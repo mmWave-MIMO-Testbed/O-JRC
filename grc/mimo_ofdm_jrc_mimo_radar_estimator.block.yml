@@ -1,0 +1,89 @@
+id: mimo_ofdm_jrc_mimo_radar_estimator
+label: MIMO-OFDM Radar Estimator (NDP)
+category: '[mimo_ofdm_jrc]'
+
+templates:
+  imports: import mimo_ofdm_jrc
+  make: mimo_ofdm_jrc.mimo_radar_estimator(${fft_len}, ${N_tx}, ${N_rx}, ${N_ltf}, ${N_sync}, 
+      ${P_ltf}, ${ltf_seq}, ${background_removal}, ${background_record}, ${record_len},
+      ${interp_factor}, ${enable_tx_interleave}, ${len_tag_key}, ${debug})
+
+  callbacks:
+    - set_background_record(${background_record})
+
+parameters:
+- id: fft_len
+  label: FFT length
+  dtype: int
+  default: fft_len
+- id: N_tx
+  label: Number of TX Antennas
+  dtype: int
+- id: N_rx
+  label: Number of RX Antennas
+  dtype: int
+- id: N_ltf
+  label: Number of LTF Symbols
+  dtype: int
+- id: N_sync
+  label: Number of SYNC Symbols
+  dtype: int
+- id: P_ltf
+  label: Mapping Matrix
+  dtype: raw
+  default: ((),)
+- id: ltf_seq
+  label: LTF Sequence
+  dtype: raw
+  default: ((),)
+- id: background_removal
+  label: Background Removal
+  dtype: bool
+  default: 'True'
+  options: ['True', 'False']
+  option_labels: [Enable, Disable]
+- id: background_record
+  label: Background Recording
+  dtype: bool
+  default: 'True'
+  options: ['True', 'False']
+  option_labels: [Enable, Disable]
+- id: record_len
+  label: Recording Length
+  dtype: int
+  default: '8'
+- id: interp_factor
+  label: Interpolation Factor (Padding)
+  dtype: int
+- id: enable_tx_interleave
+  label: TX Interleaving
+  dtype: bool
+  default: 'False'
+  options: ['True', 'False']
+  option_labels: [Enable, Disable]
+- id: len_tag_key
+  label: Length Tag Key
+  dtype: string
+  default: '"packet_len"'
+- id: debug
+  label: Debug
+  dtype: bool
+  default: 'False'
+  options: ['True', 'False']
+  option_labels: [Enable, Disable]
+
+inputs:
+- domain: stream
+  dtype: complex
+  vlen: ${ fft_len }
+  multiplicity: ${ N_rx }
+
+outputs:
+- domain: stream
+  dtype: complex
+  vlen: ${ fft_len * interp_factor}
+
+
+#  'file_format' specifies the version of the GRC yml format used in the file
+#  and should usually not be changed.
+file_format: 1
