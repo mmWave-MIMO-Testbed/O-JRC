@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/haocheng/gr-mimo_ofdm_jrc
+CMAKE_SOURCE_DIR = /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/haocheng/gr-mimo_ofdm_jrc/build
+CMAKE_BINARY_DIR = /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build
 
 # Utility rule file for uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/uninstall.dir/compiler_depend.make
 include CMakeFiles/uninstall.dir/progress.make
 
 CMakeFiles/uninstall:
-	/usr/local/bin/cmake -P /home/haocheng/gr-mimo_ofdm_jrc/build/cmake_uninstall.cmake
+	/usr/local/bin/cmake -P /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/cmake_uninstall.cmake
 
 uninstall: CMakeFiles/uninstall
 uninstall: CMakeFiles/uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/haocheng/gr-mimo_ofdm_jrc/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haocheng/gr-mimo_ofdm_jrc /home/haocheng/gr-mimo_ofdm_jrc /home/haocheng/gr-mimo_ofdm_jrc/build /home/haocheng/gr-mimo_ofdm_jrc/build /home/haocheng/gr-mimo_ofdm_jrc/build/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/haocheng/gr-mimo_ofdm_jrc/lib
+# Install script for directory: /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -55,8 +55,8 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     endif()
   endforeach()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/home/haocheng/gr-mimo_ofdm_jrc/build/lib/libgnuradio-mimo_ofdm_jrc.so.1.0.0.0"
-    "/home/haocheng/gr-mimo_ofdm_jrc/build/lib/libgnuradio-mimo_ofdm_jrc.so.1.0.0"
+    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/lib/libgnuradio-mimo_ofdm_jrc.so.1.0.0.0"
+    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/lib/libgnuradio-mimo_ofdm_jrc.so.1.0.0"
     )
   foreach(file
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgnuradio-mimo_ofdm_jrc.so.1.0.0.0"
@@ -82,7 +82,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgnuradio-mimo_ofdm_jrc.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/haocheng/gr-mimo_ofdm_jrc/build/lib/libgnuradio-mimo_ofdm_jrc.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/lib/libgnuradio-mimo_ofdm_jrc.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgnuradio-mimo_ofdm_jrc.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libgnuradio-mimo_ofdm_jrc.so")
     file(RPATH_CHANGE
@@ -99,7 +99,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/mimo_ofdm_jrc/gnuradio-mimo_ofdm_jrcTargets.cmake")
     file(DIFFERENT _cmake_export_file_changed FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/mimo_ofdm_jrc/gnuradio-mimo_ofdm_jrcTargets.cmake"
-         "/home/haocheng/gr-mimo_ofdm_jrc/build/lib/CMakeFiles/Export/684f5d80be399475d9431e7e7305dbf1/gnuradio-mimo_ofdm_jrcTargets.cmake")
+         "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/lib/CMakeFiles/Export/684f5d80be399475d9431e7e7305dbf1/gnuradio-mimo_ofdm_jrcTargets.cmake")
     if(_cmake_export_file_changed)
       file(GLOB _cmake_old_config_files "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/mimo_ofdm_jrc/gnuradio-mimo_ofdm_jrcTargets-*.cmake")
       if(_cmake_old_config_files)
@@ -112,13 +112,13 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     endif()
     unset(_cmake_export_file_changed)
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/mimo_ofdm_jrc" TYPE FILE FILES "/home/haocheng/gr-mimo_ofdm_jrc/build/lib/CMakeFiles/Export/684f5d80be399475d9431e7e7305dbf1/gnuradio-mimo_ofdm_jrcTargets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/mimo_ofdm_jrc" TYPE FILE FILES "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/lib/CMakeFiles/Export/684f5d80be399475d9431e7e7305dbf1/gnuradio-mimo_ofdm_jrcTargets.cmake")
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/mimo_ofdm_jrc" TYPE FILE FILES "/home/haocheng/gr-mimo_ofdm_jrc/build/lib/CMakeFiles/Export/684f5d80be399475d9431e7e7305dbf1/gnuradio-mimo_ofdm_jrcTargets-release.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/mimo_ofdm_jrc" TYPE FILE FILES "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/lib/CMakeFiles/Export/684f5d80be399475d9431e7e7305dbf1/gnuradio-mimo_ofdm_jrcTargets-release.cmake")
   endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/mimo_ofdm_jrc" TYPE FILE FILES "/home/haocheng/gr-mimo_ofdm_jrc/build/lib/cmake/Modules/gnuradio-mimo_ofdm_jrcConfig.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/mimo_ofdm_jrc" TYPE FILE FILES "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/lib/cmake/Modules/gnuradio-mimo_ofdm_jrcConfig.cmake")
 endif()
 

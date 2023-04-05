@@ -1,0 +1,489 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classgr_1_1mimo__ofdm_1_1viterbi__decoder" kind="class" language="C++" prot="public">
+    <compoundname>gr::mimo_ofdm::viterbi_decoder</compoundname>
+    <includes refid="old__version_2viterbi__decoder_8h" local="no">viterbi_decoder.h</includes>
+    <innerclass refid="uniongr_1_1mimo__ofdm_1_1viterbi__decoder_1_1branchtab27" prot="private">gr::mimo_ofdm::viterbi_decoder::branchtab27</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a06e6f55bf9c0e8b902b3896d48614b1d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm::viterbi_decoder::d_store_pos</definition>
+        <argsstring></argsstring>
+        <name>d_store_pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="48" column="5" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1adf5035359d5068a7380a9007e15c6521" prot="private" static="no" mutable="no">
+        <type>union gr::mimo_ofdm::viterbi_decoder::branchtab27</type>
+        <definition>union gr::mimo_ofdm::viterbi_decoder::branchtab27 gr::mimo_ofdm::viterbi_decoder::d_branchtab27_sse2[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>d_branchtab27_sse2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="58" column="23"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a213d7e3b07f210147314b7d4d858660d" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm::viterbi_decoder::d_ntraceback</definition>
+        <argsstring></argsstring>
+        <name>d_ntraceback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="65" column="5" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a5c13e34d11272176b7d4099d53eec573" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm::viterbi_decoder::d_k</definition>
+        <argsstring></argsstring>
+        <name>d_k</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="66" column="5" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1adb24d4a1c909b1ce209c574529fbc2ca" prot="private" static="no" mutable="no">
+        <type><ref refid="classofdm__mcs" kindref="compound">ofdm_mcs</ref> *</type>
+        <definition>ofdm_mcs* gr::mimo_ofdm::viterbi_decoder::d_ofdm_mcs</definition>
+        <argsstring></argsstring>
+        <name>d_ofdm_mcs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="67" column="10" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1aefbd1cb46b9e0b21ac1986a21109cca7" prot="private" static="no" mutable="no">
+        <type><ref refid="classpacket__param" kindref="compound">packet_param</ref> *</type>
+        <definition>packet_param* gr::mimo_ofdm::viterbi_decoder::d_burst_param</definition>
+        <argsstring></argsstring>
+        <name>d_burst_param</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="68" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1add47e1869d884eef09ddd7e6d05a7590" prot="private" static="no" mutable="no">
+        <type>const unsigned char *</type>
+        <definition>const unsigned char* gr::mimo_ofdm::viterbi_decoder::d_depuncture_pattern</definition>
+        <argsstring></argsstring>
+        <name>d_depuncture_pattern</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="69" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1ad2930ec755db457a437f6d9572c3034e" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t gr::mimo_ofdm::viterbi_decoder::d_depunctured[MAX_ENCODED_BITS]</definition>
+        <argsstring>[MAX_ENCODED_BITS]</argsstring>
+        <name>d_depunctured</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="71" column="9" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a4eddc5f96063880ae5b82db568180830" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t gr::mimo_ofdm::viterbi_decoder::d_decoded[MAX_ENCODED_BITS *3/4]</definition>
+        <argsstring>[MAX_ENCODED_BITS *3/4]</argsstring>
+        <name>d_decoded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="72" column="9" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a6f05433de4d45f88b7a8261b06729804" prot="private" static="yes" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char gr::mimo_ofdm::viterbi_decoder::PARTAB[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>PARTAB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="74" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a5bf6974e526db173b75b7d0cd02ab77f" prot="private" static="yes" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char gr::mimo_ofdm::viterbi_decoder::PUNCTURE_1_2[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>PUNCTURE_1_2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="75" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1af39912026a9caba8175be9667b1088da" prot="private" static="yes" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char gr::mimo_ofdm::viterbi_decoder::PUNCTURE_2_3[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>PUNCTURE_2_3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="76" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1ada4bb7901701476a25b33f2a4d6a10c7" prot="private" static="yes" mutable="no">
+        <type>const unsigned char</type>
+        <definition>const unsigned char gr::mimo_ofdm::viterbi_decoder::PUNCTURE_3_4[6]</definition>
+        <argsstring>[6]</argsstring>
+        <name>PUNCTURE_3_4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="77" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1adec79615c9010b886cb290a3bdded3b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::mimo_ofdm::viterbi_decoder::viterbi_decoder</definition>
+        <argsstring>()</argsstring>
+        <name>viterbi_decoder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a7d502b988e8eea4a1e5e3cd179c5cbe9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::mimo_ofdm::viterbi_decoder::reset_store_pos</definition>
+        <argsstring>()</argsstring>
+        <name>reset_store_pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="39" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a53e618082b4a90aee30f96f624aa762a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual gr::mimo_ofdm::viterbi_decoder::~viterbi_decoder</definition>
+        <argsstring>()</argsstring>
+        <name>~viterbi_decoder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="41" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1ac7865fa3046c601f83813eea25152e86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t* gr::mimo_ofdm::viterbi_decoder::decode</definition>
+        <argsstring>(ofdm_mcs *ofdm, packet_param *burst, uint8_t *in)</argsstring>
+        <name>decode</name>
+        <param>
+          <type><ref refid="classofdm__mcs" kindref="compound">ofdm_mcs</ref> *</type>
+          <declname>ofdm</declname>
+        </param>
+        <param>
+          <type><ref refid="classpacket__param" kindref="compound">packet_param</ref> *</type>
+          <declname>burst</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="43" column="9"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a080d460856b179fc61deb5e499ead494" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char d_mmresult[64]</type>
+        <definition>unsigned char d_mmresult [64] gr::mimo_ofdm::viterbi_decoder::__attribute__</definition>
+        <argsstring>((aligned(16)))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(aligned(16))</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="50" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a50e70cf0d538a70932512b45ae998cc2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char d_ppresult[<ref refid="viterbi__decoder_8h_1ad2020028ac988aa273cfbb4ad379fedd" kindref="member">TRACEBACK_MAX</ref>][64]</type>
+        <definition>unsigned char d_ppresult [TRACEBACK_MAX][64] gr::mimo_ofdm::viterbi_decoder::__attribute__</definition>
+        <argsstring>((aligned(16)))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(aligned(16))</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="52" column="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a9bb54238890db8dc773747558f9a3889" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__m128i d_metric0[4]</type>
+        <definition>__m128i d_metric0 [4] gr::mimo_ofdm::viterbi_decoder::__attribute__</definition>
+        <argsstring>((aligned(16)))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(aligned(16))</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="60" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a829fb262cc1a02b0faad2aa1a8a28c94" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__m128i d_metric1[4]</type>
+        <definition>__m128i d_metric1 [4] gr::mimo_ofdm::viterbi_decoder::__attribute__</definition>
+        <argsstring>((aligned(16)))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(aligned(16))</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="61" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a4fb4d0d1a4f93120aeeebb74eb585a07" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__m128i d_path0[4]</type>
+        <definition>__m128i d_path0 [4] gr::mimo_ofdm::viterbi_decoder::__attribute__</definition>
+        <argsstring>((aligned(16)))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(aligned(16))</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="62" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a4ac2b0a0107a7767f17397c054eedf20" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__m128i d_path1[4]</type>
+        <definition>__m128i d_path1 [4] gr::mimo_ofdm::viterbi_decoder::__attribute__</definition>
+        <argsstring>((aligned(16)))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(aligned(16))</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="63" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a7fb421b30f3b18b124f920e30fb52f86" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::mimo_ofdm::viterbi_decoder::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="79" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a5bd26aaa00f0dc8b7c403b58bba6633f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint8_t *</type>
+        <definition>uint8_t* gr::mimo_ofdm::viterbi_decoder::depuncture</definition>
+        <argsstring>(uint8_t *in)</argsstring>
+        <name>depuncture</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="80" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1abb50b1120af84ddd17c65891e519a44e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::mimo_ofdm::viterbi_decoder::viterbi_chunks_init_sse2</definition>
+        <argsstring>()</argsstring>
+        <name>viterbi_chunks_init_sse2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="81" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a20b9e96adbc2667c631fce6c402f0875" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::mimo_ofdm::viterbi_decoder::viterbi_butterfly2_sse2</definition>
+        <argsstring>(unsigned char *symbols, __m128i m0[], __m128i m1[], __m128i p0[], __m128i p1[])</argsstring>
+        <name>viterbi_butterfly2_sse2</name>
+        <param>
+          <type>unsigned char *</type>
+          <declname>symbols</declname>
+        </param>
+        <param>
+          <type>__m128i</type>
+          <declname>m0</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>__m128i</type>
+          <declname>m1</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>__m128i</type>
+          <declname>p0</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>__m128i</type>
+          <declname>p1</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="82" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a272ad9e485974bcdc2b1c3154ce45c50" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned char</type>
+        <definition>unsigned char gr::mimo_ofdm::viterbi_decoder::viterbi_get_output_sse2</definition>
+        <argsstring>(__m128i *mm0, __m128i *pp0, int ntraceback, unsigned char *outbuf)</argsstring>
+        <name>viterbi_get_output_sse2</name>
+        <param>
+          <type>__m128i *</type>
+          <declname>mm0</declname>
+        </param>
+        <param>
+          <type>__m128i *</type>
+          <declname>pp0</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ntraceback</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>outbuf</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="84" column="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" line="35" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/viterbi_decoder.h" bodystart="34" bodyend="86"/>
+    <listofallmembers>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a080d460856b179fc61deb5e499ead494" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>__attribute__</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a50e70cf0d538a70932512b45ae998cc2" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>__attribute__</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a9bb54238890db8dc773747558f9a3889" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>__attribute__</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a829fb262cc1a02b0faad2aa1a8a28c94" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>__attribute__</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a4fb4d0d1a4f93120aeeebb74eb585a07" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>__attribute__</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a4ac2b0a0107a7767f17397c054eedf20" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>__attribute__</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1adf5035359d5068a7380a9007e15c6521" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>d_branchtab27_sse2</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1aefbd1cb46b9e0b21ac1986a21109cca7" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>d_burst_param</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a4eddc5f96063880ae5b82db568180830" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>d_decoded</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1add47e1869d884eef09ddd7e6d05a7590" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>d_depuncture_pattern</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1ad2930ec755db457a437f6d9572c3034e" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>d_depunctured</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a5c13e34d11272176b7d4099d53eec573" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>d_k</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a213d7e3b07f210147314b7d4d858660d" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>d_ntraceback</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1adb24d4a1c909b1ce209c574529fbc2ca" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>d_ofdm_mcs</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a06e6f55bf9c0e8b902b3896d48614b1d" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>d_store_pos</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1ac7865fa3046c601f83813eea25152e86" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>decode</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a5bd26aaa00f0dc8b7c403b58bba6633f" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>depuncture</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a6f05433de4d45f88b7a8261b06729804" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>PARTAB</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a5bf6974e526db173b75b7d0cd02ab77f" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>PUNCTURE_1_2</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1af39912026a9caba8175be9667b1088da" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>PUNCTURE_2_3</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1ada4bb7901701476a25b33f2a4d6a10c7" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>PUNCTURE_3_4</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a7fb421b30f3b18b124f920e30fb52f86" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>reset</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a7d502b988e8eea4a1e5e3cd179c5cbe9" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>reset_store_pos</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a20b9e96adbc2667c631fce6c402f0875" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>viterbi_butterfly2_sse2</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1abb50b1120af84ddd17c65891e519a44e" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>viterbi_chunks_init_sse2</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1adec79615c9010b886cb290a3bdded3b8" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>viterbi_decoder</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a272ad9e485974bcdc2b1c3154ce45c50" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>viterbi_get_output_sse2</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder_1a53e618082b4a90aee30f96f624aa762a" prot="public" virt="virtual"><scope>gr::mimo_ofdm::viterbi_decoder</scope><name>~viterbi_decoder</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

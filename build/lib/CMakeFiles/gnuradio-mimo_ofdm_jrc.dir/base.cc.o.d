@@ -1,6 +1,7 @@
 lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/base.cc.o: \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/base.cc /usr/include/stdc-predef.h \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/base.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/base.cc \
+ /usr/include/stdc-predef.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/base.h \
  /usr/local/include/gnuradio/gr_complex.h /usr/include/c++/9/complex \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \

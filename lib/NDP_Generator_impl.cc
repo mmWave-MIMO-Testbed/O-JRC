@@ -24,7 +24,6 @@
 
 #include <gnuradio/io_signature.h>
 #include "NDP_Generator_impl.h"
-#include <algorithm>
 
 namespace gr {
   namespace mimo_ofdm_jrc {
@@ -33,22 +32,21 @@ namespace gr {
     NDP_Generator::sptr
     NDP_Generator::make()
     {
-      return gnuradio::get_initial_sptr
-        (new NDP_Generator_impl());
+    //  return gnuradio::get_initial_sptr
+    //    (new NDP_Generator_impl());
     }
 
 
     /*
      * The private constructor
      */
-    NDP_Generator_impl::NDP_Generator_impl(int dataSize)
+    NDP_Generator_impl::NDP_Generator_impl()
       : gr::sync_block("NDP_Generator",
               gr::io_signature::make(0, 0, 0),
               gr::io_signature::make(1, 1, sizeof(char))),
-        d_dataSize(dataSize),
         d_packetCounter(0) {
     d_ndpCharArr.resize(3);
-    d_ndpCharArr[0] = (char)PACKET_TYPE::NDP;
+    d_ndpCharArr[0] = (char) PAKCET_TYPE::NDP;
     std::fill_n(d_ndpCharArr.begin() + 1, d_ndpCharArr.size() - 1, 'X');}
 
     /*

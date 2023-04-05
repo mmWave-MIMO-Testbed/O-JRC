@@ -1,7 +1,7 @@
 lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/range_angle_raster_data.cc.o: \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/range_angle_raster_data.cc \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/range_angle_raster_data.cc \
  /usr/include/stdc-predef.h \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/range_angle_raster_data.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/range_angle_raster_data.h \
  /usr/include/qwt/qwt_global.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
  /usr/include/c++/9/type_traits \

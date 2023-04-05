@@ -1,4 +1,4 @@
-# Install script for directory: /home/haocheng/gr-mimo_ofdm_jrc/apps
+# Install script for directory: /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/apps
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

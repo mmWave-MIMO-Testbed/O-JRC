@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classgr_1_1mimo__ofdm__jrc_1_1moving__avg" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>gr::mimo_ofdm_jrc::moving_avg</compoundname>
+    <basecompoundref prot="public" virt="virtual">sync_block</basecompoundref>
+    <includes refid="moving__avg_8h" local="no">moving_avg.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1abbaf6b78324d32c56afd3c8f3e603c5e" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg" kindref="compound">moving_avg</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;moving_avg&gt; gr::mimo_ofdm_jrc::moving_avg::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/moving_avg.h" line="38" column="33" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/moving_avg.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1a06e336e3f5239cdb074c9221ce44e369" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1abbaf6b78324d32c56afd3c8f3e603c5e" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::mimo_ofdm_jrc::moving_avg::make</definition>
+        <argsstring>(int length, float scale, int max_iter, bool debug)</argsstring>
+        <name>make</name>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>scale</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max_iter</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>debug</declname>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg" kindref="compound">mimo_ofdm_jrc::moving_avg</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg" kindref="compound">mimo_ofdm_jrc::moving_avg</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1a06e336e3f5239cdb074c9221ce44e369" kindref="member">mimo_ofdm_jrc::moving_avg::make</ref> is the public interface for creating new instances. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/moving_avg.h" line="48" column="19"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1a4056c425721a37a1d860bcf45d70d4fa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int gr::mimo_ofdm_jrc::moving_avg::length</definition>
+        <argsstring>() const =0</argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/moving_avg.h" line="50" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1a046038d4eae652bf12764b4976c485fd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>float</type>
+        <definition>virtual float gr::mimo_ofdm_jrc::moving_avg::scale</definition>
+        <argsstring>() const =0</argsstring>
+        <name>scale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/moving_avg.h" line="51" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1a656998905b66a5b6977777c1a657ef41" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::mimo_ofdm_jrc::moving_avg::set_length_and_scale</definition>
+        <argsstring>(int length, float scale)=0</argsstring>
+        <name>set_length_and_scale</name>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/moving_avg.h" line="52" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1a82cdca49dae316dc489b996fee36a488" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::mimo_ofdm_jrc::moving_avg::set_length</definition>
+        <argsstring>(int length)=0</argsstring>
+        <name>set_length</name>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/moving_avg.h" line="53" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1a0b1f27d0bcd94746b412ecdda0c0bea3" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::mimo_ofdm_jrc::moving_avg::set_scale</definition>
+        <argsstring>(float scale)=0</argsstring>
+        <name>set_scale</name>
+        <param>
+          <type>float</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/moving_avg.h" line="54" column="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>gr::mimo_ofdm_jrc::moving_avg</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>sync_block</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>gr::mimo_ofdm_jrc::moving_avg</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>sync_block</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/moving_avg.h" line="36" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/moving_avg.h" bodystart="35" bodyend="55"/>
+    <listofallmembers>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1a4056c425721a37a1d860bcf45d70d4fa" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::moving_avg</scope><name>length</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1a06e336e3f5239cdb074c9221ce44e369" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::moving_avg</scope><name>make</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1a046038d4eae652bf12764b4976c485fd" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::moving_avg</scope><name>scale</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1a82cdca49dae316dc489b996fee36a488" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::moving_avg</scope><name>set_length</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1a656998905b66a5b6977777c1a657ef41" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::moving_avg</scope><name>set_length_and_scale</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1a0b1f27d0bcd94746b412ecdda0c0bea3" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::moving_avg</scope><name>set_scale</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg_1abbaf6b78324d32c56afd3c8f3e603c5e" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::moving_avg</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

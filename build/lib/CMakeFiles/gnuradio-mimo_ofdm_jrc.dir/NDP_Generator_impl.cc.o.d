@@ -1,5 +1,5 @@
 lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/NDP_Generator_impl.cc.o: \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/NDP_Generator_impl.cc \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/NDP_Generator_impl.cc \
  /usr/include/stdc-predef.h /usr/local/include/gnuradio/io_signature.h \
  /usr/local/include/gnuradio/api.h \
  /usr/local/include/gnuradio/attributes.h \
@@ -237,9 +237,9 @@ lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/NDP_Generator_impl.cc.o: \
  /usr/include/c++/9/bits/basic_ios.tcc /usr/include/c++/9/ostream \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/bits/istream.tcc \
  /usr/include/c++/9/bits/sstream.tcc \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/NDP_Generator_impl.h \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/../include/mimo_ofdm_jrc/NDP_Generator.h \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/../include/mimo_ofdm_jrc/api.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/NDP_Generator_impl.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/../include/mimo_ofdm_jrc/NDP_Generator.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/../include/mimo_ofdm_jrc/api.h \
  /usr/local/include/gnuradio/sync_block.h \
  /usr/local/include/gnuradio/block.h \
  /usr/local/include/gnuradio/basic_block.h \

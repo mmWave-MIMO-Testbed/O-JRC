@@ -1,4 +1,4 @@
-# Install script for directory: /home/haocheng/gr-mimo_ofdm_jrc
+# Install script for directory: /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,18 +43,18 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/mimo_ofdm_jrc" TYPE FILE FILES "/home/haocheng/gr-mimo_ofdm_jrc/cmake/Modules/mimo_ofdm_jrcConfig.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/mimo_ofdm_jrc" TYPE FILE FILES "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/cmake/Modules/mimo_ofdm_jrcConfig.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/haocheng/gr-mimo_ofdm_jrc/build/include/mimo_ofdm_jrc/cmake_install.cmake")
-  include("/home/haocheng/gr-mimo_ofdm_jrc/build/lib/cmake_install.cmake")
-  include("/home/haocheng/gr-mimo_ofdm_jrc/build/apps/cmake_install.cmake")
-  include("/home/haocheng/gr-mimo_ofdm_jrc/build/docs/cmake_install.cmake")
-  include("/home/haocheng/gr-mimo_ofdm_jrc/build/swig/cmake_install.cmake")
-  include("/home/haocheng/gr-mimo_ofdm_jrc/build/python/cmake_install.cmake")
-  include("/home/haocheng/gr-mimo_ofdm_jrc/build/grc/cmake_install.cmake")
+  include("/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/include/mimo_ofdm_jrc/cmake_install.cmake")
+  include("/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/lib/cmake_install.cmake")
+  include("/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/apps/cmake_install.cmake")
+  include("/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/docs/cmake_install.cmake")
+  include("/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/swig/cmake_install.cmake")
+  include("/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/python/cmake_install.cmake")
+  include("/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/grc/cmake_install.cmake")
 
 endif()
 
@@ -66,5 +66,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/haocheng/gr-mimo_ofdm_jrc/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

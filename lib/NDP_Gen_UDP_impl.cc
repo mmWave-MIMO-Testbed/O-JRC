@@ -29,10 +29,10 @@ namespace gr {
   namespace mimo_ofdm_jrc {
 
     NDP_Gen_UDP::sptr
-    NDP_Gen_UDP::make()
+    NDP_Gen_UDP::make(const std::string& host, int port, int interval)
     {
       return gnuradio::get_initial_sptr
-        (new NDP_Gen_UDP_impl());
+        (new NDP_Gen_UDP_impl(host, port, interval));
     }
 
 
@@ -40,7 +40,7 @@ namespace gr {
      * The private constructor
      */
     NDP_Gen_UDP_impl::NDP_Gen_UDP_impl(const std::string& host, int port, int interval)
-      : gr::block("NDP_Gen_UDP",
+      : gr::sync_block("NDP_Gen_UDP",
               gr::io_signature::make(0, 0, 0),
               gr::io_signature::make(0, 0, 0)),
         d_socket(d_io_context),
@@ -64,14 +64,8 @@ namespace gr {
     {
     }
 
-    void
-    NDP_Gen_UDP_impl::forecast (int noutput_items, gr_vector_int &ninput_items_required)
-    {
-      /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
-    }
-
     int
-    NDP_Gen_UDP_impl::general_work (int noutput_items,
+    NDP_Gen_UDP_impl::work (int noutput_items,
                        gr_vector_const_void_star &input_items,
                        gr_vector_void_star &output_items)
     {
@@ -86,21 +80,21 @@ namespace gr {
       consume_each (noutput_items);*/
 
       for (int i = 0; i < noutput_items; i++) {
-        // 创建要发送的数据包
+        // Generate the NDP pakcet
         std::vector<char> ndpCharArr(3);
-        ndpCharArr[0] = (char) PACKET_TYPE::NDP;
+        ndpCharArr[0] = (char) PAKCET_TYPE::NDP;
         std::fill_n(ndpCharArr.begin()+1, ndpCharArr.size()-1, 'X');
         boost::asio::const_buffer buffer(ndpCharArr.data(), ndpCharArr.size());
 
-        // 发送数据包
+        // Send the packet
         d_socket.send_to(buffer, d_remote_endpoint);
 
-        // 等待一段时间
+        // Waiting for sometime
         std::this_thread::sleep_for(std::chrono::microseconds((int)(d_interval*1000)));
 
       // Tell runtime system how many output items we produced.
-      return noutput_items;
     }
+    return noutput_items;
     }
   } /* namespace mimo_ofdm_jrc */
 } /* namespace gr */

@@ -1,0 +1,983 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</compoundname>
+    <basecompoundref refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx" prot="public" virt="non-virtual">gr::mimo_ofdm_jrc::usrp_mimo_trx</basecompoundref>
+    <includes refid="usrp__mimo__trx__impl_8h" local="no">usrp_mimo_trx_impl.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a08928d7a806783f803bb9be97578262d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_N_mboard</definition>
+        <argsstring></argsstring>
+        <name>d_N_mboard</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="58" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ad4d01956204eba2aa366246fdd83553b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_N_tx</definition>
+        <argsstring></argsstring>
+        <name>d_N_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="58" column="24" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ae9573751227c6267cc6bf8bef8e0bf81" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_N_rx</definition>
+        <argsstring></argsstring>
+        <name>d_N_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="58" column="31" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a30c9ad02e74bff5aa9e69d5f2c524715" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_samp_rate</definition>
+        <argsstring></argsstring>
+        <name>d_samp_rate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="60" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a9dca8480b60ba00c4777756106196a65" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_fft_len</definition>
+        <argsstring></argsstring>
+        <name>d_fft_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="61" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1afaabc47b747cdb5d58f1c7b29b4bf35d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_center_freq</definition>
+        <argsstring></argsstring>
+        <name>d_center_freq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="62" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a0b8c9fd23243ece2a67ea5c1559cc87c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_num_delay_samps</definition>
+        <argsstring></argsstring>
+        <name>d_num_delay_samps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="63" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a89b492f8e7449654a5957a885d6d05d9" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::prev_tx_time</definition>
+        <argsstring></argsstring>
+        <name>prev_tx_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="64" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ad9564bdab3200ccc688eff49a9b5cdde" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_update_period</definition>
+        <argsstring></argsstring>
+        <name>d_update_period</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="65" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a8bf90bc30dbbba9a06fc3ea0e0f72bee" prot="public" static="no" mutable="no">
+        <type>uhd::usrp::multi_usrp::sptr</type>
+        <definition>uhd::usrp::multi_usrp::sptr gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_usrp_mimo</definition>
+        <argsstring></argsstring>
+        <name>d_usrp_mimo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="67" column="37" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1aef9b27faec9942a40de7c027d1bb0d30" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_args</definition>
+        <argsstring></argsstring>
+        <name>d_args</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="68" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a5b9bb51fcb6ae1af4bf6e6ea3ec41297" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_wire_tx</definition>
+        <argsstring></argsstring>
+        <name>d_wire_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="69" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a6aadbbf26dd94433fc00e6f77c15294b" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_wire_rx</definition>
+        <argsstring></argsstring>
+        <name>d_wire_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="69" column="31" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a49f59a17225daa34cdda2d8f5733db35" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_antenna_tx</definition>
+        <argsstring></argsstring>
+        <name>d_antenna_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="70" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a3619b7629d52f5efbe5bb420614c2807" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_antenna_rx</definition>
+        <argsstring></argsstring>
+        <name>d_antenna_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="70" column="34" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a4a120988c28152fb29399b5a0424291f" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_clock_sources</definition>
+        <argsstring></argsstring>
+        <name>d_clock_sources</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="71" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a83fc9110afc8cb2394556ce4e1174e49" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_time_sources</definition>
+        <argsstring></argsstring>
+        <name>d_time_sources</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="72" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a5057b27d6728e9854eb98ebf692ae8d0" prot="public" static="no" mutable="no">
+        <type>uhd::tune_request_t</type>
+        <definition>uhd::tune_request_t gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_tune_request_tx</definition>
+        <argsstring></argsstring>
+        <name>d_tune_request_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="75" column="29" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1af68ca7651d0726622764e994ce867f37" prot="public" static="no" mutable="no">
+        <type>uhd::tune_request_t</type>
+        <definition>uhd::tune_request_t gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_tune_request_rx</definition>
+        <argsstring></argsstring>
+        <name>d_tune_request_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="75" column="47" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a3882e2575b67f4c60e3cf01512e6b097" prot="public" static="no" mutable="no">
+        <type>uhd::tx_streamer::sptr</type>
+        <definition>uhd::tx_streamer::sptr gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_tx_streamer</definition>
+        <argsstring></argsstring>
+        <name>d_tx_streamer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="76" column="32" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1abf8a38ab1831828b3cecdac3b1bffd06" prot="public" static="no" mutable="no">
+        <type>uhd::rx_streamer::sptr</type>
+        <definition>uhd::rx_streamer::sptr gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_rx_streamer</definition>
+        <argsstring></argsstring>
+        <name>d_rx_streamer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="77" column="32" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ace2123ca1c706476ce3c0a3ceb68b71a" prot="public" static="no" mutable="no">
+        <type>uhd::tx_metadata_t</type>
+        <definition>uhd::tx_metadata_t gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_metadata_tx</definition>
+        <argsstring></argsstring>
+        <name>d_metadata_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="78" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a57593631abda8ee0da30790a283082ca" prot="public" static="no" mutable="no">
+        <type>uhd::rx_metadata_t</type>
+        <definition>uhd::rx_metadata_t gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_metadata_rx</definition>
+        <argsstring></argsstring>
+        <name>d_metadata_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="79" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ac55351b2434ee592cd1368357a873c54" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_lo_offset_tx</definition>
+        <argsstring></argsstring>
+        <name>d_lo_offset_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="81" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a9a11bfd404ea26ada19e459458e4cff4" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_lo_offset_rx</definition>
+        <argsstring></argsstring>
+        <name>d_lo_offset_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="81" column="31" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a6dca77fa6d5e76698e0ce07f41ac823c" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_timeout_tx</definition>
+        <argsstring></argsstring>
+        <name>d_timeout_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="82" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a12bdc070ac212e20d317bd4eafc2f334" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_timeout_rx</definition>
+        <argsstring></argsstring>
+        <name>d_timeout_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="82" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a02ee9fb9ed610981860035cdbb7060eb" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_wait_tx</definition>
+        <argsstring></argsstring>
+        <name>d_wait_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="83" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a91d70bd4a49bb8f8a277c3f58f95b169" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_wait_rx</definition>
+        <argsstring></argsstring>
+        <name>d_wait_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="83" column="25" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a1e8473917638c6b0f3e5420ad36c4bca" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_gain_tx</definition>
+        <argsstring></argsstring>
+        <name>d_gain_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="84" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1afcfbc6071a415b5afa616bbf65c8ffad" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_gain_rx</definition>
+        <argsstring></argsstring>
+        <name>d_gain_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="84" column="25" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ae0ba6edd0b4590f64651da69fcd7974d" prot="public" static="no" mutable="no">
+        <type>uhd::time_spec_t</type>
+        <definition>uhd::time_spec_t gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_time_now_tx</definition>
+        <argsstring></argsstring>
+        <name>d_time_now_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="86" column="26" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a97e875dd969fe7c18ee290b4224f4fc2" prot="public" static="no" mutable="no">
+        <type>uhd::time_spec_t</type>
+        <definition>uhd::time_spec_t gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_time_now_rx</definition>
+        <argsstring></argsstring>
+        <name>d_time_now_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="86" column="40" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a1210fd26ff00eeb9b53f1f99d763926c" prot="public" static="no" mutable="no">
+        <type>uhd::time_spec_t</type>
+        <definition>uhd::time_spec_t gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_current_time_now</definition>
+        <argsstring></argsstring>
+        <name>d_current_time_now</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="86" column="54" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a147ec0a0216944d7d090b366383de28a" prot="public" static="no" mutable="no">
+        <type>gr::thread::thread</type>
+        <definition>gr::thread::thread gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_thread_recv</definition>
+        <argsstring></argsstring>
+        <name>d_thread_recv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="89" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1af1029b245b2b6db99dc4e976f64282b3" prot="public" static="no" mutable="no">
+        <type>gr::thread::thread</type>
+        <definition>gr::thread::thread gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_thread_send</definition>
+        <argsstring></argsstring>
+        <name>d_thread_send</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="90" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ad6d67bdc530eaf222bb7c72589b4660a" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; gr_complex &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;gr_complex&gt; &gt; gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_out_buffer</definition>
+        <argsstring></argsstring>
+        <name>d_out_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="92" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1aa9b5ce89789a4162ceaf44334964ba87" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; gr_complex * &gt;</type>
+        <definition>std::vector&lt;gr_complex *&gt; gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_out_recv_ptrs</definition>
+        <argsstring></argsstring>
+        <name>d_out_recv_ptrs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="94" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a3c9fdd1a878ec492a993bd2d7b7a42d7" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; const void * &gt;</type>
+        <definition>std::vector&lt;const void*&gt; gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_in_send_ptrs</definition>
+        <argsstring></argsstring>
+        <name>d_in_send_ptrs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="95" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1abca43fe7ad91cd2baabe9d0bc79c2f64" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_noutput_items_rx</definition>
+        <argsstring></argsstring>
+        <name>d_noutput_items_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="97" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a9a0480217e5b7f80d3afb5a7d07c1667" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_noutput_items_tx</definition>
+        <argsstring></argsstring>
+        <name>d_noutput_items_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="98" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a023b7ef510ae3fbecbb215e4c38b71c7" prot="public" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_time_key</definition>
+        <argsstring></argsstring>
+        <name>d_time_key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="100" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a8bb5b73c072aea7ecd1bbcdbddb7910a" prot="public" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_time_val</definition>
+        <argsstring></argsstring>
+        <name>d_time_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="100" column="31" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a08a3ffd1dce04e6c91a42ae055964491" prot="public" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_srcid</definition>
+        <argsstring></argsstring>
+        <name>d_srcid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="100" column="42" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a3944e4d61158ca0aafb68911bda61d73" prot="public" static="no" mutable="no">
+        <type>boost::recursive_mutex</type>
+        <definition>boost::recursive_mutex gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::d_mutex</definition>
+        <argsstring></argsstring>
+        <name>d_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="102" column="32" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a8a0ec7d8264bd93d09b3499e3f8f32fa" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::calculate_output_stream_length</definition>
+        <argsstring>(const gr_vector_int &amp;ninput_items)</argsstring>
+        <name>calculate_output_stream_length</name>
+        <param>
+          <type>const gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="40" column="11"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1acf67d4ef0931520651a5f6bb3e38419b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::usrp_mimo_trx_impl</definition>
+        <argsstring>(int N_mboard, int N_tx, int N_rx, int samp_rate, float center_freq, int num_delay_samps, bool debug, float update_period, std::string args, std::string clock_sources, std::string time_sources, std::string antenna_tx, float gain_tx, float timeout_tx, float wait_tx, std::string wire_tx, std::string antenna_rx, float gain_rx, float timeout_rx, float wait_rx, float lo_offset_rx, std::string wire_rx, const std::string &amp;len_key)</argsstring>
+        <name>usrp_mimo_trx_impl</name>
+        <param>
+          <type>int</type>
+          <declname>N_mboard</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N_tx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N_rx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>samp_rate</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>center_freq</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_delay_samps</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>debug</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>update_period</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>clock_sources</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>time_sources</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>antenna_tx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>gain_tx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>timeout_tx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>wait_tx</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>wire_tx</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>antenna_rx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>gain_rx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>timeout_rx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>wait_rx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>lo_offset_rx</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>wire_rx</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>len_key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="43" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1aae7aa5d0d698d431c87d3032a3b1b034" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::~usrp_mimo_trx_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~usrp_mimo_trx_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="48" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a39e9b107087388d0568012f34572ae14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::transmit</definition>
+        <argsstring>()</argsstring>
+        <name>transmit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="50" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ad9efb89d1416ff405fac1cde4cb613bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::receive</definition>
+        <argsstring>()</argsstring>
+        <name>receive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="51" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a57c55eda063eda6a6d4fd30b2cbfe08e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::set_num_delay_samps</definition>
+        <argsstring>(int num_samps)</argsstring>
+        <name>set_num_delay_samps</name>
+        <reimplements refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx_1a6bf55d23271987b03cc1b924ac357694">set_num_delay_samps</reimplements>
+        <param>
+          <type>int</type>
+          <declname>num_samps</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="52" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a669d330721eed290f00e7372cbf954d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::set_rx_gain</definition>
+        <argsstring>(float gain)</argsstring>
+        <name>set_rx_gain</name>
+        <reimplements refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx_1a724aa815eb95d653c504ee9246b06d4d">set_rx_gain</reimplements>
+        <param>
+          <type>float</type>
+          <declname>gain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="53" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a82d2423efe84436fa7f228c87bdc7f67" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::set_tx_gain</definition>
+        <argsstring>(float gain)</argsstring>
+        <name>set_tx_gain</name>
+        <reimplements refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx_1a660c917e587ed59aec8636c5f01d0644">set_tx_gain</reimplements>
+        <param>
+          <type>float</type>
+          <declname>gain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="54" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a75eff82587f1911b1250d7a23d96bf36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm_jrc::usrp_mimo_trx_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="105" column="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>gr::mimo_ofdm_jrc::usrp_mimo_trx</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tagged_stream_block</label>
+      </node>
+      <node id="1">
+        <label>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>gr::mimo_ofdm_jrc::usrp_mimo_trx</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tagged_stream_block</label>
+      </node>
+      <node id="9">
+        <label>std::vector&lt; const void * &gt;</label>
+      </node>
+      <node id="5">
+        <label>std::basic_string&lt; char &gt;</label>
+      </node>
+      <node id="1">
+        <label>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>d_args</edgelabel>
+          <edgelabel>d_wire_rx</edgelabel>
+          <edgelabel>d_wire_tx</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>d_clock_sources</edgelabel>
+          <edgelabel>d_antenna_rx</edgelabel>
+          <edgelabel>d_time_sources</edgelabel>
+          <edgelabel>d_antenna_tx</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>d_out_recv_ptrs</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>d_out_buffer</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>d_in_send_ptrs</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; std::string &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>std::vector&lt; gr_complex * &gt;</label>
+      </node>
+      <node id="8">
+        <label>std::vector&lt; std::vector&lt; gr_complex &gt; &gt;</label>
+      </node>
+      <node id="4">
+        <label>std::string</label>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" line="35" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/usrp_mimo_trx_impl.h" bodystart="34" bodyend="111"/>
+    <listofallmembers>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a8a0ec7d8264bd93d09b3499e3f8f32fa" prot="protected" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>calculate_output_stream_length</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a3619b7629d52f5efbe5bb420614c2807" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_antenna_rx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a49f59a17225daa34cdda2d8f5733db35" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_antenna_tx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1aef9b27faec9942a40de7c027d1bb0d30" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_args</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1afaabc47b747cdb5d58f1c7b29b4bf35d" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_center_freq</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a4a120988c28152fb29399b5a0424291f" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_clock_sources</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a1210fd26ff00eeb9b53f1f99d763926c" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_current_time_now</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a9dca8480b60ba00c4777756106196a65" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_fft_len</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1afcfbc6071a415b5afa616bbf65c8ffad" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_gain_rx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a1e8473917638c6b0f3e5420ad36c4bca" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_gain_tx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a3c9fdd1a878ec492a993bd2d7b7a42d7" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_in_send_ptrs</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a9a11bfd404ea26ada19e459458e4cff4" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_lo_offset_rx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ac55351b2434ee592cd1368357a873c54" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_lo_offset_tx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a57593631abda8ee0da30790a283082ca" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_metadata_rx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ace2123ca1c706476ce3c0a3ceb68b71a" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_metadata_tx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a3944e4d61158ca0aafb68911bda61d73" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_mutex</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a08928d7a806783f803bb9be97578262d" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_N_mboard</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ae9573751227c6267cc6bf8bef8e0bf81" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_N_rx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ad4d01956204eba2aa366246fdd83553b" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_N_tx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1abca43fe7ad91cd2baabe9d0bc79c2f64" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_noutput_items_rx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a9a0480217e5b7f80d3afb5a7d07c1667" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_noutput_items_tx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a0b8c9fd23243ece2a67ea5c1559cc87c" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_num_delay_samps</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ad6d67bdc530eaf222bb7c72589b4660a" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_out_buffer</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1aa9b5ce89789a4162ceaf44334964ba87" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_out_recv_ptrs</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1abf8a38ab1831828b3cecdac3b1bffd06" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_rx_streamer</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a30c9ad02e74bff5aa9e69d5f2c524715" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_samp_rate</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a08a3ffd1dce04e6c91a42ae055964491" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_srcid</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a147ec0a0216944d7d090b366383de28a" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_thread_recv</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1af1029b245b2b6db99dc4e976f64282b3" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_thread_send</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a023b7ef510ae3fbecbb215e4c38b71c7" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_time_key</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a97e875dd969fe7c18ee290b4224f4fc2" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_time_now_rx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ae0ba6edd0b4590f64651da69fcd7974d" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_time_now_tx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a83fc9110afc8cb2394556ce4e1174e49" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_time_sources</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a8bb5b73c072aea7ecd1bbcdbddb7910a" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_time_val</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a12bdc070ac212e20d317bd4eafc2f334" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_timeout_rx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a6dca77fa6d5e76698e0ce07f41ac823c" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_timeout_tx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1af68ca7651d0726622764e994ce867f37" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_tune_request_rx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a5057b27d6728e9854eb98ebf692ae8d0" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_tune_request_tx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a3882e2575b67f4c60e3cf01512e6b097" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_tx_streamer</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ad9564bdab3200ccc688eff49a9b5cdde" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_update_period</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a8bf90bc30dbbba9a06fc3ea0e0f72bee" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_usrp_mimo</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a91d70bd4a49bb8f8a277c3f58f95b169" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_wait_rx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a02ee9fb9ed610981860035cdbb7060eb" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_wait_tx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a6aadbbf26dd94433fc00e6f77c15294b" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_wire_rx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a5b9bb51fcb6ae1af4bf6e6ea3ec41297" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>d_wire_tx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx_1af7615ca3ea01485ef72eb96a4e961602" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a89b492f8e7449654a5957a885d6d05d9" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>prev_tx_time</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1ad9efb89d1416ff405fac1cde4cb613bc" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>receive</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a57c55eda063eda6a6d4fd30b2cbfe08e" prot="public" virt="virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>set_num_delay_samps</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a669d330721eed290f00e7372cbf954d0" prot="public" virt="virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>set_rx_gain</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a82d2423efe84436fa7f228c87bdc7f67" prot="public" virt="virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>set_tx_gain</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx_1aa25f3870ee101031ca6f940ade8b1414" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a39e9b107087388d0568012f34572ae14" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>transmit</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1acf67d4ef0931520651a5f6bb3e38419b" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>usrp_mimo_trx_impl</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1a75eff82587f1911b1250d7a23d96bf36" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1usrp__mimo__trx__impl_1aae7aa5d0d698d431c87d3032a3b1b034" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::usrp_mimo_trx_impl</scope><name>~usrp_mimo_trx_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

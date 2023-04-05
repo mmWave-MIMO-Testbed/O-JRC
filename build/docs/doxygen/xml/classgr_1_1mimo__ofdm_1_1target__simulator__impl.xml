@@ -1,0 +1,740 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classgr_1_1mimo__ofdm_1_1target__simulator__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::mimo_ofdm::target_simulator_impl</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">target_simulator</basecompoundref>
+    <includes refid="old__version_2target__simulator__impl_8h" local="no">target_simulator_impl.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1ab25da4abbb39cfc60fd1ebc0191137aa" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; gr::mimo_ofdm::target_simulator_impl::d_range</definition>
+        <argsstring></argsstring>
+        <name>d_range</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="55" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1ae19ce9dfc6d76ea35f612ca342fe7c34" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; gr::mimo_ofdm::target_simulator_impl::d_velocity</definition>
+        <argsstring></argsstring>
+        <name>d_velocity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="55" column="29" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aa620ef1fca3af2b7df1a38a3de0c2008" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; gr::mimo_ofdm::target_simulator_impl::d_rcs</definition>
+        <argsstring></argsstring>
+        <name>d_rcs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="55" column="40" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1af23d9a0d68f77ede099c599c8fe2b934" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; gr::mimo_ofdm::target_simulator_impl::d_azimuth</definition>
+        <argsstring></argsstring>
+        <name>d_azimuth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="55" column="46" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a8df8e181dedfe69fba06419c784ffde1" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; gr::mimo_ofdm::target_simulator_impl::d_position_rx</definition>
+        <argsstring></argsstring>
+        <name>d_position_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="55" column="56" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aff32f7a2d7e758c12fe9d2fd10e4f64b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm::target_simulator_impl::d_samp_rate</definition>
+        <argsstring></argsstring>
+        <name>d_samp_rate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="56" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aac113e05a4e7a1bdc1e307bc511e3923" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::mimo_ofdm::target_simulator_impl::d_center_freq</definition>
+        <argsstring></argsstring>
+        <name>d_center_freq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="57" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1ab16cf37d1f5cd12c3d33bab39e203206" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm::target_simulator_impl::d_buff_size</definition>
+        <argsstring></argsstring>
+        <name>d_buff_size</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="58" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a125186efa672bda2bc00a2a87f78b730" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::mimo_ofdm::target_simulator_impl::d_rndm_phaseshift</definition>
+        <argsstring></argsstring>
+        <name>d_rndm_phaseshift</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="59" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a534b9a4c02811cefc64ec382ef646abb" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::mimo_ofdm::target_simulator_impl::d_new_channel</definition>
+        <argsstring></argsstring>
+        <name>d_new_channel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="61" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a3f7af8612fe3910b1f30b95621f945ee" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::mimo_ofdm::target_simulator_impl::d_self_coupling</definition>
+        <argsstring></argsstring>
+        <name>d_self_coupling</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="63" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a8a55866e84c40ad97a51f128c09372f5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::mimo_ofdm::target_simulator_impl::d_self_coupling_db</definition>
+        <argsstring></argsstring>
+        <name>d_self_coupling_db</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="64" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1ad85f4491526994fc80a7a05f10884dda" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm::target_simulator_impl::d_num_targets</definition>
+        <argsstring></argsstring>
+        <name>d_num_targets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="66" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1af393a42f304837e59448fb6cd98f33c1" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; gr::mimo_ofdm::target_simulator_impl::d_freq</definition>
+        <argsstring></argsstring>
+        <name>d_freq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="67" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aeea8fb6c0f9c3871aa2cd7ce054c70bd" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; gr::mimo_ofdm::target_simulator_impl::d_doppler</definition>
+        <argsstring></argsstring>
+        <name>d_doppler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="68" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1af6c494529d7eb835efed9ae3d2d6dee0" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; gr::mimo_ofdm::target_simulator_impl::d_scale_ampl</definition>
+        <argsstring></argsstring>
+        <name>d_scale_ampl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="68" column="31" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a0c6a3c09b9dda5134df10dc019586481" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; float &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;float&gt; &gt; gr::mimo_ofdm::target_simulator_impl::d_timeshift_azimuth</definition>
+        <argsstring></argsstring>
+        <name>d_timeshift_azimuth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="70" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a53d376f1da073790b67bd9dd791c3414" prot="public" static="no" mutable="no">
+        <type>gr_complex</type>
+        <definition>gr_complex gr::mimo_ofdm::target_simulator_impl::d_phase_doppler</definition>
+        <argsstring></argsstring>
+        <name>d_phase_doppler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="71" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a9e8df2f1a66f35055ae3bb5527d13aa5" prot="public" static="no" mutable="no">
+        <type>gr_complex</type>
+        <definition>gr_complex gr::mimo_ofdm::target_simulator_impl::d_phase_time</definition>
+        <argsstring></argsstring>
+        <name>d_phase_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="71" column="36" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a24bb7eb9d99d3d3467d6023e7312f925" prot="public" static="no" mutable="no">
+        <type>gr_complex</type>
+        <definition>gr_complex gr::mimo_ofdm::target_simulator_impl::d_phase_random</definition>
+        <argsstring></argsstring>
+        <name>d_phase_random</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="71" column="49" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aba0bea76c03b2e8d286fea5cf386a50b" prot="public" static="no" mutable="no">
+        <type>gr_complex *</type>
+        <definition>gr_complex* gr::mimo_ofdm::target_simulator_impl::d_buff_time</definition>
+        <argsstring></argsstring>
+        <name>d_buff_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="73" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1adbfd077d4a44992dd956c4dbfb20db78" prot="public" static="no" mutable="no">
+        <type>gr_complex *</type>
+        <definition>gr_complex* gr::mimo_ofdm::target_simulator_impl::d_buff_freq</definition>
+        <argsstring></argsstring>
+        <name>d_buff_freq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="74" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aa3b393c79bd632f8345b4cfbf57fa533" prot="public" static="no" mutable="no">
+        <type>fft::fft_complex *</type>
+        <definition>fft::fft_complex* gr::mimo_ofdm::target_simulator_impl::d_fft</definition>
+        <argsstring></argsstring>
+        <name>d_fft</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="76" column="26" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a63678777b2a82a313d8100179a9881ba" prot="public" static="no" mutable="no">
+        <type>fft::fft_complex *</type>
+        <definition>fft::fft_complex* gr::mimo_ofdm::target_simulator_impl::d_ifft</definition>
+        <argsstring></argsstring>
+        <name>d_ifft</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="77" column="26" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a7c9f5f7625525edf58ff93e9ad4423a1" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; gr_complex &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;gr_complex&gt; &gt; gr::mimo_ofdm::target_simulator_impl::d_filt_doppler</definition>
+        <argsstring></argsstring>
+        <name>d_filt_doppler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="80" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a2add4e04e47cf5ca1475f487ba6ce33c" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; gr_complex &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;gr_complex&gt; &gt; gr::mimo_ofdm::target_simulator_impl::d_filt_phase</definition>
+        <argsstring></argsstring>
+        <name>d_filt_phase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="80" column="36" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aabda5593163878cee6fc4b377157d64d" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; gr_complex &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;gr_complex&gt; &gt; gr::mimo_ofdm::target_simulator_impl::d_filt_self_coupling</definition>
+        <argsstring></argsstring>
+        <name>d_filt_self_coupling</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="80" column="49" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a770de5d2b896a6e5b6db5daac239ab45" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; std::vector&lt; gr_complex &gt; &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;std::vector&lt;gr_complex&gt; &gt; &gt; gr::mimo_ofdm::target_simulator_impl::d_filt_time_azimuth</definition>
+        <argsstring></argsstring>
+        <name>d_filt_time_azimuth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="81" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1af765a2bfd423c99610715726c3058c96" prot="public" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::mimo_ofdm::target_simulator_impl::d_key</definition>
+        <argsstring></argsstring>
+        <name>d_key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="83" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1ada9d046ef873ab5f62c00dbd760110a1" prot="public" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::mimo_ofdm::target_simulator_impl::d_val</definition>
+        <argsstring></argsstring>
+        <name>d_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="83" column="26" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1abcd3437469cf60763143d9042baafb9b" prot="public" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::mimo_ofdm::target_simulator_impl::d_srcid</definition>
+        <argsstring></argsstring>
+        <name>d_srcid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="83" column="32" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a9d0860c965186eb253c55d11a4955290" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t gr::mimo_ofdm::target_simulator_impl::d_time_sec</definition>
+        <argsstring></argsstring>
+        <name>d_time_sec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="84" column="18" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1afe4fae1b3520bba7b2eef40bc59ec405" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::mimo_ofdm::target_simulator_impl::d_time_frac_sec</definition>
+        <argsstring></argsstring>
+        <name>d_time_frac_sec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="85" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a294b05bc9a633174045086971aee6048" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type>constexpr static float</type>
+        <definition>constexpr static float gr::mimo_ofdm::target_simulator_impl::c_light</definition>
+        <argsstring></argsstring>
+        <name>c_light</name>
+        <initializer>= 3e8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="87" column="32" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aca3119a1102ab27a0929b8446b02a930" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm::target_simulator_impl::calculate_output_stream_length</definition>
+        <argsstring>(const gr_vector_int &amp;ninput_items)</argsstring>
+        <name>calculate_output_stream_length</name>
+        <param>
+          <type>const gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="38" column="11"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1af45b009ce6ec632971c0084bb6989143" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::mimo_ofdm::target_simulator_impl::target_simulator_impl</definition>
+        <argsstring>(std::vector&lt; float &gt; range, std::vector&lt; float &gt; velocity, std::vector&lt; float &gt; rcs, std::vector&lt; float &gt; azimuth, std::vector&lt; float &gt; position_rx, int samp_rate, float center_freq, float self_coupling_db, bool rndm_phaseshift, bool self_coupling, const std::string &amp;len_key, bool debug)</argsstring>
+        <name>target_simulator_impl</name>
+        <param>
+          <type>std::vector&lt; float &gt;</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float &gt;</type>
+          <declname>velocity</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float &gt;</type>
+          <declname>rcs</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float &gt;</type>
+          <declname>azimuth</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float &gt;</type>
+          <declname>position_rx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>samp_rate</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>center_freq</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>self_coupling_db</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rndm_phaseshift</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>self_coupling</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>len_key</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>debug</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="41" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1af34842f685cf67a4b98d94f4221f092e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::mimo_ofdm::target_simulator_impl::~target_simulator_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~target_simulator_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="53" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aed0c24b9b7deeee26cbb4c40dd8123d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::mimo_ofdm::target_simulator_impl::setup_targets</definition>
+        <argsstring>(std::vector&lt; float &gt; range, std::vector&lt; float &gt; velocity, std::vector&lt; float &gt; rcs, std::vector&lt; float &gt; azimuth, std::vector&lt; float &gt; position_rx, int samp_rate, float center_freq, float self_coupling_db, bool rndm_phaseshift, bool self_coupling)</argsstring>
+        <name>setup_targets</name>
+        <param>
+          <type>std::vector&lt; float &gt;</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float &gt;</type>
+          <declname>velocity</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float &gt;</type>
+          <declname>rcs</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float &gt;</type>
+          <declname>azimuth</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float &gt;</type>
+          <declname>position_rx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>samp_rate</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>center_freq</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>self_coupling_db</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>rndm_phaseshift</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>self_coupling</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="91" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1ad656f4e91f9042f9be96d7b196358483" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm::target_simulator_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="103" column="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>target_simulator</label>
+      </node>
+      <node id="1">
+        <label>gr::mimo_ofdm::target_simulator_impl</label>
+        <link refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>std::vector&lt; std::vector&lt; float &gt; &gt;</label>
+        <childnode refid="4" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>std::vector&lt; float &gt;</label>
+      </node>
+      <node id="5">
+        <label>std::vector&lt; std::vector&lt; std::vector&lt; gr_complex &gt; &gt; &gt;</label>
+        <childnode refid="6" relation="usage">
+          <edgelabel>elements</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>target_simulator</label>
+      </node>
+      <node id="6">
+        <label>std::vector&lt; std::vector&lt; gr_complex &gt; &gt;</label>
+      </node>
+      <node id="1">
+        <label>gr::mimo_ofdm::target_simulator_impl</label>
+        <link refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>d_timeshift_azimuth</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>d_scale_ampl</edgelabel>
+          <edgelabel>d_freq</edgelabel>
+          <edgelabel>d_range</edgelabel>
+          <edgelabel>d_azimuth</edgelabel>
+          <edgelabel>d_position_rx</edgelabel>
+          <edgelabel>d_doppler</edgelabel>
+          <edgelabel>d_rcs</edgelabel>
+          <edgelabel>d_velocity</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>d_filt_time_azimuth</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>d_filt_self_coupling</edgelabel>
+          <edgelabel>d_filt_doppler</edgelabel>
+          <edgelabel>d_filt_phase</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" line="33" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h" bodystart="32" bodyend="109"/>
+    <listofallmembers>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a294b05bc9a633174045086971aee6048" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>c_light</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aca3119a1102ab27a0929b8446b02a930" prot="protected" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>calculate_output_stream_length</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1af23d9a0d68f77ede099c599c8fe2b934" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_azimuth</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1adbfd077d4a44992dd956c4dbfb20db78" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_buff_freq</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1ab16cf37d1f5cd12c3d33bab39e203206" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_buff_size</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aba0bea76c03b2e8d286fea5cf386a50b" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_buff_time</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aac113e05a4e7a1bdc1e307bc511e3923" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_center_freq</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aeea8fb6c0f9c3871aa2cd7ce054c70bd" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_doppler</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aa3b393c79bd632f8345b4cfbf57fa533" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_fft</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a7c9f5f7625525edf58ff93e9ad4423a1" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_filt_doppler</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a2add4e04e47cf5ca1475f487ba6ce33c" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_filt_phase</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aabda5593163878cee6fc4b377157d64d" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_filt_self_coupling</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a770de5d2b896a6e5b6db5daac239ab45" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_filt_time_azimuth</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1af393a42f304837e59448fb6cd98f33c1" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_freq</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a63678777b2a82a313d8100179a9881ba" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_ifft</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1af765a2bfd423c99610715726c3058c96" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_key</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a534b9a4c02811cefc64ec382ef646abb" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_new_channel</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1ad85f4491526994fc80a7a05f10884dda" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_num_targets</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a53d376f1da073790b67bd9dd791c3414" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_phase_doppler</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a24bb7eb9d99d3d3467d6023e7312f925" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_phase_random</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a9e8df2f1a66f35055ae3bb5527d13aa5" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_phase_time</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a8df8e181dedfe69fba06419c784ffde1" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_position_rx</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1ab25da4abbb39cfc60fd1ebc0191137aa" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_range</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aa620ef1fca3af2b7df1a38a3de0c2008" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_rcs</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a125186efa672bda2bc00a2a87f78b730" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_rndm_phaseshift</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aff32f7a2d7e758c12fe9d2fd10e4f64b" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_samp_rate</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1af6c494529d7eb835efed9ae3d2d6dee0" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_scale_ampl</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a3f7af8612fe3910b1f30b95621f945ee" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_self_coupling</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a8a55866e84c40ad97a51f128c09372f5" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_self_coupling_db</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1abcd3437469cf60763143d9042baafb9b" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_srcid</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1afe4fae1b3520bba7b2eef40bc59ec405" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_time_frac_sec</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a9d0860c965186eb253c55d11a4955290" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_time_sec</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1a0c6a3c09b9dda5134df10dc019586481" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_timeshift_azimuth</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1ada9d046ef873ab5f62c00dbd760110a1" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_val</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1ae19ce9dfc6d76ea35f612ca342fe7c34" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>d_velocity</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aed0c24b9b7deeee26cbb4c40dd8123d2" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>setup_targets</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1af45b009ce6ec632971c0084bb6989143" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>target_simulator_impl</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1ad656f4e91f9042f9be96d7b196358483" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1af34842f685cf67a4b98d94f4221f092e" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::target_simulator_impl</scope><name>~target_simulator_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

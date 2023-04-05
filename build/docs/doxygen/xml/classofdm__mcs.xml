@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classofdm__mcs" kind="class" language="C++" prot="public">
+    <compoundname>ofdm_mcs</compoundname>
+    <includes refid="old__version_2utils_8h" local="no">utils.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classofdm__mcs_1a58b2d95231d316c89ad0d6c9743d75b0" prot="public" static="no" mutable="no">
+        <type><ref refid="stream__encoder_8h_1abd65304eba67a105670298f46e3553ef" kindref="member">MCS</ref></type>
+        <definition>MCS ofdm_mcs::d_mcs</definition>
+        <argsstring></argsstring>
+        <name>d_mcs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="43" column="5" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classofdm__mcs_1a5ae6bf365d2a627af34b756797fc0237" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char ofdm_mcs::rate_field</definition>
+        <argsstring></argsstring>
+        <name>rate_field</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="45" column="10" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classofdm__mcs_1a17fb4eb93034e14ea58f47b42fb016ae" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ofdm_mcs::n_bpsc</definition>
+        <argsstring></argsstring>
+        <name>n_bpsc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="47" column="10" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classofdm__mcs_1a008b70197aefb8ec058def491e4e1d5a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ofdm_mcs::n_cbps</definition>
+        <argsstring></argsstring>
+        <name>n_cbps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="49" column="10" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classofdm__mcs_1a4dc18f3226dd2efce92404c79b5f7ce9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ofdm_mcs::n_dbps</definition>
+        <argsstring></argsstring>
+        <name>n_dbps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="51" column="10" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classofdm__mcs_1af4ce33c7641e7ad9440847fdb79555c9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ofdm_mcs::d_n_data_carriers</definition>
+        <argsstring></argsstring>
+        <name>d_n_data_carriers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="53" column="4" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classofdm__mcs_1adcf741af9fab42295a4fcd2350f51095" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ofdm_mcs::n_constellations</definition>
+        <argsstring></argsstring>
+        <name>n_constellations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="55" column="17" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classofdm__mcs_1a52618fa42085070c4ad28c267b5bda2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ofdm_mcs::ofdm_mcs</definition>
+        <argsstring>(MCS mod_encode, int data_len)</argsstring>
+        <name>ofdm_mcs</name>
+        <param>
+          <type><ref refid="stream__encoder_8h_1abd65304eba67a105670298f46e3553ef" kindref="member">MCS</ref></type>
+          <declname>mod_encode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>data_len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="41" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classofdm__mcs_1a53625da5743b570e90cf9514d9c5512e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ofdm_mcs::print</definition>
+        <argsstring>()</argsstring>
+        <name>print</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="57" column="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classofdm__mcs_1a52618fa42085070c4ad28c267b5bda2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ofdm_mcs::ofdm_mcs</definition>
+        <argsstring>(MCS mod_encode, int data_len)</argsstring>
+        <name>ofdm_mcs</name>
+        <param>
+          <type><ref refid="stream__encoder_8h_1abd65304eba67a105670298f46e3553ef" kindref="member">MCS</ref></type>
+          <declname>mod_encode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>data_len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/utils.h" line="41" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classofdm__mcs_1a53625da5743b570e90cf9514d9c5512e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ofdm_mcs::print</definition>
+        <argsstring>()</argsstring>
+        <name>print</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/utils.h" line="57" column="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="39" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="39" bodyend="58"/>
+    <listofallmembers>
+      <member refid="classofdm__mcs_1a58b2d95231d316c89ad0d6c9743d75b0" prot="public" virt="non-virtual"><scope>ofdm_mcs</scope><name>d_mcs</name></member>
+      <member refid="classofdm__mcs_1af4ce33c7641e7ad9440847fdb79555c9" prot="public" virt="non-virtual"><scope>ofdm_mcs</scope><name>d_n_data_carriers</name></member>
+      <member refid="classofdm__mcs_1a17fb4eb93034e14ea58f47b42fb016ae" prot="public" virt="non-virtual"><scope>ofdm_mcs</scope><name>n_bpsc</name></member>
+      <member refid="classofdm__mcs_1a008b70197aefb8ec058def491e4e1d5a" prot="public" virt="non-virtual"><scope>ofdm_mcs</scope><name>n_cbps</name></member>
+      <member refid="classofdm__mcs_1adcf741af9fab42295a4fcd2350f51095" prot="public" virt="non-virtual"><scope>ofdm_mcs</scope><name>n_constellations</name></member>
+      <member refid="classofdm__mcs_1a4dc18f3226dd2efce92404c79b5f7ce9" prot="public" virt="non-virtual"><scope>ofdm_mcs</scope><name>n_dbps</name></member>
+      <member refid="classofdm__mcs_1a52618fa42085070c4ad28c267b5bda2d" prot="public" virt="non-virtual"><scope>ofdm_mcs</scope><name>ofdm_mcs</name></member>
+      <member refid="classofdm__mcs_1a52618fa42085070c4ad28c267b5bda2d" prot="public" virt="non-virtual"><scope>ofdm_mcs</scope><name>ofdm_mcs</name></member>
+      <member refid="classofdm__mcs_1a53625da5743b570e90cf9514d9c5512e" prot="public" virt="non-virtual"><scope>ofdm_mcs</scope><name>print</name></member>
+      <member refid="classofdm__mcs_1a53625da5743b570e90cf9514d9c5512e" prot="public" virt="non-virtual"><scope>ofdm_mcs</scope><name>print</name></member>
+      <member refid="classofdm__mcs_1a5ae6bf365d2a627af34b756797fc0237" prot="public" virt="non-virtual"><scope>ofdm_mcs</scope><name>rate_field</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

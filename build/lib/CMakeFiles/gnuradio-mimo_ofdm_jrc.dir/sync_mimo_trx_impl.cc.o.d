@@ -1,5 +1,5 @@
 lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/sync_mimo_trx_impl.cc.o: \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/sync_mimo_trx_impl.cc \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.cc \
  /usr/include/stdc-predef.h /usr/local/include/gnuradio/io_signature.h \
  /usr/local/include/gnuradio/api.h \
  /usr/local/include/gnuradio/attributes.h \
@@ -237,9 +237,9 @@ lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/sync_mimo_trx_impl.cc.o: \
  /usr/include/c++/9/bits/basic_ios.tcc /usr/include/c++/9/ostream \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/bits/istream.tcc \
  /usr/include/c++/9/bits/sstream.tcc \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/sync_mimo_trx_impl.h \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/../include/mimo_ofdm_jrc/sync_mimo_trx.h \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/../include/mimo_ofdm_jrc/api.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/../include/mimo_ofdm_jrc/sync_mimo_trx.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/../include/mimo_ofdm_jrc/api.h \
  /usr/local/include/gnuradio/tagged_stream_block.h \
  /usr/local/include/gnuradio/block.h \
  /usr/local/include/gnuradio/basic_block.h \
@@ -1594,8 +1594,8 @@ lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/sync_mimo_trx_impl.cc.o: \
  /usr/local/include/uhd/usrp/gpio_defs.hpp \
  /usr/local/include/uhd/utils/pimpl.hpp \
  /usr/local/include/uhd/usrp/subdev_spec.hpp \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/utils.h \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/../include/mimo_ofdm_jrc/stream_encoder.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/utils.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/../include/mimo_ofdm_jrc/stream_encoder.h \
  /usr/include/c++/9/cinttypes /usr/include/inttypes.h \
  /usr/include/boost/algorithm/string.hpp \
  /usr/include/boost/algorithm/string/std_containers_traits.hpp \

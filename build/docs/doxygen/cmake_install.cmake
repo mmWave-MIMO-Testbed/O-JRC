@@ -1,4 +1,4 @@
-# Install script for directory: /home/haocheng/gr-mimo_ofdm_jrc/docs/doxygen
+# Install script for directory: /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/docs/doxygen
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/doc/gr-mimo_ofdm_jrc" TYPE DIRECTORY FILES
-    "/home/haocheng/gr-mimo_ofdm_jrc/build/docs/doxygen/xml"
-    "/home/haocheng/gr-mimo_ofdm_jrc/build/docs/doxygen/html"
+    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/docs/doxygen/xml"
+    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/docs/doxygen/html"
     )
 endif()
 

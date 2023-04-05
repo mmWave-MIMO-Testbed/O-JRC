@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="ofdm__frame__generator__impl_8h" kind="file" language="C++">
+    <compoundname>ofdm_frame_generator_impl.h</compoundname>
+    <includes refid="ofdm__frame__generator_8h" local="no">mimo_ofdm_jrc/ofdm_frame_generator.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="3">
+        <label>mimo_ofdm_jrc/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ofdm_frame_generator_impl.h</label>
+        <link refid="ofdm__frame__generator__impl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>gnuradio/tagged_stream_block.h</label>
+      </node>
+      <node id="2">
+        <label>mimo_ofdm_jrc/ofdm_frame_generator.h</label>
+        <link refid="ofdm__frame__generator_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator__impl" prot="public">gr::mimo_ofdm_jrc::ofdm_frame_generator_impl</innerclass>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1mimo__ofdm__jrc">gr::mimo_ofdm_jrc</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/ofdm_frame_generator_impl.h"/>
+  </compounddef>
+</doxygen>

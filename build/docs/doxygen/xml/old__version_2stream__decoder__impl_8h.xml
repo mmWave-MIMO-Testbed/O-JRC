@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="old__version_2stream__decoder__impl_8h" kind="file" language="C++">
+    <compoundname>old_version/stream_decoder_impl.h</compoundname>
+    <includes local="no">mimo_ofdm/stream_decoder.h</includes>
+    <includes refid="old__version_2viterbi__decoder_8h" local="yes">viterbi_decoder.h</includes>
+    <includes local="no">boost/crc.hpp</includes>
+    <includes refid="old__version_2utils_8h" local="yes">utils.h</includes>
+    <includes local="no">gnuradio/digital/constellation.h</includes>
+    <includes local="no">boost/accumulators/accumulators.hpp</includes>
+    <includes local="no">boost/accumulators/statistics.hpp</includes>
+    <includes local="no">boost/accumulators/statistics/rolling_mean.hpp</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>mimo_ofdm/stream_encoder.h</label>
+      </node>
+      <node id="11">
+        <label>xmmintrin.h</label>
+      </node>
+      <node id="13">
+        <label>gnuradio/digital/constellation.h</label>
+      </node>
+      <node id="2">
+        <label>mimo_ofdm/stream_decoder.h</label>
+      </node>
+      <node id="9">
+        <label>cinttypes</label>
+      </node>
+      <node id="1">
+        <label>stream_decoder_impl.h</label>
+        <link refid="old__version_2stream__decoder__impl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>utils.h</label>
+        <link refid="old__version_2utils_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>boost/crc.hpp</label>
+      </node>
+      <node id="15">
+        <label>boost/accumulators/statistics.hpp</label>
+      </node>
+      <node id="14">
+        <label>boost/accumulators/accumulators.hpp</label>
+      </node>
+      <node id="5">
+        <label>mimo_ofdm/api.h</label>
+      </node>
+      <node id="6">
+        <label>gnuradio/block.h</label>
+      </node>
+      <node id="10">
+        <label>iostream</label>
+      </node>
+      <node id="7">
+        <label>gnuradio/config.h</label>
+      </node>
+      <node id="3">
+        <label>viterbi_decoder.h</label>
+        <link refid="old__version_2viterbi__decoder_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>boost/accumulators/statistics/rolling_mean.hpp</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classgr_1_1mimo__ofdm_1_1stream__decoder__impl" prot="public">gr::mimo_ofdm::stream_decoder_impl</innerclass>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1mimo__ofdm">gr::mimo_ofdm</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="old__version_2stream__decoder__impl_8h_1a1ac8cb4ad622699cfe02e2bd8fd75e7b" prot="public" static="no">
+        <name>time_now</name>
+        <initializer>std::chrono::high_resolution_clock::now()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/stream_decoder_impl.h" line="34" column="9" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/stream_decoder_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/stream_decoder_impl.h"/>
+  </compounddef>
+</doxygen>

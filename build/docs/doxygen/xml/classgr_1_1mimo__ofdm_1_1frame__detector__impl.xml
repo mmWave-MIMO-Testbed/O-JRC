@@ -1,0 +1,395 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classgr_1_1mimo__ofdm_1_1frame__detector__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::mimo_ofdm::frame_detector_impl</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">frame_detector</basecompoundref>
+    <includes refid="old__version_2frame__detector__impl_8h" local="no">frame_detector_impl.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a0a7e1c67c1e86d0cbab57e064fd8ee97" prot="public" static="no" strong="no">
+        <type></type>
+        <name>@2</name>
+        <enumvalue id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a0a7e1c67c1e86d0cbab57e064fd8ee97a536aff36a400e92827ba60a3cf77463e" prot="public">
+          <name>SEARCH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a0a7e1c67c1e86d0cbab57e064fd8ee97af70eaec06d964e13472846bc31f17346" prot="public">
+          <name>COPY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="49" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="49" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a819ba3428fe7410f332b25aad69c823f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm::frame_detector_impl::d_fft_len</definition>
+        <argsstring></argsstring>
+        <name>d_fft_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="38" column="11" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a12ada2dc46de539620b12d3360c59a19" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm::frame_detector_impl::d_cp_len</definition>
+        <argsstring></argsstring>
+        <name>d_cp_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="39" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a3873cfb70e12081d4bfb67a57bb56721" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double gr::mimo_ofdm::frame_detector_impl::d_threshold</definition>
+        <argsstring></argsstring>
+        <name>d_threshold</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="40" column="22" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a7130fb314280cd29dad6ad047aea61d5" prot="public" static="no" mutable="no">
+        <type>const unsigned int</type>
+        <definition>const unsigned int gr::mimo_ofdm::frame_detector_impl::d_min_n_peaks</definition>
+        <argsstring></argsstring>
+        <name>d_min_n_peaks</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="41" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1aec8406a89d43dbbe740f392b3d32287e" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int gr::mimo_ofdm::frame_detector_impl::d_ignore_gap</definition>
+        <argsstring></argsstring>
+        <name>d_ignore_gap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="42" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a7b1dd0ec8581a25814790882216cf6e9" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int gr::mimo_ofdm::frame_detector_impl::MAX_PEAK_DISTANCE</definition>
+        <argsstring></argsstring>
+        <name>MAX_PEAK_DISTANCE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="45" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1aff764a03d74891f1b2f495d97e8ffb40" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double gr::mimo_ofdm::frame_detector_impl::MAX_PEAK_VALUE</definition>
+        <argsstring></argsstring>
+        <name>MAX_PEAK_VALUE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="46" column="22" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1ac2e445c3a5e255696c1a1136b6724dfe" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int gr::mimo_ofdm::frame_detector_impl::MAX_SAMPLES</definition>
+        <argsstring></argsstring>
+        <name>MAX_SAMPLES</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="47" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1ab5ad5cac32bfeb9f9583447ceff6897b" prot="public" static="no" mutable="no">
+        <type>enum gr::mimo_ofdm::frame_detector_impl::@2</type>
+        <definition>enum gr::mimo_ofdm::frame_detector_impl::@2 gr::mimo_ofdm::frame_detector_impl::curr_state</definition>
+        <argsstring></argsstring>
+        <name>curr_state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="49" column="25"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1ab2cac6dec047be6736647754d1ddf5da" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm::frame_detector_impl::copied_samples</definition>
+        <argsstring></argsstring>
+        <name>copied_samples</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="50" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a8e43fdbaf8411cbd48388a8d59dfef50" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm::frame_detector_impl::n_peaks</definition>
+        <argsstring></argsstring>
+        <name>n_peaks</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="51" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1add17d98728d2d973286d01d25ece98fa" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::mimo_ofdm::frame_detector_impl::coarse_cfo_est</definition>
+        <argsstring></argsstring>
+        <name>coarse_cfo_est</name>
+        <initializer>= 0.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="52" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1ad67a07cd84151036404453d5c491af1f" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t gr::mimo_ofdm::frame_detector_impl::first_peak_ind</definition>
+        <argsstring></argsstring>
+        <name>first_peak_ind</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="54" column="18" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a3584c145139d2bc62f844d972abb3509" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm::frame_detector_impl::distance_to_firstpeak</definition>
+        <argsstring></argsstring>
+        <name>distance_to_firstpeak</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="55" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1ab39a3e6b94aeff1df6f82864fd7fbe39" prot="public" static="no" mutable="no">
+        <type>gr::thread::mutex</type>
+        <definition>gr::thread::mutex gr::mimo_ofdm::frame_detector_impl::d_mutex</definition>
+        <argsstring></argsstring>
+        <name>d_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="57" column="27" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1aa7716db266175d02701d9b88a984ba07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::mimo_ofdm::frame_detector_impl::frame_detector_impl</definition>
+        <argsstring>(int fft_len, int cp_len, double threshold, unsigned int min_n_peaks, unsigned int ignore_gap, bool debug)</argsstring>
+        <name>frame_detector_impl</name>
+        <param>
+          <type>int</type>
+          <declname>fft_len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cp_len</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>threshold</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>min_n_peaks</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>ignore_gap</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>debug</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="35" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1ac08d3816574564b6b3e48a087a1574f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::mimo_ofdm::frame_detector_impl::~frame_detector_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~frame_detector_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="36" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1ad9714defded968e01ae72959c83dca75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::mimo_ofdm::frame_detector_impl::insert_tag</definition>
+        <argsstring>(uint64_t item, double cfo_est, uint64_t input_item)</argsstring>
+        <name>insert_tag</name>
+        <param>
+          <type>uint64_t</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>cfo_est</declname>
+        </param>
+        <param>
+          <type>uint64_t</type>
+          <declname>input_item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="59" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a25432c21badec44d7279f73a6438c4c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm::frame_detector_impl::general_work</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>general_work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="62" column="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>gr::mimo_ofdm::frame_detector_impl</label>
+        <link refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>frame_detector</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>gr::mimo_ofdm::frame_detector_impl</label>
+        <link refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>frame_detector</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" line="30" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_detector_impl.h" bodystart="29" bodyend="67"/>
+    <listofallmembers>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1add17d98728d2d973286d01d25ece98fa" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>coarse_cfo_est</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1ab2cac6dec047be6736647754d1ddf5da" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>copied_samples</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a0a7e1c67c1e86d0cbab57e064fd8ee97af70eaec06d964e13472846bc31f17346" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>COPY</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1ab5ad5cac32bfeb9f9583447ceff6897b" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>curr_state</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a12ada2dc46de539620b12d3360c59a19" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>d_cp_len</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a819ba3428fe7410f332b25aad69c823f" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>d_fft_len</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1aec8406a89d43dbbe740f392b3d32287e" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>d_ignore_gap</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a7130fb314280cd29dad6ad047aea61d5" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>d_min_n_peaks</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1ab39a3e6b94aeff1df6f82864fd7fbe39" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>d_mutex</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a3873cfb70e12081d4bfb67a57bb56721" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>d_threshold</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a3584c145139d2bc62f844d972abb3509" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>distance_to_firstpeak</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1ad67a07cd84151036404453d5c491af1f" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>first_peak_ind</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1aa7716db266175d02701d9b88a984ba07" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>frame_detector_impl</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a25432c21badec44d7279f73a6438c4c3" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>general_work</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1ad9714defded968e01ae72959c83dca75" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>insert_tag</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a7b1dd0ec8581a25814790882216cf6e9" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>MAX_PEAK_DISTANCE</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1aff764a03d74891f1b2f495d97e8ffb40" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>MAX_PEAK_VALUE</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1ac2e445c3a5e255696c1a1136b6724dfe" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>MAX_SAMPLES</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a8e43fdbaf8411cbd48388a8d59dfef50" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>n_peaks</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1a0a7e1c67c1e86d0cbab57e064fd8ee97a536aff36a400e92827ba60a3cf77463e" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>SEARCH</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1frame__detector__impl_1ac08d3816574564b6b3e48a087a1574f5" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::frame_detector_impl</scope><name>~frame_detector_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

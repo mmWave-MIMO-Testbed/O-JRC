@@ -39,7 +39,7 @@ namespace gr {
       int d_packetCounter;
 
      public:
-      NDP_Generator_impl(int dataSize);
+      NDP_Generator_impl();
       ~NDP_Generator_impl();
 
       // Where all the action really happens

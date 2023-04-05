@@ -1,4 +1,4 @@
-# Install script for directory: /home/haocheng/gr-mimo_ofdm_jrc/python
+# Install script for directory: /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/python
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,13 +43,13 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc" TYPE FILE FILES "/home/haocheng/gr-mimo_ofdm_jrc/python/__init__.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc" TYPE FILE FILES "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/python/__init__.py")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc" TYPE FILE FILES
-    "/home/haocheng/gr-mimo_ofdm_jrc/build/python/__init__.pyc"
-    "/home/haocheng/gr-mimo_ofdm_jrc/build/python/__init__.pyo"
+    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/python/__init__.pyc"
+    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/python/__init__.pyo"
     )
 endif()
 

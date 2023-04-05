@@ -32,7 +32,7 @@ namespace gr {
      * \ingroup mimo_ofdm_jrc
      *
      */
-    class MIMO_OFDM_JRC_API NDP_Generator : virtual public gr::sync_block
+    class MIMO_OFDM_JRC_API NDP_Generator : public gr::sync_block
     {
      public:
       typedef boost::shared_ptr<NDP_Generator> sptr;
@@ -45,7 +45,7 @@ namespace gr {
        * class. mimo_ofdm_jrc::NDP_Generator::make is the public interface for
        * creating new instances.
        */
-      static sptr make(int dataSize=3);
+      static sptr make();
     };
 
   } // namespace mimo_ofdm_jrc

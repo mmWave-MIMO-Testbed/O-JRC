@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_97aefd0d527b934f1d99a682da8fe6a9" kind="dir">
+    <compoundname>lib</compoundname>
+    <innerdir refid="dir_781652b3efbab002fc25f48e52ed3e5f">old_version</innerdir>
+    <innerfile refid="base_8h">base.h</innerfile>
+    <innerfile refid="fft__peak__detect__impl_8h">fft_peak_detect_impl.h</innerfile>
+    <innerfile refid="frame__detector__impl_8h">frame_detector_impl.h</innerfile>
+    <innerfile refid="frame__sync__impl_8h">frame_sync_impl.h</innerfile>
+    <innerfile refid="gui__heatmap__plot__impl_8h">gui_heatmap_plot_impl.h</innerfile>
+    <innerfile refid="gui__time__plot__impl_8h">gui_time_plot_impl.h</innerfile>
+    <innerfile refid="heatmap__plot_8h">heatmap_plot.h</innerfile>
+    <innerfile refid="ls_8h">ls.h</innerfile>
+    <innerfile refid="matrix__transpose__impl_8h">matrix_transpose_impl.h</innerfile>
+    <innerfile refid="mimo__ofdm__equalizer__impl_8h">mimo_ofdm_equalizer_impl.h</innerfile>
+    <innerfile refid="mimo__ofdm__radar__impl_8h">mimo_ofdm_radar_impl.h</innerfile>
+    <innerfile refid="mimo__precoder__impl_8h">mimo_precoder_impl.h</innerfile>
+    <innerfile refid="mimo__radar__estimator__2__impl_8h">mimo_radar_estimator_2_impl.h</innerfile>
+    <innerfile refid="mimo__radar__estimator__impl_8h">mimo_radar_estimator_impl.h</innerfile>
+    <innerfile refid="moving__avg__impl_8h">moving_avg_impl.h</innerfile>
+    <innerfile refid="NDP__Gen__UDP__impl_8h">NDP_Gen_UDP_impl.h</innerfile>
+    <innerfile refid="NDP__Generator__impl_8h">NDP_Generator_impl.h</innerfile>
+    <innerfile refid="ofdm__cyclic__prefix__remover__impl_8h">ofdm_cyclic_prefix_remover_impl.h</innerfile>
+    <innerfile refid="ofdm__frame__generator__impl_8h">ofdm_frame_generator_impl.h</innerfile>
+    <innerfile refid="range__angle__estimator__impl_8h">range_angle_estimator_impl.h</innerfile>
+    <innerfile refid="range__angle__raster__data_8h">range_angle_raster_data.h</innerfile>
+    <innerfile refid="sta_8h">sta.h</innerfile>
+    <innerfile refid="stream__decoder__impl_8h">stream_decoder_impl.h</innerfile>
+    <innerfile refid="stream__encoder__impl_8h">stream_encoder_impl.h</innerfile>
+    <innerfile refid="sync__mimo__trx__impl_8h">sync_mimo_trx_impl.h</innerfile>
+    <innerfile refid="target__simulator__impl_8h">target_simulator_impl.h</innerfile>
+    <innerfile refid="time__plot_8h">time_plot.h</innerfile>
+    <innerfile refid="usrp__mimo__trx__impl_8h">usrp_mimo_trx_impl.h</innerfile>
+    <innerfile refid="utils_8h">utils.h</innerfile>
+    <innerfile refid="viterbi__decoder_8h">viterbi_decoder.h</innerfile>
+    <innerfile refid="zero__pad__impl_8h">zero_pad_impl.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/"/>
+  </compounddef>
+</doxygen>

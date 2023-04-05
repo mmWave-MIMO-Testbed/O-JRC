@@ -1,5 +1,5 @@
 lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/stream_encoder_impl.cc.o: \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/stream_encoder_impl.cc \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/stream_encoder_impl.cc \
  /usr/include/stdc-predef.h /usr/local/include/gnuradio/io_signature.h \
  /usr/local/include/gnuradio/api.h \
  /usr/local/include/gnuradio/attributes.h \
@@ -237,9 +237,9 @@ lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/stream_encoder_impl.cc.o: \
  /usr/include/c++/9/bits/basic_ios.tcc /usr/include/c++/9/ostream \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/bits/istream.tcc \
  /usr/include/c++/9/bits/sstream.tcc \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/stream_encoder_impl.h \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/../include/mimo_ofdm_jrc/stream_encoder.h \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/../include/mimo_ofdm_jrc/api.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/stream_encoder_impl.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/../include/mimo_ofdm_jrc/stream_encoder.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/../include/mimo_ofdm_jrc/api.h \
  /usr/local/include/gnuradio/block.h \
  /usr/local/include/gnuradio/basic_block.h \
  /usr/local/include/gnuradio/msg_accepter.h \
@@ -1108,7 +1108,7 @@ lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/stream_encoder_impl.cc.o: \
  /usr/local/include/gnuradio/digital/constellation.h \
  /usr/local/include/gnuradio/digital/api.h \
  /usr/local/include/gnuradio/digital/metric_type.h \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/utils.h /usr/include/c++/9/cinttypes \
- /usr/include/inttypes.h /usr/include/boost/crc.hpp \
- /usr/include/boost/array.hpp /usr/include/boost/swap.hpp \
- /usr/include/boost/detail/iterator.hpp
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/utils.h \
+ /usr/include/c++/9/cinttypes /usr/include/inttypes.h \
+ /usr/include/boost/crc.hpp /usr/include/boost/array.hpp \
+ /usr/include/boost/swap.hpp /usr/include/boost/detail/iterator.hpp

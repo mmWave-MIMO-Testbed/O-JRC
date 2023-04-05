@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="range__angle__raster__data_8h" kind="file" language="C++">
+    <compoundname>range_angle_raster_data.h</compoundname>
+    <includes local="yes">qwt_global.h</includes>
+    <includes local="yes">qwt_raster_data.h</includes>
+    <includes local="no">qvector.h</includes>
+    <includedby refid="heatmap__plot_8h" local="yes">heatmap_plot.h</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>qvector.h</label>
+      </node>
+      <node id="3">
+        <label>qwt_raster_data.h</label>
+      </node>
+      <node id="1">
+        <label>range_angle_raster_data.h</label>
+        <link refid="range__angle__raster__data_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>qwt_global.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>heatmap_plot.h</label>
+        <link refid="heatmap__plot_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>range_angle_raster_data.h</label>
+        <link refid="range__angle__raster__data_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>gui_heatmap_plot_impl.h</label>
+        <link refid="gui__heatmap__plot__impl_8h"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classRangeAngleRasterData" prot="public">RangeAngleRasterData</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/range_angle_raster_data.h"/>
+  </compounddef>
+</doxygen>

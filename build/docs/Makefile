@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/haocheng/gr-mimo_ofdm_jrc
+CMAKE_SOURCE_DIR = /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/haocheng/gr-mimo_ofdm_jrc/build
+CMAKE_BINARY_DIR = /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,14 +142,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/haocheng/gr-mimo_ofdm_jrc/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/haocheng/gr-mimo_ofdm_jrc/build/CMakeFiles /home/haocheng/gr-mimo_ofdm_jrc/build/docs//CMakeFiles/progress.marks
-	cd /home/haocheng/gr-mimo_ofdm_jrc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 docs/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/haocheng/gr-mimo_ofdm_jrc/build/CMakeFiles 0
+	cd /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/CMakeFiles /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/docs//CMakeFiles/progress.marks
+	cd /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 docs/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/haocheng/gr-mimo_ofdm_jrc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 docs/clean
+	cd /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 docs/clean
 .PHONY : clean
 
 # The main clean target
@@ -158,17 +158,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/haocheng/gr-mimo_ofdm_jrc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 docs/preinstall
+	cd /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 docs/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/haocheng/gr-mimo_ofdm_jrc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 docs/preinstall
+	cd /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 docs/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/haocheng/gr-mimo_ofdm_jrc/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -195,6 +195,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/haocheng/gr-mimo_ofdm_jrc/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

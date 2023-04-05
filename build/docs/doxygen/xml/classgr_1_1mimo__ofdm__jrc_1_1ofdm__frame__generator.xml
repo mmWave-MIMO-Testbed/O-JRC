@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>gr::mimo_ofdm_jrc::ofdm_frame_generator</compoundname>
+    <basecompoundref prot="public" virt="virtual">tagged_stream_block</basecompoundref>
+    <derivedcompoundref refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator__impl" prot="public" virt="non-virtual">gr::mimo_ofdm_jrc::ofdm_frame_generator_impl</derivedcompoundref>
+    <includes refid="ofdm__frame__generator_8h" local="no">ofdm_frame_generator.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1af63d329fad39af9b80bba9e05e3f55a7" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator" kindref="compound">ofdm_frame_generator</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;ofdm_frame_generator&gt; gr::mimo_ofdm_jrc::ofdm_frame_generator::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="73" column="33" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1a37d251b1309faf810577c9d9f499d426" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string gr::mimo_ofdm_jrc::ofdm_frame_generator::len_tag_key</definition>
+        <argsstring>()=0</argsstring>
+        <name>len_tag_key</name>
+        <reimplementedby refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator__impl_1a36f769b00a0e03f1401279c111d36148">len_tag_key</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="74" column="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1a1418a4605b6b37fa38b0a16306d5ea2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>const int</type>
+        <definition>virtual const int gr::mimo_ofdm_jrc::ofdm_frame_generator::fft_len</definition>
+        <argsstring>()=0</argsstring>
+        <name>fft_len</name>
+        <reimplementedby refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator__impl_1a103fced6bf7fc1f4080c6f9d06567b52">fft_len</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="75" column="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1a2733dc1d11128eafe37ce4b00e47cf94" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::vector&lt; std::vector&lt; int &gt; &gt;</type>
+        <definition>virtual std::vector&lt;std::vector&lt;int&gt; &gt; gr::mimo_ofdm_jrc::ofdm_frame_generator::occupied_carriers</definition>
+        <argsstring>()=0</argsstring>
+        <name>occupied_carriers</name>
+        <reimplementedby refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator__impl_1a28069bb233d21c5008725214ceb8c3f6">occupied_carriers</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="76" column="27"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1ad6f655e2a9c72ae33e48898e401e3373" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1af63d329fad39af9b80bba9e05e3f55a7" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::mimo_ofdm_jrc::ofdm_frame_generator::make</definition>
+        <argsstring>(int fft_len, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;occupied_carriers, const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;pilot_carriers, const std::vector&lt; std::vector&lt; gr_complex &gt;&gt; &amp;pilot_symbols, const std::vector&lt; std::vector&lt; gr_complex &gt;&gt; &amp;sync_words, int ltf_len, const std::string &amp;len_tag_key=&quot;packet_len&quot;, const bool output_is_shifted=true)</argsstring>
+        <name>make</name>
+        <param>
+          <type>int</type>
+          <declname>fft_len</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;</type>
+          <declname>occupied_carriers</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::vector&lt; int &gt;&gt; &amp;</type>
+          <declname>pilot_carriers</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::vector&lt; gr_complex &gt;&gt; &amp;</type>
+          <declname>pilot_symbols</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::vector&lt; gr_complex &gt;&gt; &amp;</type>
+          <declname>sync_words</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>ltf_len</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>len_tag_key</declname>
+          <defval>&quot;packet_len&quot;</defval>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>output_is_shifted</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator" kindref="compound">mimo_ofdm_jrc::ofdm_frame_generator</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator" kindref="compound">mimo_ofdm_jrc::ofdm_frame_generator</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1ad6f655e2a9c72ae33e48898e401e3373" kindref="member">mimo_ofdm_jrc::ofdm_frame_generator::make</ref> is the public interface for creating new instances. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="86" column="19"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Create frequency domain OFDM symbols from complex values, add pilots. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This block turns a stream of complex, scalar modulation symbols into vectors which are the input for an IFFT in an OFDM transmitter. It also supports the possibility of placing pilot symbols onto the carriers.</para>
+<para>The carriers can be allocated freely, if a carrier is not allocated, it is set to zero. This allows doing OFDMA-style carrier allocations.</para>
+<para>Input: A tagged stream of complex scalars. The first item must have a tag containing the number of complex symbols in this frame. Output: A tagged stream of complex vectors of length fft_len. This can directly be connected to an FFT block. Make sure to set this block to &apos;reverse&apos; for the IFFT. If <computeroutput>output_is_shifted</computeroutput> is true, the FFT block must activate FFT shifting, otherwise, set shifting to false. If given, sync words are prepended to the output. Note that sync words are prepended verbatim, make sure they are shifted (or not).</para>
+<para>Carrier indexes are always such that index 0 is the DC carrier (note: you should not allocate this carrier). The carriers below the DC carrier are either indexed with negative numbers, or with indexes larger than <computeroutput>fft_len/2</computeroutput>. Index -1 and index <computeroutput>fft_len-1</computeroutput> both identify the carrier below the DC carrier.</para>
+<para>There are some basic checks in place during initialization which check that the carrier allocation table is valid. However, it is possible to overwrite data symbols with pilot symbols, or provide a carrier allocation that has mismatching pilot symbol positions and -values.</para>
+<para>Tags are propagated such that a tag on an incoming complex symbol is mapped to the corresponding OFDM symbol. There is one exception: If a tag is on the first OFDM symbol, it is assumed that this tag should stay there, so it is moved to the front even if a sync word is included (any other tags will never be attached to the sync word). This allows tags to control the transmit timing to pass through in the correct position. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>tagged_stream_block</label>
+      </node>
+      <node id="1">
+        <label>gr::mimo_ofdm_jrc::ofdm_frame_generator</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>gr::mimo_ofdm_jrc::ofdm_frame_generator_impl</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator__impl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>tagged_stream_block</label>
+      </node>
+      <node id="1">
+        <label>gr::mimo_ofdm_jrc::ofdm_frame_generator</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="71" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" bodystart="70" bodyend="94"/>
+    <listofallmembers>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1a1418a4605b6b37fa38b0a16306d5ea2c" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::ofdm_frame_generator</scope><name>fft_len</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1a37d251b1309faf810577c9d9f499d426" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::ofdm_frame_generator</scope><name>len_tag_key</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1ad6f655e2a9c72ae33e48898e401e3373" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::ofdm_frame_generator</scope><name>make</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1a2733dc1d11128eafe37ce4b00e47cf94" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::ofdm_frame_generator</scope><name>occupied_carriers</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1af63d329fad39af9b80bba9e05e3f55a7" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::ofdm_frame_generator</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

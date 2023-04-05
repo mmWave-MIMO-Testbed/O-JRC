@@ -1,7 +1,7 @@
 lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/moc_time_plot.cpp.o: \
- /home/haocheng/gr-mimo_ofdm_jrc/build/lib/moc_time_plot.cpp \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/lib/moc_time_plot.cpp \
  /usr/include/stdc-predef.h \
- /home/haocheng/gr-mimo_ofdm_jrc/build/lib/../../lib/time_plot.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/lib/../../lib/time_plot.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \

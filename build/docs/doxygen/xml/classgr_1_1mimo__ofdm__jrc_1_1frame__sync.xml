@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classgr_1_1mimo__ofdm__jrc_1_1frame__sync" kind="class" language="C++" prot="public">
+    <compoundname>gr::mimo_ofdm_jrc::frame_sync</compoundname>
+    <basecompoundref prot="public" virt="virtual">block</basecompoundref>
+    <derivedcompoundref refid="classgr_1_1mimo__ofdm__jrc_1_1frame__sync__impl" prot="public" virt="non-virtual">gr::mimo_ofdm_jrc::frame_sync_impl</derivedcompoundref>
+    <includes refid="frame__sync_8h" local="no">frame_sync.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1mimo__ofdm__jrc_1_1frame__sync_1a732a7aa72c51d90c9c4b30652c2392e4" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1mimo__ofdm__jrc_1_1frame__sync" kindref="compound">frame_sync</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;frame_sync&gt; gr::mimo_ofdm_jrc::frame_sync::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/frame_sync.h" line="38" column="33" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/frame_sync.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1frame__sync_1ad778d2cac75e32ece7541cadf47b2eb6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1mimo__ofdm__jrc_1_1frame__sync_1a732a7aa72c51d90c9c4b30652c2392e4" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::mimo_ofdm_jrc::frame_sync::make</definition>
+        <argsstring>(int fft_len, int cp_len, unsigned int sync_length, std::vector&lt; gr_complex &gt; ltf_seq_time, bool debug)</argsstring>
+        <name>make</name>
+        <param>
+          <type>int</type>
+          <declname>fft_len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cp_len</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>sync_length</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; gr_complex &gt;</type>
+          <declname>ltf_seq_time</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>debug</declname>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1mimo__ofdm__jrc_1_1frame__sync" kindref="compound">mimo_ofdm_jrc::frame_sync</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1mimo__ofdm__jrc_1_1frame__sync" kindref="compound">mimo_ofdm_jrc::frame_sync</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1mimo__ofdm__jrc_1_1frame__sync_1ad778d2cac75e32ece7541cadf47b2eb6" kindref="member">mimo_ofdm_jrc::frame_sync::make</ref> is the public interface for creating new instances. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/frame_sync.h" line="48" column="19"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>block</label>
+      </node>
+      <node id="1">
+        <label>gr::mimo_ofdm_jrc::frame_sync</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1frame__sync"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>gr::mimo_ofdm_jrc::frame_sync_impl</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1frame__sync__impl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>block</label>
+      </node>
+      <node id="1">
+        <label>gr::mimo_ofdm_jrc::frame_sync</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1frame__sync"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/frame_sync.h" line="36" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/frame_sync.h" bodystart="35" bodyend="49"/>
+    <listofallmembers>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1frame__sync_1ad778d2cac75e32ece7541cadf47b2eb6" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::frame_sync</scope><name>make</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1frame__sync_1a732a7aa72c51d90c9c4b30652c2392e4" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::frame_sync</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classgr_1_1mimo__ofdm_1_1estimator_1_1ls" kind="class" language="C++" prot="public">
+    <compoundname>gr::mimo_ofdm::estimator::ls</compoundname>
+    <basecompoundref refid="classgr_1_1mimo__ofdm_1_1estimator_1_1base" prot="public" virt="non-virtual">gr::mimo_ofdm::estimator::base</basecompoundref>
+    <includes refid="old__version_2ls_8h" local="no">ls.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1estimator_1_1ls_1a09060294c0556cb59a7f782cdac8a4a6" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double gr::mimo_ofdm::estimator::ls::d_snr_est</definition>
+        <argsstring></argsstring>
+        <name>d_snr_est</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ls.h" line="43" column="8" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ls.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1estimator_1_1ls_1a16326b9bfed40789a609f3bf0870773c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void gr::mimo_ofdm::estimator::ls::equalize</definition>
+        <argsstring>(gr_complex *in, int n, gr_complex *symbols, uint8_t *bits, gr_complex *d_H, int fft_len, std::vector&lt; int &gt; data_carriers, std::vector&lt; int &gt; pilot_carriers, std::vector&lt; int &gt; nondata_carriers, const std::vector&lt; std::vector&lt; gr_complex &gt;&gt; &amp;pilot_chips, boost::shared_ptr&lt; gr::digital::constellation &gt; mod)</argsstring>
+        <name>equalize</name>
+        <reimplements refid="classgr_1_1mimo__ofdm_1_1estimator_1_1base_1a5734c93d0b831b9299863648c132ef48">equalize</reimplements>
+        <param>
+          <type>gr_complex *</type>
+          <declname>in</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>gr_complex *</type>
+          <declname>symbols</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>bits</declname>
+        </param>
+        <param>
+          <type>gr_complex *</type>
+          <declname>d_H</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fft_len</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; int &gt;</type>
+          <declname>data_carriers</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; int &gt;</type>
+          <declname>pilot_carriers</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; int &gt;</type>
+          <declname>nondata_carriers</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::vector&lt; gr_complex &gt;&gt; &amp;</type>
+          <declname>pilot_chips</declname>
+        </param>
+        <param>
+          <type>boost::shared_ptr&lt; gr::digital::constellation &gt;</type>
+          <declname>mod</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ls.h" line="30" column="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1estimator_1_1ls_1a77d7b07e3f680e8ef4fed96f5ed2e71e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>virtual double gr::mimo_ofdm::estimator::ls::get_snr</definition>
+        <argsstring>()</argsstring>
+        <name>get_snr</name>
+        <reimplements refid="classgr_1_1mimo__ofdm_1_1estimator_1_1base_1af0c81a68b70d4169b3973982ae0d7c66">get_snr</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ls.h" line="41" column="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>gr::mimo_ofdm::estimator::base</label>
+        <link refid="classgr_1_1mimo__ofdm_1_1estimator_1_1base"/>
+      </node>
+      <node id="1">
+        <label>gr::mimo_ofdm::estimator::ls</label>
+        <link refid="classgr_1_1mimo__ofdm_1_1estimator_1_1ls"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>gr::mimo_ofdm::estimator::base</label>
+        <link refid="classgr_1_1mimo__ofdm_1_1estimator_1_1base"/>
+      </node>
+      <node id="1">
+        <label>gr::mimo_ofdm::estimator::ls</label>
+        <link refid="classgr_1_1mimo__ofdm_1_1estimator_1_1ls"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ls.h" line="28" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ls.h" bodystart="28" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classgr_1_1mimo__ofdm_1_1estimator_1_1ls_1a09060294c0556cb59a7f782cdac8a4a6" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::estimator::ls</scope><name>d_snr_est</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1estimator_1_1ls_1a16326b9bfed40789a609f3bf0870773c" prot="public" virt="virtual"><scope>gr::mimo_ofdm::estimator::ls</scope><name>equalize</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1estimator_1_1ls_1a77d7b07e3f680e8ef4fed96f5ed2e71e" prot="public" virt="virtual"><scope>gr::mimo_ofdm::estimator::ls</scope><name>get_snr</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1estimator_1_1base_1a8ee685f69b3e8e56526874f4dc67413d" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::estimator::ls</scope><name>POLARITY</name></member>
+      <member refid="classgr_1_1mimo__ofdm_1_1estimator_1_1base_1aaa35a5e9df2e5974b16f6c60e46e133e" prot="public" virt="virtual"><scope>gr::mimo_ofdm::estimator::ls</scope><name>~base</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

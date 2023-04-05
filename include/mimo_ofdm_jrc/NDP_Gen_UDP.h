@@ -22,7 +22,7 @@
 #define INCLUDED_MIMO_OFDM_JRC_NDP_GEN_UDP_H
 
 #include <mimo_ofdm_jrc/api.h>
-#include <gnuradio/block.h>
+#include <gnuradio/sync_block.h>
 
 namespace gr {
   namespace mimo_ofdm_jrc {
@@ -32,7 +32,7 @@ namespace gr {
      * \ingroup mimo_ofdm_jrc
      *
      */
-    class MIMO_OFDM_JRC_API NDP_Gen_UDP : virtual public gr::block
+    class MIMO_OFDM_JRC_API NDP_Gen_UDP : virtual public gr::sync_block
     {
      public:
       typedef boost::shared_ptr<NDP_Gen_UDP> sptr;
@@ -45,7 +45,8 @@ namespace gr {
        * class. mimo_ofdm_jrc::NDP_Gen_UDP::make is the public interface for
        * creating new instances.
        */
-      static sptr make();
+      static sptr make(const std::string& host, int port, int interval);
+
     };
 
   } // namespace mimo_ofdm_jrc

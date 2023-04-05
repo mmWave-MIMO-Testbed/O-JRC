@@ -22,28 +22,30 @@
 #define INCLUDED_MIMO_OFDM_JRC_NDP_GEN_UDP_IMPL_H
 
 #include <mimo_ofdm_jrc/NDP_Gen_UDP.h>
-#include <gnuradio/sync_block.h>
 #include <boost/asio.hpp>
 
 namespace gr {
   namespace mimo_ofdm_jrc {
 
-    class NDP_Gen_UDP_impl : virtual public gr::sync_block
+    enum class PAKCET_TYPE {NDP, DATA};
+    class NDP_Gen_UDP_impl : public NDP_Gen_UDP
     {
      private:
-      // Nothing to declare in this block.
       boost::asio::io_context d_io_context;
       boost::asio::ip::udp::socket d_socket;
       boost::asio::ip::udp::endpoint d_remote_endpoint;
       std::vector<char> d_data;
+      std::vector<char> d_ndpCharArr;
       int d_interval;
 
      public:
-     typedef std::shared_ptr<NDP_Gen_UDP_impl> sptr;
-     static sptr make(const std::string& host, int port, int interval);
+     NDP_Gen_UDP_impl(const std::string& host, int port, int interval);
+     ~NDP_Gen_UDP_impl();
+     
+     //typedef std::shared_ptr<NDP_Gen_UDP_impl> sptr;
+     //static sptr make(const std::string& host, int port, int interval);
 
-      int general_work(int noutput_items,
-           gr_vector_int &ninput_items,
+      int work(int noutput_items,
            gr_vector_const_void_star &input_items,
            gr_vector_void_star &output_items);
 

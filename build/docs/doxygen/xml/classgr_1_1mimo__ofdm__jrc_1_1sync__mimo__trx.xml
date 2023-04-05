@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>gr::mimo_ofdm_jrc::sync_mimo_trx</compoundname>
+    <basecompoundref prot="public" virt="virtual">tagged_stream_block</basecompoundref>
+    <derivedcompoundref refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl" prot="public" virt="non-virtual">gr::mimo_ofdm_jrc::sync_mimo_trx_impl</derivedcompoundref>
+    <includes refid="sync__mimo__trx_8h" local="no">sync_mimo_trx.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1a1351c85b9d78fe83aad6e9b2f4b54118" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx" kindref="compound">sync_mimo_trx</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;sync_mimo_trx&gt; gr::mimo_ofdm_jrc::sync_mimo_trx::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="38" column="33" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1a8cf9172718f819808b788d8f9939782f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1a1351c85b9d78fe83aad6e9b2f4b54118" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::mimo_ofdm_jrc::sync_mimo_trx::make</definition>
+        <argsstring>(int N_mboard, int N_tx, int N_rx, int samp_rate, float center_freq, int num_delay_samps, bool debug, float update_period, std::string args_tx, std::string wire_tx, std::string clock_source_tx, std::string time_source_tx, std::string antenna_tx, float gain_tx, float timeout_tx, float wait_tx, float lo_offset_tx, std::string args_rx, std::string wire_rx, std::string clock_source_rx, std::string time_source_rx, std::string antenna_rx, float gain_rx, float timeout_rx, float wait_rx, float lo_offset_rx, const std::string &amp;len_key=&quot;packet_len&quot;)</argsstring>
+        <name>make</name>
+        <param>
+          <type>int</type>
+          <declname>N_mboard</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N_tx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N_rx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>samp_rate</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>center_freq</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>num_delay_samps</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>debug</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>update_period</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>args_tx</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>wire_tx</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>clock_source_tx</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>time_source_tx</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>antenna_tx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>gain_tx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>timeout_tx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>wait_tx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>lo_offset_tx</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>args_rx</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>wire_rx</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>clock_source_rx</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>time_source_rx</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>antenna_rx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>gain_rx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>timeout_rx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>wait_rx</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>lo_offset_rx</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>len_key</declname>
+          <defval>&quot;packet_len&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx" kindref="compound">mimo_ofdm_jrc::sync_mimo_trx</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx" kindref="compound">mimo_ofdm_jrc::sync_mimo_trx</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1a8cf9172718f819808b788d8f9939782f" kindref="member">mimo_ofdm_jrc::sync_mimo_trx::make</ref> is the public interface for creating new instances. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="48" column="19"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1ac39a735c7b82256bd187dfbcf4c89b26" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::mimo_ofdm_jrc::sync_mimo_trx::set_num_delay_samps</definition>
+        <argsstring>(int num_samps)=0</argsstring>
+        <name>set_num_delay_samps</name>
+        <reimplementedby refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1ac89574ae975e49585056a54c8d9f41ea">set_num_delay_samps</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>num_samps</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="55" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1a502d74ece8b7ddc37076cb926ae37baa" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::mimo_ofdm_jrc::sync_mimo_trx::set_rx_gain</definition>
+        <argsstring>(float gain)=0</argsstring>
+        <name>set_rx_gain</name>
+        <reimplementedby refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a3b22e6a9840c9ac2ab63e37af61b83bd">set_rx_gain</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>gain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="56" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1a6ff9f329eb2482590127ab4d70556b42" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::mimo_ofdm_jrc::sync_mimo_trx::set_tx_gain</definition>
+        <argsstring>(float gain)=0</argsstring>
+        <name>set_tx_gain</name>
+        <reimplementedby refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1aee5635b676e462b393790236ff963288">set_tx_gain</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>gain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="57" column="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>tagged_stream_block</label>
+      </node>
+      <node id="3">
+        <label>gr::mimo_ofdm_jrc::sync_mimo_trx_impl</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gr::mimo_ofdm_jrc::sync_mimo_trx</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>tagged_stream_block</label>
+      </node>
+      <node id="1">
+        <label>gr::mimo_ofdm_jrc::sync_mimo_trx</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="36" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" bodystart="35" bodyend="58"/>
+    <listofallmembers>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1a8cf9172718f819808b788d8f9939782f" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::sync_mimo_trx</scope><name>make</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1ac39a735c7b82256bd187dfbcf4c89b26" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::sync_mimo_trx</scope><name>set_num_delay_samps</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1a502d74ece8b7ddc37076cb926ae37baa" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::sync_mimo_trx</scope><name>set_rx_gain</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1a6ff9f329eb2482590127ab4d70556b42" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::sync_mimo_trx</scope><name>set_tx_gain</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1a1351c85b9d78fe83aad6e9b2f4b54118" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::sync_mimo_trx</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

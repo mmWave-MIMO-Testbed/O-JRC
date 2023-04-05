@@ -1,9 +1,9 @@
 lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/viterbi_decoder.cc.o: \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/viterbi_decoder.cc \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/viterbi_decoder.cc \
  /usr/include/stdc-predef.h \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/viterbi_decoder.h \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/utils.h \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/../include/mimo_ofdm_jrc/api.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/viterbi_decoder.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/utils.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/../include/mimo_ofdm_jrc/api.h \
  /usr/local/include/gnuradio/attributes.h \
  /usr/local/include/gnuradio/block.h /usr/local/include/gnuradio/api.h \
  /usr/local/include/gnuradio/basic_block.h \
@@ -1105,7 +1105,7 @@ lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/viterbi_decoder.cc.o: \
  /usr/include/boost/thread/detail/atomic_redef_macros.hpp \
  /usr/local/include/gnuradio/tags.h /usr/include/gmpxx.h \
  /usr/include/c++/9/cfloat /usr/include/x86_64-linux-gnu/gmp.h \
- /home/haocheng/gr-mimo_ofdm_jrc/lib/../include/mimo_ofdm_jrc/stream_encoder.h \
+ /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/../include/mimo_ofdm_jrc/stream_encoder.h \
  /usr/include/c++/9/cinttypes /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/xmmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/mmintrin.h \

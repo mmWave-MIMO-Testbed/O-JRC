@@ -1,0 +1,498 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</compoundname>
+    <basecompoundref refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar" prot="public" virt="non-virtual">gr::mimo_ofdm_jrc::mimo_ofdm_radar</basecompoundref>
+    <includes refid="mimo__ofdm__radar__impl_8h" local="no">mimo_ofdm_radar_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1abb6b00b684f2eaf3c7b67cb042d781fb" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::d_fft_len</definition>
+        <argsstring></argsstring>
+        <name>d_fft_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="35" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a75ba4c91d55b26839f818f60190ea7ed" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::d_N_tx</definition>
+        <argsstring></argsstring>
+        <name>d_N_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="36" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1ab0e2d71cd01b5c28f9e17a1a26d0a0f5" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::d_N_rx</definition>
+        <argsstring></argsstring>
+        <name>d_N_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="37" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1af3421f4ce2669c43c31f0b8ae1976e0e" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::d_N_sym</definition>
+        <argsstring></argsstring>
+        <name>d_N_sym</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="38" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1aff79d44e34abe0d60daabbfce2697576" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::d_N_pre</definition>
+        <argsstring></argsstring>
+        <name>d_N_pre</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="39" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a45e643096deadd0ca984db5c1b4dfa9f" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::d_interp_factor</definition>
+        <argsstring></argsstring>
+        <name>d_interp_factor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="40" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1aaf9e6e776cea081964be20a4c9286adc" prot="private" static="no" mutable="no">
+        <type>const bool</type>
+        <definition>const bool gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::d_enable_tx_interleave</definition>
+        <argsstring></argsstring>
+        <name>d_enable_tx_interleave</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="41" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a8102e12315c69b7e0f3a5c5f283472c4" prot="private" static="no" mutable="no">
+        <type>gr_complex *</type>
+        <definition>gr_complex* gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::radar_chan_est</definition>
+        <argsstring></argsstring>
+        <name>radar_chan_est</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="43" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a3509d46465e42474e1b476f2403c3468" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::d_radar_chan_file</definition>
+        <argsstring></argsstring>
+        <name>d_radar_chan_file</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="45" column="27" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1abf23df21c05cde16300c490f37f5a2a6" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; gr_complex &gt;</type>
+        <definition>std::vector&lt;gr_complex&gt; gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::radar_chan_est_temp</definition>
+        <argsstring></argsstring>
+        <name>radar_chan_est_temp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="47" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1acf46ae63a1ac2caa0c7b2c95a2ec7e84" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; gr_complex &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;gr_complex&gt; &gt; gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::rx_radar_frame</definition>
+        <argsstring></argsstring>
+        <name>rx_radar_frame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="49" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1aae39c0714eaef7aa826e8126b15ec5c7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; gr_complex &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;gr_complex&gt; &gt; gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::tx_radar_frame</definition>
+        <argsstring></argsstring>
+        <name>tx_radar_frame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="50" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1ae1237cbd7f430fbfb1a7fac244e371f4" prot="private" static="no" mutable="no">
+        <type>boost::circular_buffer&lt; std::vector&lt; gr_complex &gt; &gt;</type>
+        <definition>boost::circular_buffer&lt;std::vector&lt;gr_complex&gt; &gt; gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::radar_chan_est_buffer</definition>
+        <argsstring></argsstring>
+        <name>radar_chan_est_buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="52" column="32" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a1bb5ed11c67a205174b28c9da627dc9f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::d_record_len</definition>
+        <argsstring></argsstring>
+        <name>d_record_len</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="53" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1aa447eeebb2cb0869d9e446cc96821aa7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::d_background_removal</definition>
+        <argsstring></argsstring>
+        <name>d_background_removal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="54" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a9e230aeddb524edd2d3c4017a677ff4a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::d_background_recording</definition>
+        <argsstring></argsstring>
+        <name>d_background_recording</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="55" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a89a93238e2bef76eb323c9dbf1413739" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::total_sym_copy</definition>
+        <argsstring></argsstring>
+        <name>total_sym_copy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="57" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1aa247bbf651e73dbc6ce5fb51fcf2c240" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::new_radar_frame</definition>
+        <argsstring></argsstring>
+        <name>new_radar_frame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="59" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a5cd6e74aa4feba83a175636285f05d68" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::radar_frame_received</definition>
+        <argsstring></argsstring>
+        <name>radar_frame_received</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="59" column="30" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a25c5c8e4eb7c6284a006525a176d224e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::copying</definition>
+        <argsstring></argsstring>
+        <name>copying</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="59" column="51" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a240a0570c53b964df4684a443b2ed3f4" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::captured</definition>
+        <argsstring></argsstring>
+        <name>captured</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="59" column="59" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1aa3e2a4ade8806a5d3530c0c9fbda36db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::mimo_ofdm_radar_impl</definition>
+        <argsstring>(int fft_len, int N_tx, int N_rx, int N_sym, int N_pre, bool background_removal, bool background_recording, int averaging_depth, int interp_factor, bool enable_tx_interleave, const std::string &amp;radar_chan_file, const std::string &amp;len_tag_key, bool debug=false)</argsstring>
+        <name>mimo_ofdm_radar_impl</name>
+        <param>
+          <type>int</type>
+          <declname>fft_len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N_tx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N_rx</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N_sym</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>N_pre</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>background_removal</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>background_recording</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>averaging_depth</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>interp_factor</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enable_tx_interleave</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>radar_chan_file</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>len_tag_key</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>debug</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="62" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a96e36d5418bcfbf485bc45e81872c86b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::~mimo_ofdm_radar_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~mimo_ofdm_radar_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="77" column="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1ab77183e8f2269a8e6051bdc3736cdb38" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::set_background_record</definition>
+        <argsstring>(bool background_recording)</argsstring>
+        <name>set_background_record</name>
+        <reimplements refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar_1aa68c4aaf3a6d0ad1425c26021082d30f">set_background_record</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>background_recording</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="79" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a3b6ff8626b37237022a37218508ef07d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::capture_radar_data</definition>
+        <argsstring>(bool capture_sig)</argsstring>
+        <name>capture_radar_data</name>
+        <reimplements refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar_1aff4f2c868ae75f943ab2991fcb72ade3">capture_radar_data</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>capture_sig</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="80" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1afbba8274365d8b0a4b58a155575fecc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl::general_work</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>general_work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="85" column="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>block</label>
+      </node>
+      <node id="2">
+        <label>gr::mimo_ofdm_jrc::mimo_ofdm_radar</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>block</label>
+      </node>
+      <node id="2">
+        <label>gr::mimo_ofdm_jrc::mimo_ofdm_radar</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</label>
+        <link refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" line="33" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/mimo_ofdm_radar_impl.h" bodystart="32" bodyend="90"/>
+    <listofallmembers>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a3b6ff8626b37237022a37218508ef07d" prot="public" virt="virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>capture_radar_data</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a240a0570c53b964df4684a443b2ed3f4" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>captured</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a25c5c8e4eb7c6284a006525a176d224e" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>copying</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a9e230aeddb524edd2d3c4017a677ff4a" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>d_background_recording</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1aa447eeebb2cb0869d9e446cc96821aa7" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>d_background_removal</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1aaf9e6e776cea081964be20a4c9286adc" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>d_enable_tx_interleave</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1abb6b00b684f2eaf3c7b67cb042d781fb" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>d_fft_len</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a45e643096deadd0ca984db5c1b4dfa9f" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>d_interp_factor</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1aff79d44e34abe0d60daabbfce2697576" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>d_N_pre</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1ab0e2d71cd01b5c28f9e17a1a26d0a0f5" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>d_N_rx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1af3421f4ce2669c43c31f0b8ae1976e0e" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>d_N_sym</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a75ba4c91d55b26839f818f60190ea7ed" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>d_N_tx</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a3509d46465e42474e1b476f2403c3468" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>d_radar_chan_file</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a1bb5ed11c67a205174b28c9da627dc9f" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>d_record_len</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1afbba8274365d8b0a4b58a155575fecc2" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>general_work</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar_1a57d12dae029e0d4ab91364c69617ac04" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1aa3e2a4ade8806a5d3530c0c9fbda36db" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>mimo_ofdm_radar_impl</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1aa247bbf651e73dbc6ce5fb51fcf2c240" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>new_radar_frame</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a8102e12315c69b7e0f3a5c5f283472c4" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>radar_chan_est</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1ae1237cbd7f430fbfb1a7fac244e371f4" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>radar_chan_est_buffer</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1abf23df21c05cde16300c490f37f5a2a6" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>radar_chan_est_temp</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a5cd6e74aa4feba83a175636285f05d68" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>radar_frame_received</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1acf46ae63a1ac2caa0c7b2c95a2ec7e84" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>rx_radar_frame</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1ab77183e8f2269a8e6051bdc3736cdb38" prot="public" virt="virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>set_background_record</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar_1a1023fa8b850be81e98ddac44cdb24cc2" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a89a93238e2bef76eb323c9dbf1413739" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>total_sym_copy</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1aae39c0714eaef7aa826e8126b15ec5c7" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>tx_radar_frame</name></member>
+      <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar__impl_1a96e36d5418bcfbf485bc45e81872c86b" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_ofdm_radar_impl</scope><name>~mimo_ofdm_radar_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
