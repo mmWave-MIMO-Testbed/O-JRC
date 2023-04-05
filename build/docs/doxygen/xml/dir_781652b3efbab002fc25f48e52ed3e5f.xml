@@ -17,6 +17,8 @@
     <innerfile refid="old__version_2mimo__radar__estimator__2__impl_8h">old_version/mimo_radar_estimator_2_impl.h</innerfile>
     <innerfile refid="old__version_2mimo__radar__estimator__impl_8h">old_version/mimo_radar_estimator_impl.h</innerfile>
     <innerfile refid="old__version_2moving__avg__impl_8h">old_version/moving_avg_impl.h</innerfile>
+    <innerfile refid="NDP__Gen__UDP__impl_8h">NDP_Gen_UDP_impl.h</innerfile>
+    <innerfile refid="NDP__Generator__impl_8h">NDP_Generator_impl.h</innerfile>
     <innerfile refid="old__version_2ofdm__cyclic__prefix__remover__impl_8h">old_version/ofdm_cyclic_prefix_remover_impl.h</innerfile>
     <innerfile refid="old__version_2ofdm__frame__generator__impl_8h">old_version/ofdm_frame_generator_impl.h</innerfile>
     <innerfile refid="old__version_2range__angle__estimator__impl_8h">old_version/range_angle_estimator_impl.h</innerfile>

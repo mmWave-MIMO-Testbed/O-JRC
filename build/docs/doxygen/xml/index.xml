@@ -174,30 +174,6 @@
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1gui__heatmap__plot_1ab3c6356bf81d53e236f73f71b296d678" kind="typedef"><name>sptr</name></member>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1gui__heatmap__plot_1a1e623f8154643008d2edd87276ed54cc" kind="function"><name>make</name></member>
   </compound>
-  <compound refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl" kind="class"><name>gr::mimo_ofdm::gui_heatmap_plot_impl</name>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ada9fd8318805f393e498ef28c10fd12c" kind="variable"><name>d_argc</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1aac360b28bfcdde2ffe1a5921973739f3" kind="variable"><name>d_argv</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a1b769564f69bf334a4bbe4d6bcb8c9d7" kind="variable"><name>d_qApplication</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a404830921ed98fe5450ea5c8d1037252" kind="variable"><name>d_vlen</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ad18155a19238135425ef28d598dac834" kind="variable"><name>d_interval</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a3d84cbc1eb349dda9dccb7b506fe0e77" kind="variable"><name>d_xlabel</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ac8ec0fa9706e7616d61071d7fbc248db" kind="variable"><name>d_ylabel</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ac455d999e6689e566c50da0636449fbf" kind="variable"><name>d_label</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ac857059756c6c186061c29598396f8ea" kind="variable"><name>d_axis_x</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a6911dd1219bca7ccc9d8ebda2fefcf72" kind="variable"><name>d_axis_y</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a30b7f1ad37a0465b02a1711bf2b509b4" kind="variable"><name>d_dynamic_range_db</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ad4d9b2084b69ce944b08f901c40fad3a" kind="variable"><name>d_x_axis_ticks</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ac84bf49648a2d24c49bf0bd77c53aeea" kind="variable"><name>d_y_axis_ticks</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a271ad18dbdad918443a2fc291f9eea10" kind="variable"><name>d_buffer</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1aa573b082e699ee4ece7afbe778b28942" kind="variable"><name>d_autoscale_z</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1abff09de33911f20361c38220774c1d66" kind="variable"><name>d_db_scale</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a9fd9cdc2ed048ec07aaff018639685b8" kind="variable"><name>d_main_gui</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a1726a5937a306f207ebdaf30601b9ee2" kind="function"><name>calculate_output_stream_length</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1af4eef3f4e715740ae1c10323d2cc639e" kind="function"><name>gui_heatmap_plot_impl</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a57246a9ea758e562a7d83df70f52fe65" kind="function"><name>~gui_heatmap_plot_impl</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a2371ecc282d0b352fab216b7bdbff4d6" kind="function"><name>run_gui</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1aef72c56e6e5491d549901d403fb3f945" kind="function"><name>work</name></member>
-  </compound>
   <compound refid="classgr_1_1mimo__ofdm__jrc_1_1gui__heatmap__plot__impl" kind="class"><name>gr::mimo_ofdm_jrc::gui_heatmap_plot_impl</name>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1gui__heatmap__plot__impl_1a28cabde5e0cb337b496dfba9ee460a48" kind="variable"><name>d_argc</name></member>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1gui__heatmap__plot__impl_1aecc94d0c7f8c6ed3fb31268defa4a0ad" kind="variable"><name>d_argv</name></member>
@@ -221,6 +197,30 @@
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1gui__heatmap__plot__impl_1a89ae6024ef8fda83ea8997db53c84083" kind="function"><name>~gui_heatmap_plot_impl</name></member>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1gui__heatmap__plot__impl_1a3c1df0c2f66cb9c579a38b63570dc36b" kind="function"><name>run_gui</name></member>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1gui__heatmap__plot__impl_1a8ea2cda88800d7690573ab9feae42afb" kind="function"><name>work</name></member>
+  </compound>
+  <compound refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl" kind="class"><name>gr::mimo_ofdm::gui_heatmap_plot_impl</name>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ada9fd8318805f393e498ef28c10fd12c" kind="variable"><name>d_argc</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1aac360b28bfcdde2ffe1a5921973739f3" kind="variable"><name>d_argv</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a1b769564f69bf334a4bbe4d6bcb8c9d7" kind="variable"><name>d_qApplication</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a404830921ed98fe5450ea5c8d1037252" kind="variable"><name>d_vlen</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ad18155a19238135425ef28d598dac834" kind="variable"><name>d_interval</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a3d84cbc1eb349dda9dccb7b506fe0e77" kind="variable"><name>d_xlabel</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ac8ec0fa9706e7616d61071d7fbc248db" kind="variable"><name>d_ylabel</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ac455d999e6689e566c50da0636449fbf" kind="variable"><name>d_label</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ac857059756c6c186061c29598396f8ea" kind="variable"><name>d_axis_x</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a6911dd1219bca7ccc9d8ebda2fefcf72" kind="variable"><name>d_axis_y</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a30b7f1ad37a0465b02a1711bf2b509b4" kind="variable"><name>d_dynamic_range_db</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ad4d9b2084b69ce944b08f901c40fad3a" kind="variable"><name>d_x_axis_ticks</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ac84bf49648a2d24c49bf0bd77c53aeea" kind="variable"><name>d_y_axis_ticks</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a271ad18dbdad918443a2fc291f9eea10" kind="variable"><name>d_buffer</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1aa573b082e699ee4ece7afbe778b28942" kind="variable"><name>d_autoscale_z</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1abff09de33911f20361c38220774c1d66" kind="variable"><name>d_db_scale</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a9fd9cdc2ed048ec07aaff018639685b8" kind="variable"><name>d_main_gui</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a1726a5937a306f207ebdaf30601b9ee2" kind="function"><name>calculate_output_stream_length</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1af4eef3f4e715740ae1c10323d2cc639e" kind="function"><name>gui_heatmap_plot_impl</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a57246a9ea758e562a7d83df70f52fe65" kind="function"><name>~gui_heatmap_plot_impl</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a2371ecc282d0b352fab216b7bdbff4d6" kind="function"><name>run_gui</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1aef72c56e6e5491d549901d403fb3f945" kind="function"><name>work</name></member>
   </compound>
   <compound refid="classgr_1_1mimo__ofdm__jrc_1_1gui__time__plot" kind="class"><name>gr::mimo_ofdm_jrc::gui_time_plot</name>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1gui__time__plot_1abfe418e642bf109afbe35a344a25cecf" kind="typedef"><name>sptr</name></member>
@@ -264,34 +264,6 @@
     <member refid="classgr_1_1mimo__ofdm_1_1gui__time__plot__impl_1a287baa9dbe08864330d3c744fbb48639" kind="function"><name>handle_msg</name></member>
     <member refid="classgr_1_1mimo__ofdm_1_1gui__time__plot__impl_1ae49834456e04be621a91bbf0e18d5dcb" kind="function"><name>run_gui</name></member>
   </compound>
-  <compound refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot" kind="class"><name>gr::mimo_ofdm_jrc::heatmap_plot</name>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a7baf3c283d13b54824b35980978c7842" kind="variable"><name>d_interval</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1aa60636bf7e45128f08e8e5b54c540bea" kind="variable"><name>d_vlen</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1ab56fc96bdb45715430ab0f6adbcb590f" kind="variable"><name>d_x_axis_div</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a66867ae109066d4e9f4db4c293634538" kind="variable"><name>d_y_axis_div</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a56468cfd7a6cf898442bc3f738b1e1d2" kind="variable"><name>d_axis_x</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a0bb0b73664371c50fe213335ecff7ead" kind="variable"><name>d_axis_y</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a95afcc439d6459074570786292644d64" kind="variable"><name>d_x_axis_ticks</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a1e91c20e85a0f16684969df461bf7352" kind="variable"><name>d_y_axis_ticks</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1aeb819a64c0978961f59b8f7f2f74a3ac" kind="variable"><name>d_dynamic_range_db</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a46049721e9c601630d03ee05ec3d107f" kind="variable"><name>d_buffer</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a4a5fa7d7c984747c6630a09ddae9c6a0" kind="variable"><name>d_autoscale_z</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1af8655f45e03c611e683b6a64432659c7" kind="variable"><name>d_db_scale</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a451c9e1050c164ea128d4ef2c00e92b3" kind="variable"><name>d_timer</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a7a05050c4eb49ab796e388a4caf2f021" kind="variable"><name>d_plot</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1ace21576fe17b821797b45fe97b1faa68" kind="variable"><name>d_spectrogram</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a6d48f17da22d25affe38a4889b10950b" kind="variable"><name>d_data</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a5b6b99d3d8236747152ad5fdc7fc9e25" kind="variable"><name>d_colormap</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1aff10bfedb8e2a9767c06722dbe090c00" kind="variable"><name>d_scale</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a0d9e7f3baec2cc640f6dee92a0701315" kind="variable"><name>d_plot_data</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a410c21b11c006b7177b206e97f2c87bb" kind="variable"><name>d_plot_data_3D</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1af42cfeb043f6dda41843c93dabcce5a7" kind="variable"><name>axis_font</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1aeab37b49192684da701b631501429301" kind="variable"><name>axis_title_font</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1ad994808a86a0d933258f9168126948f2" kind="function"><name>heatmap_plot</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a9760565904a21fcfe443b88beeef021f" kind="function"><name>~heatmap_plot</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a4367c283cd447cd43d00475c089622c0" kind="function"><name>resizeEvent</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a6ac0997edf1c4fec94c2c28c4e02d077" kind="slot"><name>refresh</name></member>
-  </compound>
   <compound refid="classgr_1_1mimo__ofdm_1_1heatmap__plot" kind="class"><name>gr::mimo_ofdm::heatmap_plot</name>
     <member refid="classgr_1_1mimo__ofdm_1_1heatmap__plot_1a2ac97c95dcda1c623a7721ec5e28f6ea" kind="variable"><name>d_interval</name></member>
     <member refid="classgr_1_1mimo__ofdm_1_1heatmap__plot_1a5ab387cc621348bb56101560bafd60ab" kind="variable"><name>d_vlen</name></member>
@@ -320,29 +292,47 @@
     <member refid="classgr_1_1mimo__ofdm_1_1heatmap__plot_1a31c8a0ecf4df222735fb51f7378d9537" kind="function"><name>resizeEvent</name></member>
     <member refid="classgr_1_1mimo__ofdm_1_1heatmap__plot_1a5bdbcbed38d1c020f30c22a50d9fdced" kind="slot"><name>refresh</name></member>
   </compound>
-  <compound refid="classgr_1_1mimo__ofdm_1_1estimator_1_1ls" kind="class"><name>gr::mimo_ofdm::estimator::ls</name>
-    <member refid="classgr_1_1mimo__ofdm_1_1estimator_1_1ls_1a09060294c0556cb59a7f782cdac8a4a6" kind="variable"><name>d_snr_est</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1estimator_1_1ls_1a16326b9bfed40789a609f3bf0870773c" kind="function"><name>equalize</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1estimator_1_1ls_1a77d7b07e3f680e8ef4fed96f5ed2e71e" kind="function"><name>get_snr</name></member>
+  <compound refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot" kind="class"><name>gr::mimo_ofdm_jrc::heatmap_plot</name>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a7baf3c283d13b54824b35980978c7842" kind="variable"><name>d_interval</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1aa60636bf7e45128f08e8e5b54c540bea" kind="variable"><name>d_vlen</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1ab56fc96bdb45715430ab0f6adbcb590f" kind="variable"><name>d_x_axis_div</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a66867ae109066d4e9f4db4c293634538" kind="variable"><name>d_y_axis_div</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a56468cfd7a6cf898442bc3f738b1e1d2" kind="variable"><name>d_axis_x</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a0bb0b73664371c50fe213335ecff7ead" kind="variable"><name>d_axis_y</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a95afcc439d6459074570786292644d64" kind="variable"><name>d_x_axis_ticks</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a1e91c20e85a0f16684969df461bf7352" kind="variable"><name>d_y_axis_ticks</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1aeb819a64c0978961f59b8f7f2f74a3ac" kind="variable"><name>d_dynamic_range_db</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a46049721e9c601630d03ee05ec3d107f" kind="variable"><name>d_buffer</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a4a5fa7d7c984747c6630a09ddae9c6a0" kind="variable"><name>d_autoscale_z</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1af8655f45e03c611e683b6a64432659c7" kind="variable"><name>d_db_scale</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a451c9e1050c164ea128d4ef2c00e92b3" kind="variable"><name>d_timer</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a7a05050c4eb49ab796e388a4caf2f021" kind="variable"><name>d_plot</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1ace21576fe17b821797b45fe97b1faa68" kind="variable"><name>d_spectrogram</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a6d48f17da22d25affe38a4889b10950b" kind="variable"><name>d_data</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a5b6b99d3d8236747152ad5fdc7fc9e25" kind="variable"><name>d_colormap</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1aff10bfedb8e2a9767c06722dbe090c00" kind="variable"><name>d_scale</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a0d9e7f3baec2cc640f6dee92a0701315" kind="variable"><name>d_plot_data</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a410c21b11c006b7177b206e97f2c87bb" kind="variable"><name>d_plot_data_3D</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1af42cfeb043f6dda41843c93dabcce5a7" kind="variable"><name>axis_font</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1aeab37b49192684da701b631501429301" kind="variable"><name>axis_title_font</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1ad994808a86a0d933258f9168126948f2" kind="function"><name>heatmap_plot</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a9760565904a21fcfe443b88beeef021f" kind="function"><name>~heatmap_plot</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a4367c283cd447cd43d00475c089622c0" kind="function"><name>resizeEvent</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1heatmap__plot_1a6ac0997edf1c4fec94c2c28c4e02d077" kind="slot"><name>refresh</name></member>
   </compound>
   <compound refid="classgr_1_1mimo__ofdm__jrc_1_1estimator_1_1ls" kind="class"><name>gr::mimo_ofdm_jrc::estimator::ls</name>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1estimator_1_1ls_1ad5308d5fe8e9c84cf2f6f33368af0829" kind="variable"><name>d_snr_est</name></member>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1estimator_1_1ls_1ae1e7970b25bdab269d8c22a36db3f191" kind="function"><name>equalize</name></member>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1estimator_1_1ls_1aeca32d6333301266b94906a272168bc9" kind="function"><name>get_snr</name></member>
   </compound>
+  <compound refid="classgr_1_1mimo__ofdm_1_1estimator_1_1ls" kind="class"><name>gr::mimo_ofdm::estimator::ls</name>
+    <member refid="classgr_1_1mimo__ofdm_1_1estimator_1_1ls_1a09060294c0556cb59a7f782cdac8a4a6" kind="variable"><name>d_snr_est</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1estimator_1_1ls_1a16326b9bfed40789a609f3bf0870773c" kind="function"><name>equalize</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1estimator_1_1ls_1a77d7b07e3f680e8ef4fed96f5ed2e71e" kind="function"><name>get_snr</name></member>
+  </compound>
   <compound refid="classgr_1_1mimo__ofdm__jrc_1_1matrix__transpose" kind="class"><name>gr::mimo_ofdm_jrc::matrix_transpose</name>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1matrix__transpose_1ae9ef2baf587174aee05f2b5c16491430" kind="typedef"><name>sptr</name></member>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1matrix__transpose_1aa308c1f83c4124fc4b90d15c274face7" kind="function"><name>make</name></member>
-  </compound>
-  <compound refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl" kind="class"><name>gr::mimo_ofdm::matrix_transpose_impl</name>
-    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1a4b21274e1880dc577b5015d0ed05ed20" kind="variable"><name>d_input_len</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1a7c4513216c33b6aea9c81aa2648e0edc" kind="variable"><name>d_output_len</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1ac073d7d316fec436384f4cb75fd4cb44" kind="variable"><name>d_interp_factor</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1a1642d79ccd492a70ff23c0f2d9c1b0b7" kind="variable"><name>d_tags</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1ada7bb17555f65310198032792cb110d7" kind="function"><name>calculate_output_stream_length</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1a1bfb87aad585a79d8d3df641cdddaf74" kind="function"><name>matrix_transpose_impl</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1a43c7b89588878eab0928f60aa8693c65" kind="function"><name>~matrix_transpose_impl</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1a2e62e8304f8173f5815cb11267f12d6c" kind="function"><name>work</name></member>
   </compound>
   <compound refid="classgr_1_1mimo__ofdm__jrc_1_1matrix__transpose__impl" kind="class"><name>gr::mimo_ofdm_jrc::matrix_transpose_impl</name>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1matrix__transpose__impl_1a0512a5c2356b550df6285c7e18c2e94a" kind="variable"><name>d_input_len</name></member>
@@ -354,6 +344,16 @@
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1matrix__transpose__impl_1a1ff7517ed59b4ffd785d03e09081dd63" kind="function"><name>~matrix_transpose_impl</name></member>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1matrix__transpose__impl_1ac8312e7030fbd0051f7cce5223951ac1" kind="function"><name>work</name></member>
   </compound>
+  <compound refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl" kind="class"><name>gr::mimo_ofdm::matrix_transpose_impl</name>
+    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1a4b21274e1880dc577b5015d0ed05ed20" kind="variable"><name>d_input_len</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1a7c4513216c33b6aea9c81aa2648e0edc" kind="variable"><name>d_output_len</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1ac073d7d316fec436384f4cb75fd4cb44" kind="variable"><name>d_interp_factor</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1a1642d79ccd492a70ff23c0f2d9c1b0b7" kind="variable"><name>d_tags</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1ada7bb17555f65310198032792cb110d7" kind="function"><name>calculate_output_stream_length</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1a1bfb87aad585a79d8d3df641cdddaf74" kind="function"><name>matrix_transpose_impl</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1a43c7b89588878eab0928f60aa8693c65" kind="function"><name>~matrix_transpose_impl</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1matrix__transpose__impl_1a2e62e8304f8173f5815cb11267f12d6c" kind="function"><name>work</name></member>
+  </compound>
   <compound refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__equalizer" kind="class"><name>gr::mimo_ofdm_jrc::mimo_ofdm_equalizer</name>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__equalizer_1a6d76aa2fb84ce76e9ebc7d2dd044fd87" kind="typedef"><name>sptr</name></member>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__equalizer_1ac26346df56daa99ac595bbdce725f236" kind="function"><name>set_estimator</name></member>
@@ -361,72 +361,6 @@
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__equalizer_1a8a068136a500bbe8388e4eca3b323bdc" kind="function"><name>set_frequency</name></member>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__equalizer_1a2e2ae50ca0317c24384add100e5410cd" kind="function"><name>set_stats_record</name></member>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__equalizer_1a1daf744671f0165f07e8287cebe4e7e7" kind="function"><name>make</name></member>
-  </compound>
-  <compound refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl" kind="class"><name>gr::mimo_ofdm::mimo_ofdm_equalizer_impl</name>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a024ff313efcf1f391dca20e5186a6fe0" kind="variable"><name>tags</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1446f24f9aae3dff12761d7b3942b936" kind="variable"><name>d_pilot_carriers</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a12952e2a0cceb154289118f3dc7da2ff" kind="variable"><name>d_data_carriers</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a2437914e74c7b2231fa2b2043017fa7c" kind="variable"><name>d_nondata_carriers</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a85793fa3152ed161f1ebccc838343433" kind="variable"><name>d_active_carriers</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a92c516f4c30837918d152690996f5eef" kind="variable"><name>d_chan_est_file</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a523761a5c1d5292a502cd72923955182" kind="variable"><name>d_comm_log_file</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a8c032830e17c7b62733263cac70f79e5" kind="variable"><name>d_pilot_symbols</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1af3038f1dcef4fd0d7bb4f27f00015fd6" kind="variable"><name>d_mapped_ltf_symbols</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a069dbb964acb94dfcb14b1e8c5ec1bdb" kind="variable"><name>d_N_mimo_ltf</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a52a8ab7ba873014fa1660b5b3668cbb2" kind="variable"><name>d_N_tx_antenna</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a3b338eea108e19458a8e2bbcb14ffe82" kind="variable"><name>mapped_ltf_mat</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a9c45975a08313692692254491e60f2f6" kind="variable"><name>d_stats_record</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ab833acb0bef66a295e138adfbc51ee1a" kind="variable"><name>d_stat_record_update</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1addd3261b8e40e97ff948c745962130ef" kind="variable"><name>d_symbol_ind</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1ea532026f60454030d10c2d7f6577ea" kind="variable"><name>d_fft_len</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1033b36487c7c489470ae5560c104655" kind="variable"><name>d_cp_len</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a72b022454b2e7854956352b9d3d8163a" kind="variable"><name>d_N_pilot_carr</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a4ad6160c8e116667579d9ff433c106d2" kind="variable"><name>d_N_data_carr</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1aea97d4a19b11542aae377ce8a1994bf4" kind="variable"><name>d_N_active_carr</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1afe5cd7bce68eb581ab0286b23cbb6314" kind="variable"><name>total_out</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ae7ccf74b60302ed227509f8c605600c4" kind="variable"><name>d_freq</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a844721e2a2bb1535a6bc5c1e4c14f1e9" kind="variable"><name>d_bw</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1acaa52b8797ce150e5ad1498ad6f93841" kind="variable"><name>d_freq_offset_from_synclong</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ab16f5b4384d8338179937f0e3c883805" kind="variable"><name>d_er</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ae02dab024ee7fa67f45ecd0f8b03df68" kind="variable"><name>d_epsilon0</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a3f92efa818c7fcb3a523fbe6dfede46d" kind="variable"><name>d_snr_est</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1ea464faa26551a335b6969b17faa844" kind="variable"><name>d_precoded_snr_est</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a5a9baeda997efa53c1be239f7fd1477c" kind="variable"><name>chan_est_mean_pmt</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ad9ab9ececc8784dcd740b36764d89449" kind="variable"><name>sig_decode_success</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a852b4597c2d6e619cae7ae1d14ccff71" kind="variable"><name>equalize_done</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1e1d29dabf54a51ee3bc90d673ee05f6" kind="variable"><name>data_length_SIG</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a465ed477008c9b9dd26aaf4b2dcae00d" kind="variable"><name>n_ofdm_symbols_SIG</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a6ab29658a02c7d17061045641bcd1008" kind="variable"><name>mcs_SIG</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ae6173aaf2b516d0445cb2a3c5e685b3e" kind="variable"><name>packet_type_SIG</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a5308f8ff85df128734832d307fce5e98" kind="variable"><name>d_estimator_algo</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ad59678e723ac109a797341f011cf024a" kind="variable"><name>signal_power_sum</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a3a3563050b218916863a3d45ae49b487" kind="variable"><name>noise_power_sum</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a81f7c70f7b1e0f153657d723ae122289" kind="variable"><name>snr_est_count</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a7f7675f5bd05808e02437633fbe5a4df" kind="variable"><name>d_H</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a4b5dcf6b86eadae097a53fb1c6f7e47e" kind="variable"><name>d_H_mimo</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a19822a234732fe8fee078d34af1a078f" kind="variable"><name>d_H_mimo_temp</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1d1cefe1c12e413bbd9a002763c36ef8" kind="variable"><name>rx_bits</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ad2911efe421a995f072c2717e124e263" kind="variable"><name>d_lft_seq</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a558953599a85b5e142b6ffb1d8f6be76" kind="variable"><name>d_est_rx_pilots</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1af0398f62f802778750d5c0df3e72ef51" kind="variable"><name>d_prev_pilots</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ac56c0b66257af8e0f50f812563c95fa7" kind="variable"><name>d_decoder</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a7940c61174bbed2f8c976a17c7c36ad4" kind="variable"><name>modulator_SIG</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a29c1b30a2d02ea16e45774c1e9873787" kind="variable"><name>d_bpsk</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1abe3014adb7e3714604380db61fd7c350" kind="variable"><name>d_qpsk</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a0b8d125d12dcefaab83e5d35b8b104c2" kind="variable"><name>d_16qam</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a067445bd95790ac939cbafd1993193bc" kind="variable"><name>perf_display_interval</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1af4372912a8025e70c5398f0fadb0ba9e" kind="variable"><name>last_perf_time</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a736b9e2976e81227fbb3bc8d62942ed3" kind="function"><name>mimo_ofdm_equalizer_impl</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a5ef3f8fc6090681d61f0c78923d94587" kind="function"><name>~mimo_ofdm_equalizer_impl</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ab119260e1193572d5646af95d5e0464f" kind="function"><name>decode_signal_field</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1aa52d93a2dcad19aed90c60b8d8fc795a" kind="function"><name>symbol_equalize</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ae4d140289ee854d018765f224c12d3bc" kind="function"><name>estimate_residual_cfo</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a09c10e808e063f728aa2dcc06d53d95f" kind="function"><name>set_estimator</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a517406b3d53e2e261caa673993d1e4f0" kind="function"><name>set_bandwidth</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ab50d4aba4f0bf4c1f6c0386a8e89dbc0" kind="function"><name>set_frequency</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a7c15d6973e96bb9d291ede5ca7e15480" kind="function"><name>set_stats_record</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a79809e035f7653a9e6571476817c8ac4" kind="function"><name>forecast</name></member>
-    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a2924b53998602c4f8c1519b8fc752d90" kind="function"><name>general_work</name></member>
   </compound>
   <compound refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__equalizer__impl" kind="class"><name>gr::mimo_ofdm_jrc::mimo_ofdm_equalizer_impl</name>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__equalizer__impl_1ae903efe42315a92f648d4289f9619619" kind="variable"><name>tags</name></member>
@@ -493,6 +427,72 @@
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__equalizer__impl_1a8b8d3e1db4628e8c11e8824b2ab96d98" kind="function"><name>set_stats_record</name></member>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__equalizer__impl_1ae644cdcf8263b6e5cb1e62e0d54b789a" kind="function"><name>forecast</name></member>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__equalizer__impl_1a5c605260841cf7f7ae7d9ffb09028c33" kind="function"><name>general_work</name></member>
+  </compound>
+  <compound refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl" kind="class"><name>gr::mimo_ofdm::mimo_ofdm_equalizer_impl</name>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a024ff313efcf1f391dca20e5186a6fe0" kind="variable"><name>tags</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1446f24f9aae3dff12761d7b3942b936" kind="variable"><name>d_pilot_carriers</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a12952e2a0cceb154289118f3dc7da2ff" kind="variable"><name>d_data_carriers</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a2437914e74c7b2231fa2b2043017fa7c" kind="variable"><name>d_nondata_carriers</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a85793fa3152ed161f1ebccc838343433" kind="variable"><name>d_active_carriers</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a92c516f4c30837918d152690996f5eef" kind="variable"><name>d_chan_est_file</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a523761a5c1d5292a502cd72923955182" kind="variable"><name>d_comm_log_file</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a8c032830e17c7b62733263cac70f79e5" kind="variable"><name>d_pilot_symbols</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1af3038f1dcef4fd0d7bb4f27f00015fd6" kind="variable"><name>d_mapped_ltf_symbols</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a069dbb964acb94dfcb14b1e8c5ec1bdb" kind="variable"><name>d_N_mimo_ltf</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a52a8ab7ba873014fa1660b5b3668cbb2" kind="variable"><name>d_N_tx_antenna</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a3b338eea108e19458a8e2bbcb14ffe82" kind="variable"><name>mapped_ltf_mat</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a9c45975a08313692692254491e60f2f6" kind="variable"><name>d_stats_record</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ab833acb0bef66a295e138adfbc51ee1a" kind="variable"><name>d_stat_record_update</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1addd3261b8e40e97ff948c745962130ef" kind="variable"><name>d_symbol_ind</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1ea532026f60454030d10c2d7f6577ea" kind="variable"><name>d_fft_len</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1033b36487c7c489470ae5560c104655" kind="variable"><name>d_cp_len</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a72b022454b2e7854956352b9d3d8163a" kind="variable"><name>d_N_pilot_carr</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a4ad6160c8e116667579d9ff433c106d2" kind="variable"><name>d_N_data_carr</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1aea97d4a19b11542aae377ce8a1994bf4" kind="variable"><name>d_N_active_carr</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1afe5cd7bce68eb581ab0286b23cbb6314" kind="variable"><name>total_out</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ae7ccf74b60302ed227509f8c605600c4" kind="variable"><name>d_freq</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a844721e2a2bb1535a6bc5c1e4c14f1e9" kind="variable"><name>d_bw</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1acaa52b8797ce150e5ad1498ad6f93841" kind="variable"><name>d_freq_offset_from_synclong</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ab16f5b4384d8338179937f0e3c883805" kind="variable"><name>d_er</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ae02dab024ee7fa67f45ecd0f8b03df68" kind="variable"><name>d_epsilon0</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a3f92efa818c7fcb3a523fbe6dfede46d" kind="variable"><name>d_snr_est</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1ea464faa26551a335b6969b17faa844" kind="variable"><name>d_precoded_snr_est</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a5a9baeda997efa53c1be239f7fd1477c" kind="variable"><name>chan_est_mean_pmt</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ad9ab9ececc8784dcd740b36764d89449" kind="variable"><name>sig_decode_success</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a852b4597c2d6e619cae7ae1d14ccff71" kind="variable"><name>equalize_done</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1e1d29dabf54a51ee3bc90d673ee05f6" kind="variable"><name>data_length_SIG</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a465ed477008c9b9dd26aaf4b2dcae00d" kind="variable"><name>n_ofdm_symbols_SIG</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a6ab29658a02c7d17061045641bcd1008" kind="variable"><name>mcs_SIG</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ae6173aaf2b516d0445cb2a3c5e685b3e" kind="variable"><name>packet_type_SIG</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a5308f8ff85df128734832d307fce5e98" kind="variable"><name>d_estimator_algo</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ad59678e723ac109a797341f011cf024a" kind="variable"><name>signal_power_sum</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a3a3563050b218916863a3d45ae49b487" kind="variable"><name>noise_power_sum</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a81f7c70f7b1e0f153657d723ae122289" kind="variable"><name>snr_est_count</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a7f7675f5bd05808e02437633fbe5a4df" kind="variable"><name>d_H</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a4b5dcf6b86eadae097a53fb1c6f7e47e" kind="variable"><name>d_H_mimo</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a19822a234732fe8fee078d34af1a078f" kind="variable"><name>d_H_mimo_temp</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1d1cefe1c12e413bbd9a002763c36ef8" kind="variable"><name>rx_bits</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ad2911efe421a995f072c2717e124e263" kind="variable"><name>d_lft_seq</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a558953599a85b5e142b6ffb1d8f6be76" kind="variable"><name>d_est_rx_pilots</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1af0398f62f802778750d5c0df3e72ef51" kind="variable"><name>d_prev_pilots</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ac56c0b66257af8e0f50f812563c95fa7" kind="variable"><name>d_decoder</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a7940c61174bbed2f8c976a17c7c36ad4" kind="variable"><name>modulator_SIG</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a29c1b30a2d02ea16e45774c1e9873787" kind="variable"><name>d_bpsk</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1abe3014adb7e3714604380db61fd7c350" kind="variable"><name>d_qpsk</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a0b8d125d12dcefaab83e5d35b8b104c2" kind="variable"><name>d_16qam</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a067445bd95790ac939cbafd1993193bc" kind="variable"><name>perf_display_interval</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1af4372912a8025e70c5398f0fadb0ba9e" kind="variable"><name>last_perf_time</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a736b9e2976e81227fbb3bc8d62942ed3" kind="function"><name>mimo_ofdm_equalizer_impl</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a5ef3f8fc6090681d61f0c78923d94587" kind="function"><name>~mimo_ofdm_equalizer_impl</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ab119260e1193572d5646af95d5e0464f" kind="function"><name>decode_signal_field</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1aa52d93a2dcad19aed90c60b8d8fc795a" kind="function"><name>symbol_equalize</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ae4d140289ee854d018765f224c12d3bc" kind="function"><name>estimate_residual_cfo</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a09c10e808e063f728aa2dcc06d53d95f" kind="function"><name>set_estimator</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a517406b3d53e2e261caa673993d1e4f0" kind="function"><name>set_bandwidth</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ab50d4aba4f0bf4c1f6c0386a8e89dbc0" kind="function"><name>set_frequency</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a7c15d6973e96bb9d291ede5ca7e15480" kind="function"><name>set_stats_record</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a79809e035f7653a9e6571476817c8ac4" kind="function"><name>forecast</name></member>
+    <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a2924b53998602c4f8c1519b8fc752d90" kind="function"><name>general_work</name></member>
   </compound>
   <compound refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar" kind="class"><name>gr::mimo_ofdm_jrc::mimo_ofdm_radar</name>
     <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__ofdm__radar_1a1023fa8b850be81e98ddac44cdb24cc2" kind="typedef"><name>sptr</name></member>
@@ -1371,25 +1371,6 @@
     <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1aed0c24b9b7deeee26cbb4c40dd8123d2" kind="function"><name>setup_targets</name></member>
     <member refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl_1ad656f4e91f9042f9be96d7b196358483" kind="function"><name>work</name></member>
   </compound>
-  <compound refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot" kind="class"><name>gr::mimo_ofdm_jrc::time_plot</name>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a9d41975e43deb320dae72f22763ec552" kind="variable"><name>d_interval</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a7152f10854498f8e756b9983961daaf6" kind="variable"><name>d_y_label</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1ab53ab7c5109dd1430528e8c341934e17" kind="variable"><name>d_y_tag</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1aca2862f4ac09e58ab83fc0d8336dbf54" kind="variable"><name>d_axis_y</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a2875992f212ff0109a223d2398d57c70" kind="variable"><name>d_y</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1aa43bd90c0bfdfff435b335aa835fb50b" kind="variable"><name>d_y_read</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a6147455ad80983ae714ed3301f8b50b0" kind="variable"><name>d_time_window</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a12174591cd85b1150e804d0401006d1c" kind="variable"><name>d_plot</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a71093ac29279e0d5b91ee1e08411e952" kind="variable"><name>d_symbol</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a103de5562fcf97d263f882e815d101a8" kind="variable"><name>d_grid</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a0ba7cfd2e0cbd241fa5954cb8620298b" kind="variable"><name>d_marker</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1ab980b1419493c7822e24e89a82dc4db2" kind="variable"><name>d_timer</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a9fe34b664af6f52234e8f6840cb4362c" kind="variable"><name>d_refresh_counter</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a2422f63fd4b6930722b9c6a4b4fc1d74" kind="function"><name>time_plot</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1ac930447c29814c4ec85c31e3bf95a700" kind="function"><name>~time_plot</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a28794bbf18d1198dd3de7cf3007a1c89" kind="function"><name>resizeEvent</name></member>
-    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a5374cf7fbe7a35367dac407f14b75556" kind="slot"><name>refresh</name></member>
-  </compound>
   <compound refid="classgr_1_1mimo__ofdm_1_1time__plot" kind="class"><name>gr::mimo_ofdm::time_plot</name>
     <member refid="classgr_1_1mimo__ofdm_1_1time__plot_1ab74b4c0cfdad7b6463bc00cbdf442b0d" kind="variable"><name>d_interval</name></member>
     <member refid="classgr_1_1mimo__ofdm_1_1time__plot_1ac2831195b590e56575563b9316f8767f" kind="variable"><name>d_y_label</name></member>
@@ -1408,6 +1389,25 @@
     <member refid="classgr_1_1mimo__ofdm_1_1time__plot_1a98e33b7b7e39b76c1a0f9a7b6d89bdb3" kind="function"><name>~time_plot</name></member>
     <member refid="classgr_1_1mimo__ofdm_1_1time__plot_1a4057dafd97c8c2884c7ebfd367be9735" kind="function"><name>resizeEvent</name></member>
     <member refid="classgr_1_1mimo__ofdm_1_1time__plot_1a0b63cc7495ddbf88a8d9062419d87133" kind="slot"><name>refresh</name></member>
+  </compound>
+  <compound refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot" kind="class"><name>gr::mimo_ofdm_jrc::time_plot</name>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a9d41975e43deb320dae72f22763ec552" kind="variable"><name>d_interval</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a7152f10854498f8e756b9983961daaf6" kind="variable"><name>d_y_label</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1ab53ab7c5109dd1430528e8c341934e17" kind="variable"><name>d_y_tag</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1aca2862f4ac09e58ab83fc0d8336dbf54" kind="variable"><name>d_axis_y</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a2875992f212ff0109a223d2398d57c70" kind="variable"><name>d_y</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1aa43bd90c0bfdfff435b335aa835fb50b" kind="variable"><name>d_y_read</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a6147455ad80983ae714ed3301f8b50b0" kind="variable"><name>d_time_window</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a12174591cd85b1150e804d0401006d1c" kind="variable"><name>d_plot</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a71093ac29279e0d5b91ee1e08411e952" kind="variable"><name>d_symbol</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a103de5562fcf97d263f882e815d101a8" kind="variable"><name>d_grid</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a0ba7cfd2e0cbd241fa5954cb8620298b" kind="variable"><name>d_marker</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1ab980b1419493c7822e24e89a82dc4db2" kind="variable"><name>d_timer</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a9fe34b664af6f52234e8f6840cb4362c" kind="variable"><name>d_refresh_counter</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a2422f63fd4b6930722b9c6a4b4fc1d74" kind="function"><name>time_plot</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1ac930447c29814c4ec85c31e3bf95a700" kind="function"><name>~time_plot</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a28794bbf18d1198dd3de7cf3007a1c89" kind="function"><name>resizeEvent</name></member>
+    <member refid="classgr_1_1mimo__ofdm__jrc_1_1time__plot_1a5374cf7fbe7a35367dac407f14b75556" kind="slot"><name>refresh</name></member>
   </compound>
   <compound refid="classgr_1_1blocks_1_1udp__sink" kind="class"><name>gr::blocks::udp_sink</name>
     <member refid="classgr_1_1blocks_1_1udp__sink_1aefd1441f5910e3aba7475b7d3179f9c9" kind="typedef"><name>sptr</name></member>
@@ -1876,6 +1876,8 @@
   <compound refid="dir_63b54a8dd3f28ad6daeb84257c8ad9c7" kind="dir"><name>mimo_ofdm_jrc</name>
   </compound>
   <compound refid="dir_781652b3efbab002fc25f48e52ed3e5f" kind="dir"><name>old_version</name>
+  </compound>
+  <compound refid="dir_ae569aa12517fd60f3de836732f8f02c" kind="dir"><name>old_version</name>
   </compound>
   <compound refid="dir_f2cd86917185299abf5a1f0679072f3c" kind="dir"><name>other</name>
   </compound>

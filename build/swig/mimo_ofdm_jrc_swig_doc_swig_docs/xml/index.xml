@@ -214,4 +214,6 @@
   </compound>
   <compound refid="dir_63b54a8dd3f28ad6daeb84257c8ad9c7" kind="dir"><name>mimo_ofdm_jrc</name>
   </compound>
+  <compound refid="dir_ae569aa12517fd60f3de836732f8f02c" kind="dir"><name>old_version</name>
+  </compound>
 </doxygenindex>

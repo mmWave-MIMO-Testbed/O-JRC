@@ -4,16 +4,7 @@
     <compoundname>NDP_Generator.h</compoundname>
     <includes refid="api_8h" local="no">mimo_ofdm_jrc/api.h</includes>
     <includes local="no">gnuradio/sync_block.h</includes>
-    <includedby refid="NDP__Generator__impl_8h" local="no">NDP_Generator_impl.h</includedby>
     <incdepgraph>
-      <node id="1">
-        <label>NDP_Generator.h</label>
-        <link refid="NDP__Generator_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
       <node id="4">
         <label>gnuradio/sync_block.h</label>
       </node>
@@ -26,19 +17,15 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-    </incdepgraph>
-    <invincdepgraph>
       <node id="1">
         <label>NDP_Generator.h</label>
         <link refid="NDP__Generator_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
-      <node id="2">
-        <label>NDP_Generator_impl.h</label>
-        <link refid="NDP__Generator__impl_8h"/>
-      </node>
-    </invincdepgraph>
+    </incdepgraph>
     <innerclass refid="classgr_1_1mimo__ofdm__jrc_1_1NDP__Generator" prot="public">gr::mimo_ofdm_jrc::NDP_Generator</innerclass>
     <innernamespace refid="namespacegr">gr</innernamespace>
     <innernamespace refid="namespacegr_1_1mimo__ofdm__jrc">gr::mimo_ofdm_jrc</innernamespace>
@@ -46,6 +33,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/NDP_Generator.h"/>
+    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/old_version/NDP_Generator.h"/>
   </compounddef>
 </doxygen>

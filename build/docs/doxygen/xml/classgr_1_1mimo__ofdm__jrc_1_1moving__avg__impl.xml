@@ -263,14 +263,14 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>gr::sync_block</label>
-      </node>
       <node id="2">
         <label>gr::mimo_ofdm_jrc::moving_avg</label>
         <link refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="3">
+        <label>sync_block</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
@@ -280,14 +280,14 @@
         <childnode refid="2" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="3">
-        <label>gr::sync_block</label>
-      </node>
       <node id="2">
         <label>gr::mimo_ofdm_jrc::moving_avg</label>
         <link refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg"/>
         <childnode refid="3" relation="public-inheritance">
         </childnode>
+      </node>
+      <node id="3">
+        <label>sync_block</label>
       </node>
     </collaborationgraph>
     <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/moving_avg_impl.h" line="31" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/moving_avg_impl.h" bodystart="30" bodyend="60"/>

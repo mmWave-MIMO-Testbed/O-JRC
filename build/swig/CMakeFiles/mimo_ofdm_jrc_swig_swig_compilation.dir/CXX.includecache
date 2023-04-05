@@ -53,10 +53,6 @@ mimo_ofdm_jrc/usrp_mimo_trx.h
 /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/swig/mimo_ofdm_jrc/usrp_mimo_trx.h
 mimo_ofdm_jrc/zero_pad.h
 /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/swig/mimo_ofdm_jrc/zero_pad.h
-mimo_ofdm_jrc/NDP_Generator.h
-/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/swig/mimo_ofdm_jrc/NDP_Generator.h
-mimo_ofdm_jrc/NDP_Gen_UDP.h
-/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/swig/mimo_ofdm_jrc/NDP_Gen_UDP.h
 mimo_ofdm_jrc/fft_peak_detect.h
 /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/swig/mimo_ofdm_jrc/fft_peak_detect.h
 mimo_ofdm_jrc/frame_detector.h
@@ -99,8 +95,4 @@ mimo_ofdm_jrc/usrp_mimo_trx.h
 /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/swig/mimo_ofdm_jrc/usrp_mimo_trx.h
 mimo_ofdm_jrc/zero_pad.h
 /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/swig/mimo_ofdm_jrc/zero_pad.h
-mimo_ofdm_jrc/NDP_Generator.h
-/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/swig/mimo_ofdm_jrc/NDP_Generator.h
-mimo_ofdm_jrc/NDP_Gen_UDP.h
-/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/swig/mimo_ofdm_jrc/NDP_Gen_UDP.h
 

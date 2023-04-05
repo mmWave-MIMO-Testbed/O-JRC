@@ -134,6 +134,7 @@
 /usr/local/share/doc/gr-mimo_ofdm_jrc/xml/ofdm__cyclic__prefix__remover__impl_8h.xml
 /usr/local/share/doc/gr-mimo_ofdm_jrc/xml/old__version_2mimo__radar__estimator__impl_8h.xml
 /usr/local/share/doc/gr-mimo_ofdm_jrc/xml/old__version_2moving__avg__impl_8h.xml
+/usr/local/share/doc/gr-mimo_ofdm_jrc/xml/dir_ae569aa12517fd60f3de836732f8f02c.xml
 /usr/local/share/doc/gr-mimo_ofdm_jrc/xml/old__version_2fft__peak__detect__impl_8h.xml
 /usr/local/share/doc/gr-mimo_ofdm_jrc/xml/old__version_2base_8h.xml
 /usr/local/share/doc/gr-mimo_ofdm_jrc/xml/classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator__impl.xml
@@ -713,6 +714,7 @@
 /usr/local/share/doc/gr-mimo_ofdm_jrc/html/resize.js
 /usr/local/share/doc/gr-mimo_ofdm_jrc/html/stream__decoder__impl_8h.html
 /usr/local/share/doc/gr-mimo_ofdm_jrc/html/classgr_1_1mimo__ofdm__jrc_1_1zero__pad.html
+/usr/local/share/doc/gr-mimo_ofdm_jrc/html/dir_ae569aa12517fd60f3de836732f8f02c.html
 /usr/local/share/doc/gr-mimo_ofdm_jrc/html/classgr_1_1mimo__ofdm__jrc_1_1fft__peak__detect.png
 /usr/local/share/doc/gr-mimo_ofdm_jrc/html/classgr_1_1mimo__ofdm_1_1stream__decoder__impl.js
 /usr/local/share/doc/gr-mimo_ofdm_jrc/html/classgr_1_1mimo__ofdm__jrc_1_1fft__peak__detect.html

@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/NDP_Gen_UDP_impl.h" line="30" column="27" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/NDP_Gen_UDP_impl.h" bodystart="30" bodyend="30"/>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/NDP_Gen_UDP_impl.h" line="30" column="27" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/NDP_Gen_UDP_impl.h" bodystart="30" bodyend="30"/>
       </memberdef>
       <memberdef kind="enum" id="namespacegr_1_1mimo__ofdm__jrc_1a9b8898f668aed18041b35b5d0e33cbd0" prot="public" static="no" strong="yes">
         <type></type>
@@ -129,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/NDP_Generator_impl.h" line="31" column="27" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/NDP_Generator_impl.h" bodystart="31" bodyend="31"/>
+        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/NDP_Generator_impl.h" line="31" column="27" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/NDP_Generator_impl.h" bodystart="31" bodyend="31"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
