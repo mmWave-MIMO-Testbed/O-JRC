@@ -65,8 +65,6 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
     "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_target_simulator.block.yml"
     "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_usrp_mimo_trx.block.yml"
     "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_zero_pad.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_NDP_Generator.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_NDP_Gen_UDP.block.yml"
     )
 endif()
 

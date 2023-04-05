@@ -39,6 +39,7 @@ install(FILES
     mimo_ofdm_jrc_target_simulator.block.yml
     mimo_ofdm_jrc_usrp_mimo_trx.block.yml
     mimo_ofdm_jrc_zero_pad.block.yml
-    mimo_ofdm_jrc_NDP_Generator.block.yml
-    mimo_ofdm_jrc_NDP_Gen_UDP.block.yml DESTINATION share/gnuradio/grc/blocks
+ #   mimo_ofdm_jrc_NDP_Generator.block.yml
+ #   mimo_ofdm_jrc_NDP_Gen_UDP.block.yml 
+    DESTINATION share/gnuradio/grc/blocks
 )

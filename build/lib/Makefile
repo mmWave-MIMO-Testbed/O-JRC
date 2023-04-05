@@ -185,30 +185,6 @@ gnuradio-mimo_ofdm_jrc/fast:
 	cd /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/build.make lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/build
 .PHONY : gnuradio-mimo_ofdm_jrc/fast
 
-NDP_Generator_impl.o: NDP_Generator_impl.cc.o
-.PHONY : NDP_Generator_impl.o
-
-# target to build an object file
-NDP_Generator_impl.cc.o:
-	cd /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/build.make lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/NDP_Generator_impl.cc.o
-.PHONY : NDP_Generator_impl.cc.o
-
-NDP_Generator_impl.i: NDP_Generator_impl.cc.i
-.PHONY : NDP_Generator_impl.i
-
-# target to preprocess a source file
-NDP_Generator_impl.cc.i:
-	cd /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/build.make lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/NDP_Generator_impl.cc.i
-.PHONY : NDP_Generator_impl.cc.i
-
-NDP_Generator_impl.s: NDP_Generator_impl.cc.s
-.PHONY : NDP_Generator_impl.s
-
-# target to generate assembly for a file
-NDP_Generator_impl.cc.s:
-	cd /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build && $(MAKE) $(MAKESILENT) -f lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/build.make lib/CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/NDP_Generator_impl.cc.s
-.PHONY : NDP_Generator_impl.cc.s
-
 base.o: base.cc.o
 .PHONY : base.o
 
@@ -967,9 +943,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... gnuradio-mimo_ofdm_jrc"
-	@echo "... NDP_Generator_impl.o"
-	@echo "... NDP_Generator_impl.i"
-	@echo "... NDP_Generator_impl.s"
 	@echo "... base.o"
 	@echo "... base.i"
 	@echo "... base.s"

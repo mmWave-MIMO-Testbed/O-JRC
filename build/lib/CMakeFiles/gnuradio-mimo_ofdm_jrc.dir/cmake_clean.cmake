@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/NDP_Generator_impl.cc.o"
-  "CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/NDP_Generator_impl.cc.o.d"
   "CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/base.cc.o"
   "CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/base.cc.o.d"
   "CMakeFiles/gnuradio-mimo_ofdm_jrc.dir/fft_peak_detect_impl.cc.o"

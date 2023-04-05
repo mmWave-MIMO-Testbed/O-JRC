@@ -44,6 +44,7 @@ install(FILES
     target_simulator.h
     usrp_mimo_trx.h
     zero_pad.h
-    NDP_Generator.h
-    NDP_Gen_UDP.h DESTINATION include/mimo_ofdm_jrc
+ #   NDP_Generator.h
+ #   NDP_Gen_UDP.h 
+    DESTINATION include/mimo_ofdm_jrc
 )
