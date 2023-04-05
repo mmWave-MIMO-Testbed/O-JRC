@@ -66,9 +66,7 @@ list(APPEND mimo_ofdm_jrc_sources
     target_simulator_impl.cc
     usrp_mimo_trx_impl.cc
     zero_pad_impl.cc
- #   NDP_Generator_impl.cc
- #   NDP_Gen_UDP_impl.cc 
- )
+   )
 
 set(mimo_ofdm_jrc_sources "${mimo_ofdm_jrc_sources}" PARENT_SCOPE)
 if(NOT mimo_ofdm_jrc_sources)

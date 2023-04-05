@@ -7,7 +7,7 @@ parameters:
   label: MCS
   dtype: int
   default: mimo_ofdm_jrc.BPSK_1_2
-  options: [mimo_ofdm_jrc.BPSK_1_2, mimo_ofdm_jrc.BPSK_3_4, mimo_ofdm_jrc.QPSK_1_2, mimo_ofdm_jrc.QPSK_3_4,
+  options: [BPSK_1_2, mimo_ofdm_jrc.BPSK_3_4, mimo_ofdm_jrc.QPSK_1_2, mimo_ofdm_jrc.QPSK_3_4,
       mimo_ofdm_jrc.QAM16_1_2, mimo_ofdm_jrc.QAM16_3_4]
   option_labels: [BPSK 1/2, BPSK 3/4, QPSK 1/2, QPSK 3/4, 16QAM 1/2, 16QAM 3/4]
 - id: data_len
