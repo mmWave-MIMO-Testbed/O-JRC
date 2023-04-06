@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="34" column="17" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="34" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="34" column="17" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1a089b9c7022633517b4e9b8da54485b50" prot="private" static="no" mutable="no">
         <type>const int</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="35" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="35" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="35" column="19" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1a07e5f097683852cff1875264836849a0" prot="private" static="no" mutable="no">
         <type>const int</type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="36" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="36" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="36" column="19" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1a8c4a118d3f93f7fb05e7d1ad8622b37c" prot="private" static="no" mutable="no">
         <type>const int</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="37" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="37" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="37" column="19" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1aa212c0ab8ca7faffad1f7cecc5bb1819" prot="private" static="no" mutable="no">
         <type>const int</type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="38" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="38" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="38" column="19" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1a6d4a480226c2edc299c7a152f62eb1df" prot="private" static="no" mutable="no">
         <type>const int</type>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="39" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="39" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="39" column="19" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1af98c4d6f6a4f636f2799ee6f040f05b4" prot="private" static="no" mutable="no">
         <type>const bool</type>
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="40" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="40" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="40" column="20" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1ad2f93aecf2eac4cffbfadaa11a2ac8ad" prot="private" static="no" mutable="no">
         <type>gr_complex *</type>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="42" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="42" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="42" column="20" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="42" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1a3dbf37a0deb865c31495931dd7d13dc8" prot="private" static="no" mutable="no">
         <type>std::vector&lt; gr_complex &gt;</type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="44" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="44" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="44" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1a64c05210f1760101c88aa3edd2b05fc7" prot="private" static="no" mutable="no">
         <type>boost::circular_buffer&lt; std::vector&lt; gr_complex &gt; &gt;</type>
@@ -133,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="46" column="32" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="46" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="46" column="32" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="46" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1ab3bdb30c72fde040ccdb15edd3f91543" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -146,7 +146,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="47" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="47" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="47" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1a06af0965f4ee653f6bef39b3dc703556" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -159,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="48" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="48" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="48" column="14" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1a22cec72ec10042733731c343953cfe9b" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -172,7 +172,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="49" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="49" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="49" column="14" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="49" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -191,7 +191,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="52" column="11"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="52" column="11"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -255,7 +255,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="55" column="7"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="55" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1a7c153725412a4e331bce1a054a339057" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -268,7 +268,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="67" column="7"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="67" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1a030118d0badb73db482c8c2c75526b22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -285,7 +285,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="69" column="13"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="69" column="13"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1aab0d1a1826dd9a0bd9dd032348c7e85e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -314,7 +314,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="72" column="11"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="72" column="11"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -343,7 +343,7 @@
         <label>mimo_radar_estimator_2</label>
       </node>
     </collaborationgraph>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="32" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="31" bodyend="78"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" line="32" column="1" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h" bodystart="31" bodyend="78"/>
     <listofallmembers>
       <member refid="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1a9f3eacf2d34799d5efc93d871822bb27" prot="protected" virt="non-virtual"><scope>gr::mimo_ofdm::mimo_radar_estimator_2_impl</scope><name>calculate_output_stream_length</name></member>
       <member refid="classgr_1_1mimo__ofdm_1_1mimo__radar__estimator__2__impl_1a22cec72ec10042733731c343953cfe9b" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::mimo_radar_estimator_2_impl</scope><name>d_background_recording</name></member>

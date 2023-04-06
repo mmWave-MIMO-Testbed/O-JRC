@@ -19,6 +19,15 @@
       <node id="2">
         <label>mimo_ofdm/target_simulator.h</label>
       </node>
+      <node id="4">
+        <label>gnuradio/fft/fft.h</label>
+      </node>
+      <node id="6">
+        <label>mimo_ofdm/api.h</label>
+      </node>
+      <node id="7">
+        <label>gnuradio/block.h</label>
+      </node>
       <node id="5">
         <label>utils.h</label>
         <link refid="old__version_2utils_8h"/>
@@ -35,14 +44,11 @@
         <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>gnuradio/fft/fft.h</label>
+      <node id="11">
+        <label>iostream</label>
       </node>
-      <node id="6">
-        <label>mimo_ofdm/api.h</label>
-      </node>
-      <node id="7">
-        <label>gnuradio/block.h</label>
+      <node id="8">
+        <label>gnuradio/config.h</label>
       </node>
       <node id="1">
         <label>target_simulator_impl.h</label>
@@ -56,12 +62,6 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
-      <node id="11">
-        <label>iostream</label>
-      </node>
-      <node id="8">
-        <label>gnuradio/config.h</label>
-      </node>
     </incdepgraph>
     <innerclass refid="classgr_1_1mimo__ofdm_1_1target__simulator__impl" prot="public">gr::mimo_ofdm::target_simulator_impl</innerclass>
     <innernamespace refid="namespacegr">gr</innernamespace>
@@ -70,6 +70,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/target_simulator_impl.h"/>
   </compounddef>
 </doxygen>

@@ -12,12 +12,6 @@
       <node id="3">
         <label>gnuradio/attributes.h</label>
       </node>
-      <node id="2">
-        <label>mimo_ofdm_jrc/api.h</label>
-        <link refid="api_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="1">
         <label>moving_avg.h</label>
         <link refid="moving__avg_8h"/>
@@ -26,17 +20,23 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
+      <node id="2">
+        <label>mimo_ofdm_jrc/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="2">
-        <label>moving_avg_impl.h</label>
-        <link refid="moving__avg__impl_8h"/>
-      </node>
       <node id="1">
         <label>moving_avg.h</label>
         <link refid="moving__avg_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
+      </node>
+      <node id="2">
+        <label>moving_avg_impl.h</label>
+        <link refid="moving__avg__impl_8h"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classgr_1_1mimo__ofdm__jrc_1_1moving__avg" prot="public">gr::mimo_ofdm_jrc::moving_avg</innerclass>
@@ -46,6 +46,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/moving_avg.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/moving_avg.h"/>
   </compounddef>
 </doxygen>

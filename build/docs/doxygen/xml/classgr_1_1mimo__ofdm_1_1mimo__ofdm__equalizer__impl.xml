@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="38" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="38" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="38" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1446f24f9aae3dff12761d7b3942b936" prot="private" static="no" mutable="no">
         <type>std::vector&lt; int &gt;</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="40" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="40" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="40" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a12952e2a0cceb154289118f3dc7da2ff" prot="private" static="no" mutable="no">
         <type>std::vector&lt; int &gt;</type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="41" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="41" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="41" column="20" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a2437914e74c7b2231fa2b2043017fa7c" prot="private" static="no" mutable="no">
         <type>std::vector&lt; int &gt;</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="42" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="42" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="42" column="20" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="42" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a85793fa3152ed161f1ebccc838343433" prot="private" static="no" mutable="no">
         <type>std::vector&lt; int &gt;</type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="44" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="44" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="44" column="20" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a92c516f4c30837918d152690996f5eef" prot="private" static="no" mutable="no">
         <type>const std::string</type>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="46" column="27" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="46" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="46" column="27" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="46" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a523761a5c1d5292a502cd72923955182" prot="private" static="no" mutable="no">
         <type>const std::string</type>
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="47" column="27" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="47" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="47" column="27" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a8c032830e17c7b62733263cac70f79e5" prot="private" static="no" mutable="no">
         <type>const std::vector&lt; std::vector&lt; gr_complex &gt; &gt;</type>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="49" column="27" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="49" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="49" column="27" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1af3038f1dcef4fd0d7bb4f27f00015fd6" prot="private" static="no" mutable="no">
         <type>const std::vector&lt; std::vector&lt; gr_complex &gt; &gt;</type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="50" column="27" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="50" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="50" column="27" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="50" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a069dbb964acb94dfcb14b1e8c5ec1bdb" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -133,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="51" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="51" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="51" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a52a8ab7ba873014fa1660b5b3668cbb2" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -146,7 +146,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="52" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="52" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="52" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a3b338eea108e19458a8e2bbcb14ffe82" prot="private" static="no" mutable="no">
         <type>Eigen::Matrix&lt; gr_complex, Eigen::Dynamic, Eigen::Dynamic &gt;</type>
@@ -159,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="53" column="24" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="53" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="53" column="24" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a9c45975a08313692692254491e60f2f6" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -172,7 +172,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="55" column="22" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="55" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="55" column="22" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ab833acb0bef66a295e138adfbc51ee1a" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -185,7 +185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="57" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="57" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="57" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1addd3261b8e40e97ff948c745962130ef" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -198,7 +198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="59" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="59" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="59" column="14" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="59" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1ea532026f60454030d10c2d7f6577ea" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -211,7 +211,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="61" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="61" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="61" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="61" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1033b36487c7c489470ae5560c104655" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -224,7 +224,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="62" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="62" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="62" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="62" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a72b022454b2e7854956352b9d3d8163a" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -237,7 +237,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="63" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="63" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="63" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a4ad6160c8e116667579d9ff433c106d2" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -250,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="64" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="64" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="64" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="64" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1aea97d4a19b11542aae377ce8a1994bf4" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -263,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="65" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="65" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="65" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1afe5cd7bce68eb581ab0286b23cbb6314" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -276,7 +276,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="68" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="68" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="68" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="68" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ae7ccf74b60302ed227509f8c605600c4" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -289,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="70" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="70" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="70" column="16" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="70" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a844721e2a2bb1535a6bc5c1e4c14f1e9" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -302,7 +302,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="71" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="71" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="71" column="16" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="71" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1acaa52b8797ce150e5ad1498ad6f93841" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -315,7 +315,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="73" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="73" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="73" column="16" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="73" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ab16f5b4384d8338179937f0e3c883805" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -328,7 +328,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="74" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="74" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="74" column="16" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ae02dab024ee7fa67f45ecd0f8b03df68" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -341,7 +341,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="75" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="75" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="75" column="16" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="75" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a3f92efa818c7fcb3a523fbe6dfede46d" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -354,7 +354,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="76" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="76" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="76" column="16" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="76" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1ea464faa26551a335b6969b17faa844" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -367,7 +367,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="77" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="77" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="77" column="16" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="77" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a5a9baeda997efa53c1be239f7fd1477c" prot="private" static="no" mutable="no">
         <type>pmt::pmt_t</type>
@@ -380,7 +380,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="79" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="79" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="79" column="20" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="79" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ad9ab9ececc8784dcd740b36764d89449" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -393,7 +393,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="81" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="81" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="81" column="14" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="81" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a852b4597c2d6e619cae7ae1d14ccff71" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -406,7 +406,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="82" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="82" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="82" column="14" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="82" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1e1d29dabf54a51ee3bc90d673ee05f6" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -419,7 +419,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="84" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="84" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="84" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a465ed477008c9b9dd26aaf4b2dcae00d" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -432,7 +432,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="85" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="85" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="85" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="85" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a6ab29658a02c7d17061045641bcd1008" prot="private" static="no" mutable="no">
         <type><ref refid="stream__encoder_8h_1abd65304eba67a105670298f46e3553ef" kindref="member">MCS</ref></type>
@@ -445,7 +445,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="86" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="86" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="86" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="86" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ae6173aaf2b516d0445cb2a3c5e685b3e" prot="private" static="no" mutable="no">
         <type><ref refid="stream__encoder_8h_1a9d6d29831204b75cf82daf4ddf245899" kindref="member">PACKET_TYPE</ref></type>
@@ -458,7 +458,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="87" column="29" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="87" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="87" column="29" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="87" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a5308f8ff85df128734832d307fce5e98" prot="private" static="no" mutable="no">
         <type><ref refid="mimo__ofdm__equalizer_8h_1a53c75848a335bb55766786f494c92b64" kindref="member">ChannelEstimator</ref></type>
@@ -471,7 +471,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="88" column="26" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="88" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="88" column="26" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="88" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ad59678e723ac109a797341f011cf024a" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -484,7 +484,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="90" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="90" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="90" column="16" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a3a3563050b218916863a3d45ae49b487" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -497,7 +497,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="91" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="91" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="91" column="16" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="91" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a81f7c70f7b1e0f153657d723ae122289" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -510,7 +510,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="92" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="92" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="92" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="92" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a7f7675f5bd05808e02437633fbe5a4df" prot="private" static="no" mutable="no">
         <type>gr_complex *</type>
@@ -523,7 +523,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="94" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="94" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="94" column="20" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="94" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a4b5dcf6b86eadae097a53fb1c6f7e47e" prot="private" static="no" mutable="no">
         <type>gr_complex *</type>
@@ -536,7 +536,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="95" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="95" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="95" column="20" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="95" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a19822a234732fe8fee078d34af1a078f" prot="private" static="no" mutable="no">
         <type>gr_complex *</type>
@@ -549,7 +549,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="96" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="96" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="96" column="20" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="96" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a1d1cefe1c12e413bbd9a002763c36ef8" prot="private" static="no" mutable="no">
         <type>uint8_t *</type>
@@ -562,7 +562,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="98" column="17" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="98" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="98" column="17" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="98" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ad2911efe421a995f072c2717e124e263" prot="private" static="no" mutable="no">
         <type>std::vector&lt; gr_complex &gt;</type>
@@ -575,7 +575,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="100" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="100" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="100" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="100" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a558953599a85b5e142b6ffb1d8f6be76" prot="private" static="no" mutable="no">
         <type>std::vector&lt; gr_complex &gt;</type>
@@ -588,7 +588,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="101" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="101" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="101" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="101" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1af0398f62f802778750d5c0df3e72ef51" prot="private" static="no" mutable="no">
         <type>gr_complex *</type>
@@ -601,7 +601,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="103" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="103" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="103" column="20" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ac56c0b66257af8e0f50f812563c95fa7" prot="private" static="no" mutable="no">
         <type><ref refid="classgr_1_1mimo__ofdm_1_1viterbi__decoder" kindref="compound">viterbi_decoder</ref></type>
@@ -614,7 +614,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="106" column="25" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="106" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="106" column="25" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="106" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a7940c61174bbed2f8c976a17c7c36ad4" prot="private" static="no" mutable="no">
         <type>boost::shared_ptr&lt; gr::digital::constellation &gt;</type>
@@ -627,7 +627,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="108" column="27" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="108" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="108" column="27" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="108" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a29c1b30a2d02ea16e45774c1e9873787" prot="private" static="no" mutable="no">
         <type>digital::constellation_bpsk::sptr</type>
@@ -640,7 +640,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="110" column="43" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="110" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="110" column="43" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="110" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1abe3014adb7e3714604380db61fd7c350" prot="private" static="no" mutable="no">
         <type>digital::constellation_qpsk::sptr</type>
@@ -653,7 +653,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="111" column="43" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="111" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="111" column="43" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="111" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a0b8d125d12dcefaab83e5d35b8b104c2" prot="private" static="no" mutable="no">
         <type>digital::constellation_16qam::sptr</type>
@@ -666,7 +666,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="112" column="44" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="112" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="112" column="44" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="112" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a067445bd95790ac939cbafd1993193bc" prot="private" static="no" mutable="no">
         <type>float</type>
@@ -679,7 +679,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="115" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="115" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="115" column="15" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="115" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1af4372912a8025e70c5398f0fadb0ba9e" prot="private" static="no" mutable="no">
         <type>std::chrono::system_clock::time_point</type>
@@ -692,7 +692,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="116" column="47" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="116" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="116" column="47" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="116" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -767,7 +767,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="119" column="7"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="119" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a5ef3f8fc6090681d61f0c78923d94587" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -780,7 +780,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="134" column="7"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="134" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ab119260e1193572d5646af95d5e0464f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -797,7 +797,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="136" column="6"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="136" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1aa52d93a2dcad19aed90c60b8d8fc795a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -826,7 +826,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="139" column="14"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="139" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ae4d140289ee854d018765f224c12d3bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -855,7 +855,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="140" column="16"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="140" column="16"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a09c10e808e063f728aa2dcc06d53d95f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -872,7 +872,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="141" column="14"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="141" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a517406b3d53e2e261caa673993d1e4f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -889,7 +889,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="142" column="14"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="142" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1ab50d4aba4f0bf4c1f6c0386a8e89dbc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -906,7 +906,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="143" column="14"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="143" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a7c15d6973e96bb9d291ede5ca7e15480" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -923,7 +923,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="144" column="14"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="144" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a79809e035f7653a9e6571476817c8ac4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -944,7 +944,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="146" column="14"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="146" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a2924b53998602c4f8c1519b8fc752d90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -973,7 +973,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="148" column="13"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="148" column="13"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1002,7 +1002,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="35" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="34" bodyend="153"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" line="35" column="1" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_ofdm_equalizer_impl.h" bodystart="34" bodyend="153"/>
     <listofallmembers>
       <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a5a9baeda997efa53c1be239f7fd1477c" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::mimo_ofdm_equalizer_impl</scope><name>chan_est_mean_pmt</name></member>
       <member refid="classgr_1_1mimo__ofdm_1_1mimo__ofdm__equalizer__impl_1a0b8d125d12dcefaab83e5d35b8b104c2" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::mimo_ofdm_equalizer_impl</scope><name>d_16qam</name></member>

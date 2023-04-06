@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" line="38" column="33" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" bodystart="38" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" line="38" column="33" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" line="48" column="19"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" line="48" column="19"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" line="65" column="22"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" line="65" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__precoder_1ad0892c90cd825dc3fed7dcdb82add83e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -138,7 +138,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" line="66" column="22"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" line="66" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__precoder_1a3eb0989111fbffeddaa1802b2f3d5da7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -156,7 +156,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" line="67" column="22"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" line="67" column="22"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1mimo__precoder_1ac3e0b18fa3079c1ce31b4357228d2830" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -174,7 +174,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" line="68" column="22"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" line="68" column="22"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -210,7 +210,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" line="36" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" bodystart="35" bodyend="69"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" line="36" column="1" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h" bodystart="35" bodyend="69"/>
     <listofallmembers>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__precoder_1ad31039bfac652396f2fdfb2bd3ead26b" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::mimo_precoder</scope><name>make</name></member>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__precoder_1ae6756c53ea1ac9a23d013e73cbf93c0a" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::mimo_precoder</scope><name>set_chan_est_smoothing</name></member>

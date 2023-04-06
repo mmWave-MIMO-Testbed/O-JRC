@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" line="40" column="31" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" bodystart="40" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" line="40" column="31" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -96,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" line="53" column="17"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" line="53" column="17"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -112,7 +112,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" line="60" column="17"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" line="60" column="17"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1blocks_1_1udp__sink_1a365977a0a441f77005cc9884dfb605ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -152,7 +152,7 @@ Calls <ref refid="classgr_1_1blocks_1_1udp__sink_1a4de3eb87cf0327dfdf09ece810876
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" line="70" column="18"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" line="70" column="18"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1blocks_1_1udp__sink_1a4de3eb87cf0327dfdf09ece810876d45" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -167,7 +167,7 @@ Calls <ref refid="classgr_1_1blocks_1_1udp__sink_1a4de3eb87cf0327dfdf09ece810876
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" line="77" column="18"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" line="77" column="18"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -197,7 +197,7 @@ Calls <ref refid="classgr_1_1blocks_1_1udp__sink_1a4de3eb87cf0327dfdf09ece810876
         <label>sync_block</label>
       </node>
     </collaborationgraph>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" line="37" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" bodystart="36" bodyend="78"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" line="37" column="1" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h" bodystart="36" bodyend="78"/>
     <listofallmembers>
       <member refid="classgr_1_1blocks_1_1udp__sink_1a365977a0a441f77005cc9884dfb605ad" prot="public" virt="pure-virtual"><scope>gr::blocks::udp_sink</scope><name>connect</name></member>
       <member refid="classgr_1_1blocks_1_1udp__sink_1a4de3eb87cf0327dfdf09ece810876d45" prot="public" virt="pure-virtual"><scope>gr::blocks::udp_sink</scope><name>disconnect</name></member>

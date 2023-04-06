@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="43" column="5" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="43" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="43" column="5" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classofdm__mcs_1a5ae6bf365d2a627af34b756797fc0237" prot="public" static="no" mutable="no">
         <type>char</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="45" column="10" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="45" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="45" column="10" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="45" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classofdm__mcs_1a17fb4eb93034e14ea58f47b42fb016ae" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="47" column="10" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="47" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="47" column="10" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="47" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classofdm__mcs_1a008b70197aefb8ec058def491e4e1d5a" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="49" column="10" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="49" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="49" column="10" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classofdm__mcs_1a4dc18f3226dd2efce92404c79b5f7ce9" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="51" column="10" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="51" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="51" column="10" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classofdm__mcs_1af4ce33c7641e7ad9440847fdb79555c9" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="53" column="4" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="53" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="53" column="4" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="53" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classofdm__mcs_1adcf741af9fab42295a4fcd2350f51095" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="55" column="17" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="55" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="55" column="17" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="55" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -116,7 +116,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="41" column="1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="41" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classofdm__mcs_1a53625da5743b570e90cf9514d9c5512e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -129,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="57" column="6"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="57" column="6"/>
       </memberdef>
       <memberdef kind="function" id="classofdm__mcs_1a52618fa42085070c4ad28c267b5bda2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -150,7 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/utils.h" line="41" column="1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/utils.h" line="41" column="1"/>
       </memberdef>
       <memberdef kind="function" id="classofdm__mcs_1a53625da5743b570e90cf9514d9c5512e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -163,14 +163,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/utils.h" line="57" column="6"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/utils.h" line="57" column="6"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="39" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="39" bodyend="58"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" line="39" column="15" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/utils.h" bodystart="39" bodyend="58"/>
     <listofallmembers>
       <member refid="classofdm__mcs_1a58b2d95231d316c89ad0d6c9743d75b0" prot="public" virt="non-virtual"><scope>ofdm_mcs</scope><name>d_mcs</name></member>
       <member refid="classofdm__mcs_1af4ce33c7641e7ad9440847fdb79555c9" prot="public" virt="non-virtual"><scope>ofdm_mcs</scope><name>d_n_data_carriers</name></member>

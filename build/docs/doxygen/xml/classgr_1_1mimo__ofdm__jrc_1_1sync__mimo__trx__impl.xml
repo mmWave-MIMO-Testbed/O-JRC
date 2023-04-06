@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="58" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="58" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="58" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1ad97d08d9a953afaa239a066aa8501261" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="58" column="24" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="58" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="58" column="24" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a2061c7aa4fe9a161b70303cefdbe59d7" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="58" column="31" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="58" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="58" column="31" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a65bee0e3e49a3d4d8cac5c40b438d040" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="60" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="60" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="60" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="60" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a32045f7d4b87c0d1381618ae575f7b6d" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="61" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="61" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="61" column="15" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="61" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a85422f340c4e21bf8ff12c7ecb428bea" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="62" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="62" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="62" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="62" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1ac643fb2880ac27d5ac142c409684389a" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="63" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="63" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="63" column="16" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="63" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a3d6db2cbc260316ff373399aef16efea" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="64" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="64" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="64" column="15" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="64" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a7cd8ef5657043ef4e639ca2183195bbd" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="66" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="66" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="66" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="66" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a662ab4e7b8d4cc059a8264e0b7617aa4" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -133,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="66" column="31" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="66" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="66" column="31" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="66" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a7a6eda078d6260f7fc2f3d6360de7ee1" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -146,7 +146,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="67" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="67" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="67" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a7ff3ef4ea9488e212c7726a7ec8f4a84" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -159,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="67" column="31" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="67" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="67" column="31" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1aa6646eb11a07fb08c2203d199cc9a63c" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::string &gt;</type>
@@ -172,7 +172,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="68" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="68" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="68" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="68" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a46a48479583316eabf9bc4fc603b6c5c" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::string &gt;</type>
@@ -185,7 +185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="68" column="34" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="68" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="68" column="34" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="68" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a515727599c14cd8daa83d6928c6bc6b5" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::string &gt;</type>
@@ -198,7 +198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="69" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="69" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="69" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="69" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a718dff6d804aeef422936edc328a98d8" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::string &gt;</type>
@@ -211,7 +211,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="69" column="39" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="69" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="69" column="39" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="69" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a830ceaaef58a43a0124740cc54f2e5bc" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::string &gt;</type>
@@ -224,7 +224,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="70" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="70" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="70" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="70" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a1239cfd57d0d9773a9ca25f82946ba62" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::string &gt;</type>
@@ -237,7 +237,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="70" column="38" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="70" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="70" column="38" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="70" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a079377555cd35f3b57ff08e30ad191f6" prot="public" static="no" mutable="no">
         <type>uhd::usrp::multi_usrp::sptr</type>
@@ -250,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="71" column="37" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="71" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="71" column="37" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="71" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1adac708a1829114b0aaa0df4fde5ebf1c" prot="public" static="no" mutable="no">
         <type>uhd::usrp::multi_usrp::sptr</type>
@@ -263,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="71" column="47" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="71" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="71" column="47" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="71" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a72779047a567ebed3173fec2c7209506" prot="public" static="no" mutable="no">
         <type>uhd::tune_request_t</type>
@@ -276,7 +276,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="74" column="29" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="74" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="74" column="29" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1aab737d66da1333bfa75b7b91c03d32dc" prot="public" static="no" mutable="no">
         <type>uhd::tune_request_t</type>
@@ -289,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="74" column="47" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="74" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="74" column="47" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1ad34f9de5048d899e6a4e2d0bfa7e0b0b" prot="public" static="no" mutable="no">
         <type>uhd::tx_streamer::sptr</type>
@@ -302,7 +302,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="75" column="32" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="75" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="75" column="32" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="75" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a202cd4fb1cad40e7dd75f8d2026ded41" prot="public" static="no" mutable="no">
         <type>uhd::rx_streamer::sptr</type>
@@ -315,7 +315,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="76" column="32" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="76" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="76" column="32" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="76" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a5d0bc5967b2e9693c461f41d3110b35b" prot="public" static="no" mutable="no">
         <type>uhd::tx_metadata_t</type>
@@ -328,7 +328,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="77" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="77" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="77" column="28" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="77" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1aaf12b0f28f77f1951a4f800335d1d4a9" prot="public" static="no" mutable="no">
         <type>uhd::rx_metadata_t</type>
@@ -341,7 +341,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="78" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="78" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="78" column="28" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="78" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a707ff3d9a628d766a7ca53a0e081803d" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -354,7 +354,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="79" column="16" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="79" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="79" column="16" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="79" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1aef8bcf6a36ee8c5cb7dfd4c145d7bda4" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -367,7 +367,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="79" column="31" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="79" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="79" column="31" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="79" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a21fbd3dc716b1b5f877c7967e2b9383f" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -380,7 +380,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="80" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="80" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="80" column="15" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="80" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1afb83c27b8c74cbbf101b3e18d2cdc184" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -393,7 +393,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="80" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="80" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="80" column="28" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="80" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1ad668c8ec03202d5ca74d3f0f70544a2a" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -406,7 +406,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="81" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="81" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="81" column="15" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="81" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a91e2d3eb6c1343c428130fa90fd6730d" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -419,7 +419,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="81" column="25" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="81" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="81" column="25" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="81" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1ad320ffb9c4ea52420c5bb2f240684b3a" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -432,7 +432,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="82" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="82" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="82" column="15" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="82" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1ad811b0a24f6d5e89fd59c2cd4b9654d5" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -445,7 +445,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="82" column="25" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="82" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="82" column="25" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="82" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a6f429c01273d49d4388183a9a5b71e49" prot="public" static="no" mutable="no">
         <type>uhd::time_spec_t</type>
@@ -458,7 +458,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="84" column="26" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="84" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="84" column="26" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a830937c5367eef9062e2d93c342eb5ee" prot="public" static="no" mutable="no">
         <type>uhd::time_spec_t</type>
@@ -471,7 +471,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="84" column="40" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="84" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="84" column="40" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1ad0688abbd645e1e43f989cc10578e9dd" prot="public" static="no" mutable="no">
         <type>uhd::time_spec_t</type>
@@ -484,7 +484,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="84" column="54" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="84" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="84" column="54" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="84" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a29d5524cb6c04643f1226eb548127227" prot="public" static="no" mutable="no">
         <type>std::vector&lt; std::vector&lt; gr_complex &gt; &gt;</type>
@@ -497,7 +497,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="86" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="86" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="86" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="86" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a052de5d5a6397d12a149bd777058c224" prot="public" static="no" mutable="no">
         <type>gr::thread::thread</type>
@@ -510,7 +510,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="89" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="89" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="89" column="28" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a88e92596a97724e8aa6b4432afe9df69" prot="public" static="no" mutable="no">
         <type>gr::thread::thread</type>
@@ -523,7 +523,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="90" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="90" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="90" column="28" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1ac9810633dd7c2da65de6e28e903441ee" prot="public" static="no" mutable="no">
         <type>std::vector&lt; gr_complex * &gt;</type>
@@ -536,7 +536,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="95" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="95" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="95" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="95" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a9ed564a707836928e1f09687d872a2aa" prot="public" static="no" mutable="no">
         <type>std::vector&lt; const void * &gt;</type>
@@ -549,7 +549,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="97" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="97" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="97" column="20" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="97" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a8b413673081cade60e626642c8b1c6b2" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -562,7 +562,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="99" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="99" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="99" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="99" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a6a53f07372eef383ecc58fc4ef38b634" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -575,7 +575,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="101" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="101" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="101" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="101" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a52ea5e5be58ec9fcd397d72201dee92e" prot="public" static="no" mutable="no">
         <type>pmt::pmt_t</type>
@@ -588,7 +588,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="103" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="103" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="103" column="20" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1af4aaf20e624714bbf7e6cfbcfed14d5e" prot="public" static="no" mutable="no">
         <type>pmt::pmt_t</type>
@@ -601,7 +601,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="103" column="31" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="103" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="103" column="31" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a00dcef6df0d67538836e0dad1ab4ea8b" prot="public" static="no" mutable="no">
         <type>pmt::pmt_t</type>
@@ -614,7 +614,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="103" column="42" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="103" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="103" column="42" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a1be8572b9d56716de759583c002e1230" prot="public" static="no" mutable="no">
         <type>boost::recursive_mutex</type>
@@ -627,7 +627,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="105" column="32" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="105" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="105" column="32" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="105" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -646,7 +646,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="39" column="11"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="39" column="11"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -769,7 +769,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="42" column="7"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="42" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a776a68d0553d5d5740bfd7e9d478f6b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -782,7 +782,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="48" column="7"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="48" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1ad66b70ce81b03bb6a4c0c3ed640019cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -795,7 +795,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="50" column="14"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="50" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a2206f95e18b2d0d8f690f7faab45f815" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -808,7 +808,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="51" column="14"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="51" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1ac89574ae975e49585056a54c8d9f41ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -826,7 +826,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="52" column="14"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="52" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a3b22e6a9840c9ac2ab63e37af61b83bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -844,7 +844,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="53" column="14"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="53" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1aee5635b676e462b393790236ff963288" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -862,7 +862,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="54" column="14"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="54" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1abc92069b8c484ba432d92cf8bfc53ec0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -891,7 +891,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="109" column="11"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="109" column="11"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -978,7 +978,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="34" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="33" bodyend="115"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" line="34" column="1" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sync_mimo_trx_impl.h" bodystart="33" bodyend="115"/>
     <listofallmembers>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a4d50a25792de3eb5b9b802526a369047" prot="protected" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::sync_mimo_trx_impl</scope><name>calculate_output_stream_length</name></member>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx__impl_1a46a48479583316eabf9bc4fc603b6c5c" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::sync_mimo_trx_impl</scope><name>d_antenna_rx</name></member>

@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="38" column="33" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" bodystart="38" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="38" column="33" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -143,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="48" column="19"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="48" column="19"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -163,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="55" column="21"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="55" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1a502d74ece8b7ddc37076cb926ae37baa" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -181,7 +181,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="56" column="21"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="56" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1a6ff9f329eb2482590127ab4d70556b42" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -199,7 +199,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="57" column="21"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="57" column="21"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -235,7 +235,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="36" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" bodystart="35" bodyend="58"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" line="36" column="1" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/sync_mimo_trx.h" bodystart="35" bodyend="58"/>
     <listofallmembers>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1a8cf9172718f819808b788d8f9939782f" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::sync_mimo_trx</scope><name>make</name></member>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1sync__mimo__trx_1ac39a735c7b82256bd187dfbcf4c89b26" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::sync_mimo_trx</scope><name>set_num_delay_samps</name></member>

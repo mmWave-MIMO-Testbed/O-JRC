@@ -1,4 +1,4 @@
-# Install script for directory: /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc
+# Install script for directory: /home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -37,34 +37,29 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gnuradio/grc/blocks" TYPE FILE FILES
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_fft_peak_detect.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_frame_detector.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_frame_sync.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_gui_heatmap_plot.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_gui_time_plot.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_matrix_transpose.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_mimo_ofdm_equalizer.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_mimo_ofdm_radar.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_mimo_precoder.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_mimo_radar_estimator.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_mimo_radar_estimator_2.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_moving_avg.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_ofdm_cyclic_prefix_remover.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_ofdm_frame_generator.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_range_angle_estimator.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_stream_decoder.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_stream_encoder.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_sync_mimo_trx.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_target_simulator.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_usrp_mimo_trx.block.yml"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_zero_pad.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_fft_peak_detect.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_frame_detector.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_frame_sync.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_gui_heatmap_plot.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_gui_time_plot.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_matrix_transpose.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_mimo_ofdm_equalizer.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_mimo_ofdm_radar.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_mimo_precoder.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_mimo_radar_estimator.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_mimo_radar_estimator_2.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_moving_avg.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_ofdm_cyclic_prefix_remover.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_ofdm_frame_generator.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_range_angle_estimator.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_stream_decoder.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_stream_encoder.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_sync_mimo_trx.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_target_simulator.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_usrp_mimo_trx.block.yml"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/grc/mimo_ofdm_jrc_zero_pad.block.yml"
     )
 endif()
 

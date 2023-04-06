@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/old_version/NDP_Gen_UDP.h" line="38" column="33" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/old_version/NDP_Gen_UDP.h" bodystart="38" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/old_version/NDP_Gen_UDP.h" line="38" column="33" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/old_version/NDP_Gen_UDP.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/old_version/NDP_Gen_UDP.h" line="48" column="19"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/old_version/NDP_Gen_UDP.h" line="48" column="19"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -82,7 +82,7 @@
         <label>sync_block</label>
       </node>
     </collaborationgraph>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/old_version/NDP_Gen_UDP.h" line="36" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/old_version/NDP_Gen_UDP.h" bodystart="35" bodyend="50"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/old_version/NDP_Gen_UDP.h" line="36" column="1" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/old_version/NDP_Gen_UDP.h" bodystart="35" bodyend="50"/>
     <listofallmembers>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1NDP__Gen__UDP_1a1773d8d9be70a9776c67448a2813d8c1" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::NDP_Gen_UDP</scope><name>make</name></member>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1NDP__Gen__UDP_1a7b66118ceeb341d476758bae902e796d" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::NDP_Gen_UDP</scope><name>sptr</name></member>

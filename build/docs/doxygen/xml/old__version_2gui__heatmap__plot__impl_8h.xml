@@ -14,14 +14,26 @@
       <node id="15">
         <label>qwt_point_3d.h</label>
       </node>
+      <node id="16">
+        <label>range_angle_raster_data.h</label>
+        <link refid="old__version_2range__angle__raster__data_8h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
       <node id="10">
         <label>qcolormap.h</label>
       </node>
-      <node id="2">
-        <label>mimo_ofdm/gui_heatmap_plot.h</label>
-      </node>
-      <node id="19">
-        <label>qvector.h</label>
+      <node id="1">
+        <label>gui_heatmap_plot_impl.h</label>
+        <link refid="old__version_2gui__heatmap__plot__impl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
       </node>
       <node id="3">
         <label>heatmap_plot.h</label>
@@ -53,6 +65,12 @@
         <childnode refid="16" relation="include">
         </childnode>
       </node>
+      <node id="2">
+        <label>mimo_ofdm/gui_heatmap_plot.h</label>
+      </node>
+      <node id="19">
+        <label>qvector.h</label>
+      </node>
       <node id="18">
         <label>qwt_raster_data.h</label>
       </node>
@@ -77,24 +95,6 @@
       <node id="8">
         <label>qwt_matrix_raster_data.h</label>
       </node>
-      <node id="16">
-        <label>range_angle_raster_data.h</label>
-        <link refid="old__version_2range__angle__raster__data_8h"/>
-        <childnode refid="17" relation="include">
-        </childnode>
-        <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>gui_heatmap_plot_impl.h</label>
-        <link refid="old__version_2gui__heatmap__plot__impl_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="14">
         <label>complex</label>
       </node>
@@ -109,6 +109,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h"/>
   </compounddef>
 </doxygen>

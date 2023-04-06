@@ -5,6 +5,9 @@
     <includes refid="api_8h" local="no">mimo_ofdm_jrc/api.h</includes>
     <includes local="no">gnuradio/tagged_stream_block.h</includes>
     <incdepgraph>
+      <node id="3">
+        <label>gnuradio/attributes.h</label>
+      </node>
       <node id="1">
         <label>usrp_mimo_trx.h</label>
         <link refid="usrp__mimo__trx_8h"/>
@@ -12,9 +15,6 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-      </node>
-      <node id="3">
-        <label>gnuradio/attributes.h</label>
       </node>
       <node id="2">
         <label>mimo_ofdm_jrc/api.h</label>
@@ -85,6 +85,6 @@
 <codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>INCLUDED_MIMO_OFDM_JRC_USRP_MIMO_TRX_H<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/usrp_mimo_trx.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/usrp_mimo_trx.h"/>
   </compounddef>
 </doxygen>

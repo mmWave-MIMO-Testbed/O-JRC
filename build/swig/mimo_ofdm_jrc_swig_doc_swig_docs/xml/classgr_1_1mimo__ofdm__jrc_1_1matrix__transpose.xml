@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/matrix_transpose.h" line="38" column="33" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/matrix_transpose.h" bodystart="38" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/matrix_transpose.h" line="38" column="33" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/matrix_transpose.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/matrix_transpose.h" line="48" column="19"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/matrix_transpose.h" line="48" column="19"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -84,7 +84,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/matrix_transpose.h" line="36" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/matrix_transpose.h" bodystart="35" bodyend="49"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/matrix_transpose.h" line="36" column="1" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/matrix_transpose.h" bodystart="35" bodyend="49"/>
     <listofallmembers>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1matrix__transpose_1aa308c1f83c4124fc4b90d15c274face7" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::matrix_transpose</scope><name>make</name></member>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1matrix__transpose_1ae9ef2baf587174aee05f2b5c16491430" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::matrix_transpose</scope><name>sptr</name></member>

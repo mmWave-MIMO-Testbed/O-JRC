@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="33" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="33" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="33" column="19" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1ofdm__frame__generator__impl_1ab7244cb0a524352649fab2fc58df0e66" prot="private" static="no" mutable="no">
         <type>std::vector&lt; std::vector&lt; int &gt; &gt;</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="35" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="35" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="35" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1ofdm__frame__generator__impl_1a750032ba8168c3f84609ed79f09ef3d8" prot="private" static="no" mutable="no">
         <type>std::vector&lt; std::vector&lt; int &gt; &gt;</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="37" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="37" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="37" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="37" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1ofdm__frame__generator__impl_1a4a2375fa6f8a8fa12b42dae0eee57bdd" prot="private" static="no" mutable="no">
         <type>const std::vector&lt; std::vector&lt; gr_complex &gt; &gt;</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="39" column="27" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="39" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="39" column="27" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="39" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1ofdm__frame__generator__impl_1a2e4a91b0cfaac3ff48467a78de864eac" prot="private" static="no" mutable="no">
         <type>const std::vector&lt; std::vector&lt; gr_complex &gt; &gt;</type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="41" column="27" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="41" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="41" column="27" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1ofdm__frame__generator__impl_1ad3fc4055a28bbca471c758f50c1f3f44" prot="private" static="no" mutable="no">
         <type>const int</type>
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="43" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="43" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="43" column="19" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="43" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1ofdm__frame__generator__impl_1a9cf1b02fe000614cfa5488d779dec601" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="44" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="44" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="44" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="44" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1ofdm__frame__generator__impl_1a5a0d58db1e85b5564dfbfdf0ddcbbe10" prot="private" static="no" mutable="no">
         <type>const bool</type>
@@ -112,7 +112,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="45" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="45" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="45" column="20" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="45" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -131,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="48" column="11"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="48" column="11"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -178,7 +178,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="51" column="7"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="51" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1ofdm__frame__generator__impl_1a1e9958a0eb6dfa3afba27ed9094eb91e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -191,7 +191,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="59" column="7"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="59" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1ofdm__frame__generator__impl_1ac5b3ea43e3906f8bb3b9a61a22ba9a89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -220,7 +220,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="62" column="11"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="62" column="11"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1ofdm__frame__generator__impl_1a3e27203101f123fceae9da6199816ac4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::string</type>
@@ -233,7 +233,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="69" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="69" bodyend="69"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="69" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="69" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1ofdm__frame__generator__impl_1ad2fb1bc0549a9d3f4afbf2ddda598c4b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>const int</type>
@@ -246,7 +246,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="71" column="19" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="71" bodyend="71"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="71" column="19" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="71" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1ofdm__frame__generator__impl_1acf6bc05270827fdaf7f8e64a4c8c9c05" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>std::vector&lt; std::vector&lt; int &gt; &gt;</type>
@@ -259,7 +259,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="72" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="72" bodyend="72"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="72" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="72" bodyend="72"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -288,7 +288,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="30" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="29" bodyend="73"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" line="30" column="1" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ofdm_frame_generator_impl.h" bodystart="29" bodyend="73"/>
     <listofallmembers>
       <member refid="classgr_1_1mimo__ofdm_1_1ofdm__frame__generator__impl_1a615e96c67a45722647432caafce5ee50" prot="protected" virt="non-virtual"><scope>gr::mimo_ofdm::ofdm_frame_generator_impl</scope><name>calculate_output_stream_length</name></member>
       <member refid="classgr_1_1mimo__ofdm_1_1ofdm__frame__generator__impl_1acb91277e36b63c35f26fbfa418b47fd3" prot="private" virt="non-virtual"><scope>gr::mimo_ofdm::ofdm_frame_generator_impl</scope><name>d_fft_len</name></member>

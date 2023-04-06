@@ -3,7 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/mimo_ofdm_jrc_swig.dir/mimo_ofdm_jrc_swigPYTHON_wrap.cxx"
   "mimo_ofdm_jrc_swig.py"
   "CMakeFiles/mimo_ofdm_jrc_swig.dir/CMakeFiles/mimo_ofdm_jrc_swig.dir/mimo_ofdm_jrc_swigPYTHON_wrap.cxx.o"
-  "CMakeFiles/mimo_ofdm_jrc_swig.dir/CMakeFiles/mimo_ofdm_jrc_swig.dir/mimo_ofdm_jrc_swigPYTHON_wrap.cxx.o.d"
   "_mimo_ofdm_jrc_swig.pdb"
   "_mimo_ofdm_jrc_swig.so"
 )

@@ -6,6 +6,9 @@
     <includes local="no">gnuradio/tagged_stream_block.h</includes>
     <includedby refid="usrp__mimo__trx__impl_8h" local="no">usrp_mimo_trx_impl.h</includedby>
     <incdepgraph>
+      <node id="3">
+        <label>gnuradio/attributes.h</label>
+      </node>
       <node id="1">
         <label>usrp_mimo_trx.h</label>
         <link refid="usrp__mimo__trx_8h"/>
@@ -13,9 +16,6 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-      </node>
-      <node id="3">
-        <label>gnuradio/attributes.h</label>
       </node>
       <node id="2">
         <label>mimo_ofdm_jrc/api.h</label>
@@ -46,6 +46,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/usrp_mimo_trx.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/usrp_mimo_trx.h"/>
   </compounddef>
 </doxygen>

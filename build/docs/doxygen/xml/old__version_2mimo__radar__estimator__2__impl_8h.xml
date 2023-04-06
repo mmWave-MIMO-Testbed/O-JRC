@@ -18,6 +18,12 @@
       <node id="2">
         <label>mimo_ofdm/mimo_radar_estimator_2.h</label>
       </node>
+      <node id="5">
+        <label>mimo_ofdm/api.h</label>
+      </node>
+      <node id="6">
+        <label>gnuradio/block.h</label>
+      </node>
       <node id="4">
         <label>utils.h</label>
         <link refid="old__version_2utils_8h"/>
@@ -33,12 +39,6 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-      </node>
-      <node id="5">
-        <label>mimo_ofdm/api.h</label>
-      </node>
-      <node id="6">
-        <label>gnuradio/block.h</label>
       </node>
       <node id="1">
         <label>mimo_radar_estimator_2_impl.h</label>
@@ -64,6 +64,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/mimo_radar_estimator_2_impl.h"/>
   </compounddef>
 </doxygen>

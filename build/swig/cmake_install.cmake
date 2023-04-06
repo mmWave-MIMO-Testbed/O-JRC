@@ -1,4 +1,4 @@
-# Install script for directory: /home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/swig
+# Install script for directory: /home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/swig
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -37,24 +37,19 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc/_mimo_ofdm_jrc_swig.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc/_mimo_ofdm_jrc_swig.so")
     file(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc/_mimo_ofdm_jrc_swig.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc" TYPE MODULE FILES "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/swig/_mimo_ofdm_jrc_swig.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc" TYPE MODULE FILES "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/swig/_mimo_ofdm_jrc_swig.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc/_mimo_ofdm_jrc_swig.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc/_mimo_ofdm_jrc_swig.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc/_mimo_ofdm_jrc_swig.so"
-         OLD_RPATH "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/lib:/usr/local/lib:"
+         OLD_RPATH "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/lib:/usr/local/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc/_mimo_ofdm_jrc_swig.so")
@@ -62,21 +57,21 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   endif()
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc" TYPE FILE FILES "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/swig/mimo_ofdm_jrc_swig.py")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc" TYPE FILE FILES "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/swig/mimo_ofdm_jrc_swig.py")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/mimo_ofdm_jrc" TYPE FILE FILES
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/swig/mimo_ofdm_jrc_swig.pyc"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/swig/mimo_ofdm_jrc_swig.pyo"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/swig/mimo_ofdm_jrc_swig.pyc"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/swig/mimo_ofdm_jrc_swig.pyo"
     )
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/mimo_ofdm_jrc/mimo_ofdm_jrc/swig" TYPE FILE FILES
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/swig/mimo_ofdm_jrc_swig.i"
-    "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/swig/mimo_ofdm_jrc_swig_doc.i"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/swig/mimo_ofdm_jrc_swig.i"
+    "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/build/swig/mimo_ofdm_jrc_swig_doc.i"
     )
 endif()
 

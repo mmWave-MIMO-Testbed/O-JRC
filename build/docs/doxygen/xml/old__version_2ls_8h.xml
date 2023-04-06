@@ -8,12 +8,6 @@
       <node id="4">
         <label>gnuradio/digital/constellation.h</label>
       </node>
-      <node id="5">
-        <label>vector</label>
-      </node>
-      <node id="3">
-        <label>gnuradio/gr_complex.h</label>
-      </node>
       <node id="2">
         <label>base.h</label>
         <link refid="old__version_2base_8h"/>
@@ -21,6 +15,12 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+      <node id="3">
+        <label>gnuradio/gr_complex.h</label>
       </node>
       <node id="1">
         <label>ls.h</label>
@@ -39,6 +39,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ls.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/ls.h"/>
   </compounddef>
 </doxygen>

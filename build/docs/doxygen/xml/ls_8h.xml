@@ -5,8 +5,19 @@
     <includes refid="base_8h" local="yes">base.h</includes>
     <includes local="no">vector</includes>
     <incdepgraph>
+      <node id="1">
+        <label>ls.h</label>
+        <link refid="ls_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
       <node id="4">
         <label>gnuradio/digital/constellation.h</label>
+      </node>
+      <node id="5">
+        <label>vector</label>
       </node>
       <node id="2">
         <label>base.h</label>
@@ -16,19 +27,8 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="5">
-        <label>vector</label>
-      </node>
       <node id="3">
         <label>gnuradio/gr_complex.h</label>
-      </node>
-      <node id="1">
-        <label>ls.h</label>
-        <link refid="ls_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
       </node>
     </incdepgraph>
     <innerclass refid="classgr_1_1mimo__ofdm__jrc_1_1estimator_1_1ls" prot="public">gr::mimo_ofdm_jrc::estimator::ls</innerclass>
@@ -39,6 +39,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/ls.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/ls.h"/>
   </compounddef>
 </doxygen>
