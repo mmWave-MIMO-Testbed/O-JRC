@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="73" column="33" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" bodystart="73" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="73" column="33" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" bodystart="73" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="74" column="27"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="74" column="27"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1a1418a4605b6b37fa38b0a16306d5ea2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>const int</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="75" column="25"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="75" column="25"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1a2733dc1d11128eafe37ce4b00e47cf94" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>std::vector&lt; std::vector&lt; int &gt; &gt;</type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="76" column="27"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="76" column="27"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -108,7 +108,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="86" column="19"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="86" column="19"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -144,7 +144,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="71" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" bodystart="70" bodyend="94"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" line="71" column="1" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_frame_generator.h" bodystart="70" bodyend="94"/>
     <listofallmembers>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1a1418a4605b6b37fa38b0a16306d5ea2c" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::ofdm_frame_generator</scope><name>fft_len</name></member>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__frame__generator_1a37d251b1309faf810577c9d9f499d426" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm_jrc::ofdm_frame_generator</scope><name>len_tag_key</name></member>

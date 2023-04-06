@@ -28,6 +28,10 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="3">
+        <label>gui_heatmap_plot_impl.h</label>
+        <link refid="gui__heatmap__plot__impl_8h"/>
+      </node>
       <node id="2">
         <label>heatmap_plot.h</label>
         <link refid="heatmap__plot_8h"/>
@@ -40,16 +44,12 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>gui_heatmap_plot_impl.h</label>
-        <link refid="gui__heatmap__plot__impl_8h"/>
-      </node>
     </invincdepgraph>
     <innerclass refid="classRangeAngleRasterData" prot="public">RangeAngleRasterData</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/range_angle_raster_data.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/range_angle_raster_data.h"/>
   </compounddef>
 </doxygen>

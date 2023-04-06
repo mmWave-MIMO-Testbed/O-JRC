@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="54" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="54" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="54" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1aac360b28bfcdde2ffe1a5921973739f3" prot="public" static="no" mutable="no">
         <type>char *</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="55" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="55" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="55" column="14" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a1b769564f69bf334a4bbe4d6bcb8c9d7" prot="public" static="no" mutable="no">
         <type>QApplication *</type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="56" column="22" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="56" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="56" column="22" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="56" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a404830921ed98fe5450ea5c8d1037252" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="58" column="13" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="58" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="58" column="13" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ad18155a19238135425ef28d598dac834" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="58" column="20" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="58" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="58" column="20" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a3d84cbc1eb349dda9dccb7b506fe0e77" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="59" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="59" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="59" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="59" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ac8ec0fa9706e7616d61071d7fbc248db" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="59" column="30" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="59" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="59" column="30" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="59" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ac455d999e6689e566c50da0636449fbf" prot="public" static="no" mutable="no">
         <type>std::string</type>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="59" column="39" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="59" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="59" column="39" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="59" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ac857059756c6c186061c29598396f8ea" prot="public" static="no" mutable="no">
         <type>std::vector&lt; float &gt;</type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="60" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="60" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="60" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="60" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a6911dd1219bca7ccc9d8ebda2fefcf72" prot="public" static="no" mutable="no">
         <type>std::vector&lt; float &gt;</type>
@@ -133,7 +133,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="60" column="30" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="60" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="60" column="30" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="60" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a30b7f1ad37a0465b02a1711bf2b509b4" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -146,7 +146,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="61" column="15" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="61" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="61" column="15" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="61" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ad4d9b2084b69ce944b08f901c40fad3a" prot="public" static="no" mutable="no">
         <type>std::vector&lt; float &gt;</type>
@@ -159,7 +159,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="62" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="62" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="62" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="62" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ac84bf49648a2d24c49bf0bd77c53aeea" prot="public" static="no" mutable="no">
         <type>std::vector&lt; float &gt;</type>
@@ -172,7 +172,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="62" column="36" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="62" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="62" column="36" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="62" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a271ad18dbdad918443a2fc291f9eea10" prot="public" static="no" mutable="no">
         <type>std::vector&lt; float &gt;</type>
@@ -185,7 +185,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="64" column="21" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="64" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="64" column="21" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="64" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1aa573b082e699ee4ece7afbe778b28942" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -198,7 +198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="65" column="14" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="65" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="65" column="14" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1abff09de33911f20361c38220774c1d66" prot="public" static="no" mutable="no">
         <type>bool</type>
@@ -211,7 +211,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="65" column="28" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="65" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="65" column="28" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a9fd9cdc2ed048ec07aaff018639685b8" prot="public" static="no" mutable="no">
         <type><ref refid="classgr_1_1mimo__ofdm_1_1heatmap__plot" kindref="compound">heatmap_plot</ref> *</type>
@@ -224,7 +224,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="66" column="22" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="66" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="66" column="22" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="66" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -243,7 +243,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="36" column="11"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="36" column="11"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -310,7 +310,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="39" column="7"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="39" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a57246a9ea758e562a7d83df70f52fe65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -323,7 +323,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="52" column="7"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="52" column="7"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a2371ecc282d0b352fab216b7bdbff4d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -336,7 +336,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="68" column="14"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="68" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1aef72c56e6e5491d549901d403fb3f945" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -365,7 +365,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="71" column="11"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="71" column="11"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -429,7 +429,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="31" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="30" bodyend="77"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" line="31" column="1" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/gui_heatmap_plot_impl.h" bodystart="30" bodyend="77"/>
     <listofallmembers>
       <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1a1726a5937a306f207ebdaf30601b9ee2" prot="protected" virt="non-virtual"><scope>gr::mimo_ofdm::gui_heatmap_plot_impl</scope><name>calculate_output_stream_length</name></member>
       <member refid="classgr_1_1mimo__ofdm_1_1gui__heatmap__plot__impl_1ada9fd8318805f393e498ef28c10fd12c" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm::gui_heatmap_plot_impl</scope><name>d_argc</name></member>

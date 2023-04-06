@@ -26,11 +26,18 @@
       <node id="13">
         <label>qwt_point_3d.h</label>
       </node>
+      <node id="14">
+        <label>range_angle_raster_data.h</label>
+        <link refid="old__version_2range__angle__raster__data_8h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
       <node id="8">
         <label>qcolormap.h</label>
-      </node>
-      <node id="17">
-        <label>qvector.h</label>
       </node>
       <node id="1">
         <label>heatmap_plot.h</label>
@@ -62,6 +69,9 @@
         <childnode refid="14" relation="include">
         </childnode>
       </node>
+      <node id="17">
+        <label>qvector.h</label>
+      </node>
       <node id="16">
         <label>qwt_raster_data.h</label>
       </node>
@@ -86,16 +96,6 @@
       <node id="6">
         <label>qwt_matrix_raster_data.h</label>
       </node>
-      <node id="14">
-        <label>range_angle_raster_data.h</label>
-        <link refid="old__version_2range__angle__raster__data_8h"/>
-        <childnode refid="15" relation="include">
-        </childnode>
-        <childnode refid="16" relation="include">
-        </childnode>
-        <childnode refid="17" relation="include">
-        </childnode>
-      </node>
       <node id="12">
         <label>complex</label>
       </node>
@@ -104,15 +104,15 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="2">
+        <label>gui_heatmap_plot_impl.h</label>
+        <link refid="old__version_2gui__heatmap__plot__impl_8h"/>
+      </node>
       <node id="1">
         <label>heatmap_plot.h</label>
         <link refid="old__version_2heatmap__plot_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-      </node>
-      <node id="2">
-        <label>gui_heatmap_plot_impl.h</label>
-        <link refid="old__version_2gui__heatmap__plot__impl_8h"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classgr_1_1mimo__ofdm_1_1heatmap__plot" prot="public">gr::mimo_ofdm::heatmap_plot</innerclass>
@@ -122,6 +122,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/heatmap_plot.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/heatmap_plot.h"/>
   </compounddef>
 </doxygen>

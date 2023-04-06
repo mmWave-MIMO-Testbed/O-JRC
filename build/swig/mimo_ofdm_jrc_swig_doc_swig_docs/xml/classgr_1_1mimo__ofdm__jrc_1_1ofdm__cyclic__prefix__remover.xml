@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_cyclic_prefix_remover.h" line="38" column="33" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_cyclic_prefix_remover.h" bodystart="38" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_cyclic_prefix_remover.h" line="38" column="33" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_cyclic_prefix_remover.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_cyclic_prefix_remover.h" line="48" column="19"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_cyclic_prefix_remover.h" line="48" column="19"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -76,7 +76,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_cyclic_prefix_remover.h" line="36" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_cyclic_prefix_remover.h" bodystart="35" bodyend="49"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_cyclic_prefix_remover.h" line="36" column="1" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/ofdm_cyclic_prefix_remover.h" bodystart="35" bodyend="49"/>
     <listofallmembers>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__cyclic__prefix__remover_1a1b9045eb379d034373cd2b65cec45267" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::ofdm_cyclic_prefix_remover</scope><name>make</name></member>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1ofdm__cyclic__prefix__remover_1a2f56f04ef4db6471b8618e0a93d0bf25" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::ofdm_cyclic_prefix_remover</scope><name>sptr</name></member>

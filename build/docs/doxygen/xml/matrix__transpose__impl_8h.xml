@@ -5,14 +5,6 @@
     <includes refid="matrix__transpose_8h" local="no">mimo_ofdm_jrc/matrix_transpose.h</includes>
     <includes refid="utils_8h" local="yes">utils.h</includes>
     <incdepgraph>
-      <node id="2">
-        <label>mimo_ofdm_jrc/matrix_transpose.h</label>
-        <link refid="matrix__transpose_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
-        </childnode>
-      </node>
       <node id="10">
         <label>cinttypes</label>
       </node>
@@ -23,6 +15,38 @@
         <label>mimo_ofdm_jrc/api.h</label>
         <link refid="api_8h"/>
         <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>utils.h</label>
+        <link refid="utils_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>mimo_ofdm_jrc/matrix_transpose.h</label>
+        <link refid="matrix__transpose_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>matrix_transpose_impl.h</label>
+        <link refid="matrix__transpose__impl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
         </childnode>
       </node>
       <node id="7">
@@ -45,30 +69,6 @@
         <childnode refid="7" relation="include">
         </childnode>
       </node>
-      <node id="6">
-        <label>utils.h</label>
-        <link refid="utils_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="7" relation="include">
-        </childnode>
-        <childnode refid="8" relation="include">
-        </childnode>
-        <childnode refid="9" relation="include">
-        </childnode>
-        <childnode refid="10" relation="include">
-        </childnode>
-        <childnode refid="11" relation="include">
-        </childnode>
-      </node>
-      <node id="1">
-        <label>matrix_transpose_impl.h</label>
-        <link refid="matrix__transpose__impl_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="6" relation="include">
-        </childnode>
-      </node>
     </incdepgraph>
     <innerclass refid="classgr_1_1mimo__ofdm__jrc_1_1matrix__transpose__impl" prot="public">gr::mimo_ofdm_jrc::matrix_transpose_impl</innerclass>
     <innernamespace refid="namespacegr">gr</innernamespace>
@@ -77,6 +77,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/matrix_transpose_impl.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/matrix_transpose_impl.h"/>
   </compounddef>
 </doxygen>

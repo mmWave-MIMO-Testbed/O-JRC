@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" line="44" column="25" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" bodystart="44" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" line="44" column="25" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" bodystart="44" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" line="30" column="9" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" bodystart="30" bodyend="30"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" line="30" column="9" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" bodystart="30" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1estimator_1_1base_1a5734c93d0b831b9299863648c132ef48" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>void</type>
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" line="31" column="14"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" line="31" column="14"/>
       </memberdef>
       <memberdef kind="function" id="classgr_1_1mimo__ofdm_1_1estimator_1_1base_1af0c81a68b70d4169b3973982ae0d7c66" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>double</type>
@@ -106,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" line="42" column="16"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" line="42" column="16"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -131,7 +131,7 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" line="28" column="11" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" bodystart="28" bodyend="48"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" line="28" column="11" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/base.h" bodystart="28" bodyend="48"/>
     <listofallmembers>
       <member refid="classgr_1_1mimo__ofdm_1_1estimator_1_1base_1a5734c93d0b831b9299863648c132ef48" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm::estimator::base</scope><name>equalize</name></member>
       <member refid="classgr_1_1mimo__ofdm_1_1estimator_1_1base_1af0c81a68b70d4169b3973982ae0d7c66" prot="public" virt="pure-virtual"><scope>gr::mimo_ofdm::estimator::base</scope><name>get_snr</name></member>

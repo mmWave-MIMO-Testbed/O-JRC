@@ -4,12 +4,10 @@
     <compoundname>ofdm_cyclic_prefix_remover_impl.h</compoundname>
     <includes refid="ofdm__cyclic__prefix__remover_8h" local="no">mimo_ofdm_jrc/ofdm_cyclic_prefix_remover.h</includes>
     <incdepgraph>
-      <node id="2">
-        <label>mimo_ofdm_jrc/ofdm_cyclic_prefix_remover.h</label>
-        <link refid="ofdm__cyclic__prefix__remover_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-        <childnode refid="5" relation="include">
+      <node id="1">
+        <label>ofdm_cyclic_prefix_remover_impl.h</label>
+        <link refid="ofdm__cyclic__prefix__remover__impl_8h"/>
+        <childnode refid="2" relation="include">
         </childnode>
       </node>
       <node id="4">
@@ -21,10 +19,12 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="1">
-        <label>ofdm_cyclic_prefix_remover_impl.h</label>
-        <link refid="ofdm__cyclic__prefix__remover__impl_8h"/>
-        <childnode refid="2" relation="include">
+      <node id="2">
+        <label>mimo_ofdm_jrc/ofdm_cyclic_prefix_remover.h</label>
+        <link refid="ofdm__cyclic__prefix__remover_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
         </childnode>
       </node>
       <node id="5">
@@ -38,6 +38,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/ofdm_cyclic_prefix_remover_impl.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/ofdm_cyclic_prefix_remover_impl.h"/>
   </compounddef>
 </doxygen>

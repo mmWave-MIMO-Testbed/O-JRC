@@ -6,14 +6,6 @@
     <includes local="no">gnuradio/block.h</includes>
     <includedby refid="frame__detector__impl_8h" local="no">frame_detector_impl.h</includedby>
     <incdepgraph>
-      <node id="1">
-        <label>frame_detector.h</label>
-        <link refid="frame__detector_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-        <childnode refid="4" relation="include">
-        </childnode>
-      </node>
       <node id="3">
         <label>gnuradio/attributes.h</label>
       </node>
@@ -23,20 +15,28 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>gnuradio/block.h</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
       <node id="1">
         <label>frame_detector.h</label>
         <link refid="frame__detector_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
       </node>
+      <node id="4">
+        <label>gnuradio/block.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
       <node id="2">
         <label>frame_detector_impl.h</label>
         <link refid="frame__detector__impl_8h"/>
+      </node>
+      <node id="1">
+        <label>frame_detector.h</label>
+        <link refid="frame__detector_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
       </node>
     </invincdepgraph>
     <innerclass refid="classgr_1_1mimo__ofdm__jrc_1_1frame__detector" prot="public">gr::mimo_ofdm_jrc::frame_detector</innerclass>
@@ -46,6 +46,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/frame_detector.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/frame_detector.h"/>
   </compounddef>
 </doxygen>

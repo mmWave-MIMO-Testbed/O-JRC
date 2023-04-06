@@ -16,6 +16,9 @@
         <childnode refid="5" relation="include">
         </childnode>
       </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
       <node id="2">
         <label>base.h</label>
         <link refid="base_8h"/>
@@ -23,9 +26,6 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-      </node>
-      <node id="5">
-        <label>vector</label>
       </node>
       <node id="3">
         <label>gnuradio/gr_complex.h</label>
@@ -39,6 +39,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sta.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/sta.h"/>
   </compounddef>
 </doxygen>

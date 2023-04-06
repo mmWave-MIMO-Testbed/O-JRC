@@ -5,9 +5,6 @@
     <includes refid="api_8h" local="no">mimo_ofdm_jrc/api.h</includes>
     <includes local="no">gnuradio/tagged_stream_block.h</includes>
     <incdepgraph>
-      <node id="3">
-        <label>gnuradio/attributes.h</label>
-      </node>
       <node id="1">
         <label>fft_peak_detect.h</label>
         <link refid="fft__peak__detect_8h"/>
@@ -15,6 +12,9 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+      </node>
+      <node id="3">
+        <label>gnuradio/attributes.h</label>
       </node>
       <node id="2">
         <label>mimo_ofdm_jrc/api.h</label>
@@ -81,6 +81,6 @@
 <codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>INCLUDED_MIMO_OFDM_JRC_FFT_PEAK_DETECT_H<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/fft_peak_detect.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/fft_peak_detect.h"/>
   </compounddef>
 </doxygen>

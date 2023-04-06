@@ -23,6 +23,10 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="2">
+        <label>ls.h</label>
+        <link refid="ls_8h"/>
+      </node>
       <node id="3">
         <label>sta.h</label>
         <link refid="sta_8h"/>
@@ -35,10 +39,6 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="2">
-        <label>ls.h</label>
-        <link refid="ls_8h"/>
-      </node>
     </invincdepgraph>
     <innerclass refid="classgr_1_1mimo__ofdm__jrc_1_1estimator_1_1base" prot="public">gr::mimo_ofdm_jrc::estimator::base</innerclass>
     <innernamespace refid="namespacegr">gr</innernamespace>
@@ -48,6 +48,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/base.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/base.h"/>
   </compounddef>
 </doxygen>

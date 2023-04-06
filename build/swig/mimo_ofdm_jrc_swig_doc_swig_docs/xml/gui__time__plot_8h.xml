@@ -14,9 +14,6 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>gnuradio/block.h</label>
-      </node>
       <node id="1">
         <label>gui_time_plot.h</label>
         <link refid="gui__time__plot_8h"/>
@@ -24,6 +21,9 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+      </node>
+      <node id="4">
+        <label>gnuradio/block.h</label>
       </node>
     </incdepgraph>
     <innerclass refid="classgr_1_1mimo__ofdm__jrc_1_1gui__time__plot" prot="public">gr::mimo_ofdm_jrc::gui_time_plot</innerclass>
@@ -82,6 +82,6 @@
 <codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>INCLUDED_MIMO_OFDM_JRC_GUI_TIME_PLOT_H<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/gui_time_plot.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/gui_time_plot.h"/>
   </compounddef>
 </doxygen>

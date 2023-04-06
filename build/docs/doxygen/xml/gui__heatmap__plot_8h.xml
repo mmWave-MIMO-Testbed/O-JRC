@@ -15,6 +15,9 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
+      <node id="4">
+        <label>gnuradio/tagged_stream_block.h</label>
+      </node>
       <node id="1">
         <label>gui_heatmap_plot.h</label>
         <link refid="gui__heatmap__plot_8h"/>
@@ -22,9 +25,6 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-      </node>
-      <node id="4">
-        <label>gnuradio/tagged_stream_block.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
@@ -46,6 +46,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/gui_heatmap_plot.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/gui_heatmap_plot.h"/>
   </compounddef>
 </doxygen>

@@ -18,6 +18,12 @@
       <node id="8">
         <label>mimo_ofdm/stream_encoder.h</label>
       </node>
+      <node id="9">
+        <label>cinttypes</label>
+      </node>
+      <node id="12">
+        <label>tuple</label>
+      </node>
       <node id="1">
         <label>frame_sync_impl.h</label>
         <link refid="old__version_2frame__sync__impl_8h"/>
@@ -34,8 +40,14 @@
         <childnode refid="13" relation="include">
         </childnode>
       </node>
-      <node id="9">
-        <label>cinttypes</label>
+      <node id="13">
+        <label>gnuradio/fft/fft.h</label>
+      </node>
+      <node id="5">
+        <label>mimo_ofdm/api.h</label>
+      </node>
+      <node id="6">
+        <label>gnuradio/block.h</label>
       </node>
       <node id="4">
         <label>utils.h</label>
@@ -52,18 +64,6 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-      </node>
-      <node id="12">
-        <label>tuple</label>
-      </node>
-      <node id="13">
-        <label>gnuradio/fft/fft.h</label>
-      </node>
-      <node id="5">
-        <label>mimo_ofdm/api.h</label>
-      </node>
-      <node id="6">
-        <label>gnuradio/block.h</label>
       </node>
       <node id="10">
         <label>iostream</label>
@@ -82,6 +82,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_sync_impl.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/frame_sync_impl.h"/>
   </compounddef>
 </doxygen>

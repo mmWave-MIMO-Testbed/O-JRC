@@ -22,6 +22,12 @@
       <node id="8">
         <label>cinttypes</label>
       </node>
+      <node id="4">
+        <label>mimo_ofdm/api.h</label>
+      </node>
+      <node id="5">
+        <label>gnuradio/block.h</label>
+      </node>
       <node id="3">
         <label>utils.h</label>
         <link refid="old__version_2utils_8h"/>
@@ -38,12 +44,6 @@
         <childnode refid="9" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>mimo_ofdm/api.h</label>
-      </node>
-      <node id="5">
-        <label>gnuradio/block.h</label>
-      </node>
       <node id="9">
         <label>iostream</label>
       </node>
@@ -58,6 +58,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/matrix_transpose_impl.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/matrix_transpose_impl.h"/>
   </compounddef>
 </doxygen>

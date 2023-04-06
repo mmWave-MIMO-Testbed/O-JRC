@@ -7,12 +7,6 @@
     <includes local="no">qvector.h</includes>
     <includedby refid="old__version_2heatmap__plot_8h" local="yes">heatmap_plot.h</includedby>
     <incdepgraph>
-      <node id="4">
-        <label>qvector.h</label>
-      </node>
-      <node id="3">
-        <label>qwt_raster_data.h</label>
-      </node>
       <node id="1">
         <label>range_angle_raster_data.h</label>
         <link refid="old__version_2range__angle__raster__data_8h"/>
@@ -23,17 +17,17 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
+      <node id="4">
+        <label>qvector.h</label>
+      </node>
+      <node id="3">
+        <label>qwt_raster_data.h</label>
+      </node>
       <node id="2">
         <label>qwt_global.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="2">
-        <label>heatmap_plot.h</label>
-        <link refid="old__version_2heatmap__plot_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
       <node id="1">
         <label>range_angle_raster_data.h</label>
         <link refid="old__version_2range__angle__raster__data_8h"/>
@@ -44,12 +38,18 @@
         <label>gui_heatmap_plot_impl.h</label>
         <link refid="old__version_2gui__heatmap__plot__impl_8h"/>
       </node>
+      <node id="2">
+        <label>heatmap_plot.h</label>
+        <link refid="old__version_2heatmap__plot_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
     </invincdepgraph>
     <innerclass refid="classRangeAngleRasterData" prot="public">RangeAngleRasterData</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/range_angle_raster_data.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/range_angle_raster_data.h"/>
   </compounddef>
 </doxygen>

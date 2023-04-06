@@ -5,6 +5,9 @@
     <includes local="no">gnuradio/blocks/api.h</includes>
     <includes local="no">gnuradio/sync_block.h</includes>
     <incdepgraph>
+      <node id="3">
+        <label>gnuradio/sync_block.h</label>
+      </node>
       <node id="1">
         <label>udp_sink.h</label>
         <link refid="udp__sink_8h"/>
@@ -12,9 +15,6 @@
         </childnode>
         <childnode refid="3" relation="include">
         </childnode>
-      </node>
-      <node id="3">
-        <label>gnuradio/sync_block.h</label>
       </node>
       <node id="2">
         <label>gnuradio/blocks/api.h</label>
@@ -83,6 +83,6 @@
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>INCLUDED_GR_UDP_SINK_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/udp_sink.h"/>
   </compounddef>
 </doxygen>

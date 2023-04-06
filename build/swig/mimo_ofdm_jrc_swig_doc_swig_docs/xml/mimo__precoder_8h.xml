@@ -14,9 +14,6 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="4">
-        <label>gnuradio/tagged_stream_block.h</label>
-      </node>
       <node id="1">
         <label>mimo_precoder.h</label>
         <link refid="mimo__precoder_8h"/>
@@ -24,6 +21,9 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
+      </node>
+      <node id="4">
+        <label>gnuradio/tagged_stream_block.h</label>
       </node>
     </incdepgraph>
     <innerclass refid="classgr_1_1mimo__ofdm__jrc_1_1mimo__precoder" prot="public">gr::mimo_ofdm_jrc::mimo_precoder</innerclass>
@@ -97,6 +97,6 @@
 <codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>INCLUDED_MIMO_OFDM_JRC_MIMO_PRECODER_H<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/mimo_precoder.h"/>
   </compounddef>
 </doxygen>

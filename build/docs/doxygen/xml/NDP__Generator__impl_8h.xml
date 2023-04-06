@@ -9,6 +9,12 @@
       <node id="4">
         <label>gnuradio/sync_block.h</label>
       </node>
+      <node id="3">
+        <label>vector</label>
+      </node>
+      <node id="2">
+        <label>mimo_ofdm_jrc/NDP_Generator.h</label>
+      </node>
       <node id="1">
         <label>NDP_Generator_impl.h</label>
         <link refid="NDP__Generator__impl_8h"/>
@@ -19,12 +25,6 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="3">
-        <label>vector</label>
-      </node>
-      <node id="2">
-        <label>mimo_ofdm_jrc/NDP_Generator.h</label>
-      </node>
     </incdepgraph>
     <innerclass refid="classgr_1_1mimo__ofdm__jrc_1_1NDP__Generator__impl" prot="public">gr::mimo_ofdm_jrc::NDP_Generator_impl</innerclass>
     <innernamespace refid="namespacegr">gr</innernamespace>
@@ -33,6 +33,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/NDP_Generator_impl.h"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/lib/old_version/NDP_Generator_impl.h"/>
   </compounddef>
 </doxygen>

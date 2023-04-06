@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/gui_heatmap_plot.h" line="38" column="33" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/gui_heatmap_plot.h" bodystart="38" bodyend="-1"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/gui_heatmap_plot.h" line="38" column="33" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/gui_heatmap_plot.h" bodystart="38" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/gui_heatmap_plot.h" line="48" column="19"/>
+        <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/gui_heatmap_plot.h" line="48" column="19"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -116,7 +116,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/gui_heatmap_plot.h" line="36" column="1" bodyfile="/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/gui_heatmap_plot.h" bodystart="35" bodyend="61"/>
+    <location file="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/gui_heatmap_plot.h" line="36" column="1" bodyfile="/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/include/mimo_ofdm_jrc/gui_heatmap_plot.h" bodystart="35" bodyend="61"/>
     <listofallmembers>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1gui__heatmap__plot_1a1e623f8154643008d2edd87276ed54cc" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::gui_heatmap_plot</scope><name>make</name></member>
       <member refid="classgr_1_1mimo__ofdm__jrc_1_1gui__heatmap__plot_1ab3c6356bf81d53e236f73f71b296d678" prot="public" virt="non-virtual"><scope>gr::mimo_ofdm_jrc::gui_heatmap_plot</scope><name>sptr</name></member>
