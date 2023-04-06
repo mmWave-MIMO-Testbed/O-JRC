@@ -1,0 +1,64 @@
+# .gitignore for GNU Radio projects
+
+# Build and cache directories
+build/
+cache/
+
+# Compiled Object files
+*.o
+*.so
+*.ko
+*.obj
+*.elf
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.dll
+*.dylib
+
+# Compiled Static libraries
+*.lib
+*.a
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python related
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Backup files
+*~
+*.swp
+*.swo
+.backup
+*.bak
+*.tmp
+
+# Other
+*.lock
+*.conf
