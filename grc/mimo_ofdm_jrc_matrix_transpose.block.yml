@@ -1,6 +1,6 @@
 id: mimo_ofdm_jrc_matrix_transpose
 label: Matrix_transpose
-category: '[mimo_ofdm_jrc]'
+category: '[MIMO OFDM JRC]'
 
 templates:
   imports: import mimo_ofdm_jrc

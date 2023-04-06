@@ -1,0 +1,57 @@
+id: mimo_ofdm_jrc_socket_pdu_jrc
+label: socket_pdu_jrc
+category: '[MIMO OFDM JRC]'
+flags: [ python, cpp ]
+
+parameters:
+-   id: type
+    label: Type
+    dtype: enum
+    default: UDP_SERVER
+    options: ["TCP_SERVER", "TCP_CLIENT", "UDP_SERVER", "UDP_CLIENT"]
+    option_labels: [TCP Server, TCP Client, UDP Server, UDP Client]
+-   id: host
+    label: Host
+    dtype: string
+-   id: port
+    label: Port
+    dtype: string
+    default: '52001'
+-   id: MTU
+    label: MTU
+    dtype: int
+    default: '200'
+-   id: tcp_no_delay
+    label: TCP No Delay
+    dtype: enum
+    default: 'False'
+    options: ['True', 'False']
+    option_labels: [Enabled, Disabled]
+    hide: ${ (( 'part' if (str(tcp_no_delay) == 'False') else 'none') if ((type == 'TCP_CLIENT') or (type == 'TCP_SERVER')) else 'all') }
+
+inputs:
+-   domain: message
+    id: pdus
+    optional: true
+
+outputs:
+-   domain: message
+    id: pdus
+    optional: true
+
+
+templates:
+  imports: import mimo_ofdm_jrc
+  make: mimo_ofdm_jrc.socket_pdu_jrc('${type}', ${host}, ${port}, ${MTU}, ${tcp_no_delay})
+
+cpp_templates:
+  includes: ['#include <mimo_ofdm_jrc/socket_pdu_jrc.h>']
+  declarations: 'mimo_ofdm_jrc::socket_pdu_jrc::sptr ${id};'
+  make: 'this->${id} = mimo_ofdm_jrc::socket_pdu_jrc::make(${type}, ${host}, ${port}, ${MTU}, ${tcp_no_delay});'
+  translations:
+    'True': 'true'
+    'False': 'false'
+
+documentation: |-
+    For server modes, leave Host blank to bind to all interfaces (equivalent to 0.0.0.0).
+file_format: 1

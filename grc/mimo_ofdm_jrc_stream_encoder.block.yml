@@ -1,6 +1,6 @@
 id: mimo_ofdm_jrc_stream_encoder
 label: stream_encoder
-category: '[mimo_ofdm_jrc]'
+category: '[MIMO OFDM JRC]'
 
 parameters:
 - id: mod_encode

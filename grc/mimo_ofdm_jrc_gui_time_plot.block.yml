@@ -1,6 +1,6 @@
 id: mimo_ofdm_jrc_gui_time_plot
 label: Time_plot (GUI)
-category: '[mimo_ofdm_jrc]'
+category: '[MIMO OFDM JRC]'
 
 templates:
   imports: import mimo_ofdm_jrc

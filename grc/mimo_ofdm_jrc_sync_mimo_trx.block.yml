@@ -1,6 +1,6 @@
 id: mimo_ofdm_jrc_sync_mimo_trx
 label: sync_mimo_trx
-category: '[mimo_ofdm_jrc]'
+category: '[MIMO OFDM JRC]'
 
 templates:
   imports: import mimo_ofdm_jrc

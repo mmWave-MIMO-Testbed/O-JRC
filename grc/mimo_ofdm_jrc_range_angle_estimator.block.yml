@@ -1,6 +1,6 @@
 id: mimo_ofdm_jrc_range_angle_estimator
 label: Range_angle_estimator
-category: '[mimo_ofdm_jrc]'
+category: '[MIMO OFDM JRC]'
 
 templates:
   imports: import mimo_ofdm_jrc

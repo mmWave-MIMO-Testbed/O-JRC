@@ -1,6 +1,6 @@
 id: mimo_ofdm_jrc_mimo_ofdm_equalizer
 label: MIMO_ofdm_equalizer
-category: '[mimo_ofdm_jrc]'
+category: '[MIMO OFDM JRC]'
 
 templates:
   imports: import mimo_ofdm_jrc

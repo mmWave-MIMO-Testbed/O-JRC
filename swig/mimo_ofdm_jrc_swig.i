@@ -29,6 +29,7 @@
 #include "mimo_ofdm_jrc/target_simulator.h"
 #include "mimo_ofdm_jrc/usrp_mimo_trx.h"
 #include "mimo_ofdm_jrc/zero_pad.h"
+#include "mimo_ofdm_jrc/socket_pdu_jrc.h"
 %}
 
 %include "mimo_ofdm_jrc/fft_peak_detect.h"
@@ -75,3 +76,5 @@ GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, usrp_mimo_trx);
 GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, zero_pad);
 
 
+%include "mimo_ofdm_jrc/socket_pdu_jrc.h"
+GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, socket_pdu_jrc);
