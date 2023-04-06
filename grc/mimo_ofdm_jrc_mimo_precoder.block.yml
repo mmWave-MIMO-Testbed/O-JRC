@@ -1,6 +1,6 @@
 id: mimo_ofdm_jrc_mimo_precoder
 label: MIMO OFDM Precoder
-category: '[mimo_ofdm_jrc]'
+category: '[MIMO OFDM JRC]'
 
 templates:
   imports: import mimo_ofdm_jrc

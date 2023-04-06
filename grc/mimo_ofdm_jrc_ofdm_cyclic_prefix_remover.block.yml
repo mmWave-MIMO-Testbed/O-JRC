@@ -1,6 +1,6 @@
 id: mimo_ofdm_jrc_ofdm_cyclic_prefix_remover
 label: OFDM Cyclic Prefix Remover
-category: '[mimo_ofdm_jrc]'
+category: '[MIMO OFDM JRC]'
 
 templates:
   imports: import mimo_ofdm_jrc

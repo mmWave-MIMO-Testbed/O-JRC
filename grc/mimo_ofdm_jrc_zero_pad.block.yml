@@ -1,6 +1,6 @@
 id: mimo_ofdm_jrc_zero_pad
 label: zero_pad
-category: '[mimo_ofdm_jrc]'
+category: '[MIMO OFDM JRC]'
 
 templates:
   imports: import mimo_ofdm_jrc

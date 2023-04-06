@@ -1,6 +1,6 @@
 id: mimo_ofdm_jrc_ofdm_frame_generator
 label: OFDM_frame_generator
-category: '[mimo_ofdm_jrc]'
+category: '[MIMO OFDM JRC]'
 
 templates:
   imports: import mimo_ofdm_jrc

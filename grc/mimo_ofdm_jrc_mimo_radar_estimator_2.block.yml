@@ -1,6 +1,6 @@
 id: mimo_ofdm_jrc_mimo_radar_estimator_2
 label: MIMO-OFDM Radar Estimator 2
-category: '[mimo_ofdm_jrc]'
+category: '[MIMO OFDM JRC]'
 
 templates:
   imports: import mimo_ofdm_jrc

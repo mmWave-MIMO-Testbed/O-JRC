@@ -1,6 +1,6 @@
 id: mimo_ofdm_jrc_gui_heatmap_plot
 label: Heatmap_plot (QT GUI)
-category: '[mimo_ofdm_jrc]'
+category: '[MIMO OFDM JRC]'
 
 templates:
   imports: import mimo_ofdm_jrc

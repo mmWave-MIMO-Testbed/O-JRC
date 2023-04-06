@@ -1,6 +1,6 @@
 id: mimo_ofdm_jrc_moving_avg
 label: Moving_avg
-category: '[mimo_ofdm_jrc]'
+category: '[MIMO OFDM JRC]'
 
 templates:
   imports: import mimo_ofdm_jrc
