@@ -265,9 +265,31 @@ void socket_pdu_jrc_impl::handle_udp_read(const boost::system::error_code& error
                                       size_t bytes_transferred)
 {
     if (!error) {
+
+        // Print d_rxbuf
+        std::cout << "Received UDP data (bytes_transferred = " << bytes_transferred << "):" << std::endl;
+        for (size_t i = 0; i < bytes_transferred; ++i) {
+            std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(d_rxbuf[i]) << " ";
+        }
+        std::cout << std::endl;
+
+
+
         pmt::pmt_t vector =
             pmt::init_u8vector(bytes_transferred, (const uint8_t*)&d_rxbuf[0]);
         pmt::pmt_t pdu = pmt::cons(pmt::PMT_NIL, vector);
+
+
+
+        // Print the data that will be sent to other blocks
+        std::cout << "socket_pdu_jrc: Sending data to other blocks (bytes_transferred = " << bytes_transferred << "):" << std::endl;
+        size_t pdu_length = pmt::length(pmt::cdr(pdu));
+        const uint8_t *pdu_data = pmt::u8vector_elements(pmt::cdr(pdu), pdu_length);
+        for (size_t i = 0; i < pdu_length; ++i) {
+            std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(pdu_data[i]) << " ";
+        }
+        std::cout << std::endl;
+
 
         message_port_pub(gr::blocks::pdu::pdu_port_id(), pdu);
 

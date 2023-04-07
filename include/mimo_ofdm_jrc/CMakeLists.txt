@@ -44,5 +44,6 @@ install(FILES
     target_simulator.h
     usrp_mimo_trx.h
     zero_pad.h
-    socket_pdu_jrc.h DESTINATION include/mimo_ofdm_jrc
+    socket_pdu_jrc.h
+    ndp_generator.h DESTINATION include/mimo_ofdm_jrc
 )
