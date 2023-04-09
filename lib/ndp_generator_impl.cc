@@ -24,6 +24,9 @@
 
 #include <gnuradio/io_signature.h>
 #include "ndp_generator_impl.h"
+#include <mutex>
+#include <condition_variable>
+#include <boost/date_time/posix_time/posix_time.hpp>
 
 namespace gr {
   namespace mimo_ofdm_jrc {
@@ -36,9 +39,12 @@ namespace gr {
     ndp_generator_impl::ndp_generator_impl()
       : block("ndp_generator",
               gr::io_signature::make(0, 0, 0),
-              gr::io_signature::make(0, 0, 0))
+              gr::io_signature::make(0, 0, 0)),
+        d_enabled(false)
     {
       message_port_register_out(pmt::mp("out"));
+      message_port_register_in(pmt::mp("enable"));
+      set_msg_handler(pmt::mp("enable"), boost::bind(&ndp_generator_impl::enable_handler, this, _1));
     }
 
     ndp_generator_impl::~ndp_generator_impl()
@@ -54,29 +60,61 @@ namespace gr {
 
     bool ndp_generator_impl::stop()
     {
+        {
+          std::unique_lock<std::mutex> lock(d_mutex);
+          d_enabled = true;
+          d_condition_variable.notify_one();
+        }
+      
       d_thread->interrupt();
       d_thread->join();
       return true;
     }
 
+
+    void ndp_generator_impl::enable_handler(pmt::pmt_t msg)
+    {
+      if (pmt::is_integer(msg))
+      {
+        d_enabled = (pmt::to_long(msg) == 1);
+        if (d_enabled)
+        {
+          std::unique_lock<std::mutex> lock(d_mutex);
+          d_condition_variable.notify_one();
+        }
+      }
+      else
+      {
+        std::cerr << "Error: expected integer value for enable signal" << std::endl;
+      }
+    }
+
+
     void ndp_generator_impl::send_data()
     {
-      while (true) {
-        boost::this_thread::sleep(boost::posix_time::milliseconds(100));
-
+      while (true) 
+      {   
+        
+        std::unique_lock<std::mutex> lock(d_mutex);
+        d_condition_variable.wait(lock, [this] { return d_enabled; });
+        
+        
         const uint8_t data[] = {0x01, 0x58, 0x58};
         pmt::pmt_t vector_data = pmt::init_u8vector(3, data);
         pmt::pmt_t pdu = pmt::cons(pmt::PMT_NIL, vector_data);
         message_port_pub(pmt::mp("out"), pdu);
 
-        std::cout << "Output data: ";
-        for (size_t i = 0; i < sizeof(data); ++i) {
-          std::cout << std::hex << static_cast<int>(data[i]) << " ";
+        d_enabled = false; // reset the enable flag
+
+        boost::this_thread::sleep(boost::posix_time::milliseconds(10));
+        
+        if (boost::this_thread::interruption_requested())
+        {
+          break;
         }
-        std::cout << std::endl;
       }
     }
 
-  } /* namespace fake_socket_pdu */
+  } /* namespace mimo_ofdm_jrc */
 } /* namespace gr */
 

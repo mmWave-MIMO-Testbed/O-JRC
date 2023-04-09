@@ -320,21 +320,21 @@ namespace gr {
             throw std::runtime_error("no mcs tag in input stream!");
         }
         MCS mcs = (MCS)pmt::to_long(tags[0].value);
-        dout << "[MIMO PRECODER] MCS from encoder: " << mcs << std::endl;
+        // dout << "[MIMO PRECODER] MCS from encoder: " << mcs << std::endl;
 
         get_tags_in_range(tags, 0, nitems_read(0), nitems_read(0) + ninput_items[0], pmt::mp("packet_type"));
         if (tags.size() != 1) {
             throw std::runtime_error("no packet_type tag in input stream!");
         }
         PACKET_TYPE packet_type = (PACKET_TYPE) pmt::to_uint64(tags[0].value);
-        dout << "[MIMO PRECODER] Packet Type from encoder: " << packet_type << std::endl;
+        // dout << "[MIMO PRECODER] Packet Type from encoder: " << packet_type << std::endl;
 
         get_tags_in_range(tags, 0, nitems_read(0), nitems_read(0) + ninput_items[0], pmt::mp("pdu_len"));
         if (tags.size() != 1) {
             throw std::runtime_error("no pdu_len tag in input stream!");
         }
         int data_size_crc = pmt::to_long(tags[0].value);
-        dout << "[MIMO PRECODER] Data size with CRC from encoder: " << data_size_crc << " byte" << std::endl;
+        // dout << "[MIMO PRECODER] Data size with CRC from encoder: " << data_size_crc << " byte" << std::endl;
 
         ofdm_mcs ofdm_param(mcs, d_N_data_carriers);
         packet_param frame_param(ofdm_param, data_size_crc, packet_type);
@@ -390,7 +390,7 @@ namespace gr {
         long i_ofdm_symbol = 0; // Number of output items
         if (packet_type == PACKET_TYPE::NDP)
         {
-            dout << "[MIMO PRECODER] Generating an NDP frame..." << std::endl;
+            // dout << "[MIMO PRECODER] Generating an NDP frame..." << std::endl;
             
             // COPYING MIMO PREAMBLE 
             for (int i_tx = 0; i_tx < out_ptrs.size(); i_tx++)
@@ -446,7 +446,7 @@ namespace gr {
         }
         else if (packet_type == PACKET_TYPE::DATA)
         {
-            dout << "[MIMO PRECODER] Generating an DATA frame..." << std::endl;
+            // dout << "[MIMO PRECODER] Generating an DATA frame..." << std::endl;
             
             // GENERATE RADAR STREAMS
             std::random_device rd;
@@ -792,7 +792,7 @@ namespace gr {
             throw std::invalid_argument("[MIMO PRECODER] packet type is not defined!");
         }
         
-        dout << "[MIMO PRECODER] OFDM symbols generated: " << i_ofdm_symbol << std::endl;
+        // dout << "[MIMO PRECODER] OFDM symbols generated: " << i_ofdm_symbol << std::endl;
 
         if (i_ofdm_symbol != N_ofdm_symbol)
         {
@@ -899,11 +899,11 @@ namespace gr {
         }
 
         std::time_t curr_write_time = boost::filesystem::last_write_time(d_chan_est_file);
-        dout << "[MIMO PRECODER] Last write time of the chanEst file: " << last_chanEst_update_time << ", Current write time of the file: " << curr_write_time << std::endl;
+        // dout << "[MIMO PRECODER] Last write time of the chanEst file: " << last_chanEst_update_time << ", Current write time of the file: " << curr_write_time << std::endl;
         
         if(curr_write_time <= last_chanEst_update_time && !mean_chan_est_changed)
         {
-            dout << "[MIMO PRECODER] Steering matrix is up-to-date --> No need to compute steering matrix again " << std::endl;
+            // dout << "[MIMO PRECODER] Steering matrix is up-to-date --> No need to compute steering matrix again " << std::endl;
             return true;
         }
 

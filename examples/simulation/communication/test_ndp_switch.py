@@ -28,6 +28,7 @@ from gnuradio import qtgui
 from gnuradio.filter import firdes
 import sip
 from gnuradio import blocks
+import pmt
 from gnuradio import channels
 from gnuradio import digital
 from gnuradio import fft
@@ -100,6 +101,7 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
         self.radar_log_file = radar_log_file = os.getcwd()+"/temp/radar_log.csv"
         self.radar_aided = radar_aided = False
         self.phased_steering = phased_steering = False
+        self.period = period = 2000
         self.path_loss = path_loss = 4*cmath.pi*distance/wavelength
         self.noise_var = noise_var = 4e-21*samp_rate*10**(noise_figure_dB/10.0)
         self.mtu_value = mtu_value = mtu_range
@@ -177,6 +179,9 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
             lambda i: self.set_phased_steering(self._phased_steering_options[i]))
         # Create the radio buttons
         self.top_grid_layout.addWidget(self._phased_steering_tool_bar)
+        self._period_range = Range(100, 2000, 100, 2000, 200)
+        self._period_win = RangeWidget(self._period_range, self.set_period, 'Enable Period', "counter_slider", int)
+        self.top_grid_layout.addWidget(self._period_win)
         # Create the options list
         self._mcs_options = [0, 1, 2, 3, 4, 5]
         # Create the labels list
@@ -236,7 +241,7 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
         for c in range(0, 1):
             self.top_grid_layout.setColumnStretch(c, 1)
         self.qtgui_time_sink_x_0_2_0 = qtgui.time_sink_c(
-            (fft_len+cp_len)*40, #size
+            (fft_len+cp_len)*15, #size
             1, #samp_rate
             "RX FRAME", #name
             1 #number of inputs
@@ -299,7 +304,7 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_zero_pad_0 = mimo_ofdm_jrc.zero_pad(False, 5, 6*(fft_len+cp_len)+10)
         self.mimo_ofdm_jrc_stream_encoder_1 = mimo_ofdm_jrc.stream_encoder(mcs, ofdm_config.N_data, 0, False)
         self.mimo_ofdm_jrc_stream_decoder_0 = mimo_ofdm_jrc.stream_decoder(len(ofdm_config.data_subcarriers), comm_log_file, record_comm_stats, False)
-        self.mimo_ofdm_jrc_socket_pdu_jrc_1 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', mtu_value, False)
+        self.mimo_ofdm_jrc_ndp_generator_1 = mimo_ofdm_jrc.ndp_generator()
         self.mimo_ofdm_jrc_moving_avg_0 = mimo_ofdm_jrc.moving_avg(corr_window_size, 1, 16000, False)
         self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64, ofdm_config.ltf_mapped_sc__ss_sym, chan_est_file, False, radar_log_file, radar_aided, phased_steering, False, "packet_len",  True)
         self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0 = mimo_ofdm_jrc.mimo_ofdm_equalizer(chan_est, rf_freq, samp_rate, fft_len, cp_len, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64[3], ofdm_config.ltf_mapped_sc__ss_sym, N_tx, chan_est_file, "", False, False)
@@ -337,6 +342,7 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_cc(tx_multiplier)
         self.blocks_moving_average_xx_1_0 = blocks.moving_average_ff(int(1.5*corr_window_size), 1/1.5, 16000, 1)
         self.blocks_moving_average_xx_1_0.set_processor_affinity([3, 4])
+        self.blocks_message_strobe_0 = blocks.message_strobe(pmt.from_long(1), period)
         self.blocks_divide_xx_0 = blocks.divide_ff(1)
         self.blocks_delay_0_0 = blocks.delay(gr.sizeof_gr_complex*1, int(fft_len/4))
         self.blocks_delay_0 = blocks.delay(gr.sizeof_gr_complex*1, sync_length)
@@ -351,7 +357,8 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.mimo_ofdm_jrc_socket_pdu_jrc_1, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_1, 'pdu_in'))
+        self.msg_connect((self.blocks_message_strobe_0, 'strobe'), (self.mimo_ofdm_jrc_ndp_generator_1, 'enable'))
+        self.msg_connect((self.mimo_ofdm_jrc_ndp_generator_1, 'out'), (self.mimo_ofdm_jrc_stream_encoder_1, 'pdu_in'))
         self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'sym'), (self.blocks_socket_pdu_1, 'pdus'))
         self.connect((self.blocks_abs_xx_0, 0), (self.blocks_divide_xx_0, 1))
         self.connect((self.blocks_add_xx_0_0, 0), (self.channels_channel_model_0, 0))
@@ -534,6 +541,13 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
         self.phased_steering = phased_steering
         self._phased_steering_callback(self.phased_steering)
         self.mimo_ofdm_jrc_mimo_precoder_0.set_phased_steering(self.phased_steering)
+
+    def get_period(self):
+        return self.period
+
+    def set_period(self, period):
+        self.period = period
+        self.blocks_message_strobe_0.set_period(self.period)
 
     def get_path_loss(self):
         return self.path_loss

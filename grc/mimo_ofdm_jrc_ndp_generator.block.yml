@@ -12,7 +12,13 @@ templates:
 #     * label (label shown in the GUI)
 #     * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
 parameters: []
-inputs: []
+
+inputs:
+  - label: enable
+    domain: message
+    id: enable
+    dtype: int
+
 outputs:
   - label: out
     domain: message
