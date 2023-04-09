@@ -35,18 +35,16 @@ namespace mimo_ofdm_jrc {
 socket_pdu_jrc::sptr socket_pdu_jrc::make(std::string type,
                                   std::string addr,
                                   std::string port,
-                                  int MTU /*= 10000*/,
-                                  bool tcp_no_delay /*= false*/)
+                                  int MTU /*= 10000*/)
 {
     return gnuradio::get_initial_sptr(
-        new socket_pdu_jrc_impl(type, addr, port, MTU, tcp_no_delay));
+        new socket_pdu_jrc_impl(type, addr, port, MTU));
 }
 
 socket_pdu_jrc_impl::socket_pdu_jrc_impl(std::string type,
                                  std::string addr,
                                  std::string port,
-                                 int MTU /*= 10000*/,
-                                 bool tcp_no_delay /*= false*/)
+                                 int MTU /*= 10000*/)
     : block("socket_pdu_jrc", io_signature::make(0, 0, 0), io_signature::make(0, 0, 0)),
       d_MTU(MTU)
 {
