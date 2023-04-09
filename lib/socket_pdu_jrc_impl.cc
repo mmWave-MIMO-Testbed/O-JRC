@@ -128,7 +128,7 @@ bool socket_pdu_jrc_impl::stop()
 void socket_pdu_jrc_impl::enable_handler(pmt::pmt_t msg) {
     if (pmt::is_integer(msg)) 
     {
-        d_enabled = (pmt::to_long(msg) == 1);
+        d_enabled = (pmt::to_long(msg) == 2);
         std::cout << "d_enabled: " << d_enabled << std::endl;
     }
     else
@@ -164,6 +164,14 @@ void socket_pdu_jrc_impl::handle_udp_read(const boost::system::error_code& error
         std::cout << "Before d_enabled " << d_enabled << std::endl;
         if (!d_enabled) 
         {
+            
+            d_udp_socket->async_receive_from(   boost::asio::buffer(d_rxbuf),
+                                                d_udp_endpoint_other,
+                                                boost::bind(&socket_pdu_jrc_impl::handle_udp_read,
+                                                this,
+                                                boost::asio::placeholders::error,
+                                                boost::asio::placeholders::bytes_transferred)
+                                            );
             return;
         } 
         std::cout << "After d_enabled " << d_enabled << std::endl;  
