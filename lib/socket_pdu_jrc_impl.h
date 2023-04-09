@@ -36,7 +36,9 @@ private:
     void run_io_service() { d_io_service.run(); }
     gr::thread::thread d_thread;
     bool d_started;
-
+    
+    void enable_handler(pmt::pmt_t msg);
+    bool d_enabled;
 
     // UDP specific
     boost::asio::ip::udp::endpoint d_udp_endpoint;
