@@ -24,6 +24,8 @@
 #include <mimo_ofdm_jrc/ndp_generator.h>
 #include <boost/shared_ptr.hpp>
 #include <boost/thread.hpp>
+#include <mutex>
+#include <condition_variable>
 
 namespace gr {
   namespace mimo_ofdm_jrc {
@@ -32,7 +34,11 @@ namespace gr {
     {
      private:
       boost::shared_ptr<boost::thread> d_thread;
+      std::mutex d_mutex;
+      std::condition_variable d_condition_variable;
       void send_data();
+      void enable_handler(pmt::pmt_t msg);
+      bool d_enabled;
 
      public:
       ndp_generator_impl();
