@@ -54,8 +54,7 @@ public:
     socket_pdu_jrc_impl(std::string type,
                     std::string addr,
                     std::string port,
-                    int MTU = 200,
-                    bool tcp_no_delay = false);
+                    int MTU = 200);
     ~socket_pdu_jrc_impl();
     bool stop();
 

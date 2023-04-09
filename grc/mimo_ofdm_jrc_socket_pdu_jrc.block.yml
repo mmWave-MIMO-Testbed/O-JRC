@@ -21,13 +21,6 @@ parameters:
     label: MTU
     dtype: int
     default: '200'
--   id: tcp_no_delay
-    label: TCP No Delay
-    dtype: enum
-    default: 'False'
-    options: ['True', 'False']
-    option_labels: [Enabled, Disabled]
-    hide: ${ (( 'part' if (str(tcp_no_delay) == 'False') else 'none') if ((type == 'TCP_CLIENT') or (type == 'TCP_SERVER')) else 'all') }
 
 inputs:
 -   domain: message
@@ -42,12 +35,12 @@ outputs:
 
 templates:
   imports: import mimo_ofdm_jrc
-  make: mimo_ofdm_jrc.socket_pdu_jrc('${type}', ${host}, ${port}, ${MTU}, ${tcp_no_delay})
+  make: mimo_ofdm_jrc.socket_pdu_jrc('${type}', ${host}, ${port}, ${MTU})
 
 cpp_templates:
   includes: ['#include <mimo_ofdm_jrc/socket_pdu_jrc.h>']
   declarations: 'mimo_ofdm_jrc::socket_pdu_jrc::sptr ${id};'
-  make: 'this->${id} = mimo_ofdm_jrc::socket_pdu_jrc::make(${type}, ${host}, ${port}, ${MTU}, ${tcp_no_delay});'
+  make: 'this->${id} = mimo_ofdm_jrc::socket_pdu_jrc::make(${type}, ${host}, ${port}, ${MTU});'
   translations:
     'True': 'true'
     'False': 'false'
