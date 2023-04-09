@@ -644,7 +644,7 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    msg: "pmt.from_long(0) \n"
+    msg: 'pmt.from_long(msg_one) '
     period: '1000'
   states:
     bus_sink: false
@@ -1407,26 +1407,6 @@ blocks:
     coordinate: [100, 620]
     rotation: 0
     state: disabled
-- name: mimo_ofdm_jrc_socket_pdu_jrc_0
-  id: mimo_ofdm_jrc_socket_pdu_jrc
-  parameters:
-    MTU: '200'
-    affinity: ''
-    alias: ''
-    comment: ''
-    host: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    port: '52001'
-    tcp_no_delay: 'False'
-    type: UDP_SERVER
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [56, 467]
-    rotation: 0
-    state: disabled
 - name: mimo_ofdm_jrc_socket_pdu_jrc_1
   id: mimo_ofdm_jrc_socket_pdu_jrc
   parameters:
@@ -1444,7 +1424,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [62, 468]
+    coordinate: [56, 467]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_stream_decoder_0
@@ -2029,7 +2009,6 @@ connections:
 - [mimo_ofdm_jrc_moving_avg_0, '0', blocks_complex_to_mag_0, '0']
 - [mimo_ofdm_jrc_moving_avg_0, '0', mimo_ofdm_jrc_frame_detector_0, '1']
 - [mimo_ofdm_jrc_ndp_generator_0, out, mimo_ofdm_jrc_stream_encoder_1, pdu_in]
-- [mimo_ofdm_jrc_socket_pdu_jrc_0, pdus, mimo_ofdm_jrc_stream_encoder_1, pdu_in]
 - [mimo_ofdm_jrc_socket_pdu_jrc_1, pdus, mimo_ofdm_jrc_stream_encoder_1, pdu_in]
 - [mimo_ofdm_jrc_stream_decoder_0, '0', blocks_null_sink_0_0, '0']
 - [mimo_ofdm_jrc_stream_decoder_0, stats, mimo_ofdm_jrc_gui_time_plot_0, stats]
