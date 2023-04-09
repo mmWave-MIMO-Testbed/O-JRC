@@ -37,23 +37,6 @@ private:
     gr::thread::thread d_thread;
     bool d_started;
 
-    // TCP specific
-    boost::asio::ip::tcp::endpoint d_tcp_endpoint;
-    std::vector<tcp_connection::sptr> d_tcp_connections;
-    void handle_tcp_read(const boost::system::error_code& error,
-                         size_t bytes_transferred);
-    bool d_tcp_no_delay;
-
-    // TCP server specific
-    boost::shared_ptr<boost::asio::ip::tcp::acceptor> d_acceptor_tcp;
-    void start_tcp_accept();
-    void tcp_server_send(pmt::pmt_t msg);
-    void handle_tcp_accept(tcp_connection::sptr new_connection,
-                           const boost::system::error_code& error);
-
-    // TCP client specific
-    boost::shared_ptr<boost::asio::ip::tcp::socket> d_tcp_socket;
-    void tcp_client_send(pmt::pmt_t msg);
 
     // UDP specific
     boost::asio::ip::udp::endpoint d_udp_endpoint;
@@ -63,10 +46,9 @@ private:
                          size_t bytes_transferred);
     void udp_send(pmt::pmt_t msg);
 
-    //////////////////////////
     int d_MTU;
     gr::thread::mutex d_mutex; // Add this line
-    //////////////////////////
+
 
 public:
     socket_pdu_jrc_impl(std::string type,
@@ -77,9 +59,8 @@ public:
     ~socket_pdu_jrc_impl();
     bool stop();
 
-    //////////////////////////
     void set_MTU(int new_MTU); // Add this line
-    //////////////////////////
+
 };
 
 } /* namespace blocks */
