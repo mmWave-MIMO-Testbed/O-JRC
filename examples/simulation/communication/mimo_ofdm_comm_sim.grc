@@ -214,29 +214,26 @@ blocks:
     rotation: 0
     state: enabled
 - name: msg_one
-  id: variable
+  id: variable_qtgui_range
   parameters:
     comment: ''
+    gui_hint: ''
+    label: Msg Range
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: int
+    start: '0'
+    step: '1'
+    stop: '3'
     value: '1'
+    widget: counter_slider
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [322, 673]
+    coordinate: [96, 757]
     rotation: 0
-    state: disabled
-- name: msg_zero
-  id: variable
-  parameters:
-    comment: ''
-    value: '0'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [321, 744]
-    rotation: 0
-    state: disabled
+    state: true
 - name: mtu_range
   id: variable_qtgui_range
   parameters:
@@ -306,6 +303,27 @@ blocks:
     coordinate: [1056, 1124.0]
     rotation: 0
     state: enabled
+- name: period_socket_pdu_jrc
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Period Range
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: int
+    start: '100'
+    step: '100'
+    stop: '5000'
+    value: '1000'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [349, 663]
+    rotation: 0
+    state: true
 - name: phased_steering
   id: variable_qtgui_chooser
   parameters:
@@ -644,15 +662,15 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    msg: 'pmt.from_long(msg_one) '
-    period: '1000'
+    msg: pmt.from_long(msg_one)
+    period: period_socket_pdu_jrc
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [96, 712]
+    coordinate: [95, 672]
     rotation: 180
-    state: disabled
+    state: true
 - name: blocks_moving_average_xx_1_0
   id: blocks_moving_average_xx
   parameters:
@@ -1404,9 +1422,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [100, 620]
+    coordinate: [87, 602]
     rotation: 0
-    state: disabled
+    state: true
 - name: mimo_ofdm_jrc_socket_pdu_jrc_1
   id: mimo_ofdm_jrc_socket_pdu_jrc
   parameters:
@@ -1418,13 +1436,12 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     port: '52001'
-    tcp_no_delay: 'False'
     type: UDP_SERVER
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [56, 467]
+    coordinate: [88, 468]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_stream_decoder_0
@@ -1462,7 +1479,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [307, 468]
+    coordinate: [309, 468]
     rotation: 0
     state: enabled
 - name: mimo_ofdm_jrc_zero_pad_0
@@ -1974,6 +1991,7 @@ connections:
 - [blocks_delay_0_0, '0', mimo_ofdm_jrc_frame_detector_0, '0']
 - [blocks_divide_xx_0, '0', mimo_ofdm_jrc_frame_detector_0, '2']
 - [blocks_message_strobe_0, strobe, mimo_ofdm_jrc_ndp_generator_0, enable]
+- [blocks_message_strobe_0, strobe, mimo_ofdm_jrc_socket_pdu_jrc_1, enable]
 - [blocks_moving_average_xx_1_0, '0', blocks_abs_xx_0, '0']
 - [blocks_multiply_const_vxx_0, '0', mimo_ofdm_jrc_zero_pad_0, '0']
 - [blocks_multiply_const_vxx_0_0, '0', mimo_ofdm_jrc_zero_pad_0_0, '0']

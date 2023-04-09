@@ -26,6 +26,10 @@ inputs:
 -   domain: message
     id: pdus
     optional: true
+-   label: enable
+    domain: message
+    id: enable
+    dtype: int
 
 outputs:
 -   domain: message

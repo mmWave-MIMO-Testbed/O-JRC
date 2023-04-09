@@ -46,13 +46,16 @@ socket_pdu_jrc_impl::socket_pdu_jrc_impl(std::string type,
                                  std::string port,
                                  int MTU /*= 10000*/)
     : block("socket_pdu_jrc", io_signature::make(0, 0, 0), io_signature::make(0, 0, 0)),
-      d_MTU(MTU)
+      d_MTU(MTU),
+      d_enabled(false)
 {
     // d_rxbuf.resize(MTU);
     d_rxbuf.resize(d_MTU);
     using namespace gr::blocks::pdu;
     message_port_register_in(gr::blocks::pdu::pdu_port_id());
     message_port_register_out(gr::blocks::pdu::pdu_port_id());
+    message_port_register_in(pmt::mp("enable"));
+    set_msg_handler(pmt::mp("enable"), [this](pmt::pmt_t msg) { this->enable_handler(msg); });
 
     if ((type == "UDP_SERVER") &&
                ((addr.empty()) || (addr == "0.0.0.0"))) { // Bind on all interfaces
@@ -122,8 +125,21 @@ bool socket_pdu_jrc_impl::stop()
     return true;
 }
 
+void socket_pdu_jrc_impl::enable_handler(pmt::pmt_t msg) {
+    if (pmt::is_integer(msg)) 
+    {
+        d_enabled = (pmt::to_long(msg) == 2);
+        std::cout << "d_enabled: " << d_enabled << std::endl;
+    }
+    else
+    {
+        std::cerr << "Error: expected integer value for enable signal of socket_pdu_jrc" << std::endl;
+    }
+}
+
+
 void socket_pdu_jrc_impl::udp_send(pmt::pmt_t msg)
-{
+{      
     if (d_udp_endpoint_other.address().to_string() == "0.0.0.0")
         return;
 
@@ -131,7 +147,8 @@ void socket_pdu_jrc_impl::udp_send(pmt::pmt_t msg)
     size_t len = pmt::blob_length(vector);
     size_t offset = 0;
     std::vector<char> txbuf(std::min(len, d_rxbuf.size()));
-    while (offset < len) {
+    while (offset < len) 
+    {
         size_t send_len = std::min((len - offset), txbuf.size());
         memcpy(&txbuf[0], pmt::uniform_vector_elements(vector, offset), send_len);
         offset += send_len;
@@ -142,21 +159,35 @@ void socket_pdu_jrc_impl::udp_send(pmt::pmt_t msg)
 void socket_pdu_jrc_impl::handle_udp_read(const boost::system::error_code& error,
                                       size_t bytes_transferred)
 {
-    if (!error) {
-
-        pmt::pmt_t vector =
-            pmt::init_u8vector(bytes_transferred, (const uint8_t*)&d_rxbuf[0]);
+    if (!error) 
+    {
+        std::cout << "Before d_enabled " << d_enabled << std::endl;
+        if (!d_enabled) 
+        {
+            
+            d_udp_socket->async_receive_from(   boost::asio::buffer(d_rxbuf),
+                                                d_udp_endpoint_other,
+                                                boost::bind(&socket_pdu_jrc_impl::handle_udp_read,
+                                                this,
+                                                boost::asio::placeholders::error,
+                                                boost::asio::placeholders::bytes_transferred)
+                                            );
+            return;
+        } 
+        std::cout << "After d_enabled " << d_enabled << std::endl;  
+        
+        pmt::pmt_t vector = pmt::init_u8vector(bytes_transferred, (const uint8_t*)&d_rxbuf[0]);
         pmt::pmt_t pdu = pmt::cons(pmt::PMT_NIL, vector);
 
         message_port_pub(gr::blocks::pdu::pdu_port_id(), pdu);
 
-        d_udp_socket->async_receive_from(
-            boost::asio::buffer(d_rxbuf),
-            d_udp_endpoint_other,
-            boost::bind(&socket_pdu_jrc_impl::handle_udp_read,
-                        this,
-                        boost::asio::placeholders::error,
-                        boost::asio::placeholders::bytes_transferred));
+        d_udp_socket->async_receive_from(   boost::asio::buffer(d_rxbuf),
+                                            d_udp_endpoint_other,
+                                            boost::bind(&socket_pdu_jrc_impl::handle_udp_read,
+                                            this,
+                                            boost::asio::placeholders::error,
+                                            boost::asio::placeholders::bytes_transferred)
+                                        ); 
     }
 }
 
