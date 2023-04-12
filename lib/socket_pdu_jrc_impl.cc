@@ -188,6 +188,7 @@ void socket_pdu_jrc_impl::handle_udp_read(const boost::system::error_code& error
                                             boost::asio::placeholders::error,
                                             boost::asio::placeholders::bytes_transferred)
                                         ); 
+        d_enabled = false; // reset the enable flag
     }
 }
 
