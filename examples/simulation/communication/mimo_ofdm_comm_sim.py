@@ -8,7 +8,7 @@
 # Title: MIMO OFDM Comm Simulation
 # Author: Ceyhun D. Ozkaptan
 # Description: The Ohio State University
-# GNU Radio version: 3.8.1.0
+# GNU Radio version: v3.8.5.0-6-g57bd109d
 
 from distutils.version import StrictVersion
 
@@ -47,6 +47,7 @@ import ofdm_config  # embedded python module
 import os
 import random
 import string
+
 from gnuradio import qtgui
 
 class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
@@ -101,11 +102,11 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
         self.radar_log_file = radar_log_file = os.getcwd()+"/temp/radar_log.csv"
         self.radar_aided = radar_aided = False
         self.phased_steering = phased_steering = False
-        self.period_socket_pdu_jrc = period_socket_pdu_jrc = 1000
+        self.period_socket_pdu_jrc = period_socket_pdu_jrc = 3000
         self.path_loss = path_loss = 4*cmath.pi*distance/wavelength
         self.noise_var = noise_var = 4e-21*samp_rate*10**(noise_figure_dB/10.0)
         self.mtu_value = mtu_value = mtu_range
-        self.msg_one = msg_one = 1
+        self.msg_one = msg_one = 3
         self.mcs = mcs = 3
         self.corr_window_size = corr_window_size = int(fft_len/2)
         self.comm_log_file = comm_log_file = os.getcwd()+"/temp/comm_log.csv"
@@ -133,9 +134,9 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
         for c in range(0, 1):
             self.top_grid_layout.setColumnStretch(c, 1)
         # Create the options list
-        self._record_comm_stats_options = (False, True, )
+        self._record_comm_stats_options = [False, True]
         # Create the labels list
-        self._record_comm_stats_labels = ('False', 'True', )
+        self._record_comm_stats_labels = ['False', 'True']
         # Create the combo box
         self._record_comm_stats_tool_bar = Qt.QToolBar(self)
         self._record_comm_stats_tool_bar.addWidget(Qt.QLabel('Record Comm Stats' + ": "))
@@ -147,11 +148,11 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
         self._record_comm_stats_combo_box.currentIndexChanged.connect(
             lambda i: self.set_record_comm_stats(self._record_comm_stats_options[i]))
         # Create the radio buttons
-        self.top_grid_layout.addWidget(self._record_comm_stats_tool_bar)
+        self.top_layout.addWidget(self._record_comm_stats_tool_bar)
         # Create the options list
-        self._radar_aided_options = (False, True, )
+        self._radar_aided_options = [False, True]
         # Create the labels list
-        self._radar_aided_labels = ('False', 'True', )
+        self._radar_aided_labels = ['False', 'True']
         # Create the combo box
         self._radar_aided_tool_bar = Qt.QToolBar(self)
         self._radar_aided_tool_bar.addWidget(Qt.QLabel('Radar-aided Precoding' + ": "))
@@ -163,11 +164,11 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
         self._radar_aided_combo_box.currentIndexChanged.connect(
             lambda i: self.set_radar_aided(self._radar_aided_options[i]))
         # Create the radio buttons
-        self.top_grid_layout.addWidget(self._radar_aided_tool_bar)
+        self.top_layout.addWidget(self._radar_aided_tool_bar)
         # Create the options list
-        self._phased_steering_options = (False, True, )
+        self._phased_steering_options = [False, True]
         # Create the labels list
-        self._phased_steering_labels = ('OFF', 'ON', )
+        self._phased_steering_labels = ['OFF', 'ON']
         # Create the combo box
         self._phased_steering_tool_bar = Qt.QToolBar(self)
         self._phased_steering_tool_bar.addWidget(Qt.QLabel('Phased Steering' + ": "))
@@ -179,17 +180,17 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
         self._phased_steering_combo_box.currentIndexChanged.connect(
             lambda i: self.set_phased_steering(self._phased_steering_options[i]))
         # Create the radio buttons
-        self.top_grid_layout.addWidget(self._phased_steering_tool_bar)
-        self._period_socket_pdu_jrc_range = Range(100, 5000, 100, 1000, 200)
+        self.top_layout.addWidget(self._phased_steering_tool_bar)
+        self._period_socket_pdu_jrc_range = Range(100, 5000, 100, 3000, 200)
         self._period_socket_pdu_jrc_win = RangeWidget(self._period_socket_pdu_jrc_range, self.set_period_socket_pdu_jrc, 'Period Range', "counter_slider", int)
-        self.top_grid_layout.addWidget(self._period_socket_pdu_jrc_win)
-        self._msg_one_range = Range(0, 3, 1, 1, 200)
+        self.top_layout.addWidget(self._period_socket_pdu_jrc_win)
+        self._msg_one_range = Range(0, 3, 1, 3, 200)
         self._msg_one_win = RangeWidget(self._msg_one_range, self.set_msg_one, 'Msg Range', "counter_slider", int)
-        self.top_grid_layout.addWidget(self._msg_one_win)
+        self.top_layout.addWidget(self._msg_one_win)
         # Create the options list
         self._mcs_options = [0, 1, 2, 3, 4, 5]
         # Create the labels list
-        self._mcs_labels = ["BPSK 1/2", "BPSK 3/4", "QPSK 1/2", "QPSK 3/4", "16QAM 1/2","16QAM 3/4" ]
+        self._mcs_labels = ['BPSK 1/2', 'BPSK 3/4', 'QPSK 1/2', 'QPSK 3/4', '16QAM 1/2', '16QAM 3/4']
         # Create the combo box
         # Create the radio buttons
         self._mcs_group_box = Qt.QGroupBox('Modulation and Coding Scheme' + ": ")
@@ -216,9 +217,9 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
         for c in range(0, 1):
             self.top_grid_layout.setColumnStretch(c, 1)
         # Create the options list
-        self._chan_est_options = [0,  1]
+        self._chan_est_options = [0, 1]
         # Create the labels list
-        self._chan_est_labels = ["LS",  "STA"]
+        self._chan_est_labels = ['LS', 'STA']
         # Create the combo box
         # Create the radio buttons
         self._chan_est_group_box = Qt.QGroupBox('Channel Estimation Algorithm' + ": ")
@@ -301,7 +302,7 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setColumnStretch(c, 1)
         self._mtu_range_range = Range(0, 300, 50, 200, 200)
         self._mtu_range_win = RangeWidget(self._mtu_range_range, self.set_mtu_range, 'MTU Range', "counter_slider", int)
-        self.top_grid_layout.addWidget(self._mtu_range_win)
+        self.top_layout.addWidget(self._mtu_range_win)
         self.mimo_ofdm_jrc_zero_pad_0_0_0_0 = mimo_ofdm_jrc.zero_pad(False, 5, 6*(fft_len+cp_len)+10)
         self.mimo_ofdm_jrc_zero_pad_0_0_0 = mimo_ofdm_jrc.zero_pad(False, 5, 6*(fft_len+cp_len)+10)
         self.mimo_ofdm_jrc_zero_pad_0_0 = mimo_ofdm_jrc.zero_pad(False, 5, 6*(fft_len+cp_len)+10)
@@ -356,7 +357,6 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
         self.blocks_complex_to_mag_0 = blocks.complex_to_mag(1)
         self.blocks_add_xx_0_0 = blocks.add_vcc(1)
         self.blocks_abs_xx_0 = blocks.abs_ff(1)
-
 
 
         ##################################################
@@ -417,6 +417,7 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
         self.connect((self.mimo_ofdm_jrc_zero_pad_0_0, 0), (self.blocks_multiply_const_vxx_1_0, 0))
         self.connect((self.mimo_ofdm_jrc_zero_pad_0_0_0, 0), (self.blocks_multiply_const_vxx_1_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_zero_pad_0_0_0_0, 0), (self.blocks_multiply_const_vxx_1_0_0_0, 0))
+
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "mimo_ofdm_comm_sim")
@@ -642,6 +643,8 @@ class mimo_ofdm_comm_sim(gr.top_block, Qt.QWidget):
 
 
 
+
+
 def main(top_block_cls=mimo_ofdm_comm_sim, options=None):
 
     if StrictVersion("4.5.0") <= StrictVersion(Qt.qVersion()) < StrictVersion("5.0.0"):
@@ -650,7 +653,9 @@ def main(top_block_cls=mimo_ofdm_comm_sim, options=None):
     qapp = Qt.QApplication(sys.argv)
 
     tb = top_block_cls()
+
     tb.start()
+
     tb.show()
 
     def sig_handler(sig=None, frame=None):
@@ -666,9 +671,9 @@ def main(top_block_cls=mimo_ofdm_comm_sim, options=None):
     def quitting():
         tb.stop()
         tb.wait()
+
     qapp.aboutToQuit.connect(quitting)
     qapp.exec_()
-
 
 if __name__ == '__main__':
     main()
