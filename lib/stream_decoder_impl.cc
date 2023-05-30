@@ -260,7 +260,7 @@ namespace gr {
                 {
                     if(!d_new_stat_started)
                     {
-                        file_stream << "\n NEW RECORD - " << current_date_time() << "\n";;
+                        file_stream << "\n NEW RECORD - " << current_date_time() << "time, CRC, type, snr, data_snr, snr_val, per_val" <<"\n";;
                         file_stream.flush();
                         d_new_stat_started = true;
                     }
@@ -341,7 +341,8 @@ namespace gr {
 
                     if (file_stream.is_open())
                     {
-                        file_stream << current_date_time2() << ", \t" << 0 << ", \t" << (int) d_packet_type << ", \t" << (int) d_mcs << ", \t" << d_snr_est << ", \t" << d_snr_data_est << ", \t" << d_stream_param.data_size_byte << ", \t";
+                        //file_stream << current_date_time2() << ", \t" << 0 << ", \t" << (int) d_packet_type << ", \t" << (int) d_mcs << ", \t" << d_snr_est << ", \t" << d_snr_data_est << ", \t" << d_stream_param.data_size_byte << ", \t";
+                        file_stream << current_date_time2() << ", \t" << 0 << ", \t" << (int) d_packet_type << ", \t" << d_snr_est << ", \t" <<d_snr_data_est << ", \t" << snr_val << ", \t" << per_val <<", \t";
                         for (int i = 0; i < chan_est_mean.size(); i++)
                         {
                             file_stream << chan_est_mean[i] << ";";
@@ -413,7 +414,8 @@ namespace gr {
                 dout << "[STREAM DECODER] d_comm_log_file:" << d_comm_log_file << ", " << file_stream.is_open() << std::endl;
                 if (file_stream.is_open())
                 {
-                    file_stream << current_date_time2() << ", \t" << 1 << ", \t" << (int) d_packet_type << ", \t" << (int) d_mcs << ", \t" << d_snr_est << ", \t" << d_snr_data_est << ", \t" << d_stream_param.data_size_byte << ", \t" ;
+                    //file_stream << current_date_time2() << ", \t" << 1 << ", \t" << (int) d_packet_type << ", \t" << (int) d_mcs << ", \t" << d_snr_est << ", \t" << d_snr_data_est << ", \t" << d_stream_param.data_size_byte << ", \t" ;
+                    file_stream << current_date_time2() << ", \t" << 1 << ", \t" << (int) d_packet_type << ", \t" << d_snr_est << ", \t" <<d_snr_data_est << ", \t" << snr_val << ", \t" << per_val <<", \t";
                     for (int i = 0; i < chan_est_mean.size(); i++)
                     {
                         file_stream << chan_est_mean[i] << ";";

@@ -1067,14 +1067,14 @@ namespace gr {
             compute_steering_matrix();
             return false;
         }
-        std::stringstream lineStream(lastline);
+        std::stringstream lineStream(lastline); 
         std::string line_entry;
 
-        getline(lineStream, line_entry, ',');
-        getline(lineStream, line_entry, ',');
-        getline(lineStream, line_entry, ',');
-        getline(lineStream, line_entry, ',');
-        getline(lineStream, line_entry, '\n');
+        getline(lineStream, line_entry, ','); //read radar log first variable: time
+        getline(lineStream, line_entry, ','); //read second var peak power
+        getline(lineStream, line_entry, ','); //read third var snr
+        getline(lineStream, line_entry, ','); //read range
+        getline(lineStream, line_entry, '\n'); //read angle (getline overwrite everytime, only angle finally)
 
         angle_estimate = std::stof(line_entry);
         dout << "[MIMO PRECODER] line_entry: " << line_entry << ", angle_estimate:" << angle_estimate <<  std::endl;

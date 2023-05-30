@@ -291,6 +291,7 @@ namespace gr {
                         d_new_stat_started = true;
                     }
                     file_stream << current_date_time2() << ", \t" << peak_power << ", \t" << snr_est << ", \t" << range_val << ", \t" << angle_val << "\n" ;
+                    //write info format(time,power,snr,range,angle \n)
                     file_stream.flush();
                     file_stream.close();
                 }

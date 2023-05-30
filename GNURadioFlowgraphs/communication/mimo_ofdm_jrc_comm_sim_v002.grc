@@ -393,6 +393,18 @@ blocks:
     coordinate: [392, 180.0]
     rotation: 0
     state: enabled
+- name: radar_read_file
+  id: variable
+  parameters:
+    comment: ''
+    value: '"/home/haocheng/temp/radar_read.csv"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [568, 184.0]
+    rotation: 0
+    state: true
 - name: record_comm_stats
   id: variable_qtgui_chooser
   parameters:
@@ -1938,7 +1950,7 @@ blocks:
     pilot_carriers: ofdm_config.pilot_subcarriers
     pilot_symbols: ofdm_config.pilot_symbols
     radar_aided: radar_aided
-    radar_log_file: radar_log_file
+    radar_log_file: radar_read_file
     sync_words: ofdm_config.l_stf_ltf_64
     use_radar_streams: use_radar_streams
   states:
