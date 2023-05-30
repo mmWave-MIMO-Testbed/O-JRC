@@ -234,7 +234,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"/home/workstation/temp/chan_est.csv"'
+    value: '"/home/haocheng/temp/chan_est.csv"'
   states:
     bus_sink: false
     bus_source: false
@@ -426,7 +426,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"/home/workstation/temp/radar_chan.csv"'
+    value: '"/home/haocheng/temp/radar_chan.csv"'
   states:
     bus_sink: false
     bus_source: false
@@ -450,7 +450,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"/home/workstation/temp/radar_log.csv"'
+    value: '"/home/haocheng/temp/radar_log.csv"'
   states:
     bus_sink: false
     bus_source: false

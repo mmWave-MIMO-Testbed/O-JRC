@@ -287,7 +287,7 @@ namespace gr {
                 {
                     if(!d_new_stat_started)
                     {
-                        file_stream << "\n NEW RECORD - " << current_date_time() << "\n";
+                        file_stream << "\n NEW RECORD - " << current_date_time() <<", \t" << "peak_power,\t snr_est,\t range,\t angle" <<"\n";
                         d_new_stat_started = true;
                     }
                     file_stream << current_date_time2() << ", \t" << peak_power << ", \t" << snr_est << ", \t" << range_val << ", \t" << angle_val << "\n" ;
