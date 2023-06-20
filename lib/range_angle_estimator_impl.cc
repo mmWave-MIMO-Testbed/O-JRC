@@ -148,7 +148,7 @@ namespace gr {
                     peak_angle_idx = i_angle; 
                 }
             }
-        }
+        } //go through all angle-range combinations and find the highest power point and index of angle & range
         float angle_val = d_angle_bins[peak_angle_idx];
         float range_val = d_range_bins[peak_range_idx];
 
@@ -220,6 +220,7 @@ namespace gr {
 
         int start_range_idx = (peak_range_idx+d_range_bins.size()/2-discard_range_idx);
         int end_range_idx = (peak_range_idx+d_range_bins.size()/2+discard_range_idx);
+        // discard the user's range angle data point 
 
         int start_angle_idx = angle_null_idx - discard_angle_idx;
         int end_angle_idx = angle_null_idx + discard_angle_idx;
@@ -239,10 +240,10 @@ namespace gr {
             for (int i_angle = start_angle_idx; i_angle < end_angle_idx ; i_angle++) // go through angle axis
             {   
                 int a_idx = ((i_angle % d_vlen) + d_vlen)%d_vlen;
-                noise_power += std::pow(std::abs( in[a_idx + d_vlen * r_idx] ), 2);;
+                noise_power += std::pow(std::abs( in[a_idx + d_vlen * r_idx] ), 2);; //find a_idx & r_idx from in[]
                 n_noise_samples++;
             }
-        }
+        } // calculate cumulative noise power and the number of noise samples
 
         dout << "[RANGE-ANGLE ESTIMATOR] n_noise_samples: " << n_noise_samples << std::endl;
 

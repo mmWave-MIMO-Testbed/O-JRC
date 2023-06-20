@@ -1899,6 +1899,25 @@ blocks:
     coordinate: [1696, 1948.0]
     rotation: 0
     state: true
+- name: mimo_ofdm_jrc_gui_time_plot_1_0
+  id: mimo_ofdm_jrc_gui_time_plot
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    interval: '100'
+    label: '"Received Data Throughput"'
+    time_window: '5'
+    y_axis_lim: '[0,30]'
+    y_label: '"Throughput [KByte/s]"'
+    y_tag: '"throughput"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1696, 2092.0]
+    rotation: 0
+    state: true
 - name: mimo_ofdm_jrc_mimo_ofdm_equalizer_0
   id: mimo_ofdm_jrc_mimo_ofdm_equalizer
   parameters:
@@ -3931,6 +3950,7 @@ connections:
 - [mimo_ofdm_jrc_stream_decoder_0, stats, helper_gui_time_plot_1, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, stats, mimo_ofdm_jrc_gui_time_plot_0, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, stats, mimo_ofdm_jrc_gui_time_plot_1, stats]
+- [mimo_ofdm_jrc_stream_decoder_0, stats, mimo_ofdm_jrc_gui_time_plot_1_0, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, sym, blocks_socket_pdu_1, pdus]
 - [mimo_ofdm_jrc_stream_encoder_0, '0', helper_mimo_precoder_0, '0']
 - [mimo_ofdm_jrc_stream_encoder_1, '0', helper_mimo_precoder_0, '0']

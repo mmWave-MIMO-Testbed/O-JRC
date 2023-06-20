@@ -61,6 +61,7 @@ namespace gr {
             d_stats_record(stats_record),
             d_frame_rx_complete(true),
             per_stats(bt::rolling_window::window_size = 25),
+            tpt_stats(bt::rolling_window::window_size = 10),
             snr_data_stats(bt::rolling_window::window_size = 1)
     {
             message_port_register_out(pmt::mp("sym"));
@@ -245,7 +246,7 @@ namespace gr {
     }
 
     void stream_decoder_impl::decode() 
-    {
+        {
 
             // dout << "[STREAM DECODER] d_comm_log_file:" << d_comm_log_file << std::endl;
 
@@ -329,11 +330,17 @@ namespace gr {
                 pmt::pmt_t d_snr_value = pmt::init_f32vector(1, &snr_val); // pmt
                 pmt::pmt_t d_snr_pack = pmt::list2(d_snr_key, d_snr_value); // make list 
 
-                pmt::pmt_t stats_msg = pmt::list2(d_per_pack, d_snr_pack);
+                float tpt_val = 0.01*boost::accumulators::rolling_mean(tpt_stats);
+                pmt::pmt_t d_tpt_key = pmt::string_to_symbol("throughput"); //identifier
+                pmt::pmt_t d_tpt_value = pmt::init_f32vector(1, &tpt_val); //pmt
+                pmt::pmt_t d_tpt_pack = pmt::list2(d_tpt_key,d_tpt_value); //make list
+
+                pmt::pmt_t stats_msg = pmt::list3(d_per_pack, d_snr_pack,d_tpt_pack);
                 message_port_pub(pmt::mp("stats"), stats_msg); // publish message
 
                 per_stats(1);
                 snr_data_stats(d_snr_data_est);
+                tpt_stats(0);
 
                 if(d_stats_record)
                 {       
@@ -365,6 +372,14 @@ namespace gr {
             total_data_received += d_stream_param.data_size_byte;
             per_stats(0);
             snr_data_stats(d_snr_data_est);
+            if (int(d_packet_type) == 1)
+            {
+                tpt_stats(0);
+            }
+            else
+            {
+                tpt_stats(d_stream_param.data_size_byte);
+            }
             dout << "[STREAM DECODER] Estimated SNR:" << d_snr_est << std::endl;
             
             // time (&curr_time);
@@ -406,7 +421,12 @@ namespace gr {
             pmt::pmt_t d_snr_value = pmt::init_f32vector(1, &snr_val); // pmt
             pmt::pmt_t d_snr_pack = pmt::list2(d_snr_key, d_snr_value); // make list 
 
-            pmt::pmt_t stats_msg = pmt::list2(d_per_pack, d_snr_pack);
+            float tpt_val = 0.01 * boost::accumulators::rolling_mean(tpt_stats);
+            pmt::pmt_t d_tpt_key = pmt::string_to_symbol("throughput"); //identifier
+            pmt::pmt_t d_tpt_value = pmt::init_f32vector(1, &tpt_val); //pmt
+            pmt::pmt_t d_tpt_pack = pmt::list2(d_tpt_key,d_tpt_value); //make list
+
+            pmt::pmt_t stats_msg = pmt::list3(d_per_pack, d_snr_pack,d_tpt_pack);
             message_port_pub(pmt::mp("stats"), stats_msg); // publish message
 
             if(d_stats_record)
