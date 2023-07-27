@@ -1886,7 +1886,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    interval: '250'
+    interval: '150'
     label: '"Packet Error Rate"'
     time_window: '10'
     y_axis_lim: '[0,102]'
@@ -1905,9 +1905,9 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    interval: '100'
+    interval: '150'
     label: '"Received Data Throughput"'
-    time_window: '5'
+    time_window: '10'
     y_axis_lim: '[0,30]'
     y_label: '"Throughput [KByte/s]"'
     y_tag: '"throughput"'
@@ -1916,6 +1916,25 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [1696, 2092.0]
+    rotation: 0
+    state: true
+- name: mimo_ofdm_jrc_gui_time_plot_1_0_0
+  id: mimo_ofdm_jrc_gui_time_plot
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    interval: '150'
+    label: '"average SNR sync with PER"'
+    time_window: '10'
+    y_axis_lim: '[0,40]'
+    y_label: '"average SNR[dB]"'
+    y_tag: '"average snr"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1696, 2228.0]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_mimo_ofdm_equalizer_0
@@ -3951,6 +3970,7 @@ connections:
 - [mimo_ofdm_jrc_stream_decoder_0, stats, mimo_ofdm_jrc_gui_time_plot_0, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, stats, mimo_ofdm_jrc_gui_time_plot_1, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, stats, mimo_ofdm_jrc_gui_time_plot_1_0, stats]
+- [mimo_ofdm_jrc_stream_decoder_0, stats, mimo_ofdm_jrc_gui_time_plot_1_0_0, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, sym, blocks_socket_pdu_1, pdus]
 - [mimo_ofdm_jrc_stream_encoder_0, '0', helper_mimo_precoder_0, '0']
 - [mimo_ofdm_jrc_stream_encoder_1, '0', helper_mimo_precoder_0, '0']
