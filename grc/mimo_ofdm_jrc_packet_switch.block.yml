@@ -24,7 +24,7 @@ outputs:
 
 templates:
   imports: import mimo_ofdm_jrc
-  make: mimo_ofdm_jrc.packet_switch.make(${period_ms}, ${packet_info_file})
+  make: mimo_ofdm_jrc.packet_switch(${period_ms}, ${packet_info_file})
 
 cpp_templates:
   includes: ['#include <mimo_ofdm_jrc/packet_switch.h>']

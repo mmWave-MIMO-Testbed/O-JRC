@@ -21,7 +21,6 @@ if __name__ == '__main__':
             print("Warning: failed to XInitThreads()")
 
 from gnuradio import blocks
-import pmt
 from gnuradio import gr
 from gnuradio.filter import firdes
 import sys
@@ -77,21 +76,14 @@ class test_packet_switch(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
-        self.mimo_ofdm_jrc_socket_pdu_jrc_1 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 200)
-        self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch.make(1000, '/path/to/default/file')
-        self.mimo_ofdm_jrc_ndp_generator_0 = mimo_ofdm_jrc.ndp_generator()
-        self.blocks_message_strobe_0 = blocks.message_strobe(pmt.from_long(1) , 1000)
+        self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(1000, packet_data_file)
         self.blocks_message_debug_0 = blocks.message_debug()
 
 
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.blocks_message_strobe_0, 'strobe'), (self.mimo_ofdm_jrc_ndp_generator_0, 'enable'))
-        self.msg_connect((self.blocks_message_strobe_0, 'strobe'), (self.mimo_ofdm_jrc_socket_pdu_jrc_1, 'enable'))
-        self.msg_connect((self.mimo_ofdm_jrc_ndp_generator_0, 'out'), (self.blocks_message_debug_0, 'print_pdu'))
         self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'Message Out'), (self.blocks_message_debug_0, 'print'))
-        self.msg_connect((self.mimo_ofdm_jrc_socket_pdu_jrc_1, 'pdus'), (self.blocks_message_debug_0, 'store'))
 
 
     def closeEvent(self, event):

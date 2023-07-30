@@ -81,38 +81,6 @@ blocks:
     coordinate: [832, 216.0]
     rotation: 0
     state: true
-- name: blocks_message_strobe_0
-  id: blocks_message_strobe
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    msg: 'pmt.from_long(1) '
-    period: '1000'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [344, 324.0]
-    rotation: 0
-    state: true
-- name: mimo_ofdm_jrc_ndp_generator_0
-  id: mimo_ofdm_jrc_ndp_generator
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [592, 336.0]
-    rotation: 0
-    state: true
 - name: mimo_ofdm_jrc_ndp_generator_1
   id: mimo_ofdm_jrc_ndp_generator
   parameters:
@@ -128,6 +96,23 @@ blocks:
     coordinate: [400, 320.0]
     rotation: 0
     state: disabled
+- name: mimo_ofdm_jrc_packet_control_0
+  id: mimo_ofdm_jrc_packet_control
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    packet_info_file: packet_data_file
+    period_ms: '1000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [408, 204.0]
+    rotation: 0
+    state: true
 - name: mimo_ofdm_jrc_packet_switch_0
   id: mimo_ofdm_jrc_packet_switch
   parameters:
@@ -136,13 +121,13 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    packet_info_file: /path/to/default/file
+    packet_info_file: packet_data_file
     period_ms: '1000'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [336, 204.0]
+    coordinate: [144, 204.0]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_socket_pdu_jrc_0
@@ -164,34 +149,11 @@ blocks:
     coordinate: [400, 164.0]
     rotation: 0
     state: disabled
-- name: mimo_ofdm_jrc_socket_pdu_jrc_1
-  id: mimo_ofdm_jrc_socket_pdu_jrc
-  parameters:
-    MTU: '200'
-    affinity: ''
-    alias: ''
-    comment: ''
-    host: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    port: '52001'
-    type: UDP_SERVER
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [584, 420.0]
-    rotation: 0
-    state: true
 
 connections:
-- [blocks_message_strobe_0, strobe, mimo_ofdm_jrc_ndp_generator_0, enable]
-- [blocks_message_strobe_0, strobe, mimo_ofdm_jrc_socket_pdu_jrc_1, enable]
-- [mimo_ofdm_jrc_ndp_generator_0, out, blocks_message_debug_0, print_pdu]
 - [mimo_ofdm_jrc_ndp_generator_1, out, blocks_message_debug_0, print]
+- [mimo_ofdm_jrc_packet_control_0, out, blocks_message_debug_0, print]
 - [mimo_ofdm_jrc_packet_switch_0, Message Out, blocks_message_debug_0, print]
-- [mimo_ofdm_jrc_socket_pdu_jrc_0, pdus, blocks_message_debug_0, print]
-- [mimo_ofdm_jrc_socket_pdu_jrc_1, pdus, blocks_message_debug_0, store]
 
 metadata:
   file_format: 1
