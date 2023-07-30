@@ -31,6 +31,7 @@
 #include "mimo_ofdm_jrc/zero_pad.h"
 #include "mimo_ofdm_jrc/socket_pdu_jrc.h"
 #include "mimo_ofdm_jrc/ndp_generator.h"
+#include "mimo_ofdm_jrc/packet_switch.h"
 %}
 
 %include "mimo_ofdm_jrc/fft_peak_detect.h"
@@ -81,3 +82,5 @@ GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, zero_pad);
 GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, socket_pdu_jrc);
 %include "mimo_ofdm_jrc/ndp_generator.h"
 GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, ndp_generator);
+%include "mimo_ofdm_jrc/packet_switch.h"
+GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, packet_switch);

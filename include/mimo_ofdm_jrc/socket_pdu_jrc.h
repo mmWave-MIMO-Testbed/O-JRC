@@ -21,8 +21,9 @@
 #ifndef INCLUDED_MIMO_OFDM_JRC_SOCKET_PDU_JRC_H
 #define INCLUDED_MIMO_OFDM_JRC_SOCKET_PDU_JRC_H
 
-#include <mimo_ofdm_jrc/api.h>
 #include <gnuradio/block.h>
+#include <mimo_ofdm_jrc/api.h>
+
 
 namespace gr {
   namespace mimo_ofdm_jrc {
@@ -33,7 +34,7 @@ namespace gr {
      *
      */
 
-    class MIMO_OFDM_JRC_API socket_pdu_jrc : virtual public block
+    class MIMO_OFDM_JRC_API socket_pdu_jrc : virtual public gr::block
     {
     public:
         // gr::network::socket_pdu::sptr
@@ -57,7 +58,7 @@ namespace gr {
         //////////////////////////
     };
 
-  } /* namespace network */
+  } /* namespace mimo_ofdm_jrc */
 } /* namespace gr */
 
 #endif /* INCLUDED_MIMO_OFDM_JRC_SOCKET_PDU_JRC_H */

@@ -24,7 +24,6 @@
 #include <mimo_ofdm_jrc/api.h>
 #include <gnuradio/block.h>
 
-
 namespace gr {
   namespace mimo_ofdm_jrc{
 
@@ -33,7 +32,7 @@ namespace gr {
      * \ingroup fake_socket_pdu
      *
      */
-    class MIMO_OFDM_JRC_API ndp_generator : virtual public block
+    class MIMO_OFDM_JRC_API ndp_generator : virtual public gr::block
     {
      public:
       typedef boost::shared_ptr<ndp_generator> sptr;

@@ -1,0 +1,197 @@
+options:
+  parameters:
+    author: ''
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: test_packet_switch
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: packet_data_file
+  id: variable
+  parameters:
+    comment: ''
+    value: parrent_path+"/data/packet_data.csv"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [240, 100.0]
+    rotation: 0
+    state: enabled
+- name: parrent_path
+  id: variable
+  parameters:
+    comment: ''
+    value: '"/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/examples"'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [16, 108.0]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '32000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: blocks_message_debug_0
+  id: blocks_message_debug
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [832, 216.0]
+    rotation: 0
+    state: true
+- name: blocks_message_strobe_0
+  id: blocks_message_strobe
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    msg: 'pmt.from_long(1) '
+    period: '1000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [344, 324.0]
+    rotation: 0
+    state: true
+- name: mimo_ofdm_jrc_ndp_generator_0
+  id: mimo_ofdm_jrc_ndp_generator
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [592, 336.0]
+    rotation: 0
+    state: true
+- name: mimo_ofdm_jrc_ndp_generator_1
+  id: mimo_ofdm_jrc_ndp_generator
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [400, 320.0]
+    rotation: 0
+    state: disabled
+- name: mimo_ofdm_jrc_packet_switch_0
+  id: mimo_ofdm_jrc_packet_switch
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    packet_info_file: /path/to/default/file
+    period_ms: '1000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [336, 204.0]
+    rotation: 0
+    state: true
+- name: mimo_ofdm_jrc_socket_pdu_jrc_0
+  id: mimo_ofdm_jrc_socket_pdu_jrc
+  parameters:
+    MTU: '200'
+    affinity: ''
+    alias: ''
+    comment: ''
+    host: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    port: '52001'
+    type: UDP_SERVER
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [400, 164.0]
+    rotation: 0
+    state: disabled
+- name: mimo_ofdm_jrc_socket_pdu_jrc_1
+  id: mimo_ofdm_jrc_socket_pdu_jrc
+  parameters:
+    MTU: '200'
+    affinity: ''
+    alias: ''
+    comment: ''
+    host: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    port: '52001'
+    type: UDP_SERVER
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [584, 420.0]
+    rotation: 0
+    state: true
+
+connections:
+- [blocks_message_strobe_0, strobe, mimo_ofdm_jrc_ndp_generator_0, enable]
+- [blocks_message_strobe_0, strobe, mimo_ofdm_jrc_socket_pdu_jrc_1, enable]
+- [mimo_ofdm_jrc_ndp_generator_0, out, blocks_message_debug_0, print_pdu]
+- [mimo_ofdm_jrc_ndp_generator_1, out, blocks_message_debug_0, print]
+- [mimo_ofdm_jrc_packet_switch_0, Message Out, blocks_message_debug_0, print]
+- [mimo_ofdm_jrc_socket_pdu_jrc_0, pdus, blocks_message_debug_0, print]
+- [mimo_ofdm_jrc_socket_pdu_jrc_1, pdus, blocks_message_debug_0, store]
+
+metadata:
+  file_format: 1

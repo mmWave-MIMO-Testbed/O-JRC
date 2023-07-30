@@ -68,7 +68,8 @@ list(APPEND mimo_ofdm_jrc_sources
     zero_pad_impl.cc
     socket_pdu_jrc_impl.cc 
     tcp_connection.cc
-    ndp_generator_impl.cc)
+    ndp_generator_impl.cc
+    packet_switch_impl.cc)
 
 set(mimo_ofdm_jrc_sources "${mimo_ofdm_jrc_sources}" PARENT_SCOPE)
 if(NOT mimo_ofdm_jrc_sources)
