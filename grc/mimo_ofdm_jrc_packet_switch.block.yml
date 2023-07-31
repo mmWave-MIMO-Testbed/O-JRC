@@ -17,10 +17,9 @@ parameters:
   description: 'Path to the file containing packet info.'
 
 outputs:
-- domain: message
-  port: strobe
-  dtype: 'message'
-  label: 'Message Out'
+  - domain: message
+    id: strobe
+    optional: true
 
 templates:
   imports: import mimo_ofdm_jrc

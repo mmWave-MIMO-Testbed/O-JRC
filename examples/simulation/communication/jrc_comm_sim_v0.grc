@@ -737,19 +737,6 @@ blocks:
     coordinate: [1112, 1328.0]
     rotation: 0
     state: enabled
-- name: blocks_message_debug_0
-  id: blocks_message_debug
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [360, 352.0]
-    rotation: 0
-    state: true
 - name: blocks_moving_average_xx_0
   id: blocks_moving_average_xx
   parameters:
@@ -3900,7 +3887,6 @@ connections:
 - [blocks_multiply_xx_0, '0', helper_moving_avg_0, '0']
 - [blocks_multiply_xx_0, '0', mimo_ofdm_jrc_moving_avg_0, '0']
 - [blocks_nlog10_ff_1, '0', qtgui_number_sink_0, '0']
-- [blocks_socket_pdu_0, pdus, blocks_message_debug_0, print_pdu]
 - [blocks_socket_pdu_0, pdus, helper_mimo_encoder_0, pdu_in]
 - [blocks_socket_pdu_0, pdus, mimo_ofdm_jrc_stream_encoder_0, pdu_in]
 - [blocks_socket_pdu_0, pdus, mimo_ofdm_jrc_stream_encoder_1, pdu_in]

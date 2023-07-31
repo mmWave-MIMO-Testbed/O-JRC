@@ -37,8 +37,7 @@ socket_pdu_jrc::sptr socket_pdu_jrc::make(std::string type,
                                   std::string port,
                                   int MTU /*= 10000*/)
 {
-    return gnuradio::get_initial_sptr(
-        new socket_pdu_jrc_impl(type, addr, port, MTU));
+    return gnuradio::get_initial_sptr(new socket_pdu_jrc_impl(type, addr, port, MTU));
 }
 
 socket_pdu_jrc_impl::socket_pdu_jrc_impl(std::string type,
@@ -46,10 +45,10 @@ socket_pdu_jrc_impl::socket_pdu_jrc_impl(std::string type,
                                  std::string port,
                                  int MTU /*= 10000*/)
     : block("socket_pdu_jrc", io_signature::make(0, 0, 0), io_signature::make(0, 0, 0)),
-      d_MTU(MTU),
-      d_enabled(false)
+        d_MTU(MTU),
+        // d_size(MTU),
+        d_enabled(false)
 {
-    // d_rxbuf.resize(MTU);
     d_rxbuf.resize(d_MTU);
     using namespace gr::blocks::pdu;
     message_port_register_in(gr::blocks::pdu::pdu_port_id());
@@ -57,15 +56,15 @@ socket_pdu_jrc_impl::socket_pdu_jrc_impl(std::string type,
     message_port_register_in(pmt::mp("enable"));
     set_msg_handler(pmt::mp("enable"), [this](pmt::pmt_t msg) { this->enable_handler(msg); });
 
-    if ((type == "UDP_SERVER") &&
-               ((addr.empty()) || (addr == "0.0.0.0"))) { // Bind on all interfaces
+    if ((type == "UDP_SERVER") && ((addr.empty()) || (addr == "0.0.0.0"))) 
+    { // Bind on all interfaces
+        
         int port_num = atoi(port.c_str());
         if (port_num == 0)
-            throw std::invalid_argument(
-                "gr::blocks:socket_pdu_jrc: invalid port for UDP_SERVER");
-        d_udp_endpoint =
-            boost::asio::ip::udp::endpoint(boost::asio::ip::udp::v4(), port_num);
+            throw std::invalid_argument("gr::blocks:socket_pdu_jrc: invalid port for UDP_SERVER");
+            d_udp_endpoint = boost::asio::ip::udp::endpoint(boost::asio::ip::udp::v4(), port_num);
     } else if ((type == "UDP_SERVER") || (type == "UDP_CLIENT")) {
+        std::cout << "2nd " << std::endl;
         boost::asio::ip::udp::resolver resolver(d_io_service);
         boost::asio::ip::udp::resolver::query query(
             boost::asio::ip::udp::v4(),
@@ -79,10 +78,10 @@ socket_pdu_jrc_impl::socket_pdu_jrc_impl(std::string type,
             d_udp_endpoint_other = *resolver.resolve(query);
     }
 
-    if (type == "UDP_SERVER") {
-        d_udp_socket.reset(
-            new boost::asio::ip::udp::socket(d_io_service, d_udp_endpoint));
-        d_udp_socket->async_receive_from(
+    if (type == "UDP_SERVER") 
+    {
+        d_udp_socket.reset(new boost::asio::ip::udp::socket(d_io_service, d_udp_endpoint));
+        d_udp_socket->async_receive_from (
             boost::asio::buffer(d_rxbuf),
             d_udp_endpoint_other,
             boost::bind(&socket_pdu_jrc_impl::handle_udp_read,
@@ -90,11 +89,11 @@ socket_pdu_jrc_impl::socket_pdu_jrc_impl(std::string type,
                         boost::asio::placeholders::error,
                         boost::asio::placeholders::bytes_transferred));
 
-        set_msg_handler(gr::blocks::pdu::pdu_port_id(),
-                        [this](pmt::pmt_t msg) { this->udp_send(msg); });
-    } else if (type == "UDP_CLIENT") {
+            set_msg_handler(gr::blocks::pdu::pdu_port_id(), [this](pmt::pmt_t msg) { this->udp_send(msg); });
+    } else if (type == "UDP_CLIENT") 
+    {
         d_udp_socket.reset(
-            new boost::asio::ip::udp::socket(d_io_service, d_udp_endpoint));
+        new boost::asio::ip::udp::socket(d_io_service, d_udp_endpoint));
         d_udp_socket->async_receive_from(
             boost::asio::buffer(d_rxbuf),
             d_udp_endpoint_other,
@@ -126,45 +125,42 @@ bool socket_pdu_jrc_impl::stop()
 }
 
 void socket_pdu_jrc_impl::enable_handler(pmt::pmt_t msg) {
-    if (pmt::is_integer(msg)) 
+    if (pmt::is_symbol(msg)) 
     {
-        d_enabled = (pmt::to_long(msg) == 2);
-        std::cout << "d_enabled: " << d_enabled << std::endl;
+        std::string str_msg = pmt::symbol_to_string(msg);
+        // std::cout << "Received msg: " << str_msg << std::endl;
+        std::istringstream ss(str_msg);
+        std::string type_str;
+        std::getline(ss, type_str, '#');
+        std::string size_str;
+        std::getline(ss, size_str, '#');
+
+        // std::cout << "Received type: " << type_str << std::endl;
+        // std::cout << "Received size: " << size_str << std::endl;
+        
+        if (std::stoi(type_str) == 2)
+        {
+            d_enabled = true;
+            d_MTU = std::stoi(size_str);
+            gr::thread::scoped_lock lock(d_mutex);  // Lock to prevent race conditions
+            d_rxbuf.resize(d_MTU);
+
+        }
     }
     else
     {
-        std::cerr << "Error: expected integer value for enable signal of socket_pdu_jrc" << std::endl;
+        std::cerr << "Error: expected string value for enable signal" << std::endl;
     }
 }
 
-
-void socket_pdu_jrc_impl::udp_send(pmt::pmt_t msg)
-{      
-    if (d_udp_endpoint_other.address().to_string() == "0.0.0.0")
-        return;
-
-    pmt::pmt_t vector = pmt::cdr(msg);
-    size_t len = pmt::blob_length(vector);
-    size_t offset = 0;
-    std::vector<char> txbuf(std::min(len, d_rxbuf.size()));
-    while (offset < len) 
-    {
-        size_t send_len = std::min((len - offset), txbuf.size());
-        memcpy(&txbuf[0], pmt::uniform_vector_elements(vector, offset), send_len);
-        offset += send_len;
-        d_udp_socket->send_to(boost::asio::buffer(txbuf, send_len), d_udp_endpoint_other);
-    }
-}
-
-void socket_pdu_jrc_impl::handle_udp_read(const boost::system::error_code& error,
-                                      size_t bytes_transferred)
+void socket_pdu_jrc_impl::handle_udp_read(const boost::system::error_code& error, size_t bytes_transferred)
 {
+    // std::cout << "Before d_enabled " << d_enabled << std::endl;
     if (!error) 
     {
-        std::cout << "Before d_enabled " << d_enabled << std::endl;
+        // std::cout << "Before d_enabled " << d_enabled << std::endl;
         if (!d_enabled) 
         {
-            
             d_udp_socket->async_receive_from(   boost::asio::buffer(d_rxbuf),
                                                 d_udp_endpoint_other,
                                                 boost::bind(&socket_pdu_jrc_impl::handle_udp_read,
@@ -174,7 +170,7 @@ void socket_pdu_jrc_impl::handle_udp_read(const boost::system::error_code& error
                                             );
             return;
         } 
-        std::cout << "After d_enabled " << d_enabled << std::endl;  
+        // std::cout << "After d_enabled " << d_enabled << std::endl;  
         
         pmt::pmt_t vector = pmt::init_u8vector(bytes_transferred, (const uint8_t*)&d_rxbuf[0]);
         pmt::pmt_t pdu = pmt::cons(pmt::PMT_NIL, vector);
@@ -192,29 +188,33 @@ void socket_pdu_jrc_impl::handle_udp_read(const boost::system::error_code& error
     }
 }
 
-void socket_pdu_jrc_impl::set_MTU(int new_MTU) {
-    gr::thread::scoped_lock lock(d_mutex);  // Lock to prevent race conditions
-    d_MTU = new_MTU;
-    d_rxbuf.resize(d_MTU);
+void socket_pdu_jrc_impl::udp_send(pmt::pmt_t msg)
+{      
+    
+    if (d_udp_endpoint_other.address().to_string() == "0.0.0.0")
+        return;
+
+    pmt::pmt_t vector = pmt::cdr(msg);
+    size_t len = pmt::blob_length(vector);
+    // std::cout << "len:" << len << std::endl;
+    size_t offset = 0;
+    std::vector<char> txbuf(std::min(len, d_rxbuf.size()));
+    // std::vector<char> txbuf(d_MTU);
+    // std::cout << "txbuf.size(): " << txbuf.size() << std::endl;
+    while (offset < len) 
+    {
+        size_t send_len = std::min((len - offset), txbuf.size());
+        memcpy(&txbuf[0], pmt::uniform_vector_elements(vector, offset), send_len);
+        offset += send_len;
+        d_udp_socket->send_to(boost::asio::buffer(txbuf, send_len), d_udp_endpoint_other);
+    }
 }
 
+// void socket_pdu_jrc_impl::set_MTU(int new_MTU) {
+//     gr::thread::scoped_lock lock(d_mutex);  // Lock to prevent race conditions
+//     d_MTU = new_MTU;
+//     d_rxbuf.resize(d_MTU);
+// }
 
 } /* namespace blocks */
 } /* namespace gr */
-
-       // Print d_rxbuf
-        // std::cout << "Received UDP data (bytes_transferred = " << bytes_transferred << "):" << std::endl;
-        // for (size_t i = 0; i < bytes_transferred; ++i) {
-        //     std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(d_rxbuf[i]) << " ";
-        // }
-        // std::cout << std::endl;
-
-
-        // Print the data that will be sent to other blocks
-        // std::cout << "socket_pdu_jrc: Sending data to other blocks (bytes_transferred = " << bytes_transferred << "):" << std::endl;
-        // size_t pdu_length = pmt::length(pmt::cdr(pdu));
-        // const uint8_t *pdu_data = pmt::u8vector_elements(pmt::cdr(pdu), pdu_length);
-        // for (size_t i = 0; i < pdu_length; ++i) {
-        //     std::cout << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(pdu_data[i]) << " ";
-        // }
-        // std::cout << std::endl;

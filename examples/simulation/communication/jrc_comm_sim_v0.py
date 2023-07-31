@@ -102,6 +102,7 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.radar_aided = radar_aided = False
         self.phased_steering = phased_steering = False
         self.path_loss = path_loss = 4*cmath.pi*distance/wavelength
+        self.packet_data_file = packet_data_file = parrent_path+"/data/packet_data.csv"
         self.noise_var = noise_var = 4e-21*samp_rate*10**(noise_figure_dB/10.0)
         self.mimo_tap1_angle = mimo_tap1_angle = np.arcsin( np.angle(mimo_tap1) / cmath.pi  )*180/cmath.pi
         self.mcs = mcs = 3
@@ -462,6 +463,9 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_zero_pad_0 = mimo_ofdm_jrc.zero_pad(False, 5, 6*(fft_len+cp_len)+10)
         self.mimo_ofdm_jrc_stream_encoder_1 = mimo_ofdm_jrc.stream_encoder(mcs, ofdm_config.N_data, 0, False)
         self.mimo_ofdm_jrc_stream_decoder_0 = mimo_ofdm_jrc.stream_decoder(len(ofdm_config.data_subcarriers), comm_log_file, record_comm_stats, False)
+        self.mimo_ofdm_jrc_socket_pdu_jrc_0 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 10000)
+        self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(1000, packet_data_file)
+        self.mimo_ofdm_jrc_ndp_generator_0 = mimo_ofdm_jrc.ndp_generator()
         self.mimo_ofdm_jrc_moving_avg_0 = mimo_ofdm_jrc.moving_avg(corr_window_size, 1, 16000, False)
         self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64, ofdm_config.ltf_mapped_sc__ss_sym, chan_est_file, False, radar_read_file, radar_aided, phased_steering, use_radar_streams, "packet_len",  False)
         self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0 = mimo_ofdm_jrc.mimo_ofdm_equalizer(chan_est, rf_freq, samp_rate, fft_len, cp_len, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64[3], ofdm_config.ltf_mapped_sc__ss_sym, N_tx, chan_est_file, "", False, False)
@@ -491,7 +495,6 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_stream_to_vector_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, fft_len)
         self.blocks_socket_pdu_1 = blocks.socket_pdu('UDP_CLIENT', '127.0.0.1', '52002', 5000, False)
-        self.blocks_socket_pdu_0 = blocks.socket_pdu('UDP_SERVER', '', '52001', 5000, False)
         self.blocks_null_sink_0_0 = blocks.null_sink(gr.sizeof_float*1)
         self.blocks_multiply_xx_0 = blocks.multiply_vcc(1)
         self.blocks_multiply_const_vxx_1_0_0_0 = blocks.multiply_const_cc((1/path_loss)*cmath.exp(3j*cmath.pi*np.sin(np.deg2rad(theta))))
@@ -504,7 +507,6 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_cc(tx_multiplier)
         self.blocks_moving_average_xx_1_0 = blocks.moving_average_ff(int(1.5*corr_window_size), 1/1.5, 16000, 1)
         self.blocks_moving_average_xx_1_0.set_processor_affinity([3, 4])
-        self.blocks_message_debug_0 = blocks.message_debug()
         self.blocks_divide_xx_0 = blocks.divide_ff(1)
         self.blocks_delay_0_0 = blocks.delay(gr.sizeof_gr_complex*1, int(fft_len/4))
         self.blocks_delay_0 = blocks.delay(gr.sizeof_gr_complex*1, sync_length)
@@ -518,8 +520,10 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.blocks_socket_pdu_0, 'pdus'), (self.blocks_message_debug_0, 'print_pdu'))
-        self.msg_connect((self.blocks_socket_pdu_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_1, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_ndp_generator_0, 'out'), (self.mimo_ofdm_jrc_stream_encoder_1, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_ndp_generator_0, 'enable'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'enable'))
+        self.msg_connect((self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_1, 'pdu_in'))
         self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'sym'), (self.blocks_socket_pdu_1, 'pdus'))
         self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_0, 'stats'))
         self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_1, 'stats'))
@@ -644,6 +648,7 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.parrent_path = parrent_path
         self.set_chan_est_file(self.parrent_path+"/data/chan_est.csv")
         self.set_comm_log_file(self.parrent_path+"/data/comm_log.csv")
+        self.set_packet_data_file(self.parrent_path+"/data/packet_data.csv")
         self.set_radar_log_file(self.parrent_path+"/data/radar_log.csv")
         self.set_radar_read_file(self.parrent_path+"/data/radar_data.csv")
 
@@ -745,6 +750,12 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.blocks_multiply_const_vxx_1_0.set_k((1/self.path_loss)*cmath.exp(1j*cmath.pi*np.sin(np.deg2rad(self.theta))))
         self.blocks_multiply_const_vxx_1_0_0.set_k((1/self.path_loss)*cmath.exp(2j*cmath.pi*np.sin(np.deg2rad(self.theta))))
         self.blocks_multiply_const_vxx_1_0_0_0.set_k((1/self.path_loss)*cmath.exp(3j*cmath.pi*np.sin(np.deg2rad(self.theta))))
+
+    def get_packet_data_file(self):
+        return self.packet_data_file
+
+    def set_packet_data_file(self, packet_data_file):
+        self.packet_data_file = packet_data_file
 
     def get_noise_var(self):
         return self.noise_var

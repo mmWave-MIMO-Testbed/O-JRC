@@ -50,12 +50,7 @@ namespace gr {
         static sptr make(std::string type,
                         std::string addr,
                         std::string port,
-                        int MTU = 200);
-
-
-        //////////////////////////
-        virtual void set_MTU(int new_MTU) = 0; // Add this line
-        //////////////////////////
+                        int MTU);
     };
 
   } /* namespace mimo_ofdm_jrc */

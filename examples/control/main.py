@@ -44,14 +44,14 @@ test_packet = data_interface.PacketData(current_time, packet_type, packet_size)
 
 while True:
     for _ in range(10):
-        time.sleep(0.01)
+        time.sleep(0.1)
     current_time = datetime.now()
     test_radar_angle = random.uniform(-60,60)
     test_packet_type = random.randint(1, 2)
-    test_packet_size = random.randint(100, 500)
-    print(test_radar_angle)
-    print(test_packet_type)
-    print(test_packet_size)
+    # test_packet_type = 2
+    test_packet_size = random.randint(10, 300)
+    # print(test_radar_angle)
+    print(test_packet_type, test_packet_size)
     test_radar.est_angle = test_radar_angle
     test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
     test_packet.packet_type = test_packet_type

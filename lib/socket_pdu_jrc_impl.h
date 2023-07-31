@@ -49,6 +49,7 @@ private:
     void udp_send(pmt::pmt_t msg);
 
     int d_MTU;
+    // int d_size;
     gr::thread::mutex d_mutex; // Add this line
 
 
@@ -56,11 +57,9 @@ public:
     socket_pdu_jrc_impl(std::string type,
                     std::string addr,
                     std::string port,
-                    int MTU = 200);
+                    int MTU);
     ~socket_pdu_jrc_impl();
     bool stop();
-
-    void set_MTU(int new_MTU); // Add this line
 
 };
 
