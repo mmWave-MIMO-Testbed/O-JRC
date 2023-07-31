@@ -1,0 +1,36 @@
+id: mimo_ofdm_jrc_packet_switch
+label: packet_switch
+category: '[MIMO OFDM JRC]'
+flags: [ python, cpp ]
+
+parameters:
+- id: period_ms
+  label: Period (ms)
+  dtype: int
+  default: 1000
+  description: 'Interval at which to read the packet info file and emit a message.'
+
+- id: packet_info_file
+  label: Packet Info File
+  dtype: string
+  default: '/path/to/default/file'
+  description: 'Path to the file containing packet info.'
+
+outputs:
+  - domain: message
+    id: strobe
+    optional: true
+
+templates:
+  imports: import mimo_ofdm_jrc
+  make: mimo_ofdm_jrc.packet_switch(${period_ms}, ${packet_info_file})
+
+cpp_templates:
+  includes: ['#include <mimo_ofdm_jrc/packet_switch.h>']
+  declarations: 'mimo_ofdm_jrc::packet_switch::sptr ${id};'
+  make: 'this->${id} = mimo_ofdm_jrc::packet_switch::make(${period_ms}, ${packet_info_file});'
+  translations:
+    'True': 'true'
+    'False': 'false'
+
+file_format: 1

@@ -295,7 +295,7 @@ blocks:
   id: variable_qtgui_chooser
   parameters:
     comment: ''
-    gui_hint: 3,0,1,8
+    gui_hint: ''
     label: Modulation and Coding Scheme
     label0: ''
     label1: ''
@@ -487,7 +487,7 @@ blocks:
   id: variable_qtgui_range
   parameters:
     comment: ''
-    gui_hint: 3,0,1,4
+    gui_hint: 3,0,1,5
     label: Target Angle
     min_len: '200'
     orient: Qt.Horizontal
@@ -496,12 +496,12 @@ blocks:
     step: '1'
     stop: '+89'
     value: '0'
-    widget: counter_slider
+    widget: dial
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1496, 1192.0]
+    coordinate: [1504, 1196.0]
     rotation: 0
     state: enabled
 - name: trgt_range

@@ -27,6 +27,9 @@
 #include <mutex>
 #include <condition_variable>
 #include <boost/date_time/posix_time/posix_time.hpp>
+#include <sstream>
+#include <string>
+
 
 namespace gr {
   namespace mimo_ofdm_jrc {
@@ -74,18 +77,24 @@ namespace gr {
 
     void ndp_generator_impl::enable_handler(pmt::pmt_t msg)
     {
-      if (pmt::is_integer(msg))
+      if (pmt::is_symbol(msg))
       {
-        d_enabled = (pmt::to_long(msg) == 1);
-        if (d_enabled)
+        std::string str_msg = pmt::symbol_to_string(msg);
+        // std::cout << "Received msg: " << str_msg << std::endl;
+        std::istringstream ss(str_msg);
+        std::string type;
+        std::getline(ss, type, '#');
+
+        if (std::stoi(type) == 1)
         {
+          d_enabled = true;
           std::unique_lock<std::mutex> lock(d_mutex);
           d_condition_variable.notify_one();
         }
       }
       else
       {
-        std::cerr << "Error: expected integer value for enable signal" << std::endl;
+        std::cerr << "Error: expected string value for enable signal" << std::endl;
       }
     }
 

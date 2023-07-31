@@ -20,7 +20,7 @@ parameters:
 -   id: MTU
     label: MTU
     dtype: int
-    default: '200'
+    default: '10000'
 
 inputs:
 -   domain: message
