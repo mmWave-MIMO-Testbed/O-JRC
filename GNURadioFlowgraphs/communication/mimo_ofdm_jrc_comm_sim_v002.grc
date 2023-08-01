@@ -1867,10 +1867,10 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    interval: '250'
+    interval: '150'
     label: '"Signal-to-Noise Ratio"'
     time_window: '10'
-    y_axis_lim: '[0,40]'
+    y_axis_lim: '[-10,40]'
     y_label: '"SNR [dB]"'
     y_tag: '"snr"'
   states:
@@ -1927,7 +1927,7 @@ blocks:
     interval: '150'
     label: '"average SNR sync with PER"'
     time_window: '10'
-    y_axis_lim: '[0,40]'
+    y_axis_lim: '[-10,40]'
     y_label: '"average SNR[dB]"'
     y_tag: '"average snr"'
   states:

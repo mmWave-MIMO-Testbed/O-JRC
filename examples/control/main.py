@@ -32,7 +32,7 @@ test_radar = data_interface.RadarData(current_time, peak_power, snr_est, range_v
 
 
 # load data from comm_data
-test_comm = data_interface.CommData(current_time, 0, packet_type, snr_est, snr_est, 34.3, 2.3)
+test_comm = data_interface.CommData(current_time, 0, packet_type, snr_est, snr_est, 34.3, 2.3,10)
 test_comm = data_interface.load_comm_data(comm_log_path)
 print(test_comm.per_val)
 

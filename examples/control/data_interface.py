@@ -10,7 +10,7 @@ class RadarData:
         self.est_angle  = float(est_angle)
 
 class CommData:
-    def __init__(self, timestamp, CRC, packet_type, est_snr, data_snr, snr_val, per_val):
+    def __init__(self, timestamp, CRC, packet_type, est_snr, data_snr, snr_val, per_val,throughput):
         self.timestamp = timestamp
         self.CRC = int(CRC)
         self.packet_type = int(packet_type)
@@ -18,6 +18,7 @@ class CommData:
         self.data_snr = float(data_snr)
         self.snr_val = float(snr_val)
         self.per_val = float(per_val)
+        self.throughput = float(throughput)
 
 class PacketData:
     def __init__(self, timestamp, packet_type, packet_size):
@@ -41,7 +42,7 @@ def load_comm_data(comm_log_path):
     last_line_comm = comm_log[-1]
     curr_comm_data = last_line_comm.split(",")
     curr_comm_data = [data.strip() for data in curr_comm_data]
-    comm_data = CommData(*curr_comm_data[:7]) #load first 7 comm data
+    comm_data = CommData(*curr_comm_data[:8]) #load first 8 comm data
     return comm_data
 
 def load_packet_data(packet_log_path):

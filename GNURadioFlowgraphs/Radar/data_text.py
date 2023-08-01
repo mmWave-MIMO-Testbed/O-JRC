@@ -25,7 +25,7 @@ print(test_comm.per_val)
 # write data to radar_read
 value = random.uniform(-60,60)
 while True:
-    for _ in range(10):
+    for _ in range(1):
         time.sleep(1.5)
     value = random.uniform(-60,60)
     print(value)
