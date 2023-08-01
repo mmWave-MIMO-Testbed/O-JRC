@@ -62,7 +62,7 @@ namespace gr {
             d_frame_rx_complete(true),
             per_stats(bt::rolling_window::window_size = 25),
             tpt_stats(bt::rolling_window::window_size = 10),
-            snr_stats(bt::rolling_window::window_size = 10), //sync with per for reward design
+            snr_stats(bt::rolling_window::window_size = 25), //sync with per for reward design
             snr_data_stats(bt::rolling_window::window_size = 1)
     {
             message_port_register_out(pmt::mp("sym"));

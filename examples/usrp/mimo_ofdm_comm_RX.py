@@ -8,7 +8,7 @@
 # Title: MIMO OFDM Comm Receiver
 # Author: Ceyhun D. Ozkaptan
 # Description: The Ohio State University
-# GNU Radio version: 3.8.1.0
+# GNU Radio version: v3.8.5.0-6-g57bd109d
 
 from distutils.version import StrictVersion
 
@@ -46,6 +46,7 @@ import ofdm_config  # embedded python module
 import os
 import random
 import string
+
 from gnuradio import qtgui
 
 class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
@@ -87,15 +88,19 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         self.usrp_freq = usrp_freq = 5e9
         self.fft_len = fft_len = ofdm_config.N_sc
         self.rf_frequency = rf_frequency = usrp_freq+19e9
+        self.parrent_path = parrent_path = "/home/hostpc-usrp/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/examples"
         self.cp_len = cp_len = int(fft_len/4)
         self.wavelength = wavelength = 3e8/rf_frequency
         self.sync_length = sync_length = 4*(fft_len+cp_len)
         self.save_comm_log = save_comm_log = False
         self.samp_rate = samp_rate = int(125e6)
         self.rx_gain = rx_gain = 45
+        self.radar_read_file = radar_read_file = parrent_path+"/data/radar_data.csv"
+        self.radar_log_file = radar_log_file = parrent_path+"/data/radar_log.csv"
+        self.packet_data_file = packet_data_file = parrent_path+"/data/packet_data.csv"
         self.corr_window_size = corr_window_size = int(fft_len/2)
-        self.comm_log_file = comm_log_file = os.getcwd()+"/temp/comm_log.csv"
-        self.chan_est_file = chan_est_file = os.getcwd()+"/temp/chan_est.csv"
+        self.comm_log_file = comm_log_file = parrent_path+"/data/comm_log.csv"
+        self.chan_est_file = chan_est_file = parrent_path+"/data/chan_est.csv"
         self.chan_est = chan_est = 1
         self.N_tx = N_tx = ofdm_config.N_tx
         self.N_ltf = N_ltf = ofdm_config.N_ltf
@@ -104,9 +109,9 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         # Blocks
         ##################################################
         # Create the options list
-        self._save_comm_log_options = (False, True, )
+        self._save_comm_log_options = [False, True]
         # Create the labels list
-        self._save_comm_log_labels = ('OFF', 'ON', )
+        self._save_comm_log_labels = ['OFF', 'ON']
         # Create the combo box
         self._save_comm_log_tool_bar = Qt.QToolBar(self)
         self._save_comm_log_tool_bar.addWidget(Qt.QLabel('Save Comm Log' + ": "))
@@ -131,9 +136,9 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         for c in range(1, 3):
             self.top_grid_layout.setColumnStretch(c, 1)
         # Create the options list
-        self._chan_est_options = [0,  1]
+        self._chan_est_options = [0, 1]
         # Create the labels list
-        self._chan_est_labels = ["LS",  "STA"]
+        self._chan_est_labels = ['LS', 'STA']
         # Create the combo box
         # Create the radio buttons
         self._chan_est_group_box = Qt.QGroupBox('Channel Estimation Algorithm' + ": ")
@@ -337,7 +342,9 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_moving_avg_0.set_min_output_buffer(24000)
         self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0 = mimo_ofdm_jrc.mimo_ofdm_equalizer(chan_est, rf_frequency, samp_rate, fft_len, cp_len, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64[3], ofdm_config.ltf_mapped_sc__ss_sym, N_tx, chan_est_file, comm_log_file, False, False)
         self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0.set_processor_affinity([4])
-        self.mimo_ofdm_jrc_gui_time_plot_0 = mimo_ofdm_jrc.gui_time_plot(250, "snr", "SNR [dB]", [5, 40], 10, "Signal-to-Noise Ratio")
+        self.mimo_ofdm_jrc_gui_time_plot_1_0 = mimo_ofdm_jrc.gui_time_plot(250, "throughput", "Throughput [KByte/s]", [0,10], 10, "Received Data Throughput")
+        self.mimo_ofdm_jrc_gui_time_plot_1 = mimo_ofdm_jrc.gui_time_plot(250, "per", "PER [%]", [0,102], 10, "Packet Error Rate")
+        self.mimo_ofdm_jrc_gui_time_plot_0_0 = mimo_ofdm_jrc.gui_time_plot(250, "snr", "SNR [dB]", [0,40], 10, "Signal-to-Noise Ratio")
         self.mimo_ofdm_jrc_frame_sync_0 = mimo_ofdm_jrc.frame_sync(fft_len, cp_len, sync_length, ofdm_config.l_ltf_fir, False)
         self.mimo_ofdm_jrc_frame_detector_0 = mimo_ofdm_jrc.frame_detector(64, 16, 0.85, 30, (len(ofdm_config.l_stf_ltf_64)+N_tx)*(fft_len+cp_len), False)
         self.mimo_ofdm_jrc_frame_detector_0.set_processor_affinity([3])
@@ -365,12 +372,13 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         self.blocks_abs_xx_0 = blocks.abs_ff(1)
 
 
-
         ##################################################
         # Connections
         ##################################################
         self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'sym'), (self.blocks_socket_pdu_1, 'pdus'))
-        self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_0, 'stats'))
+        self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_0_0, 'stats'))
+        self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_1, 'stats'))
+        self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_1_0, 'stats'))
         self.connect((self.blocks_abs_xx_0, 0), (self.blocks_divide_xx_0, 1))
         self.connect((self.blocks_complex_to_mag_0, 0), (self.blocks_divide_xx_0, 0))
         self.connect((self.blocks_complex_to_mag_squared_0_0, 0), (self.blocks_moving_average_xx_1_0, 0))
@@ -400,6 +408,7 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         self.connect((self.mimo_ofdm_jrc_stream_decoder_0, 0), (self.blocks_null_sink_0, 0))
         self.connect((self.uhd_usrp_source_0, 0), (self.blocks_sub_xx_0, 0))
         self.connect((self.uhd_usrp_source_0, 0), (self.mimo_ofdm_jrc_moving_avg_0, 0))
+
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "mimo_ofdm_comm_RX")
@@ -432,6 +441,17 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         self.rf_frequency = rf_frequency
         self.set_wavelength(3e8/self.rf_frequency)
         self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0.set_frequency(self.rf_frequency)
+
+    def get_parrent_path(self):
+        return self.parrent_path
+
+    def set_parrent_path(self, parrent_path):
+        self.parrent_path = parrent_path
+        self.set_chan_est_file(self.parrent_path+"/data/chan_est.csv")
+        self.set_comm_log_file(self.parrent_path+"/data/comm_log.csv")
+        self.set_packet_data_file(self.parrent_path+"/data/packet_data.csv")
+        self.set_radar_log_file(self.parrent_path+"/data/radar_log.csv")
+        self.set_radar_read_file(self.parrent_path+"/data/radar_data.csv")
 
     def get_cp_len(self):
         return self.cp_len
@@ -477,6 +497,24 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         self.rx_gain = rx_gain
         self.uhd_usrp_source_0.set_gain(self.rx_gain, 0)
 
+    def get_radar_read_file(self):
+        return self.radar_read_file
+
+    def set_radar_read_file(self, radar_read_file):
+        self.radar_read_file = radar_read_file
+
+    def get_radar_log_file(self):
+        return self.radar_log_file
+
+    def set_radar_log_file(self, radar_log_file):
+        self.radar_log_file = radar_log_file
+
+    def get_packet_data_file(self):
+        return self.packet_data_file
+
+    def set_packet_data_file(self, packet_data_file):
+        self.packet_data_file = packet_data_file
+
     def get_corr_window_size(self):
         return self.corr_window_size
 
@@ -518,6 +556,8 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
 
 
 
+
+
 def main(top_block_cls=mimo_ofdm_comm_RX, options=None):
 
     if StrictVersion("4.5.0") <= StrictVersion(Qt.qVersion()) < StrictVersion("5.0.0"):
@@ -526,7 +566,9 @@ def main(top_block_cls=mimo_ofdm_comm_RX, options=None):
     qapp = Qt.QApplication(sys.argv)
 
     tb = top_block_cls()
+
     tb.start()
+
     tb.show()
 
     def sig_handler(sig=None, frame=None):
@@ -542,9 +584,9 @@ def main(top_block_cls=mimo_ofdm_comm_RX, options=None):
     def quitting():
         tb.stop()
         tb.wait()
+
     qapp.aboutToQuit.connect(quitting)
     qapp.exec_()
-
 
 if __name__ == '__main__':
     main()
