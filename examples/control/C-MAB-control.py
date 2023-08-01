@@ -46,7 +46,7 @@ class ContextualUCB:
         self.context_action_estimates[radar_angle, beamforming_angle] += (reward - q_n) / n # update the UCB value
         
     def save_ucb_info(self):
-        np.savetxt("ucb_info,csv",self.context_action_estimates,delimiter=',')
+        np.savetxt("ucb_info.csv",self.context_action_estimates,delimiter=',')
 
 
 # Testing
