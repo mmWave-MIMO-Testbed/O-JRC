@@ -97,7 +97,9 @@ while True:
         if current_sys_time - pre_sys_time >= 2: # regular NDP packet
             # Send out NDP
             test_packet.packet_type = 1
-            test_packet.packet_size = 0
+            test_packet.packet_size = 10
+            current_time = datetime.now()
+            test_packet.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3]
             data_interface.write_packet_data(test_packet, packet_data_path)
             data_interface.write_packet_log(test_packet,packet_log_path)
             pre_sys_time = current_sys_time
@@ -122,6 +124,8 @@ while True:
             if curr_comm_snr <= 15 or curr_comm_per >= 0.05: # send NDP if lower than threshold
                 test_packet.packet_type = 1
                 test_packet.packet_size = 10
+                current_time = datetime.now()
+                test_packet.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3]
                 data_interface.write_packet_data(test_packet, packet_data_path)
                 data_interface.write_packet_log(test_packet,packet_log_path)
                 print("Lower than threshold, send NDP")
@@ -136,12 +140,17 @@ while True:
             # Write to interface
             test_radar.est_angle = curr_beamforming_angle
             current_time = datetime.now()
+            test_packet.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3]
             test_radar.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3]
             test_packet.packet_type = 2
             test_packet.packet_size = 300
             data_interface.write_packet_data(test_packet, packet_data_path)
             data_interface.write_packet_log(test_packet,packet_log_path)
+            data_interface.write_radar_data(test_radar, radar_data_path)
+            data_interface.write_radar_log(test_radar, radar_log_path)
         else: # repeat previous decision
+            current_time = datetime.now()
+            test_packet.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3]
             data_interface.write_packet_data(test_packet, packet_data_path)
             data_interface.write_packet_log(test_packet,packet_log_path)
             print('repeat previous setting')
@@ -150,10 +159,10 @@ while True:
 
 # In[29]:
 
-
+ucb_info = np.loadtxt("ucb_info.csv", delimiter=",")
 context_values = np.arange(-90,90,20)
 for context in context_values:
-    ucb_estimates = bandit.get_mean_value(context + 90)
+    ucb_estimates = ucn_info[context,:]
     plt.plot(range(-90, 91), ucb_estimates, label=f'radar angle{context}')
 
 plt.xlabel('Beamforming angle')
@@ -161,7 +170,3 @@ plt.ylabel('UCB Estimate')
 plt.title('UCB Estimates for Different Radar angle')
 plt.legend()
 plt.show()
-
-
-
-
