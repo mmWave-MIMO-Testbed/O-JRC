@@ -44,7 +44,7 @@ test_packet = data_interface.PacketData(current_time, packet_type, packet_size)
 
 while True:
     for _ in range(10):
-        time.sleep(0.1)
+        time.sleep(0.01)
     current_time = datetime.now()
     test_radar_angle = random.uniform(-60,60)
     test_packet_type = random.randint(1, 2)

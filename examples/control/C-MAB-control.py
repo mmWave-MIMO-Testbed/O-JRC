@@ -21,8 +21,8 @@ class ContextualUCB:
         # n_beamformnig_angle: is the total number of angles which will apply to stream encoder  
         self.n_contexts = n_radar_angle
         self.n_actions = n_beamforming_angle
-        self.total_plays = 1
-        self.context_action_counts = np.ones((n_radar_angle, n_beamforming_angle))
+        self.total_plays = 0
+        self.context_action_counts = np.zeros((n_radar_angle, n_beamforming_angle))
         self.context_action_estimates = np.zeros((n_radar_angle, n_beamforming_angle))
 
     def get_ucb_value(self, radar_angle):
@@ -92,7 +92,7 @@ pre_sys_time = time.time()
 ucb_count = 0
 
 while True:
-        time.sleep(0.1)
+        time.sleep(0.001)
         current_sys_time = time.time()
         if current_sys_time - pre_sys_time >= 2: # regular NDP packet
             # Send out NDP
@@ -108,20 +108,26 @@ while True:
             
         test_radar = data_interface.load_radar_data(radar_log_path) # update radar info
         test_comm = data_interface.load_comm_data(comm_log_path) # update comm info
-        
+       
         if pre_radar_time != test_radar.timestamp and pre_comm_time != test_comm.timestamp: #new radar and comm information updated     
             # udpate SNR PER data
             curr_comm_snr = test_comm.snr_val
             curr_comm_per = test_comm.per_val
-            reward = curr_comm_snr * (1 - curr_comm_per)
+            curr_comm_throughput = test_comm.throughput
+            #reward = curr_comm_snr/25 * ((100 - curr_comm_per)/100)
+            reward = np.exp(-curr_comm_per/50)
+            print(f"reward: {reward}")
             agent.update(curr_radar_angle+90,curr_beamforming_angle+90,reward) # update reward for last decision
+            pre_comm_time = test_comm.timestamp
+            pre_radar_time = test_radar.timestamp
             
             ucb_count += 1
-            if ucb_count >= 1000: # save ucb every 1000 round
+            if ucb_count == 1000: # save ucb every 1000 round
                 agent.save_ucb_info()
                 ucb_count = 0
+                
             
-            if curr_comm_snr <= 15 or curr_comm_per >= 0.05: # send NDP if lower than threshold
+            if reward <= 0.6: # send NDP if lower than threshold
                 test_packet.packet_type = 1
                 test_packet.packet_size = 10
                 current_time = datetime.now()
@@ -136,6 +142,7 @@ while True:
             pre_radar_time = test_radar.timestamp
             pre_comm_time = test_comm.timestamp
             curr_beamforming_angle = int(agent.angle_selection(curr_radar_angle + 90)) # beamforming angle decision from MAB
+            print(f"radar angle: {curr_radar_angle}")
             print(f"beamforming angle by C-UCB:{curr_beamforming_angle}")
             # Write to interface
             test_radar.est_angle = curr_beamforming_angle
@@ -148,12 +155,12 @@ while True:
             data_interface.write_packet_log(test_packet,packet_log_path)
             data_interface.write_radar_data(test_radar, radar_data_path)
             data_interface.write_radar_log(test_radar, radar_log_path)
-        else: # repeat previous decision
-            current_time = datetime.now()
-            test_packet.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3]
-            data_interface.write_packet_data(test_packet, packet_data_path)
-            data_interface.write_packet_log(test_packet,packet_log_path)
-            print('repeat previous setting')
+        #else: # repeat previous decision
+            #current_time = datetime.now()
+            #test_packet.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3]
+            #data_interface.write_packet_data(test_packet, packet_data_path)
+            #data_interface.write_packet_log(test_packet,packet_log_path)
+            #print('repeat previous setting')
 
 
 
@@ -162,7 +169,7 @@ while True:
 ucb_info = np.loadtxt("ucb_info.csv", delimiter=",")
 context_values = np.arange(-90,90,20)
 for context in context_values:
-    ucb_estimates = ucn_info[context,:]
+    ucb_estimates = ucb_info[context,:]
     plt.plot(range(-90, 91), ucb_estimates, label=f'radar angle{context}')
 
 plt.xlabel('Beamforming angle')
