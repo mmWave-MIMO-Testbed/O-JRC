@@ -65,7 +65,7 @@ namespace gr {
         ba::accumulator_set<int, ba::stats<bt::rolling_mean> > per_stats;
         ba::accumulator_set<float, ba::stats<bt::rolling_mean> > snr_data_stats;
         ba::accumulator_set<double, ba::stats<bt::rolling_mean> > tpt_stats;
-        ba::accumulator_set<float, ba::stats<bt::rolling_mean> > snr_stats;
+        ba::accumulator_set<float, ba::stats<bt::rolling_mean> > reward_stats;
 
         // double d_nom_freq;  // nominal frequency, Hz
         // double d_freq_offset;  // frequency offset, Hz

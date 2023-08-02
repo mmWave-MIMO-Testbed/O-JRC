@@ -1909,10 +1909,10 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    interval: '100'
+    interval: '250'
     label: '"Received Data Throughput"'
-    time_window: '5'
-    y_axis_lim: '[0,30]'
+    time_window: '10'
+    y_axis_lim: '[0,5]'
     y_label: '"Throughput [KByte/s]"'
     y_tag: '"throughput"'
   states:

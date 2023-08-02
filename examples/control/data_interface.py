@@ -10,13 +10,13 @@ class RadarData:
         self.est_angle  = float(est_angle)
 
 class CommData:
-    def __init__(self, timestamp, CRC, packet_type, est_snr, data_snr, snr_val, per_val,throughput):
+    def __init__(self, timestamp, CRC, packet_type, est_snr, data_snr, reward_val, per_val,throughput):
         self.timestamp = timestamp
         self.CRC = int(CRC)
         self.packet_type = int(packet_type)
         self.est_snr = float(est_snr)
         self.data_snr = float(data_snr)
-        self.snr_val = float(snr_val)
+        self.reward_val = float(reward_val)
         self.per_val = float(per_val)
         self.throughput = float(throughput)
 
