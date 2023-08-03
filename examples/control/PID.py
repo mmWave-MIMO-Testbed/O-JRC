@@ -9,6 +9,12 @@ current_dir = os.path.dirname(current_file_path)
 parent_dir = os.path.dirname(current_dir)
 print(parent_dir)
 
+radar_log_path      = os.path.join(parent_dir, 'data', 'radar_log.csv')
+comm_log_path       = os.path.join(parent_dir, 'data', 'comm_log.csv')
+packet_log_path     = os.path.join(parent_dir, 'data', 'packet_log.csv')
+
+radar_data_path     = os.path.join(parent_dir, 'data', 'radar_data.csv')
+packet_data_path    = os.path.join(parent_dir, 'data', 'packet_data.csv')
 
 
 class PIDController:
@@ -100,12 +106,13 @@ def main():
             packet_type = 1
             packet_size = 10
 
+        print(current_snr, output)
         print(packet_type, packet_size)
         test_packet = data_interface.PacketData(pid.current_time, packet_type, packet_size)
         data_interface.write_packet_data(test_packet, packet_data_path)
         data_interface.write_packet_log(test_packet, packet_log_path)
 
-        time.sleep(0.1)  # Loop delay, tune this value as you need
+        time.sleep(1)  # Loop delay, tune this value as you need
 
 if __name__ == "__main__":
     main()

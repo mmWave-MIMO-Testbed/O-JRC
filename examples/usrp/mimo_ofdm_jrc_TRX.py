@@ -8,7 +8,7 @@
 # Title: MIMO OFDM JRC Transceiver
 # Author: Ceyhun D. Ozkaptan
 # Description: The Ohio State University
-# GNU Radio version: 3.8.1.0
+# GNU Radio version: v3.8.5.0-6-g57bd109d
 
 from distutils.version import StrictVersion
 
@@ -43,6 +43,7 @@ import ofdm_config  # embedded python module
 import os
 import random
 import string
+
 from gnuradio import qtgui
 
 class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
@@ -84,6 +85,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.usrp_freq = usrp_freq = 5e9
         self.samp_rate = samp_rate = int(125e6)
         self.rf_freq = rf_freq = usrp_freq+19e9
+        self.parrent_path = parrent_path = "/home/hostpc-usrp/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/examples"
         self.interp_factor_angle = interp_factor_angle = 16
         self.fft_len = fft_len = ofdm_config.N_sc
         self.N_tx = N_tx = ofdm_config.N_tx
@@ -93,20 +95,22 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.tx_gain = tx_gain = 42
         self.save_radar_log = save_radar_log = False
         self.rx_gain = rx_gain = 40
-        self.radar_log_file = radar_log_file = os.getcwd()+"/temp/radar_log.csv"
-        self.radar_chan_file = radar_chan_file = os.getcwd()+"/temp/radar_chan.csv"
+        self.radar_log_file = radar_log_file = parrent_path+"/data/radar_log.csv"
+        self.radar_data_file = radar_data_file = parrent_path+"/data/radar_data.csv"
+        self.radar_chan_file = radar_chan_file = parrent_path+"/data/radar_chan.csv"
         self.radar_aided = radar_aided = False
         self.phased_steering = phased_steering = False
         self.phase_tx4 = phase_tx4 = 2.2
         self.phase_tx3 = phase_tx3 = 1.5
         self.phase_tx2 = phase_tx2 = -1.2
         self.phase_rx2 = phase_rx2 = -0.6
+        self.packet_data_file = packet_data_file = parrent_path+"/data/packet_data.csv"
         self.mcs = mcs = 3
         self.interp_factor = interp_factor = 8
         self.freq_smoothing = freq_smoothing = False
         self.delay_samp = delay_samp = 187+5
         self.cp_len = cp_len = int(fft_len/4)
-        self.chan_est_file = chan_est_file = os.getcwd()+"/temp/chan_est.csv"
+        self.chan_est_file = chan_est_file = parrent_path+"/data/chan_est.csv"
         self.capture_radar = capture_radar = False
         self.background_record = background_record = True
         self.angle_res = angle_res = np.rad2deg(np.arcsin(2/(N_tx*N_rx)))
@@ -137,9 +141,9 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         for c in range(0, 3):
             self.top_grid_layout.setColumnStretch(c, 1)
         # Create the options list
-        self._save_radar_log_options = (False, True, )
+        self._save_radar_log_options = [False, True]
         # Create the labels list
-        self._save_radar_log_labels = ('OFF', 'ON', )
+        self._save_radar_log_labels = ['OFF', 'ON']
         # Create the combo box
         self._save_radar_log_tool_bar = Qt.QToolBar(self)
         self._save_radar_log_tool_bar.addWidget(Qt.QLabel('Saving    \nRadar Log' + ": "))
@@ -164,9 +168,9 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         for c in range(3, 6):
             self.top_grid_layout.setColumnStretch(c, 1)
         # Create the options list
-        self._radar_aided_options = (False, True, )
+        self._radar_aided_options = [False, True]
         # Create the labels list
-        self._radar_aided_labels = ('OFF', 'ON', )
+        self._radar_aided_labels = ['OFF', 'ON']
         # Create the combo box
         self._radar_aided_tool_bar = Qt.QToolBar(self)
         self._radar_aided_tool_bar.addWidget(Qt.QLabel('Radar-aided   \nPrecoding' + ": "))
@@ -214,7 +218,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         # Create the options list
         self._mcs_options = [0, 1, 2, 3, 4, 5]
         # Create the labels list
-        self._mcs_labels = ["BPSK 1/2", "BPSK 3/4", "QPSK 1/2", "QPSK 3/4", "16QAM 1/2","16QAM 3/4" ]
+        self._mcs_labels = ['BPSK 1/2', 'BPSK 3/4', 'QPSK 1/2', 'QPSK 3/4', '16QAM 1/2', '16QAM 3/4']
         # Create the combo box
         # Create the radio buttons
         self._mcs_group_box = Qt.QGroupBox('Modulation and Coding Scheme' + ": ")
@@ -241,9 +245,9 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         for c in range(0, 8):
             self.top_grid_layout.setColumnStretch(c, 1)
         # Create the options list
-        self._freq_smoothing_options = (False, True, )
+        self._freq_smoothing_options = [False, True]
         # Create the labels list
-        self._freq_smoothing_labels = ('OFF', 'ON', )
+        self._freq_smoothing_labels = ['OFF', 'ON']
         # Create the combo box
         self._freq_smoothing_tool_bar = Qt.QToolBar(self)
         self._freq_smoothing_tool_bar.addWidget(Qt.QLabel('Frequency    \nSmoothing' + ": "))
@@ -268,9 +272,9 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         for c in range(0, 8):
             self.top_grid_layout.setColumnStretch(c, 1)
         # Create the options list
-        self._background_record_options = (False, True, )
+        self._background_record_options = [False, True]
         # Create the labels list
-        self._background_record_labels = ('OFF', 'ON', )
+        self._background_record_labels = ['OFF', 'ON']
         # Create the combo box
         self._background_record_tool_bar = Qt.QToolBar(self)
         self._background_record_tool_bar.addWidget(Qt.QLabel('Static Background    \nRecording' + ": "))
@@ -316,9 +320,9 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         for c in range(0, 2):
             self.top_grid_layout.setColumnStretch(c, 1)
         # Create the options list
-        self._phased_steering_options = (False, True, )
+        self._phased_steering_options = [False, True]
         # Create the labels list
-        self._phased_steering_labels = ('OFF', 'ON', )
+        self._phased_steering_labels = ['OFF', 'ON']
         # Create the combo box
         self._phased_steering_tool_bar = Qt.QToolBar(self)
         self._phased_steering_tool_bar.addWidget(Qt.QLabel('Phased Steering' + ": "))
@@ -346,10 +350,13 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_usrp_mimo_trx_0 = mimo_ofdm_jrc.usrp_mimo_trx(2, 4, 2, samp_rate, usrp_freq, delay_samp, False, 0.04, "addr0=192.168.120.2, addr1=192.168.101.2, master_clock_rate=250e6", "external,external", "external,external", "TX/RX,TX/RX,TX/RX,TX/RX", tx_gain, 0.5, 0.01, "", "RX2,RX2", rx_gain, 0.5, 0.01, 0, "", "packet_len")
         self.mimo_ofdm_jrc_usrp_mimo_trx_0.set_processor_affinity([6])
         self.mimo_ofdm_jrc_stream_encoder_0 = mimo_ofdm_jrc.stream_encoder(mcs, ofdm_config.N_data, 0, False)
+        self.mimo_ofdm_jrc_socket_pdu_jrc_0 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 10000)
         self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor), np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, angle_res*2, 15, 0, radar_log_file, save_radar_log, "packet_len", False)
+        self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(100, packet_data_file)
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
-        self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64, ofdm_config.ltf_mapped_sc__ss_sym, chan_est_file, freq_smoothing, radar_log_file, radar_aided, False, False, "packet_len",  False)
+        self.mimo_ofdm_jrc_ndp_generator_0 = mimo_ofdm_jrc.ndp_generator()
+        self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64, ofdm_config.ltf_mapped_sc__ss_sym, chan_est_file, freq_smoothing, radar_data_file, radar_aided, False, False, "packet_len",  False)
         self.mimo_ofdm_jrc_mimo_precoder_0.set_processor_affinity([7])
         self.mimo_ofdm_jrc_mimo_precoder_0.set_min_output_buffer(1000)
         self.mimo_ofdm_jrc_mimo_ofdm_radar_0 = mimo_ofdm_jrc.mimo_ofdm_radar(fft_len, N_tx, N_rx, N_tx, len(ofdm_config.l_stf_ltf_64)+1, True, background_record, 8, interp_factor, False, radar_chan_file, "packet_len", False)
@@ -379,8 +386,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self._capture_radar_choices = {'Pressed': True, 'Released': False}
         _capture_radar_push_button.pressed.connect(lambda: self.set_capture_radar(self._capture_radar_choices['Pressed']))
         _capture_radar_push_button.released.connect(lambda: self.set_capture_radar(self._capture_radar_choices['Released']))
-        self.top_grid_layout.addWidget(_capture_radar_push_button)
-        self.blocks_socket_pdu_0 = blocks.socket_pdu('UDP_SERVER', '', '52001', 5000, False)
+        self.top_layout.addWidget(_capture_radar_push_button)
         self.blocks_multiply_const_vxx_0_1 = blocks.multiply_const_cc(amp_rx2*cmath.exp(1j*phase_rx2))
         self.blocks_multiply_const_vxx_0_0_1_0 = blocks.multiply_const_cc(tx_multiplier)
         self.blocks_multiply_const_vxx_0_0_1 = blocks.multiply_const_cc(tx_multiplier)
@@ -393,14 +399,16 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.blocks_complex_to_mag_squared_0_0.set_processor_affinity([9])
 
 
-
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.blocks_socket_pdu_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_ndp_generator_0, 'out'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_ndp_generator_0, 'enable'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'enable'))
         self.msg_connect((self.mimo_ofdm_jrc_range_angle_estimator_0, 'params'), (self.mimo_ofdm_jrc_gui_time_plot_0, 'stats'))
         self.msg_connect((self.mimo_ofdm_jrc_range_angle_estimator_0, 'params'), (self.mimo_ofdm_jrc_gui_time_plot_1, 'stats'))
         self.msg_connect((self.mimo_ofdm_jrc_range_angle_estimator_0, 'params'), (self.mimo_ofdm_jrc_gui_time_plot_2, 'stats'))
+        self.msg_connect((self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
         self.connect((self.blocks_complex_to_mag_squared_0_0, 0), (self.mimo_ofdm_jrc_gui_heatmap_plot_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.mimo_ofdm_jrc_zero_pad_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0_0, 0), (self.blocks_multiply_const_vxx_0_0_0, 0))
@@ -429,10 +437,10 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.fft_vxx_0_2, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.fft_vxx_0_2_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.fft_vxx_0_3, 0))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 3))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 2))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 1))
-        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 3))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0, 0), (self.fft_vxx_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0, 0), (self.fft_vxx_0_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_stream_encoder_0, 0), (self.mimo_ofdm_jrc_mimo_precoder_0, 0))
@@ -442,6 +450,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.connect((self.mimo_ofdm_jrc_zero_pad_0_0, 0), (self.mimo_ofdm_jrc_usrp_mimo_trx_0, 1))
         self.connect((self.mimo_ofdm_jrc_zero_pad_0_0_0, 0), (self.mimo_ofdm_jrc_usrp_mimo_trx_0, 2))
         self.connect((self.mimo_ofdm_jrc_zero_pad_0_0_0_0, 0), (self.mimo_ofdm_jrc_usrp_mimo_trx_0, 3))
+
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "mimo_ofdm_jrc_TRX")
@@ -469,6 +478,17 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
     def set_rf_freq(self, rf_freq):
         self.rf_freq = rf_freq
         self.set_wavelength(3e8/self.rf_freq)
+
+    def get_parrent_path(self):
+        return self.parrent_path
+
+    def set_parrent_path(self, parrent_path):
+        self.parrent_path = parrent_path
+        self.set_chan_est_file(self.parrent_path+"/data/chan_est.csv")
+        self.set_packet_data_file(self.parrent_path+"/data/packet_data.csv")
+        self.set_radar_chan_file(self.parrent_path+"/data/radar_chan.csv")
+        self.set_radar_data_file(self.parrent_path+"/data/radar_data.csv")
+        self.set_radar_log_file(self.parrent_path+"/data/radar_log.csv")
 
     def get_interp_factor_angle(self):
         return self.interp_factor_angle
@@ -545,6 +565,12 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
     def set_radar_log_file(self, radar_log_file):
         self.radar_log_file = radar_log_file
 
+    def get_radar_data_file(self):
+        return self.radar_data_file
+
+    def set_radar_data_file(self, radar_data_file):
+        self.radar_data_file = radar_data_file
+
     def get_radar_chan_file(self):
         return self.radar_chan_file
 
@@ -593,6 +619,12 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
     def set_phase_rx2(self, phase_rx2):
         self.phase_rx2 = phase_rx2
         self.blocks_multiply_const_vxx_0_1.set_k(self.amp_rx2*cmath.exp(1j*self.phase_rx2))
+
+    def get_packet_data_file(self):
+        return self.packet_data_file
+
+    def set_packet_data_file(self, packet_data_file):
+        self.packet_data_file = packet_data_file
 
     def get_mcs(self):
         return self.mcs
@@ -710,6 +742,8 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
 
 
 
+
+
 def main(top_block_cls=mimo_ofdm_jrc_TRX, options=None):
     if gr.enable_realtime_scheduling() != gr.RT_OK:
         print("Error: failed to enable real-time scheduling.")
@@ -720,7 +754,9 @@ def main(top_block_cls=mimo_ofdm_jrc_TRX, options=None):
     qapp = Qt.QApplication(sys.argv)
 
     tb = top_block_cls()
+
     tb.start()
+
     tb.show()
 
     def sig_handler(sig=None, frame=None):
@@ -736,9 +772,9 @@ def main(top_block_cls=mimo_ofdm_jrc_TRX, options=None):
     def quitting():
         tb.stop()
         tb.wait()
+
     qapp.aboutToQuit.connect(quitting)
     qapp.exec_()
-
 
 if __name__ == '__main__':
     main()
