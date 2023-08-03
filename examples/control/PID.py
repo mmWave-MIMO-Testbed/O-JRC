@@ -1,4 +1,15 @@
+import os
 import time
+import random
+from datetime import datetime
+import data_interface
+
+current_file_path = os.path.abspath(__file__)
+current_dir = os.path.dirname(current_file_path)
+parent_dir = os.path.dirname(current_dir)
+print(parent_dir)
+
+
 
 class PIDController:
     def __init__(self, P=0.2, I=0.0, D=0.0, current_time=None):
@@ -75,15 +86,24 @@ def main():
     pid.set_point(target_snr)
 
     while True:
-        current_snr = get_snr()
+
+        # test_comm = data_interface.CommData(pid.current_time, 0, 0, 0, 0, 0, 0, 0)
+        test_comm = data_interface.load_comm_data(comm_log_path)
+        current_snr = test_comm.snr_val
         pid.update(current_snr)
         output = pid.output
 
-        if current_snr >= target_snr:
-            send_data()
-        else:
-            angle = output  # Use output to calculate the angle
-            send_ndp(angle)
+        if output >= 0: # If the output is positive, it means SNR is increasing or above target.
+            packet_type = 2
+            packet_size = min(300, 10*int(output)) # Size is adjusted based on PID output
+        else: # If the output is negative, it means SNR is decreasing or below target.
+            packet_type = 1
+            packet_size = 10
+
+        print(packet_type, packet_size)
+        test_packet = data_interface.PacketData(pid.current_time, packet_type, packet_size)
+        data_interface.write_packet_data(test_packet, packet_data_path)
+        data_interface.write_packet_log(test_packet, packet_log_path)
 
         time.sleep(0.1)  # Loop delay, tune this value as you need
 

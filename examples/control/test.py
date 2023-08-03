@@ -9,6 +9,15 @@ current_dir = os.path.dirname(current_file_path)
 parent_dir = os.path.dirname(current_dir)
 print(parent_dir)
 
+
+radar_log_path      = os.path.join(parent_dir, 'data', 'radar_log.csv')
+comm_log_path       = os.path.join(parent_dir, 'data', 'comm_log.csv')
+packet_log_path     = os.path.join(parent_dir, 'data', 'packet_log.csv')
+
+radar_data_path     = os.path.join(parent_dir, 'data', 'radar_data.csv')
+packet_data_path    = os.path.join(parent_dir, 'data', 'packet_data.csv')
+
+
 # Testing
 current_time = '22:10:39.001'
 peak_power = 0.0239202
@@ -18,12 +27,6 @@ angle_val = -55.599
 packet_type = 1 # 0 for NDP, 1 for Data
 packet_size = 100
 
-radar_log_path      = os.path.join(parent_dir, 'data', 'radar_log.csv')
-comm_log_path       = os.path.join(parent_dir, 'data', 'comm_log.csv')
-packet_log_path     = os.path.join(parent_dir, 'data', 'packet_log.csv')
-
-radar_data_path     = os.path.join(parent_dir, 'data', 'radar_data.csv')
-packet_data_path    = os.path.join(parent_dir, 'data', 'packet_data.csv')
 
 #load data from radar_data
 test_radar = data_interface.RadarData(current_time, peak_power, snr_est, range_val, angle_val)
