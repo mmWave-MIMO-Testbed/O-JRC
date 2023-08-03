@@ -102,17 +102,24 @@ def main():
         if output >= 0: # If the output is positive, it means SNR is increasing or above target.
             packet_type = 2
             packet_size = min(300, 10*int(output)) # Size is adjusted based on PID output
+            # print(packet_type, packet_size)
         else: # If the output is negative, it means SNR is decreasing or below target.
             packet_type = 1
             packet_size = 10
+            # print(packet_type, packet_size)
+            time.sleep(0.1)
+            packet_type = 2
+            packet_size = min(300, 10*int(output)) # Size is adjusted based on PID output      
 
-        print(current_snr, output)
-        print(packet_type, packet_size)
+        # print(current_snr, output)
+        
         test_packet = data_interface.PacketData(pid.current_time, packet_type, packet_size)
+        print(datetime.fromtimestamp(test_packet.timestamp))
         data_interface.write_packet_data(test_packet, packet_data_path)
-        data_interface.write_packet_log(test_packet, packet_log_path)
+        # print(packet_data_path)
+        # data_interface.write_packet_log(test_packet, packet_log_path)
 
-        time.sleep(1)  # Loop delay, tune this value as you need
+        time.sleep(0.1)  # Loop delay, tune this value as you need
 
 if __name__ == "__main__":
     main()

@@ -48,7 +48,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/examples"'
+    value: '"/home/hostpc-usrp/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/examples"'
   states:
     bus_sink: false
     bus_source: false
@@ -68,7 +68,7 @@ blocks:
     coordinate: [184, 12]
     rotation: 0
     state: enabled
-- name: blocks_message_debug_0
+- name: blocks_message_debug_0_0
   id: blocks_message_debug
   parameters:
     affinity: ''
@@ -78,22 +78,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [760, 200.0]
-    rotation: 0
-    state: true
-- name: mimo_ofdm_jrc_ndp_generator_0
-  id: mimo_ofdm_jrc_ndp_generator
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [472, 352.0]
+    coordinate: [240, 392.0]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_ndp_generator_1
@@ -164,31 +149,9 @@ blocks:
     coordinate: [400, 164.0]
     rotation: 0
     state: disabled
-- name: mimo_ofdm_jrc_socket_pdu_jrc_1
-  id: mimo_ofdm_jrc_socket_pdu_jrc
-  parameters:
-    MTU: '10000'
-    affinity: ''
-    alias: ''
-    comment: ''
-    host: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    port: '52001'
-    type: UDP_SERVER
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [464, 212.0]
-    rotation: 0
-    state: true
 
 connections:
-- [mimo_ofdm_jrc_ndp_generator_0, out, blocks_message_debug_0, print]
-- [mimo_ofdm_jrc_packet_switch_0, strobe, mimo_ofdm_jrc_ndp_generator_0, enable]
-- [mimo_ofdm_jrc_packet_switch_0, strobe, mimo_ofdm_jrc_socket_pdu_jrc_1, enable]
-- [mimo_ofdm_jrc_socket_pdu_jrc_1, pdus, blocks_message_debug_0, print]
+- [mimo_ofdm_jrc_packet_switch_0, strobe, blocks_message_debug_0_0, print]
 
 metadata:
   file_format: 1

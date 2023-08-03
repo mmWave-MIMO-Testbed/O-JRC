@@ -6,7 +6,7 @@
 #
 # GNU Radio Python Flow Graph
 # Title: Not titled yet
-# GNU Radio version: 3.8.5.0
+# GNU Radio version: v3.8.5.0-6-g57bd109d
 
 from distutils.version import StrictVersion
 
@@ -69,26 +69,21 @@ class test_packet_switch(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.parrent_path = parrent_path = "/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/examples"
+        self.parrent_path = parrent_path = "/home/hostpc-usrp/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/examples"
         self.samp_rate = samp_rate = 32000
         self.packet_data_file = packet_data_file = parrent_path+"/data/packet_data.csv"
 
         ##################################################
         # Blocks
         ##################################################
-        self.mimo_ofdm_jrc_socket_pdu_jrc_1 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 10000)
         self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(1000, packet_data_file)
-        self.mimo_ofdm_jrc_ndp_generator_0 = mimo_ofdm_jrc.ndp_generator()
-        self.blocks_message_debug_0 = blocks.message_debug()
+        self.blocks_message_debug_0_0 = blocks.message_debug()
 
 
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.mimo_ofdm_jrc_ndp_generator_0, 'out'), (self.blocks_message_debug_0, 'print'))
-        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_ndp_generator_0, 'enable'))
-        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_socket_pdu_jrc_1, 'enable'))
-        self.msg_connect((self.mimo_ofdm_jrc_socket_pdu_jrc_1, 'pdus'), (self.blocks_message_debug_0, 'print'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.blocks_message_debug_0_0, 'print'))
 
 
     def closeEvent(self, event):
