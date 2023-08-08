@@ -36,8 +36,8 @@ test_radar = data_interface.RadarData(current_time, peak_power, snr_est, range_v
 
 # load data from comm_data
 test_comm = data_interface.CommData(current_time, 0, packet_type, snr_est, snr_est, 34.3, 2.3,10)
-test_comm = data_interface.load_comm_data(comm_log_path)
-print(test_comm.per_val)
+# test_comm = data_interface.load_comm_data(comm_log_path)
+# print(test_comm.per_val)
 
 # load data from packet_data
 test_packet = data_interface.PacketData(current_time, packet_type, packet_size)
@@ -47,7 +47,7 @@ test_packet = data_interface.PacketData(current_time, packet_type, packet_size)
 
 while True:
     for _ in range(10):
-        time.sleep(0.1)
+        time.sleep(0.01)
     current_time = datetime.now()
     test_radar_angle = random.uniform(-60,60)
     test_packet_type = random.randint(1, 2)
@@ -65,6 +65,9 @@ while True:
 
     data_interface.write_packet_data(test_packet, packet_data_path)
     data_interface.write_packet_log(test_packet, packet_log_path)
+
+    test_comm = data_interface.load_comm_data(comm_log_path)
+    print(test_comm.rx_snr)
 
 
  

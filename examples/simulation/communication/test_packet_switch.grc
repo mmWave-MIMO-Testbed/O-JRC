@@ -78,7 +78,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [240, 392.0]
+    coordinate: [536, 216.0]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_ndp_generator_1
@@ -122,7 +122,7 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     packet_info_file: packet_data_file
-    period_ms: '1000'
+    period_ms: '100'
   states:
     bus_sink: false
     bus_source: false

@@ -16,6 +16,14 @@ packet_log_path     = os.path.join(parent_dir, 'data', 'packet_log.csv')
 radar_data_path     = os.path.join(parent_dir, 'data', 'radar_data.csv')
 packet_data_path    = os.path.join(parent_dir, 'data', 'packet_data.csv')
 
+# with open(radar_log_path, 'w') as file:
+#     pass
+
+# with open(comm_log_path, 'w') as file:
+#     pass
+
+# with open(packet_log_path, 'w') as file:
+#     pass
 
 class PIDController:
     def __init__(self, P=0.2, I=0.0, D=0.0, current_time=None):
@@ -69,11 +77,11 @@ class PIDController:
             self.last_error = error
 
             self.output = self.PTerm + (self.Ki * self.ITerm) + (self.Kd * self.DTerm)
+            print(round(self.SetPoint, 2), round(feedback_value,2), round(error,2), round(self.PTerm,2), round(self.ITerm,2), round(self.DTerm,2), round(self.output,2))
 
     def set_point(self, set_point):
         """Initiates a new set point and resets the PID controller"""
         self.SetPoint = set_point
-        self.clear()
 
 def send_data():
     print("Sending data packet")
@@ -87,34 +95,35 @@ def get_snr():
     return random.uniform(0, 30)  # For demo purpose, returns a random SNR between 0 and 30
 
 def main():
-    target_snr = 20.0  # Define target SNR here
+    target_snr = 18.0  # Define target SNR here
     pid = PIDController(P=0.2, I=0.1, D=0.01)
     pid.set_point(target_snr)
 
     while True:
+        
+        output = 0
 
-        # test_comm = data_interface.CommData(pid.current_time, 0, 0, 0, 0, 0, 0, 0)
         test_comm = data_interface.load_comm_data(comm_log_path)
-        current_snr = test_comm.snr_val
-        pid.update(current_snr)
-        output = pid.output
+        pid.update(test_comm.rx_snr)
+        output = pid.output 
 
         if output >= 0: # If the output is positive, it means SNR is increasing or above target.
+            print('******************************************')
             packet_type = 2
-            packet_size = min(300, 10*int(output)) # Size is adjusted based on PID output
-            # print(packet_type, packet_size)
+            # packet_size = min(300, 100*int(output)) # Size is adjusted based on PID output
+            packet_size = 100 # Size is adjusted based on PID output
         else: # If the output is negative, it means SNR is decreasing or below target.
             packet_type = 1
             packet_size = 10
             # print(packet_type, packet_size)
-            time.sleep(0.1)
-            packet_type = 2
-            packet_size = min(300, 10*int(output)) # Size is adjusted based on PID output      
+            # time.sleep(0.1)
+            # packet_type = 2
+            # packet_size = 10 # Size is adjusted based on PID output      
 
-        # print(current_snr, output)
-        
-        test_packet = data_interface.PacketData(pid.current_time, packet_type, packet_size)
-        print(datetime.fromtimestamp(test_packet.timestamp))
+        # print(test_comm.rx_snr, output, packet_type, packet_size)
+
+        test_packet = data_interface.PacketData(time.time(), packet_type, packet_size)
+        # print(datetime.fromtimestamp(test_packet.timestamp))
         data_interface.write_packet_data(test_packet, packet_data_path)
         # print(packet_data_path)
         # data_interface.write_packet_log(test_packet, packet_log_path)

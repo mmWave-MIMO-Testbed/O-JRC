@@ -76,7 +76,7 @@ class test_packet_switch(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
-        self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(1000, packet_data_file)
+        self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(100, packet_data_file)
         self.blocks_message_debug_0_0 = blocks.message_debug()
 
 
