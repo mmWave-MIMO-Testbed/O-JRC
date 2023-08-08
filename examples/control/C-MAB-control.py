@@ -121,7 +121,7 @@ while True:
         test_radar = data_interface.load_radar_data(radar_log_path) # update radar info
         test_comm = data_interface.load_comm_data(comm_log_path) # update comm info
         current_time = datetime.now() # test
-        test_radar.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3] #test
+        test_radar.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3] #test if no change, send NDP
        
         if pre_radar_time != test_radar.timestamp and pre_comm_time != test_comm.timestamp: #new radar and comm information updated     
             # udpate PER throughput reward data
