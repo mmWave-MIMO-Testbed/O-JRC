@@ -262,7 +262,7 @@ namespace gr {
                 {
                     if(!d_new_stat_started)
                     {
-                        file_stream << "\n NEW RECORD - " << current_date_time() << "time, CRC, type, snr, data_snr, reward, per_val, Throughput" <<"\n";;
+                        file_stream << "\n NEW RECORD - " << current_date_time() << "time, CRC, type, snr, data_snr, data_CRC, per_val, Throughput" <<"\n";;
                         file_stream.flush();
                         d_new_stat_started = true;
                     }
@@ -336,9 +336,9 @@ namespace gr {
                 pmt::pmt_t d_tpt_value = pmt::init_f32vector(1, &tpt_val); //pmt
                 pmt::pmt_t d_tpt_pack = pmt::list2(d_tpt_key,d_tpt_value); //make list
 
-                float reward_stat = boost::accumulators::rolling_mean(reward_stats);
-                pmt::pmt_t d_avesnr_key = pmt::string_to_symbol("average snr"); //identifier
-                pmt::pmt_t d_avesnr_value = pmt::init_f32vector(1, &reward_stat); //pmt
+                float reward_val = boost::accumulators::rolling_mean(reward_stats);
+                pmt::pmt_t d_avesnr_key = pmt::string_to_symbol("reward"); //identifier
+                pmt::pmt_t d_avesnr_value = pmt::init_f32vector(1, &reward_val); //pmt
                 pmt::pmt_t d_avesnr_pack = pmt::list2(d_avesnr_key,d_avesnr_value); //make list
 
                 pmt::pmt_t stats_msg = pmt::list4(d_per_pack, d_snr_pack,d_tpt_pack,d_avesnr_pack);
@@ -356,7 +356,7 @@ namespace gr {
                     if (file_stream.is_open())
                     {
                         //file_stream << current_date_time2() << ", \t" << 0 << ", \t" << (int) d_packet_type << ", \t" << (int) d_mcs << ", \t" << d_snr_est << ", \t" << d_snr_data_est << ", \t" << d_stream_param.data_size_byte << ", \t";
-                        file_stream << current_date_time2() << ", \t" << 0 << ", \t" << (int) d_packet_type << ", \t" << d_snr_est << ", \t" <<d_snr_data_est << ", \t" << reward_stat << ", \t" << per_val <<", \t" << tpt_val << ", \t";
+                        file_stream << current_date_time2() << ", \t" << 0 << ", \t" << (int) d_packet_type << ", \t" << d_snr_est << ", \t" <<d_snr_data_est << ", \t" << reward_val << ", \t" << per_val <<", \t" << tpt_val << ", \t";
                         for (int i = 0; i < chan_est_mean.size(); i++)
                         {
                             file_stream << chan_est_mean[i] << ";";
@@ -435,9 +435,9 @@ namespace gr {
             pmt::pmt_t d_tpt_value = pmt::init_f32vector(1, &tpt_val); //pmt
             pmt::pmt_t d_tpt_pack = pmt::list2(d_tpt_key,d_tpt_value); //make list
 
-            float reward_stat = boost::accumulators::rolling_mean(reward_stats);
-            pmt::pmt_t d_avesnr_key = pmt::string_to_symbol("average snr"); //identifier
-            pmt::pmt_t d_avesnr_value = pmt::init_f32vector(1, &reward_stat); //pmt
+            float reward_val = boost::accumulators::rolling_mean(reward_stats);
+            pmt::pmt_t d_avesnr_key = pmt::string_to_symbol("reward"); //identifier
+            pmt::pmt_t d_avesnr_value = pmt::init_f32vector(1, &reward_val); //pmt
             pmt::pmt_t d_avesnr_pack = pmt::list2(d_avesnr_key,d_avesnr_value); //make list
 
             pmt::pmt_t stats_msg = pmt::list4(d_per_pack, d_snr_pack,d_tpt_pack,d_avesnr_pack);
@@ -449,7 +449,7 @@ namespace gr {
                 if (file_stream.is_open())
                 {
                     //file_stream << current_date_time2() << ", \t" << 1 << ", \t" << (int) d_packet_type << ", \t" << (int) d_mcs << ", \t" << d_snr_est << ", \t" << d_snr_data_est << ", \t" << d_stream_param.data_size_byte << ", \t" ;
-                    file_stream << current_date_time2() << ", \t" << 1 << ", \t" << (int) d_packet_type << ", \t" << d_snr_est << ", \t" <<d_snr_data_est << ", \t" << reward_stat << ", \t" << per_val <<", \t" << tpt_val << ", \t"; 
+                    file_stream << current_date_time2() << ", \t" << 1 << ", \t" << (int) d_packet_type << ", \t" << d_snr_est << ", \t" <<d_snr_data_est << ", \t" << reward_val << ", \t" << per_val <<", \t" << tpt_val << ", \t"; 
                     for (int i = 0; i < chan_est_mean.size(); i++)
                     {
                         file_stream << chan_est_mean[i] << ";";
