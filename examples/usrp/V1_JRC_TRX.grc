@@ -1254,7 +1254,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1328, 2056.0]
+    coordinate: [1328, 2052.0]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_gui_time_plot_1
@@ -1435,7 +1435,7 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     packet_info_file: packet_data_file
-    period_ms: '100'
+    period_ms: '50'
   states:
     bus_sink: false
     bus_source: false
