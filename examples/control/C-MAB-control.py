@@ -57,6 +57,17 @@ class ContextualUCB:
                 ucb_info_value = np.vstack((ucb_info_value,ucb_new))
         np.savetxt("ucb_info.csv",ucb_info_value,delimiter=',')
 
+    def save_trained_model(self):
+        np.save('estimated_mean.npy',self.context_action_estimates)
+        np.save('total_play.npy',self.total_plays)
+        np.save('context_action_play.npy',self.context_action_counts)
+
+    def load_trained_model(self, est_mean, total_play, context_action_play):
+        self.context_action_estimates = est_mean
+        self.total_plays = total_play
+        self.context_action_counts = context_action_play
+
+
 
 # Testing
 current_file_path = os.path.abspath(__file__)
@@ -105,6 +116,13 @@ curr_beamforming_angle = int(np.round(test_radar.est_angle))
 pre_sys_time = time.time()
 ucb_count = 0
 
+# Load trained model if needed
+#trained_model = np.load('estimated_mean.npy')
+#trained_total_play = np.load('total_play.npy')
+#trained_action_play = np.load('context_action_play.npy')
+#agent.load_trained_model(trained_model, trained_total_play, trained_action_play)
+
+
 while True:
         time.sleep(0.001)
         current_sys_time = time.time()
@@ -144,6 +162,7 @@ while True:
             if ucb_count == 100: # save ucb every 1000 round
                 agent.save_ucb_info()
                 agent.save_mean_info()
+                agent.save_trained_model()
                 ucb_count = 0
                 
             
