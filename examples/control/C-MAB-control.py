@@ -74,6 +74,7 @@ comm_log_path = os.path.join(parent_dir, 'data', 'comm_log.csv')
 radar_data_path = os.path.join(parent_dir, 'data','radar_data.csv')
 packet_log_path = os.path.join(parent_dir,'data','packet_log.csv')
 packet_data_path = os.path.join(parent_dir,'data','packet_data.csv')
+plot_log_path     = os.path.join(parent_dir, 'data', 'plot_log.csv')
 
 test_radar = data_interface.RadarData(current_date_time2, peak_power, snr_est, range_val, angle_val)
 test_radar_data = data_interface.RadarData(current_date_time2, peak_power, snr_est, range_val, angle_val)
@@ -97,6 +98,8 @@ agent = ContextualUCB(n_radar_angle,n_beamforming_angle)
 pre_radar_time = 0
 pre_comm_time = 0
 last_packet = 1
+pre_radar_angle = 0
+pre_beamforming_angle = 0
 curr_radar_angle = int(np.round(test_radar.est_angle))
 curr_beamforming_angle = int(np.round(test_radar.est_angle))
 pre_sys_time = time.time()
@@ -172,6 +175,10 @@ while True:
             data_interface.write_packet_log(test_packet,packet_log_path)
             data_interface.write_radar_data(test_radar_data, radar_data_path)
             data_interface.write_radar_log(test_radar, radar_log_path)
+
+            data_interface.write_plot_log(test_comm.packet_type, pre_radar_angle, pre_beamforming_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
+            pre_radar_angle = curr_radar_angle
+            pre_beamforming_angle = curr_beamforming_angle
         #else: # repeat previous decision, no radar-aided beamforming
             #current_time = datetime.now()
             #test_packet.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3]

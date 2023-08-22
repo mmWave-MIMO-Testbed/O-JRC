@@ -77,7 +77,10 @@ def write_radar_log(radar_data,radar_log_path):
     with open(radar_log_path, 'a') as file:
         file.write(line)
 
-
+def write_plot_log(packet_type, radar_angle, beamforming_angle, data_snr, CRC, throughput, plot_log_path):
+    line = f"{packet_type}, \t{radar_angle}, \t{beamforming_angle}, \t{data_snr}, \t{CRC}, \t{throughput}\n"
+    with open(plot_log_path,'a') as file:
+        file.write(line)
 
 
 

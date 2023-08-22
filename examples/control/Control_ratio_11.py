@@ -13,6 +13,7 @@ print(parent_dir)
 radar_log_path      = os.path.join(parent_dir, 'data', 'radar_log.csv')
 comm_log_path       = os.path.join(parent_dir, 'data', 'comm_log.csv')
 packet_log_path     = os.path.join(parent_dir, 'data', 'packet_log.csv')
+plot_log_path     = os.path.join(parent_dir, 'data', 'plot_log.csv')
 
 radar_data_path     = os.path.join(parent_dir, 'data', 'radar_data.csv')
 packet_data_path    = os.path.join(parent_dir, 'data', 'packet_data.csv')
@@ -36,7 +37,7 @@ test_radar = data_interface.RadarData(current_time, peak_power, snr_est, range_v
 
 
 # load data from comm_data
-#test_comm = data_interface.CommData(current_time, 0, packet_type, snr_est, snr_est, 34.3, 2.3,10)
+test_comm = data_interface.CommData(current_time, 0, packet_type, snr_est, snr_est, 1, 0,0)
 # test_comm = data_interface.load_comm_data(comm_log_path)
 # print(test_comm.per_val)
 
@@ -47,10 +48,12 @@ test_packet = data_interface.PacketData(current_time, packet_type, packet_size)
 
 
 while True:
-    for _ in range(10):
-        time.sleep(0.005)
+
+    time.sleep(0.005)
+
     current_time = datetime.now()
     test_radar = data_interface.load_radar_data(radar_log_path)
+    test_comm = data_interface.load_comm_data(comm_log_path)
     #test_radar_angle = random.uniform(-60,60)
     #test_packet_type = random.randint(1, 2)
     # test_packet_type = 2
@@ -71,6 +74,7 @@ while True:
 
     data_interface.write_radar_data(test_radar, radar_data_path)
     data_interface.write_radar_log(test_radar, radar_log_path)
+    data_interface.write_plot_log(test_comm.packet_type, test_radar.est_angle, test_radar.est_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
 
     data_interface.write_packet_data(test_packet, packet_data_path)
     data_interface.write_packet_log(test_packet, packet_log_path)
