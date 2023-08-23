@@ -26,7 +26,7 @@ snr_est = 23
 range_val = 5.10998
 angle_val = -55.599
 packet_type = 1 # 1 for NDP, 2 for Data
-packet_size = 100
+packet_size = 400
 test_packet_type = 1
 
 

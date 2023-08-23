@@ -129,7 +129,7 @@ while True:
         if current_sys_time - pre_sys_time >= 2: # regular NDP packet
             # Send out NDP
             test_packet.packet_type = 1
-            test_packet.packet_size = 10
+            test_packet.packet_size = 7
             current_time = datetime.now()
             test_packet.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3]
             data_interface.write_packet_data(test_packet, packet_data_path)
@@ -144,7 +144,7 @@ while True:
         current_time = datetime.now() # test
         test_radar.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3] #test if no change, send NDP
        
-        if pre_radar_time != test_radar.timestamp and pre_comm_time != test_comm.timestamp: #new radar and comm information updated     
+        if pre_radar_time != test_radar.timestamp: # and pre_comm_time != test_comm.timestamp: #new radar and comm information updated     
             # udpate PER throughput reward data
             curr_comm_reward = test_comm.reward_val
             curr_comm_per = test_comm.per_val
@@ -168,7 +168,7 @@ while True:
             
             if curr_comm_per >= 30: # send NDP if higher than threshold
                 test_packet.packet_type = 1
-                test_packet.packet_size = 10
+                test_packet.packet_size = 7
                 last_packet = 1
                 current_time = datetime.now()
                 test_packet.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3]
@@ -188,7 +188,7 @@ while True:
             test_packet.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3]
             test_radar_data.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3]
             test_packet.packet_type = 2
-            test_packet.packet_size = 300
+            test_packet.packet_size = 400
             last_packet = 2
             data_interface.write_packet_data(test_packet, packet_data_path)
             data_interface.write_packet_log(test_packet,packet_log_path)
