@@ -1,6 +1,5 @@
 import os
 import time
-import random
 import numpy as np
 from scipy import stats
 from datetime import datetime
