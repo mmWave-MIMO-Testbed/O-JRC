@@ -63,7 +63,7 @@ while True:
         test_packet.packet_size = 7
         test_radar = data_interface.load_radar_data(radar_log_path)
         current_time = datetime.now()
-        last_timestamp = datetime.now()
+        #last_timestamp = datetime.now()
         test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
 
         if last_timestamp != test_radar.timestamp: # record radar angle
@@ -74,7 +74,7 @@ while True:
         data_interface.write_packet_data(test_packet,packet_data_path)
         data_interface.write_radar_data(test_radar, radar_data_path)
 
-    mode_variable = stats.mode(np.array(data_array))[0][0]
+    mode_variable = stats.mode(data_array)[0]
     print(f"the mode of the angle is: {mode_variable}")
     test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
     
@@ -82,7 +82,7 @@ while True:
         test_packet.packet_type = 2
         test_packet.packet_size = 300
         current_time = datetime.now()
-        last_data_timestamp = datetime.now()
+        #last_data_timestamp = datetime.now()
         test_comm = data_interface.load_comm_data(comm_log_path)
         test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
 
