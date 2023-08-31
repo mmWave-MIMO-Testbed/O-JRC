@@ -52,7 +52,7 @@ data_flag = 0
 
 while True:
 
-    time.sleep(0.005)
+    time.sleep(2)
     test_radar = data_interface.load_radar_data(radar_log_path)
     test_comm = data_interface.load_comm_data(comm_log_path)
     current_time = datetime.now()
@@ -80,7 +80,7 @@ while True:
     angle_bin = -60 # from -60 to 60 degree
 
     while angle_bin <= 60:
-        while data_flag <= 10:
+        while data_flag <= 5:
             test_packet.packet_type = 2
             test_packet.packet_size = 300
             current_time = datetime.now()
