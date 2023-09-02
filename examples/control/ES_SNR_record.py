@@ -52,6 +52,7 @@ data_flag = 0
 
 while True:
 
+<<<<<<< HEAD
     time.sleep(0.005)
     pre_test_radar = test_radar
     pre_test_comm = test_comm
@@ -67,6 +68,11 @@ while True:
     else:
         pre_test_comm = test_comm
 
+=======
+    time.sleep(2)
+    test_radar = data_interface.load_radar_data(radar_log_path)
+    test_comm = data_interface.load_comm_data(comm_log_path)
+>>>>>>> C-UCB
     current_time = datetime.now()
     test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]  
 
@@ -98,7 +104,7 @@ while True:
     previous_time = time.time()
 
     while angle_bin <= 60:
-        while data_flag <= 10:
+        while data_flag <= 5:
             test_packet.packet_type = 2
             test_packet.packet_size = 300
             current_time = datetime.now()
