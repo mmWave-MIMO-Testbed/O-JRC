@@ -52,8 +52,20 @@ while True:
     time.sleep(0.005)
 
     current_time = datetime.now()
-    test_radar = data_interface.load_radar_data(radar_log_path)
-    test_comm = data_interface.load_comm_data(comm_log_path)
+    pre_test_radar = test_radar
+    pre_test_comm = test_comm
+    test_radar = data_interface.load_radar_data(radar_log_path) # update radar info
+    test_comm = data_interface.load_comm_data(comm_log_path) # update comm info
+    if test_radar == None:
+        test_radar = pre_test_radar
+    else:
+        pre_test_radar = test_radar
+
+    if test_comm == None:
+        test_comm = pre_test_comm
+    else:
+        pre_test_comm = test_comm
+    
     #test_radar_angle = random.uniform(-60,60)
     #test_packet_type = random.randint(1, 2)
     # test_packet_type = 2

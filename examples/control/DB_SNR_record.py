@@ -53,8 +53,21 @@ data_flag = 0
 while True:
 
     time.sleep(0.005)
-    test_radar = data_interface.load_radar_data(radar_log_path)
-    test_comm = data_interface.load_comm_data(comm_log_path)
+    pre_test_radar = test_radar
+    pre_test_comm = test_comm
+    test_radar = data_interface.load_radar_data(radar_log_path) # update radar info
+    test_comm = data_interface.load_comm_data(comm_log_path) # update comm info
+    if test_radar == None:
+        test_radar = pre_test_radar
+    else:
+        pre_test_radar = test_radar
+
+    if test_comm == None:
+        test_comm = pre_test_comm
+    else:
+        pre_test_comm = test_comm
+
+
     current_time = datetime.now()
     test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]  
 
@@ -62,8 +75,13 @@ while True:
         test_packet.packet_type = 1
         test_packet.packet_size = 7
         test_radar = data_interface.load_radar_data(radar_log_path)
+
+        if test_radar == None:
+            data_interface.write_packet_data(test_packet,packet_data_path)
+            continue
+
         current_time = datetime.now()
-        #last_timestamp = datetime.now()
+        last_timestamp = datetime.now() # self_test
         test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
 
         if last_timestamp != test_radar.timestamp: # record radar angle
@@ -77,19 +95,35 @@ while True:
     mode_variable = stats.mode(data_array)[0]
     print(f"the mode of the angle is: {mode_variable}")
     test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
+    previous_time = time.time()
     
     while data_flag <= 20:
         test_packet.packet_type = 2
         test_packet.packet_size = 300
         current_time = datetime.now()
+        now_time = time.time()
         #last_data_timestamp = datetime.now()
         test_comm = data_interface.load_comm_data(comm_log_path)
+        time_diff = now_time - previous_time
+
+        if test_comm == None:
+            data_interface.write_packet_data(test_packet,packet_data_path)
+            data_interface.write_radar_data(test_radar,radar_data_path)
+            continue
+
         test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
 
         if last_data_timestamp != test_comm.timestamp: # record comm SNR
             data_flag += 1
             last_data_timestamp = test_comm.timestamp
             snr_array.append(test_comm.data_snr)
+            previous_time = now_time
+        elif time_diff >= 3: # 3 second time out
+            data_flag += 1
+            last_data_timestamp = current_time
+            snr_array.append(0) # time-out for 0 SNR
+            previous_time = now_time
+            print("Comm time-out")
 
         test_radar.est_angle = mode_variable
         data_interface.write_packet_data(test_packet,packet_data_path)

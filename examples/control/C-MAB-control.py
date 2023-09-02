@@ -138,9 +138,21 @@ while True:
             last_packet = 1
             print('regular NDP')
             continue
-            
+
+        pre_test_radar = test_radar
+        pre_test_comm = test_comm
         test_radar = data_interface.load_radar_data(radar_log_path) # update radar info
         test_comm = data_interface.load_comm_data(comm_log_path) # update comm info
+        if test_radar == None:
+            test_radar = pre_test_radar
+        else:
+            pre_test_radar = test_radar
+
+        if test_comm == None:
+            test_comm = pre_test_comm
+        else:
+            pre_test_comm = test_comm
+
         current_time = datetime.now() # test
         test_radar.timestamp = current_time.strftime("%H:%M:%S") + ':'+current_time.strftime("%f")[:3] #test if no change, send NDP
        
