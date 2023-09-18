@@ -13,7 +13,7 @@ class ContextualUCB:
 
     def get_ucb_value(self, radar_angle):
         ucb_value = self.context_action_estimates[radar_angle, :] + \
-                        0.5* np.sqrt(2 * np.log(self.total_plays[radar_angle]) / (1 + self.context_action_counts[radar_angle, :]))
+                        0.3* np.sqrt(2 * np.log(self.total_plays[radar_angle]) / (1 + self.context_action_counts[radar_angle, :]))
         return ucb_value
     
     def get_mean_value(self,radar_angle):
@@ -22,7 +22,7 @@ class ContextualUCB:
 
     def angle_selection(self, radar_angle):
         ucb_value = self.get_ucb_value(radar_angle)
-        return np.argmax(ucb_value) - 90 # - 90 to change the range of angle to (-90,90) 
+        return np.argmax(ucb_value) - 60 # - 60 to change the range of angle to (-60,60) 
 
     def update(self, radar_angle, beamforming_angle, reward):
         self.total_plays[radar_angle] += 1

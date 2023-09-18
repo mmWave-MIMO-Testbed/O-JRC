@@ -1435,7 +1435,7 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     packet_info_file: packet_data_file
-    period_ms: '50'
+    period_ms: '20'
   states:
     bus_sink: false
     bus_source: false
