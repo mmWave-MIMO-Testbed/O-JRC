@@ -72,7 +72,8 @@ while total_time-start_time <= end_time:
 
     if test_packet_type == 1:
         test_packet_type = 2
-    else:
+
+    if test_packet_type == 2 and test_comm.CRC == 0:
         test_packet_type = 1
 
     if test_comm == None:
