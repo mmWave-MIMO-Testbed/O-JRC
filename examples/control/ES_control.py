@@ -50,7 +50,7 @@ print("Start recording")
 time.sleep(10)
 previous_time = time.time()
 arc_length = 2 * np.pi
-speed_user = 1
+speed_user = 0.5
 start_time = time.time()
 total_time = time.time()
 end_time = arc_length / speed_user
@@ -121,7 +121,7 @@ while total_time-start_time <= end_time:
     data_interface.write_radar_data(test_radar, radar_data_path)
     data_interface.write_packet_data(test_packet,packet_data_path)
     time.sleep(0.01)
-    print(f"beamforming angle:{angle_bin}")
+    #print(f"beamforming angle:{angle_bin}")
     
     total_time = time.time()
 

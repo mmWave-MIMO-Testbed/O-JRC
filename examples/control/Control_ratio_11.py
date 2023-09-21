@@ -93,7 +93,7 @@ while total_time-start_time <= end_time:
         last_data_timestamp = test_comm.timestamp
         data_interface.write_plot_log(test_comm.packet_type, test_radar.est_angle, test_radar.est_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
         previous_time = now_time
-        print(f"the average SNR of DB is: {test_comm.data_snr}, beamforming angle is: {test_radar.est_angle}")
+        #print(f"the average SNR of DB is: {test_comm.data_snr}, beamforming angle is: {test_radar.est_angle}")
     elif time_diff >= 0.02: # 1 second time out
         #last_data_timestamp = current_time
         data_interface.write_plot_log(test_comm.packet_type, test_radar.est_angle, test_radar.est_angle, 0, 0, test_comm.throughput, plot_log_path)
