@@ -64,7 +64,7 @@ print("Start recording")
 time.sleep(10)
 previous_time = time.time()
 arc_length = 2 * np.pi
-speed_user = 0.5
+speed_user = 1
 start_time = time.time()
 total_time = time.time()
 end_time = arc_length / speed_user
@@ -111,7 +111,7 @@ while total_time-start_time <= end_time:
         reward = curr_comm_reward * (1 / (1 + (np.exp(-0.8 * (curr_comm_snr - 20)))))
         #print(f"reward: {reward}")
         if test_comm.packet_type == 2: # update only for data packet
-            agent.update(curr_radar_angle+90,curr_beamforming_angle+90,reward) # update reward for last decision
+            agent.update(curr_radar_angle+90,curr_beamforming_angle+60,reward) # update reward for last decision
 
         data_interface.write_plot_log(test_comm.packet_type, test_radar.est_angle, curr_beamforming_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
         previous_time = now_time
@@ -119,11 +119,11 @@ while total_time-start_time <= end_time:
     elif time_diff >= 0.02: # 1 second time out
         #last_data_timestamp = current_time
         if test_comm.packet_type == 2: # update only for data packet
-            agent.update(curr_radar_angle+90,curr_beamforming_angle+90,0) # update reward for last decision
+            agent.update(curr_radar_angle+90,curr_beamforming_angle+60,0) # update reward for last decision
         data_interface.write_plot_log(test_comm.packet_type, test_radar.est_angle, curr_beamforming_angle, 0, 0, test_comm.throughput, plot_log_path)
         previous_time = now_time
         print("Comm time-out")
-        print(f"the average SNR of DB is: 0, beamforming angle is: {test_radar.est_angle}")
+        print(f"the average SNR is: 0, beamforming angle is: {test_radar.est_angle}")
 
     curr_radar_angle = int(np.round(test_radar.est_angle)) #angle input for C-MAB
     curr_beamforming_angle = int(agent.angle_selection(curr_radar_angle + 90)) # beamforming angle decision from MAB
