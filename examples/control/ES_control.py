@@ -54,56 +54,77 @@ speed_user = 1
 start_time = time.time()
 total_time = time.time()
 end_time = arc_length / speed_user
+angle_bin = -60
+record_flag = 0
+crc_flag = 0
+empty_array = []
+snr_array =np.array(empty_array)
+data_flag = []
 
 while total_time-start_time <= end_time:
 
-    time.sleep(0.015)
+     # ES algorithm
     current_time = datetime.now()
+    test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
+    test_packet.packet_type = 2
+    test_packet.packet_size = 300
     now_time = time.time()
-    pre_test_radar = test_radar
-    pre_test_comm = test_comm
+    #last_data_timestamp = datetime.now() #Self-test
+    test_comm = data_interface.load_comm_data(comm_log_path)
     test_radar = data_interface.load_radar_data(radar_log_path) # update radar info
-    test_comm = data_interface.load_comm_data(comm_log_path) # update comm info
     time_diff = now_time - previous_time
-    if test_radar == None:
-        test_radar = pre_test_radar
-    else:
-        pre_test_radar = test_radar
-
-    if test_packet_type == 1:
-        test_packet_type = 2
-    else:
-        test_packet_type = 1
 
     if test_comm == None:
-        test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
-        test_packet.packet_size = packet_size
         data_interface.write_radar_data(test_radar,radar_data_path)
         data_interface.write_packet_data(test_packet,packet_data_path)
         continue
-    
-    #print(test_radar.est_angle)
-    #test_radar.est_angle = test_radar_angle
+
     test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
-    test_packet.packet_type = test_packet_type
-    test_packet.packet_size = packet_size
 
     if last_data_timestamp != test_comm.timestamp: # record comm SNR
         last_data_timestamp = test_comm.timestamp
-        data_interface.write_plot_log(test_comm.packet_type, test_radar.est_angle, test_radar.est_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
-        previous_time = now_time
-        print(f"the average SNR of DB is: {test_comm.data_snr}, beamforming angle is: {test_radar.est_angle}")
-    elif time_diff >= 0.02: # 1 second time out
+        curr_beamforming_angle = angle_bin
+        previous_time = time.time()
+        if record_flag == 0:
+            angle_bin += 1
+            snr_array = np.append(snr_array,test_comm.data_snr)
+        if record_flag == 1:
+            data_flag.append(test_comm.data_snr)
+        data_interface.write_plot_log(2, test_radar.est_angle, curr_beamforming_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
+    elif time_diff >= 0.02:
         #last_data_timestamp = current_time
-        data_interface.write_plot_log(test_comm.packet_type, test_radar.est_angle, test_radar.est_angle, 0, 0, test_comm.throughput, plot_log_path)
-        previous_time = now_time
+        curr_beamforming_angle = angle_bin
+        previous_time = time.time()
+        if record_flag == 0:
+            angle_bin += 1
+            snr_array = np.append(snr_array,0)
+        data_interface.write_plot_log(2, test_radar.est_angle, curr_beamforming_angle, 0, 0, test_comm.throughput, plot_log_path)
         print("Comm time-out")
-        print(f"the average SNR of DB is: 0, beamforming angle is: {test_radar.est_angle}")
 
+    if angle_bin > 60 and record_flag == 0:
+        max_snr_angle = np.argmax(snr_array) - 60
+        angle_bin = max_snr_angle
+        print(f"best angle: {max_snr_angle}")
+        record_flag = 1
+
+    if record_flag == 1:
+        if test_comm.CRC == 0:
+            crc_flag += 1
+        if crc_flag >= 5:
+            crc_flag = 0
+            snr_array =np.array(empty_array)
+            angle_bin = -60
+            record_flag = 0
+            print("CRC check time-out")
+
+    test_radar.est_angle = angle_bin
     data_interface.write_radar_data(test_radar, radar_data_path)
-    #data_interface.write_radar_log(test_radar, radar_log_path)
-    data_interface.write_packet_data(test_packet, packet_data_path)
-    #data_interface.write_packet_log(test_packet, packet_log_path)
+    data_interface.write_packet_data(test_packet,packet_data_path)
+    time.sleep(0.01)
+    print(f"beamforming angle:{angle_bin}")
+    
     total_time = time.time()
 
-# DB algorithm
+print(data_flag)
+np.savetxt("data_total.csv",data_flag,delimiter=",")
+# ES algorithm
