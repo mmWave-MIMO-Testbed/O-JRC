@@ -30,6 +30,8 @@ angle_val = 60
 packet_type = 1 # 1 for NDP, 2 for Data
 packet_size = 300
 test_packet_type = 1
+curr_radar_angle = -60
+curr_beamforming_angle = -60
 last_data_timestamp = None
 
 #load data from radar_data
@@ -99,7 +101,7 @@ if training_flag == 2:
     start_time = time.time()
     total_time = time.time()
 
-    while total_time - start_time <= 100:        # Training for 100sec
+    while total_time - start_time <= 200:        # Training for 100sec
         time.sleep(0.015)
         current_time = datetime.now()
         now_time = time.time()
