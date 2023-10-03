@@ -49,11 +49,11 @@ test_packet = data_interface.PacketData(current_time, packet_type, packet_size)
 print("Start recording")    
 time.sleep(10)
 previous_time = time.time()
-arc_length = 2 * np.pi
-speed_user = 0.5
+arc_length = 3.5
+speed_user = 1
 start_time = time.time()
 total_time = time.time()
-end_time = arc_length / speed_user
+end_time = arc_length / speed_user *10
 angle_bin = -60
 record_flag = 0
 crc_flag = 0

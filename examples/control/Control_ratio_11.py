@@ -29,6 +29,7 @@ packet_type = 1 # 1 for NDP, 2 for Data
 packet_size = 300
 test_packet_type = 1
 last_data_timestamp = None
+CRC_flag = 0
 
 #load data from radar_data
 test_radar = data_interface.RadarData(current_time, peak_power, snr_est, range_val, angle_val)
@@ -49,11 +50,11 @@ test_packet = data_interface.PacketData(current_time, packet_type, packet_size)
 print("Start recording")    
 time.sleep(10)
 previous_time = time.time()
-arc_length = 2 * np.pi
-speed_user = 1
+arc_length = 3.5
+speed_user = 0.5
 start_time = time.time()
 total_time = time.time()
-end_time = arc_length / speed_user
+end_time = arc_length / speed_user *10
 
 while total_time-start_time <= end_time:
 
@@ -73,9 +74,6 @@ while total_time-start_time <= end_time:
     if test_packet_type == 1:
         test_packet_type = 2
 
-    if test_packet_type == 2 and test_comm.CRC == 0:
-        test_packet_type = 1
-
     if test_comm == None:
         test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
         test_packet.packet_size = packet_size
@@ -83,6 +81,10 @@ while total_time-start_time <= end_time:
         data_interface.write_packet_data(test_packet,packet_data_path)
         continue
     
+    if test_packet_type == 2 and test_comm.CRC == 0:
+        test_packet_type = 1
+        CRC_flag += 1
+
     #print(test_radar.est_angle)
     #test_radar.est_angle = test_radar_angle
     test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
@@ -107,4 +109,5 @@ while total_time-start_time <= end_time:
     #data_interface.write_packet_log(test_packet, packet_log_path)
     total_time = time.time()
 
+print(f"The CRC flag:{CRC_flag}")
 # DB algorithm

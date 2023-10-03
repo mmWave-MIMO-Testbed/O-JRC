@@ -29,7 +29,7 @@ range_val = 3
 angle_val = 60
 packet_type = 1 # 1 for NDP, 2 for Data
 packet_size = 300
-test_packet_type = 1
+test_packet_type = 2
 curr_radar_angle = -60
 curr_beamforming_angle = -60
 last_data_timestamp = None
@@ -45,7 +45,7 @@ test_packet = data_interface.PacketData(current_time, packet_type, packet_size)
 if training_flag == 1:
     # 获取脚本所在的目录
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(script_dir, 'raw_data_ES.csv')
+    file_path = os.path.join(script_dir, 'plot_log_Dynamic.csv')
 
     # 使用 np.loadtxt 读取文件
     raw_data = np.loadtxt(file_path, delimiter=',', usecols=(1,2,3,4), skiprows=1)
@@ -73,7 +73,7 @@ if training_flag == 1:
         curr_radar_angle = int(np.round(curr_radar_angle))
         curr_beamforming_angle = int(np.round(curr_beamforming_angle))
         # 计算 reward
-        reward = curr_comm_reward * (1 / (1 + (np.exp(-0.8 * (curr_comm_snr - 20)))))
+        reward = curr_comm_reward * (1 / (1 + (np.exp(-0.8 * (curr_comm_snr - 16)))))
         
         # 更新 agent
         agent.update(curr_radar_angle + 90, curr_beamforming_angle + 60, reward)
@@ -101,7 +101,7 @@ if training_flag == 2:
     start_time = time.time()
     total_time = time.time()
 
-    while total_time - start_time <= 200:        # Training for 100sec
+    while total_time - start_time <= 300:        # Training for 100sec
         time.sleep(0.015)
         current_time = datetime.now()
         now_time = time.time()
@@ -115,11 +115,16 @@ if training_flag == 2:
         else:
             pre_test_radar = test_radar
 
-        if test_packet_type == 1:
-            test_packet_type = 2
+        if test_comm == None:
+            data_interface.write_radar_data(test_radar,radar_data_path)
+            data_interface.write_packet_data(test_packet,packet_data_path)
+            continue
 
-        if test_packet_type == 2 and test_comm.CRC == 0:
-            test_packet_type = 1
+        #if test_packet_type == 1:
+        #    test_packet_type = 2
+
+        #if test_packet_type == 2 and test_comm.CRC == 0:
+        #    test_packet_type = 1
 
         if test_comm == None:
             test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
@@ -139,7 +144,7 @@ if training_flag == 2:
             last_data_timestamp = test_comm.timestamp
             curr_comm_reward = test_comm.reward_val
             curr_comm_snr = test_comm.data_snr
-            reward = curr_comm_reward * (1 / (1 + (np.exp(-0.8 * (curr_comm_snr - 20)))))
+            reward = curr_comm_reward * (1 / (1 + (np.exp(-0.8 * (curr_comm_snr - 16)))))
             #print(f"reward: {reward}")
             if test_comm.packet_type == 2: # update only for data packet
                 agent.update(curr_radar_angle+90,curr_beamforming_angle+60,reward) # update reward for last decision

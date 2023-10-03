@@ -30,6 +30,7 @@ packet_type = 1 # 1 for NDP, 2 for Data
 packet_size = 300
 test_packet_type = 1
 last_data_timestamp = None
+CRC_flag = 0
 
 #load data from radar_data
 test_radar = data_interface.RadarData(current_time, peak_power, snr_est, range_val, angle_val)
@@ -63,15 +64,16 @@ curr_radar_angle = -60
 print("Start recording")    
 time.sleep(10)
 previous_time = time.time()
-arc_length = 2 * np.pi
+#arc_length = 2 * np.pi
+arc_length = 3.5
 speed_user = 1
 start_time = time.time()
 total_time = time.time()
-end_time = arc_length / speed_user
+end_time = arc_length / speed_user * 10
 
 while total_time-start_time <= end_time:
 
-    time.sleep(0.015)
+    time.sleep(0.011)
     current_time = datetime.now()
     now_time = time.time()
     pre_test_radar = test_radar
@@ -87,15 +89,16 @@ while total_time-start_time <= end_time:
     if test_packet_type == 1:
         test_packet_type = 2
 
-    if test_packet_type == 2 and test_comm.CRC == 0:
-        test_packet_type = 1
-
     if test_comm == None:
         test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
         test_packet.packet_size = packet_size
         data_interface.write_radar_data(test_radar,radar_data_path)
         data_interface.write_packet_data(test_packet,packet_data_path)
         continue
+
+    if test_packet_type == 2 and test_comm.CRC == 0:
+        test_packet_type = 1
+        CRC_flag += 1
     
     #print(test_radar.est_angle)
     #test_radar.est_angle = test_radar_angle
@@ -108,7 +111,7 @@ while total_time-start_time <= end_time:
         last_data_timestamp = test_comm.timestamp
         curr_comm_reward = test_comm.reward_val
         curr_comm_snr = test_comm.data_snr
-        reward = curr_comm_reward * (1 / (1 + (np.exp(-0.8 * (curr_comm_snr - 20)))))
+        reward = curr_comm_reward * (1 / (1 + (np.exp(-0.8 * (curr_comm_snr - 16)))))
         #print(f"reward: {reward}")
         if test_comm.packet_type == 2: # update only for data packet
             agent.update(curr_radar_angle+90,curr_beamforming_angle+60,reward) # update reward for last decision
@@ -116,7 +119,7 @@ while total_time-start_time <= end_time:
         data_interface.write_plot_log(test_comm.packet_type, test_radar.est_angle, curr_beamforming_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
         previous_time = now_time
         #print(f"the average SNR of DB is: {test_comm.data_snr}, beamforming angle is: {test_radar.est_angle}")
-    elif time_diff >= 0.02: # 1 second time out
+    elif time_diff >= 0.033: # 1 second time out
         #last_data_timestamp = current_time
         if test_comm.packet_type == 2: # update only for data packet
             agent.update(curr_radar_angle+90,curr_beamforming_angle+60,0) # update reward for last decision
@@ -139,4 +142,5 @@ while total_time-start_time <= end_time:
 print("Finish")
 agent.save_trained_model()
 trained_model_mean = np.load('estimated_mean.npy')
-print(f"Trained model: {trained_model_mean}")
+#print(f"Trained model: {trained_model_mean}")
+print(f"The number of CRC is:{CRC_flag}")
