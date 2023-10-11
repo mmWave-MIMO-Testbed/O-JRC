@@ -27,7 +27,7 @@ peak_power = 0.01
 snr_est = 0
 range_val = 3
 angle_val = 60
-packet_type = 1 # 1 for NDP, 2 for Data
+packet_type = 2 # 1 for NDP, 2 for Data
 packet_size = 300
 test_packet_type = 2
 curr_radar_angle = -60
@@ -73,7 +73,7 @@ if training_flag == 1:
         curr_radar_angle = int(np.round(curr_radar_angle))
         curr_beamforming_angle = int(np.round(curr_beamforming_angle))
         # 计算 reward
-        reward = curr_comm_reward * (1 / (1 + (np.exp(-0.8 * (curr_comm_snr - 16)))))
+        reward = curr_comm_reward * (1 / (1 + (np.exp(-0.9 * (curr_comm_snr - 18)))))
         
         # 更新 agent
         agent.update(curr_radar_angle + 90, curr_beamforming_angle + 60, reward)
@@ -102,7 +102,7 @@ if training_flag == 2:
     total_time = time.time()
 
     while total_time - start_time <= 300:        # Training for 100sec
-        time.sleep(0.015)
+        time.sleep(0.02)
         current_time = datetime.now()
         now_time = time.time()
         pre_test_radar = test_radar
@@ -118,6 +118,7 @@ if training_flag == 2:
         if test_comm == None:
             data_interface.write_radar_data(test_radar,radar_data_path)
             data_interface.write_packet_data(test_packet,packet_data_path)
+            previous_time = now_time
             continue
 
         #if test_packet_type == 1:
@@ -131,6 +132,7 @@ if training_flag == 2:
             test_packet.packet_size = packet_size
             data_interface.write_radar_data(test_radar,radar_data_path)
             data_interface.write_packet_data(test_packet,packet_data_path)
+            previous_time = now_time
             continue
         
         #print(test_radar.est_angle)
@@ -144,7 +146,7 @@ if training_flag == 2:
             last_data_timestamp = test_comm.timestamp
             curr_comm_reward = test_comm.reward_val
             curr_comm_snr = test_comm.data_snr
-            reward = curr_comm_reward * (1 / (1 + (np.exp(-0.8 * (curr_comm_snr - 16)))))
+            reward = curr_comm_reward * (1 / (1 + (np.exp(-0.9 * (curr_comm_snr - 18)))))
             #print(f"reward: {reward}")
             if test_comm.packet_type == 2: # update only for data packet
                 agent.update(curr_radar_angle+90,curr_beamforming_angle+60,reward) # update reward for last decision
@@ -152,7 +154,7 @@ if training_flag == 2:
             data_interface.write_plot_log(test_comm.packet_type, test_radar.est_angle, curr_beamforming_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
             previous_time = now_time
             #print(f"the average SNR of DB is: {test_comm.data_snr}, beamforming angle is: {test_radar.est_angle}")
-        elif time_diff >= 0.02: # 0.02 second time out
+        elif time_diff >= 0.5: # 0.2 second time out
             #last_data_timestamp = current_time
             if test_comm.packet_type == 2: # update only for data packet
                 agent.update(curr_radar_angle+90,curr_beamforming_angle+60,0) # update reward for last decision

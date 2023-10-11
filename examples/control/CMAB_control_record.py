@@ -73,7 +73,7 @@ end_time = arc_length / speed_user * 10
 
 while total_time-start_time <= end_time:
 
-    time.sleep(0.011)
+    time.sleep(0.01)
     current_time = datetime.now()
     now_time = time.time()
     pre_test_radar = test_radar
@@ -86,14 +86,12 @@ while total_time-start_time <= end_time:
     else:
         pre_test_radar = test_radar
 
-    if test_packet_type == 1:
-        test_packet_type = 2
-
     if test_comm == None:
         test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
         test_packet.packet_size = packet_size
         data_interface.write_radar_data(test_radar,radar_data_path)
         data_interface.write_packet_data(test_packet,packet_data_path)
+        previous_time = now_time
         continue
 
     if test_packet_type == 2 and test_comm.CRC == 0:
@@ -111,15 +109,17 @@ while total_time-start_time <= end_time:
         last_data_timestamp = test_comm.timestamp
         curr_comm_reward = test_comm.reward_val
         curr_comm_snr = test_comm.data_snr
-        reward = curr_comm_reward * (1 / (1 + (np.exp(-0.8 * (curr_comm_snr - 16)))))
+        reward = curr_comm_reward * (1 / (1 + (np.exp(-0.9 * (curr_comm_snr - 18)))))
         #print(f"reward: {reward}")
         if test_comm.packet_type == 2: # update only for data packet
             agent.update(curr_radar_angle+90,curr_beamforming_angle+60,reward) # update reward for last decision
 
         data_interface.write_plot_log(test_comm.packet_type, test_radar.est_angle, curr_beamforming_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
         previous_time = now_time
+        if test_packet_type == 1:
+            test_packet_type = 2
         #print(f"the average SNR of DB is: {test_comm.data_snr}, beamforming angle is: {test_radar.est_angle}")
-    elif time_diff >= 0.033: # 1 second time out
+    elif time_diff >= 0.2: # 0.2 second time out
         #last_data_timestamp = current_time
         if test_comm.packet_type == 2: # update only for data packet
             agent.update(curr_radar_angle+90,curr_beamforming_angle+60,0) # update reward for last decision

@@ -50,7 +50,7 @@ print("Start recording")
 time.sleep(10)
 previous_time = time.time()
 arc_length = 3.5
-speed_user = 1
+speed_user = 0.5
 start_time = time.time()
 total_time = time.time()
 end_time = arc_length / speed_user *10
@@ -77,6 +77,7 @@ while total_time-start_time <= end_time:
     if test_comm == None:
         data_interface.write_radar_data(test_radar,radar_data_path)
         data_interface.write_packet_data(test_packet,packet_data_path)
+        previous_time = now_time
         continue
 
     test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
@@ -91,7 +92,7 @@ while total_time-start_time <= end_time:
         if record_flag == 1:
             data_flag.append(test_comm.data_snr)
         data_interface.write_plot_log(2, test_radar.est_angle, curr_beamforming_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
-    elif time_diff >= 0.02:
+    elif time_diff >= 0.2:
         #last_data_timestamp = current_time
         curr_beamforming_angle = angle_bin
         previous_time = time.time()
@@ -99,6 +100,7 @@ while total_time-start_time <= end_time:
             angle_bin += 1
             snr_array = np.append(snr_array,0)
         data_interface.write_plot_log(2, test_radar.est_angle, curr_beamforming_angle, 0, 0, test_comm.throughput, plot_log_path)
+        previous_time = now_time
         print("Comm time-out")
 
     if angle_bin > 60 and record_flag == 0:

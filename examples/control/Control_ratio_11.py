@@ -51,14 +51,14 @@ print("Start recording")
 time.sleep(10)
 previous_time = time.time()
 arc_length = 3.5
-speed_user = 0.5
+speed_user = 1
 start_time = time.time()
 total_time = time.time()
 end_time = arc_length / speed_user *10
 
 while total_time-start_time <= end_time:
 
-    time.sleep(0.015)
+    time.sleep(0.01)
     current_time = datetime.now()
     now_time = time.time()
     pre_test_radar = test_radar
@@ -71,14 +71,13 @@ while total_time-start_time <= end_time:
     else:
         pre_test_radar = test_radar
 
-    if test_packet_type == 1:
-        test_packet_type = 2
 
     if test_comm == None:
         test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
         test_packet.packet_size = packet_size
         data_interface.write_radar_data(test_radar,radar_data_path)
         data_interface.write_packet_data(test_packet,packet_data_path)
+        previous_time = now_time
         continue
     
     if test_packet_type == 2 and test_comm.CRC == 0:
@@ -95,8 +94,12 @@ while total_time-start_time <= end_time:
         last_data_timestamp = test_comm.timestamp
         data_interface.write_plot_log(test_comm.packet_type, test_radar.est_angle, test_radar.est_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
         previous_time = now_time
+        
+        if test_packet_type == 1:
+            test_packet_type = 2
+
         #print(f"the average SNR of DB is: {test_comm.data_snr}, beamforming angle is: {test_radar.est_angle}")
-    elif time_diff >= 0.02: # 1 second time out
+    elif time_diff >= 0.2: # 1 second time out
         #last_data_timestamp = current_time
         data_interface.write_plot_log(test_comm.packet_type, test_radar.est_angle, test_radar.est_angle, 0, 0, test_comm.throughput, plot_log_path)
         previous_time = now_time
