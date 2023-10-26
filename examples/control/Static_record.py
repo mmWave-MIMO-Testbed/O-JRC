@@ -131,6 +131,7 @@ while round_flag<10:
             if test_comm == None:
                 data_interface.write_packet_data(test_packet,packet_data_path)
                 data_interface.write_radar_data(test_radar,radar_data_path)
+                previous_time = time.time()
                 continue
 
             test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
@@ -144,13 +145,13 @@ while round_flag<10:
                 curr_comm_per = test_comm.per_val
                 curr_comm_throughput = test_comm.throughput
                 curr_comm_snr = test_comm.data_snr
-                reward = curr_comm_reward * (1/(1+(np.exp(-0.8*(curr_comm_snr-20)))))
+                reward = curr_comm_reward * (1/(1+(np.exp(-0.9*(curr_comm_snr-18)))))
                 curr_beamforming_angle = np.round(angle_bin)
                 agent.update(curr_radar_angle+90,curr_beamforming_angle+90,reward) # update reward for last decision
 
                 data_interface.write_plot_log(2, mode_variable, angle_bin, test_comm.data_snr, test_comm.CRC, test_comm.throughput, raw_data_ES)
                 previous_time = time.time()
-            elif time_diff >= 1:
+            elif time_diff >= 0.2:
                 data_flag += 1
                 last_data_timestamp = current_time
                 snr_array.append(0) # SNR=0 for time-out
@@ -165,7 +166,7 @@ while round_flag<10:
             test_radar.est_angle = angle_bin
             data_interface.write_packet_data(test_packet,packet_data_path)
             data_interface.write_radar_data(test_radar, radar_data_path)
-            time.sleep(0.04)
+            time.sleep(0.01)
         
         ave_snr = np.mean(snr_array)
         print(f"the average SNR of ES is: {ave_snr}, beamforming angle is: {test_radar.est_angle}")
@@ -195,6 +196,7 @@ while round_flag<10:
         if test_comm == None:
             data_interface.write_packet_data(test_packet,packet_data_path)
             data_interface.write_radar_data(test_radar,radar_data_path)
+            previous_time = time.time()
             continue
 
         test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
@@ -205,7 +207,7 @@ while round_flag<10:
             snr_array.append(test_comm.data_snr)
             data_interface.write_plot_log(2, mode_variable, mode_variable, test_comm.data_snr, test_comm.CRC, test_comm.throughput, raw_data_DB)
             previous_time = now_time
-        elif time_diff >= 1: # 1 second time out
+        elif time_diff >= 0.2: # 1 second time out
             data_flag += 1
             last_data_timestamp = current_time
             snr_array.append(0) # time-out for 0 SNR
@@ -215,7 +217,7 @@ while round_flag<10:
 
         data_interface.write_packet_data(test_packet,packet_data_path)
         data_interface.write_radar_data(test_radar, radar_data_path)
-        time.sleep(0.04)
+        time.sleep(0.01)
         
     ave_snr = np.mean(snr_array)
     print(f"the average SNR of DB is: {ave_snr}, beamforming angle is: {test_radar.est_angle}")
@@ -246,6 +248,7 @@ while round_flag<10:
         if test_comm == None:
             data_interface.write_packet_data(test_packet,packet_data_path)
             data_interface.write_radar_data(test_radar,radar_data_path)
+            previous_time = time.time()
             continue
 
         test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
@@ -257,7 +260,7 @@ while round_flag<10:
             curr_comm_per = test_comm.per_val
             curr_comm_throughput = test_comm.throughput
             curr_comm_snr = test_comm.data_snr
-            reward = curr_comm_reward * (1/(1+(np.exp(-0.8*(curr_comm_snr-20)))))
+            reward = curr_comm_reward * (1/(1+(np.exp(-0.9*(curr_comm_snr-18)))))
             #print(f"reward: {reward},beamforming angle: {curr_beamforming_angle}")
             
             agent.update(curr_radar_angle+90,curr_beamforming_angle+90,reward) # update reward for last decision
@@ -273,7 +276,7 @@ while round_flag<10:
             #    agent.save_trained_model()
             #    ucb_count = 0
 
-        elif time_diff >= 1:
+        elif time_diff >= 0.2:
             agent.update(curr_radar_angle+90,curr_beamforming_angle+90,0)
             curr_beamforming_angle = int(agent.angle_selection(curr_radar_angle + 90))
             test_radar.est_angle = curr_beamforming_angle
@@ -283,7 +286,7 @@ while round_flag<10:
 
         data_interface.write_packet_data(test_packet,packet_data_path)
         data_interface.write_radar_data(test_radar,radar_data_path)
-        time.sleep(0.04)
+        time.sleep(0.01)
 
     print("Finish Training")
 
@@ -302,6 +305,7 @@ while round_flag<10:
         if test_comm == None:
             data_interface.write_packet_data(test_packet,packet_data_path)
             data_interface.write_radar_data(test_radar,radar_data_path)
+            previous_time = time.time()
             continue
 
         test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
@@ -315,23 +319,23 @@ while round_flag<10:
             curr_comm_per = test_comm.per_val
             curr_comm_throughput = test_comm.throughput
             curr_comm_snr = test_comm.data_snr
-            reward = curr_comm_reward * curr_comm_snr/20
+            reward = curr_comm_reward * (1/(1+(np.exp(-0.9*(curr_comm_snr-18)))))
             #print(f"reward: {reward}")        
             agent.update(curr_radar_angle+90,curr_beamforming_angle+90,reward) # update reward for last decision
             data_interface.write_plot_log(2, mode_variable, curr_beamforming_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, raw_data_MAB)
-            previous_time = now_time
-        elif time_diff >= 1: # 1 second time out
+            previous_time = time.time()
+        elif time_diff >= 0.2: # 1 second time out
             data_flag += 1
             last_data_timestamp = current_time
             snr_array.append(0) # time-out for 0 SNR
             agent.update(curr_radar_angle+90,curr_beamforming_angle+90,0) # update reward for last decision
             data_interface.write_plot_log(2, mode_variable, curr_beamforming_angle, 0, test_comm.CRC, test_comm.throughput, raw_data_MAB)
-            previous_time = now_time
+            previous_time = time.time()
             print("Comm time-out")
 
         data_interface.write_packet_data(test_packet,packet_data_path)
         data_interface.write_radar_data(test_radar, radar_data_path)
-        time.sleep(0.04)
+        time.sleep(0.01)
         
     ave_snr = np.mean(snr_array)
     print(f"the average SNR of MAB is: {ave_snr}, beamforming angle is: {test_radar.est_angle}")
