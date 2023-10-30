@@ -161,7 +161,7 @@ while training_flag < 1000: # train the model for 5000 times
         #    agent.save_trained_model()
         #    ucb_count = 0
 
-    elif time_diff >= 0.2:
+    elif time_diff >= 0.1:
         agent.update(curr_radar_angle+90,curr_beamforming_angle+60,0)
         curr_beamforming_angle = int(agent.angle_selection(curr_radar_angle + 90))
         test_radar.est_angle = curr_beamforming_angle
