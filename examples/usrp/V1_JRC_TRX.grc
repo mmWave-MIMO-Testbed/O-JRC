@@ -104,7 +104,11 @@ blocks:
     start: '0'
     step: '0.01'
     stop: '10'
+<<<<<<< HEAD
     value: '1.12'
+=======
+    value: '1.15'
+>>>>>>> C-UCB
     widget: counter_slider
   states:
     bus_sink: false
@@ -125,7 +129,11 @@ blocks:
     start: '0'
     step: '0.01'
     stop: '10'
+<<<<<<< HEAD
     value: '0.9'
+=======
+    value: '0.61'
+>>>>>>> C-UCB
     widget: counter_slider
   states:
     bus_sink: false
@@ -146,7 +154,11 @@ blocks:
     start: '0'
     step: '0.01'
     stop: '10'
+<<<<<<< HEAD
     value: '0.9'
+=======
+    value: '0.62'
+>>>>>>> C-UCB
     widget: counter_slider
   states:
     bus_sink: false
@@ -167,7 +179,11 @@ blocks:
     start: '0'
     step: '0.01'
     stop: '10'
+<<<<<<< HEAD
     value: '0.9'
+=======
+    value: '0.73'
+>>>>>>> C-UCB
     widget: counter_slider
   states:
     bus_sink: false
@@ -426,7 +442,11 @@ blocks:
     start: -2*cmath.pi
     step: '0.01'
     stop: 2*cmath.pi
+<<<<<<< HEAD
     value: '-0.6'
+=======
+    value: '-1.27'
+>>>>>>> C-UCB
     widget: counter_slider
   states:
     bus_sink: false
@@ -447,7 +467,11 @@ blocks:
     start: -2*cmath.pi
     step: '0.01'
     stop: 2*cmath.pi
+<<<<<<< HEAD
     value: '-1.2'
+=======
+    value: '-1.0'
+>>>>>>> C-UCB
     widget: counter_slider
   states:
     bus_sink: false
@@ -468,7 +492,11 @@ blocks:
     start: -2*cmath.pi
     step: '0.01'
     stop: 2*cmath.pi
+<<<<<<< HEAD
     value: '1.5'
+=======
+    value: '1.82'
+>>>>>>> C-UCB
     widget: counter_slider
   states:
     bus_sink: false
@@ -489,7 +517,11 @@ blocks:
     start: -2*cmath.pi
     step: '0.01'
     stop: 2*cmath.pi
+<<<<<<< HEAD
     value: '2.2'
+=======
+    value: '1.9'
+>>>>>>> C-UCB
     widget: counter_slider
   states:
     bus_sink: false
@@ -1435,7 +1467,11 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     packet_info_file: packet_data_file
+<<<<<<< HEAD
     period_ms: '100'
+=======
+    period_ms: '20'
+>>>>>>> C-UCB
   states:
     bus_sink: false
     bus_source: false

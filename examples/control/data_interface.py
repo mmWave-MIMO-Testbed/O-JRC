@@ -10,13 +10,22 @@ class RadarData:
         self.est_angle  = float(est_angle)
 
 class CommData:
+<<<<<<< HEAD
     def __init__(self, timestamp, CRC, packet_type, est_snr, rx_snr, reward, per_val,throughput):
+=======
+    def __init__(self, timestamp, CRC, packet_type, est_snr, data_snr, reward_val, per_val,throughput):
+>>>>>>> C-UCB
         self.timestamp = timestamp
         self.CRC = int(CRC)
         self.packet_type = int(packet_type)
         self.est_snr = float(est_snr)
+<<<<<<< HEAD
         self.rx_snr = float(rx_snr)
         self.reward = float(reward)
+=======
+        self.data_snr = float(data_snr)
+        self.reward_val = float(reward_val)
+>>>>>>> C-UCB
         self.per_val = float(per_val)
         self.throughput = float(throughput)
 
@@ -33,8 +42,12 @@ def load_radar_data(radar_log_path):
     last_line_data = radar_log[-1]
     curr_radar_data = last_line_data.split(",")
     curr_radar_data = [data.strip() for data in curr_radar_data]
-    radar_data = RadarData(*curr_radar_data)
-    return radar_data
+    if len(curr_radar_data) >= 5:  # check curr_radar_data length
+        radar_data = RadarData(*curr_radar_data)
+        return radar_data
+    else:
+        print("Warning: No enough data to update RadarData")
+        return None  
 
 def load_comm_data(comm_log_path):
     with open(comm_log_path,'r') as comm_file:
@@ -42,8 +55,12 @@ def load_comm_data(comm_log_path):
     last_line_comm = comm_log[-1]
     curr_comm_data = last_line_comm.split(",")
     curr_comm_data = [data.strip() for data in curr_comm_data]
-    comm_data = CommData(*curr_comm_data[:8]) #load first 8 comm data
-    return comm_data
+    if len(curr_comm_data) >= 8:
+        comm_data = CommData(*curr_comm_data[:8]) #load first 8 comm data
+        return comm_data
+    else:
+        print("Warning: No enough data to update CommData")
+        return None
 
 def load_packet_data(packet_log_path):
     with open(packet_log_path,'r') as packet_file:
@@ -51,8 +68,12 @@ def load_packet_data(packet_log_path):
     last_line_data = packet_log[-1]
     curr_packet_data = last_line_data.split(",")
     curr_packet_data = [data.strip() for data in curr_packet_data]
-    packet_data = PacketData(*curr_packet_data)
-    return packet_data
+    if len(curr_packet_data >=3 ):
+        packet_data = PacketData(*curr_packet_data)
+        return packet_data
+    else:
+        print("Warning: No enough data to update PacketData")
+        return None
 
 
 def write_packet_data(packet_data, packet_data_path):
@@ -77,7 +98,10 @@ def write_radar_log(radar_data,radar_log_path):
     with open(radar_log_path, 'a') as file:
         file.write(line)
 
-
+def write_plot_log(packet_type, radar_angle, beamforming_angle, data_snr, CRC, throughput, plot_log_path):
+    line = f"{packet_type}, \t{radar_angle}, \t{beamforming_angle}, \t{data_snr}, \t{CRC}, \t{throughput}\n"
+    with open(plot_log_path,'a') as file:
+        file.write(line)
 
 
 

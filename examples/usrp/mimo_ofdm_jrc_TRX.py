@@ -100,10 +100,17 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.radar_chan_file = radar_chan_file = parrent_path+"/data/radar_chan.csv"
         self.radar_aided = radar_aided = False
         self.phased_steering = phased_steering = False
+<<<<<<< HEAD
         self.phase_tx4 = phase_tx4 = 2.2
         self.phase_tx3 = phase_tx3 = 1.5
         self.phase_tx2 = phase_tx2 = -1.2
         self.phase_rx2 = phase_rx2 = -0.6
+=======
+        self.phase_tx4 = phase_tx4 = 1.9
+        self.phase_tx3 = phase_tx3 = 1.82
+        self.phase_tx2 = phase_tx2 = -1.0
+        self.phase_rx2 = phase_rx2 = -1.27
+>>>>>>> C-UCB
         self.packet_data_file = packet_data_file = parrent_path+"/data/packet_data.csv"
         self.mcs = mcs = 3
         self.interp_factor = interp_factor = 8
@@ -115,10 +122,10 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.background_record = background_record = True
         self.angle_res = angle_res = np.rad2deg(np.arcsin(2/(N_tx*N_rx)))
         self.angle_axis = angle_axis = np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi
-        self.amp_tx4 = amp_tx4 = 0.9
-        self.amp_tx3 = amp_tx3 = 0.9
-        self.amp_tx2 = amp_tx2 = 0.9
-        self.amp_rx2 = amp_rx2 = 1.12
+        self.amp_tx4 = amp_tx4 = 0.73
+        self.amp_tx3 = amp_tx3 = 0.62
+        self.amp_tx2 = amp_tx2 = 0.61
+        self.amp_rx2 = amp_rx2 = 1.15
         self.R_res = R_res = 3e8/(2*samp_rate)
         self.R_max = R_max = 3e8*fft_len/(2*samp_rate)
         self.N_ltf = N_ltf = ofdm_config.N_ltf
@@ -187,28 +194,28 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(2, 4):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._phase_tx4_range = Range(-2*cmath.pi, 2*cmath.pi, 0.01, 2.2, 200)
+        self._phase_tx4_range = Range(-2*cmath.pi, 2*cmath.pi, 0.01, 1.9, 200)
         self._phase_tx4_win = RangeWidget(self._phase_tx4_range, self.set_phase_tx4, 'TX4 \n Phase', "counter_slider", float)
         self.top_grid_layout.addWidget(self._phase_tx4_win, 7, 6, 1, 2)
         for r in range(7, 8):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(6, 8):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._phase_tx3_range = Range(-2*cmath.pi, 2*cmath.pi, 0.01, 1.5, 200)
+        self._phase_tx3_range = Range(-2*cmath.pi, 2*cmath.pi, 0.01, 1.82, 200)
         self._phase_tx3_win = RangeWidget(self._phase_tx3_range, self.set_phase_tx3, 'TX3 \n Phase', "counter_slider", float)
         self.top_grid_layout.addWidget(self._phase_tx3_win, 7, 4, 1, 2)
         for r in range(7, 8):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(4, 6):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._phase_tx2_range = Range(-2*cmath.pi, 2*cmath.pi, 0.01, -1.2, 200)
+        self._phase_tx2_range = Range(-2*cmath.pi, 2*cmath.pi, 0.01, -1.0, 200)
         self._phase_tx2_win = RangeWidget(self._phase_tx2_range, self.set_phase_tx2, 'TX2 \n Phase', "counter_slider", float)
         self.top_grid_layout.addWidget(self._phase_tx2_win, 7, 2, 1, 2)
         for r in range(7, 8):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(2, 4):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._phase_rx2_range = Range(-2*cmath.pi, 2*cmath.pi, 0.01, -0.6, 200)
+        self._phase_rx2_range = Range(-2*cmath.pi, 2*cmath.pi, 0.01, -1.27, 200)
         self._phase_rx2_win = RangeWidget(self._phase_rx2_range, self.set_phase_rx2, 'RX2 \nPhase', "counter_slider", float)
         self.top_grid_layout.addWidget(self._phase_rx2_win, 7, 0, 1, 2)
         for r in range(7, 8):
@@ -291,28 +298,28 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(0, 2):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._amp_tx4_range = Range(0, 10, 0.01, 0.9, 200)
+        self._amp_tx4_range = Range(0, 10, 0.01, 0.73, 200)
         self._amp_tx4_win = RangeWidget(self._amp_tx4_range, self.set_amp_tx4, 'TX4 \n Amp', "counter_slider", float)
         self.top_grid_layout.addWidget(self._amp_tx4_win, 6, 6, 1, 2)
         for r in range(6, 7):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(6, 8):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._amp_tx3_range = Range(0, 10, 0.01, 0.9, 200)
+        self._amp_tx3_range = Range(0, 10, 0.01, 0.62, 200)
         self._amp_tx3_win = RangeWidget(self._amp_tx3_range, self.set_amp_tx3, 'TX3 \n Amp', "counter_slider", float)
         self.top_grid_layout.addWidget(self._amp_tx3_win, 6, 4, 1, 2)
         for r in range(6, 7):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(4, 6):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._amp_tx2_range = Range(0, 10, 0.01, 0.9, 200)
+        self._amp_tx2_range = Range(0, 10, 0.01, 0.61, 200)
         self._amp_tx2_win = RangeWidget(self._amp_tx2_range, self.set_amp_tx2, 'TX2 \n Amp', "counter_slider", float)
         self.top_grid_layout.addWidget(self._amp_tx2_win, 6, 2, 1, 2)
         for r in range(6, 7):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(2, 4):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._amp_rx2_range = Range(0, 10, 0.01, 1.12, 200)
+        self._amp_rx2_range = Range(0, 10, 0.01, 1.15, 200)
         self._amp_rx2_win = RangeWidget(self._amp_rx2_range, self.set_amp_rx2, 'RX2 \nAmp', "counter_slider", float)
         self.top_grid_layout.addWidget(self._amp_rx2_win, 6, 0, 1, 2)
         for r in range(6, 7):
@@ -352,7 +359,11 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_stream_encoder_0 = mimo_ofdm_jrc.stream_encoder(mcs, ofdm_config.N_data, 0, False)
         self.mimo_ofdm_jrc_socket_pdu_jrc_0 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 10000)
         self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor), np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, angle_res*2, 15, 0, radar_log_file, save_radar_log, "packet_len", False)
+<<<<<<< HEAD
         self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(100, packet_data_file)
+=======
+        self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(20, packet_data_file)
+>>>>>>> C-UCB
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
         self.mimo_ofdm_jrc_ndp_generator_0 = mimo_ofdm_jrc.ndp_generator()
