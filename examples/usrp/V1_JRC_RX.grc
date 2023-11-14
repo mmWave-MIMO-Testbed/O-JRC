@@ -801,11 +801,8 @@ blocks:
     interval: '250'
     label: '"Received Data Throughput"'
     time_window: '10'
-<<<<<<< HEAD
     y_axis_lim: '[0,10]'
-=======
     y_axis_lim: '[0,5]'
->>>>>>> C-UCB
     y_label: '"Throughput [KByte/s]"'
     y_tag: '"throughput"'
   states:
