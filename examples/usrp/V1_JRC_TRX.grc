@@ -1227,9 +1227,9 @@ blocks:
     label: Range-Angle Image
     len_key: '"packet_len"'
     vlen: N_tx*N_rx*interp_factor_angle
-    x_axis_ticks: '[-70, 70, 10]'
-    xlabel: '"Angle"'
-    y_axis_ticks: '[0, 20, 4]'
+    x_axis_ticks: '[-70, 70, 15]'
+    xlabel: "\"Angle (\xB0)\""
+    y_axis_ticks: '[0, 20, 2]'
     ylabel: '"Range (m)"'
   states:
     bus_sink: false
