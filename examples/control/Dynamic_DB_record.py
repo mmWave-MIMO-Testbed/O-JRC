@@ -51,7 +51,7 @@ print("Start recording")
 time.sleep(10)
 previous_time = time.time()
 arc_length = 3.5
-speed_user = 1
+speed_user = 0.01
 start_time = time.time()
 total_time = time.time()
 end_time = arc_length / speed_user *10

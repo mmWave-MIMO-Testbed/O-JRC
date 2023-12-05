@@ -406,7 +406,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"/home/hostpc-usrp/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/examples"'
+    value: '"/home/hostpc-usrp/O-JRC/examples"'
   states:
     bus_sink: false
     bus_source: false
