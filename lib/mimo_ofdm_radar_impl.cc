@@ -39,6 +39,7 @@ namespace mimo_ofdm_jrc {
                             int record_len,
                             int interp_factor,
                             bool enable_tx_interleave,
+                            bool capture_sig,
                             const std::string& radar_chan_file,
                             const std::string& len_tag_key,
                             bool debug)
@@ -54,6 +55,7 @@ namespace mimo_ofdm_jrc {
                                             record_len,
                                             interp_factor,
                                             enable_tx_interleave,
+                                            capture_sig,
                                             radar_chan_file,
                                             len_tag_key,
                                             debug));
@@ -74,6 +76,7 @@ namespace mimo_ofdm_jrc {
                 int record_len,
                 int interp_factor,
                 bool enable_tx_interleave,
+                bool capture_sig,
                 const std::string& radar_chan_file,
 				const std::string& len_tag_key,
                 bool debug
@@ -91,6 +94,7 @@ namespace mimo_ofdm_jrc {
                     d_record_len(record_len),
                     d_interp_factor(interp_factor),
                     d_enable_tx_interleave(enable_tx_interleave),
+                    d_capture_sig(capture_sig),
                     d_radar_chan_file(radar_chan_file),
                     d_debug(debug)
     {
@@ -335,6 +339,39 @@ namespace mimo_ofdm_jrc {
             }
         }
 
+        if (d_capture_sig)
+        {
+            const static Eigen::IOFormat csv_formatting(Eigen::FullPrecision, Eigen::DontAlignCols, 
+                                                                    ";",   //_coeffSeparator
+                                                                    ":",   //_rowSeparator
+                                                                    "",     //_rowPrefix
+                                                                    "",     //_rowSuffix
+                                                                    "",  //_matPrefix
+                                                                    ";\n");  //_matSuffix
+
+            // radar_chan_est --> [ [fft_len], [fft_len], [fft_len], ...]
+            std::ofstream file_stream(d_radar_chan_file, std::ofstream::app);
+            Eigen::Map<Eigen::VectorXcf> H_radar(radar_chan_est, d_N_tx*d_N_rx*d_fft_len);
+
+            if (file_stream.is_open())
+            {
+                file_stream << current_date_time2() << ", " << d_N_tx << ", " << d_N_rx << ", " << d_fft_len << ":";
+                file_stream << H_radar.transpose().format(csv_formatting);
+                file_stream << "\n";
+                file_stream.flush();
+            }
+            else
+            {
+                throw std::runtime_error("[MIMO OFDM RADAR] Could not open file!!");
+            }
+            
+            file_stream.close();
+
+            std::cout << "[MIMO OFDM RADAR] Radar image captured!" << std::endl;
+
+            // captured = true;
+        }
+
         if (d_background_removal)
         {
             radar_chan_est_buffer.push_back(radar_chan_est_temp);
@@ -386,9 +423,9 @@ namespace mimo_ofdm_jrc {
         d_background_recording = background_recording;
     }
 
-    void mimo_ofdm_radar_impl::capture_radar_data(bool capture_sig)
+    void mimo_ofdm_radar_impl::capture_radar_data(bool capture_radar)
     {
-        if (capture_sig)
+        if (capture_radar)
         {
             const static Eigen::IOFormat csv_formatting(Eigen::FullPrecision, Eigen::DontAlignCols, 
                                                                     ";",   //_coeffSeparator

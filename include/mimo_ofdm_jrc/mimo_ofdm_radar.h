@@ -55,12 +55,13 @@ namespace gr {
                         int record_len,
                         int interp_factor,
                         bool enable_tx_interleave,
+                        bool capture_sig,
                         const std::string& radar_chan_file,
                         const std::string& len_tag_key = "packet_len",
                         bool debug = false);
                         
       virtual void set_background_record(bool background_record) = 0;
-      virtual void capture_radar_data(bool capture_sig) = 0;
+      virtual void capture_radar_data(bool capture_radar) = 0;
     };
 
   } // namespace mimo_ofdm_jrc
