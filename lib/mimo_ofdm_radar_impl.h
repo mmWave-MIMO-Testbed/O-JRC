@@ -53,6 +53,7 @@ namespace gr {
         int d_record_len;
         bool d_background_removal;
         bool d_background_recording;
+        bool d_capture_sig;
 
         int total_sym_copy;
 
@@ -70,6 +71,7 @@ namespace gr {
             int averaging_depth,
             int interp_factor,
             bool enable_tx_interleave,
+            bool capture_sig,
             const std::string& radar_chan_file,
             const std::string& len_tag_key,
             bool debug = false
@@ -77,7 +79,7 @@ namespace gr {
       ~mimo_ofdm_radar_impl();
       
       void set_background_record(bool background_recording);
-      void capture_radar_data(bool capture_sig);
+      void capture_radar_data(bool capture_radar);
       
       // void forecast (int noutput_items, gr_vector_int &ninput_items_required);
 
