@@ -24,6 +24,7 @@
 
 #include <gnuradio/io_signature.h>
 #include "mimo_ofdm_radar_impl.h"
+//#include "range_angle_estimator_impl.h"
 
 namespace gr {
 namespace mimo_ofdm_jrc {
@@ -39,26 +40,26 @@ namespace mimo_ofdm_jrc {
                             int record_len,
                             int interp_factor,
                             bool enable_tx_interleave,
-                            bool capture_sig,
+                            //bool stats_record,
                             const std::string& radar_chan_file,
                             const std::string& len_tag_key,
                             bool debug)
     {
       return gnuradio::get_initial_sptr
         (new mimo_ofdm_radar_impl(fft_len,
-                                            N_tx,
-                                            N_rx,
-                                            N_sym,
-                                            N_pre,
-                                            background_removal,
-                                            background_recording,
-                                            record_len,
-                                            interp_factor,
-                                            enable_tx_interleave,
-                                            capture_sig,
-                                            radar_chan_file,
-                                            len_tag_key,
-                                            debug));
+                                    N_tx,
+                                    N_rx,
+                                    N_sym,
+                                    N_pre,
+                                    background_removal,
+                                    background_recording,
+                                    record_len,
+                                    interp_factor,
+                                    enable_tx_interleave,
+                                    //stats_record,
+                                    radar_chan_file,
+                                    len_tag_key,
+                                    debug));
     }
 
 
@@ -76,7 +77,7 @@ namespace mimo_ofdm_jrc {
                 int record_len,
                 int interp_factor,
                 bool enable_tx_interleave,
-                bool capture_sig,
+                //bool stats_record,
                 const std::string& radar_chan_file,
 				const std::string& len_tag_key,
                 bool debug
@@ -94,7 +95,7 @@ namespace mimo_ofdm_jrc {
                     d_record_len(record_len),
                     d_interp_factor(interp_factor),
                     d_enable_tx_interleave(enable_tx_interleave),
-                    d_capture_sig(capture_sig),
+                    //d_stats_record(stats_record),
                     d_radar_chan_file(radar_chan_file),
                     d_debug(debug)
     {
@@ -339,7 +340,8 @@ namespace mimo_ofdm_jrc {
             }
         }
 
-        if (d_capture_sig)
+        /*
+        if (d_stats_record)
         {
             const static Eigen::IOFormat csv_formatting(Eigen::FullPrecision, Eigen::DontAlignCols, 
                                                                     ";",   //_coeffSeparator
@@ -371,6 +373,8 @@ namespace mimo_ofdm_jrc {
 
             // captured = true;
         }
+        */
+        //mimo_ofdm_radar_impl::set_background_record(True);
 
         if (d_background_removal)
         {
@@ -423,9 +427,9 @@ namespace mimo_ofdm_jrc {
         d_background_recording = background_recording;
     }
 
-    void mimo_ofdm_radar_impl::capture_radar_data(bool capture_radar)
+    void mimo_ofdm_radar_impl::capture_radar_data(bool capture_sig)
     {
-        if (capture_radar)
+        if (capture_sig)
         {
             const static Eigen::IOFormat csv_formatting(Eigen::FullPrecision, Eigen::DontAlignCols, 
                                                                     ";",   //_coeffSeparator

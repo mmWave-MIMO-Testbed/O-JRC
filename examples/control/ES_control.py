@@ -49,8 +49,8 @@ test_packet = data_interface.PacketData(current_time, packet_type, packet_size)
 print("Start recording")    
 time.sleep(10)
 previous_time = time.time()
-arc_length = 3.5
-speed_user = 0.5
+arc_length = 10
+speed_user = 0.01
 start_time = time.time()
 total_time = time.time()
 end_time = arc_length / speed_user *10
@@ -66,7 +66,7 @@ while total_time-start_time <= end_time:
      # ES algorithm
     current_time = datetime.now()
     test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
-    test_packet.packet_type = 2
+    test_packet.packet_type = 1   # 1 for NDP 2 for data
     test_packet.packet_size = 300
     now_time = time.time()
     #last_data_timestamp = datetime.now() #Self-test

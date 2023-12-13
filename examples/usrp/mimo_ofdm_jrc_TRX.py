@@ -359,7 +359,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64, ofdm_config.ltf_mapped_sc__ss_sym, chan_est_file, freq_smoothing, radar_data_file, radar_aided, False, False, "packet_len",  False)
         self.mimo_ofdm_jrc_mimo_precoder_0.set_processor_affinity([7])
         self.mimo_ofdm_jrc_mimo_precoder_0.set_min_output_buffer(1000)
-        self.mimo_ofdm_jrc_mimo_ofdm_radar_0 = mimo_ofdm_jrc.mimo_ofdm_radar(fft_len, N_tx, N_rx, N_tx, len(ofdm_config.l_stf_ltf_64)+1, True, background_record, 8, interp_factor, False, radar_chan_file, "packet_len", False)
+        self.mimo_ofdm_jrc_mimo_ofdm_radar_0 = mimo_ofdm_jrc.mimo_ofdm_radar(fft_len, N_tx, N_rx, N_tx, len(ofdm_config.l_stf_ltf_64)+1, True, background_record, 8, interp_factor, False, radar_chan_file, "packet_len",  False)
         self.mimo_ofdm_jrc_matrix_transpose_0 = mimo_ofdm_jrc.matrix_transpose(fft_len*interp_factor, N_tx*N_rx, interp_factor_angle, False, "packet_len")
         self.mimo_ofdm_jrc_gui_time_plot_2 = mimo_ofdm_jrc.gui_time_plot(250, "angle", "Angle (degree)", [-70,70], 10, "Angle Estimate")
         self.mimo_ofdm_jrc_gui_time_plot_1 = mimo_ofdm_jrc.gui_time_plot(250, "snr", "SNR [dB]", [10,40], 10, "Signal-to-Noise Ratio")
@@ -383,7 +383,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.digital_ofdm_cyclic_prefixer_0 = digital.ofdm_cyclic_prefixer(fft_len, fft_len + cp_len, 0, "packet_len")
         _capture_radar_push_button = Qt.QPushButton('Capture Radar Image ')
         _capture_radar_push_button = Qt.QPushButton('Capture Radar Image ')
-        self._capture_radar_choices = {'Pressed': True, 'Released': False}
+        self._capture_radar_choices = {'Pressed': True, 'Released': True}
         _capture_radar_push_button.pressed.connect(lambda: self.set_capture_radar(self._capture_radar_choices['Pressed']))
         _capture_radar_push_button.released.connect(lambda: self.set_capture_radar(self._capture_radar_choices['Released']))
         self.top_layout.addWidget(_capture_radar_push_button)
@@ -438,8 +438,8 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.fft_vxx_0_2_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.fft_vxx_0_3, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 0))
-        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 2))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 1))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 2))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 3))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0, 0), (self.fft_vxx_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0, 0), (self.fft_vxx_0_0_0, 0))
@@ -672,7 +672,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
 
     def set_capture_radar(self, capture_radar):
         self.capture_radar = capture_radar
-        self.mimo_ofdm_jrc_mimo_ofdm_radar_0.capture_radar_data(self.capture_radar)
+        self.mimo_ofdm_jrc_mimo_ofdm_radar_0.capture_radar_data(self.capture_radar);
 
     def get_background_record(self):
         return self.background_record
@@ -680,7 +680,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
     def set_background_record(self, background_record):
         self.background_record = background_record
         self._background_record_callback(self.background_record)
-        self.mimo_ofdm_jrc_mimo_ofdm_radar_0.set_background_record(self.background_record)
+        self.mimo_ofdm_jrc_mimo_ofdm_radar_0.set_background_record(self.background_record);
 
     def get_angle_res(self):
         return self.angle_res

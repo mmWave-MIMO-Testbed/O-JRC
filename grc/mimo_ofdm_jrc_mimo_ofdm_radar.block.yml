@@ -6,10 +6,10 @@ templates:
   imports: import mimo_ofdm_jrc
   make: mimo_ofdm_jrc.mimo_ofdm_radar(${fft_len}, ${N_tx}, ${N_rx}, ${N_sym}, ${N_pre}, 
       ${background_removal}, ${background_record}, ${record_len},
-      ${interp_factor}, ${enable_tx_interleave}, ${radar_chan_file}, ${len_tag_key}, ${debug})
+      ${interp_factor}, ${enable_tx_interleave}, ${radar_chan_file}, ${len_tag_key},  ${debug})
   callbacks:
-    - set_background_record(${background_record})
-    - capture_radar_data(${capture_sig})
+    - set_background_record(${background_record});
+    - capture_radar_data(${capture_sig});
 
 parameters:
 - id: fft_len

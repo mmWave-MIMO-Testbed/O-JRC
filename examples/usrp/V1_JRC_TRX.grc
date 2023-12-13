@@ -238,7 +238,7 @@ blocks:
     gui_hint: ''
     label: 'Capture Radar Image '
     pressed: 'True'
-    released: 'False'
+    released: 'True'
     type: bool
     value: 'False'
   states:
