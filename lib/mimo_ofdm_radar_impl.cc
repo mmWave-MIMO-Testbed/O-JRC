@@ -24,7 +24,6 @@
 
 #include <gnuradio/io_signature.h>
 #include "mimo_ofdm_radar_impl.h"
-//#include "range_angle_estimator_impl.h"
 
 namespace gr {
 namespace mimo_ofdm_jrc {
@@ -40,8 +39,8 @@ namespace mimo_ofdm_jrc {
                             int record_len,
                             int interp_factor,
                             bool enable_tx_interleave,
-                            //bool stats_record,
                             const std::string& radar_chan_file,
+                            bool stats_record,
                             const std::string& len_tag_key,
                             bool debug)
     {
@@ -56,8 +55,8 @@ namespace mimo_ofdm_jrc {
                                     record_len,
                                     interp_factor,
                                     enable_tx_interleave,
-                                    //stats_record,
                                     radar_chan_file,
+                                    stats_record,
                                     len_tag_key,
                                     debug));
     }
@@ -77,8 +76,8 @@ namespace mimo_ofdm_jrc {
                 int record_len,
                 int interp_factor,
                 bool enable_tx_interleave,
-                //bool stats_record,
                 const std::string& radar_chan_file,
+                bool stats_record,
 				const std::string& len_tag_key,
                 bool debug
     )
@@ -95,8 +94,8 @@ namespace mimo_ofdm_jrc {
                     d_record_len(record_len),
                     d_interp_factor(interp_factor),
                     d_enable_tx_interleave(enable_tx_interleave),
-                    //d_stats_record(stats_record),
                     d_radar_chan_file(radar_chan_file),
+                    d_stats_record(stats_record),
                     d_debug(debug)
     {
         //TODO Add sanity checks!
@@ -340,16 +339,16 @@ namespace mimo_ofdm_jrc {
             }
         }
 
-        /*
+        
         if (d_stats_record)
         {
             const static Eigen::IOFormat csv_formatting(Eigen::FullPrecision, Eigen::DontAlignCols, 
-                                                                    ";",   //_coeffSeparator
-                                                                    ":",   //_rowSeparator
+                                                                    ",",   //_coeffSeparator
+                                                                    ".",   //_rowSeparator
                                                                     "",     //_rowPrefix
                                                                     "",     //_rowSuffix
                                                                     "",  //_matPrefix
-                                                                    ";\n");  //_matSuffix
+                                                                    ".\n");  //_matSuffix
 
             // radar_chan_est --> [ [fft_len], [fft_len], [fft_len], ...]
             std::ofstream file_stream(d_radar_chan_file, std::ofstream::app);
@@ -357,7 +356,7 @@ namespace mimo_ofdm_jrc {
 
             if (file_stream.is_open())
             {
-                file_stream << current_date_time2() << ", " << d_N_tx << ", " << d_N_rx << ", " << d_fft_len << ":";
+                file_stream << current_date_time2() << ", " << d_N_tx << ", " << d_N_rx << ", " << d_fft_len << ".";
                 file_stream << H_radar.transpose().format(csv_formatting);
                 file_stream << "\n";
                 file_stream.flush();
@@ -373,7 +372,7 @@ namespace mimo_ofdm_jrc {
 
             // captured = true;
         }
-        */
+        
         //mimo_ofdm_radar_impl::set_background_record(True);
 
         if (d_background_removal)
@@ -427,17 +426,22 @@ namespace mimo_ofdm_jrc {
         d_background_recording = background_recording;
     }
 
+    void mimo_ofdm_radar_impl::set_stats_record(bool stats_record)
+    {
+        d_stats_record = stats_record;
+    }
+
     void mimo_ofdm_radar_impl::capture_radar_data(bool capture_sig)
     {
         if (capture_sig)
         {
             const static Eigen::IOFormat csv_formatting(Eigen::FullPrecision, Eigen::DontAlignCols, 
-                                                                    ";",   //_coeffSeparator
-                                                                    ":",   //_rowSeparator
+                                                                    ",",   //_coeffSeparator
+                                                                    ".",   //_rowSeparator
                                                                     "",     //_rowPrefix
                                                                     "",     //_rowSuffix
                                                                     "",  //_matPrefix
-                                                                    ";\n");  //_matSuffix
+                                                                    ".\n");  //_matSuffix
 
             // radar_chan_est --> [ [fft_len], [fft_len], [fft_len], ...]
             std::ofstream file_stream(d_radar_chan_file, std::ofstream::app);
@@ -445,7 +449,7 @@ namespace mimo_ofdm_jrc {
 
             if (file_stream.is_open())
             {
-                file_stream << current_date_time2() << ", " << d_N_tx << ", " << d_N_rx << ", " << d_fft_len << ":";
+                file_stream << current_date_time2() << ", " << d_N_tx << ", " << d_N_rx << ", " << d_fft_len << ".";
                 file_stream << H_radar.transpose().format(csv_formatting);
                 file_stream << "\n";
                 file_stream.flush();
