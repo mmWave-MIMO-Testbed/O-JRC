@@ -1,6 +1,6 @@
 options:
   parameters:
-    author: Ceyhun D. Ozkaptan
+    author: Ceyhun D. Ozkaptan, Haocheng Zhu, Xin Liu
     category: Custom
     cmake_opt: ''
     comment: ''
@@ -86,6 +86,18 @@ blocks:
     coordinate: [904, 16.0]
     rotation: 0
     state: enabled
+- name: chan_est_data_file
+  id: variable
+  parameters:
+    comment: ''
+    value: parrent_path+"/data/chan_est_data.csv"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [800, 248.0]
+    rotation: 0
+    state: enabled
 - name: chan_est_file
   id: variable
   parameters:
@@ -162,7 +174,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"/home/hostpc-usrp/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/examples"'
+    value: '"/home/hostpc-usrp/O-JRC/examples"'
   states:
     bus_sink: false
     bus_source: false
@@ -801,7 +813,6 @@ blocks:
     interval: '250'
     label: '"Received Data Throughput"'
     time_window: '10'
-    y_axis_lim: '[0,10]'
     y_axis_lim: '[0,5]'
     y_label: '"Throughput [KByte/s]"'
     y_tag: '"throughput"'
@@ -818,6 +829,7 @@ blocks:
     affinity: '[4]'
     alias: ''
     bw: samp_rate
+    chan_est_data_file: chan_est_data_file
     chan_est_file: chan_est_file
     comm_log_file: comm_log_file
     comment: ''

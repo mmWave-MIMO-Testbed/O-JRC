@@ -7,7 +7,7 @@ templates:
   make: mimo_ofdm_jrc.mimo_ofdm_equalizer(${estimator}, 
           ${freq}, ${bw}, ${fft_len},
           ${cp_len}, ${data_carriers}, ${pilot_carriers}, ${pilot_symbols},
-          ${long_seq}, ${mapped_ltf_symbols}, ${n_mimo_ltf}, ${chan_est_file}, ${comm_log_file}, ${stats_record}, ${debug})
+          ${long_seq}, ${mapped_ltf_symbols}, ${n_mimo_ltf}, ${chan_est_file}, ${comm_log_file}, ${chan_est_data_file} ,${stats_record}, ${debug})
   callbacks:
     - set_estimator(${estimator})
     - set_frequency(${freq})
@@ -61,6 +61,11 @@ parameters:
     hide: part
 -   id: comm_log_file
     label: Comm. Log File
+    dtype: string
+    default: '""'
+    hide: part
+-   id: chan_est_data_file
+    label: Comm. Channel Data Est. File
     dtype: string
     default: '""'
     hide: part

@@ -74,6 +74,7 @@ namespace gr {
                             int n_mimo_ltf,
                             const std::string& chan_est_file,
                             const std::string& comm_log_file,
+                            const std::string& chan_est_data_file,
                             bool stats_record,                            
                             bool debug);
     };

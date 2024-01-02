@@ -49,6 +49,7 @@ namespace gr {
                                 int n_mimo_ltf, 
                                 const std::string& chan_est_file,
                                 const std::string& comm_log_file,
+                                const std::string& chan_est_data_file,
                                 bool stats_record,
                                 bool debug)
     {
@@ -66,6 +67,7 @@ namespace gr {
                                         n_mimo_ltf,
                                         chan_est_file,
                                         comm_log_file,
+                                        chan_est_data_file,
                                         stats_record,
                                         debug));
 
@@ -88,6 +90,7 @@ namespace gr {
                                                         int n_mimo_ltf,
                                                         const std::string& chan_est_file,
                                                         const std::string& comm_log_file,
+                                                        const std::string& chan_est_data_file,
                                                         bool stats_record,                                                        
                                                         bool debug)
       : gr::block("mimo_ofdm_equalizer",
@@ -109,6 +112,7 @@ namespace gr {
                 d_N_mimo_ltf(n_mimo_ltf),
                 d_chan_est_file(chan_est_file),
                 d_comm_log_file(comm_log_file),
+                d_chan_est_data_file(chan_est_data_file),
                 d_stats_record(stats_record),
                 d_debug(debug)
     {
@@ -438,6 +442,14 @@ namespace gr {
                     }
                     else if (packet_type_SIG == PACKET_TYPE::DATA)
                     {
+                        const static Eigen::IOFormat csv_formatting(Eigen::FullPrecision, Eigen::DontAlignCols, 
+                                                                ",",   //_coeffSeparator
+                                                                ".",   //_rowSeparator
+                                                                "",     //_rowPrefix
+                                                                "",     //_rowSuffix
+                                                                "",  //_matPrefix
+                                                                ".\n");  //_matSuffix
+                        std::ofstream file_stream(d_chan_est_data_file, std::ofstream::app);
                         // TODO this may go into SIG field or block parameters
                         int rx_index = 0; //This is the actual stream index at the transmitter.
 
@@ -469,6 +481,22 @@ namespace gr {
                             d_H_mimo[i_sc] = X_ltf.row(rx_index).dot(y_rx) / (float) d_N_mimo_ltf; 
                             chan_est_vector_mean += d_H_mimo[i_sc];
                         }
+
+                        // Save data Channel estimation
+                        Eigen::Map<Eigen::VectorXcf> H_data(d_H_mimo, d_N_data_carr+d_N_pilot_carr);
+
+                        if (file_stream.is_open())
+                        {
+                            file_stream << d_N_data_carr << ',' << d_N_pilot_carr << ",";
+                            file_stream << H_data.transpose().format(csv_formatting);
+                            file_stream.flush();
+                        }
+                        else
+                        {
+                            throw std::runtime_error("[OFDM EQUALIZER DATA] Could not open file!!");
+                        }
+
+                        file_stream.close();
 
                         chan_est_vector_mean = chan_est_vector_mean / (float) d_N_active_carr;
                         chan_est_mean_pmt = pmt::init_c32vector(1, &chan_est_vector_mean);

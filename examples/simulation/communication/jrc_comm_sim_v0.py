@@ -88,7 +88,7 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.fft_len = fft_len = ofdm_config.N_sc
         self.wavelength = wavelength = 3e8/rf_freq
         self.samp_rate = samp_rate = 150000000
-        self.parrent_path = parrent_path = "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/examples"
+        self.parrent_path = parrent_path = "/home/haocheng/O-JRC/examples"
         self.noise_figure_dB = noise_figure_dB = 10
         self.mimo_tap1 = mimo_tap1 = cmath.exp(1j*cmath.pi*np.sin(np.deg2rad(theta)))
         self.distance = distance = 20
@@ -110,6 +110,7 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.corr_window_size = corr_window_size = int(fft_len/2)
         self.comm_log_file = comm_log_file = parrent_path+"/data/comm_log.csv"
         self.chan_est_file = chan_est_file = parrent_path+"/data/chan_est.csv"
+        self.chan_est_data_file = chan_est_data_file = parrent_path+"/data/chan_est_data.csv"
         self.chan_est = chan_est = 1
         self.N_tx = N_tx = ofdm_config.N_tx
         self.N_rx = N_rx = 4
@@ -468,7 +469,7 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_ndp_generator_0 = mimo_ofdm_jrc.ndp_generator()
         self.mimo_ofdm_jrc_moving_avg_0 = mimo_ofdm_jrc.moving_avg(corr_window_size, 1, 16000, False)
         self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64, ofdm_config.ltf_mapped_sc__ss_sym, chan_est_file, False, radar_read_file, radar_aided, phased_steering, use_radar_streams, "packet_len",  False)
-        self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0 = mimo_ofdm_jrc.mimo_ofdm_equalizer(chan_est, rf_freq, samp_rate, fft_len, cp_len, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64[3], ofdm_config.ltf_mapped_sc__ss_sym, N_tx, chan_est_file, "", False, False)
+        self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0 = mimo_ofdm_jrc.mimo_ofdm_equalizer(chan_est, rf_freq, samp_rate, fft_len, cp_len, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64[3], ofdm_config.ltf_mapped_sc__ss_sym, N_tx, chan_est_file, comm_log_file, chan_est_data_file ,False, False)
         self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0.set_min_output_buffer(80000)
         self.mimo_ofdm_jrc_gui_time_plot_1_0 = mimo_ofdm_jrc.gui_time_plot(250, "throughput", "Throughput [KByte/s]", [0,5], 10, "Received Data Throughput")
         self.mimo_ofdm_jrc_gui_time_plot_1 = mimo_ofdm_jrc.gui_time_plot(250, "per", "PER [%]", [0,102], 10, "Packet Error Rate")
@@ -646,6 +647,7 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
 
     def set_parrent_path(self, parrent_path):
         self.parrent_path = parrent_path
+        self.set_chan_est_data_file(self.parrent_path+"/data/chan_est_data.csv")
         self.set_chan_est_file(self.parrent_path+"/data/chan_est.csv")
         self.set_comm_log_file(self.parrent_path+"/data/comm_log.csv")
         self.set_packet_data_file(self.parrent_path+"/data/packet_data.csv")
@@ -803,6 +805,12 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
 
     def set_chan_est_file(self, chan_est_file):
         self.chan_est_file = chan_est_file
+
+    def get_chan_est_data_file(self):
+        return self.chan_est_data_file
+
+    def set_chan_est_data_file(self, chan_est_data_file):
+        self.chan_est_data_file = chan_est_data_file
 
     def get_chan_est(self):
         return self.chan_est

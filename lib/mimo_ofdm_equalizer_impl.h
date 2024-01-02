@@ -45,6 +45,7 @@ namespace gr {
 
         const std::string d_chan_est_file; 
         const std::string d_comm_log_file;
+        const std::string d_chan_est_data_file;
 
         const std::vector<std::vector<gr_complex>> d_pilot_symbols;
         const std::vector<std::vector<gr_complex>> d_mapped_ltf_symbols;
@@ -129,6 +130,7 @@ namespace gr {
                                     int n_mimo_ltf,
                                     const std::string& chan_est_file,
                                     const std::string& comm_log_file,
+                                    const std::string& chan_est_data_file,
                                     bool stats_record,
                                     bool debug);
       ~mimo_ofdm_equalizer_impl();
