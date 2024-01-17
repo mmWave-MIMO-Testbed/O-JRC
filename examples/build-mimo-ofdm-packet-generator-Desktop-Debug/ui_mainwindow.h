@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.12.8
+** Created by: Qt User Interface Compiler version 5.15.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -691,54 +691,54 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MIMO OFDM Packet Generator", nullptr));
-        groupBox->setTitle(QApplication::translate("MainWindow", "System Configuration", nullptr));
-        parameterGroup->setTitle(QApplication::translate("MainWindow", "System Parameters", nullptr));
-        label_9->setText(QApplication::translate("MainWindow", "Data Subcarriers", nullptr));
-        dataCarrierInput->setText(QApplication::translate("MainWindow", "48", nullptr));
-        label_5->setText(QApplication::translate("MainWindow", "Modulation", nullptr));
-        mcsSelect->setItemText(0, QApplication::translate("MainWindow", "BPSK 1/2", nullptr));
-        mcsSelect->setItemText(1, QApplication::translate("MainWindow", "BPSK 3/4", nullptr));
-        mcsSelect->setItemText(2, QApplication::translate("MainWindow", "QPSK 1/2", nullptr));
-        mcsSelect->setItemText(3, QApplication::translate("MainWindow", "QPSK 3/4", nullptr));
-        mcsSelect->setItemText(4, QApplication::translate("MainWindow", "16QAM 1/2", nullptr));
-        mcsSelect->setItemText(5, QApplication::translate("MainWindow", "16 QAM 3/4", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MIMO OFDM Packet Generator", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("MainWindow", "System Configuration", nullptr));
+        parameterGroup->setTitle(QCoreApplication::translate("MainWindow", "System Parameters", nullptr));
+        label_9->setText(QCoreApplication::translate("MainWindow", "Data Subcarriers", nullptr));
+        dataCarrierInput->setText(QCoreApplication::translate("MainWindow", "48", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "Modulation", nullptr));
+        mcsSelect->setItemText(0, QCoreApplication::translate("MainWindow", "BPSK 1/2", nullptr));
+        mcsSelect->setItemText(1, QCoreApplication::translate("MainWindow", "BPSK 3/4", nullptr));
+        mcsSelect->setItemText(2, QCoreApplication::translate("MainWindow", "QPSK 1/2", nullptr));
+        mcsSelect->setItemText(3, QCoreApplication::translate("MainWindow", "QPSK 3/4", nullptr));
+        mcsSelect->setItemText(4, QCoreApplication::translate("MainWindow", "16QAM 1/2", nullptr));
+        mcsSelect->setItemText(5, QCoreApplication::translate("MainWindow", "16 QAM 3/4", nullptr));
 
-        label_3->setText(QApplication::translate("MainWindow", "FFT Length", nullptr));
-        label_4->setText(QApplication::translate("MainWindow", "Cyclic Prefix Length", nullptr));
-        cpPrefixInput->setText(QApplication::translate("MainWindow", "16", nullptr));
-        fftLengthInput->setText(QApplication::translate("MainWindow", "64", nullptr));
-        label_10->setText(QApplication::translate("MainWindow", "TX Antennas", nullptr));
-        txAntennaInput->setText(QApplication::translate("MainWindow", "2", nullptr));
-        label_12->setText(QApplication::translate("MainWindow", "Bandwidth (MHz)", nullptr));
-        bandwidthInput->setText(QApplication::translate("MainWindow", "125", nullptr));
-        gnuSocketGroup->setTitle(QApplication::translate("MainWindow", "GNU Radio Connection", nullptr));
-        udpPortInput->setText(QApplication::translate("MainWindow", "52001", nullptr));
-        label_6->setText(QApplication::translate("MainWindow", "UDP Port:", nullptr));
-        RateBox->setTitle(QApplication::translate("MainWindow", "Current Configuration", nullptr));
-        label_14->setText(QApplication::translate("MainWindow", "Data Tx Duration: ", nullptr));
-        label_13->setText(QApplication::translate("MainWindow", "Maximum Throughput:", nullptr));
-        currentRateLabel->setText(QApplication::translate("MainWindow", "0.0", nullptr));
-        label_11->setText(QApplication::translate("MainWindow", "Data Throughput:", nullptr));
-        maximumRateLabel->setText(QApplication::translate("MainWindow", "0.0", nullptr));
-        txDurationLabel->setText(QApplication::translate("MainWindow", "0.0", nullptr));
-        pduGeneratorGroup->setTitle(QApplication::translate("MainWindow", "Packet Configuration", nullptr));
-        videoTxGroup->setTitle(QApplication::translate("MainWindow", "Video Streaming", nullptr));
-        label_7->setText(QApplication::translate("MainWindow", "Camera Device: ", nullptr));
-        cameraConnectButton->setText(QApplication::translate("MainWindow", "Connect", nullptr));
-        videoTxButton->setText(QApplication::translate("MainWindow", "Start Streaming", nullptr));
-        txParamGroup->setTitle(QApplication::translate("MainWindow", "Tranmission Parameters", nullptr));
-        dataIntervalLabel->setText(QApplication::translate("MainWindow", "DATA Interval [ms]:", nullptr));
-        dataIntervalInput->setText(QApplication::translate("MainWindow", "100", nullptr));
-        dataSizeLabel->setText(QApplication::translate("MainWindow", "Packet Size [byte]: ", nullptr));
-        dataSizeInput->setText(QApplication::translate("MainWindow", "500", nullptr));
-        ndpIntervalLabel->setText(QApplication::translate("MainWindow", "NDP Interval [ms]:", nullptr));
-        ndpIntervalInput->setText(QApplication::translate("MainWindow", "100", nullptr));
-        txModeGroup->setTitle(QApplication::translate("MainWindow", "Transmission Mode", nullptr));
-        ndpButton->setText(QApplication::translate("MainWindow", "NDP", nullptr));
-        dataButton->setText(QApplication::translate("MainWindow", "DATA", nullptr));
-        comboButton->setText(QApplication::translate("MainWindow", "NDP + DATA", nullptr));
-        startButton->setText(QApplication::translate("MainWindow", "START", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "FFT Length", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "Cyclic Prefix Length", nullptr));
+        cpPrefixInput->setText(QCoreApplication::translate("MainWindow", "16", nullptr));
+        fftLengthInput->setText(QCoreApplication::translate("MainWindow", "64", nullptr));
+        label_10->setText(QCoreApplication::translate("MainWindow", "TX Antennas", nullptr));
+        txAntennaInput->setText(QCoreApplication::translate("MainWindow", "2", nullptr));
+        label_12->setText(QCoreApplication::translate("MainWindow", "Bandwidth (MHz)", nullptr));
+        bandwidthInput->setText(QCoreApplication::translate("MainWindow", "125", nullptr));
+        gnuSocketGroup->setTitle(QCoreApplication::translate("MainWindow", "GNU Radio Connection", nullptr));
+        udpPortInput->setText(QCoreApplication::translate("MainWindow", "52001", nullptr));
+        label_6->setText(QCoreApplication::translate("MainWindow", "UDP Port:", nullptr));
+        RateBox->setTitle(QCoreApplication::translate("MainWindow", "Current Configuration", nullptr));
+        label_14->setText(QCoreApplication::translate("MainWindow", "Data Tx Duration: ", nullptr));
+        label_13->setText(QCoreApplication::translate("MainWindow", "Maximum Throughput:", nullptr));
+        currentRateLabel->setText(QCoreApplication::translate("MainWindow", "0.0", nullptr));
+        label_11->setText(QCoreApplication::translate("MainWindow", "Data Throughput:", nullptr));
+        maximumRateLabel->setText(QCoreApplication::translate("MainWindow", "0.0", nullptr));
+        txDurationLabel->setText(QCoreApplication::translate("MainWindow", "0.0", nullptr));
+        pduGeneratorGroup->setTitle(QCoreApplication::translate("MainWindow", "Packet Configuration", nullptr));
+        videoTxGroup->setTitle(QCoreApplication::translate("MainWindow", "Video Streaming", nullptr));
+        label_7->setText(QCoreApplication::translate("MainWindow", "Camera Device: ", nullptr));
+        cameraConnectButton->setText(QCoreApplication::translate("MainWindow", "Connect", nullptr));
+        videoTxButton->setText(QCoreApplication::translate("MainWindow", "Start Streaming", nullptr));
+        txParamGroup->setTitle(QCoreApplication::translate("MainWindow", "Tranmission Parameters", nullptr));
+        dataIntervalLabel->setText(QCoreApplication::translate("MainWindow", "DATA Interval [ms]:", nullptr));
+        dataIntervalInput->setText(QCoreApplication::translate("MainWindow", "100", nullptr));
+        dataSizeLabel->setText(QCoreApplication::translate("MainWindow", "Packet Size [byte]: ", nullptr));
+        dataSizeInput->setText(QCoreApplication::translate("MainWindow", "500", nullptr));
+        ndpIntervalLabel->setText(QCoreApplication::translate("MainWindow", "NDP Interval [ms]:", nullptr));
+        ndpIntervalInput->setText(QCoreApplication::translate("MainWindow", "100", nullptr));
+        txModeGroup->setTitle(QCoreApplication::translate("MainWindow", "Transmission Mode", nullptr));
+        ndpButton->setText(QCoreApplication::translate("MainWindow", "NDP", nullptr));
+        dataButton->setText(QCoreApplication::translate("MainWindow", "DATA", nullptr));
+        comboButton->setText(QCoreApplication::translate("MainWindow", "NDP + DATA", nullptr));
+        startButton->setText(QCoreApplication::translate("MainWindow", "START", nullptr));
     } // retranslateUi
 
 };

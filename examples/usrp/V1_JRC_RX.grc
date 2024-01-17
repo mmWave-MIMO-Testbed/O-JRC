@@ -174,7 +174,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"/home/hostpc-usrp/O-JRC/examples"'
+    value: '"/home/host-pc/O-JRC/examples"'
   states:
     bus_sink: false
     bus_source: false

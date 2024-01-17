@@ -85,7 +85,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.usrp_freq = usrp_freq = 5e9
         self.samp_rate = samp_rate = int(125e6)
         self.rf_freq = rf_freq = usrp_freq+19e9
-        self.parrent_path = parrent_path = "/home/hostpc-usrp/O-JRC/examples"
+        self.parrent_path = parrent_path = "/home/host-pc/O-JRC/examples"
         self.interp_factor_angle = interp_factor_angle = 16
         self.fft_len = fft_len = ofdm_config.N_sc
         self.N_tx = N_tx = ofdm_config.N_tx
@@ -340,15 +340,16 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         for c in range(0, 4):
             self.top_grid_layout.setColumnStretch(c, 1)
         self.mimo_ofdm_jrc_zero_pad_0_0_0_0 = mimo_ofdm_jrc.zero_pad(False, 5, (fft_len+cp_len)*3)
-        self.mimo_ofdm_jrc_zero_pad_0_0_0_0.set_min_output_buffer(24000)
+        self.mimo_ofdm_jrc_zero_pad_0_0_0_0.set_min_output_buffer(8000)
         self.mimo_ofdm_jrc_zero_pad_0_0_0 = mimo_ofdm_jrc.zero_pad(False, 5, (fft_len+cp_len)*3)
-        self.mimo_ofdm_jrc_zero_pad_0_0_0.set_min_output_buffer(24000)
+        self.mimo_ofdm_jrc_zero_pad_0_0_0.set_min_output_buffer(8000)
         self.mimo_ofdm_jrc_zero_pad_0_0 = mimo_ofdm_jrc.zero_pad(False, 5, (fft_len+cp_len)*3)
-        self.mimo_ofdm_jrc_zero_pad_0_0.set_min_output_buffer(24000)
+        self.mimo_ofdm_jrc_zero_pad_0_0.set_min_output_buffer(8000)
         self.mimo_ofdm_jrc_zero_pad_0 = mimo_ofdm_jrc.zero_pad(False, 5, (fft_len+cp_len)*3)
-        self.mimo_ofdm_jrc_zero_pad_0.set_min_output_buffer(24000)
-        self.mimo_ofdm_jrc_usrp_mimo_trx_0 = mimo_ofdm_jrc.usrp_mimo_trx(2, 4, 2, samp_rate, usrp_freq, delay_samp, False, 0.04, "addr0=192.168.120.2, addr1=192.168.101.2, master_clock_rate=250e6", "external,external", "external,external", "TX/RX,TX/RX,TX/RX,TX/RX", tx_gain, 0.5, 0.01, "", "RX2,RX2", rx_gain, 0.5, 0.01, 0, "", "packet_len")
+        self.mimo_ofdm_jrc_zero_pad_0.set_min_output_buffer(8000)
+        self.mimo_ofdm_jrc_usrp_mimo_trx_0 = mimo_ofdm_jrc.usrp_mimo_trx(2, 4, 2, samp_rate, usrp_freq, delay_samp, False, 0.04, "addr0=192.168.120.2, addr1=192.168.101.2, master_clock_rate=250e6", "external,external", "external,external", "TX/RX,TX/RX,TX/RX,TX/RX", tx_gain, 0.6, 0.01, "", "RX2,RX2", rx_gain, 0.6, 0.01, 0, "", "packet_len")
         self.mimo_ofdm_jrc_usrp_mimo_trx_0.set_processor_affinity([6])
+        self.mimo_ofdm_jrc_usrp_mimo_trx_0.set_min_output_buffer(24000)
         self.mimo_ofdm_jrc_stream_encoder_0 = mimo_ofdm_jrc.stream_encoder(mcs, ofdm_config.N_data, 0, False)
         self.mimo_ofdm_jrc_socket_pdu_jrc_0 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 10000)
         self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor), np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, angle_res*2, 15, 0, radar_log_file, save_radar_log, "packet_len", False)
@@ -437,10 +438,10 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.fft_vxx_0_2, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.fft_vxx_0_2_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.fft_vxx_0_3, 0))
-        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 3))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 1))
-        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 2))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 3))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 0))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 2))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0, 0), (self.fft_vxx_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0, 0), (self.fft_vxx_0_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_stream_encoder_0, 0), (self.mimo_ofdm_jrc_mimo_precoder_0, 0))

@@ -88,7 +88,7 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         self.usrp_freq = usrp_freq = 5e9
         self.fft_len = fft_len = ofdm_config.N_sc
         self.rf_frequency = rf_frequency = usrp_freq+19e9
-        self.parrent_path = parrent_path = "/home/hostpc-usrp/O-JRC/examples"
+        self.parrent_path = parrent_path = "/home/host-pc/O-JRC/examples"
         self.cp_len = cp_len = int(fft_len/4)
         self.wavelength = wavelength = 3e8/rf_frequency
         self.sync_length = sync_length = 4*(fft_len+cp_len)
@@ -341,7 +341,7 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_moving_avg_0 = mimo_ofdm_jrc.moving_avg(32, 1/32, 20000, False)
         self.mimo_ofdm_jrc_moving_avg_0.set_processor_affinity([0])
         self.mimo_ofdm_jrc_moving_avg_0.set_min_output_buffer(24000)
-        self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0 = mimo_ofdm_jrc.mimo_ofdm_equalizer(chan_est, rf_frequency, samp_rate, fft_len, cp_len, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64[3], ofdm_config.ltf_mapped_sc__ss_sym, N_tx, chan_est_file, comm_log_file, False, False)
+        self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0 = mimo_ofdm_jrc.mimo_ofdm_equalizer(chan_est, rf_frequency, samp_rate, fft_len, cp_len, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64[3], ofdm_config.ltf_mapped_sc__ss_sym, N_tx, chan_est_file, comm_log_file, chan_est_data_file ,False, False)
         self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0.set_processor_affinity([4])
         self.mimo_ofdm_jrc_gui_time_plot_1_0 = mimo_ofdm_jrc.gui_time_plot(250, "throughput", "Throughput [KByte/s]", [0,5], 10, "Received Data Throughput")
         self.mimo_ofdm_jrc_gui_time_plot_1 = mimo_ofdm_jrc.gui_time_plot(250, "per", "PER [%]", [0,102], 10, "Packet Error Rate")

@@ -376,7 +376,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/examples"'
+    value: '"/home/host-pc/O-JRC/examples"'
   states:
     bus_sink: false
     bus_source: false
@@ -806,7 +806,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: /home/haocheng/temp/static_radar_image.csv
+    file: /home/host-pc/temp/static_radar_image.csv
     type: float
     unbuffered: 'False'
     vlen: '128'
@@ -1968,7 +1968,7 @@ blocks:
     interp_factor: interp_factor_angle
     len_key: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: '0'
+    minoutbuf: '65535'
     output_len: N_tx*N_rx
   states:
     bus_sink: false
@@ -1999,6 +1999,7 @@ blocks:
     minoutbuf: '0'
     radar_chan_file: radar_chan_file
     record_len: '8'
+    stats_record: 'False'
   states:
     bus_sink: false
     bus_source: false
@@ -2013,8 +2014,8 @@ blocks:
     N_tx: N_tx
     affinity: ''
     alias: ''
-    chan_est_file: '""'
-    chan_est_smoothing: 'False'
+    chan_est_file: ''''''
+    chan_est_smoothing: 'True'
     comment: ''
     data_carriers: data_carriers_64
     debug: 'False'
@@ -2027,7 +2028,7 @@ blocks:
     pilot_carriers: pilot_carriers_64
     pilot_symbols: pilot_symbols
     radar_aided: 'False'
-    radar_log_file: '""'
+    radar_log_file: ''''''
     sync_words: preamble_designer.l_stf_ltf_64
     use_radar_streams: 'False'
   states:
@@ -2235,7 +2236,7 @@ blocks:
     comment: ''
     debug: 'False'
     maxoutbuf: '0'
-    minoutbuf: 300*(fft_len+cp_len)
+    minoutbuf: 500*(fft_len+cp_len)
     pad_front: '0'
     pad_tail: (fft_len+cp_len)*3
   states:
@@ -2253,7 +2254,7 @@ blocks:
     comment: ''
     debug: 'False'
     maxoutbuf: '0'
-    minoutbuf: 300*(fft_len+cp_len)
+    minoutbuf: 500*(fft_len+cp_len)
     pad_front: '0'
     pad_tail: (fft_len+cp_len)*3
   states:
@@ -2271,7 +2272,7 @@ blocks:
     comment: ''
     debug: 'False'
     maxoutbuf: '0'
-    minoutbuf: 300*(fft_len+cp_len)
+    minoutbuf: 500*(fft_len+cp_len)
     pad_front: '0'
     pad_tail: (fft_len+cp_len)*3
   states:
@@ -2289,7 +2290,7 @@ blocks:
     comment: ''
     debug: 'False'
     maxoutbuf: '0'
-    minoutbuf: 300*(fft_len+cp_len)
+    minoutbuf: 500*(fft_len+cp_len)
     pad_front: '0'
     pad_tail: (fft_len+cp_len)*3
   states:
@@ -3465,10 +3466,10 @@ connections:
 - [fft_vxx_0, '0', digital_ofdm_cyclic_prefixer_0, '0']
 - [fft_vxx_0_0, '0', blocks_null_sink_0, '0']
 - [fft_vxx_0_0, '0', blocks_vector_to_stream_0_0, '0']
-- [fft_vxx_0_0, '0', helper_mimo_ofdm_radar_0, '4']
+- [fft_vxx_0_0, '0', helper_mimo_ofdm_radar_0, '0']
 - [fft_vxx_0_0, '0', mimo_ofdm_jrc_mimo_ofdm_radar_0, '4']
 - [fft_vxx_0_0_0, '0', blocks_null_sink_0, '1']
-- [fft_vxx_0_0_0, '0', helper_mimo_ofdm_radar_0, '5']
+- [fft_vxx_0_0_0, '0', helper_mimo_ofdm_radar_0, '1']
 - [fft_vxx_0_0_0, '0', mimo_ofdm_jrc_mimo_ofdm_radar_0, '5']
 - [fft_vxx_0_1, '0', helper_matrix_transpose_0, '0']
 - [fft_vxx_0_1, '0', mimo_ofdm_jrc_matrix_transpose_0, '0']
@@ -3483,14 +3484,14 @@ connections:
 - [helper_mimo_ofdm_radar_0, '0', virtual_sink_0_1_0_0_0, '0']
 - [helper_mimo_precoder_0, '0', blocks_vector_to_stream_1, '0']
 - [helper_mimo_precoder_0, '0', fft_vxx_0, '0']
-- [helper_mimo_precoder_0, '0', helper_mimo_ofdm_radar_0, '0']
+- [helper_mimo_precoder_0, '0', helper_mimo_ofdm_radar_0, '2']
 - [helper_mimo_precoder_0, '1', blocks_vector_to_stream_1_0, '0']
 - [helper_mimo_precoder_0, '1', fft_vxx_0_2, '0']
-- [helper_mimo_precoder_0, '1', helper_mimo_ofdm_radar_0, '1']
+- [helper_mimo_precoder_0, '1', helper_mimo_ofdm_radar_0, '3']
 - [helper_mimo_precoder_0, '2', fft_vxx_0_2_0, '0']
-- [helper_mimo_precoder_0, '2', helper_mimo_ofdm_radar_0, '2']
+- [helper_mimo_precoder_0, '2', helper_mimo_ofdm_radar_0, '4']
 - [helper_mimo_precoder_0, '3', fft_vxx_0_2_0_0, '0']
-- [helper_mimo_precoder_0, '3', helper_mimo_ofdm_radar_0, '3']
+- [helper_mimo_precoder_0, '3', helper_mimo_ofdm_radar_0, '5']
 - [helper_ofdm_cyclic_prefix_remover_0_0, '0', fft_vxx_0_0, '0']
 - [helper_ofdm_cyclic_prefix_remover_0_0_0, '0', fft_vxx_0_0_0, '0']
 - [helper_range_angle_estimator_0, params, helper_gui_time_plot_0_0, stats]
@@ -3512,17 +3513,17 @@ connections:
 - [mimo_ofdm_jrc_mimo_ofdm_radar_0, '0', virtual_sink_0_1_0_0_0, '0']
 - [mimo_ofdm_jrc_mimo_precoder_0, '0', blocks_vector_to_stream_1, '0']
 - [mimo_ofdm_jrc_mimo_precoder_0, '0', fft_vxx_0, '0']
-- [mimo_ofdm_jrc_mimo_precoder_0, '0', helper_mimo_ofdm_radar_0, '0']
+- [mimo_ofdm_jrc_mimo_precoder_0, '0', helper_mimo_ofdm_radar_0, '2']
 - [mimo_ofdm_jrc_mimo_precoder_0, '0', mimo_ofdm_jrc_mimo_ofdm_radar_0, '0']
 - [mimo_ofdm_jrc_mimo_precoder_0, '1', blocks_vector_to_stream_1_0, '0']
 - [mimo_ofdm_jrc_mimo_precoder_0, '1', fft_vxx_0_2, '0']
-- [mimo_ofdm_jrc_mimo_precoder_0, '1', helper_mimo_ofdm_radar_0, '1']
+- [mimo_ofdm_jrc_mimo_precoder_0, '1', helper_mimo_ofdm_radar_0, '3']
 - [mimo_ofdm_jrc_mimo_precoder_0, '1', mimo_ofdm_jrc_mimo_ofdm_radar_0, '1']
 - [mimo_ofdm_jrc_mimo_precoder_0, '2', fft_vxx_0_2_0, '0']
-- [mimo_ofdm_jrc_mimo_precoder_0, '2', helper_mimo_ofdm_radar_0, '2']
+- [mimo_ofdm_jrc_mimo_precoder_0, '2', helper_mimo_ofdm_radar_0, '4']
 - [mimo_ofdm_jrc_mimo_precoder_0, '2', mimo_ofdm_jrc_mimo_ofdm_radar_0, '2']
 - [mimo_ofdm_jrc_mimo_precoder_0, '3', fft_vxx_0_2_0_0, '0']
-- [mimo_ofdm_jrc_mimo_precoder_0, '3', helper_mimo_ofdm_radar_0, '3']
+- [mimo_ofdm_jrc_mimo_precoder_0, '3', helper_mimo_ofdm_radar_0, '5']
 - [mimo_ofdm_jrc_mimo_precoder_0, '3', mimo_ofdm_jrc_mimo_ofdm_radar_0, '3']
 - [mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0, '0', fft_vxx_0_0, '0']
 - [mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0, '0', fft_vxx_0_0_0, '0']

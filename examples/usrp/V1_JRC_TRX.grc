@@ -406,7 +406,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"/home/hostpc-usrp/O-JRC/examples"'
+    value: '"/home/host-pc/O-JRC/examples"'
   states:
     bus_sink: false
     bus_source: false
@@ -1529,12 +1529,12 @@ blocks:
     len_key: '"packet_len"'
     lo_offset_rx: '0'
     maxoutbuf: '0'
-    minoutbuf: '0'
+    minoutbuf: '24000'
     num_delay_samps: delay_samp
     samp_rate: samp_rate
     time_sources: '"external,external"'
-    timeout_rx: '0.5'
-    timeout_tx: '0.5'
+    timeout_rx: '0.6'
+    timeout_tx: '0.6'
     update_period: '0.04'
     wait_rx: '0.01'
     wait_tx: '0.01'
@@ -1555,7 +1555,7 @@ blocks:
     comment: ''
     debug: 'False'
     maxoutbuf: '0'
-    minoutbuf: 300*(fft_len+cp_len)
+    minoutbuf: 100*(fft_len+cp_len)
     pad_front: '5'
     pad_tail: (fft_len+cp_len)*3
   states:
@@ -1573,7 +1573,7 @@ blocks:
     comment: ''
     debug: 'False'
     maxoutbuf: '0'
-    minoutbuf: 300*(fft_len+cp_len)
+    minoutbuf: 100*(fft_len+cp_len)
     pad_front: '5'
     pad_tail: (fft_len+cp_len)*3
   states:
@@ -1591,7 +1591,7 @@ blocks:
     comment: ''
     debug: 'False'
     maxoutbuf: '0'
-    minoutbuf: 300*(fft_len+cp_len)
+    minoutbuf: 100*(fft_len+cp_len)
     pad_front: '5'
     pad_tail: (fft_len+cp_len)*3
   states:
@@ -1609,7 +1609,7 @@ blocks:
     comment: ''
     debug: 'False'
     maxoutbuf: '0'
-    minoutbuf: 300*(fft_len+cp_len)
+    minoutbuf: 100*(fft_len+cp_len)
     pad_front: '5'
     pad_tail: (fft_len+cp_len)*3
   states:

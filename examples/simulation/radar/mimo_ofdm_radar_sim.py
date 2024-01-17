@@ -86,7 +86,7 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
         self.rf_freq = rf_freq = freq+20e9
         self.wavelength = wavelength = 3e8/rf_freq
         self.samp_rate = samp_rate = 125000000
-        self.parrent_path = parrent_path = "/home/haocheng/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/examples"
+        self.parrent_path = parrent_path = "/home/host-pc/O-JRC/examples"
         self.noise_figure_dB = noise_figure_dB = 10
         self.interp_factor_angle = interp_factor_angle = 16
         self.interp_factor = interp_factor = 8
@@ -357,13 +357,13 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
         self._noise_figure_dB_win = RangeWidget(self._noise_figure_dB_range, self.set_noise_figure_dB, 'Noise Figure (dB)', "counter_slider", float)
         self.top_layout.addWidget(self._noise_figure_dB_win)
         self.mimo_ofdm_jrc_zero_pad_0_0_0_0 = mimo_ofdm_jrc.zero_pad(False, 0, (fft_len+cp_len)*3)
-        self.mimo_ofdm_jrc_zero_pad_0_0_0_0.set_min_output_buffer(24000)
+        self.mimo_ofdm_jrc_zero_pad_0_0_0_0.set_min_output_buffer(40000)
         self.mimo_ofdm_jrc_zero_pad_0_0_0 = mimo_ofdm_jrc.zero_pad(False, 0, (fft_len+cp_len)*3)
-        self.mimo_ofdm_jrc_zero_pad_0_0_0.set_min_output_buffer(24000)
+        self.mimo_ofdm_jrc_zero_pad_0_0_0.set_min_output_buffer(40000)
         self.mimo_ofdm_jrc_zero_pad_0_0 = mimo_ofdm_jrc.zero_pad(False, 0, (fft_len+cp_len)*3)
-        self.mimo_ofdm_jrc_zero_pad_0_0.set_min_output_buffer(24000)
+        self.mimo_ofdm_jrc_zero_pad_0_0.set_min_output_buffer(40000)
         self.mimo_ofdm_jrc_zero_pad_0 = mimo_ofdm_jrc.zero_pad(False, 0, (fft_len+cp_len)*3)
-        self.mimo_ofdm_jrc_zero_pad_0.set_min_output_buffer(24000)
+        self.mimo_ofdm_jrc_zero_pad_0.set_min_output_buffer(40000)
         self.mimo_ofdm_jrc_target_simulator_0_0_0_0 = mimo_ofdm_jrc.target_simulator([trgt_range], [trgt_velocity], [10**(trgt_rcs_dbsm/10.0)], [trgt_angle], TX4_RXs, samp_rate, rf_freq, -40, False, False, "packet_len", False)
         self.mimo_ofdm_jrc_target_simulator_0_0_0_0.set_min_output_buffer(64000)
         self.mimo_ofdm_jrc_target_simulator_0_0_0 = mimo_ofdm_jrc.target_simulator([trgt_range], [trgt_velocity], [10**(trgt_rcs_dbsm/10.0)], [trgt_angle], TX3_RXs, samp_rate, rf_freq, -40, False, False, "packet_len", False)
@@ -376,10 +376,11 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor), np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, angle_res*2, 15, 0, radar_log_file, save_radar_log, "packet_len", False)
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
-        self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, data_carriers_64, pilot_carriers_64, pilot_symbols, preamble_designer.l_stf_ltf_64, preamble_designer.ltf_mapped_sc__ss_sym, "", False, "", False, False, False, "packet_len",  False)
+        self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, data_carriers_64, pilot_carriers_64, pilot_symbols, preamble_designer.l_stf_ltf_64, preamble_designer.ltf_mapped_sc__ss_sym, '', True, '', False, False, False, "packet_len",  False)
         self.mimo_ofdm_jrc_mimo_precoder_0.set_min_output_buffer(800)
-        self.mimo_ofdm_jrc_mimo_ofdm_radar_0 = mimo_ofdm_jrc.mimo_ofdm_radar(fft_len, N_tx, N_rx, N_tx, len(preamble_designer.l_stf_ltf_64)+1, False, False, 8, interp_factor, False, radar_chan_file, "packet_len", False)
+        self.mimo_ofdm_jrc_mimo_ofdm_radar_0 = mimo_ofdm_jrc.mimo_ofdm_radar(fft_len, N_tx, N_rx, N_tx, len(preamble_designer.l_stf_ltf_64)+1, False, False, 8, interp_factor, False, radar_chan_file, False, "packet_len",  False)
         self.mimo_ofdm_jrc_matrix_transpose_0 = mimo_ofdm_jrc.matrix_transpose(fft_len*interp_factor, N_tx*N_rx, interp_factor_angle, False, "packet_len")
+        self.mimo_ofdm_jrc_matrix_transpose_0.set_min_output_buffer(65535)
         self.mimo_ofdm_jrc_gui_time_plot_2 = mimo_ofdm_jrc.gui_time_plot(250, "range", "Range (m)", [0,20], 10, "Range Estimate")
         self.mimo_ofdm_jrc_gui_time_plot_1 = mimo_ofdm_jrc.gui_time_plot(250, "angle", "Angle (degree)", [-70,70], 10, "Angle Estimate")
         self.mimo_ofdm_jrc_gui_time_plot_0 = mimo_ofdm_jrc.gui_time_plot(250, "snr", "SNR [dB]", [0,40], 10, "Signal-to-Noise Ratio")
@@ -423,7 +424,7 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
         self.blocks_multiply_const_vxx_0_0.set_min_output_buffer(64000)
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_cc(tx_multiplier)
         self.blocks_multiply_const_vxx_0.set_min_output_buffer(64000)
-        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_float*128, '/home/haocheng/temp/static_radar_image.csv', False)
+        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_float*128, '/home/host-pc/temp/static_radar_image.csv', False)
         self.blocks_file_sink_0.set_unbuffered(False)
         self.blocks_complex_to_mag_squared_0_0 = blocks.complex_to_mag_squared(N_tx*N_rx*interp_factor_angle)
         self.blocks_complex_to_mag_squared_0_0.set_processor_affinity([9])
@@ -477,10 +478,10 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.fft_vxx_0_2, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.fft_vxx_0_2_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.fft_vxx_0_2_0_0, 0))
-        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 2))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 3))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 1))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 0))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0, 0), (self.fft_vxx_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0, 0), (self.fft_vxx_0_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_stream_encoder_0, 0), (self.mimo_ofdm_jrc_mimo_precoder_0, 0))
@@ -727,7 +728,7 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
 
     def set_capture_radar(self, capture_radar):
         self.capture_radar = capture_radar
-        self.mimo_ofdm_jrc_mimo_ofdm_radar_0.capture_radar_data(self.capture_radar)
+        self.mimo_ofdm_jrc_mimo_ofdm_radar_0.capture_radar_data(self.capture_radar);
 
     def get_angle_res(self):
         return self.angle_res
