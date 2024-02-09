@@ -1229,7 +1229,7 @@ blocks:
     vlen: N_tx*N_rx*interp_factor_angle
     x_axis_ticks: '[-70, 70, 10]'
     xlabel: '"Angle"'
-    y_axis_ticks: '[0, 20, 4]'
+    y_axis_ticks: '[0, 10, 2]'
     ylabel: '"Range (m)"'
   states:
     bus_sink: false

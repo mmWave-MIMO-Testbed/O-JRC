@@ -110,6 +110,18 @@ blocks:
     coordinate: [608, 180.0]
     rotation: 0
     state: enabled
+- name: chan_est_ndp_file
+  id: variable
+  parameters:
+    comment: ''
+    value: parrent_path+"/data/chan_est_ndp.csv"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [992, 252.0]
+    rotation: 0
+    state: enabled
 - name: comm_log_file
   id: variable
   parameters:
@@ -831,6 +843,7 @@ blocks:
     bw: samp_rate
     chan_est_data_file: chan_est_data_file
     chan_est_file: chan_est_file
+    chan_est_ndp_file: chan_est_ndp_file
     comm_log_file: comm_log_file
     comment: ''
     cp_len: cp_len

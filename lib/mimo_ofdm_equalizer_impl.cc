@@ -50,6 +50,7 @@ namespace gr {
                                 const std::string& chan_est_file,
                                 const std::string& comm_log_file,
                                 const std::string& chan_est_data_file,
+                                const std::string& chan_est_ndp_file,
                                 bool stats_record,
                                 bool debug)
     {
@@ -68,6 +69,7 @@ namespace gr {
                                         chan_est_file,
                                         comm_log_file,
                                         chan_est_data_file,
+                                        chan_est_ndp_file,
                                         stats_record,
                                         debug));
 
@@ -91,6 +93,7 @@ namespace gr {
                                                         const std::string& chan_est_file,
                                                         const std::string& comm_log_file,
                                                         const std::string& chan_est_data_file,
+                                                        const std::string& chan_est_ndp_file,
                                                         bool stats_record,                                                        
                                                         bool debug)
       : gr::block("mimo_ofdm_equalizer",
@@ -113,6 +116,7 @@ namespace gr {
                 d_chan_est_file(chan_est_file),
                 d_comm_log_file(comm_log_file),
                 d_chan_est_data_file(chan_est_data_file),
+                d_chan_est_ndp_file(chan_est_ndp_file),
                 d_stats_record(stats_record),
                 d_debug(debug)
     {
@@ -401,6 +405,15 @@ namespace gr {
                                                                 "",  //_matPrefix
                                                                 "\n");  //_matSuffix
                         std::ofstream file_stream(d_chan_est_file, std::ofstream::trunc);
+
+                        const static Eigen::IOFormat ndp_csv_formatting(Eigen::FullPrecision, Eigen::DontAlignCols, 
+                                                                ",",   //_coeffSeparator
+                                                                ".",   //_rowSeparator
+                                                                "",     //_rowPrefix
+                                                                "",     //_rowSuffix
+                                                                "",  //_matPrefix
+                                                                ".\n");  //_matSuffix
+                        std::ofstream file_stream_ndp(d_chan_est_ndp_file, std::ofstream::app);
                         // TODO fix eigen3 mapping here
                         // Eigen::Matrix<gr_complex,Eigen::Dynamic,Eigen::Dynamic, Eigen::RowMajor> X_ltf;
                         
@@ -428,12 +441,25 @@ namespace gr {
                                 throw std::runtime_error("[OFDM Equalizer] Could not open file!!");
                             }
                             
+                            if (file_stream_ndp.is_open())
+                            {
+                                file_stream_ndp << i_sc << ":";
+                                file_stream_ndp << H_mimo.transpose().format(ndp_csv_formatting);
+                                file_stream.flush();
+                            }
+                            else
+                            {
+                                throw std::runtime_error("[OFDM Equalizer] Could not open NDP file!!");
+                            }
+
+
                             if (std::find(d_active_carriers.begin(), d_active_carriers.end(), i_sc) != d_active_carriers.end())
                             {
                                 chan_est_vector_mean += H_mimo;
                             }
                         }
                         file_stream.close();
+                        file_stream_ndp.close();
 
                         chan_est_vector_mean = chan_est_vector_mean/d_N_active_carr;
 

@@ -368,7 +368,7 @@ namespace mimo_ofdm_jrc {
             
             file_stream.close();
 
-            std::cout << "[MIMO OFDM RADAR] Radar image captured!" << std::endl;
+            //std::cout << "[MIMO OFDM RADAR] Radar image captured!" << std::endl;
 
             // captured = true;
         }
@@ -461,7 +461,7 @@ namespace mimo_ofdm_jrc {
             
             file_stream.close();
 
-            std::cout << "[MIMO OFDM RADAR] Radar image captured!" << std::endl;
+            //std::cout << "[MIMO OFDM RADAR] Radar image captured!" << std::endl;
 
             // captured = true;
         }

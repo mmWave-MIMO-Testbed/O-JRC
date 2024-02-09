@@ -75,6 +75,7 @@ namespace gr {
                             const std::string& chan_est_file,
                             const std::string& comm_log_file,
                             const std::string& chan_est_data_file,
+                            const std::string& chan_est_ndp_file,
                             bool stats_record,                            
                             bool debug);
     };

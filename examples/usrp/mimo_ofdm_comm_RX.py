@@ -100,6 +100,7 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         self.packet_data_file = packet_data_file = parrent_path+"/data/packet_data.csv"
         self.corr_window_size = corr_window_size = int(fft_len/2)
         self.comm_log_file = comm_log_file = parrent_path+"/data/comm_log.csv"
+        self.chan_est_ndp_file = chan_est_ndp_file = parrent_path+"/data/chan_est_ndp.csv"
         self.chan_est_file = chan_est_file = parrent_path+"/data/chan_est.csv"
         self.chan_est_data_file = chan_est_data_file = parrent_path+"/data/chan_est_data.csv"
         self.chan_est = chan_est = 1
@@ -341,7 +342,7 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_moving_avg_0 = mimo_ofdm_jrc.moving_avg(32, 1/32, 20000, False)
         self.mimo_ofdm_jrc_moving_avg_0.set_processor_affinity([0])
         self.mimo_ofdm_jrc_moving_avg_0.set_min_output_buffer(24000)
-        self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0 = mimo_ofdm_jrc.mimo_ofdm_equalizer(chan_est, rf_frequency, samp_rate, fft_len, cp_len, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64[3], ofdm_config.ltf_mapped_sc__ss_sym, N_tx, chan_est_file, comm_log_file, chan_est_data_file ,False, False)
+        self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0 = mimo_ofdm_jrc.mimo_ofdm_equalizer(chan_est, rf_frequency, samp_rate, fft_len, cp_len, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64[3], ofdm_config.ltf_mapped_sc__ss_sym, N_tx, chan_est_file, comm_log_file, chan_est_data_file,chan_est_ndp_file ,False, False)
         self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0.set_processor_affinity([4])
         self.mimo_ofdm_jrc_gui_time_plot_1_0 = mimo_ofdm_jrc.gui_time_plot(250, "throughput", "Throughput [KByte/s]", [0,5], 10, "Received Data Throughput")
         self.mimo_ofdm_jrc_gui_time_plot_1 = mimo_ofdm_jrc.gui_time_plot(250, "per", "PER [%]", [0,102], 10, "Packet Error Rate")
@@ -450,6 +451,7 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         self.parrent_path = parrent_path
         self.set_chan_est_data_file(self.parrent_path+"/data/chan_est_data.csv")
         self.set_chan_est_file(self.parrent_path+"/data/chan_est.csv")
+        self.set_chan_est_ndp_file(self.parrent_path+"/data/chan_est_ndp.csv")
         self.set_comm_log_file(self.parrent_path+"/data/comm_log.csv")
         self.set_packet_data_file(self.parrent_path+"/data/packet_data.csv")
         self.set_radar_log_file(self.parrent_path+"/data/radar_log.csv")
@@ -529,6 +531,12 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
 
     def set_comm_log_file(self, comm_log_file):
         self.comm_log_file = comm_log_file
+
+    def get_chan_est_ndp_file(self):
+        return self.chan_est_ndp_file
+
+    def set_chan_est_ndp_file(self, chan_est_ndp_file):
+        self.chan_est_ndp_file = chan_est_ndp_file
 
     def get_chan_est_file(self):
         return self.chan_est_file
