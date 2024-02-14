@@ -669,6 +669,18 @@ blocks:
     coordinate: [1032, 232.0]
     rotation: 0
     state: true
+- name: signal_strength_log_file
+  id: variable
+  parameters:
+    comment: ''
+    value: parrent_path+"/data/signal_strength_log.csv"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [216, 444.0]
+    rotation: 0
+    state: enabled
 - name: tx_gain
   id: variable_qtgui_range
   parameters:
@@ -1455,7 +1467,7 @@ blocks:
     debug: 'False'
     len_key: '"packet_len"'
     maxoutbuf: '0'
-    minoutbuf: '0'
+    minoutbuf: '48000'
     noise_discard_angle: angle_res*2
     noise_discard_range: R_res*2
     power_threshold: '0'
@@ -1463,12 +1475,13 @@ blocks:
     snr_threshold: '15'
     stats_path: radar_log_file
     stats_record: save_radar_log
+    stats_signal_strength_path: signal_strength_log_file
     vlen: N_tx*N_rx*interp_factor_angle
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [992, 2064.0]
+    coordinate: [696, 2116.0]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_socket_pdu_jrc_0

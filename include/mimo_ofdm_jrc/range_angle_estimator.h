@@ -53,6 +53,7 @@ namespace gr {
                         float snr_threshold, 
                         float power_threshold, 
                         const std::string& stats_path,
+                        const std::string& stats_signal_strength_path,
                         bool stats_record, 
                         const std::string& len_key = "packet_len",
                         bool debug = false);

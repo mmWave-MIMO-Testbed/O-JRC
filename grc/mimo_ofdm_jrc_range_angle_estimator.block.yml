@@ -4,7 +4,7 @@ category: '[MIMO OFDM JRC]'
 
 templates:
   imports: import mimo_ofdm_jrc
-  make: mimo_ofdm_jrc.range_angle_estimator(${vlen}, ${range_bins}, ${angle_bins}, ${noise_discard_range}, ${noise_discard_angle}, ${snr_threshold}, ${power_threshold}, ${stats_path}, ${stats_record}, ${len_key}, ${debug})
+  make: mimo_ofdm_jrc.range_angle_estimator(${vlen}, ${range_bins}, ${angle_bins}, ${noise_discard_range}, ${noise_discard_angle}, ${snr_threshold}, ${power_threshold}, ${stats_path}, ${stats_signal_strength_path}, ${stats_record}, ${len_key}, ${debug})
 
   callbacks:
   - set_snr_threshold(${snr_threshold});
@@ -35,6 +35,10 @@ parameters:
     dtype: float
 -   id: stats_path
     label: Path to Radar Stats
+    dtype: string
+    default: '""'
+-   id: stats_signal_strength_path
+    label: Path to signal strength Stats
     dtype: string
     default: '""'
 -   id: stats_record

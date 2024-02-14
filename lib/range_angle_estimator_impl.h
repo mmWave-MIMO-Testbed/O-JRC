@@ -40,6 +40,7 @@ namespace gr {
         bool d_stats_record; 
         bool d_debug;
         const std::string d_stats_path;
+        const std::string d_stats_signal_strength_path;
         bool d_new_stat_started;
 
         std::ofstream file_stream;
@@ -56,6 +57,7 @@ namespace gr {
                         float snr_threshold, 
                         float power_threshold,
                         const std::string& stats_path, 
+                        const std::string& stats_signal_strength_path,
                         bool stats_record, 
                         const std::string& len_key = "packet_len",
                         bool debug = false);

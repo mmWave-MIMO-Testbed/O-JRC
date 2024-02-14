@@ -93,6 +93,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.wavelength = wavelength = 3e8/rf_freq
         self.tx_multiplier = tx_multiplier = 0.42
         self.tx_gain = tx_gain = 42
+        self.signal_strength_log_file = signal_strength_log_file = parrent_path+"/data/signal_strength_log.csv"
         self.save_radar_log = save_radar_log = False
         self.rx_gain = rx_gain = 40
         self.radar_log_file = radar_log_file = parrent_path+"/data/radar_log.csv"
@@ -352,7 +353,8 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_usrp_mimo_trx_0.set_min_output_buffer(24000)
         self.mimo_ofdm_jrc_stream_encoder_0 = mimo_ofdm_jrc.stream_encoder(mcs, ofdm_config.N_data, 0, False)
         self.mimo_ofdm_jrc_socket_pdu_jrc_0 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 10000)
-        self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor), np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, angle_res*2, 15, 0, radar_log_file, save_radar_log, "packet_len", False)
+        self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor), np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, angle_res*2, 15, 0, radar_log_file, signal_strength_log_file, save_radar_log, "packet_len", False)
+        self.mimo_ofdm_jrc_range_angle_estimator_0.set_min_output_buffer(48000)
         self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(100, packet_data_file)
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
@@ -438,10 +440,10 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.fft_vxx_0_2, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.fft_vxx_0_2_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.fft_vxx_0_3, 0))
-        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 0))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 2))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 1))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 3))
-        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 2))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 0))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0, 0), (self.fft_vxx_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0, 0), (self.fft_vxx_0_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_stream_encoder_0, 0), (self.mimo_ofdm_jrc_mimo_precoder_0, 0))
@@ -490,6 +492,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.set_radar_chan_file(self.parrent_path+"/data/radar_chan.csv")
         self.set_radar_data_file(self.parrent_path+"/data/radar_data.csv")
         self.set_radar_log_file(self.parrent_path+"/data/radar_log.csv")
+        self.set_signal_strength_log_file(self.parrent_path+"/data/signal_strength_log.csv")
 
     def get_interp_factor_angle(self):
         return self.interp_factor_angle
@@ -544,6 +547,12 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
     def set_tx_gain(self, tx_gain):
         self.tx_gain = tx_gain
         self.mimo_ofdm_jrc_usrp_mimo_trx_0.set_tx_gain(self.tx_gain)
+
+    def get_signal_strength_log_file(self):
+        return self.signal_strength_log_file
+
+    def set_signal_strength_log_file(self, signal_strength_log_file):
+        self.signal_strength_log_file = signal_strength_log_file
 
     def get_save_radar_log(self):
         return self.save_radar_log

@@ -37,6 +37,7 @@ namespace gr {
                         float snr_threshold, 
                         float power_threshold,
                         const std::string& stats_path, 
+                        const std::string& signal_strength_path,
                         bool stats_record, 
                         const std::string& len_key,
                         bool debug)
@@ -50,6 +51,7 @@ namespace gr {
                                         snr_threshold, 
                                         power_threshold, 
                                         stats_path,
+                                        signal_strength_path,
                                         stats_record, 
                                         len_key,
                                         debug));
@@ -67,6 +69,7 @@ namespace gr {
                                                             float snr_threshold, 
                                                             float power_threshold, 
                                                             const std::string& stats_path,
+                                                            const std::string& signal_strength_path,
                                                             bool stats_record, 
                                                             const std::string& len_key,
                                                             bool debug)
@@ -82,6 +85,7 @@ namespace gr {
                 d_snr_threshold(snr_threshold), 
                 d_power_threshold(power_threshold), 
                 d_stats_path(stats_path),
+                d_stats_signal_strength_path(signal_strength_path),
                 d_stats_record(stats_record), 
                 d_debug(debug),
                 file_stream(d_stats_path, std::ofstream::app)
@@ -131,14 +135,19 @@ namespace gr {
         float mean_power = 0;
         float peak_power = -1;
         float curr_power;
+        int signal_strength_index = 0;
         int peak_range_idx = -1;
         int peak_angle_idx = -1;
+        int strength_threshold = 25;
 
         for (int i_range = 0; i_range < n_inputs; i_range++)  // go through range axis
         {
             for (int i_angle = 0; i_angle < d_vlen; i_angle++) // go through angle axis
             {   
                 curr_power = std::pow(std::abs( in[i_angle + d_vlen * i_range] ), 2);
+                // Here this is the order of processing data.
+                // in[] is CSI vector, i_angle is index of angle bin, i_range is the index of range bin
+                // d_vlen is defined in GNU-Radio
                 mean_power += curr_power;
 
                 if(curr_power > peak_power)
@@ -147,7 +156,34 @@ namespace gr {
                     peak_range_idx = i_range;
                     peak_angle_idx = i_angle; 
                 }
+
+                if(d_stats_record && curr_power>=strength_threshold)
+                {
+                    file_stream.open(d_stats_signal_strength_path, std::ofstream::app);
+
+                    dout << "[RANGE-ANGLE ESTIMATOR] d_stats_path:" << d_stats_signal_strength_path << ", " << file_stream.is_open() << std::endl;
+
+                    if (file_stream.is_open())
+                    {
+                        if(!d_new_stat_started)
+                        {
+                            file_stream << "\n NEW RECORD - " << current_date_time() <<", \t" << "current_power,\t range,\t angle" <<"\n";
+                            d_new_stat_started = true;
+                        }
+                        file_stream<< signal_strength_index << ", \t" << curr_power << ", \t" << d_range_bins[i_range] << ", \t" << d_angle_bins[i_angle]<< "\n" ;
+                        file_stream.flush();
+                        file_stream.close();
+                    }
+                    else
+                    {
+                        dout << "[RANGE-ANGLE ESTIMATOR] d_stats_signal_strength_path:" << d_stats_signal_strength_path << ", " << file_stream.is_open() << std::endl;
+
+                        throw std::runtime_error("[STREAM DECODER] Could not open signal strength file!!");
+                    }
+                    signal_strength_index += 1;
+                }        
             }
+
         } //go through all angle-range combinations and find the highest power point and index of angle & range
         float angle_val = d_angle_bins[peak_angle_idx];
         float range_val = d_range_bins[peak_range_idx];
