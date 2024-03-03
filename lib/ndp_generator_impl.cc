@@ -115,7 +115,7 @@ namespace gr {
 
         d_enabled = false; // reset the enable flag
 
-        boost::this_thread::sleep(boost::posix_time::milliseconds(10));
+        boost::this_thread::sleep(boost::posix_time::milliseconds(5));
         
         if (boost::this_thread::interruption_requested())
         {

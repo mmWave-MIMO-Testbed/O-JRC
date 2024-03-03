@@ -356,7 +356,7 @@ namespace mimo_ofdm_jrc {
 
             if (file_stream.is_open())
             {
-                file_stream << current_date_time2() << ", " << d_N_tx << ", " << d_N_rx << ", " << d_fft_len << ".";
+                //file_stream << current_date_time2() << ", " << d_N_tx << ", " << d_N_rx << ", " << d_fft_len << ".";
                 file_stream << H_radar.transpose().format(csv_formatting);
                 file_stream << "\n";
                 file_stream.flush();

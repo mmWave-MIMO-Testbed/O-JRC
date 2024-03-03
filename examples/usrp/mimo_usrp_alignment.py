@@ -791,7 +791,7 @@ class mimo_usrp_alignment(gr.top_block, Qt.QWidget):
         self.connect((self.mimo_ofdm_jrc_fft_peak_detect_0_0, 2), (self.qtgui_number_sink_0_0_0_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_fft_peak_detect_0_0, 1), (self.qtgui_number_sink_0_0_0_1, 0))
         self.connect((self.mimo_ofdm_jrc_fft_peak_detect_0_0, 0), (self.qtgui_number_sink_0_1_0, 0))
-        self.connect((self.mimo_ofdm_jrc_usrp_mimo_trx_0, 1), (self.blocks_complex_to_imag_0_0, 0))
+        self.connect((self.mimo_ofdm_jrc_usrp_mimo_trx_0, 0), (self.blocks_complex_to_imag_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_usrp_mimo_trx_0, 0), (self.blocks_complex_to_real_0, 0))
         self.connect((self.mimo_ofdm_jrc_usrp_mimo_trx_0, 0), (self.blocks_multiply_conjugate_cc_0, 0))
         self.connect((self.mimo_ofdm_jrc_usrp_mimo_trx_0, 1), (self.blocks_multiply_const_vxx_0, 0))

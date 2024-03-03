@@ -138,7 +138,7 @@ namespace gr {
         int signal_strength_index = 0;
         int peak_range_idx = -1;
         int peak_angle_idx = -1;
-        int strength_threshold = 25;
+        //int strength_threshold = 30;
 
         for (int i_range = 0; i_range < n_inputs; i_range++)  // go through range axis
         {
@@ -157,7 +157,7 @@ namespace gr {
                     peak_angle_idx = i_angle; 
                 }
 
-                if(d_stats_record && curr_power>=strength_threshold)
+                if(d_stats_record && curr_power >= d_power_threshold)
                 {
                     file_stream.open(d_stats_signal_strength_path, std::ofstream::app);
 

@@ -262,7 +262,7 @@ namespace gr {
                 {
                     if(!d_new_stat_started)
                     {
-                        file_stream << "\n NEW RECORD - " << current_date_time() << "time, CRC, type, snr, data_snr, data_CRC, per_val, Throughput" <<"\n";;
+                        file_stream << "\n NEW RECORD - " << current_date_time() << "time, CRC, type, est_snr, data_snr, data_CRC, reward, per_val, Throughput" <<"\n";;
                         file_stream.flush();
                         d_new_stat_started = true;
                     }
@@ -359,7 +359,7 @@ namespace gr {
                         file_stream << current_date_time2() << ", \t" << 0 << ", \t" << (int) d_packet_type << ", \t" << d_snr_est << ", \t" <<d_snr_data_est << ", \t" << reward_val << ", \t" << per_val <<", \t" << tpt_val << ", \t";
                         for (int i = 0; i < chan_est_mean.size(); i++)
                         {
-                            file_stream << chan_est_mean[i] << ";";
+                            file_stream << chan_est_mean[i] << ".";
                         }
                         file_stream << "\n";
                         file_stream.flush();
@@ -452,7 +452,7 @@ namespace gr {
                     file_stream << current_date_time2() << ", \t" << 1 << ", \t" << (int) d_packet_type << ", \t" << d_snr_est << ", \t" <<d_snr_data_est << ", \t" << reward_val << ", \t" << per_val <<", \t" << tpt_val << ", \t"; 
                     for (int i = 0; i < chan_est_mean.size(); i++)
                     {
-                        file_stream << chan_est_mean[i] << ";";
+                        file_stream << chan_est_mean[i] << ".";
                     }
                     file_stream << "\n";
                     file_stream.flush();

@@ -439,7 +439,7 @@ namespace gr {
 		uhd::stream_cmd_t stream_cmd(uhd::stream_cmd_t::STREAM_MODE_NUM_SAMPS_AND_DONE);
 		// std::cout << "[USRP] Total Number of Samples for TX/RX : " << total_num_samps << std::endl;
 		stream_cmd.num_samps = total_num_samps;
-		stream_cmd.stream_now = false;
+		stream_cmd.stream_now = false; // default false
 		stream_cmd.time_spec = d_time_now_rx + uhd::time_spec_t(d_wait_rx);
 
         // dout << "[USRP] Will receive samples: " << total_num_samps << std::endl;

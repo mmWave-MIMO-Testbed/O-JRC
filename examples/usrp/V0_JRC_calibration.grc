@@ -558,7 +558,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1008, 444.0]
+    coordinate: [1016, 452.0]
     rotation: 0
     state: enabled
 - name: blocks_multiply_const_vxx_0_0
@@ -1945,9 +1945,9 @@ connections:
 - [mimo_ofdm_jrc_fft_peak_detect_0_0, '1', qtgui_number_sink_0_0_0_1, '0']
 - [mimo_ofdm_jrc_fft_peak_detect_0_0, '2', blocks_divide_xx_0, '1']
 - [mimo_ofdm_jrc_fft_peak_detect_0_0, '2', qtgui_number_sink_0_0_0_0_0, '0']
+- [mimo_ofdm_jrc_usrp_mimo_trx_0, '0', blocks_complex_to_imag_0_0, '0']
 - [mimo_ofdm_jrc_usrp_mimo_trx_0, '0', blocks_complex_to_real_0, '0']
 - [mimo_ofdm_jrc_usrp_mimo_trx_0, '0', virtual_sink_0, '0']
-- [mimo_ofdm_jrc_usrp_mimo_trx_0, '1', blocks_complex_to_imag_0_0, '0']
 - [mimo_ofdm_jrc_usrp_mimo_trx_0, '1', blocks_multiply_const_vxx_0, '0']
 - [radar_ts_fft_cc_0_2, '0', blocks_complex_to_mag_0_0, '0']
 - [radar_ts_fft_cc_0_2, '0', mimo_ofdm_jrc_fft_peak_detect_0, '0']

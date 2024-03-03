@@ -54,6 +54,7 @@ speed_user = 0.1
 start_time = time.time()
 total_time = time.time()
 end_time = arc_length / speed_user *10
+end_time = 35
 angle_bin = -60
 record_flag = 0
 crc_flag = 0
@@ -69,8 +70,9 @@ while total_time-start_time <= end_time:
     test_packet.packet_type = 1   # 1 for NDP 2 for data
     test_packet.packet_size = 300
     now_time = time.time()
-    #last_data_timestamp = datetime.now() #Self-test
-    test_comm = data_interface.load_comm_data(comm_log_path)
+    last_data_timestamp = datetime.now() #Self-test
+    test_comm.CRC = 1 #Self-test
+    #test_comm = data_interface.load_comm_data(comm_log_path)
     test_radar = data_interface.load_radar_data(radar_log_path) # update radar info
     time_diff = now_time - previous_time
 
@@ -91,15 +93,15 @@ while total_time-start_time <= end_time:
             snr_array = np.append(snr_array,test_comm.data_snr)
         if record_flag == 1:
             data_flag.append(test_comm.data_snr)
-        data_interface.write_plot_log(2, test_radar.est_angle, curr_beamforming_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
-    elif time_diff >= 0.2:
+        #data_interface.write_plot_log(2, test_radar.est_angle, curr_beamforming_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
+    elif time_diff >= 0.04:
         #last_data_timestamp = current_time
         curr_beamforming_angle = angle_bin
         previous_time = time.time()
         if record_flag == 0:
             angle_bin += 1
             snr_array = np.append(snr_array,0)
-        data_interface.write_plot_log(2, test_radar.est_angle, curr_beamforming_angle, 0, 0, test_comm.throughput, plot_log_path)
+        #data_interface.write_plot_log(2, test_radar.est_angle, curr_beamforming_angle, 0, 0, test_comm.throughput, plot_log_path)
         previous_time = now_time
         print("Comm time-out")
 
@@ -122,7 +124,7 @@ while total_time-start_time <= end_time:
     test_radar.est_angle = angle_bin
     data_interface.write_radar_data(test_radar, radar_data_path)
     data_interface.write_packet_data(test_packet,packet_data_path)
-    time.sleep(0.01)
+    time.sleep(0.005)
     #print(f"beamforming angle:{angle_bin}")
     
     total_time = time.time()
