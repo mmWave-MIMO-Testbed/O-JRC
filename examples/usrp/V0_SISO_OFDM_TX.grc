@@ -80,6 +80,27 @@ blocks:
     coordinate: [552, 20.0]
     rotation: 0
     state: enabled
+- name: delay_samp
+  id: variable_qtgui_range
+  parameters:
+    comment: 125 MHz -> 187
+    gui_hint: 8,0,1,8
+    label: TX/RX Sync
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '500'
+    value: 187+5
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [672, 876.0]
+    rotation: 0
+    state: disabled
 - name: fft_len
   id: variable
   parameters:
@@ -163,7 +184,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: usrp_freq+19e9
+    value: usrp_freq+20e9
   states:
     bus_sink: false
     bus_source: false
@@ -175,7 +196,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: int(125e6)
+    value: int(25e6)
   states:
     bus_sink: false
     bus_source: false
@@ -442,6 +463,44 @@ blocks:
     coordinate: [320, 516.0]
     rotation: 0
     state: true
+- name: mimo_ofdm_jrc_usrp_mimo_trx_0
+  id: mimo_ofdm_jrc_usrp_mimo_trx
+  parameters:
+    N_mboard: '1'
+    N_rx: '0'
+    N_tx: '1'
+    affinity: '[6]'
+    alias: ''
+    antenna_rx: '"RX2,RX2"'
+    antenna_tx: '"TX/RX"'
+    args: '"addr0=192.168.120.2, master_clock_rate=250e6"'
+    center_freq: usrp_freq
+    clock_sources: '"external"'
+    comment: ''
+    debug: 'False'
+    gain_rx: rx_gain
+    gain_tx: tx_gain
+    len_key: '"packet_len"'
+    lo_offset_rx: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    num_delay_samps: delay_samp
+    samp_rate: samp_rate
+    time_sources: '"external"'
+    timeout_rx: '0.6'
+    timeout_tx: '0.6'
+    update_period: '0.04'
+    wait_rx: '0.01'
+    wait_tx: '0.01'
+    wire_rx: '""'
+    wire_tx: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [856, 844.0]
+    rotation: 0
+    state: disabled
 - name: mimo_ofdm_jrc_zero_pad_0
   id: mimo_ofdm_jrc_zero_pad
   parameters:
@@ -814,7 +873,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [976, 652.0]
+    coordinate: [1152, 652.0]
     rotation: 0
     state: enabled
 - name: virtual_sink_0
@@ -851,6 +910,7 @@ connections:
 - [fft_vxx_0, '0', digital_ofdm_cyclic_prefixer_0, '0']
 - [mimo_ofdm_jrc_mimo_precoder_0, '0', fft_vxx_0, '0']
 - [mimo_ofdm_jrc_stream_encoder_0, '0', mimo_ofdm_jrc_mimo_precoder_0, '0']
+- [mimo_ofdm_jrc_zero_pad_0, '0', mimo_ofdm_jrc_usrp_mimo_trx_0, '0']
 - [mimo_ofdm_jrc_zero_pad_0, '0', uhd_usrp_sink_1, '0']
 - [virtual_source_0_1_0_0, '0', blocks_multiply_const_vxx_0, '0']
 

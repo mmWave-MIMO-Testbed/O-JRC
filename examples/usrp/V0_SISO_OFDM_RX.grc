@@ -222,7 +222,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: usrp_freq+19e9
+    value: usrp_freq+20e9
   states:
     bus_sink: false
     bus_source: false
@@ -242,7 +242,7 @@ blocks:
     start: '0'
     step: '1'
     stop: '60'
-    value: '45'
+    value: '20'
     widget: counter_slider
   states:
     bus_sink: false
@@ -255,7 +255,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: int(125e6)
+    value: int(25e6)
   states:
     bus_sink: false
     bus_source: false
@@ -309,7 +309,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 5e9
+    value: 4.5e8
   states:
     bus_sink: false
     bus_source: false
@@ -1454,7 +1454,7 @@ blocks:
     bus_structure: null
     coordinate: [856, 468.0]
     rotation: 180
-    state: disabled
+    state: enabled
 - name: qtgui_time_sink_x_0_2
   id: qtgui_time_sink_x
   parameters:
@@ -1648,7 +1648,7 @@ blocks:
     bus_structure: null
     coordinate: [1328, 724.0]
     rotation: 180
-    state: enabled
+    state: disabled
 - name: qtgui_time_sink_x_1
   id: qtgui_time_sink_x
   parameters:

@@ -84,13 +84,13 @@ class V0_SISO_OFDM_TX(gr.top_block, Qt.QWidget):
         # Variables
         ##################################################
         self.usrp_freq = usrp_freq = 5e9
-        self.rf_freq = rf_freq = usrp_freq+19e9
+        self.rf_freq = rf_freq = usrp_freq+20e9
         self.parrent_path = parrent_path = "/home/host-pc/O-JRC/examples"
         self.fft_len = fft_len = ofdm_config_siso.N_sc
         self.wavelength = wavelength = 3e8/rf_freq
         self.tx_multiplier = tx_multiplier = 0.42
         self.tx_gain = tx_gain = 42
-        self.samp_rate = samp_rate = int(125e6)
+        self.samp_rate = samp_rate = int(25e6)
         self.radar_log_file = radar_log_file = parrent_path+"/data/radar_log.csv"
         self.mcs = mcs = 3
         self.interp_factor = interp_factor = 8
@@ -197,7 +197,7 @@ class V0_SISO_OFDM_TX(gr.top_block, Qt.QWidget):
 
     def set_usrp_freq(self, usrp_freq):
         self.usrp_freq = usrp_freq
-        self.set_rf_freq(self.usrp_freq+19e9)
+        self.set_rf_freq(self.usrp_freq+20e9)
         self.uhd_usrp_sink_1.set_center_freq(self.usrp_freq, 0)
 
     def get_rf_freq(self):

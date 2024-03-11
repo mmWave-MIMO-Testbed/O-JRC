@@ -1667,7 +1667,7 @@ blocks:
     bus_structure: null
     coordinate: [1312, 732.0]
     rotation: 180
-    state: enabled
+    state: disabled
 - name: qtgui_time_sink_x_1
   id: qtgui_time_sink_x
   parameters:
