@@ -87,7 +87,7 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         ##################################################
         self.usrp_freq = usrp_freq = 5e9
         self.fft_len = fft_len = ofdm_config.N_sc
-        self.rf_frequency = rf_frequency = usrp_freq+19e9
+        self.rf_frequency = rf_frequency = usrp_freq+20e9
         self.parrent_path = parrent_path = "/home/host-pc/O-JRC/examples"
         self.cp_len = cp_len = int(fft_len/4)
         self.wavelength = wavelength = 3e8/rf_frequency
@@ -366,7 +366,7 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
 
     def set_usrp_freq(self, usrp_freq):
         self.usrp_freq = usrp_freq
-        self.set_rf_frequency(self.usrp_freq+19e9)
+        self.set_rf_frequency(self.usrp_freq+20e9)
         self.uhd_usrp_source_0.set_center_freq(self.usrp_freq, 0)
 
     def get_fft_len(self):

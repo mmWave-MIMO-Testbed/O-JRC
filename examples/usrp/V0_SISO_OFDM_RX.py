@@ -84,16 +84,16 @@ class V0_SISO_OFDM_RX(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.usrp_freq = usrp_freq = 4.5e8
+        self.usrp_freq = usrp_freq = 4e8
         self.fft_len = fft_len = ofdm_config_siso.N_sc
-        self.rf_frequency = rf_frequency = usrp_freq+20e9
+        self.rf_frequency = rf_frequency = usrp_freq+24.6e9
         self.parrent_path = parrent_path = "/home/host-pc/O-JRC/examples"
         self.cp_len = cp_len = int(fft_len/4)
         self.wavelength = wavelength = 3e8/rf_frequency
         self.sync_length = sync_length = 4*(fft_len+cp_len)
         self.save_comm_log = save_comm_log = False
         self.samp_rate = samp_rate = int(25e6)
-        self.rx_gain = rx_gain = 20
+        self.rx_gain = rx_gain = 10
         self.radar_read_file = radar_read_file = parrent_path+"/data/radar_data.csv"
         self.radar_log_file = radar_log_file = parrent_path+"/data/radar_log.csv"
         self.packet_data_file = packet_data_file = parrent_path+"/data/packet_data.csv"
@@ -129,7 +129,7 @@ class V0_SISO_OFDM_RX(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(3, 4):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._rx_gain_range = Range(0, 60, 1, 20, 200)
+        self._rx_gain_range = Range(0, 60, 1, 10, 200)
         self._rx_gain_win = RangeWidget(self._rx_gain_range, self.set_rx_gain, 'RX Gain', "counter_slider", float)
         self.top_grid_layout.addWidget(self._rx_gain_win, 0, 1, 1, 2)
         for r in range(0, 1):
@@ -181,6 +181,61 @@ class V0_SISO_OFDM_RX(gr.top_block, Qt.QWidget):
         self.uhd_usrp_source_0.set_samp_rate(samp_rate)
         # No synchronization enforced.
         self.uhd_usrp_source_0.set_min_output_buffer(24000)
+        self.qtgui_time_sink_x_0_2_0 = qtgui.time_sink_c(
+            (fft_len+cp_len)*30, #size
+            1, #samp_rate
+            "FRAME", #name
+            1 #number of inputs
+        )
+        self.qtgui_time_sink_x_0_2_0.set_update_time(0.1)
+        self.qtgui_time_sink_x_0_2_0.set_y_axis(-1, 1)
+
+        self.qtgui_time_sink_x_0_2_0.set_y_label('Amplitude', "")
+
+        self.qtgui_time_sink_x_0_2_0.enable_tags(True)
+        self.qtgui_time_sink_x_0_2_0.set_trigger_mode(qtgui.TRIG_MODE_TAG, qtgui.TRIG_SLOPE_POS, 0, 300, 0, "frame_start")
+        self.qtgui_time_sink_x_0_2_0.enable_autoscale(True)
+        self.qtgui_time_sink_x_0_2_0.enable_grid(True)
+        self.qtgui_time_sink_x_0_2_0.enable_axis_labels(True)
+        self.qtgui_time_sink_x_0_2_0.enable_control_panel(False)
+        self.qtgui_time_sink_x_0_2_0.enable_stem_plot(False)
+
+        self.qtgui_time_sink_x_0_2_0.disable_legend()
+
+        labels = ['', '', '', '', '',
+            '', '', '', '', '']
+        widths = [2, 2, 1, 1, 1,
+            1, 1, 1, 1, 1]
+        colors = ['blue', 'red', 'green', 'black', 'cyan',
+            'magenta', 'yellow', 'dark red', 'dark green', 'dark blue']
+        alphas = [0.6, 0.6, 1.0, 1.0, 1.0,
+            1.0, 1.0, 1.0, 1.0, 1.0]
+        styles = [1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1]
+        markers = [-1, -1, -1, -1, -1,
+            -1, -1, -1, -1, -1]
+
+
+        for i in range(2):
+            if len(labels[i]) == 0:
+                if (i % 2 == 0):
+                    self.qtgui_time_sink_x_0_2_0.set_line_label(i, "Re{{Data {0}}}".format(i/2))
+                else:
+                    self.qtgui_time_sink_x_0_2_0.set_line_label(i, "Im{{Data {0}}}".format(i/2))
+            else:
+                self.qtgui_time_sink_x_0_2_0.set_line_label(i, labels[i])
+            self.qtgui_time_sink_x_0_2_0.set_line_width(i, widths[i])
+            self.qtgui_time_sink_x_0_2_0.set_line_color(i, colors[i])
+            self.qtgui_time_sink_x_0_2_0.set_line_style(i, styles[i])
+            self.qtgui_time_sink_x_0_2_0.set_line_marker(i, markers[i])
+            self.qtgui_time_sink_x_0_2_0.set_line_alpha(i, alphas[i])
+
+        self._qtgui_time_sink_x_0_2_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_2_0.pyqwidget(), Qt.QWidget)
+        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_2_0_win, 5, 0, 1, 4)
+        for r in range(5, 6):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(0, 4):
+            self.top_grid_layout.setColumnStretch(c, 1)
         self.qtgui_time_sink_x_0_2 = qtgui.time_sink_f(
             (fft_len+cp_len)*30, #size
             1, #samp_rate
@@ -232,60 +287,6 @@ class V0_SISO_OFDM_RX(gr.top_block, Qt.QWidget):
         for r in range(4, 5):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(0, 2):
-            self.top_grid_layout.setColumnStretch(c, 1)
-        self.qtgui_time_sink_x_0_0_1_1 = qtgui.time_sink_c(
-            (fft_len+cp_len)*15, #size
-            1, #samp_rate
-            'Signal RX', #name
-            1 #number of inputs
-        )
-        self.qtgui_time_sink_x_0_0_1_1.set_update_time(0.10)
-        self.qtgui_time_sink_x_0_0_1_1.set_y_axis(-1, 1)
-
-        self.qtgui_time_sink_x_0_0_1_1.set_y_label('Amplitude', "")
-
-        self.qtgui_time_sink_x_0_0_1_1.enable_tags(True)
-        self.qtgui_time_sink_x_0_0_1_1.set_trigger_mode(qtgui.TRIG_MODE_AUTO, qtgui.TRIG_SLOPE_POS, 0.0, 100, 0, "packet_len")
-        self.qtgui_time_sink_x_0_0_1_1.enable_autoscale(True)
-        self.qtgui_time_sink_x_0_0_1_1.enable_grid(True)
-        self.qtgui_time_sink_x_0_0_1_1.enable_axis_labels(True)
-        self.qtgui_time_sink_x_0_0_1_1.enable_control_panel(False)
-        self.qtgui_time_sink_x_0_0_1_1.enable_stem_plot(False)
-
-
-        labels = ['', '', '', '', '',
-            '', '', '', '', '']
-        widths = [1, 1, 1, 1, 1,
-            1, 1, 1, 1, 1]
-        colors = ['blue', 'red', 'green', 'black', 'cyan',
-            'magenta', 'yellow', 'dark red', 'dark green', 'dark blue']
-        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
-            1.0, 1.0, 1.0, 1.0, 1.0]
-        styles = [1, 1, 1, 1, 1,
-            1, 1, 1, 1, 1]
-        markers = [-1, -1, -1, -1, -1,
-            -1, -1, -1, -1, -1]
-
-
-        for i in range(2):
-            if len(labels[i]) == 0:
-                if (i % 2 == 0):
-                    self.qtgui_time_sink_x_0_0_1_1.set_line_label(i, "Re{{Data {0}}}".format(i/2))
-                else:
-                    self.qtgui_time_sink_x_0_0_1_1.set_line_label(i, "Im{{Data {0}}}".format(i/2))
-            else:
-                self.qtgui_time_sink_x_0_0_1_1.set_line_label(i, labels[i])
-            self.qtgui_time_sink_x_0_0_1_1.set_line_width(i, widths[i])
-            self.qtgui_time_sink_x_0_0_1_1.set_line_color(i, colors[i])
-            self.qtgui_time_sink_x_0_0_1_1.set_line_style(i, styles[i])
-            self.qtgui_time_sink_x_0_0_1_1.set_line_marker(i, markers[i])
-            self.qtgui_time_sink_x_0_0_1_1.set_line_alpha(i, alphas[i])
-
-        self._qtgui_time_sink_x_0_0_1_1_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0_1_1.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_0_1_1_win, 3, 2, 1, 2)
-        for r in range(3, 4):
-            self.top_grid_layout.setRowStretch(r, 1)
-        for c in range(2, 4):
             self.top_grid_layout.setColumnStretch(c, 1)
         self.qtgui_const_sink_x_0 = qtgui.const_sink_c(
             ofdm_config_siso.N_data*5, #size
@@ -342,7 +343,6 @@ class V0_SISO_OFDM_RX(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_moving_avg_0.set_min_output_buffer(24000)
         self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0 = mimo_ofdm_jrc.mimo_ofdm_equalizer(chan_est, rf_frequency, samp_rate, fft_len, cp_len, ofdm_config_siso.data_subcarriers, ofdm_config_siso.pilot_subcarriers, ofdm_config_siso.pilot_symbols, ofdm_config_siso.l_stf_ltf_64[3], ofdm_config_siso.ltf_mapped_sc__ss_sym, N_tx, chan_est_file, comm_log_file, chan_est_data_file,chan_est_ndp_file ,False, False)
         self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0.set_processor_affinity([4])
-        self.mimo_ofdm_jrc_gui_time_plot_1_0 = mimo_ofdm_jrc.gui_time_plot(250, "throughput", "Throughput [KByte/s]", [0,5], 10, "Received Data Throughput")
         self.mimo_ofdm_jrc_gui_time_plot_1 = mimo_ofdm_jrc.gui_time_plot(250, "per", "PER [%]", [0,102], 10, "Packet Error Rate")
         self.mimo_ofdm_jrc_gui_time_plot_0_0 = mimo_ofdm_jrc.gui_time_plot(250, "snr", "SNR [dB]", [0,40], 10, "Signal-to-Noise Ratio")
         self.mimo_ofdm_jrc_frame_sync_0 = mimo_ofdm_jrc.frame_sync(fft_len, cp_len, sync_length, ofdm_config_siso.l_ltf_fir, False)
@@ -378,7 +378,6 @@ class V0_SISO_OFDM_RX(gr.top_block, Qt.QWidget):
         self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'sym'), (self.blocks_socket_pdu_1, 'pdus'))
         self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_0_0, 'stats'))
         self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_1, 'stats'))
-        self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_1_0, 'stats'))
         self.connect((self.blocks_abs_xx_0, 0), (self.blocks_divide_xx_0, 1))
         self.connect((self.blocks_complex_to_mag_0, 0), (self.blocks_divide_xx_0, 0))
         self.connect((self.blocks_complex_to_mag_squared_0_0, 0), (self.blocks_moving_average_xx_1_0, 0))
@@ -394,11 +393,11 @@ class V0_SISO_OFDM_RX(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_sub_xx_0, 0), (self.blocks_complex_to_mag_squared_0_0, 0))
         self.connect((self.blocks_sub_xx_0, 0), (self.blocks_delay_0_0, 0))
         self.connect((self.blocks_sub_xx_0, 0), (self.blocks_multiply_xx_0, 1))
-        self.connect((self.blocks_sub_xx_0, 0), (self.qtgui_time_sink_x_0_0_1_1, 0))
         self.connect((self.blocks_vector_to_stream_0, 0), (self.qtgui_const_sink_x_0, 0))
         self.connect((self.fft_vxx_0_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0, 0))
         self.connect((self.mimo_ofdm_jrc_frame_detector_0, 0), (self.blocks_delay_0, 0))
         self.connect((self.mimo_ofdm_jrc_frame_detector_0, 0), (self.mimo_ofdm_jrc_frame_sync_0, 0))
+        self.connect((self.mimo_ofdm_jrc_frame_detector_0, 0), (self.qtgui_time_sink_x_0_2_0, 0))
         self.connect((self.mimo_ofdm_jrc_frame_sync_0, 0), (self.blocks_stream_to_vector_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0, 0), (self.blocks_vector_to_stream_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0, 0), (self.mimo_ofdm_jrc_stream_decoder_0, 0))
@@ -420,7 +419,7 @@ class V0_SISO_OFDM_RX(gr.top_block, Qt.QWidget):
 
     def set_usrp_freq(self, usrp_freq):
         self.usrp_freq = usrp_freq
-        self.set_rf_frequency(self.usrp_freq+20e9)
+        self.set_rf_frequency(self.usrp_freq+24.6e9)
         self.uhd_usrp_source_0.set_center_freq(self.usrp_freq, 0)
 
     def get_fft_len(self):

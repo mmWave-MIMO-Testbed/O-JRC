@@ -84,7 +84,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         ##################################################
         self.usrp_freq = usrp_freq = 5e9
         self.samp_rate = samp_rate = int(125e6)
-        self.rf_freq = rf_freq = usrp_freq+19e9
+        self.rf_freq = rf_freq = usrp_freq+20e9
         self.parrent_path = parrent_path = "/home/host-pc/O-JRC/examples"
         self.interp_factor_angle = interp_factor_angle = 16
         self.fft_len = fft_len = ofdm_config.N_sc
@@ -95,7 +95,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.tx_gain = tx_gain = 42
         self.signal_strength_log_file = signal_strength_log_file = parrent_path+"/data/signal_strength_log.csv"
         self.save_radar_log = save_radar_log = False
-        self.rx_gain = rx_gain = 40
+        self.rx_gain = rx_gain = 41
         self.radar_log_file = radar_log_file = parrent_path+"/data/radar_log.csv"
         self.radar_data_file = radar_data_file = parrent_path+"/data/radar_data.csv"
         self.radar_chan_file = radar_chan_file = parrent_path+"/data/radar_chan.csv"
@@ -161,7 +161,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(6, 8):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._rx_gain_range = Range(0, 60, 1, 40, 200)
+        self._rx_gain_range = Range(0, 60, 1, 41, 200)
         self._rx_gain_win = RangeWidget(self._rx_gain_range, self.set_rx_gain, 'RX Gain', "counter_slider", float)
         self.top_grid_layout.addWidget(self._rx_gain_win, 0, 3, 1, 3)
         for r in range(0, 1):
@@ -352,7 +352,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_usrp_mimo_trx_0.set_processor_affinity([6])
         self.mimo_ofdm_jrc_stream_encoder_0 = mimo_ofdm_jrc.stream_encoder(mcs, ofdm_config.N_data, 0, False)
         self.mimo_ofdm_jrc_socket_pdu_jrc_0 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 5000)
-        self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor), np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, angle_res*2, 15, 30, radar_log_file, signal_strength_log_file, save_radar_log, "packet_len", False)
+        self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor), np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, angle_res*2, 15, 50, radar_log_file, signal_strength_log_file, save_radar_log, "packet_len", False)
         self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(50, packet_data_file)
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
@@ -439,8 +439,8 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.fft_vxx_0_2_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.fft_vxx_0_3, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 0))
-        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 2))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 3))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 2))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 1))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0, 0), (self.fft_vxx_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0, 0), (self.fft_vxx_0_0_0, 0))
@@ -463,7 +463,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
 
     def set_usrp_freq(self, usrp_freq):
         self.usrp_freq = usrp_freq
-        self.set_rf_freq(self.usrp_freq+19e9)
+        self.set_rf_freq(self.usrp_freq+20e9)
 
     def get_samp_rate(self):
         return self.samp_rate

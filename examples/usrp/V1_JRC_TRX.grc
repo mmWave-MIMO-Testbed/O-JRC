@@ -598,7 +598,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: usrp_freq+19e9
+    value: usrp_freq+20e9
   states:
     bus_sink: false
     bus_source: false
@@ -618,7 +618,7 @@ blocks:
     start: '0'
     step: '1'
     stop: '60'
-    value: '40'
+    value: '41'
     widget: counter_slider
   states:
     bus_sink: false
@@ -1490,7 +1490,7 @@ blocks:
     minoutbuf: '0'
     noise_discard_angle: angle_res*2
     noise_discard_range: R_res*2
-    power_threshold: '30'
+    power_threshold: '50'
     range_bins: np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor)
     snr_threshold: '15'
     stats_path: radar_log_file
