@@ -93,7 +93,7 @@ class V0_SISO_OFDM_RX(gr.top_block, Qt.QWidget):
         self.sync_length = sync_length = 4*(fft_len+cp_len)
         self.save_comm_log = save_comm_log = False
         self.samp_rate = samp_rate = int(25e6)
-        self.rx_gain = rx_gain = 10
+        self.rx_gain = rx_gain = 20
         self.radar_read_file = radar_read_file = parrent_path+"/data/radar_data.csv"
         self.radar_log_file = radar_log_file = parrent_path+"/data/radar_log.csv"
         self.packet_data_file = packet_data_file = parrent_path+"/data/packet_data.csv"
@@ -129,7 +129,7 @@ class V0_SISO_OFDM_RX(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(3, 4):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._rx_gain_range = Range(0, 60, 1, 10, 200)
+        self._rx_gain_range = Range(0, 60, 1, 20, 200)
         self._rx_gain_win = RangeWidget(self._rx_gain_range, self.set_rx_gain, 'RX Gain', "counter_slider", float)
         self.top_grid_layout.addWidget(self._rx_gain_win, 0, 1, 1, 2)
         for r in range(0, 1):

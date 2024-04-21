@@ -2004,7 +2004,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1136, 1636.0]
+    coordinate: [1120, 1628.0]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_mimo_precoder_0
@@ -2093,6 +2093,7 @@ blocks:
     snr_threshold: '15'
     stats_path: radar_log_file
     stats_record: save_radar_log
+    stats_signal_strength_path: '""'
     vlen: N_tx*N_rx*interp_factor_angle
   states:
     bus_sink: false

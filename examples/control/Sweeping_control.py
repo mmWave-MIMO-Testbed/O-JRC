@@ -87,11 +87,11 @@ while total_time-start_time <= end_time:
         curr_beamforming_angle = test_radar.est_angle
         previous_time = time.time()
         data_interface.write_plot_log(test_packet.packet_type, test_radar.est_angle, curr_beamforming_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
-    elif time_diff >= 0.02:  # Communication time-out
+    elif time_diff >= 0.1:  # Communication time-out
         #last_data_timestamp = current_time
         curr_beamforming_angle = test_radar.est_angle
         previous_time = time.time()
-        data_interface.write_plot_log(test_packet.packet_type, test_radar.est_angle, curr_beamforming_angle, 0, 0, test_comm.throughput, plot_log_path)
+        data_interface.write_plot_log(test_packet.packet_type, test_radar.est_angle, curr_beamforming_angle, -20, 0, test_comm.throughput, plot_log_path)
         previous_time = now_time
         #print("Comm time-out")
 
