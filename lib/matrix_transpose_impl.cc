@@ -100,11 +100,12 @@ namespace gr {
         // Update len key tag
         update_length_tags(noutput_items,0);
         
-        memset(out, 0, sizeof(gr_complex)*d_interp_factor*d_output_len*d_input_len);
+        // Create all 0 vector, sizeof(gr_complex)*interp_factor * d_output_len * d_input_len, 8*16*8*512
+        memset(out, 0, sizeof(gr_complex)*d_interp_factor*d_output_len*d_input_len); 
 
         // Reorganize samples
         for(int l = 0; l < d_input_len; l++){ // go through single input vector
-            for(int k=0; k < ninput_items[0]; k++){ // go through all input vectors
+            for(int k=0; k < ninput_items[0]; k++){ // go through all input vectors, ninput_items[0]=512
                 out[l*d_output_len*d_interp_factor + k] = in[k*d_input_len + l];
             }
         }
