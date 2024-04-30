@@ -926,7 +926,7 @@ blocks:
     bus_structure: null
     coordinate: [144, 532.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: digital_ofdm_cyclic_prefixer_0
   id: digital_ofdm_cyclic_prefixer
   parameters:
@@ -1422,7 +1422,7 @@ blocks:
     bus_structure: null
     coordinate: [152, 784.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0
   id: mimo_ofdm_jrc_ofdm_cyclic_prefix_remover
   parameters:
@@ -1475,7 +1475,7 @@ blocks:
     bus_structure: null
     coordinate: [64, 892.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: mimo_ofdm_jrc_range_angle_estimator_0
   id: mimo_ofdm_jrc_range_angle_estimator
   parameters:
@@ -1522,7 +1522,7 @@ blocks:
     bus_structure: null
     coordinate: [144, 644.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: mimo_ofdm_jrc_stream_encoder_0
   id: mimo_ofdm_jrc_stream_encoder
   parameters:

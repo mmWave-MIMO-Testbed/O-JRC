@@ -105,18 +105,6 @@ blocks:
     coordinate: [1400, 1324.0]
     rotation: 0
     state: enabled
-- name: angle_res
-  id: variable
-  parameters:
-    comment: ''
-    value: np.rad2deg(np.arcsin(2/(N_tx*N_rx)))
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1272, 12.0]
-    rotation: 0
-    state: enabled
 - name: background_record
   id: variable_qtgui_chooser
   parameters:
@@ -1035,7 +1023,7 @@ blocks:
     len_key: '"packet_len"'
     maxoutbuf: '0'
     minoutbuf: '0'
-    noise_discard_angle: angle_res*2
+    noise_discard_angle: '10'
     noise_discard_range: R_res*2
     power_threshold: '50'
     range_bins: np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor)
