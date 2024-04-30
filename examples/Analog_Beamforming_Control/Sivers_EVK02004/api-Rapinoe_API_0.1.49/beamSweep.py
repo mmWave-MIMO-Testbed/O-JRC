@@ -85,12 +85,16 @@ if __name__ == "__main__":
         info_logger.log_info('Available motherboards:',2)
         nof_channels = int(mb.num_of_channels())
         #print("[EVK]The number of channels:{:}".format(nof_channels))
+        nof_channels = 2
+        mb_num_list = ["123", "321"]
         if nof_channels > 0:
             mbs = {}
             for chan in range(0,nof_channels):
-                mb_num = mb.get_channel_info(chan)['SerialNumber'][:-1]
+                # mb_num = mb.get_channel_info(chan)['SerialNumber'][:-1]
+                mb_num = mb_num_list[chan]
                 if mb_num != '':
-                    mbs[mb_num] = mb.get_channel_info(chan)
+                    # mbs[mb_num] = mb.get_channel_info(chan)
+                    mbs[mb_num] = mb_num_list[chan]
                 print("[EVK]The mb_num:{:}".format(mb_num))
             for mb_num in mbs:
                 info_logger.log_info('{}'.format(mb_num),2+2)
@@ -110,8 +114,10 @@ if __name__ == "__main__":
         serial_num = args.serial_num
 
     if serial_num != '':
-        board_id   = mb.get_board_id(serial_num)
-        board_type = mb.get_board_type(board_id)
+        # board_id   = mb.get_board_id(serial_num)
+        board_id = 1
+        # board_type = mb.get_board_type(board_id)
+        board_type = 3
         print("Board ID 1: {0}".format(board_id))
         print("Board type 1: {0}".format(board_type))
         #board_id_2   = mb.get_board_id(serial_num_2)
@@ -119,13 +125,13 @@ if __name__ == "__main__":
         #print("Board ID 2: {0}".format(board_id_2))
         #print("Board type 2: {0}".format(board_type_2))
         info_logger.log_info('Connecting to motherboard {0} with serial number {1} ...'.format(board_type, serial_num),2)
-        host = host.Host(serial_num=serial_num, bsp=args.bsp, fref=fref, fdig=fdig, flo=flo, fspi=fspi, indent=2)
-        rapAll = []
-        print("The number of devices:{:}".format(host.chip._chip_info.get_num_devs()))
-        for num in range(0,host.chip._chip_info.get_num_devs()):
-            exec("rap{:} = host.rap{:}".format(num,num))
-            print('[EVK]Connected Devices:{0}, with rap: {1}.'.format(num,num))
-            exec("rapAll.append(rap{:})".format(str(num)))
+        # host = host.Host(serial_num=serial_num, bsp=args.bsp, fref=fref, fdig=fdig, flo=flo, fspi=fspi, indent=2)
+        # rapAll = []
+        # print("The number of devices:{:}".format(host.chip._chip_info.get_num_devs()))
+        # for num in range(0,host.chip._chip_info.get_num_devs()):
+        #     exec("rap{:} = host.rap{:}".format(num,num))
+        #     print('[EVK]Connected Devices:{0}, with rap: {1}.'.format(num,num))
+        #     exec("rapAll.append(rap{:})".format(str(num)))
 
         if args.gui != None:
             if len(args.gui) == 0:
