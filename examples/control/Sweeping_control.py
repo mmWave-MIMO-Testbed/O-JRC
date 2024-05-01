@@ -58,8 +58,8 @@ record_flag = 0
 crc_flag = 0
 test_packet.packet_type = 1   # 1 for NDP 2 for data
 test_packet.packet_size = 100
-test_radar.est_angle = 60      # beamforming angle of DATA packet
-test_radar.est_range = 3        # beamforming range of DATA packet
+test_radar.est_angle = 0      # beamforming angle of DATA packet
+test_radar.est_range = 5        # beamforming range of DATA packet
 data_interface.write_radar_data(test_radar, radar_data_path)
 
 while total_time-start_time <= end_time:

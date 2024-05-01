@@ -223,12 +223,12 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 4e9
+    value: 4e8
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [320, 12]
+    coordinate: [312, 12.0]
     rotation: 0
     state: enabled
 - name: interp_factor
@@ -414,12 +414,12 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: freq+20e9
+    value: 25e9
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [384, 12.0]
+    coordinate: [392, 12.0]
     rotation: 0
     state: enabled
 - name: samp_rate
@@ -911,7 +911,7 @@ blocks:
     bus_structure: null
     coordinate: [656, 400.0]
     rotation: 180
-    state: true
+    state: disabled
 - name: blocks_vector_to_stream_1_0
   id: blocks_vector_to_stream
   parameters:
@@ -947,7 +947,7 @@ blocks:
     bus_structure: null
     coordinate: [896, 1648.0]
     rotation: 180
-    state: true
+    state: disabled
 - name: digital_ofdm_cyclic_prefixer_0
   id: digital_ofdm_cyclic_prefixer
   parameters:
@@ -1690,7 +1690,7 @@ blocks:
     bus_structure: null
     coordinate: [112, 1348.0]
     rotation: 180
-    state: enabled
+    state: disabled
 - name: qtgui_time_sink_x_0_0_0_0_0_0
   id: qtgui_time_sink_x
   parameters:
@@ -1843,8 +1843,8 @@ blocks:
     marker9: '-1'
     name: Signal IDFT
     nconnections: '1'
-    size: fft_len*12
-    srate: '1'
+    size: '512'
+    srate: samp_rate
     stemplot: 'False'
     style1: '1'
     style10: '1'
@@ -1941,7 +1941,7 @@ blocks:
     name: Signal FFT
     nconnections: '1'
     size: fft_len*12
-    srate: '1'
+    srate: samp_rate
     stemplot: 'False'
     style1: '1'
     style10: '1'
@@ -1981,7 +1981,7 @@ blocks:
     bus_structure: null
     coordinate: [680, 1620.0]
     rotation: 180
-    state: enabled
+    state: disabled
 - name: qtgui_time_sink_x_0_0_0_0_0_2
   id: qtgui_time_sink_x
   parameters:
@@ -2272,7 +2272,7 @@ blocks:
     bus_structure: null
     coordinate: [656, 284.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: virtual_sink_0
   id: virtual_sink
   parameters:

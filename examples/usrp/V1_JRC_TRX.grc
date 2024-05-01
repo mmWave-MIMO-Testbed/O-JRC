@@ -104,7 +104,7 @@ blocks:
     start: '0'
     step: '0.01'
     stop: '10'
-    value: '1.2'
+    value: '1.43'
     widget: counter_slider
   states:
     bus_sink: false
@@ -125,7 +125,7 @@ blocks:
     start: '0'
     step: '0.01'
     stop: '10'
-    value: '0.39'
+    value: '0.68'
     widget: counter_slider
   states:
     bus_sink: false
@@ -146,7 +146,7 @@ blocks:
     start: '0'
     step: '0.01'
     stop: '10'
-    value: '0.37'
+    value: '0.75'
     widget: counter_slider
   states:
     bus_sink: false
@@ -167,7 +167,7 @@ blocks:
     start: '0'
     step: '0.01'
     stop: '10'
-    value: '0.44'
+    value: '0.87'
     widget: counter_slider
   states:
     bus_sink: false
@@ -426,7 +426,7 @@ blocks:
     start: -2*cmath.pi
     step: '0.01'
     stop: 2*cmath.pi
-    value: '-1.09'
+    value: '-1.15'
     widget: counter_slider
   states:
     bus_sink: false
@@ -447,7 +447,7 @@ blocks:
     start: -2*cmath.pi
     step: '0.01'
     stop: 2*cmath.pi
-    value: '-1.33'
+    value: '-1.2'
     widget: counter_slider
   states:
     bus_sink: false
@@ -468,7 +468,7 @@ blocks:
     start: -2*cmath.pi
     step: '0.01'
     stop: 2*cmath.pi
-    value: '1.77'
+    value: '1.95'
     widget: counter_slider
   states:
     bus_sink: false
@@ -926,7 +926,7 @@ blocks:
     bus_structure: null
     coordinate: [144, 532.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: digital_ofdm_cyclic_prefixer_0
   id: digital_ofdm_cyclic_prefixer
   parameters:
@@ -1422,7 +1422,7 @@ blocks:
     bus_structure: null
     coordinate: [152, 784.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0
   id: mimo_ofdm_jrc_ofdm_cyclic_prefix_remover
   parameters:
@@ -1475,7 +1475,7 @@ blocks:
     bus_structure: null
     coordinate: [64, 892.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: mimo_ofdm_jrc_range_angle_estimator_0
   id: mimo_ofdm_jrc_range_angle_estimator
   parameters:
@@ -1522,7 +1522,7 @@ blocks:
     bus_structure: null
     coordinate: [144, 644.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: mimo_ofdm_jrc_stream_encoder_0
   id: mimo_ofdm_jrc_stream_encoder
   parameters:
