@@ -23,7 +23,6 @@ class Host():
             fspi = 1000000
         elif fspi is None:
             fspi = 10000000
-        
         self._conn      = connect.Connect(serial_num=serial_num, bsp=bsp, clock_rate=fspi)
         self.version    = version.Version().get_version()
         if evk_logger.evk_logger == None:

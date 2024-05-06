@@ -1,7 +1,9 @@
 import time
 import os
 import sys
-import host
+import beamSweep_host
+import multiprocessing
+import connect
 from common import *
 
 
@@ -38,95 +40,15 @@ def info_file(fname="evk.info"):
     evk_logger.evk_logger = evk_logger.EvkLogger(fname)
     return evk_logger.evk_logger
 
-
-if __name__ == "__main__":
-    if sys.platform == 'linux':
-        print('  Unloading USB Serial driver...')
-        os.system('sudo modprobe -r ftdi_sio')
-    args = get_args()
-    #cmd_hist_file()
-    info_logger=info_file()
-    import rlcompleter, readline
-    readline.set_history_length(1000)
-    readline.parse_and_bind('tab:complete')
-    import fileHandler as json
-    #info_logger=info_file()
-    try:
-        fref = float(args.fref)
-    except:
-        fref = None
-
-    try:
-        fdig = float(args.fdig)
-    except:
-        fdig = None
-        
-    try:
-        flo = float(args.flo)
-    except:
-        flo = None
-        
-    try:
-        fspi = int(args.fspi)
-    except:
-        fspi = None
-
-    
-    try:
-        info_logger.log_info('Trying to import module MB',2)
-        import mbdrv
-        mb = mbdrv.MbDrv()
-    except ImportError as ie:
-        info_logger.log_error("Error! " + str(ie),2)
-        sys.exit()
-
-    info_logger.log_info('MB {:} import successful.'.format(mb.version()),2+2)
-    if args.serial_num == None:
-        info_logger.log_info('Available motherboards:',2)
-        nof_channels = int(mb.num_of_channels())
-        print("[EVK]The number of channels:{:}".format(nof_channels))
-        if nof_channels > 0:
-            mbs = {}
-            for chan in range(0,nof_channels):
-                mb_num = mb.get_channel_info(chan)['SerialNumber'][:-1]
-                if mb_num != '':
-                    mbs[mb_num] = mb.get_channel_info(chan)
-                print("[EVK]The mb_num:{:}".format(mb_num))
-            for mb_num in mbs:
-                info_logger.log_info('{}'.format(mb_num),2+2)
-            info_logger.log_info('')
-            #serial_num = input('Enter EVK serial number from above list [{}]:'.format(mb.get_channel_info(0)['SerialNumber'][:-1]))
-            # print('  Enter first EVK serial number from above list [{}]:'.format(list(mbs.keys())[0]), end=' ')
-            # serial_num = sys.stdin.readline().strip()
-            #print('  Enter second EVK serial number from above list [{}]:'.format(list(mbs.keys())[1]), end=' ')
-            #serial_num_2 = sys.stdin.readline().strip() # If multiple EVKs exist
-            # if serial_num == '':
-            serial_num = list(mbs.keys())[0]
-            # serial_num_2 = list(mbs.keys())[1]
-        else:
-            info_logger.log_info('No motherboard detected. Exiting ...')
-            sys.exit()
-    else:
-        serial_num = args.serial_num
-
+def connect_to_device(serial_num, args, info_logger, mb, fref=None, fdig=None, flo=None, fspi=None):
     if serial_num != '':
         board_id   = mb.get_board_id(serial_num)
         board_type = mb.get_board_type(board_id)
-        print("Board ID 1: {0}".format(board_id))
-        print("Board type 1: {0}".format(board_type))
-        # board_id_2   = mb.get_board_id(serial_num_2)
-        # board_type_2 = mb.get_board_type(board_id_2)
-        # print("Board ID 2: {0}".format(board_id_2))
-        # print("Board type 2: {0}".format(board_type_2))
         info_logger.log_info('Connecting to motherboard {0} with serial number {1} ...'.format(board_type, serial_num),2)
-        host = host.Host(serial_num=serial_num, bsp=args.bsp, fref=fref, fdig=fdig, flo=flo, fspi=fspi, indent=2)
+        host = beamSweep_host.Host(serial_num=serial_num, bsp=args.bsp, fref=fref, fdig=fdig, flo=flo, fspi=fspi, mb=mb, indent=2)
         rapAll = []
-        # print("The number of devices:{:}".format(host.chip._chip_info.get_num_devs()))
         for num in range(0,host.chip._chip_info.get_num_devs()):
-            # print("The number of devices:{:}".format(host.chip._chip_info.get_num_devs()))
             exec("rap{:} = host.rap{:}".format(num,num))
-            # print("The number of devices:{:}".format(host.chip._chip_info.get_num_devs()))
-            print('[EVK]Connected Devices:{0}, with rap: {1}.'.format(num,num))
             exec("rapAll.append(rap{:})".format(str(num)))
 
         if args.gui != None:
@@ -176,3 +98,81 @@ if __name__ == "__main__":
                 exec(t.read())
                 t.close()
     info_logger.delayed_reset()
+
+
+if __name__ == "__main__":
+    if sys.platform == 'linux':
+        print('  Unloading USB Serial driver...')
+        os.system('sudo modprobe -r ftdi_sio')
+    args = get_args()
+    #cmd_hist_file()
+    info_logger=info_file()
+    import rlcompleter, readline
+    readline.set_history_length(1000)
+    readline.parse_and_bind('tab:complete')
+    import fileHandler as json
+    #info_logger=info_file()
+    try:
+        fref = float(args.fref)
+    except:
+        fref = None
+
+    try:
+        fdig = float(args.fdig)
+    except:
+        fdig = None
+        
+    try:
+        flo = float(args.flo)
+    except:
+        flo = None
+        
+    try:
+        fspi = int(args.fspi)
+    except:
+        fspi = None
+
+    
+    try:
+        info_logger.log_info('Trying to import module MB',2)
+        import beamSweep_mbdrv
+        mb = beamSweep_mbdrv.MbDrv()
+    except ImportError as ie:
+        info_logger.log_error("Error! " + str(ie),2)
+        sys.exit()
+
+    info_logger.log_info('MB {:} import successful.'.format(mb.version()),2+2)
+    if args.serial_num == None:
+        info_logger.log_info('Available motherboards:',2)
+        nof_channels = int(mb.num_of_channels())
+        if nof_channels > 0:
+            mbs = {}
+            for chan in range(0,nof_channels):
+                mb_num = mb.get_channel_info(chan)['SerialNumber'][:-1]
+                if mb_num != '':
+                    mbs[mb_num] = mb.get_channel_info(chan)
+            for mb_num in mbs:
+                info_logger.log_info('{}'.format(mb_num),2+2)
+            info_logger.log_info('')
+            if all(key in mbs.keys() for key in ["T582306548", "T582306549"]):
+                serial_num1 = "T582306548"
+                serial_num2 = "T582306549"
+        else:
+            info_logger.log_info('No motherboard detected. Exiting ...')
+            sys.exit()
+    else:
+        serial_num1 = args.serial_num
+
+
+    connect_to_device(serial_num1, args, info_logger, mb, fref, fdig, flo, fspi)
+    connect_to_device(serial_num2, args, info_logger, mb, fref, fdig, flo, fspi)
+    
+    
+    # process1 = multiprocessing.Process(target=connect_to_device,
+    #                                                 args=(serial_num1, args, info_logger, mb, fref, fdig, flo, fspi))
+    # process1.start()
+    # process1.join()
+    # process2 = multiprocessing.Process(target=connect_to_device,
+    #                                                 args=(serial_num2, args, info_logger, mb, fref, fdig, flo, fspi))
+    # process2.start()
+    # process2.join()

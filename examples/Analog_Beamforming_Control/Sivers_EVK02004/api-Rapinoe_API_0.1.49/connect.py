@@ -2,6 +2,7 @@
 class Connect:
     
     def __init__(self, serial_num, bsp, clock_rate=10000000):
+
         import mbdrv
         self.serial_num = serial_num
         self.mb         = mbdrv.MbDrv()
@@ -15,6 +16,10 @@ class Connect:
         elif self.board_type == 'MB2':
             import config.platform.mb2
             self.config = config.platform.mb2
+            attributes = vars(self.config)
+            for key, value in attributes.items():
+                print(f"{key} = {value}")
+                break
             for hw_obj in list(self.config.HW_OBJECTS):
                 exec("self.{} = self.config.{}(**{})".format(hw_obj, self.config.HW_OBJECTS[hw_obj]['type'], self.config.HW_OBJECTS[hw_obj]['params']))
         elif self.board_type == 'DBMB':
