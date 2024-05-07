@@ -28,6 +28,7 @@ class Connect:
 
         # Get module configuration
         if (bsp == 'rapvalbsp') or (bsp == 'rapvalx'):
+            print("XXX")
             import config.bsp.rapvalx
             self._override_signals(config.bsp.rapvalx, self.config)
             for hw_obj in list(config.bsp.rapvalx.HW_OBJECTS):
