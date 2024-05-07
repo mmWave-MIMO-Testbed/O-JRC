@@ -1,11 +1,14 @@
 
 class Connect:
     
-    def __init__(self, serial_num, bsp, mb, clock_rate=10000000):
-        print(bsp)
+    def __init__(self, serial_num, bsp, clock_rate=10000000):
+
+        import beamSweep_mbdrv
+
         self.serial_num = serial_num
-        self.mb         = mb
+        self.mb         = beamSweep_mbdrv.MbDrv()
         self.board_id  = self.mb.get_board_id(serial_num)
+
         # Get MB configuration
         self.board_type = self.mb.get_board_type(self.board_id)
         if self.board_type == 'EVK06002':
@@ -28,7 +31,6 @@ class Connect:
 
         # Get module configuration
         if (bsp == 'rapvalbsp') or (bsp == 'rapvalx'):
-            print("XXX")
             import config.bsp.rapvalx
             self._override_signals(config.bsp.rapvalx, self.config)
             for hw_obj in list(config.bsp.rapvalx.HW_OBJECTS):
@@ -44,18 +46,13 @@ class Connect:
             for hw_obj in list(config.bsp.bfm02803.HW_OBJECTS):
                 exec("self.{} = config.bsp.bfm02803.{}(**{})".format(hw_obj, config.bsp.bfm02803.HW_OBJECTS[hw_obj]['type'], config.bsp.bfm02803.HW_OBJECTS[hw_obj]['params']))
         elif bsp == 'dbm1':
-            print("444")
             import config.bsp.dbm1
             self._override_signals(config.bsp.dbm1, self.config)
             for hw_obj in list(config.bsp.dbm1.HW_OBJECTS):
                 exec("self.{} = config.bsp.dbm1.{}(**{})".format(hw_obj, config.bsp.dbm1.HW_OBJECTS[hw_obj]['type'], config.bsp.dbm1.HW_OBJECTS[hw_obj]['params']))
 
 
-        print(self.mb.get_board_type(self.board_id))
-        # self.MbDrv_dll.get_description(ctypes.c_uint8(index))
         self.mb.gpio_open(self.board_id, 0, self.config.GPIO_STATE_C)
-        # self.MbDrv_dll.gpio_init(ctypes.c_uint8(dev_index), ctypes.c_uint8(chan), ctypes.c_uint32(pin))
-        print("222")
         self.mb.gpio_open(self.board_id, 1, self.config.GPIO_STATE_D)
         print("  SPI speed set to {} MHz".format(clock_rate/1e6))
         self.spi_chan = self.mb.spi_open(self.board_id, mode=0, clock_rate=clock_rate, pin=self.config.GPIO_STATE_A)

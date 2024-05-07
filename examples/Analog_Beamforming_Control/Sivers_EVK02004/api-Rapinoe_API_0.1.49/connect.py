@@ -4,6 +4,7 @@ class Connect:
     def __init__(self, serial_num, bsp, clock_rate=10000000):
 
         import mbdrv
+
         self.serial_num = serial_num
         self.mb         = mbdrv.MbDrv()
         self.board_id  = self.mb.get_board_id(serial_num)

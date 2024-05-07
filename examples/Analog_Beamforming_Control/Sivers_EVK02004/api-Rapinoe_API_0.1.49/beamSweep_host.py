@@ -16,14 +16,14 @@ import eeprom
 #import cmd_server
 
 class Host():
-    def __init__(self, serial_num, bsp='rapvalbsp', fref=None, fdig=None, flo=None, fspi=None, indent=None, mb=None):
+    def __init__(self, serial_num, bsp='rapvalbsp', fref=None, fdig=None, flo=None, fspi=None, indent=None):
         if fspi is not None:
             pass
         elif bsp == 'rapvalt':
             fspi = 1000000
         elif fspi is None:
             fspi = 10000000
-        self._conn      = beamSweep_connect.Connect(serial_num=serial_num, bsp=bsp, mb=mb, clock_rate=fspi)
+        self._conn      = beamSweep_connect.Connect(serial_num=serial_num, bsp=bsp, clock_rate=fspi)
         self.version    = version.Version().get_version()
         if evk_logger.evk_logger == None:
             info_logger = self.info_file()
@@ -144,7 +144,8 @@ class Host():
 
     @evk_logger.log_call
     def versions(self,printit=False):
-        mbdll_version   = self._conn.mb.mbdrv_version()
+        # mbdll_version   = self._conn.mb.mbdrv_version()
+        mbdll_version   = "XXX"
         api_version     = self.version
         ret = {"MB_DLL":mbdll_version, "API":api_version}
         if printit:

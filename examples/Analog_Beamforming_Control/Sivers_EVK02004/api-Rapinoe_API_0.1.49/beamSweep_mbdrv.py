@@ -22,40 +22,42 @@ class MbDrv():
         else:
             self.MbDrv_dll = ctypes.WinDLL (dll_path+'win\\'+'MBDRV.dll')
 
-        self.MbDrv_dll.get_mbdrv_version.argtypes = ()
-        self.MbDrv_dll.get_mbdrv_version.restype = ctypes.c_char_p
-        self.MbDrv_dll.list_devs.argtypes = (ctypes.POINTER(self.FT_DEVICE_LIST_INFO_NODE),)
-        self.MbDrv_dll.get_num_of_channels.argtypes = ()
-        self.MbDrv_dll.print_dev_info.argtypes = (ctypes.c_uint8,)
-        self.MbDrv_dll.spi_chaninfo_init()
+        # self.MbDrv_dll.get_mbdrv_version.argtypes = ()
+        # self.MbDrv_dll.get_mbdrv_version.restype = ctypes.c_char_p
+        # self.MbDrv_dll.list_devs.argtypes = (ctypes.POINTER(self.FT_DEVICE_LIST_INFO_NODE),)
+        # self.MbDrv_dll.get_num_of_channels.argtypes = ()
+        # self.MbDrv_dll.print_dev_info.argtypes = (ctypes.c_uint8,)
+        # self.MbDrv_dll.spi_chaninfo_init()
         self.MbDrv_dll.get_device_id.argtypes = (ctypes.c_char_p,)
-        self.MbDrv_dll.get_serial_number.argtypes = (ctypes.c_uint8,)
-        self.MbDrv_dll.get_serial_number.restype = ctypes.c_char_p
+        # self.MbDrv_dll.get_serial_number.argtypes = (ctypes.c_uint8,)
+        # self.MbDrv_dll.get_serial_number.restype = ctypes.c_char_p
         self.MbDrv_dll.get_description.argtypes = (ctypes.c_uint8,)
+        # print("222")
         self.MbDrv_dll.get_description.restype = ctypes.c_char_p
         self.MbDrv_dll.get_board_type.argtypes = (ctypes.c_uint8,)
         self.MbDrv_dll.spi_chaninfo_get_chan.argtypes = (ctypes.c_char_p,)
-        self.MbDrv_dll.spi_init.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint32, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint32, ctypes.c_uint8)
-        self.MbDrv_dll.spi_reconfig.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint32, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint32, ctypes.c_uint8)
-        self.MbDrv_dll.spi_change_cs.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8)
-        self.MbDrv_dll.spi_read.argtypes = (ctypes.c_uint8, ctypes.POINTER(ctypes.c_uint8), ctypes.c_uint32, ctypes.POINTER(ctypes.c_uint8), ctypes.c_uint32)
-        self.MbDrv_dll.spi_write.argtypes = (ctypes.c_uint8, ctypes.POINTER(ctypes.c_uint8), ctypes.c_uint32)
-        self.MbDrv_dll.spi_read_write.argtypes = (ctypes.c_uint8, ctypes.POINTER(ctypes.c_uint8), ctypes.c_uint32, ctypes.POINTER(ctypes.c_uint8))
-        self.MbDrv_dll.spi_gpio.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8)
-        self.MbDrv_dll.spi_gpio_grp_set_dir.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8)
-        self.MbDrv_dll.spi_grp_gpio.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8)
-        self.MbDrv_dll.spi_gpio_get.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.POINTER(ctypes.c_uint8), ctypes.c_uint8)
-        self.MbDrv_dll.spi_gpio_dir.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8)
-        self.MbDrv_dll.spi_close.argtypes = (ctypes.c_uint8,)
-        self.MbDrv_dll.cleanup_libmpsse.argtypes = ()
-        self.MbDrv_dll.get_signal.argtypes = (ctypes.c_uint8, ctypes.c_uint16, ctypes.POINTER(ctypes.c_uint8), ctypes.c_uint8)
-        self.MbDrv_dll.set_signal.argtypes = (ctypes.c_uint8, ctypes.c_uint16, ctypes.c_bool, ctypes.c_uint8, ctypes.c_bool, ctypes.c_uint16)
-        self.MbDrv_dll.set_grp_signal.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8)
-        self.MbDrv_dll.get_grp_signal.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.POINTER(ctypes.c_uint8))
-        self.MbDrv_dll.set_signal_direction.argtypes = (ctypes.c_uint8, ctypes.c_uint16, ctypes.c_bool)
-        self.MbDrv_dll.get_signal_direction.argtypes = (ctypes.c_uint8, ctypes.c_uint16)
-        self.MbDrv_dll.get_signal_grp_direction.argtypes = (ctypes.c_uint8, ctypes.c_uint8)
-        self.MbDrv_dll.set_signal_grp_direction.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8)
+        # self.MbDrv_dll.spi_init.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint32, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint32, ctypes.c_uint8)
+        # self.MbDrv_dll.spi_reconfig.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint32, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint32, ctypes.c_uint8)
+        # self.MbDrv_dll.spi_change_cs.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8)
+        # self.MbDrv_dll.spi_read.argtypes = (ctypes.c_uint8, ctypes.POINTER(ctypes.c_uint8), ctypes.c_uint32, ctypes.POINTER(ctypes.c_uint8), ctypes.c_uint32)
+        # self.MbDrv_dll.spi_write.argtypes = (ctypes.c_uint8, ctypes.POINTER(ctypes.c_uint8), ctypes.c_uint32)
+        # self.MbDrv_dll.spi_read_write.argtypes = (ctypes.c_uint8, ctypes.POINTER(ctypes.c_uint8), ctypes.c_uint32, ctypes.POINTER(ctypes.c_uint8))
+        # self.MbDrv_dll.spi_gpio.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8)
+        # self.MbDrv_dll.spi_gpio_grp_set_dir.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8)
+        # self.MbDrv_dll.spi_grp_gpio.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8)
+        # self.MbDrv_dll.spi_gpio_get.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.POINTER(ctypes.c_uint8), ctypes.c_uint8)
+        # self.MbDrv_dll.spi_gpio_dir.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8)
+        # self.MbDrv_dll.spi_close.argtypes = (ctypes.c_uint8,)
+        # self.MbDrv_dll.cleanup_libmpsse.argtypes = ()
+        # self.MbDrv_dll.get_signal.argtypes = (ctypes.c_uint8, ctypes.c_uint16, ctypes.POINTER(ctypes.c_uint8), ctypes.c_uint8)
+        # self.MbDrv_dll.set_signal.argtypes = (ctypes.c_uint8, ctypes.c_uint16, ctypes.c_bool, ctypes.c_uint8, ctypes.c_bool, ctypes.c_uint16)
+        # self.MbDrv_dll.set_grp_signal.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8)
+        # self.MbDrv_dll.get_grp_signal.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.POINTER(ctypes.c_uint8))
+        # self.MbDrv_dll.set_signal_direction.argtypes = (ctypes.c_uint8, ctypes.c_uint16, ctypes.c_bool)
+        # self.MbDrv_dll.get_signal_direction.argtypes = (ctypes.c_uint8, ctypes.c_uint16)
+        # self.MbDrv_dll.get_signal_grp_direction.argtypes = (ctypes.c_uint8, ctypes.c_uint8)
+        # self.MbDrv_dll.set_signal_grp_direction.argtypes = (ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8, ctypes.c_uint8)
+        
         self.MbDrv_dll.i2c_chaninfo_init.argtypes = ()
         self.MbDrv_dll.i2c_chaninfo_get_chan.argtypes = (ctypes.c_char_p,)
         self.MbDrv_dll.i2c_init.argtypes = (ctypes.c_uint8, ctypes.c_uint32)
@@ -76,15 +78,19 @@ class MbDrv():
         self.MbDrv_dll.set_vcm.argtypes = (ctypes.c_uint8, ctypes.c_uint16)
         self.MbDrv_dll.set_vchp.argtypes = (ctypes.c_uint8, ctypes.c_uint16)
         self.MbDrv_dll.get_chpc.argtypes = (ctypes.c_uint8, ctypes.POINTER(ctypes.c_uint8))
+        # print("333")
 
         self.lock = Lock()
         self._set_default_spi_setting()
-
-        n = self.num_of_channels()
-        if n > 0:
-            dev_info = self._list_devs()
+        # print("444")
+        # n = self.num_of_channels()
+        # if n > 0:
+        #     dev_info = self._list_devs()
         self._i2c_chaninfo_init()
-        self._spi_chaninfo_init()
+        # self._spi_chaninfo_init()
+
+        # print("555")
+        
 
     def _list_devs(self):
         self.lock.acquire()
@@ -363,9 +369,6 @@ class MbDrv():
 
     def _gpio_init(self, dev_index, chan, pin):
         self.lock.acquire()
-        print(dev_index)
-        print(chan)
-        print(pin)
         res = self.MbDrv_dll.gpio_init(ctypes.c_uint8(dev_index), ctypes.c_uint8(chan), ctypes.c_uint32(pin))
         self.lock.release()
         return res
