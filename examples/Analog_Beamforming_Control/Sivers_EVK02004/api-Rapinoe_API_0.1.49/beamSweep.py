@@ -1,13 +1,10 @@
-import time
 import os
 import sys
-import beamSweep_host
+import code
+import time
+import readline
 import multiprocessing
-import beamSweep_mbdrv
-import connect
-from common import *
-
-
+import beamSweep_host
 
 def get_args():
     import argparse
@@ -35,86 +32,28 @@ def get_args():
     parser.add_argument('-x', '--xgui', dest='xgui', metavar='rap? | rap? rap? ... | rapAll', nargs='*', default=None,
                          help='Start GUI[s] with extended features')
     return parser.parse_args()
-    
+
 def info_file(fname="evk.info"):
     import evk_logger
     evk_logger.evk_logger = evk_logger.EvkLogger(fname)
     return evk_logger.evk_logger
 
-def connect_to_device(serial_num, args, info_logger, fref=None, fdig=None, flo=None, fspi=None):
-    mb  = beamSweep_mbdrv.MbDrv()
-    if serial_num != '':
-        board_id   = mb.get_board_id(serial_num)
-        board_type = mb.get_board_type(board_id)
-        print(board_type)
-        info_logger.log_info('Connecting to motherboard {0} with serial number {1} ...'.format(board_type, serial_num),2)
-        host = beamSweep_host.Host(serial_num=serial_num, bsp=args.bsp, fref=fref, fdig=fdig, flo=flo, fspi=fspi, mb=mb, indent=2)
-        rapAll = []
-        for num in range(0,host.chip._chip_info.get_num_devs()):
-            exec("rap{:} = host.rap{:}".format(num,num))
-            exec("rapAll.append(rap{:})".format(str(num)))
-
-        if args.gui != None:
-            if len(args.gui) == 0:
-                guis = rapAll
-            else:
-                guis = []
-                for gui in args.gui:
-                    guis.append(eval(gui))
-            host.open_gui(guis)
-
-        if args.xgui != None:
-            if len(args.xgui) == 0:
-                guis = rapAll
-            else:
-                guis = []
-                for gui in args.xgui:
-                    guis.append(eval(gui))
-            host.open_gui(guis, extended=True)
+def interactive_shell():
+    banner = "Interactive mode started. Type exit() to exit."
+    code.interact(banner=banner, local=globals())
 
 
-        if args.test != None:
-            if not args.test.endswith('.py'):
-                args.test = args.test+'.py'
-            if os.path.isfile(args.test):
-                test_file_exist = True
-            else:
-                test_file_exist = False
-                for dir in ['tests']:
-                    if os.path.isfile(os.path.join(dir,args.test)):
-                        args.test = os.path.join(dir,args.test)
-                        test_file_exist = True
-                        break
-                if not test_file_exist:
-                    info_logger.log_error('No file found matching {}'.format(args.test),2)
-                    possible_test_files = []
-                    for dir in ['tests']+sys.path:
-                        if os.path.isfile(os.path.join(dir,os.path.basename(args.test))):
-                            possible_test_files.append(os.path.join(dir,os.path.basename(args.test)))
-                    if len(possible_test_files) > 0:
-                        info_logger.log_error('Maybe you meant one of these files?',4)
-                        for file in possible_test_files:
-                            info_logger.log_error(file,4)
-            if test_file_exist:
-                info_logger.log_info('Running file {}'.format(args.test),2)
-                t=open(args.test,'r')
-                exec(t.read())
-                t.close()
-    info_logger.delayed_reset()
+def initialize_evk(serial_num, bsp, fref, fdig, flo, fspi):
 
-
-if __name__ == "__main__":
     if sys.platform == 'linux':
         print('  Unloading USB Serial driver...')
         os.system('sudo modprobe -r ftdi_sio')
-    args = get_args()
-    #cmd_hist_file()
+
     info_logger=info_file()
-    import rlcompleter, readline
+
     readline.set_history_length(1000)
     readline.parse_and_bind('tab:complete')
-    import fileHandler as json
-    #info_logger=info_file()
+
     try:
         fref = float(args.fref)
     except:
@@ -136,48 +75,72 @@ if __name__ == "__main__":
         fspi = None
 
     
-    # try:
-    #     info_logger.log_info('Trying to import module MB',2)
-    #     import beamSweep_mbdrv
-    #     mb = beamSweep_mbdrv.MbDrv()
-    # except ImportError as ie:
-    #     info_logger.log_error("Error! " + str(ie),2)
-    #     sys.exit()
+    info_logger.log_info('Connecting to motherboard with serial number {0} ...'.format(serial_num),2)
+    host_instance = beamSweep_host.Host(serial_num=serial_num, bsp=bsp, fref=fref, fdig=fdig, flo=flo, fspi=fspi, indent=2)
+    rapAll = []
+    for num in range(0,host_instance.chip._chip_info.get_num_devs()):
+        exec("rap{:} = host_instance.rap{:}".format(num,num))
+        exec("rapAll.append(rap{:})".format(str(num)))
 
-    # info_logger.log_info('MB {:} import successful.'.format(mb.version()),2+2)
-    # if args.serial_num == None:
-    #     info_logger.log_info('Available motherboards:',2)
-    #     nof_channels = int(mb.num_of_channels())
-    #     if nof_channels > 0:
-    #         mbs = {}
-    #         for chan in range(0,nof_channels):
-    #             mb_num = mb.get_channel_info(chan)['SerialNumber'][:-1]
-    #             if mb_num != '':
-    #                 mbs[mb_num] = mb.get_channel_info(chan)
-    #         for mb_num in mbs:
-    #             info_logger.log_info('{}'.format(mb_num),2+2)
-    #         info_logger.log_info('')
-    #         # if all(key in mbs.keys() for key in ["T582306548", "T582306549"]):
-    #         serial_num1 = "T582306549"
-    #         serial_num2 = "T582306548"
-    #     else:
-    #         info_logger.log_info('No motherboard detected. Exiting ...')
-    #         sys.exit()
-    # else:
-    #     serial_num1 = args.serial_num
+    if args.gui != None:
+        if len(args.gui) == 0:
+            guis = rapAll
+        else:
+            guis = []
+            for gui in args.gui:
+                guis.append(eval(gui))
+        host_instance.open_gui(guis)
 
-    serial_num1 = "T582306549"
-    serial_num2 = "T582306548"
+    if args.xgui != None:
+        if len(args.xgui) == 0:
+            guis = rapAll
+        else:
+            guis = []
+            for gui in args.xgui:
+                guis.append(eval(gui))
+        host_instance.open_gui(guis, extended=True)
 
-    # connect_to_device(serial_num1, args, info_logger, mb, fref, fdig, flo, fspi)
-    # connect_to_device(serial_num2, args, info_logger, mb, fref, fdig, flo, fspi)
+    if args.test != None:
+        if not args.test.endswith('.py'):
+            args.test = args.test+'.py'
+        if os.path.isfile(args.test):
+            test_file_exist = True
+        else:
+            test_file_exist = False
+            for dir in ['tests']:
+                if os.path.isfile(os.path.join(dir,args.test)):
+                    args.test = os.path.join(dir,args.test)
+                    test_file_exist = True
+                    break
+            if not test_file_exist:
+                info_logger.log_error('No file found matching {}'.format(args.test),2)
+                possible_test_files = []
+                for dir in ['tests']+sys.path:
+                    if os.path.isfile(os.path.join(dir,os.path.basename(args.test))):
+                        possible_test_files.append(os.path.join(dir,os.path.basename(args.test)))
+                if len(possible_test_files) > 0:
+                    info_logger.log_error('Maybe you meant one of these files?',4)
+                    for file in possible_test_files:
+                        info_logger.log_error(file,4)
+        if test_file_exist:
+            info_logger.log_info('Running file {}'.format(args.test),2)
+            t=open(args.test,'r')
+            exec(t.read())
+            t.close()
+    info_logger.delayed_reset()
+
+
+if __name__ == '__main__':
+
+    args = get_args()
+
+    process = multiprocessing.Process(target=initialize_evk, args=(args.serial_num, args.bsp, args.fref, args.fdig, args.flo, args.fspi))
+    process.start()
+    process.join()  
+
+
+    # interactive_shell()
     
-    
-    process1 = multiprocessing.Process(target=connect_to_device,
-                                                    args=(serial_num1, args, info_logger, fref, fdig, flo, fspi))
-    process1.start()
-    process1.join()
-    process2 = multiprocessing.Process(target=connect_to_device,
-                                                    args=(serial_num2, args, info_logger, fref, fdig, flo, fspi))
-    process2.start()
-    process2.join()
+
+
+# python3 beamSweep.py -s  T582306548 -t beamSweep_tx_setup
