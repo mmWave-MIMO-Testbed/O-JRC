@@ -1,6 +1,5 @@
 import os
 import sys
-import code
 import time
 import readline
 import multiprocessing
@@ -37,10 +36,6 @@ def info_file(fname="evk.info"):
     import evk_logger
     evk_logger.evk_logger = evk_logger.EvkLogger(fname)
     return evk_logger.evk_logger
-
-def interactive_shell():
-    banner = "Interactive mode started. Type exit() to exit."
-    code.interact(banner=banner, local=globals())
 
 
 def initialize_evk(serial_num, bsp, fref, fdig, flo, fspi):
@@ -135,12 +130,11 @@ if __name__ == '__main__':
     args = get_args()
 
     process = multiprocessing.Process(target=initialize_evk, args=(args.serial_num, args.bsp, args.fref, args.fdig, args.flo, args.fspi))
+    # process.daemon = True
     process.start()
     process.join()  
 
 
-    # interactive_shell()
-    
 
 
 # python3 beamSweep.py -s  T582306548 -t beamSweep_tx_setup

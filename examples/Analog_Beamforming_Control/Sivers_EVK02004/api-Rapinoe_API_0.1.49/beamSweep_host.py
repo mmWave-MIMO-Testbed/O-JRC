@@ -13,7 +13,7 @@ from common import *
 import modstore
 import gpio
 import eeprom
-#import cmd_server
+# import cmd_server
 
 class Host():
     def __init__(self, serial_num, bsp='rapvalbsp', fref=None, fdig=None, flo=None, fspi=None, indent=None):
@@ -88,11 +88,11 @@ class Host():
         # self.cmd_server_thread.setDaemon(True)
         # self.cmd_server_thread.start()
 
-    def start_cmd_server(self):
-        cmdserver = cmd_server.MyService(self)
-        from rpyc.utils.server import  ThreadedServer
-        t = ThreadedServer(cmdserver, port=18861, protocol_config={"allow_public_attrs": True, "allow_all_attrs": True})
-        t.start()
+    # def start_cmd_server(self):
+    #     cmdserver = cmd_server.MyService(self)
+    #     from rpyc.utils.server import  ThreadedServer
+    #     t = ThreadedServer(cmdserver, port=18861, protocol_config={"allow_public_attrs": True, "allow_all_attrs": True})
+    #     t.start()
 
     def info_file(self, fname="evk.info"):
         evk_logger.evk_logger = evk_logger.EvkLogger(fname)
