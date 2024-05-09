@@ -101,9 +101,13 @@ def evk_setup(serial_num, bsp, fref, fdig, flo, fspi, gui, xgui, test):
         if os.path.isfile(test):
             test_file_exist = True
         else:
+            print("222")
             test_file_exist = False
             for dir in ['tests']:
+                print(dir)
                 if os.path.isfile(os.path.join(dir,test)):
+                    print("333")
+                    print(os.path.join(dir,test))
                     test = os.path.join(dir,test)
                     test_file_exist = True
                     break
@@ -122,8 +126,10 @@ def evk_setup(serial_num, bsp, fref, fdig, flo, fspi, gui, xgui, test):
             t=open(test,'r')
             exec(t.read())
             t.close()
-            print("gggggggggggggggggggggggggggggg")
-            exec("host_instance.chip.tx.dco.calibrate(rap0, mode, pol1)")
+
+
+            # print("gggggggggggggggggggggggggggggg")
+            # exec("host_instance.chip.tx.dco.calibrate(rap0, mode, pol1)")
             # t.close()
     info_logger.delayed_reset()
 

@@ -28,19 +28,19 @@ host_instance.chip.init(rap0, 'TX', printit=False)
 freq_rff = 22.6e9 # LO frequency. The script is for IF mode. So RF will be IF freq + freq_rff
 host_instance.chip.synth.setup(rap0)
 host_instance.chip.synth.set(rap0,freq_rff, frac_mode=True, sd_order=2, printit=True)
-host_instance.chip.ram.fill(rap0, '27GHz') # Loads beam for 27GHz from file to RAM. Depending on the RF value a different beambook should be loaded
+# host_instance.chip.ram.fill(rap0, '27GHz') # Loads beam for 27GHz from file to RAM. Depending on the RF value a different beambook should be loaded
 
 #Enabling 16 elements on V pol
-host_instance.chip.tx.setup(rap0, mode, tpol, ant_en_v=0xFFFF, ant_en_h=0x0000) # for H pol or dual pol write appropriate values for ant_en_h. 0xFFFF is for all 16 paths (each bit is for one path). for ex, if you want just one path write 0x0001. 
-print("222")
+# host_instance.chip.tx.setup(rap0, mode, tpol, ant_en_v=0xFFFF, ant_en_h=0x0000) # for H pol or dual pol write appropriate values for ant_en_h. 0xFFFF is for all 16 paths (each bit is for one path). for ex, if you want just one path write 0x0001. 
+# print("222")
 #setting up the RFIC in Tx mode and choosing the required gain and beam indices. Check the 'ram.xml' file @C:\Sivers Semiconductors\Rapinoe\API\config\ram for more details
-host_instance.chip.trx.mode(rap0,tpol)
-host_instance.chip.tx.beam(rap0, 5, tpol)
-host_instance.chip.tx.gain_rf(rap0, 0, tpol)
+# host_instance.chip.trx.mode(rap0,tpol)
+# host_instance.chip.tx.beam(rap0, 5, tpol)
+# host_instance.chip.tx.gain_rf(rap0, 0, tpol)
 
 #calibrating for H and V pol separately
-print("xxx")
-host_instance.chip.tx.dco.calibrate(rap0, mode, pol1)
+# print("xxx")
+# host_instance.chip.tx.dco.calibrate(rap0, mode, pol1)
 #host.chip.tx.dco.calibrate(rap0, mode, pol2) # uncomment this cmd and comment the line above if H pol is used or uncomment both lines if dual pol is used (two DCO calibrations are needed then)
 
 # beam_index = 0
