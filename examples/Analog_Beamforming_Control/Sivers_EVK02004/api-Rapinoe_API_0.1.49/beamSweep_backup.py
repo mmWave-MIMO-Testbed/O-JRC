@@ -1,15 +1,12 @@
-import time
 import os
 import sys
-import threading
-import rlcompleter
+import time
 import readline
-import fileHandler as json
+import argparse
 import multiprocessing
 import beamSweep_host
 
 def get_args():
-    import argparse
     parser = argparse.ArgumentParser(description='Command line options.')
     parser.add_argument('-s', '--serial', dest='serial_num', metavar='Serial number', default=None,
                          help='Specify MB serial name')
@@ -35,8 +32,44 @@ def get_args():
                          help='Start GUI[s] with extended features')
     return parser.parse_args()
 
+def info_file(fname="evk.info"):
+    import evk_logger
+    evk_logger.evk_logger = evk_logger.EvkLogger(fname)
+    return evk_logger.evk_logger
 
-def initialize_evk(serial_num, bsp, fref, fdig, flo, fspi):
+
+def evk_setup(serial_num, bsp, fref, fdig, flo, fspi, gui, xgui, test):
+
+    if sys.platform == 'linux':
+        print('  Unloading USB Serial driver...')
+        os.system('sudo modprobe -r ftdi_sio')
+
+    info_logger=info_file()
+
+    readline.set_history_length(1000)
+    readline.parse_and_bind('tab:complete')
+
+    try:
+        fref = float(fref)
+    except:
+        fref = None
+
+    try:
+        fdig = float(fdig)
+    except:
+        fdig = None
+        
+    try:
+        flo = float(flo)
+    except:
+        flo = None
+        
+    try:
+        fspi = int(fspi)
+    except:
+        fspi = None
+
+    
     info_logger.log_info('Connecting to motherboard with serial number {0} ...'.format(serial_num),2)
     host_instance = beamSweep_host.Host(serial_num=serial_num, bsp=bsp, fref=fref, fdig=fdig, flo=flo, fspi=fspi, indent=2)
     rapAll = []
@@ -44,155 +77,83 @@ def initialize_evk(serial_num, bsp, fref, fdig, flo, fspi):
         exec("rap{:} = host_instance.rap{:}".format(num,num))
         exec("rapAll.append(rap{:})".format(str(num)))
 
-    if args.gui != None:
-        if len(args.gui) == 0:
+    if gui != None:
+        if len(gui) == 0:
             guis = rapAll
         else:
             guis = []
-            for gui in args.gui:
+            for gui in gui:
                 guis.append(eval(gui))
-        host.open_gui(guis)
+        host_instance.open_gui(guis)
 
-    if args.xgui != None:
-        if len(args.xgui) == 0:
+    if xgui != None:
+        if len(xgui) == 0:
             guis = rapAll
         else:
             guis = []
-            for gui in args.xgui:
+            for gui in xgui:
                 guis.append(eval(gui))
-        host.open_gui(guis, extended=True)
+        host_instance.open_gui(guis, extended=True)
 
-    if args.test != None:
-        if not args.test.endswith('.py'):
-            args.test = args.test+'.py'
-        if os.path.isfile(args.test):
+    if test != None:
+        if not test.endswith('.py'):
+            test = test+'.py'
+        if os.path.isfile(test):
             test_file_exist = True
         else:
             test_file_exist = False
             for dir in ['tests']:
-                if os.path.isfile(os.path.join(dir,args.test)):
-                    args.test = os.path.join(dir,args.test)
+                if os.path.isfile(os.path.join(dir,test)):
+                    test = os.path.join(dir,test)
                     test_file_exist = True
                     break
             if not test_file_exist:
-                info_logger.log_error('No file found matching {}'.format(args.test),2)
+                info_logger.log_error('No file found matching {}'.format(test),2)
                 possible_test_files = []
                 for dir in ['tests']+sys.path:
-                    if os.path.isfile(os.path.join(dir,os.path.basename(args.test))):
-                        possible_test_files.append(os.path.join(dir,os.path.basename(args.test)))
+                    if os.path.isfile(os.path.join(dir,os.path.basename(test))):
+                        possible_test_files.append(os.path.join(dir,os.path.basename(test)))
                 if len(possible_test_files) > 0:
                     info_logger.log_error('Maybe you meant one of these files?',4)
                     for file in possible_test_files:
                         info_logger.log_error(file,4)
         if test_file_exist:
-            info_logger.log_info('Running file {}'.format(args.test),2)
-            t=open(args.test,'r')
+            info_logger.log_info('Running file {}'.format(test),2)
+            t=open(test,'r')
             exec(t.read())
             t.close()
+            print("gggggggggggggggggggggggggggggg")
+            exec("host_instance.chip.tx.dco.calibrate(rap0, mode, pol1)")
+            # t.close()
     info_logger.delayed_reset()
 
-
-def info_file(fname="evk.info"):
-    import evk_logger
-    evk_logger.evk_logger = evk_logger.EvkLogger(fname)
-    return evk_logger.evk_logger
-
+def main(serial_num, bsp, fref, fdig, flo, fspi, gui, xgui, test):
+    process = multiprocessing.Process(target=evk_setup, args=(serial_num, bsp, fref, fdig, flo, fspi, gui, xgui, test))
+    process.start()
+    process.join()
 
 if __name__ == '__main__':
-
-    if sys.platform == 'linux':
-        print('  Unloading USB Serial driver...')
-        os.system('sudo modprobe -r ftdi_sio')
     args = get_args()
-    info_logger=info_file()
-    readline.set_history_length(1000)
-    readline.parse_and_bind('tab:complete')
-
-    try:
-        fref = float(args.fref)
-    except:
-        fref = None
-
-    try:
-        fdig = float(args.fdig)
-    except:
-        fdig = None
-        
-    try:
-        flo = float(args.flo)
-    except:
-        flo = None
-        
-    try:
-        fspi = int(args.fspi)
-    except:
-        fspi = None
-
-    # Serial numbers for the devices
-    serial_num1 = "T582306548"
-    serial_num2 = "T582306549"
-
-
-    # initialize_evk(serial_num2, args.bsp, fref, fdig, flo, fspi)
-    # initialize_host(serial_num1, 'rapvalt', 1000000)
-    process1 = multiprocessing.Process(target=initialize_evk, args=(serial_num1, args.bsp, fref, fdig, flo, fspi))
-    process2 = multiprocessing.Process(target=initialize_evk, args=(serial_num2, args.bsp, fref, fdig, flo, fspi))
-
-    # Start and join the processes
+    main(args.serial_num, args.bsp, args.fref, args.fdig, args.flo, args.fspi, args.gui, args. xgui, args.test)
     
-    process1.start()
-    process1.join()
-
-    process2.start()
-    process2.join()
-
-
-# class Connect:
     
-#     def __init__(self, serial_num, bsp, clock_rate=10000000):
-#         import mbdrv
-#         self.serial_num = serial_num
-#         self.mb         = mbdrv.MbDrv()
-#         self.board_id  = self.mb.get_board_id(serial_num)
-
-#         # Get MB configuration
-#         self.board_type = self.mb.get_board_type(self.board_id)
-#         if self.board_type == 'EVK06002':
-#             import config.platform.mb1
-#             self.config = config.platform.mb1
-#         elif self.board_type == 'MB2':
-#             import config.platform.mb2
-#             self.config = config.platform.mb2
-#             attributes = vars(self.config)
-#             for key, value in attributes.items():
-#                 print(f"{key} = {value}")
-#                 break
-#             for hw_obj in list(self.config.HW_OBJECTS):
-#                 exec("self.{} = self.config.{}(**{})".format(hw_obj, self.config.HW_OBJECTS[hw_obj]['type'], self.config.HW_OBJECTS[hw_obj]['params']))
     
-#         # Get module configuration
-#         if (bsp == 'rapvalbsp') or (bsp == 'rapvalx'):
-#             import config.bsp.rapvalx
-#             self._override_signals(config.bsp.rapvalx, self.config)
-#             for hw_obj in list(config.bsp.rapvalx.HW_OBJECTS):
-#                 exec("self.{} = config.bsp.rapvalx.{}(**{})".format(hw_obj, config.bsp.rapvalx.HW_OBJECTS[hw_obj]['type'], config.bsp.rapvalx.HW_OBJECTS[hw_obj]['params']))
-#         elif bsp == 'rapvalt':
-#             import config.bsp.rapvalt
-#             self._override_signals(config.bsp.rapvalt, self.config)
-#             for hw_obj in list(config.bsp.rapvalt.HW_OBJECTS):
-#                 exec("self.{} = config.bsp.rapvalt.{}(**{})".format(hw_obj, config.bsp.rapvalt.HW_OBJECTS[hw_obj]['type'], config.bsp.rapvalt.HW_OBJECTS[hw_obj]['params']))
-        
+    # evk_beam()
 
-#         self.mb.gpio_open(self.board_id, 0, self.config.GPIO_STATE_C)
-#         self.mb.gpio_open(self.board_id, 1, self.config.GPIO_STATE_D)
-#         print("  SPI speed set to {} MHz".format(clock_rate/1e6))
-#         self.spi_chan = self.mb.spi_open(self.board_id, mode=0, clock_rate=clock_rate, pin=self.config.GPIO_STATE_A)
-#         self.i2c_chan = self.mb.i2c_open(self.board_id, pin=self.config.GPIO_STATE_B)
+def evk_beam(beam_index):
+    host_instance.chip.tx.beam(rap0, beam_index, tpol)
 
-#     def _override_signals(self, bsp, conf):
-#         sig_names = [item for item in dir(conf)]
-#         for sig_name in sig_names:
-#             try:
-#                 exec("conf.{} = bsp.{}".format(sig_name,sig_name))
-#             except:
-#                 pass
+
+
+
+# if __name__ == '__main__':
+
+#     args = get_args()
+
+#     process = multiprocessing.Process(target=initialize_evk, args=(args.serial_num, args.bsp, args.fref, args.fdig, args.flo, args.fspi))
+#     # process.daemon = True
+#     process.start()
+#     process.join()
+
+
+# python3 beamSweep.py -s  T582306548 -t beamSweep_tx_setup

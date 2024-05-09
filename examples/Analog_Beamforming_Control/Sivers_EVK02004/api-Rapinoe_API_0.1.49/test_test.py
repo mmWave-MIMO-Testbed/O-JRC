@@ -1,22 +1,64 @@
-from multiprocessing import Process
+# import beamSweep
+
+# beamSweep.main("T582306548", "rapvalbsp", None, None, None, None, None, None, "beamSweep_tx_setup")
+# beamSweep.beam(6)
+
+import multiprocessing
 import time
 
-def add_one(a):
-    result = a + 1
-    print(f"Process 1: {a} + 1 = {result}")
-    time.sleep(1)  # 模拟长时间运行
+class PersistentProcess(multiprocessing.Process):
+    def __init__(self, process_id):
+        super().__init__()
+        self.process_id = process_id
+        self.current_value = 0
+        self.event = multiprocessing.Event()
+        self.new_input = multiprocessing.Queue()
+        self.terminate = multiprocessing.Event()  # Additional event to handle termination
 
-def add_two(a):
-    result = a + 2
-    print(f"Process 1: {a} + 1 = {result}")
-    time.sleep(3)  # 模拟长时间运行
+    def update_value(self, new_value):
+        self.new_input.put(new_value)
+        self.event.set()  # Set event to notify process there is new data
+
+    def run(self):
+        while not self.terminate.is_set():  # Check if termination is requested
+            self.event.wait()  # Wait for the event to be set
+            while not self.new_input.empty():
+                input_value = self.new_input.get()
+                self.current_value += input_value + 2
+                print(f"Process {self.process_id}: Updated value: {self.current_value}", flush=True)
+            self.event.clear()  # Clear event after processing
+            
+            if self.terminate.is_set():  # Check again after clearing inputs
+                break
+
+    def stop(self):
+        self.terminate.set()  # Signal the process to terminate
+        self.event.set()  # Ensure the process wakes up if it is waiting
+        self.join()
 
 if __name__ == '__main__':
-    process_one = Process(target=add_one, args=(5,))
-    process_two = Process(target=add_two, args=(5,))
+    # Start multiple processes
+    pp1 = PersistentProcess(process_id=1)
+    pp2 = PersistentProcess(process_id=2)
 
-    process_one.start()
-    process_two.start()
+    pp1.start()
+    pp2.start()
 
-    process_one.join()  # Optionally wait for the process to finish
-    process_two.join()  # Optionally wait for the process to finish
+    print("Main thread is doing something else...")
+    time.sleep(1)
+    pp1.update_value(5)
+    time.sleep(1)
+    print("Main thread is still working...")
+    pp2.update_value(3)
+    time.sleep(1)
+    pp1.stop()
+    pp2.stop()
+
+    # pp1.update_value(7)  # Update while interactive
+    # time.sleep(1)  # Give some time to process
+    # pp1.update_value(2)  # Update while interactive
+    # print("222")
+    # pp2.update_value(3)  # Update while interactive
+    # time.sleep(1)  # Give some time to process
+
+
