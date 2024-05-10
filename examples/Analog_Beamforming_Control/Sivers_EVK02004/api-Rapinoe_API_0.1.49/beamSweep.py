@@ -5,7 +5,7 @@ import readline
 import argparse
 import evk_logger
 import multiprocessing
-import beamSweep_host
+import host
 
 def get_args():
     parser = argparse.ArgumentParser(description='Command line options.')
@@ -96,8 +96,8 @@ class beamSweep(multiprocessing.Process):
         
         try:
             # Attempt to create the host instance
-            self.host_instance = beamSweep_host.Host(serial_num=self.serial_num, bsp=self.bsp, fref=fref, fdig=fdig, flo=flo, fspi=fspi, indent=2)
-            if not self.host_instance:
+            self.host = host.Host(serial_num=self.serial_num, bsp=self.bsp, fref=fref, fdig=fdig, flo=flo, fspi=fspi, indent=2)
+            if not self.host:
                 raise ValueError("Host instance creation returned None.")
             info_logger.log_info('Host instance created successfully.')
         except Exception as e:
@@ -126,11 +126,11 @@ class beamSweep(multiprocessing.Process):
 
     def manage_gui(self):
         if self.gui:
-            guis = [getattr(self.host_instance, gui_item.strip()) for gui_item in self.gui]
-            self.host_instance.open_gui(guis)
+            guis = [getattr(self.host, gui_item.strip()) for gui_item in self.gui]
+            self.host.open_gui(guis)
         if self.xgui:
-            xguis = [getattr(self.host_instance, xgui_item.strip()) for xgui_item in self.xgui]
-            self.host_instance.open_gui(xguis, extended=True)
+            xguis = [getattr(self.host, xgui_item.strip()) for xgui_item in self.xgui]
+            self.host.open_gui(xguis, extended=True)
 
     def run_test(self, info_logger):
         test_path = f"{self.test}.py" if not self.test.endswith('.py') else self.test
@@ -156,7 +156,7 @@ class beamSweep(multiprocessing.Process):
         if test_file_exist:
             info_logger.log_info('Running file {}'.format(test_path),2)
             t=open(test,'r')
-            exec(t.read(), {'host_instance': self.host_instance, 'rap0': self.host_instance.rap0})
+            exec(t.read(), {'host': self.host, 'rap0': self.host.rap0})
             t.close()
 
     def process_commands(self, info_logger):
@@ -164,7 +164,7 @@ class beamSweep(multiprocessing.Process):
             self.event.wait()
             while not self.new_cmd.empty():
                 input_cmd = self.new_cmd.get()
-                exec(input_cmd, {'host_instance': self.host_instance, 'rap0': self.host_instance.rap0})
+                exec(input_cmd, {'host': self.host, 'rap0': self.host.rap0})
                 info_logger.log_info('Command executed.', 2)
             self.event.clear()
 
@@ -205,7 +205,7 @@ if __name__ == '__main__':
 
     for ii in range(64):
         # Format the command string with the current beam_index and tpol
-        command = f"host_instance.chip.tx.beam(rap0, {beam_index}, '{tpol}')"
+        command = f"host.chip.tx.beam(rap0, {beam_index}, '{tpol}')"
         beamSweep_process_1.update_cmd(command)
         time.sleep(0.02)  # Sleep to allow processing time between commands
         beam_index += 1
