@@ -134,14 +134,18 @@ class beamSweep(multiprocessing.Process):
 
     def run_test(self, info_logger):
         test_path = f"{self.test}.py" if not self.test.endswith('.py') else self.test
+        
         if os.path.isfile(test_path):
             test_file_exist = True
         else:
-            test_file_exist = False
+            test_file_exist = False            
             for dir in ['tests']:
+                print(os.path.join(dir,test_path))
+                print(os.path.isfile(os.path.join(dir,test_path)))
                 if os.path.isfile(os.path.join(dir,test_path)):
                     test = os.path.join(dir,test_path)
                     test_file_exist = True
+                    print(test)
                     break
             if not test_file_exist:
                 info_logger.log_error('No file found matching {}'.format(test_path),2)
@@ -193,22 +197,22 @@ def beamSweep_start(process_id, serial_num, bsp, fref, fdig, flo, fspi, gui, xgu
     return beamSweep_process
 
 
-if __name__ == '__main__':
-    args = get_args()
-    beamSweep_process_1 = beamSweep_start(1, args.serial_num, args.bsp, args.fref, args.fdig, args.flo, args.fspi, args.gui, args. xgui, args.test)
+# if __name__ == '__main__':
+#     args = get_args()
+#     beamSweep_process_1 = beamSweep_start(1, args.serial_num, args.bsp, args.fref, args.fdig, args.flo, args.fspi, args.gui, args. xgui, args.test)
     
-    if beamSweep_process_1 is None:
-        sys.exit(1)  # Exit the program if initialization failed
+#     if beamSweep_process_1 is None:
+#         sys.exit(1)  # Exit the program if initialization failed
 
-    beam_index = 0
-    tpol = 'tv'
+#     beam_index = 0
+#     tpol = 'tv'
 
-    for ii in range(64):
-        # Format the command string with the current beam_index and tpol
-        command = f"host.chip.tx.beam(rap0, {beam_index}, '{tpol}')"
-        beamSweep_process_1.update_cmd(command)
-        time.sleep(0.02)  # Sleep to allow processing time between commands
-        beam_index += 1
-        print(f'Config TX beam index: {beam_index}')
+#     for ii in range(64):
+#         # Format the command string with the current beam_index and tpol
+#         command = f"host.chip.tx.beam(rap0, {beam_index}, '{tpol}')"
+#         beamSweep_process_1.update_cmd(command)
+#         time.sleep(0.02)  # Sleep to allow processing time between commands
+#         beam_index += 1
+#         print(f'Config TX beam index: {beam_index}')
 
-    beamSweep_process_1.stop()
+#     beamSweep_process_1.stop()

@@ -1,1 +1,1488 @@
 2024-05-01 10:12:09,316 INFO : #   Trying to import module MB
+2024-05-10 15:24:45,452 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:24:52,028 ERROR: # [1m[31mFailed to create host instance: 'NoneType' object has no attribute 'decode'
+2024-05-10 15:24:52,028 ERROR: # [1m[31mInitialization failed: 'NoneType' object has no attribute 'decode'
+2024-05-10 15:24:52,028 INFO : # Process will terminate due to failed initialization.
+2024-05-10 15:25:46,200 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:25:57,989 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:25:57,990 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:25:57,990 INFO : #     API       : 0.1.49
+2024-05-10 15:25:59,146 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:25:59,146 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:25:59,147 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:25:59,147 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:25:59,147 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:25:59,148 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:25:59,148 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:25:59,149 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:25:59,150 ERROR: #     [1m[31mDevice with id 0x00000000 not supported.
+2024-05-10 15:25:59,150 ERROR: #     [1m[31mDevice with id 0x00000000 not supported.
+2024-05-10 15:25:59,150 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:25:59,275 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:25:59,385 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:25:59,386 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:25:59,387 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:25:59,394 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:25:59,394 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:25:59,394 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:25:59,395 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:25:59,395 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:25:59,396 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:25:59,396 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:25:59,396 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:25:59,396 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:25:59,398 INFO : # Host instance created successfully.
+2024-05-10 15:25:59,399 ERROR: #   [1m[31mNo file found matching tx_setup_25Ghz.py
+2024-05-10 15:25:59,408 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:26:04,248 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:26:04,248 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:26:04,248 INFO : #     API       : 0.1.49
+2024-05-10 15:26:05,387 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:26:05,387 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:26:05,387 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:26:05,387 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:26:05,387 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:26:05,389 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:26:05,389 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:26:05,390 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:26:05,390 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:26:05,391 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:26:05,391 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:26:05,515 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:26:05,625 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:26:05,626 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:26:05,627 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:26:05,635 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:26:05,635 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:26:05,635 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:26:05,635 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:26:05,635 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:26:05,636 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:26:05,636 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:26:05,636 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:26:05,636 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:26:05,639 INFO : # Host instance created successfully.
+2024-05-10 15:26:05,639 ERROR: #   [1m[31mNo file found matching rx_setup_25Ghz.py
+2024-05-10 15:26:48,689 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:27:04,574 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:27:04,574 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:27:04,574 INFO : #     API       : 0.1.49
+2024-05-10 15:27:05,708 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:27:05,709 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:27:05,709 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:27:05,709 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:27:05,709 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:27:05,710 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:27:05,710 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:27:05,711 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:27:05,711 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:27:05,712 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:27:05,712 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:27:05,836 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:27:05,946 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:27:05,947 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:27:05,948 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:27:05,958 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:27:05,958 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:27:05,958 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:27:05,959 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:27:05,959 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:27:05,959 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:27:05,960 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:27:05,960 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:27:05,960 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:27:05,962 INFO : # Host instance created successfully.
+2024-05-10 15:27:05,962 ERROR: #   [1m[31mNo file found matching tx_setup_25Ghz.py
+2024-05-10 15:27:05,971 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:27:06,364 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:27:06,364 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:27:06,364 INFO : #     API       : 0.1.49
+2024-05-10 15:27:07,502 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:27:07,502 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:27:07,503 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:27:07,503 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:27:07,503 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:27:07,504 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:27:07,504 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:27:07,505 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:27:07,506 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:27:07,506 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:27:07,506 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:27:07,631 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:27:07,741 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:27:07,741 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:27:07,742 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:27:07,748 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:27:07,748 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:27:07,748 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:27:07,749 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:27:07,749 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:27:07,750 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:27:07,750 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:27:07,750 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:27:07,750 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:27:07,752 INFO : # Host instance created successfully.
+2024-05-10 15:27:07,752 ERROR: #   [1m[31mNo file found matching rx_setup_25Ghz.py
+2024-05-10 15:28:27,293 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:28:27,296 ERROR: # [1m[31mFailed to create host instance: 'NoneType' object has no attribute 'decode'
+2024-05-10 15:28:27,296 ERROR: # [1m[31mInitialization failed: 'NoneType' object has no attribute 'decode'
+2024-05-10 15:28:27,296 INFO : # Process will terminate due to failed initialization.
+2024-05-10 15:29:20,560 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:29:36,773 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:29:36,773 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:29:36,773 INFO : #     API       : 0.1.49
+2024-05-10 15:29:37,907 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:29:37,907 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:29:37,907 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:29:37,907 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:29:37,907 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:29:37,908 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:29:37,908 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:29:37,909 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:29:37,909 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:29:37,910 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:29:37,910 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:29:38,034 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:29:38,144 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:29:38,145 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:29:38,146 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:29:38,152 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:29:38,152 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:29:38,152 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:29:38,153 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:29:38,153 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:29:38,153 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:29:38,153 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:29:38,153 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:29:38,154 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:29:38,156 INFO : # Host instance created successfully.
+2024-05-10 15:29:38,156 ERROR: #   [1m[31mNo file found matching tx_setup_25Ghz.py
+2024-05-10 15:29:38,158 CALL [0] : Tx.beam(rap0, 0, 'th')
+2024-05-10 15:29:38,159 INFO : #   Command executed.
+2024-05-10 15:29:38,178 CALL [0] : Tx.beam(rap0, 1, 'th')
+2024-05-10 15:29:38,179 INFO : #   Command executed.
+2024-05-10 15:29:38,198 CALL [0] : Tx.beam(rap0, 2, 'th')
+2024-05-10 15:29:38,199 INFO : #   Command executed.
+2024-05-10 15:29:38,218 CALL [0] : Tx.beam(rap0, 3, 'th')
+2024-05-10 15:29:38,219 INFO : #   Command executed.
+2024-05-10 15:29:38,238 CALL [0] : Tx.beam(rap0, 4, 'th')
+2024-05-10 15:29:38,239 INFO : #   Command executed.
+2024-05-10 15:29:38,258 CALL [0] : Tx.beam(rap0, 5, 'th')
+2024-05-10 15:29:38,259 INFO : #   Command executed.
+2024-05-10 15:29:38,279 CALL [0] : Tx.beam(rap0, 6, 'th')
+2024-05-10 15:29:38,280 INFO : #   Command executed.
+2024-05-10 15:29:38,299 CALL [0] : Tx.beam(rap0, 7, 'th')
+2024-05-10 15:29:38,300 INFO : #   Command executed.
+2024-05-10 15:29:38,319 CALL [0] : Tx.beam(rap0, 8, 'th')
+2024-05-10 15:29:38,320 INFO : #   Command executed.
+2024-05-10 15:29:38,339 CALL [0] : Tx.beam(rap0, 9, 'th')
+2024-05-10 15:29:38,340 INFO : #   Command executed.
+2024-05-10 15:29:38,359 CALL [0] : Tx.beam(rap0, 10, 'th')
+2024-05-10 15:29:38,360 INFO : #   Command executed.
+2024-05-10 15:29:38,379 CALL [0] : Tx.beam(rap0, 11, 'th')
+2024-05-10 15:29:38,380 INFO : #   Command executed.
+2024-05-10 15:29:38,399 CALL [0] : Tx.beam(rap0, 12, 'th')
+2024-05-10 15:29:38,400 INFO : #   Command executed.
+2024-05-10 15:29:38,419 CALL [0] : Tx.beam(rap0, 13, 'th')
+2024-05-10 15:29:38,421 INFO : #   Command executed.
+2024-05-10 15:29:38,460 CALL [0] : Tx.beam(rap0, 14, 'th')
+2024-05-10 15:29:38,461 INFO : #   Command executed.
+2024-05-10 15:29:38,461 CALL [0] : Tx.beam(rap0, 15, 'th')
+2024-05-10 15:29:38,462 INFO : #   Command executed.
+2024-05-10 15:29:38,480 CALL [0] : Tx.beam(rap0, 16, 'th')
+2024-05-10 15:29:38,481 INFO : #   Command executed.
+2024-05-10 15:29:38,520 CALL [0] : Tx.beam(rap0, 17, 'th')
+2024-05-10 15:29:38,521 INFO : #   Command executed.
+2024-05-10 15:29:38,521 CALL [0] : Tx.beam(rap0, 18, 'th')
+2024-05-10 15:29:38,522 INFO : #   Command executed.
+2024-05-10 15:29:38,560 CALL [0] : Tx.beam(rap0, 19, 'th')
+2024-05-10 15:29:38,561 INFO : #   Command executed.
+2024-05-10 15:29:38,561 CALL [0] : Tx.beam(rap0, 20, 'th')
+2024-05-10 15:29:38,562 INFO : #   Command executed.
+2024-05-10 15:29:38,580 CALL [0] : Tx.beam(rap0, 21, 'th')
+2024-05-10 15:29:38,581 INFO : #   Command executed.
+2024-05-10 15:29:38,601 CALL [0] : Tx.beam(rap0, 22, 'th')
+2024-05-10 15:29:38,602 INFO : #   Command executed.
+2024-05-10 15:29:38,621 CALL [0] : Tx.beam(rap0, 23, 'th')
+2024-05-10 15:29:38,622 INFO : #   Command executed.
+2024-05-10 15:29:38,641 CALL [0] : Tx.beam(rap0, 24, 'th')
+2024-05-10 15:29:38,642 INFO : #   Command executed.
+2024-05-10 15:29:38,661 CALL [0] : Tx.beam(rap0, 25, 'th')
+2024-05-10 15:29:38,662 INFO : #   Command executed.
+2024-05-10 15:29:38,681 CALL [0] : Tx.beam(rap0, 26, 'th')
+2024-05-10 15:29:38,682 INFO : #   Command executed.
+2024-05-10 15:29:38,701 CALL [0] : Tx.beam(rap0, 27, 'th')
+2024-05-10 15:29:38,702 INFO : #   Command executed.
+2024-05-10 15:29:38,721 CALL [0] : Tx.beam(rap0, 28, 'th')
+2024-05-10 15:29:38,722 INFO : #   Command executed.
+2024-05-10 15:29:38,742 CALL [0] : Tx.beam(rap0, 29, 'th')
+2024-05-10 15:29:38,743 INFO : #   Command executed.
+2024-05-10 15:29:38,762 CALL [0] : Tx.beam(rap0, 30, 'th')
+2024-05-10 15:29:38,763 INFO : #   Command executed.
+2024-05-10 15:29:38,782 CALL [0] : Tx.beam(rap0, 31, 'th')
+2024-05-10 15:29:38,783 INFO : #   Command executed.
+2024-05-10 15:29:38,802 CALL [0] : Tx.beam(rap0, 32, 'th')
+2024-05-10 15:29:38,803 INFO : #   Command executed.
+2024-05-10 15:29:38,822 CALL [0] : Tx.beam(rap0, 33, 'th')
+2024-05-10 15:29:38,823 INFO : #   Command executed.
+2024-05-10 15:29:38,863 CALL [0] : Tx.beam(rap0, 34, 'th')
+2024-05-10 15:29:38,864 INFO : #   Command executed.
+2024-05-10 15:29:38,864 CALL [0] : Tx.beam(rap0, 35, 'th')
+2024-05-10 15:29:38,865 INFO : #   Command executed.
+2024-05-10 15:29:38,903 CALL [0] : Tx.beam(rap0, 36, 'th')
+2024-05-10 15:29:38,904 INFO : #   Command executed.
+2024-05-10 15:29:38,904 CALL [0] : Tx.beam(rap0, 37, 'th')
+2024-05-10 15:29:38,905 INFO : #   Command executed.
+2024-05-10 15:29:38,923 CALL [0] : Tx.beam(rap0, 38, 'th')
+2024-05-10 15:29:38,924 INFO : #   Command executed.
+2024-05-10 15:29:38,943 CALL [0] : Tx.beam(rap0, 39, 'th')
+2024-05-10 15:29:38,944 INFO : #   Command executed.
+2024-05-10 15:29:38,983 CALL [0] : Tx.beam(rap0, 40, 'th')
+2024-05-10 15:29:38,984 INFO : #   Command executed.
+2024-05-10 15:29:38,984 CALL [0] : Tx.beam(rap0, 41, 'th')
+2024-05-10 15:29:38,985 INFO : #   Command executed.
+2024-05-10 15:29:39,024 CALL [0] : Tx.beam(rap0, 42, 'th')
+2024-05-10 15:29:39,025 INFO : #   Command executed.
+2024-05-10 15:29:39,025 CALL [0] : Tx.beam(rap0, 43, 'th')
+2024-05-10 15:29:39,026 INFO : #   Command executed.
+2024-05-10 15:29:39,044 CALL [0] : Tx.beam(rap0, 44, 'th')
+2024-05-10 15:29:39,045 INFO : #   Command executed.
+2024-05-10 15:29:39,064 CALL [0] : Tx.beam(rap0, 45, 'th')
+2024-05-10 15:29:39,065 INFO : #   Command executed.
+2024-05-10 15:29:39,084 CALL [0] : Tx.beam(rap0, 46, 'th')
+2024-05-10 15:29:39,085 INFO : #   Command executed.
+2024-05-10 15:29:39,104 CALL [0] : Tx.beam(rap0, 47, 'th')
+2024-05-10 15:29:39,106 INFO : #   Command executed.
+2024-05-10 15:29:39,124 CALL [0] : Tx.beam(rap0, 48, 'th')
+2024-05-10 15:29:39,126 INFO : #   Command executed.
+2024-05-10 15:29:39,145 CALL [0] : Tx.beam(rap0, 49, 'th')
+2024-05-10 15:29:39,146 INFO : #   Command executed.
+2024-05-10 15:29:39,165 CALL [0] : Tx.beam(rap0, 50, 'th')
+2024-05-10 15:29:39,166 INFO : #   Command executed.
+2024-05-10 15:29:39,205 CALL [0] : Tx.beam(rap0, 51, 'th')
+2024-05-10 15:29:39,206 INFO : #   Command executed.
+2024-05-10 15:29:39,206 CALL [0] : Tx.beam(rap0, 52, 'th')
+2024-05-10 15:29:39,207 INFO : #   Command executed.
+2024-05-10 15:29:39,245 CALL [0] : Tx.beam(rap0, 53, 'th')
+2024-05-10 15:29:39,246 INFO : #   Command executed.
+2024-05-10 15:29:39,246 CALL [0] : Tx.beam(rap0, 54, 'th')
+2024-05-10 15:29:39,247 INFO : #   Command executed.
+2024-05-10 15:29:39,285 CALL [0] : Tx.beam(rap0, 55, 'th')
+2024-05-10 15:29:39,286 INFO : #   Command executed.
+2024-05-10 15:29:39,286 CALL [0] : Tx.beam(rap0, 56, 'th')
+2024-05-10 15:29:39,287 INFO : #   Command executed.
+2024-05-10 15:29:39,326 CALL [0] : Tx.beam(rap0, 57, 'th')
+2024-05-10 15:29:39,327 INFO : #   Command executed.
+2024-05-10 15:29:39,327 CALL [0] : Tx.beam(rap0, 58, 'th')
+2024-05-10 15:29:39,328 INFO : #   Command executed.
+2024-05-10 15:29:39,366 CALL [0] : Tx.beam(rap0, 59, 'th')
+2024-05-10 15:29:39,367 INFO : #   Command executed.
+2024-05-10 15:29:39,367 CALL [0] : Tx.beam(rap0, 60, 'th')
+2024-05-10 15:29:39,368 INFO : #   Command executed.
+2024-05-10 15:29:39,406 CALL [0] : Tx.beam(rap0, 61, 'th')
+2024-05-10 15:29:39,407 INFO : #   Command executed.
+2024-05-10 15:29:39,407 CALL [0] : Tx.beam(rap0, 62, 'th')
+2024-05-10 15:29:39,408 INFO : #   Command executed.
+2024-05-10 15:29:39,426 CALL [0] : Tx.beam(rap0, 63, 'th')
+2024-05-10 15:29:39,427 INFO : #   Command executed.
+2024-05-10 15:30:33,177 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:30:56,649 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:30:56,649 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:30:56,649 INFO : #     API       : 0.1.49
+2024-05-10 15:30:57,784 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:30:57,784 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:30:57,784 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:30:57,784 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:30:57,784 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:30:57,785 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:30:57,785 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:30:57,786 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:30:57,787 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:30:57,787 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:30:57,787 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:30:57,911 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:30:58,021 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:30:58,021 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:30:58,022 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:30:58,028 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:30:58,028 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:30:58,028 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:30:58,029 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:30:58,029 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:30:58,030 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:30:58,030 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:30:58,030 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:30:58,030 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:30:58,032 INFO : # Host instance created successfully.
+2024-05-10 15:30:58,032 ERROR: #   [1m[31mNo file found matching tx_setup.py
+2024-05-10 15:30:58,053 CALL [0] : Tx.beam(rap0, 0, 'th')
+2024-05-10 15:30:58,054 INFO : #   Command executed.
+2024-05-10 15:30:58,054 CALL [0] : Tx.beam(rap0, 1, 'th')
+2024-05-10 15:30:58,055 INFO : #   Command executed.
+2024-05-10 15:30:58,073 CALL [0] : Tx.beam(rap0, 2, 'th')
+2024-05-10 15:30:58,074 INFO : #   Command executed.
+2024-05-10 15:30:58,114 CALL [0] : Tx.beam(rap0, 3, 'th')
+2024-05-10 15:30:58,114 INFO : #   Command executed.
+2024-05-10 15:30:58,114 CALL [0] : Tx.beam(rap0, 4, 'th')
+2024-05-10 15:30:58,115 INFO : #   Command executed.
+2024-05-10 15:30:58,134 CALL [0] : Tx.beam(rap0, 5, 'th')
+2024-05-10 15:30:58,134 INFO : #   Command executed.
+2024-05-10 15:30:58,154 CALL [0] : Tx.beam(rap0, 6, 'th')
+2024-05-10 15:30:58,155 INFO : #   Command executed.
+2024-05-10 15:30:58,174 CALL [0] : Tx.beam(rap0, 7, 'th')
+2024-05-10 15:30:58,175 INFO : #   Command executed.
+2024-05-10 15:30:58,194 CALL [0] : Tx.beam(rap0, 8, 'th')
+2024-05-10 15:30:58,195 INFO : #   Command executed.
+2024-05-10 15:30:58,214 CALL [0] : Tx.beam(rap0, 9, 'th')
+2024-05-10 15:30:58,215 INFO : #   Command executed.
+2024-05-10 15:30:58,254 CALL [0] : Tx.beam(rap0, 10, 'th')
+2024-05-10 15:30:58,255 INFO : #   Command executed.
+2024-05-10 15:30:58,255 CALL [0] : Tx.beam(rap0, 11, 'th')
+2024-05-10 15:30:58,256 INFO : #   Command executed.
+2024-05-10 15:30:58,274 CALL [0] : Tx.beam(rap0, 12, 'th')
+2024-05-10 15:30:58,275 INFO : #   Command executed.
+2024-05-10 15:30:58,295 CALL [0] : Tx.beam(rap0, 13, 'th')
+2024-05-10 15:30:58,296 INFO : #   Command executed.
+2024-05-10 15:30:58,315 CALL [0] : Tx.beam(rap0, 14, 'th')
+2024-05-10 15:30:58,316 INFO : #   Command executed.
+2024-05-10 15:30:58,335 CALL [0] : Tx.beam(rap0, 15, 'th')
+2024-05-10 15:30:58,336 INFO : #   Command executed.
+2024-05-10 15:30:58,355 CALL [0] : Tx.beam(rap0, 16, 'th')
+2024-05-10 15:30:58,356 INFO : #   Command executed.
+2024-05-10 15:30:58,375 CALL [0] : Tx.beam(rap0, 17, 'th')
+2024-05-10 15:30:58,376 INFO : #   Command executed.
+2024-05-10 15:30:58,416 CALL [0] : Tx.beam(rap0, 18, 'th')
+2024-05-10 15:30:58,416 INFO : #   Command executed.
+2024-05-10 15:30:58,416 CALL [0] : Tx.beam(rap0, 19, 'th')
+2024-05-10 15:30:58,417 INFO : #   Command executed.
+2024-05-10 15:30:58,436 CALL [0] : Tx.beam(rap0, 20, 'th')
+2024-05-10 15:30:58,437 INFO : #   Command executed.
+2024-05-10 15:30:58,456 CALL [0] : Tx.beam(rap0, 21, 'th')
+2024-05-10 15:30:58,457 INFO : #   Command executed.
+2024-05-10 15:30:58,496 CALL [0] : Tx.beam(rap0, 22, 'th')
+2024-05-10 15:30:58,497 INFO : #   Command executed.
+2024-05-10 15:30:58,497 CALL [0] : Tx.beam(rap0, 23, 'th')
+2024-05-10 15:30:58,498 INFO : #   Command executed.
+2024-05-10 15:30:58,516 CALL [0] : Tx.beam(rap0, 24, 'th')
+2024-05-10 15:30:58,517 INFO : #   Command executed.
+2024-05-10 15:30:58,536 CALL [0] : Tx.beam(rap0, 25, 'th')
+2024-05-10 15:30:58,537 INFO : #   Command executed.
+2024-05-10 15:30:58,556 CALL [0] : Tx.beam(rap0, 26, 'th')
+2024-05-10 15:30:58,557 INFO : #   Command executed.
+2024-05-10 15:30:58,597 CALL [0] : Tx.beam(rap0, 27, 'th')
+2024-05-10 15:30:58,597 INFO : #   Command executed.
+2024-05-10 15:30:58,597 CALL [0] : Tx.beam(rap0, 28, 'th')
+2024-05-10 15:30:58,598 INFO : #   Command executed.
+2024-05-10 15:30:58,637 CALL [0] : Tx.beam(rap0, 29, 'th')
+2024-05-10 15:30:58,638 INFO : #   Command executed.
+2024-05-10 15:30:58,638 CALL [0] : Tx.beam(rap0, 30, 'th')
+2024-05-10 15:30:58,639 INFO : #   Command executed.
+2024-05-10 15:30:58,677 CALL [0] : Tx.beam(rap0, 31, 'th')
+2024-05-10 15:30:58,678 INFO : #   Command executed.
+2024-05-10 15:30:58,678 CALL [0] : Tx.beam(rap0, 32, 'th')
+2024-05-10 15:30:58,679 INFO : #   Command executed.
+2024-05-10 15:30:58,717 CALL [0] : Tx.beam(rap0, 33, 'th')
+2024-05-10 15:30:58,718 INFO : #   Command executed.
+2024-05-10 15:30:58,718 CALL [0] : Tx.beam(rap0, 34, 'th')
+2024-05-10 15:30:58,719 INFO : #   Command executed.
+2024-05-10 15:30:58,757 CALL [0] : Tx.beam(rap0, 35, 'th')
+2024-05-10 15:30:58,758 INFO : #   Command executed.
+2024-05-10 15:30:58,758 CALL [0] : Tx.beam(rap0, 36, 'th')
+2024-05-10 15:30:58,759 INFO : #   Command executed.
+2024-05-10 15:30:58,798 CALL [0] : Tx.beam(rap0, 37, 'th')
+2024-05-10 15:30:58,798 INFO : #   Command executed.
+2024-05-10 15:30:58,798 CALL [0] : Tx.beam(rap0, 38, 'th')
+2024-05-10 15:30:58,799 INFO : #   Command executed.
+2024-05-10 15:30:58,838 CALL [0] : Tx.beam(rap0, 39, 'th')
+2024-05-10 15:30:58,839 INFO : #   Command executed.
+2024-05-10 15:30:58,839 CALL [0] : Tx.beam(rap0, 40, 'th')
+2024-05-10 15:30:58,840 INFO : #   Command executed.
+2024-05-10 15:30:58,878 CALL [0] : Tx.beam(rap0, 41, 'th')
+2024-05-10 15:30:58,879 INFO : #   Command executed.
+2024-05-10 15:30:58,879 CALL [0] : Tx.beam(rap0, 42, 'th')
+2024-05-10 15:30:58,880 INFO : #   Command executed.
+2024-05-10 15:30:58,918 CALL [0] : Tx.beam(rap0, 43, 'th')
+2024-05-10 15:30:58,919 INFO : #   Command executed.
+2024-05-10 15:30:58,919 CALL [0] : Tx.beam(rap0, 44, 'th')
+2024-05-10 15:30:58,920 INFO : #   Command executed.
+2024-05-10 15:30:58,958 CALL [0] : Tx.beam(rap0, 45, 'th')
+2024-05-10 15:30:58,959 INFO : #   Command executed.
+2024-05-10 15:30:58,959 CALL [0] : Tx.beam(rap0, 46, 'th')
+2024-05-10 15:30:58,960 INFO : #   Command executed.
+2024-05-10 15:30:58,998 CALL [0] : Tx.beam(rap0, 47, 'th')
+2024-05-10 15:30:58,999 INFO : #   Command executed.
+2024-05-10 15:30:58,999 CALL [0] : Tx.beam(rap0, 48, 'th')
+2024-05-10 15:30:59,000 INFO : #   Command executed.
+2024-05-10 15:30:59,018 CALL [0] : Tx.beam(rap0, 49, 'th')
+2024-05-10 15:30:59,019 INFO : #   Command executed.
+2024-05-10 15:30:59,059 CALL [0] : Tx.beam(rap0, 50, 'th')
+2024-05-10 15:30:59,060 INFO : #   Command executed.
+2024-05-10 15:30:59,060 CALL [0] : Tx.beam(rap0, 51, 'th')
+2024-05-10 15:30:59,061 INFO : #   Command executed.
+2024-05-10 15:30:59,099 CALL [0] : Tx.beam(rap0, 52, 'th')
+2024-05-10 15:30:59,100 INFO : #   Command executed.
+2024-05-10 15:30:59,100 CALL [0] : Tx.beam(rap0, 53, 'th')
+2024-05-10 15:30:59,101 INFO : #   Command executed.
+2024-05-10 15:30:59,139 CALL [0] : Tx.beam(rap0, 54, 'th')
+2024-05-10 15:30:59,140 INFO : #   Command executed.
+2024-05-10 15:30:59,140 CALL [0] : Tx.beam(rap0, 55, 'th')
+2024-05-10 15:30:59,141 INFO : #   Command executed.
+2024-05-10 15:30:59,159 CALL [0] : Tx.beam(rap0, 56, 'th')
+2024-05-10 15:30:59,160 INFO : #   Command executed.
+2024-05-10 15:30:59,179 CALL [0] : Tx.beam(rap0, 57, 'th')
+2024-05-10 15:30:59,180 INFO : #   Command executed.
+2024-05-10 15:30:59,200 CALL [0] : Tx.beam(rap0, 58, 'th')
+2024-05-10 15:30:59,201 INFO : #   Command executed.
+2024-05-10 15:30:59,220 CALL [0] : Tx.beam(rap0, 59, 'th')
+2024-05-10 15:30:59,221 INFO : #   Command executed.
+2024-05-10 15:30:59,240 CALL [0] : Tx.beam(rap0, 60, 'th')
+2024-05-10 15:30:59,241 INFO : #   Command executed.
+2024-05-10 15:30:59,260 CALL [0] : Tx.beam(rap0, 61, 'th')
+2024-05-10 15:30:59,261 INFO : #   Command executed.
+2024-05-10 15:30:59,280 CALL [0] : Tx.beam(rap0, 62, 'th')
+2024-05-10 15:30:59,281 INFO : #   Command executed.
+2024-05-10 15:30:59,300 CALL [0] : Tx.beam(rap0, 63, 'th')
+2024-05-10 15:30:59,301 INFO : #   Command executed.
+2024-05-10 15:33:08,829 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:33:29,393 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:33:29,393 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:33:29,393 INFO : #     API       : 0.1.49
+2024-05-10 15:33:30,530 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:33:30,530 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:33:30,530 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:33:30,530 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:33:30,530 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:33:30,532 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:33:30,532 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:33:30,532 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:33:30,533 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:33:30,534 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:33:30,534 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:33:30,658 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:33:30,768 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:33:30,769 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:33:30,769 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:33:30,776 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:33:30,776 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:33:30,776 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:33:30,776 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:33:30,776 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:33:30,777 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:33:30,777 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:33:30,777 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:33:30,777 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:33:30,779 INFO : # Host instance created successfully.
+2024-05-10 15:33:30,779 ERROR: #   [1m[31mNo file found matching tx_setup.py
+2024-05-10 15:33:30,800 CALL [0] : Tx.beam(rap0, 0, 'th')
+2024-05-10 15:33:30,802 INFO : #   Command executed.
+2024-05-10 15:33:30,802 CALL [0] : Tx.beam(rap0, 1, 'th')
+2024-05-10 15:33:30,803 INFO : #   Command executed.
+2024-05-10 15:33:30,820 CALL [0] : Tx.beam(rap0, 2, 'th')
+2024-05-10 15:33:30,822 INFO : #   Command executed.
+2024-05-10 15:33:30,840 CALL [0] : Tx.beam(rap0, 3, 'th')
+2024-05-10 15:33:30,842 INFO : #   Command executed.
+2024-05-10 15:33:30,861 CALL [0] : Tx.beam(rap0, 4, 'th')
+2024-05-10 15:33:30,862 INFO : #   Command executed.
+2024-05-10 15:33:30,881 CALL [0] : Tx.beam(rap0, 5, 'th')
+2024-05-10 15:33:30,881 INFO : #   Command executed.
+2024-05-10 15:33:30,901 CALL [0] : Tx.beam(rap0, 6, 'th')
+2024-05-10 15:33:30,902 INFO : #   Command executed.
+2024-05-10 15:33:30,941 CALL [0] : Tx.beam(rap0, 7, 'th')
+2024-05-10 15:33:30,943 INFO : #   Command executed.
+2024-05-10 15:33:30,943 CALL [0] : Tx.beam(rap0, 8, 'th')
+2024-05-10 15:33:30,943 INFO : #   Command executed.
+2024-05-10 15:33:30,981 CALL [0] : Tx.beam(rap0, 9, 'th')
+2024-05-10 15:33:30,983 INFO : #   Command executed.
+2024-05-10 15:33:30,983 CALL [0] : Tx.beam(rap0, 10, 'th')
+2024-05-10 15:33:30,984 INFO : #   Command executed.
+2024-05-10 15:33:31,022 CALL [0] : Tx.beam(rap0, 11, 'th')
+2024-05-10 15:33:31,023 INFO : #   Command executed.
+2024-05-10 15:33:31,023 CALL [0] : Tx.beam(rap0, 12, 'th')
+2024-05-10 15:33:31,023 INFO : #   Command executed.
+2024-05-10 15:33:31,062 CALL [0] : Tx.beam(rap0, 13, 'th')
+2024-05-10 15:33:31,063 INFO : #   Command executed.
+2024-05-10 15:33:31,063 CALL [0] : Tx.beam(rap0, 14, 'th')
+2024-05-10 15:33:31,064 INFO : #   Command executed.
+2024-05-10 15:33:31,102 CALL [0] : Tx.beam(rap0, 15, 'th')
+2024-05-10 15:33:31,104 INFO : #   Command executed.
+2024-05-10 15:33:31,104 CALL [0] : Tx.beam(rap0, 16, 'th')
+2024-05-10 15:33:31,105 INFO : #   Command executed.
+2024-05-10 15:33:31,142 CALL [0] : Tx.beam(rap0, 17, 'th')
+2024-05-10 15:33:31,143 INFO : #   Command executed.
+2024-05-10 15:33:31,144 CALL [0] : Tx.beam(rap0, 18, 'th')
+2024-05-10 15:33:31,145 INFO : #   Command executed.
+2024-05-10 15:33:31,182 CALL [0] : Tx.beam(rap0, 19, 'th')
+2024-05-10 15:33:31,184 INFO : #   Command executed.
+2024-05-10 15:33:31,184 CALL [0] : Tx.beam(rap0, 20, 'th')
+2024-05-10 15:33:31,185 INFO : #   Command executed.
+2024-05-10 15:33:31,203 CALL [0] : Tx.beam(rap0, 21, 'th')
+2024-05-10 15:33:31,204 INFO : #   Command executed.
+2024-05-10 15:33:31,243 CALL [0] : Tx.beam(rap0, 22, 'th')
+2024-05-10 15:33:31,245 INFO : #   Command executed.
+2024-05-10 15:33:31,245 CALL [0] : Tx.beam(rap0, 23, 'th')
+2024-05-10 15:33:31,246 INFO : #   Command executed.
+2024-05-10 15:33:31,263 CALL [0] : Tx.beam(rap0, 24, 'th')
+2024-05-10 15:33:31,265 INFO : #   Command executed.
+2024-05-10 15:33:31,283 CALL [0] : Tx.beam(rap0, 25, 'th')
+2024-05-10 15:33:31,285 INFO : #   Command executed.
+2024-05-10 15:33:31,324 CALL [0] : Tx.beam(rap0, 26, 'th')
+2024-05-10 15:33:31,324 INFO : #   Command executed.
+2024-05-10 15:33:31,325 CALL [0] : Tx.beam(rap0, 27, 'th')
+2024-05-10 15:33:31,326 INFO : #   Command executed.
+2024-05-10 15:33:31,344 CALL [0] : Tx.beam(rap0, 28, 'th')
+2024-05-10 15:33:31,344 INFO : #   Command executed.
+2024-05-10 15:33:31,364 CALL [0] : Tx.beam(rap0, 29, 'th')
+2024-05-10 15:33:31,364 INFO : #   Command executed.
+2024-05-10 15:33:31,384 CALL [0] : Tx.beam(rap0, 30, 'th')
+2024-05-10 15:33:31,384 INFO : #   Command executed.
+2024-05-10 15:33:31,404 CALL [0] : Tx.beam(rap0, 31, 'th')
+2024-05-10 15:33:31,404 INFO : #   Command executed.
+2024-05-10 15:33:31,424 CALL [0] : Tx.beam(rap0, 32, 'th')
+2024-05-10 15:33:31,425 INFO : #   Command executed.
+2024-05-10 15:33:31,444 CALL [0] : Tx.beam(rap0, 33, 'th')
+2024-05-10 15:33:31,445 INFO : #   Command executed.
+2024-05-10 15:33:31,464 CALL [0] : Tx.beam(rap0, 34, 'th')
+2024-05-10 15:33:31,465 INFO : #   Command executed.
+2024-05-10 15:33:31,485 CALL [0] : Tx.beam(rap0, 35, 'th')
+2024-05-10 15:33:31,485 INFO : #   Command executed.
+2024-05-10 15:33:31,505 CALL [0] : Tx.beam(rap0, 36, 'th')
+2024-05-10 15:33:31,505 INFO : #   Command executed.
+2024-05-10 15:33:31,525 CALL [0] : Tx.beam(rap0, 37, 'th')
+2024-05-10 15:33:31,525 INFO : #   Command executed.
+2024-05-10 15:33:31,545 CALL [0] : Tx.beam(rap0, 38, 'th')
+2024-05-10 15:33:31,545 INFO : #   Command executed.
+2024-05-10 15:33:31,565 CALL [0] : Tx.beam(rap0, 39, 'th')
+2024-05-10 15:33:31,565 INFO : #   Command executed.
+2024-05-10 15:33:31,585 CALL [0] : Tx.beam(rap0, 40, 'th')
+2024-05-10 15:33:31,586 INFO : #   Command executed.
+2024-05-10 15:33:31,625 CALL [0] : Tx.beam(rap0, 41, 'th')
+2024-05-10 15:33:31,627 INFO : #   Command executed.
+2024-05-10 15:33:31,627 CALL [0] : Tx.beam(rap0, 42, 'th')
+2024-05-10 15:33:31,627 INFO : #   Command executed.
+2024-05-10 15:33:31,646 CALL [0] : Tx.beam(rap0, 43, 'th')
+2024-05-10 15:33:31,647 INFO : #   Command executed.
+2024-05-10 15:33:31,666 CALL [0] : Tx.beam(rap0, 44, 'th')
+2024-05-10 15:33:31,666 INFO : #   Command executed.
+2024-05-10 15:33:31,706 CALL [0] : Tx.beam(rap0, 45, 'th')
+2024-05-10 15:33:31,708 INFO : #   Command executed.
+2024-05-10 15:33:31,708 CALL [0] : Tx.beam(rap0, 46, 'th')
+2024-05-10 15:33:31,709 INFO : #   Command executed.
+2024-05-10 15:33:31,726 CALL [0] : Tx.beam(rap0, 47, 'th')
+2024-05-10 15:33:31,727 INFO : #   Command executed.
+2024-05-10 15:33:31,746 CALL [0] : Tx.beam(rap0, 48, 'th')
+2024-05-10 15:33:31,747 INFO : #   Command executed.
+2024-05-10 15:33:31,767 CALL [0] : Tx.beam(rap0, 49, 'th')
+2024-05-10 15:33:31,767 INFO : #   Command executed.
+2024-05-10 15:33:31,787 CALL [0] : Tx.beam(rap0, 50, 'th')
+2024-05-10 15:33:31,787 INFO : #   Command executed.
+2024-05-10 15:33:31,807 CALL [0] : Tx.beam(rap0, 51, 'th')
+2024-05-10 15:33:31,808 INFO : #   Command executed.
+2024-05-10 15:33:31,847 CALL [0] : Tx.beam(rap0, 52, 'th')
+2024-05-10 15:33:31,848 INFO : #   Command executed.
+2024-05-10 15:33:31,849 CALL [0] : Tx.beam(rap0, 53, 'th')
+2024-05-10 15:33:31,849 INFO : #   Command executed.
+2024-05-10 15:33:31,868 CALL [0] : Tx.beam(rap0, 54, 'th')
+2024-05-10 15:33:31,869 INFO : #   Command executed.
+2024-05-10 15:33:31,908 CALL [0] : Tx.beam(rap0, 55, 'th')
+2024-05-10 15:33:31,909 INFO : #   Command executed.
+2024-05-10 15:33:31,909 CALL [0] : Tx.beam(rap0, 56, 'th')
+2024-05-10 15:33:31,909 INFO : #   Command executed.
+2024-05-10 15:33:31,948 CALL [0] : Tx.beam(rap0, 57, 'th')
+2024-05-10 15:33:31,949 INFO : #   Command executed.
+2024-05-10 15:33:31,950 CALL [0] : Tx.beam(rap0, 58, 'th')
+2024-05-10 15:33:31,950 INFO : #   Command executed.
+2024-05-10 15:33:31,989 CALL [0] : Tx.beam(rap0, 59, 'th')
+2024-05-10 15:33:31,989 INFO : #   Command executed.
+2024-05-10 15:33:31,990 CALL [0] : Tx.beam(rap0, 60, 'th')
+2024-05-10 15:33:31,990 INFO : #   Command executed.
+2024-05-10 15:33:32,029 CALL [0] : Tx.beam(rap0, 61, 'th')
+2024-05-10 15:33:32,029 INFO : #   Command executed.
+2024-05-10 15:33:32,030 CALL [0] : Tx.beam(rap0, 62, 'th')
+2024-05-10 15:33:32,030 INFO : #   Command executed.
+2024-05-10 15:33:32,069 CALL [0] : Tx.beam(rap0, 63, 'th')
+2024-05-10 15:33:32,069 INFO : #   Command executed.
+2024-05-10 15:34:22,026 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:34:58,793 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:34:58,794 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:34:58,794 INFO : #     API       : 0.1.49
+2024-05-10 15:34:59,937 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:34:59,937 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:34:59,937 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:34:59,937 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:34:59,937 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:34:59,938 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:34:59,938 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:34:59,939 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:34:59,939 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:34:59,940 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:34:59,940 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:35:00,064 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:35:00,175 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:35:00,175 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:35:00,176 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:35:00,182 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:35:00,182 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:35:00,182 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:35:00,183 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:35:00,183 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:35:00,184 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:35:00,184 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:35:00,184 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:35:00,184 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:35:00,186 INFO : # Host instance created successfully.
+2024-05-10 15:35:00,186 ERROR: #   [1m[31mNo file found matching tx_setup.py
+2024-05-10 15:35:00,186 CALL [0] : Tx.beam(rap0, 0, 'th')
+2024-05-10 15:35:00,187 INFO : #   Command executed.
+2024-05-10 15:35:00,207 CALL [0] : Tx.beam(rap0, 1, 'th')
+2024-05-10 15:35:00,208 INFO : #   Command executed.
+2024-05-10 15:35:00,227 CALL [0] : Tx.beam(rap0, 2, 'th')
+2024-05-10 15:35:00,228 INFO : #   Command executed.
+2024-05-10 15:35:00,247 CALL [0] : Tx.beam(rap0, 3, 'th')
+2024-05-10 15:35:00,248 INFO : #   Command executed.
+2024-05-10 15:35:00,267 CALL [0] : Tx.beam(rap0, 4, 'th')
+2024-05-10 15:35:00,268 INFO : #   Command executed.
+2024-05-10 15:35:00,287 CALL [0] : Tx.beam(rap0, 5, 'th')
+2024-05-10 15:35:00,288 INFO : #   Command executed.
+2024-05-10 15:35:00,307 CALL [0] : Tx.beam(rap0, 6, 'th')
+2024-05-10 15:35:00,308 INFO : #   Command executed.
+2024-05-10 15:35:00,327 CALL [0] : Tx.beam(rap0, 7, 'th')
+2024-05-10 15:35:00,329 INFO : #   Command executed.
+2024-05-10 15:35:00,348 CALL [0] : Tx.beam(rap0, 8, 'th')
+2024-05-10 15:35:00,349 INFO : #   Command executed.
+2024-05-10 15:35:00,368 CALL [0] : Tx.beam(rap0, 9, 'th')
+2024-05-10 15:35:00,369 INFO : #   Command executed.
+2024-05-10 15:35:00,388 CALL [0] : Tx.beam(rap0, 10, 'th')
+2024-05-10 15:35:00,389 INFO : #   Command executed.
+2024-05-10 15:35:00,408 CALL [0] : Tx.beam(rap0, 11, 'th')
+2024-05-10 15:35:00,409 INFO : #   Command executed.
+2024-05-10 15:35:00,428 CALL [0] : Tx.beam(rap0, 12, 'th')
+2024-05-10 15:35:00,429 INFO : #   Command executed.
+2024-05-10 15:35:00,448 CALL [0] : Tx.beam(rap0, 13, 'th')
+2024-05-10 15:35:00,449 INFO : #   Command executed.
+2024-05-10 15:35:00,469 CALL [0] : Tx.beam(rap0, 14, 'th')
+2024-05-10 15:35:00,470 INFO : #   Command executed.
+2024-05-10 15:35:00,489 CALL [0] : Tx.beam(rap0, 15, 'th')
+2024-05-10 15:35:00,490 INFO : #   Command executed.
+2024-05-10 15:35:00,509 CALL [0] : Tx.beam(rap0, 16, 'th')
+2024-05-10 15:35:00,510 INFO : #   Command executed.
+2024-05-10 15:35:00,529 CALL [0] : Tx.beam(rap0, 17, 'th')
+2024-05-10 15:35:00,530 INFO : #   Command executed.
+2024-05-10 15:35:00,549 CALL [0] : Tx.beam(rap0, 18, 'th')
+2024-05-10 15:35:00,550 INFO : #   Command executed.
+2024-05-10 15:35:00,569 CALL [0] : Tx.beam(rap0, 19, 'th')
+2024-05-10 15:35:00,570 INFO : #   Command executed.
+2024-05-10 15:35:00,589 CALL [0] : Tx.beam(rap0, 20, 'th')
+2024-05-10 15:35:00,590 INFO : #   Command executed.
+2024-05-10 15:35:00,609 CALL [0] : Tx.beam(rap0, 21, 'th')
+2024-05-10 15:35:00,611 INFO : #   Command executed.
+2024-05-10 15:35:00,630 CALL [0] : Tx.beam(rap0, 22, 'th')
+2024-05-10 15:35:00,631 INFO : #   Command executed.
+2024-05-10 15:35:00,650 CALL [0] : Tx.beam(rap0, 23, 'th')
+2024-05-10 15:35:00,651 INFO : #   Command executed.
+2024-05-10 15:35:00,670 CALL [0] : Tx.beam(rap0, 24, 'th')
+2024-05-10 15:35:00,671 INFO : #   Command executed.
+2024-05-10 15:35:00,690 CALL [0] : Tx.beam(rap0, 25, 'th')
+2024-05-10 15:35:00,691 INFO : #   Command executed.
+2024-05-10 15:35:00,710 CALL [0] : Tx.beam(rap0, 26, 'th')
+2024-05-10 15:35:00,711 INFO : #   Command executed.
+2024-05-10 15:35:00,730 CALL [0] : Tx.beam(rap0, 27, 'th')
+2024-05-10 15:35:00,731 INFO : #   Command executed.
+2024-05-10 15:35:00,750 CALL [0] : Tx.beam(rap0, 28, 'th')
+2024-05-10 15:35:00,752 INFO : #   Command executed.
+2024-05-10 15:35:00,771 CALL [0] : Tx.beam(rap0, 29, 'th')
+2024-05-10 15:35:00,772 INFO : #   Command executed.
+2024-05-10 15:35:00,791 CALL [0] : Tx.beam(rap0, 30, 'th')
+2024-05-10 15:35:00,792 INFO : #   Command executed.
+2024-05-10 15:35:00,811 CALL [0] : Tx.beam(rap0, 31, 'th')
+2024-05-10 15:35:00,812 INFO : #   Command executed.
+2024-05-10 15:35:00,831 CALL [0] : Tx.beam(rap0, 32, 'th')
+2024-05-10 15:35:00,832 INFO : #   Command executed.
+2024-05-10 15:35:00,851 CALL [0] : Tx.beam(rap0, 33, 'th')
+2024-05-10 15:35:00,852 INFO : #   Command executed.
+2024-05-10 15:35:00,871 CALL [0] : Tx.beam(rap0, 34, 'th')
+2024-05-10 15:35:00,872 INFO : #   Command executed.
+2024-05-10 15:35:00,891 CALL [0] : Tx.beam(rap0, 35, 'th')
+2024-05-10 15:35:00,892 INFO : #   Command executed.
+2024-05-10 15:35:00,912 CALL [0] : Tx.beam(rap0, 36, 'th')
+2024-05-10 15:35:00,913 INFO : #   Command executed.
+2024-05-10 15:35:00,932 CALL [0] : Tx.beam(rap0, 37, 'th')
+2024-05-10 15:35:00,933 INFO : #   Command executed.
+2024-05-10 15:35:00,952 CALL [0] : Tx.beam(rap0, 38, 'th')
+2024-05-10 15:35:00,953 INFO : #   Command executed.
+2024-05-10 15:35:00,972 CALL [0] : Tx.beam(rap0, 39, 'th')
+2024-05-10 15:35:00,973 INFO : #   Command executed.
+2024-05-10 15:35:00,992 CALL [0] : Tx.beam(rap0, 40, 'th')
+2024-05-10 15:35:00,993 INFO : #   Command executed.
+2024-05-10 15:35:01,012 CALL [0] : Tx.beam(rap0, 41, 'th')
+2024-05-10 15:35:01,013 INFO : #   Command executed.
+2024-05-10 15:35:01,032 CALL [0] : Tx.beam(rap0, 42, 'th')
+2024-05-10 15:35:01,033 INFO : #   Command executed.
+2024-05-10 15:35:01,053 CALL [0] : Tx.beam(rap0, 43, 'th')
+2024-05-10 15:35:01,054 INFO : #   Command executed.
+2024-05-10 15:35:01,073 CALL [0] : Tx.beam(rap0, 44, 'th')
+2024-05-10 15:35:01,074 INFO : #   Command executed.
+2024-05-10 15:35:01,093 CALL [0] : Tx.beam(rap0, 45, 'th')
+2024-05-10 15:35:01,094 INFO : #   Command executed.
+2024-05-10 15:35:01,113 CALL [0] : Tx.beam(rap0, 46, 'th')
+2024-05-10 15:35:01,114 INFO : #   Command executed.
+2024-05-10 15:35:01,133 CALL [0] : Tx.beam(rap0, 47, 'th')
+2024-05-10 15:35:01,134 INFO : #   Command executed.
+2024-05-10 15:35:01,153 CALL [0] : Tx.beam(rap0, 48, 'th')
+2024-05-10 15:35:01,154 INFO : #   Command executed.
+2024-05-10 15:35:01,173 CALL [0] : Tx.beam(rap0, 49, 'th')
+2024-05-10 15:35:01,174 INFO : #   Command executed.
+2024-05-10 15:35:01,193 CALL [0] : Tx.beam(rap0, 50, 'th')
+2024-05-10 15:35:01,195 INFO : #   Command executed.
+2024-05-10 15:35:01,214 CALL [0] : Tx.beam(rap0, 51, 'th')
+2024-05-10 15:35:01,215 INFO : #   Command executed.
+2024-05-10 15:35:01,234 CALL [0] : Tx.beam(rap0, 52, 'th')
+2024-05-10 15:35:01,235 INFO : #   Command executed.
+2024-05-10 15:35:01,274 CALL [0] : Tx.beam(rap0, 53, 'th')
+2024-05-10 15:35:01,275 INFO : #   Command executed.
+2024-05-10 15:35:01,275 CALL [0] : Tx.beam(rap0, 54, 'th')
+2024-05-10 15:35:01,276 INFO : #   Command executed.
+2024-05-10 15:35:01,314 CALL [0] : Tx.beam(rap0, 55, 'th')
+2024-05-10 15:35:01,315 INFO : #   Command executed.
+2024-05-10 15:35:01,315 CALL [0] : Tx.beam(rap0, 56, 'th')
+2024-05-10 15:35:01,316 INFO : #   Command executed.
+2024-05-10 15:35:01,354 CALL [0] : Tx.beam(rap0, 57, 'th')
+2024-05-10 15:35:01,355 INFO : #   Command executed.
+2024-05-10 15:35:01,355 CALL [0] : Tx.beam(rap0, 58, 'th')
+2024-05-10 15:35:01,356 INFO : #   Command executed.
+2024-05-10 15:35:01,375 CALL [0] : Tx.beam(rap0, 59, 'th')
+2024-05-10 15:35:01,376 INFO : #   Command executed.
+2024-05-10 15:35:01,395 CALL [0] : Tx.beam(rap0, 60, 'th')
+2024-05-10 15:35:01,396 INFO : #   Command executed.
+2024-05-10 15:35:01,415 CALL [0] : Tx.beam(rap0, 61, 'th')
+2024-05-10 15:35:01,416 INFO : #   Command executed.
+2024-05-10 15:35:01,435 CALL [0] : Tx.beam(rap0, 62, 'th')
+2024-05-10 15:35:01,436 INFO : #   Command executed.
+2024-05-10 15:35:01,455 CALL [0] : Tx.beam(rap0, 63, 'th')
+2024-05-10 15:35:01,456 INFO : #   Command executed.
+2024-05-10 15:35:51,733 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:36:18,133 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:36:18,133 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:36:18,133 INFO : #     API       : 0.1.49
+2024-05-10 15:36:19,267 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:36:19,267 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:36:19,267 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:36:19,267 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:36:19,267 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:36:19,269 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:36:19,269 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:36:19,270 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:36:19,270 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:36:19,271 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:36:19,271 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:36:19,395 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:36:19,505 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:36:19,505 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:36:19,506 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:36:19,517 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:36:19,517 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:36:19,517 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:36:19,518 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:36:19,518 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:36:19,519 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:36:19,519 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:36:19,519 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:36:19,519 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:36:19,521 INFO : # Host instance created successfully.
+2024-05-10 15:36:19,521 ERROR: #   [1m[31mNo file found matching tx_setup.py
+2024-05-10 15:36:19,521 CALL [0] : Tx.beam(rap0, 0, 'th')
+2024-05-10 15:36:19,523 INFO : #   Command executed.
+2024-05-10 15:36:19,542 CALL [0] : Tx.beam(rap0, 1, 'th')
+2024-05-10 15:36:19,543 INFO : #   Command executed.
+2024-05-10 15:36:19,562 CALL [0] : Tx.beam(rap0, 2, 'th')
+2024-05-10 15:36:19,563 INFO : #   Command executed.
+2024-05-10 15:36:19,582 CALL [0] : Tx.beam(rap0, 3, 'th')
+2024-05-10 15:36:19,583 INFO : #   Command executed.
+2024-05-10 15:36:19,602 CALL [0] : Tx.beam(rap0, 4, 'th')
+2024-05-10 15:36:19,603 INFO : #   Command executed.
+2024-05-10 15:36:19,622 CALL [0] : Tx.beam(rap0, 5, 'th')
+2024-05-10 15:36:19,623 INFO : #   Command executed.
+2024-05-10 15:36:19,642 CALL [0] : Tx.beam(rap0, 6, 'th')
+2024-05-10 15:36:19,644 INFO : #   Command executed.
+2024-05-10 15:36:19,663 CALL [0] : Tx.beam(rap0, 7, 'th')
+2024-05-10 15:36:19,664 INFO : #   Command executed.
+2024-05-10 15:36:19,683 CALL [0] : Tx.beam(rap0, 8, 'th')
+2024-05-10 15:36:19,684 INFO : #   Command executed.
+2024-05-10 15:36:19,703 CALL [0] : Tx.beam(rap0, 9, 'th')
+2024-05-10 15:36:19,704 INFO : #   Command executed.
+2024-05-10 15:36:19,723 CALL [0] : Tx.beam(rap0, 10, 'th')
+2024-05-10 15:36:19,724 INFO : #   Command executed.
+2024-05-10 15:36:19,743 CALL [0] : Tx.beam(rap0, 11, 'th')
+2024-05-10 15:36:19,744 INFO : #   Command executed.
+2024-05-10 15:36:19,763 CALL [0] : Tx.beam(rap0, 12, 'th')
+2024-05-10 15:36:19,764 INFO : #   Command executed.
+2024-05-10 15:36:19,783 CALL [0] : Tx.beam(rap0, 13, 'th')
+2024-05-10 15:36:19,784 INFO : #   Command executed.
+2024-05-10 15:36:19,803 CALL [0] : Tx.beam(rap0, 14, 'th')
+2024-05-10 15:36:19,805 INFO : #   Command executed.
+2024-05-10 15:36:19,824 CALL [0] : Tx.beam(rap0, 15, 'th')
+2024-05-10 15:36:19,825 INFO : #   Command executed.
+2024-05-10 15:36:19,844 CALL [0] : Tx.beam(rap0, 16, 'th')
+2024-05-10 15:36:19,845 INFO : #   Command executed.
+2024-05-10 15:36:19,864 CALL [0] : Tx.beam(rap0, 17, 'th')
+2024-05-10 15:36:19,865 INFO : #   Command executed.
+2024-05-10 15:36:19,884 CALL [0] : Tx.beam(rap0, 18, 'th')
+2024-05-10 15:36:19,885 INFO : #   Command executed.
+2024-05-10 15:36:19,924 CALL [0] : Tx.beam(rap0, 19, 'th')
+2024-05-10 15:36:19,926 INFO : #   Command executed.
+2024-05-10 15:36:19,926 CALL [0] : Tx.beam(rap0, 20, 'th')
+2024-05-10 15:36:19,927 INFO : #   Command executed.
+2024-05-10 15:36:19,944 CALL [0] : Tx.beam(rap0, 21, 'th')
+2024-05-10 15:36:19,946 INFO : #   Command executed.
+2024-05-10 15:36:19,965 CALL [0] : Tx.beam(rap0, 22, 'th')
+2024-05-10 15:36:19,966 INFO : #   Command executed.
+2024-05-10 15:36:19,985 CALL [0] : Tx.beam(rap0, 23, 'th')
+2024-05-10 15:36:19,986 INFO : #   Command executed.
+2024-05-10 15:36:20,025 CALL [0] : Tx.beam(rap0, 24, 'th')
+2024-05-10 15:36:20,026 INFO : #   Command executed.
+2024-05-10 15:36:20,026 CALL [0] : Tx.beam(rap0, 25, 'th')
+2024-05-10 15:36:20,027 INFO : #   Command executed.
+2024-05-10 15:36:20,065 CALL [0] : Tx.beam(rap0, 26, 'th')
+2024-05-10 15:36:20,067 INFO : #   Command executed.
+2024-05-10 15:36:20,067 CALL [0] : Tx.beam(rap0, 27, 'th')
+2024-05-10 15:36:20,068 INFO : #   Command executed.
+2024-05-10 15:36:20,085 CALL [0] : Tx.beam(rap0, 28, 'th')
+2024-05-10 15:36:20,087 INFO : #   Command executed.
+2024-05-10 15:36:20,106 CALL [0] : Tx.beam(rap0, 29, 'th')
+2024-05-10 15:36:20,107 INFO : #   Command executed.
+2024-05-10 15:36:20,126 CALL [0] : Tx.beam(rap0, 30, 'th')
+2024-05-10 15:36:20,127 INFO : #   Command executed.
+2024-05-10 15:36:20,146 CALL [0] : Tx.beam(rap0, 31, 'th')
+2024-05-10 15:36:20,147 INFO : #   Command executed.
+2024-05-10 15:36:20,166 CALL [0] : Tx.beam(rap0, 32, 'th')
+2024-05-10 15:36:20,167 INFO : #   Command executed.
+2024-05-10 15:36:20,186 CALL [0] : Tx.beam(rap0, 33, 'th')
+2024-05-10 15:36:20,187 INFO : #   Command executed.
+2024-05-10 15:36:20,226 CALL [0] : Tx.beam(rap0, 34, 'th')
+2024-05-10 15:36:20,228 INFO : #   Command executed.
+2024-05-10 15:36:20,228 CALL [0] : Tx.beam(rap0, 35, 'th')
+2024-05-10 15:36:20,229 INFO : #   Command executed.
+2024-05-10 15:36:20,247 CALL [0] : Tx.beam(rap0, 36, 'th')
+2024-05-10 15:36:20,248 INFO : #   Command executed.
+2024-05-10 15:36:20,267 CALL [0] : Tx.beam(rap0, 37, 'th')
+2024-05-10 15:36:20,268 INFO : #   Command executed.
+2024-05-10 15:36:20,287 CALL [0] : Tx.beam(rap0, 38, 'th')
+2024-05-10 15:36:20,288 INFO : #   Command executed.
+2024-05-10 15:36:20,307 CALL [0] : Tx.beam(rap0, 39, 'th')
+2024-05-10 15:36:20,308 INFO : #   Command executed.
+2024-05-10 15:36:20,327 CALL [0] : Tx.beam(rap0, 40, 'th')
+2024-05-10 15:36:20,328 INFO : #   Command executed.
+2024-05-10 15:36:20,347 CALL [0] : Tx.beam(rap0, 41, 'th')
+2024-05-10 15:36:20,348 INFO : #   Command executed.
+2024-05-10 15:36:20,367 CALL [0] : Tx.beam(rap0, 42, 'th')
+2024-05-10 15:36:20,369 INFO : #   Command executed.
+2024-05-10 15:36:20,387 CALL [0] : Tx.beam(rap0, 43, 'th')
+2024-05-10 15:36:20,389 INFO : #   Command executed.
+2024-05-10 15:36:20,408 CALL [0] : Tx.beam(rap0, 44, 'th')
+2024-05-10 15:36:20,409 INFO : #   Command executed.
+2024-05-10 15:36:20,428 CALL [0] : Tx.beam(rap0, 45, 'th')
+2024-05-10 15:36:20,429 INFO : #   Command executed.
+2024-05-10 15:36:20,468 CALL [0] : Tx.beam(rap0, 46, 'th')
+2024-05-10 15:36:20,469 INFO : #   Command executed.
+2024-05-10 15:36:20,469 CALL [0] : Tx.beam(rap0, 47, 'th')
+2024-05-10 15:36:20,470 INFO : #   Command executed.
+2024-05-10 15:36:20,488 CALL [0] : Tx.beam(rap0, 48, 'th')
+2024-05-10 15:36:20,489 INFO : #   Command executed.
+2024-05-10 15:36:20,508 CALL [0] : Tx.beam(rap0, 49, 'th')
+2024-05-10 15:36:20,509 INFO : #   Command executed.
+2024-05-10 15:36:20,528 CALL [0] : Tx.beam(rap0, 50, 'th')
+2024-05-10 15:36:20,529 INFO : #   Command executed.
+2024-05-10 15:36:20,548 CALL [0] : Tx.beam(rap0, 51, 'th')
+2024-05-10 15:36:20,550 INFO : #   Command executed.
+2024-05-10 15:36:20,569 CALL [0] : Tx.beam(rap0, 52, 'th')
+2024-05-10 15:36:20,570 INFO : #   Command executed.
+2024-05-10 15:36:20,589 CALL [0] : Tx.beam(rap0, 53, 'th')
+2024-05-10 15:36:20,590 INFO : #   Command executed.
+2024-05-10 15:36:20,609 CALL [0] : Tx.beam(rap0, 54, 'th')
+2024-05-10 15:36:20,610 INFO : #   Command executed.
+2024-05-10 15:36:20,629 CALL [0] : Tx.beam(rap0, 55, 'th')
+2024-05-10 15:36:20,630 INFO : #   Command executed.
+2024-05-10 15:36:20,649 CALL [0] : Tx.beam(rap0, 56, 'th')
+2024-05-10 15:36:20,650 INFO : #   Command executed.
+2024-05-10 15:36:20,669 CALL [0] : Tx.beam(rap0, 57, 'th')
+2024-05-10 15:36:20,670 INFO : #   Command executed.
+2024-05-10 15:36:20,689 CALL [0] : Tx.beam(rap0, 58, 'th')
+2024-05-10 15:36:20,691 INFO : #   Command executed.
+2024-05-10 15:36:20,710 CALL [0] : Tx.beam(rap0, 59, 'th')
+2024-05-10 15:36:20,711 INFO : #   Command executed.
+2024-05-10 15:36:20,750 CALL [0] : Tx.beam(rap0, 60, 'th')
+2024-05-10 15:36:20,751 INFO : #   Command executed.
+2024-05-10 15:36:20,751 CALL [0] : Tx.beam(rap0, 61, 'th')
+2024-05-10 15:36:20,752 INFO : #   Command executed.
+2024-05-10 15:36:20,770 CALL [0] : Tx.beam(rap0, 62, 'th')
+2024-05-10 15:36:20,771 INFO : #   Command executed.
+2024-05-10 15:36:20,790 CALL [0] : Tx.beam(rap0, 63, 'th')
+2024-05-10 15:36:20,791 INFO : #   Command executed.
+2024-05-10 15:38:06,452 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:38:16,873 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:38:16,873 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:38:16,873 INFO : #     API       : 0.1.49
+2024-05-10 15:38:18,009 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:38:18,009 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:38:18,009 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:38:18,009 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:38:18,009 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:38:18,011 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:38:18,011 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:38:18,012 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:38:18,012 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:38:18,013 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:38:18,013 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:38:18,137 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:38:18,246 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:38:18,247 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:38:18,248 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:38:18,255 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:38:18,256 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:38:18,256 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:38:18,256 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:38:18,256 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:38:18,257 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:38:18,257 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:38:18,257 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:38:18,258 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:38:18,260 INFO : # Host instance created successfully.
+2024-05-10 15:38:18,260 ERROR: # [1m[31mInitialization failed: local variable 'dir' referenced before assignment
+2024-05-10 15:38:18,260 INFO : # Process will terminate due to failed initialization.
+2024-05-10 15:38:47,918 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:38:54,834 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:38:54,834 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:38:54,834 INFO : #     API       : 0.1.49
+2024-05-10 15:38:55,968 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:38:55,968 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:38:55,968 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:38:55,968 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:38:55,968 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:38:55,969 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:38:55,969 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:38:55,970 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:38:55,970 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:38:55,971 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:38:55,971 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:38:56,095 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:38:56,205 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:38:56,206 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:38:56,207 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:38:56,213 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:38:56,213 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:38:56,213 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:38:56,214 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:38:56,214 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:38:56,214 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:38:56,214 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:38:56,214 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:38:56,214 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:38:56,216 INFO : # Host instance created successfully.
+2024-05-10 15:38:56,217 ERROR: #   [1m[31mNo file found matching tx_setup.py
+2024-05-10 15:38:56,217 CALL [0] : Tx.beam(rap0, 0, 'th')
+2024-05-10 15:38:56,218 INFO : #   Command executed.
+2024-05-10 15:38:56,238 CALL [0] : Tx.beam(rap0, 1, 'th')
+2024-05-10 15:38:56,239 INFO : #   Command executed.
+2024-05-10 15:38:56,258 CALL [0] : Tx.beam(rap0, 2, 'th')
+2024-05-10 15:38:56,259 INFO : #   Command executed.
+2024-05-10 15:38:56,298 CALL [0] : Tx.beam(rap0, 3, 'th')
+2024-05-10 15:38:56,299 INFO : #   Command executed.
+2024-05-10 15:38:56,299 CALL [0] : Tx.beam(rap0, 4, 'th')
+2024-05-10 15:38:56,300 INFO : #   Command executed.
+2024-05-10 15:38:56,338 CALL [0] : Tx.beam(rap0, 5, 'th')
+2024-05-10 15:38:56,339 INFO : #   Command executed.
+2024-05-10 15:38:56,339 CALL [0] : Tx.beam(rap0, 6, 'th')
+2024-05-10 15:38:56,340 INFO : #   Command executed.
+2024-05-10 15:38:56,358 CALL [0] : Tx.beam(rap0, 7, 'th')
+2024-05-10 15:38:56,359 INFO : #   Command executed.
+2024-05-10 15:38:56,378 CALL [0] : Tx.beam(rap0, 8, 'th')
+2024-05-10 15:38:56,379 INFO : #   Command executed.
+2024-05-10 15:38:56,399 CALL [0] : Tx.beam(rap0, 9, 'th')
+2024-05-10 15:38:56,399 INFO : #   Command executed.
+2024-05-10 15:38:56,419 CALL [0] : Tx.beam(rap0, 10, 'th')
+2024-05-10 15:38:56,420 INFO : #   Command executed.
+2024-05-10 15:38:56,439 CALL [0] : Tx.beam(rap0, 11, 'th')
+2024-05-10 15:38:56,440 INFO : #   Command executed.
+2024-05-10 15:38:56,459 CALL [0] : Tx.beam(rap0, 12, 'th')
+2024-05-10 15:38:56,460 INFO : #   Command executed.
+2024-05-10 15:38:56,499 CALL [0] : Tx.beam(rap0, 13, 'th')
+2024-05-10 15:38:56,500 INFO : #   Command executed.
+2024-05-10 15:38:56,500 CALL [0] : Tx.beam(rap0, 14, 'th')
+2024-05-10 15:38:56,501 INFO : #   Command executed.
+2024-05-10 15:38:56,540 CALL [0] : Tx.beam(rap0, 15, 'th')
+2024-05-10 15:38:56,541 INFO : #   Command executed.
+2024-05-10 15:38:56,541 CALL [0] : Tx.beam(rap0, 16, 'th')
+2024-05-10 15:38:56,542 INFO : #   Command executed.
+2024-05-10 15:38:56,560 CALL [0] : Tx.beam(rap0, 17, 'th')
+2024-05-10 15:38:56,561 INFO : #   Command executed.
+2024-05-10 15:38:56,580 CALL [0] : Tx.beam(rap0, 18, 'th')
+2024-05-10 15:38:56,581 INFO : #   Command executed.
+2024-05-10 15:38:56,600 CALL [0] : Tx.beam(rap0, 19, 'th')
+2024-05-10 15:38:56,601 INFO : #   Command executed.
+2024-05-10 15:38:56,620 CALL [0] : Tx.beam(rap0, 20, 'th')
+2024-05-10 15:38:56,621 INFO : #   Command executed.
+2024-05-10 15:38:56,640 CALL [0] : Tx.beam(rap0, 21, 'th')
+2024-05-10 15:38:56,641 INFO : #   Command executed.
+2024-05-10 15:38:56,660 CALL [0] : Tx.beam(rap0, 22, 'th')
+2024-05-10 15:38:56,661 INFO : #   Command executed.
+2024-05-10 15:38:56,681 CALL [0] : Tx.beam(rap0, 23, 'th')
+2024-05-10 15:38:56,681 INFO : #   Command executed.
+2024-05-10 15:38:56,701 CALL [0] : Tx.beam(rap0, 24, 'th')
+2024-05-10 15:38:56,702 INFO : #   Command executed.
+2024-05-10 15:38:56,721 CALL [0] : Tx.beam(rap0, 25, 'th')
+2024-05-10 15:38:56,722 INFO : #   Command executed.
+2024-05-10 15:38:56,761 CALL [0] : Tx.beam(rap0, 26, 'th')
+2024-05-10 15:38:56,762 INFO : #   Command executed.
+2024-05-10 15:38:56,762 CALL [0] : Tx.beam(rap0, 27, 'th')
+2024-05-10 15:38:56,763 INFO : #   Command executed.
+2024-05-10 15:38:56,781 CALL [0] : Tx.beam(rap0, 28, 'th')
+2024-05-10 15:38:56,782 INFO : #   Command executed.
+2024-05-10 15:38:56,801 CALL [0] : Tx.beam(rap0, 29, 'th')
+2024-05-10 15:38:56,802 INFO : #   Command executed.
+2024-05-10 15:38:56,821 CALL [0] : Tx.beam(rap0, 30, 'th')
+2024-05-10 15:38:56,822 INFO : #   Command executed.
+2024-05-10 15:38:56,842 CALL [0] : Tx.beam(rap0, 31, 'th')
+2024-05-10 15:38:56,842 INFO : #   Command executed.
+2024-05-10 15:38:56,862 CALL [0] : Tx.beam(rap0, 32, 'th')
+2024-05-10 15:38:56,863 INFO : #   Command executed.
+2024-05-10 15:38:56,882 CALL [0] : Tx.beam(rap0, 33, 'th')
+2024-05-10 15:38:56,883 INFO : #   Command executed.
+2024-05-10 15:38:56,902 CALL [0] : Tx.beam(rap0, 34, 'th')
+2024-05-10 15:38:56,903 INFO : #   Command executed.
+2024-05-10 15:38:56,943 CALL [0] : Tx.beam(rap0, 35, 'th')
+2024-05-10 15:38:56,943 INFO : #   Command executed.
+2024-05-10 15:38:56,943 CALL [0] : Tx.beam(rap0, 36, 'th')
+2024-05-10 15:38:56,944 INFO : #   Command executed.
+2024-05-10 15:38:56,963 CALL [0] : Tx.beam(rap0, 37, 'th')
+2024-05-10 15:38:56,964 INFO : #   Command executed.
+2024-05-10 15:38:56,983 CALL [0] : Tx.beam(rap0, 38, 'th')
+2024-05-10 15:38:56,984 INFO : #   Command executed.
+2024-05-10 15:38:57,003 CALL [0] : Tx.beam(rap0, 39, 'th')
+2024-05-10 15:38:57,004 INFO : #   Command executed.
+2024-05-10 15:38:57,043 CALL [0] : Tx.beam(rap0, 40, 'th')
+2024-05-10 15:38:57,044 INFO : #   Command executed.
+2024-05-10 15:38:57,044 CALL [0] : Tx.beam(rap0, 41, 'th')
+2024-05-10 15:38:57,045 INFO : #   Command executed.
+2024-05-10 15:38:57,063 CALL [0] : Tx.beam(rap0, 42, 'th')
+2024-05-10 15:38:57,064 INFO : #   Command executed.
+2024-05-10 15:38:57,084 CALL [0] : Tx.beam(rap0, 43, 'th')
+2024-05-10 15:38:57,084 INFO : #   Command executed.
+2024-05-10 15:38:57,104 CALL [0] : Tx.beam(rap0, 44, 'th')
+2024-05-10 15:38:57,105 INFO : #   Command executed.
+2024-05-10 15:38:57,144 CALL [0] : Tx.beam(rap0, 45, 'th')
+2024-05-10 15:38:57,145 INFO : #   Command executed.
+2024-05-10 15:38:57,145 CALL [0] : Tx.beam(rap0, 46, 'th')
+2024-05-10 15:38:57,146 INFO : #   Command executed.
+2024-05-10 15:38:57,184 CALL [0] : Tx.beam(rap0, 47, 'th')
+2024-05-10 15:38:57,185 INFO : #   Command executed.
+2024-05-10 15:38:57,185 CALL [0] : Tx.beam(rap0, 48, 'th')
+2024-05-10 15:38:57,186 INFO : #   Command executed.
+2024-05-10 15:38:57,204 CALL [0] : Tx.beam(rap0, 49, 'th')
+2024-05-10 15:38:57,205 INFO : #   Command executed.
+2024-05-10 15:38:57,224 CALL [0] : Tx.beam(rap0, 50, 'th')
+2024-05-10 15:38:57,225 INFO : #   Command executed.
+2024-05-10 15:38:57,245 CALL [0] : Tx.beam(rap0, 51, 'th')
+2024-05-10 15:38:57,245 INFO : #   Command executed.
+2024-05-10 15:38:57,265 CALL [0] : Tx.beam(rap0, 52, 'th')
+2024-05-10 15:38:57,266 INFO : #   Command executed.
+2024-05-10 15:38:57,285 CALL [0] : Tx.beam(rap0, 53, 'th')
+2024-05-10 15:38:57,286 INFO : #   Command executed.
+2024-05-10 15:38:57,305 CALL [0] : Tx.beam(rap0, 54, 'th')
+2024-05-10 15:38:57,306 INFO : #   Command executed.
+2024-05-10 15:38:57,325 CALL [0] : Tx.beam(rap0, 55, 'th')
+2024-05-10 15:38:57,326 INFO : #   Command executed.
+2024-05-10 15:38:57,345 CALL [0] : Tx.beam(rap0, 56, 'th')
+2024-05-10 15:38:57,346 INFO : #   Command executed.
+2024-05-10 15:38:57,365 CALL [0] : Tx.beam(rap0, 57, 'th')
+2024-05-10 15:38:57,366 INFO : #   Command executed.
+2024-05-10 15:38:57,386 CALL [0] : Tx.beam(rap0, 58, 'th')
+2024-05-10 15:38:57,386 INFO : #   Command executed.
+2024-05-10 15:38:57,406 CALL [0] : Tx.beam(rap0, 59, 'th')
+2024-05-10 15:38:57,407 INFO : #   Command executed.
+2024-05-10 15:38:57,426 CALL [0] : Tx.beam(rap0, 60, 'th')
+2024-05-10 15:38:57,427 INFO : #   Command executed.
+2024-05-10 15:38:57,446 CALL [0] : Tx.beam(rap0, 61, 'th')
+2024-05-10 15:38:57,447 INFO : #   Command executed.
+2024-05-10 15:38:57,466 CALL [0] : Tx.beam(rap0, 62, 'th')
+2024-05-10 15:38:57,467 INFO : #   Command executed.
+2024-05-10 15:38:57,486 CALL [0] : Tx.beam(rap0, 63, 'th')
+2024-05-10 15:38:57,487 INFO : #   Command executed.
+2024-05-10 15:39:50,516 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:39:51,914 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:39:51,915 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:39:51,915 INFO : #     API       : 0.1.49
+2024-05-10 15:39:53,048 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:39:53,048 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:39:53,048 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:39:53,048 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:39:53,048 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:39:53,050 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:39:53,050 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:39:53,050 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:39:53,051 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:39:53,052 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:39:53,052 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:39:53,175 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:39:53,285 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:39:53,286 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:39:53,287 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:39:53,293 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:39:53,293 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:39:53,293 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:39:53,293 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:39:53,293 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:39:53,294 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:39:53,294 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:39:53,294 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:39:53,294 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:39:53,296 INFO : # Host instance created successfully.
+2024-05-10 15:39:53,297 ERROR: #   [1m[31mNo file found matching tx_setup.py
+2024-05-10 15:39:53,297 CALL [0] : Tx.beam(rap0, 0, 'th')
+2024-05-10 15:39:53,299 INFO : #   Command executed.
+2024-05-10 15:39:53,317 CALL [0] : Tx.beam(rap0, 1, 'th')
+2024-05-10 15:39:53,319 INFO : #   Command executed.
+2024-05-10 15:39:53,358 CALL [0] : Tx.beam(rap0, 2, 'th')
+2024-05-10 15:39:53,359 INFO : #   Command executed.
+2024-05-10 15:39:53,359 CALL [0] : Tx.beam(rap0, 3, 'th')
+2024-05-10 15:39:53,360 INFO : #   Command executed.
+2024-05-10 15:39:53,378 CALL [0] : Tx.beam(rap0, 4, 'th')
+2024-05-10 15:39:53,380 INFO : #   Command executed.
+2024-05-10 15:39:53,398 CALL [0] : Tx.beam(rap0, 5, 'th')
+2024-05-10 15:39:53,400 INFO : #   Command executed.
+2024-05-10 15:39:53,418 CALL [0] : Tx.beam(rap0, 6, 'th')
+2024-05-10 15:39:53,420 INFO : #   Command executed.
+2024-05-10 15:39:53,439 CALL [0] : Tx.beam(rap0, 7, 'th')
+2024-05-10 15:39:53,440 INFO : #   Command executed.
+2024-05-10 15:39:53,459 CALL [0] : Tx.beam(rap0, 8, 'th')
+2024-05-10 15:39:53,460 INFO : #   Command executed.
+2024-05-10 15:39:53,479 CALL [0] : Tx.beam(rap0, 9, 'th')
+2024-05-10 15:39:53,480 INFO : #   Command executed.
+2024-05-10 15:39:53,499 CALL [0] : Tx.beam(rap0, 10, 'th')
+2024-05-10 15:39:53,501 INFO : #   Command executed.
+2024-05-10 15:39:53,519 CALL [0] : Tx.beam(rap0, 11, 'th')
+2024-05-10 15:39:53,521 INFO : #   Command executed.
+2024-05-10 15:39:53,539 CALL [0] : Tx.beam(rap0, 12, 'th')
+2024-05-10 15:39:53,541 INFO : #   Command executed.
+2024-05-10 15:39:53,560 CALL [0] : Tx.beam(rap0, 13, 'th')
+2024-05-10 15:39:53,561 INFO : #   Command executed.
+2024-05-10 15:39:53,580 CALL [0] : Tx.beam(rap0, 14, 'th')
+2024-05-10 15:39:53,581 INFO : #   Command executed.
+2024-05-10 15:39:53,600 CALL [0] : Tx.beam(rap0, 15, 'th')
+2024-05-10 15:39:53,601 INFO : #   Command executed.
+2024-05-10 15:39:53,620 CALL [0] : Tx.beam(rap0, 16, 'th')
+2024-05-10 15:39:53,622 INFO : #   Command executed.
+2024-05-10 15:39:53,640 CALL [0] : Tx.beam(rap0, 17, 'th')
+2024-05-10 15:39:53,642 INFO : #   Command executed.
+2024-05-10 15:39:53,660 CALL [0] : Tx.beam(rap0, 18, 'th')
+2024-05-10 15:39:53,662 INFO : #   Command executed.
+2024-05-10 15:39:53,680 CALL [0] : Tx.beam(rap0, 19, 'th')
+2024-05-10 15:39:53,682 INFO : #   Command executed.
+2024-05-10 15:39:53,700 CALL [0] : Tx.beam(rap0, 20, 'th')
+2024-05-10 15:39:53,702 INFO : #   Command executed.
+2024-05-10 15:39:53,721 CALL [0] : Tx.beam(rap0, 21, 'th')
+2024-05-10 15:39:53,722 INFO : #   Command executed.
+2024-05-10 15:39:53,741 CALL [0] : Tx.beam(rap0, 22, 'th')
+2024-05-10 15:39:53,742 INFO : #   Command executed.
+2024-05-10 15:39:53,761 CALL [0] : Tx.beam(rap0, 23, 'th')
+2024-05-10 15:39:53,762 INFO : #   Command executed.
+2024-05-10 15:39:53,781 CALL [0] : Tx.beam(rap0, 24, 'th')
+2024-05-10 15:39:53,783 INFO : #   Command executed.
+2024-05-10 15:39:53,801 CALL [0] : Tx.beam(rap0, 25, 'th')
+2024-05-10 15:39:53,803 INFO : #   Command executed.
+2024-05-10 15:39:53,822 CALL [0] : Tx.beam(rap0, 26, 'th')
+2024-05-10 15:39:53,823 INFO : #   Command executed.
+2024-05-10 15:39:53,842 CALL [0] : Tx.beam(rap0, 27, 'th')
+2024-05-10 15:39:53,843 INFO : #   Command executed.
+2024-05-10 15:39:53,862 CALL [0] : Tx.beam(rap0, 28, 'th')
+2024-05-10 15:39:53,863 INFO : #   Command executed.
+2024-05-10 15:39:53,882 CALL [0] : Tx.beam(rap0, 29, 'th')
+2024-05-10 15:39:53,883 INFO : #   Command executed.
+2024-05-10 15:39:53,902 CALL [0] : Tx.beam(rap0, 30, 'th')
+2024-05-10 15:39:53,904 INFO : #   Command executed.
+2024-05-10 15:39:53,922 CALL [0] : Tx.beam(rap0, 31, 'th')
+2024-05-10 15:39:53,924 INFO : #   Command executed.
+2024-05-10 15:39:53,943 CALL [0] : Tx.beam(rap0, 32, 'th')
+2024-05-10 15:39:53,944 INFO : #   Command executed.
+2024-05-10 15:39:53,963 CALL [0] : Tx.beam(rap0, 33, 'th')
+2024-05-10 15:39:53,964 INFO : #   Command executed.
+2024-05-10 15:39:53,983 CALL [0] : Tx.beam(rap0, 34, 'th')
+2024-05-10 15:39:53,984 INFO : #   Command executed.
+2024-05-10 15:39:54,003 CALL [0] : Tx.beam(rap0, 35, 'th')
+2024-05-10 15:39:54,004 INFO : #   Command executed.
+2024-05-10 15:39:54,023 CALL [0] : Tx.beam(rap0, 36, 'th')
+2024-05-10 15:39:54,024 INFO : #   Command executed.
+2024-05-10 15:39:54,043 CALL [0] : Tx.beam(rap0, 37, 'th')
+2024-05-10 15:39:54,044 INFO : #   Command executed.
+2024-05-10 15:39:54,063 CALL [0] : Tx.beam(rap0, 38, 'th')
+2024-05-10 15:39:54,064 INFO : #   Command executed.
+2024-05-10 15:39:54,083 CALL [0] : Tx.beam(rap0, 39, 'th')
+2024-05-10 15:39:54,085 INFO : #   Command executed.
+2024-05-10 15:39:54,103 CALL [0] : Tx.beam(rap0, 40, 'th')
+2024-05-10 15:39:54,105 INFO : #   Command executed.
+2024-05-10 15:39:54,123 CALL [0] : Tx.beam(rap0, 41, 'th')
+2024-05-10 15:39:54,125 INFO : #   Command executed.
+2024-05-10 15:39:54,144 CALL [0] : Tx.beam(rap0, 42, 'th')
+2024-05-10 15:39:54,145 INFO : #   Command executed.
+2024-05-10 15:39:54,164 CALL [0] : Tx.beam(rap0, 43, 'th')
+2024-05-10 15:39:54,165 INFO : #   Command executed.
+2024-05-10 15:39:54,184 CALL [0] : Tx.beam(rap0, 44, 'th')
+2024-05-10 15:39:54,185 INFO : #   Command executed.
+2024-05-10 15:39:54,224 CALL [0] : Tx.beam(rap0, 45, 'th')
+2024-05-10 15:39:54,225 INFO : #   Command executed.
+2024-05-10 15:39:54,225 CALL [0] : Tx.beam(rap0, 46, 'th')
+2024-05-10 15:39:54,225 INFO : #   Command executed.
+2024-05-10 15:39:54,244 CALL [0] : Tx.beam(rap0, 47, 'th')
+2024-05-10 15:39:54,246 INFO : #   Command executed.
+2024-05-10 15:39:54,264 CALL [0] : Tx.beam(rap0, 48, 'th')
+2024-05-10 15:39:54,266 INFO : #   Command executed.
+2024-05-10 15:39:54,285 CALL [0] : Tx.beam(rap0, 49, 'th')
+2024-05-10 15:39:54,286 INFO : #   Command executed.
+2024-05-10 15:39:54,305 CALL [0] : Tx.beam(rap0, 50, 'th')
+2024-05-10 15:39:54,305 INFO : #   Command executed.
+2024-05-10 15:39:54,325 CALL [0] : Tx.beam(rap0, 51, 'th')
+2024-05-10 15:39:54,326 INFO : #   Command executed.
+2024-05-10 15:39:54,345 CALL [0] : Tx.beam(rap0, 52, 'th')
+2024-05-10 15:39:54,346 INFO : #   Command executed.
+2024-05-10 15:39:54,365 CALL [0] : Tx.beam(rap0, 53, 'th')
+2024-05-10 15:39:54,366 INFO : #   Command executed.
+2024-05-10 15:39:54,385 CALL [0] : Tx.beam(rap0, 54, 'th')
+2024-05-10 15:39:54,386 INFO : #   Command executed.
+2024-05-10 15:39:54,405 CALL [0] : Tx.beam(rap0, 55, 'th')
+2024-05-10 15:39:54,406 INFO : #   Command executed.
+2024-05-10 15:39:54,425 CALL [0] : Tx.beam(rap0, 56, 'th')
+2024-05-10 15:39:54,427 INFO : #   Command executed.
+2024-05-10 15:39:54,445 CALL [0] : Tx.beam(rap0, 57, 'th')
+2024-05-10 15:39:54,447 INFO : #   Command executed.
+2024-05-10 15:39:54,466 CALL [0] : Tx.beam(rap0, 58, 'th')
+2024-05-10 15:39:54,467 INFO : #   Command executed.
+2024-05-10 15:39:54,486 CALL [0] : Tx.beam(rap0, 59, 'th')
+2024-05-10 15:39:54,487 INFO : #   Command executed.
+2024-05-10 15:39:54,506 CALL [0] : Tx.beam(rap0, 60, 'th')
+2024-05-10 15:39:54,507 INFO : #   Command executed.
+2024-05-10 15:39:54,526 CALL [0] : Tx.beam(rap0, 61, 'th')
+2024-05-10 15:39:54,526 INFO : #   Command executed.
+2024-05-10 15:39:54,546 CALL [0] : Tx.beam(rap0, 62, 'th')
+2024-05-10 15:39:54,548 INFO : #   Command executed.
+2024-05-10 15:39:54,566 CALL [0] : Tx.beam(rap0, 63, 'th')
+2024-05-10 15:39:54,568 INFO : #   Command executed.
+2024-05-10 15:41:19,167 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:41:23,881 ERROR: # [1m[31mFailed to create host instance: 'NoneType' object has no attribute 'encode'
+2024-05-10 15:41:23,881 ERROR: # [1m[31mInitialization failed: 'NoneType' object has no attribute 'encode'
+2024-05-10 15:41:23,881 INFO : # Process will terminate due to failed initialization.
+2024-05-10 15:41:26,955 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:41:29,859 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:41:29,859 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:41:29,859 INFO : #     API       : 0.1.49
+2024-05-10 15:41:30,998 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:41:30,998 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:41:30,998 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:41:30,998 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:41:30,999 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:41:30,999 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:41:30,999 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:41:31,000 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:41:31,001 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:41:31,001 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:41:31,001 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:41:31,125 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:41:31,235 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:41:31,236 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:41:31,236 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:41:31,242 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:41:31,242 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:41:31,242 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:41:31,243 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:41:31,243 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:41:31,244 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:41:31,244 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:41:31,244 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:41:31,244 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:41:31,246 INFO : # Host instance created successfully.
+2024-05-10 15:41:31,247 ERROR: #   [1m[31mNo file found matching tx_setup.py
+2024-05-10 15:41:31,268 CALL [0] : Tx.beam(rap0, 0, 'th')
+2024-05-10 15:41:31,268 INFO : #   Command executed.
+2024-05-10 15:41:31,268 CALL [0] : Tx.beam(rap0, 1, 'th')
+2024-05-10 15:41:31,269 INFO : #   Command executed.
+2024-05-10 15:41:31,288 CALL [0] : Tx.beam(rap0, 2, 'th')
+2024-05-10 15:41:31,288 INFO : #   Command executed.
+2024-05-10 15:41:31,328 CALL [0] : Tx.beam(rap0, 3, 'th')
+2024-05-10 15:41:31,329 INFO : #   Command executed.
+2024-05-10 15:41:31,329 CALL [0] : Tx.beam(rap0, 4, 'th')
+2024-05-10 15:41:31,330 INFO : #   Command executed.
+2024-05-10 15:41:31,368 CALL [0] : Tx.beam(rap0, 5, 'th')
+2024-05-10 15:41:31,369 INFO : #   Command executed.
+2024-05-10 15:41:31,369 CALL [0] : Tx.beam(rap0, 6, 'th')
+2024-05-10 15:41:31,370 INFO : #   Command executed.
+2024-05-10 15:41:31,388 CALL [0] : Tx.beam(rap0, 7, 'th')
+2024-05-10 15:41:31,389 INFO : #   Command executed.
+2024-05-10 15:41:31,408 CALL [0] : Tx.beam(rap0, 8, 'th')
+2024-05-10 15:41:31,409 INFO : #   Command executed.
+2024-05-10 15:41:31,449 CALL [0] : Tx.beam(rap0, 9, 'th')
+2024-05-10 15:41:31,450 INFO : #   Command executed.
+2024-05-10 15:41:31,450 CALL [0] : Tx.beam(rap0, 10, 'th')
+2024-05-10 15:41:31,451 INFO : #   Command executed.
+2024-05-10 15:41:31,489 CALL [0] : Tx.beam(rap0, 11, 'th')
+2024-05-10 15:41:31,490 INFO : #   Command executed.
+2024-05-10 15:41:31,491 CALL [0] : Tx.beam(rap0, 12, 'th')
+2024-05-10 15:41:31,491 INFO : #   Command executed.
+2024-05-10 15:41:31,509 CALL [0] : Tx.beam(rap0, 13, 'th')
+2024-05-10 15:41:31,510 INFO : #   Command executed.
+2024-05-10 15:41:31,530 CALL [0] : Tx.beam(rap0, 14, 'th')
+2024-05-10 15:41:31,530 INFO : #   Command executed.
+2024-05-10 15:41:31,550 CALL [0] : Tx.beam(rap0, 15, 'th')
+2024-05-10 15:41:31,550 INFO : #   Command executed.
+2024-05-10 15:41:31,570 CALL [0] : Tx.beam(rap0, 16, 'th')
+2024-05-10 15:41:31,571 INFO : #   Command executed.
+2024-05-10 15:41:31,590 CALL [0] : Tx.beam(rap0, 17, 'th')
+2024-05-10 15:41:31,591 INFO : #   Command executed.
+2024-05-10 15:41:31,610 CALL [0] : Tx.beam(rap0, 18, 'th')
+2024-05-10 15:41:31,611 INFO : #   Command executed.
+2024-05-10 15:41:31,630 CALL [0] : Tx.beam(rap0, 19, 'th')
+2024-05-10 15:41:31,631 INFO : #   Command executed.
+2024-05-10 15:41:31,650 CALL [0] : Tx.beam(rap0, 20, 'th')
+2024-05-10 15:41:31,651 INFO : #   Command executed.
+2024-05-10 15:41:31,671 CALL [0] : Tx.beam(rap0, 21, 'th')
+2024-05-10 15:41:31,672 INFO : #   Command executed.
+2024-05-10 15:41:31,691 CALL [0] : Tx.beam(rap0, 22, 'th')
+2024-05-10 15:41:31,692 INFO : #   Command executed.
+2024-05-10 15:41:31,711 CALL [0] : Tx.beam(rap0, 23, 'th')
+2024-05-10 15:41:31,712 INFO : #   Command executed.
+2024-05-10 15:41:31,731 CALL [0] : Tx.beam(rap0, 24, 'th')
+2024-05-10 15:41:31,732 INFO : #   Command executed.
+2024-05-10 15:41:31,751 CALL [0] : Tx.beam(rap0, 25, 'th')
+2024-05-10 15:41:31,752 INFO : #   Command executed.
+2024-05-10 15:41:31,772 CALL [0] : Tx.beam(rap0, 26, 'th')
+2024-05-10 15:41:31,773 INFO : #   Command executed.
+2024-05-10 15:41:31,792 CALL [0] : Tx.beam(rap0, 27, 'th')
+2024-05-10 15:41:31,793 INFO : #   Command executed.
+2024-05-10 15:41:31,812 CALL [0] : Tx.beam(rap0, 28, 'th')
+2024-05-10 15:41:31,813 INFO : #   Command executed.
+2024-05-10 15:41:31,832 CALL [0] : Tx.beam(rap0, 29, 'th')
+2024-05-10 15:41:31,833 INFO : #   Command executed.
+2024-05-10 15:41:31,852 CALL [0] : Tx.beam(rap0, 30, 'th')
+2024-05-10 15:41:31,853 INFO : #   Command executed.
+2024-05-10 15:41:31,873 CALL [0] : Tx.beam(rap0, 31, 'th')
+2024-05-10 15:41:31,873 INFO : #   Command executed.
+2024-05-10 15:41:31,913 CALL [0] : Tx.beam(rap0, 32, 'th')
+2024-05-10 15:41:31,914 INFO : #   Command executed.
+2024-05-10 15:41:31,914 CALL [0] : Tx.beam(rap0, 33, 'th')
+2024-05-10 15:41:31,915 INFO : #   Command executed.
+2024-05-10 15:41:31,933 CALL [0] : Tx.beam(rap0, 34, 'th')
+2024-05-10 15:41:31,934 INFO : #   Command executed.
+2024-05-10 15:41:31,953 CALL [0] : Tx.beam(rap0, 35, 'th')
+2024-05-10 15:41:31,954 INFO : #   Command executed.
+2024-05-10 15:41:31,973 CALL [0] : Tx.beam(rap0, 36, 'th')
+2024-05-10 15:41:31,974 INFO : #   Command executed.
+2024-05-10 15:41:31,993 CALL [0] : Tx.beam(rap0, 37, 'th')
+2024-05-10 15:41:31,994 INFO : #   Command executed.
+2024-05-10 15:41:32,014 CALL [0] : Tx.beam(rap0, 38, 'th')
+2024-05-10 15:41:32,014 INFO : #   Command executed.
+2024-05-10 15:41:32,054 CALL [0] : Tx.beam(rap0, 39, 'th')
+2024-05-10 15:41:32,055 INFO : #   Command executed.
+2024-05-10 15:41:32,055 CALL [0] : Tx.beam(rap0, 40, 'th')
+2024-05-10 15:41:32,056 INFO : #   Command executed.
+2024-05-10 15:41:32,074 CALL [0] : Tx.beam(rap0, 41, 'th')
+2024-05-10 15:41:32,075 INFO : #   Command executed.
+2024-05-10 15:41:32,094 CALL [0] : Tx.beam(rap0, 42, 'th')
+2024-05-10 15:41:32,095 INFO : #   Command executed.
+2024-05-10 15:41:32,114 CALL [0] : Tx.beam(rap0, 43, 'th')
+2024-05-10 15:41:32,115 INFO : #   Command executed.
+2024-05-10 15:41:32,135 CALL [0] : Tx.beam(rap0, 44, 'th')
+2024-05-10 15:41:32,136 INFO : #   Command executed.
+2024-05-10 15:41:32,155 CALL [0] : Tx.beam(rap0, 45, 'th')
+2024-05-10 15:41:32,156 INFO : #   Command executed.
+2024-05-10 15:41:32,175 CALL [0] : Tx.beam(rap0, 46, 'th')
+2024-05-10 15:41:32,176 INFO : #   Command executed.
+2024-05-10 15:41:32,195 CALL [0] : Tx.beam(rap0, 47, 'th')
+2024-05-10 15:41:32,196 INFO : #   Command executed.
+2024-05-10 15:41:32,215 CALL [0] : Tx.beam(rap0, 48, 'th')
+2024-05-10 15:41:32,216 INFO : #   Command executed.
+2024-05-10 15:41:32,235 CALL [0] : Tx.beam(rap0, 49, 'th')
+2024-05-10 15:41:32,236 INFO : #   Command executed.
+2024-05-10 15:41:32,256 CALL [0] : Tx.beam(rap0, 50, 'th')
+2024-05-10 15:41:32,257 INFO : #   Command executed.
+2024-05-10 15:41:32,276 CALL [0] : Tx.beam(rap0, 51, 'th')
+2024-05-10 15:41:32,277 INFO : #   Command executed.
+2024-05-10 15:41:32,296 CALL [0] : Tx.beam(rap0, 52, 'th')
+2024-05-10 15:41:32,297 INFO : #   Command executed.
+2024-05-10 15:41:32,316 CALL [0] : Tx.beam(rap0, 53, 'th')
+2024-05-10 15:41:32,317 INFO : #   Command executed.
+2024-05-10 15:41:32,336 CALL [0] : Tx.beam(rap0, 54, 'th')
+2024-05-10 15:41:32,337 INFO : #   Command executed.
+2024-05-10 15:41:32,356 CALL [0] : Tx.beam(rap0, 55, 'th')
+2024-05-10 15:41:32,357 INFO : #   Command executed.
+2024-05-10 15:41:32,376 CALL [0] : Tx.beam(rap0, 56, 'th')
+2024-05-10 15:41:32,377 INFO : #   Command executed.
+2024-05-10 15:41:32,396 CALL [0] : Tx.beam(rap0, 57, 'th')
+2024-05-10 15:41:32,397 INFO : #   Command executed.
+2024-05-10 15:41:32,416 CALL [0] : Tx.beam(rap0, 58, 'th')
+2024-05-10 15:41:32,417 INFO : #   Command executed.
+2024-05-10 15:41:32,437 CALL [0] : Tx.beam(rap0, 59, 'th')
+2024-05-10 15:41:32,437 INFO : #   Command executed.
+2024-05-10 15:41:32,457 CALL [0] : Tx.beam(rap0, 60, 'th')
+2024-05-10 15:41:32,458 INFO : #   Command executed.
+2024-05-10 15:41:32,477 CALL [0] : Tx.beam(rap0, 61, 'th')
+2024-05-10 15:41:32,478 INFO : #   Command executed.
+2024-05-10 15:41:32,517 CALL [0] : Tx.beam(rap0, 62, 'th')
+2024-05-10 15:41:32,518 INFO : #   Command executed.
+2024-05-10 15:41:32,518 CALL [0] : Tx.beam(rap0, 63, 'th')
+2024-05-10 15:41:32,519 INFO : #   Command executed.
+2024-05-10 15:43:23,388 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:43:32,517 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:43:32,517 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:43:32,517 INFO : #     API       : 0.1.49
+2024-05-10 15:43:33,652 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:43:33,652 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:43:33,652 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:43:33,652 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:43:33,652 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:43:33,654 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:43:33,654 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:43:33,655 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:43:33,655 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:43:33,656 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:43:33,656 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:43:33,780 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:43:33,890 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:43:33,891 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:43:33,891 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:43:33,898 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:43:33,898 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:43:33,898 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:43:33,898 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:43:33,898 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:43:33,899 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:43:33,899 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:43:33,899 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:43:33,899 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:43:33,902 INFO : # Host instance created successfully.
+2024-05-10 15:43:33,902 ERROR: #   [1m[31mNo file found matching tx_setup.py
+2024-05-10 15:43:33,911 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-05-10 15:43:38,253 CALL [0] : Host.versions(**{'printit': True})
+2024-05-10 15:43:38,253 INFO : #     MB_DLL    : 0.1.13
+2024-05-10 15:43:38,253 INFO : #     API       : 0.1.49
+2024-05-10 15:43:39,393 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:43:39,393 INFO : #   Expecting 2 devices. Trying to connect to them ...
+2024-05-10 15:43:39,393 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:43:39,393 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:43:39,393 CALL [0] : Host.set_vcm(rap0, 600)
+2024-05-10 15:43:39,395 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:43:39,395 CALL [0] : Host.set_vcm(rap1, 600)
+2024-05-10 15:43:39,396 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:43:39,397 ERROR: #     [1m[31mDevice with id 0x00000000 not supported.
+2024-05-10 15:43:39,397 ERROR: #     [1m[31mDevice with id 0x00000000 not supported.
+2024-05-10 15:43:39,397 INFO : #   Initial connection failed. Initialising power and re-trying ...
+2024-05-10 15:43:39,522 CALL [0] : Pwr.on('VDD1V8',)
+2024-05-10 15:43:39,632 CALL [0] : Chip_info.detect(**{'printit': True})
+2024-05-10 15:43:39,633 INFO : #     Device with id 0x12522112 detected.
+2024-05-10 15:43:39,634 ERROR: #     [1m[31mDevice with id 0xFFFFFFFF not supported.
+2024-05-10 15:43:39,640 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:43:39,640 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:43:39,640 CALL [0] : Chip_info.get(rap0, **{'printit': None})
+2024-05-10 15:43:39,641 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:43:39,641 CALL [0] : Chip_info.get(rap1, **{'printit': None})
+2024-05-10 15:43:39,641 CALL [0] : Chip_info.get_num_devs(**{})
+2024-05-10 15:43:39,641 CALL [0] : Chip_info.get_dev(0,)
+2024-05-10 15:43:39,642 CALL [0] : Chip_info.get_dev(1,)
+2024-05-10 15:43:39,642 CALL [0] : Adf4150.setup(**{})
+2024-05-10 15:43:39,644 INFO : # Host instance created successfully.
+2024-05-10 15:43:39,644 ERROR: #   [1m[31mNo file found matching rx_setup_25Ghz.py

@@ -43,8 +43,11 @@ host.chip.ram.fill(rap0, '25GHz') # Loads beam for 24GHz from file to RAM. Depen
 #---------------------------------------------
 #------Beamforming Configuration--------------
 #---------------------------------------------
+#Change the RX bandwidth
+host.spi.wrrd(rap0,'capval_0',5)
+host.spi.wrrd(rap0,'capval_1',5)
 
-#Enabling 16 elements on V pol
+#Enabling 16 elements on H pol
 host.chip.rx.setup(rap0, mode, rpol, ant_en_v=0x0000, ant_en_h=0xFFFF)# for H pol or dual pol write appropriate values for ant_en_h. 0xFFFF is for all 16 paths (each bit is for one path). for ex, if you want just one path write 0x0001.
 
 #setting up the RFIC in Rx mode and choosing the required gain and beam indices. Check the 'ram.xml' file @C:\Sivers Semiconductors\Rapinoe\API\config\ram for more details
