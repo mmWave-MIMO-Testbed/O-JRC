@@ -1,1 +1,0 @@
-/usr/bin/sh: 0: Can't open ../start_evk.sh

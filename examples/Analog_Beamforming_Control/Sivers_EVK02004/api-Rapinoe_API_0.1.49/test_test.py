@@ -1,6 +1,8 @@
 import sys
 import time
 import beamSweep
+import hunter 
+hunter.trace(module='posixpath', action=hunter.CallPrinter)
 
 process_tx = beamSweep.beamSweep_start(1, "T582306548", "rapvalbsp", None, None, None, None, None, None, "tx_setup_25Ghz")
 process_rx = beamSweep.beamSweep_start(2, "T582306549", "rapvalbsp", None, None, None, None, None, None, "rx_setup_25Ghz")
