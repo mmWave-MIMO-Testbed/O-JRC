@@ -325,7 +325,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"/home/haocheng/O-JRC/examples"'
+    value: '"/home/xin/O-JRC/examples"'
   states:
     bus_sink: false
     bus_source: false
@@ -1940,7 +1940,6 @@ blocks:
     affinity: ''
     alias: ''
     bw: samp_rate
-    chan_est_data_file: chan_est_data_file
     chan_est_file: chan_est_file
     comm_log_file: comm_log_file
     comment: ''

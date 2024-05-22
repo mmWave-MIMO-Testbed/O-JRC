@@ -6,7 +6,7 @@
 #
 # GNU Radio Python Flow Graph
 # Title: Jrc Comm Sim V0
-# GNU Radio version: v3.8.5.0-6-g57bd109d
+# GNU Radio version: 3.8.5.0
 
 from distutils.version import StrictVersion
 
@@ -88,7 +88,7 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.fft_len = fft_len = ofdm_config.N_sc
         self.wavelength = wavelength = 3e8/rf_freq
         self.samp_rate = samp_rate = 150000000
-        self.parrent_path = parrent_path = "/home/haocheng/O-JRC/examples"
+        self.parrent_path = parrent_path = "/home/xin/O-JRC/examples"
         self.noise_figure_dB = noise_figure_dB = 10
         self.mimo_tap1 = mimo_tap1 = cmath.exp(1j*cmath.pi*np.sin(np.deg2rad(theta)))
         self.distance = distance = 20
@@ -469,7 +469,7 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_ndp_generator_0 = mimo_ofdm_jrc.ndp_generator()
         self.mimo_ofdm_jrc_moving_avg_0 = mimo_ofdm_jrc.moving_avg(corr_window_size, 1, 16000, False)
         self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64, ofdm_config.ltf_mapped_sc__ss_sym, chan_est_file, False, radar_read_file, radar_aided, phased_steering, use_radar_streams, "packet_len",  False)
-        self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0 = mimo_ofdm_jrc.mimo_ofdm_equalizer(chan_est, rf_freq, samp_rate, fft_len, cp_len, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64[3], ofdm_config.ltf_mapped_sc__ss_sym, N_tx, chan_est_file, comm_log_file, chan_est_data_file ,False, False)
+        self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0 = mimo_ofdm_jrc.mimo_ofdm_equalizer(chan_est, rf_freq, samp_rate, fft_len, cp_len, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64[3], ofdm_config.ltf_mapped_sc__ss_sym, N_tx, chan_est_file, comm_log_file, False, False)
         self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0.set_min_output_buffer(80000)
         self.mimo_ofdm_jrc_gui_time_plot_1_0 = mimo_ofdm_jrc.gui_time_plot(250, "throughput", "Throughput [KByte/s]", [0,5], 10, "Received Data Throughput")
         self.mimo_ofdm_jrc_gui_time_plot_1 = mimo_ofdm_jrc.gui_time_plot(250, "per", "PER [%]", [0,102], 10, "Packet Error Rate")

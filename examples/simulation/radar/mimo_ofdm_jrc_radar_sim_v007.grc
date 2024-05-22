@@ -376,7 +376,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"/home/host-pc/O-JRC/examples"'
+    value: '"/home/xin/O-JRC/examples"'
   states:
     bus_sink: false
     bus_source: false
@@ -770,7 +770,7 @@ blocks:
 - name: blocks_complex_to_mag_squared_0_0
   id: blocks_complex_to_mag_squared
   parameters:
-    affinity: '9'
+    affinity: '0'
     alias: ''
     comment: ''
     maxoutbuf: '0'
@@ -806,7 +806,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: /home/host-pc/temp/static_radar_image.csv
+    file: parrent_path+"/data/static_radar_image.csv"
     type: float
     unbuffered: 'False'
     vlen: '128'
@@ -1999,7 +1999,6 @@ blocks:
     minoutbuf: '0'
     radar_chan_file: radar_chan_file
     record_len: '8'
-    stats_record: 'False'
   states:
     bus_sink: false
     bus_source: false
@@ -2093,7 +2092,6 @@ blocks:
     snr_threshold: '15'
     stats_path: radar_log_file
     stats_record: save_radar_log
-    stats_signal_strength_path: '""'
     vlen: N_tx*N_rx*interp_factor_angle
   states:
     bus_sink: false
