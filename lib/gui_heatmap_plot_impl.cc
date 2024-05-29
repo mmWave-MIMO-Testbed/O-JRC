@@ -30,6 +30,8 @@ namespace gr {
 
     gui_heatmap_plot::sptr 
     gui_heatmap_plot::make(int vlen,
+                                                    bool digital_control,
+                                                    const std::string& sivers_angle_log,
                                                     int interval,
                                                     std::string xlabel,
                                                     std::string ylabel,
@@ -44,6 +46,8 @@ namespace gr {
                                                     std::string len_key)
     {
         return gnuradio::get_initial_sptr(new gui_heatmap_plot_impl(vlen,
+                                                                    digital_control,
+                                                                    sivers_angle_log,
                                                                     interval,
                                                                     xlabel,
                                                                     ylabel,
@@ -62,6 +66,8 @@ namespace gr {
     * The private constructor
     */
     gui_heatmap_plot_impl::gui_heatmap_plot_impl(int vlen,
+                                                    bool digital_control,
+                                                    const std::string& sivers_angle_log,
                                                     int interval,
                                                     std::string xlabel,
                                                     std::string ylabel,
@@ -80,6 +86,8 @@ namespace gr {
                                 len_key)
     {
         d_vlen = vlen;
+        d_digital_control = digital_control;
+        d_sivers_angle_log = sivers_angle_log;
         d_interval = interval;
         d_xlabel = xlabel;
         d_ylabel = ylabel;
@@ -118,6 +126,8 @@ namespace gr {
         // Set QWT plot widget
         d_main_gui = new heatmap_plot(d_interval,
                                         d_vlen,
+                                        d_digital_control,
+                                        d_sivers_angle_log,
                                         &d_buffer,
                                         d_xlabel,
                                         d_ylabel,
@@ -131,6 +141,44 @@ namespace gr {
                                         d_db_scale);
         d_main_gui->show();
     }
+
+    // // Load angle info from CSV
+    // double gui_heatmap_plot_impl::loadSiversAngleFromCSV() {
+    //     std::ifstream file(d_sivers_angle_log);
+    //     if (!file.is_open()) {
+    //         std::cerr<<"Could not open file: " << d_sivers_angle_log<<std::endl;
+    //         return false;
+    //     }
+
+    //     std::string lastLine;
+    //     std::string line;
+    //     while (std::getline(file, line)) {
+    //         if (!line.empty()) {
+    //             lastLine = line;
+    //         }
+    //     }
+    //     file.close();
+
+    //     if (lastLine.empty()) {
+    //         std::cerr<<"File is empty or no valid data found"<<std::endl;
+    //         return false;
+    //     }
+
+    //     std::stringstream ss(lastLine);
+    //     std::string timestampStr, angleStr;
+
+    //     if (std::getline(ss, timestampStr, ',') && std::getline(ss, angleStr, ',')) {
+    //         try {
+    //             return std::stod(angleStr); // change to double and return
+    //         } catch (const std::invalid_argument& e) {
+    //             std::cerr<<"Invalid angle value in the CSV file"<<std::endl;
+    //             return false;
+    //         }
+    //     } else {
+    //         std::cerr<<"Invalid format of the last line in the CSV file"<<std::endl;
+    //         return false;
+    //     }
+    // }
 
     int gui_heatmap_plot_impl::calculate_output_stream_length(
         const gr_vector_int& ninput_items)

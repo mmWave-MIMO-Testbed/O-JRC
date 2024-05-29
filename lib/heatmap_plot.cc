@@ -21,6 +21,10 @@
 #include "heatmap_plot.h"
 #include <iostream>
 #include <stdexcept>
+#include <fstream>
+#include <sstream>
+#include <string>
+
 
 namespace gr {
 namespace mimo_ofdm_jrc {
@@ -28,6 +32,8 @@ namespace mimo_ofdm_jrc {
 
     heatmap_plot::heatmap_plot(int interval,
                                     int vlen,
+                                    bool digital_control,
+                                    const std::string& sivers_angle_log,
                                     std::vector<float>* buffer,
                                     std::string label_x,
                                     std::string label_y,
@@ -44,6 +50,8 @@ namespace mimo_ofdm_jrc {
     {
         d_interval = interval;
         d_vlen = vlen;
+        d_sivers_angle_log = sivers_angle_log;
+        d_digital_control = digital_control;
         d_buffer = buffer;
         d_autoscale_z = autoscale_z;
         d_db_scale = db_scale;
@@ -154,42 +162,155 @@ namespace mimo_ofdm_jrc {
         d_plot->setGeometry(0, 0, this->width(), this->height());
     }
 
+    //Find the closest angle(x-axis index) of Sivers_angle
+    int heatmap_plot::findClosestIndex(const QVector<double>& axis, double value)
+    {
+        auto it = std::min_element(axis.begin(), axis.end(), 
+                                    [value](double a, double b){
+                                        return std::abs(a -value) < std::abs(b - value);
+                                    });
+        return std::distance(axis.begin(),it);
+    }
+    
+
+    // Load angle info from CSV
+    double heatmap_plot::loadSiversAngleFromCSV() {
+        std::ifstream file(d_sivers_angle_log);
+        if (!file.is_open()) {
+            std::cerr<<"Could not open file: " << d_sivers_angle_log<<std::endl;
+            return false;
+        }
+
+        std::string lastLine;
+        std::string line;
+        while (std::getline(file, line)) {
+            if (!line.empty()) {
+                lastLine = line;
+            }
+        }
+        file.close();
+
+        if (lastLine.empty()) {
+            std::cerr<<"File is empty or no valid data found"<<std::endl;
+            return false;
+        }
+
+        std::stringstream ss(lastLine);
+        std::string timestampStr, angleStr;
+
+        if (std::getline(ss, timestampStr, ',') && std::getline(ss, angleStr, ',')) {
+            try {
+                return std::stod(angleStr); // change to double and return
+            } catch (const std::invalid_argument& e) {
+                std::cerr<<"Invalid angle value in the CSV file"<<std::endl;
+                return false;
+            }
+        } else {
+            std::cerr<<"Invalid format of the last line in the CSV file"<<std::endl;
+            return false;
+        }
+
+    }
+
     void heatmap_plot::refresh()
     {
         // Fetch new data and push to matrix
         d_plot_data.clear();
-
+        
         float maximum, minimum; // get maximum and minimum
         float min_display;
-        if (d_buffer->size() != 0) {
-            d_plot_data.resize(d_buffer->size());
+        double Sivers_angle;
 
-            // d_plot_data = QVector<double>(d_buffer->begin(), d_buffer->end());
-            d_plot_data = QVector<double>::fromStdVector(std::vector<double>(d_buffer->begin(), d_buffer->end()));
+        // digital or analog
+        if (d_digital_control)  // digital Beamforming mode
+        {
 
-            minimum = *std::min_element( std::begin(d_plot_data), std::end(d_plot_data) );
-            maximum = *std::max_element( std::begin(d_plot_data), std::end(d_plot_data) );
-            
-            if (std::isnan(minimum) || std::isnan(maximum)){
-                throw std::runtime_error("minimum or maximum for z axis is NaN");
-            }
+            if (d_buffer->size() != 0) {
+                d_plot_data.resize(d_buffer->size());
+
+                // d_plot_data = QVector<double>(d_buffer->begin(), d_buffer->end());
+                d_plot_data = QVector<double>::fromStdVector(std::vector<double>(d_buffer->begin(), d_buffer->end()));
+
+                minimum = *std::min_element( std::begin(d_plot_data), std::end(d_plot_data) );
+                maximum = *std::max_element( std::begin(d_plot_data), std::end(d_plot_data) );
                 
-            // Get rows and columns
-            int columns, rows;
-            columns = d_vlen;
-            rows = d_buffer->size() / d_vlen;
+                if (std::isnan(minimum) || std::isnan(maximum)){
+                    throw std::runtime_error("minimum or maximum for z axis is NaN");
+                }
+                    
+                // Fill data in spectrogram
+                // d_data->setValueMatrix(d_plot_data, columns);
+                d_data->setValueMatrix(d_plot_data, d_axis_x, d_axis_y);
+                // d_plot_data: the data, d_axis_x: the position of x axis(nubmer of columns), d_axis_y: number of rows.
+                // d_data: d_axis_y * d_axis_x matrix, filling the matrix row by row 
+                d_data->setResampleMode(RangeAngleRasterData::BilinearInterpolation); 
 
-            // Fill data in spectrogram
-            // d_data->setValueMatrix(d_plot_data, columns);
-            d_data->setValueMatrix(d_plot_data, d_axis_x, d_axis_y);
-            d_data->setResampleMode(RangeAngleRasterData::BilinearInterpolation); 
+                // d_data->setInterval(Qt::XAxis, QwtInterval(d_axis_x[0], d_axis_x[1]));
+                // d_data->setInterval(Qt::YAxis, QwtInterval(d_axis_y[0], d_axis_y[1]));
+                QwtInterval intervall = QwtInterval(d_axis_x.front(), d_axis_x.back());
+                
+                d_data->setInterval(Qt::XAxis, QwtInterval(d_axis_x.front(), d_axis_x.back()));
+                d_data->setInterval(Qt::YAxis, QwtInterval(d_axis_y.front(), d_axis_y.back()));
+            }
+        }
+        else //Analog mode (Sivers)
+        {
 
-            // d_data->setInterval(Qt::XAxis, QwtInterval(d_axis_x[0], d_axis_x[1]));
-            // d_data->setInterval(Qt::YAxis, QwtInterval(d_axis_y[0], d_axis_y[1]));
-            QwtInterval intervall = QwtInterval(d_axis_x.front(), d_axis_x.back());
-            
-            d_data->setInterval(Qt::XAxis, QwtInterval(d_axis_x.front(), d_axis_x.back()));
-            d_data->setInterval(Qt::YAxis, QwtInterval(d_axis_y.front(), d_axis_y.back()));
+            if (d_buffer->size() != 0) {
+                d_plot_data.resize(d_buffer->size());
+                d_plot_data = QVector<double>::fromStdVector(std::vector<double>(d_buffer->begin(), d_buffer->end()));
+                //std::cout<< "The size of d_plot_data is "<< d_plot_data.size() <<std::endl;
+
+                minimum = *std::min_element( std::begin(d_plot_data), std::end(d_plot_data) );
+                maximum = *std::max_element( std::begin(d_plot_data), std::end(d_plot_data) );
+                
+                if (std::isnan(minimum) || std::isnan(maximum)){
+                    throw std::runtime_error("minimum or maximum for z axis is NaN");
+                }
+                // get the index of column and row
+                int columns = d_axis_x.size();
+                int rows = d_axis_y.size();
+                //std::cout<< "rows" << rows << "columns" <<columns <<std::endl;
+
+                // Load the last line from CSV to update Sivers_angle
+                double Sivers_angle = loadSiversAngleFromCSV();
+
+                // Find the x index range of Sivers_angle ± 5 degrees
+                int col_index_start = findClosestIndex(d_axis_x, Sivers_angle - 2);
+                int col_index_end = findClosestIndex(d_axis_x, Sivers_angle + 2);
+
+                // Ensure indices are within bounds
+                col_index_start = std::max(0, col_index_start);
+                col_index_end = std::min(columns - 1, col_index_end);
+
+                //Create data matrix that only keeps the data within the angle range, 0 for others
+                //QVector<double> new_plot_data(columns*rows, 0.0);
+                
+                // for (int row = 0; row < rows; ++row) {
+                //     for (int col = col_index_start; col <= col_index_end; ++col) {
+                //         new_plot_data[row * columns + col] = d_plot_data[row];
+                //     }
+                // }
+
+                // fill new data matrix to d_data
+                //d_data->setValueMatrix(new_plot_data, d_axis_x, d_axis_y);
+                d_data->setValueMatrix(d_plot_data, d_axis_x, d_axis_y);
+                d_data->setResampleMode(RangeAngleRasterData::NearestNeighbour);
+                QwtInterval intervall = QwtInterval(d_axis_x.front(), d_axis_x.back());              
+                d_data->setInterval(Qt::XAxis, QwtInterval(d_axis_x.front(), d_axis_x.back()));
+                d_data->setInterval(Qt::YAxis, QwtInterval(d_axis_y.front(), d_axis_y.back())); 
+                             
+                // create data matrix that only keep the data of given row, 0 for others
+                for (int row = 0; row < rows; ++row) {
+                    for (int col = 0; col < col_index_start; ++col) {
+                        d_data->setValue(row, col, 0.0);
+                    }
+                    for (int col = col_index_end + 1; col < columns; ++col) {
+                        d_data->setValue(row, col, 0.0);
+                    }
+                }
+       
+        }}
 
             if (d_db_scale)
             {
@@ -234,7 +355,7 @@ namespace mimo_ofdm_jrc {
             // d_plot->setAxisScaleDiv(Qt::ZAxis, QwtScaleDiv(QwtInterval(d_axis_x.front(), d_axis_x.back()), d_axis_x.front(), d_axis_x.back()));
             // Do replot
             d_plot->replot();
-        }
+        
     }
 
 } // namespace mimo_ofdm_jrc

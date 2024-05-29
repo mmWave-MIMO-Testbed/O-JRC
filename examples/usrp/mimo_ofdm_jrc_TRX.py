@@ -96,6 +96,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.wavelength = wavelength = 3e8/rf_freq
         self.tx_multiplier = tx_multiplier = 0.42
         self.tx_gain = tx_gain = 20
+        self.sivers_angle_log = sivers_angle_log = parrent_path+"/data/sivers_angle_log.csv"
         self.signal_strength_log_file = signal_strength_log_file = parrent_path+"/data/signal_strength_log.csv"
         self.save_radar_log = save_radar_log = False
         self.rx_gain = rx_gain = 20
@@ -108,6 +109,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.packet_data_file = packet_data_file = parrent_path+"/data/packet_data.csv"
         self.mcs = mcs = 3
         self.freq_smoothing = freq_smoothing = False
+        self.digital_beamforming = digital_beamforming = False
         self.delay_samp = delay_samp = 188
         self.cp_len = cp_len = int(fft_len/4)
         self.chan_est_file = chan_est_file = parrent_path+"/data/chan_est.csv"
@@ -231,6 +233,22 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(4, 6):
             self.top_grid_layout.setColumnStretch(c, 1)
+        # Create the options list
+        self._digital_beamforming_options = [False, True]
+        # Create the labels list
+        self._digital_beamforming_labels = ['False', 'True']
+        # Create the combo box
+        self._digital_beamforming_tool_bar = Qt.QToolBar(self)
+        self._digital_beamforming_tool_bar.addWidget(Qt.QLabel('Digital Beamforming' + ": "))
+        self._digital_beamforming_combo_box = Qt.QComboBox()
+        self._digital_beamforming_tool_bar.addWidget(self._digital_beamforming_combo_box)
+        for _label in self._digital_beamforming_labels: self._digital_beamforming_combo_box.addItem(_label)
+        self._digital_beamforming_callback = lambda i: Qt.QMetaObject.invokeMethod(self._digital_beamforming_combo_box, "setCurrentIndex", Qt.Q_ARG("int", self._digital_beamforming_options.index(i)))
+        self._digital_beamforming_callback(self.digital_beamforming)
+        self._digital_beamforming_combo_box.currentIndexChanged.connect(
+            lambda i: self.set_digital_beamforming(self._digital_beamforming_options[i]))
+        # Create the radio buttons
+        self.top_layout.addWidget(self._digital_beamforming_tool_bar)
         self._delay_samp_range = Range(0, 500, 1, 188, 200)
         self._delay_samp_win = RangeWidget(self._delay_samp_range, self.set_delay_samp, 'TX/RX Sync', "counter_slider", float)
         self.top_grid_layout.addWidget(self._delay_samp_win, 8, 0, 1, 8)
@@ -341,8 +359,8 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_mimo_ofdm_radar_0 = mimo_ofdm_jrc.mimo_ofdm_radar(fft_len, N_tx, N_rx, N_tx, len(ofdm_config_siso.l_stf_ltf_64)+1, False, background_record, 8, interp_factor, False, radar_chan_file, save_radar_log, "packet_len",  False)
         self.mimo_ofdm_jrc_matrix_transpose_0 = mimo_ofdm_jrc.matrix_transpose(fft_len*interp_factor, N_tx*N_rx, interp_factor_angle, False, "packet_len")
         self.mimo_ofdm_jrc_gui_time_plot_0 = mimo_ofdm_jrc.gui_time_plot(250, "range", "Range (m)", [0, 20], 10, "Range Estimate")
-        self.mimo_ofdm_jrc_gui_heatmap_plot_0 = mimo_ofdm_jrc.gui_heatmap_plot(N_tx*N_rx*interp_factor_angle, 100, "Angle", "Range (m)", 'Range-Angle Image', angle_axis, range_axis, 9, [70, -70, 10], [0, 15,2], False, False, "packet_len")
-        self.fft_vxx_0_1_0 = fft.fft_vcc(N_tx*N_rx*interp_factor_angle, True, window.rectangular(N_tx*N_rx*interp_factor_angle), True, 1)
+        self.mimo_ofdm_jrc_gui_heatmap_plot_0 = mimo_ofdm_jrc.gui_heatmap_plot(N_tx*N_rx*interp_factor_angle, digital_beamforming,sivers_angle_log,100, "Angle", "Range (m)", 'Range-Angle Image', angle_axis, range_axis, 9, [70, -70, 10], [0, 15,2], False, False, "packet_len")
+        self.fft_vxx_0_1_0 = fft.fft_vcc(N_tx*N_rx*interp_factor_angle, True, [], True, 1)
         self.fft_vxx_0_1 = fft.fft_vcc(fft_len*interp_factor, False, window.rectangular(fft_len*interp_factor), True, 1)
         self.fft_vxx_0_0 = fft.fft_vcc(fft_len, True, (), True, 1)
         self.fft_vxx_0 = fft.fft_vcc(fft_len, False, tuple([1/64**.5] * 64), True, 1)
@@ -425,6 +443,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.set_radar_data_file(self.parrent_path+"/data/radar_data.csv")
         self.set_radar_log_file(self.parrent_path+"/data/radar_log.csv")
         self.set_signal_strength_log_file(self.parrent_path+"/data/signal_strength_log.csv")
+        self.set_sivers_angle_log(self.parrent_path+"/data/sivers_angle_log.csv")
 
     def get_interp_factor_angle(self):
         return self.interp_factor_angle
@@ -482,6 +501,12 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
     def set_tx_gain(self, tx_gain):
         self.tx_gain = tx_gain
         self.mimo_ofdm_jrc_usrp_mimo_trx_0.set_tx_gain(self.tx_gain)
+
+    def get_sivers_angle_log(self):
+        return self.sivers_angle_log
+
+    def set_sivers_angle_log(self, sivers_angle_log):
+        self.sivers_angle_log = sivers_angle_log
 
     def get_signal_strength_log_file(self):
         return self.signal_strength_log_file
@@ -565,6 +590,13 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.freq_smoothing = freq_smoothing
         self._freq_smoothing_callback(self.freq_smoothing)
         self.mimo_ofdm_jrc_mimo_precoder_0.set_chan_est_smoothing(self.freq_smoothing)
+
+    def get_digital_beamforming(self):
+        return self.digital_beamforming
+
+    def set_digital_beamforming(self, digital_beamforming):
+        self.digital_beamforming = digital_beamforming
+        self._digital_beamforming_callback(self.digital_beamforming)
 
     def get_delay_samp(self):
         return self.delay_samp

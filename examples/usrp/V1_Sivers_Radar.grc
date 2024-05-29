@@ -198,6 +198,36 @@ blocks:
     coordinate: [968, 820.0]
     rotation: 0
     state: enabled
+- name: digital_beamforming
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Digital Beamforming
+    label0: 'False'
+    label1: 'True'
+    label2: ''
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '2'
+    option0: 'False'
+    option1: 'True'
+    option2: '2'
+    option3: '3'
+    option4: '4'
+    options: '[0, 1, 2]'
+    orient: Qt.QVBoxLayout
+    type: raw
+    value: 'False'
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1616, 1400.0]
+    rotation: 0
+    state: true
 - name: fft_len
   id: variable
   parameters:
@@ -514,6 +544,18 @@ blocks:
     coordinate: [640, 340.0]
     rotation: 0
     state: enabled
+- name: sivers_angle_log
+  id: variable
+  parameters:
+    comment: ''
+    value: parrent_path+"/data/sivers_angle_log.csv"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [816, 280.0]
+    rotation: 0
+    state: enabled
 - name: tx_gain
   id: variable_qtgui_range
   parameters:
@@ -755,7 +797,7 @@ blocks:
     nthreads: '1'
     shift: 'True'
     type: complex
-    window: window.rectangular(N_tx*N_rx*interp_factor_angle)
+    window: '[]'
   states:
     bus_sink: false
     bus_source: false
@@ -838,10 +880,12 @@ blocks:
     axis_y: range_axis
     comment: dynamic_range = 9 dB
     db_scale: 'False'
+    digital_control: digital_beamforming
     dynamic_range_db: '9'
     interval: '100'
     label: Range-Angle Image
     len_key: '"packet_len"'
+    sivers_angle_log: sivers_angle_log
     vlen: N_tx*N_rx*interp_factor_angle
     x_axis_ticks: '[70, -70, 10]'
     xlabel: '"Angle"'
