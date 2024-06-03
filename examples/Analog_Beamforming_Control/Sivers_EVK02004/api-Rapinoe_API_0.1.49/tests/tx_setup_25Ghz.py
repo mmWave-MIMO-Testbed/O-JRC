@@ -40,7 +40,7 @@ host.chip.tx.gain_rf(rap0, 0, tpol)
 
 #calibrating for H and V pol separately
 #host.chip.tx.dco.calibrate(rap0, mode, pol1)
-# host.chip.tx.dco.calibrate(rap0, mode, pol2) # uncomment this cmd and comment the line above if H pol is used or uncomment both lines if dual pol is used (two DCO calibrations are needed then)
+#host.chip.tx.dco.calibrate(rap0, mode, pol2) # uncomment this cmd and comment the line above if H pol is used or uncomment both lines if dual pol is used (two DCO calibrations are needed then)
 
 
 #Copy paste the cmds below to change the gain. Modify gain_com and gain_bf as you see fit. Both the ram.wr and tx.gain_rf cmds need to be run for the changed gain values to take effect

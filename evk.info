@@ -1486,3 +1486,4 @@
 2024-05-10 15:43:39,642 CALL [0] : Adf4150.setup(**{})
 2024-05-10 15:43:39,644 INFO : # Host instance created successfully.
 2024-05-10 15:43:39,644 ERROR: #   [1m[31mNo file found matching rx_setup_25Ghz.py
+2024-05-29 18:25:53,602 INFO : #   Connecting to motherboard with serial number 0 ...

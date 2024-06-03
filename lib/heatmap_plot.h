@@ -45,6 +45,8 @@ namespace gr {
     public:
         heatmap_plot(int interval,
                         int vlen,
+                        bool digital_control,
+                        const std::string& sivers_angle_log,
                         std::vector<float>* buffer,
                         std::string label_x,
                         std::string label_y,
@@ -60,7 +62,8 @@ namespace gr {
         ~heatmap_plot();
 
     private:
-        int d_interval, d_vlen;
+        int d_interval, d_vlen, d_digital_control;
+        std::string d_sivers_angle_log;
 
         int d_x_axis_div, d_y_axis_div;
         QVector<double> d_axis_x, d_axis_y;
@@ -95,6 +98,8 @@ namespace gr {
 
     public slots:
         void refresh();
+        int findClosestIndex(const QVector<double>& axis, double value);
+        double loadSiversAngleFromCSV();
     };
 
   } // namespace mimo_ofdm_jrc

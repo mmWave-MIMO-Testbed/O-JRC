@@ -46,6 +46,8 @@ namespace gr {
        * creating new instances.
        */
       static sptr make(int vlen,
+                     bool digital_control,
+                     const std::string& sivers_angle_log,
                      int interval,
                      std::string xlabel,
                      std::string ylabel,

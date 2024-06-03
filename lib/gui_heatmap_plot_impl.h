@@ -37,6 +37,8 @@ namespace gr {
 
      public:
       gui_heatmap_plot_impl(int vlen,
+                                bool digital_control,
+                                const std::string& sivers_angle_log,
                                 int interval,
                                 std::string xlabel,
                                 std::string ylabel,
@@ -56,6 +58,8 @@ namespace gr {
         QApplication* d_qApplication;
 
         int d_vlen, d_interval;
+        bool d_digital_control;
+        std::string d_sivers_angle_log;
         std::string d_xlabel, d_ylabel, d_label;
         std::vector<float> d_axis_x, d_axis_y;
         float d_dynamic_range_db;
@@ -66,6 +70,7 @@ namespace gr {
         heatmap_plot* d_main_gui;
 
         void run_gui();
+        //double loadSiversAngleFromCSV();
 
       // Where all the action really happens
       int work(

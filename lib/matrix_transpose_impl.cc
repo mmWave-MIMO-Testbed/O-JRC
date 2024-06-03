@@ -76,6 +76,7 @@ namespace gr {
         const gr_complex *in = (const gr_complex *) input_items[0];
         gr_complex *out = (gr_complex *) output_items[0];
         
+
         dout << "[MATRIX TRANSPOSE] ninput_items " << ninput_items[0] << " noutput_items " << noutput_items << std::endl;
 
 
@@ -96,16 +97,20 @@ namespace gr {
 
         // Set noutput items
         noutput_items = d_input_len;
-        
+        //noutput_items = 1;
+
         // Update len key tag
         update_length_tags(noutput_items,0);
         
-        // Create all 0 vector, sizeof(gr_complex)*interp_factor * d_output_len * d_input_len, 8*16*8*512
+        // Create all 0 vector, sizeof(gr_complex)*interp_factor * d_output_len * d_input_len
+        // Here: out(d_input_len rows, interp_factor*d_output_len columns) transpose
+        //       only first d_output_len columns have value from in(), following (interp_factor*d_output_len - interp_factor) zeros
+        //     : in(input_items[0] = ninput_items[0]*d_input_len+d_input_len)
         memset(out, 0, sizeof(gr_complex)*d_interp_factor*d_output_len*d_input_len); 
 
         // Reorganize samples
         for(int l = 0; l < d_input_len; l++){ // go through single input vector
-            for(int k=0; k < ninput_items[0]; k++){ // go through all input vectors, ninput_items[0]=512
+            for(int k=0; k < ninput_items[0]; k++){ // go through all input vectors
                 out[l*d_output_len*d_interp_factor + k] = in[k*d_input_len + l];
             }
         }

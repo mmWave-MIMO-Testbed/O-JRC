@@ -4,13 +4,19 @@ category: '[MIMO OFDM JRC]'
 
 templates:
   imports: import mimo_ofdm_jrc
-  make: mimo_ofdm_jrc.gui_heatmap_plot(${vlen}, ${interval}, ${xlabel}, ${ylabel}, ${label}, ${axis_x}, ${axis_y}, ${dynamic_range_db}, ${x_axis_ticks}, ${y_axis_ticks}, ${autoscale_z}, ${db_scale}, ${len_key})
+  make: mimo_ofdm_jrc.gui_heatmap_plot(${vlen}, ${digital_control},${sivers_angle_log},${interval}, ${xlabel}, ${ylabel}, ${label}, ${axis_x}, ${axis_y}, ${dynamic_range_db}, ${x_axis_ticks}, ${y_axis_ticks}, ${autoscale_z}, ${db_scale}, ${len_key})
 
 parameters:
 -   id: vlen
     label: Input Length
     dtype: int
     hide: ${ 'part' if vlen == 1 else 'none' }
+-   id: digital_control
+    label: Digital Beamforming Method
+    dtype: bool
+-   id: sivers_angle_log
+    label: Sivers Angle Log
+    dtype: string
 -   id: interval
     label: Update Interval [ms]
     dtype: int
