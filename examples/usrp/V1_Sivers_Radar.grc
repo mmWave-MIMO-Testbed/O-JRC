@@ -656,26 +656,6 @@ blocks:
     coordinate: [248, 1036.0]
     rotation: 0
     state: enabled
-- name: blocks_socket_pdu_0
-  id: blocks_socket_pdu
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    host: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    mtu: '5000'
-    port: '52001'
-    tcp_no_delay: 'False'
-    type: UDP_SERVER
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [144, 532.0]
-    rotation: 0
-    state: enabled
 - name: blocks_vector_to_stream_0
   id: blocks_vector_to_stream
   parameters:
@@ -895,7 +875,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1400, 1388.0]
+    coordinate: [1232, 1372.0]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_gui_time_plot_0
@@ -1036,7 +1016,7 @@ blocks:
     coordinate: [672, 580.0]
     rotation: 0
     state: true
-- name: mimo_ofdm_jrc_ndp_generator_0
+- name: mimo_ofdm_jrc_ndp_generator_1
   id: mimo_ofdm_jrc_ndp_generator
   parameters:
     affinity: ''
@@ -1048,9 +1028,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [152, 784.0]
+    coordinate: [144, 672.0]
     rotation: 0
-    state: disabled
+    state: true
 - name: mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0
   id: mimo_ofdm_jrc_ofdm_cyclic_prefix_remover
   parameters:
@@ -1066,10 +1046,10 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [272, 1212.0]
+    coordinate: [256, 1212.0]
     rotation: 0
     state: true
-- name: mimo_ofdm_jrc_packet_switch_0
+- name: mimo_ofdm_jrc_packet_switch_1
   id: mimo_ofdm_jrc_packet_switch
   parameters:
     affinity: ''
@@ -1077,15 +1057,15 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    packet_info_file: packet_data_file
-    period_ms: '50'
+    packet_info_file: /path/to/default/file
+    period_ms: '1000'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [64, 892.0]
+    coordinate: [112, 836.0]
     rotation: 0
-    state: disabled
+    state: true
 - name: mimo_ofdm_jrc_range_angle_estimator_0
   id: mimo_ofdm_jrc_range_angle_estimator
   parameters:
@@ -1114,7 +1094,7 @@ blocks:
     coordinate: [984, 1660.0]
     rotation: 0
     state: true
-- name: mimo_ofdm_jrc_socket_pdu_jrc_0
+- name: mimo_ofdm_jrc_socket_pdu_jrc_1
   id: mimo_ofdm_jrc_socket_pdu_jrc
   parameters:
     MTU: '5000'
@@ -1130,9 +1110,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [144, 644.0]
+    coordinate: [144, 532.0]
     rotation: 0
-    state: disabled
+    state: true
 - name: mimo_ofdm_jrc_stream_encoder_0
   id: mimo_ofdm_jrc_stream_encoder
   parameters:
@@ -1467,7 +1447,6 @@ blocks:
 connections:
 - [blocks_complex_to_mag_squared_0_0, '0', mimo_ofdm_jrc_gui_heatmap_plot_0, '0']
 - [blocks_multiply_const_vxx_0, '0', mimo_ofdm_jrc_zero_pad_0, '0']
-- [blocks_socket_pdu_0, pdus, mimo_ofdm_jrc_stream_encoder_0, pdu_in]
 - [blocks_vector_to_stream_0, '0', qtgui_time_sink_x_0, '0']
 - [digital_ofdm_cyclic_prefixer_0, '0', virtual_sink_0, '0']
 - [fft_vxx_0, '0', digital_ofdm_cyclic_prefixer_0, '0']
@@ -1480,14 +1459,14 @@ connections:
 - [mimo_ofdm_jrc_mimo_ofdm_radar_0, '0', virtual_sink_0_1_0_0_0, '0']
 - [mimo_ofdm_jrc_mimo_precoder_0, '0', fft_vxx_0, '0']
 - [mimo_ofdm_jrc_mimo_precoder_0, '0', mimo_ofdm_jrc_mimo_ofdm_radar_0, '0']
-- [mimo_ofdm_jrc_ndp_generator_0, out, mimo_ofdm_jrc_stream_encoder_0, pdu_in]
+- [mimo_ofdm_jrc_ndp_generator_1, out, mimo_ofdm_jrc_stream_encoder_0, pdu_in]
 - [mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0, '0', fft_vxx_0_0, '0']
-- [mimo_ofdm_jrc_packet_switch_0, strobe, mimo_ofdm_jrc_ndp_generator_0, enable]
-- [mimo_ofdm_jrc_packet_switch_0, strobe, mimo_ofdm_jrc_socket_pdu_jrc_0, enable]
+- [mimo_ofdm_jrc_packet_switch_1, strobe, mimo_ofdm_jrc_ndp_generator_1, enable]
+- [mimo_ofdm_jrc_packet_switch_1, strobe, mimo_ofdm_jrc_socket_pdu_jrc_1, enable]
 - [mimo_ofdm_jrc_range_angle_estimator_0, params, mimo_ofdm_jrc_gui_time_plot_0, stats]
 - [mimo_ofdm_jrc_range_angle_estimator_0, params, mimo_ofdm_jrc_gui_time_plot_1, stats]
 - [mimo_ofdm_jrc_range_angle_estimator_0, params, mimo_ofdm_jrc_gui_time_plot_2, stats]
-- [mimo_ofdm_jrc_socket_pdu_jrc_0, pdus, mimo_ofdm_jrc_stream_encoder_0, pdu_in]
+- [mimo_ofdm_jrc_socket_pdu_jrc_1, pdus, mimo_ofdm_jrc_stream_encoder_0, pdu_in]
 - [mimo_ofdm_jrc_stream_encoder_0, '0', mimo_ofdm_jrc_mimo_precoder_0, '0']
 - [mimo_ofdm_jrc_usrp_mimo_trx_0, '0', virtual_sink_1, '0']
 - [mimo_ofdm_jrc_zero_pad_0, '0', mimo_ofdm_jrc_usrp_mimo_trx_0, '0']

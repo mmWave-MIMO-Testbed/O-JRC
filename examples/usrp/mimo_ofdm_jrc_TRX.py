@@ -351,8 +351,11 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_usrp_mimo_trx_0 = mimo_ofdm_jrc.usrp_mimo_trx(1, 1, 1, samp_rate, usrp_freq, delay_samp, False, 0.04, "addr0=192.168.120.2, master_clock_rate=250e6", "internal", "internal", "TX/RX,TX/RX", tx_gain, 0.6, 0.02, "", "RX2,RX2", rx_gain, 0.6, 0.02, 0, "", "packet_len")
         self.mimo_ofdm_jrc_usrp_mimo_trx_0.set_processor_affinity([6])
         self.mimo_ofdm_jrc_stream_encoder_0 = mimo_ofdm_jrc.stream_encoder(mcs, ofdm_config_siso.N_data, 0, False)
+        self.mimo_ofdm_jrc_socket_pdu_jrc_1 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 5000)
         self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, range_axis, np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, 10, 15, 50, radar_log_file, signal_strength_log_file, save_radar_log, "packet_len", False)
+        self.mimo_ofdm_jrc_packet_switch_1 = mimo_ofdm_jrc.packet_switch(1000, '/path/to/default/file')
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
+        self.mimo_ofdm_jrc_ndp_generator_1 = mimo_ofdm_jrc.ndp_generator()
         self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, ofdm_config_siso.data_subcarriers, ofdm_config_siso.pilot_subcarriers, ofdm_config_siso.pilot_symbols, ofdm_config_siso.l_stf_ltf_64, ofdm_config_siso.ltf_mapped_sc__ss_sym, chan_est_file, freq_smoothing, radar_data_file, radar_aided, False, False, "packet_len",  False)
         self.mimo_ofdm_jrc_mimo_precoder_0.set_processor_affinity([7])
         self.mimo_ofdm_jrc_mimo_precoder_0.set_min_output_buffer(1000)
@@ -373,7 +376,6 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         _capture_radar_push_button.released.connect(lambda: self.set_capture_radar(self._capture_radar_choices['Released']))
         self.top_layout.addWidget(_capture_radar_push_button)
         self.blocks_vector_to_stream_0 = blocks.vector_to_stream(gr.sizeof_gr_complex*1, fft_len*interp_factor)
-        self.blocks_socket_pdu_0 = blocks.socket_pdu('UDP_SERVER', '', '52001', 5000, False)
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_cc(tx_multiplier)
         self.blocks_complex_to_mag_squared_0_0 = blocks.complex_to_mag_squared(N_tx*N_rx*interp_factor_angle)
         self.blocks_complex_to_mag_squared_0_0.set_processor_affinity([9])
@@ -382,8 +384,11 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.blocks_socket_pdu_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_ndp_generator_1, 'out'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_1, 'strobe'), (self.mimo_ofdm_jrc_ndp_generator_1, 'enable'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_1, 'strobe'), (self.mimo_ofdm_jrc_socket_pdu_jrc_1, 'enable'))
         self.msg_connect((self.mimo_ofdm_jrc_range_angle_estimator_0, 'params'), (self.mimo_ofdm_jrc_gui_time_plot_0, 'stats'))
+        self.msg_connect((self.mimo_ofdm_jrc_socket_pdu_jrc_1, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
         self.connect((self.blocks_complex_to_mag_squared_0_0, 0), (self.mimo_ofdm_jrc_gui_heatmap_plot_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.mimo_ofdm_jrc_zero_pad_0, 0))
         self.connect((self.blocks_vector_to_stream_0, 0), (self.qtgui_time_sink_x_0, 0))

@@ -6,7 +6,7 @@
 #
 # GNU Radio Python Flow Graph
 # Title: Sivers Radar Sim
-# GNU Radio version: 3.8.5.0
+# GNU Radio version: v3.8.5.0-6-g57bd109d
 
 from distutils.version import StrictVersion
 
@@ -40,6 +40,7 @@ from gnuradio.qtgui import Range, RangeWidget
 import cmath
 import mimo_ofdm_jrc
 import numpy as np
+import ofdm_config  # embedded python module
 import preamble_designer_SISO  # embedded python module
 import random
 import string
@@ -85,7 +86,7 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
         self.rf_freq = rf_freq = 25e9
         self.wavelength = wavelength = 3e8/rf_freq
         self.samp_rate = samp_rate = 125000000
-        self.parrent_path = parrent_path = "/home/xin/O-JRC/examples"
+        self.parrent_path = parrent_path = "/home/host-pc/O-JRC/examples"
         self.noise_figure_dB = noise_figure_dB = 10
         self.interp_factor_angle = interp_factor_angle = 16
         self.interp_factor = interp_factor = 8
@@ -99,6 +100,7 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
         self.trgt_angle = trgt_angle = 0
         self.sync_words = sync_words = ((0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0), (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0), (0, 0j, 0, 0j, 0, 0j, -1, 1j, -1, 1j, -1, 1j, -1, -1j, 1, 1j, 1, -1j, -1, 1j, 1, 1j, 1, 1j, 1, 1j, -1, (-0-1j), 1, -1j, -1, 1j, 0, -1j, 1, (-0-1j), 1, -1j, 1, 1j, -1, -1j, 1, (-0-1j), -1, 1j, 1, 1j, 1, 1j, 1, 1j, -1, -1j, 1, 1j, 1, -1j, -1, 0j, 0, 0j, 0, 0j), (0, 0, 0, 0, 0, 0, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 0, 1, -1, -1, 1, 1, -1, 1, -1, 1, -1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, 1, 1, 1, 1, 0, 0, 0, 0, 0))
         self.save_radar_log = save_radar_log = False
+        self.range_axis = range_axis = np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor)
         self.radar_log_file = radar_log_file = parrent_path+"/data/radar_log.csv"
         self.radar_chan_file = radar_chan_file = parrent_path+"/data/radar_chan.csv"
         self.pilot_symbols = pilot_symbols = ((1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1))
@@ -108,6 +110,7 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
         self.mcs = mcs = 3
         self.max_ofdm_symbols = max_ofdm_symbols = 800
         self.freq = freq = 4e8
+        self.digital_beamforming = digital_beamforming = False
         self.data_carriers_64 = data_carriers_64 = list(range(-26, -21)) + list(range(-20, -7)) + list(range(-6, 0)) + list(range(1, 7)) + list(range(8, 21)) +list( range(22, 27))
         self.cp_len = cp_len = int(fft_len/4)
         self.chan_est_path = chan_est_path = parrent_path+"/data/chan_est.csv"
@@ -180,12 +183,22 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(0, 1):
             self.top_grid_layout.setColumnStretch(c, 1)
-        _capture_radar_push_button = Qt.QPushButton('Capture Radar Image ')
-        _capture_radar_push_button = Qt.QPushButton('Capture Radar Image ')
-        self._capture_radar_choices = {'Pressed': True, 'Released': False}
-        _capture_radar_push_button.pressed.connect(lambda: self.set_capture_radar(self._capture_radar_choices['Pressed']))
-        _capture_radar_push_button.released.connect(lambda: self.set_capture_radar(self._capture_radar_choices['Released']))
-        self.top_layout.addWidget(_capture_radar_push_button)
+        # Create the options list
+        self._digital_beamforming_options = [False, True]
+        # Create the labels list
+        self._digital_beamforming_labels = ['False', 'True']
+        # Create the combo box
+        self._digital_beamforming_tool_bar = Qt.QToolBar(self)
+        self._digital_beamforming_tool_bar.addWidget(Qt.QLabel('Digital Beamforming' + ": "))
+        self._digital_beamforming_combo_box = Qt.QComboBox()
+        self._digital_beamforming_tool_bar.addWidget(self._digital_beamforming_combo_box)
+        for _label in self._digital_beamforming_labels: self._digital_beamforming_combo_box.addItem(_label)
+        self._digital_beamforming_callback = lambda i: Qt.QMetaObject.invokeMethod(self._digital_beamforming_combo_box, "setCurrentIndex", Qt.Q_ARG("int", self._digital_beamforming_options.index(i)))
+        self._digital_beamforming_callback(self.digital_beamforming)
+        self._digital_beamforming_combo_box.currentIndexChanged.connect(
+            lambda i: self.set_digital_beamforming(self._digital_beamforming_options[i]))
+        # Create the radio buttons
+        self.top_layout.addWidget(self._digital_beamforming_tool_bar)
         self.qtgui_time_sink_x_0_0_0_0_0_1 = qtgui.time_sink_c(
             512, #size
             samp_rate, #samp_rate
@@ -243,21 +256,21 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_zero_pad_0.set_min_output_buffer(40000)
         self.mimo_ofdm_jrc_target_simulator_0 = mimo_ofdm_jrc.target_simulator([trgt_range], [trgt_velocity], [10**(trgt_rcs_dbsm/10.0)], [trgt_angle], TX1_RXs, samp_rate, rf_freq, -40, False, False, "packet_len", False)
         self.mimo_ofdm_jrc_target_simulator_0.set_min_output_buffer(64000)
-        self.mimo_ofdm_jrc_stream_encoder_0 = mimo_ofdm_jrc.stream_encoder(mcs, len(data_carriers_64), 0, False)
+        self.mimo_ofdm_jrc_stream_encoder_1 = mimo_ofdm_jrc.stream_encoder(mcs, ofdm_config.N_data, 0, False)
         self.mimo_ofdm_jrc_socket_pdu_jrc_0 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 10000)
-        self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor), np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, 10, 15, 0, radar_log_file, save_radar_log, "packet_len", False)
-        self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(10, packet_data_file)
+        self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor), np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, 10, 15, 0, radar_log_file, "", save_radar_log, "packet_len", False)
+        self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(50, packet_data_file)
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
         self.mimo_ofdm_jrc_ndp_generator_0 = mimo_ofdm_jrc.ndp_generator()
         self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, data_carriers_64, pilot_carriers_64, pilot_symbols, preamble_designer_SISO.l_stf_ltf_64, preamble_designer_SISO.ltf_mapped_sc__ss_sym, '', True, '', False, False, False, "packet_len",  False)
         self.mimo_ofdm_jrc_mimo_precoder_0.set_min_output_buffer(800)
-        self.mimo_ofdm_jrc_mimo_ofdm_radar_0 = mimo_ofdm_jrc.mimo_ofdm_radar(fft_len, N_tx, N_rx, N_tx, len(preamble_designer_SISO.l_stf_ltf_64)+1, False, False, 8, interp_factor, False, capture_radar, radar_chan_file, "packet_len", False)
+        self.mimo_ofdm_jrc_mimo_ofdm_radar_0 = mimo_ofdm_jrc.mimo_ofdm_radar(fft_len, N_tx, N_rx, N_tx, len(preamble_designer_SISO.l_stf_ltf_64)+1, False, False, 8, interp_factor, False, radar_chan_file, False, "packet_len",  False)
         self.mimo_ofdm_jrc_matrix_transpose_0 = mimo_ofdm_jrc.matrix_transpose(fft_len*interp_factor, N_tx*N_rx, interp_factor_angle, False, "packet_len")
         self.mimo_ofdm_jrc_matrix_transpose_0.set_min_output_buffer(65535)
         self.mimo_ofdm_jrc_gui_time_plot_2 = mimo_ofdm_jrc.gui_time_plot(250, "range", "Range (m)", [0,20], 10, "Range Estimate")
         self.mimo_ofdm_jrc_gui_time_plot_1 = mimo_ofdm_jrc.gui_time_plot(250, "angle", "Angle (degree)", [-70,70], 10, "Angle Estimate")
         self.mimo_ofdm_jrc_gui_time_plot_0 = mimo_ofdm_jrc.gui_time_plot(250, "snr", "SNR [dB]", [0,40], 10, "Signal-to-Noise Ratio")
-        self.mimo_ofdm_jrc_gui_heatmap_plot_0 = mimo_ofdm_jrc.gui_heatmap_plot(N_tx*N_rx*interp_factor_angle, 100, "Angle", "Range (m)", 'Range-Angle Image', angle_axis, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor), 15, [-90, 90, 10], [0, 32, 4], True, False, "packet_len")
+        self.mimo_ofdm_jrc_gui_heatmap_plot_0 = mimo_ofdm_jrc.gui_heatmap_plot(N_tx*N_rx*interp_factor_angle, digital_beamforming,'',100, "Angle", "Range (m)", 'Range-Angle Image', angle_axis, range_axis, 15, [-90, 90, 10], [0, 32, 4], True, False, "packet_len")
         self.fft_vxx_0_1_0 = fft.fft_vcc(N_tx*N_rx*interp_factor_angle, True, window.rectangular(N_tx*N_rx*interp_factor_angle), True, 1)
         self.fft_vxx_0_1 = fft.fft_vcc(fft_len*interp_factor, False, window.rectangular(fft_len*interp_factor), False, 1)
         self.fft_vxx_0_0 = fft.fft_vcc(fft_len, True, (), True, 1)
@@ -265,6 +278,12 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
         self.fft_vxx_0.set_min_output_buffer(800)
         self.digital_ofdm_cyclic_prefixer_0 = digital.ofdm_cyclic_prefixer(fft_len, fft_len + cp_len, 0, "packet_len")
         self.digital_ofdm_cyclic_prefixer_0.set_min_output_buffer(64000)
+        _capture_radar_push_button = Qt.QPushButton('Capture Radar Image ')
+        _capture_radar_push_button = Qt.QPushButton('Capture Radar Image ')
+        self._capture_radar_choices = {'Pressed': True, 'Released': False}
+        _capture_radar_push_button.pressed.connect(lambda: self.set_capture_radar(self._capture_radar_choices['Pressed']))
+        _capture_radar_push_button.released.connect(lambda: self.set_capture_radar(self._capture_radar_choices['Released']))
+        self.top_layout.addWidget(_capture_radar_push_button)
         self.blocks_vector_to_stream_1_0 = blocks.vector_to_stream(gr.sizeof_gr_complex*1, 512)
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_null_sink_1 = blocks.null_sink(gr.sizeof_gr_complex*1)
@@ -281,13 +300,13 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.mimo_ofdm_jrc_ndp_generator_0, 'out'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_ndp_generator_0, 'out'), (self.mimo_ofdm_jrc_stream_encoder_1, 'pdu_in'))
         self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_ndp_generator_0, 'enable'))
         self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'enable'))
         self.msg_connect((self.mimo_ofdm_jrc_range_angle_estimator_0, 'params'), (self.mimo_ofdm_jrc_gui_time_plot_0, 'stats'))
         self.msg_connect((self.mimo_ofdm_jrc_range_angle_estimator_0, 'params'), (self.mimo_ofdm_jrc_gui_time_plot_1, 'stats'))
         self.msg_connect((self.mimo_ofdm_jrc_range_angle_estimator_0, 'params'), (self.mimo_ofdm_jrc_gui_time_plot_2, 'stats'))
-        self.msg_connect((self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_1, 'pdu_in'))
         self.connect((self.analog_noise_source_x_0, 0), (self.blocks_add_xx_0, 1))
         self.connect((self.blocks_add_xx_0, 0), (self.blocks_throttle_0, 0))
         self.connect((self.blocks_complex_to_mag_squared_0_0, 0), (self.blocks_file_sink_0, 0))
@@ -307,7 +326,7 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 0), (self.fft_vxx_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 0))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0, 0), (self.fft_vxx_0_0, 0))
-        self.connect((self.mimo_ofdm_jrc_stream_encoder_0, 0), (self.mimo_ofdm_jrc_mimo_precoder_0, 0))
+        self.connect((self.mimo_ofdm_jrc_stream_encoder_1, 0), (self.mimo_ofdm_jrc_mimo_precoder_0, 0))
         self.connect((self.mimo_ofdm_jrc_target_simulator_0, 0), (self.blocks_add_xx_0, 0))
         self.connect((self.mimo_ofdm_jrc_target_simulator_0, 1), (self.blocks_null_sink_1, 0))
         self.connect((self.mimo_ofdm_jrc_zero_pad_0, 0), (self.mimo_ofdm_jrc_target_simulator_0, 0))
@@ -341,6 +360,7 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
         self.set_R_max(3e8*self.fft_len/(2*self.samp_rate))
         self.set_R_res(3e8/(2*self.samp_rate))
         self.set_noise_var(4.003886160000000e-21*self.samp_rate*10**(self.noise_figure_dB/10.0))
+        self.set_range_axis(np.linspace(0, 3e8*self.fft_len/(2*self.samp_rate), self.fft_len*self.interp_factor))
         self.blocks_throttle_0.set_sample_rate(self.samp_rate)
         self.mimo_ofdm_jrc_target_simulator_0.setup_targets([self.trgt_range], [self.trgt_velocity], [10**(self.trgt_rcs_dbsm/10.0)], [self.trgt_angle], self.TX1_RXs, self.samp_rate, self.rf_freq, -40, False, False)
         self.qtgui_time_sink_x_0_0_0_0_0_1.set_samp_rate(self.samp_rate)
@@ -376,6 +396,7 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
     def set_interp_factor(self, interp_factor):
         self.interp_factor = interp_factor
         self.set_angle_max(np.rad2deg(np.arcsin((self.N_tx*self.N_rx*self.interp_factor-5)/(self.N_tx*self.N_rx*self.interp_factor))))
+        self.set_range_axis(np.linspace(0, 3e8*self.fft_len/(2*self.samp_rate), self.fft_len*self.interp_factor))
 
     def get_fft_len(self):
         return self.fft_len
@@ -384,6 +405,7 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
         self.fft_len = fft_len
         self.set_R_max(3e8*self.fft_len/(2*self.samp_rate))
         self.set_cp_len(int(self.fft_len/4))
+        self.set_range_axis(np.linspace(0, 3e8*self.fft_len/(2*self.samp_rate), self.fft_len*self.interp_factor))
 
     def get_N_tx(self):
         return self.N_tx
@@ -450,6 +472,12 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
         self._save_radar_log_callback(self.save_radar_log)
         self.mimo_ofdm_jrc_range_angle_estimator_0.set_stats_record(self.save_radar_log);
 
+    def get_range_axis(self):
+        return self.range_axis
+
+    def set_range_axis(self, range_axis):
+        self.range_axis = range_axis
+
     def get_radar_log_file(self):
         return self.radar_log_file
 
@@ -493,7 +521,7 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
     def set_mcs(self, mcs):
         self.mcs = mcs
         self._mcs_callback(self.mcs)
-        self.mimo_ofdm_jrc_stream_encoder_0.set_mcs(self.mcs)
+        self.mimo_ofdm_jrc_stream_encoder_1.set_mcs(self.mcs)
 
     def get_max_ofdm_symbols(self):
         return self.max_ofdm_symbols
@@ -506,6 +534,13 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
 
     def set_freq(self, freq):
         self.freq = freq
+
+    def get_digital_beamforming(self):
+        return self.digital_beamforming
+
+    def set_digital_beamforming(self, digital_beamforming):
+        self.digital_beamforming = digital_beamforming
+        self._digital_beamforming_callback(self.digital_beamforming)
 
     def get_data_carriers_64(self):
         return self.data_carriers_64
@@ -530,7 +565,7 @@ class Sivers_Radar_Sim(gr.top_block, Qt.QWidget):
 
     def set_capture_radar(self, capture_radar):
         self.capture_radar = capture_radar
-        self.mimo_ofdm_jrc_mimo_ofdm_radar_0.capture_radar_data(self.capture_radar)
+        self.mimo_ofdm_jrc_mimo_ofdm_radar_0.capture_radar_data(self.capture_radar);
 
     def get_angle_max(self):
         return self.angle_max
