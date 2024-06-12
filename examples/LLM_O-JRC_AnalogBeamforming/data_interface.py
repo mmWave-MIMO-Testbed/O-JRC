@@ -21,10 +21,10 @@ class CommData:
         self.throughput = float(throughput)
 
 class PacketData:
-    def __init__(self, timestamp, packet_type, packet_size):
+    def __init__(self, timestamp, packet_type, packet_length):
         self.timestamp = timestamp
         self.packet_type =   int(packet_type)
-        self.packet_size =   int(packet_size)
+        self.packet_legnth =   int(packet_length)
 
 
 def load_radar_data(radar_log_path):
@@ -68,12 +68,12 @@ def load_packet_data(packet_log_path):
 
 
 def write_packet_data(packet_data, packet_data_path):
-    line = f"{packet_data.timestamp}, \t{packet_data.packet_type}, \t{packet_data.packet_size}\n"
+    line = f"{packet_data.timestamp}, \t{packet_data.packet_type}, \t{packet_data.packet_length}\n"
     with open(packet_data_path, 'w') as file:
         file.write(line)    
 
 def write_packet_log(packet_data,packet_log_path):
-    line = f"{packet_data.timestamp}, \t{packet_data.packet_type}, \t{packet_data.packet_size}\n"
+    line = f"{packet_data.timestamp}, \t{packet_data.packet_type}, \t{packet_data.packet_length}\n"
     with open(packet_log_path, 'a') as file:
         file.write(line)
                 
