@@ -293,6 +293,36 @@ blocks:
     coordinate: [904, 944.0]
     rotation: 0
     state: enabled
+- name: digital_beamforming
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Digital Beamforming
+    label0: 'False'
+    label1: 'True'
+    label2: ''
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '2'
+    option0: 'False'
+    option1: 'True'
+    option2: '2'
+    option3: '3'
+    option4: '4'
+    options: '[0, 1, 2]'
+    orient: Qt.QVBoxLayout
+    type: raw
+    value: 'True'
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1416, 1620.0]
+    rotation: 0
+    state: true
 - name: fft_len
   id: variable
   parameters:
@@ -727,7 +757,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 5e9
+    value: 4e9
   states:
     bus_sink: false
     bus_source: false
@@ -1254,10 +1284,12 @@ blocks:
     axis_y: np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor)
     comment: dynamic_range = 9 dB
     db_scale: 'False'
+    digital_control: digital_beamforming
     dynamic_range_db: '9'
     interval: '100'
     label: Range-Angle Image
     len_key: '"packet_len"'
+    sivers_angle_log: ''
     vlen: N_tx*N_rx*interp_factor_angle
     x_axis_ticks: '[70, -70, 10]'
     xlabel: '"Angle"'
@@ -1468,7 +1500,7 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     packet_info_file: packet_data_file
-    period_ms: '50'
+    period_ms: '100'
   states:
     bus_sink: false
     bus_source: false

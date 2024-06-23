@@ -85,7 +85,7 @@ class mimo_ofdm_comm_RX(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.usrp_freq = usrp_freq = 5e9
+        self.usrp_freq = usrp_freq = 4e9
         self.fft_len = fft_len = ofdm_config.N_sc
         self.rf_frequency = rf_frequency = usrp_freq+20e9
         self.parrent_path = parrent_path = "/home/host-pc/O-JRC/examples"

@@ -53,7 +53,7 @@ previous_time = time.time()
 start_time = time.time()
 total_time = time.time()
 #end_time = arc_length / speed_user *10
-end_time = 10
+end_time = 600
 record_flag = 0
 crc_flag = 0
 test_packet.packet_type = 1   # 1 for NDP 2 for data
@@ -87,7 +87,7 @@ while total_time-start_time <= end_time:
         curr_beamforming_angle = test_radar.est_angle
         previous_time = time.time()
         data_interface.write_plot_log(test_packet.packet_type, test_radar.est_angle, curr_beamforming_angle, test_comm.data_snr, test_comm.CRC, test_comm.throughput, plot_log_path)
-    elif time_diff >= 0.1:  # Communication time-out
+    elif time_diff >= 0.2:  # Communication time-out
         #last_data_timestamp = current_time
         curr_beamforming_angle = test_radar.est_angle
         previous_time = time.time()
@@ -97,7 +97,7 @@ while total_time-start_time <= end_time:
 
     #data_interface.write_radar_data(test_radar, radar_data_path)
     data_interface.write_packet_data(test_packet,packet_data_path)
-    time.sleep(0.001)
+    time.sleep(0.05)
     total_time = time.time()
 
 # Sweeping algorithm

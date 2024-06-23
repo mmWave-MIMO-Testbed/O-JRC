@@ -24,14 +24,12 @@ if __name__ == '__main__':
 
 from PyQt5 import Qt
 from PyQt5.QtCore import QObject, pyqtSlot
-from gnuradio import qtgui
-from gnuradio.filter import firdes
-import sip
 from gnuradio import blocks
 from gnuradio import digital
 from gnuradio import fft
 from gnuradio.fft import window
 from gnuradio import gr
+from gnuradio.filter import firdes
 import sys
 import signal
 from argparse import ArgumentParser
@@ -41,7 +39,7 @@ from gnuradio.qtgui import Range, RangeWidget
 import cmath
 import mimo_ofdm_jrc
 import numpy as np
-import ofdm_config_siso  # embedded python module
+import ofdm_config  # embedded python module
 import os
 import random
 import string
@@ -84,41 +82,48 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.usrp_freq = usrp_freq = 4e8
+        self.usrp_freq = usrp_freq = 4e9
         self.samp_rate = samp_rate = int(125e6)
-        self.rf_freq = rf_freq = usrp_freq+24.6e9
+        self.rf_freq = rf_freq = usrp_freq+20e9
         self.parrent_path = parrent_path = "/home/host-pc/O-JRC/examples"
         self.interp_factor_angle = interp_factor_angle = 16
-        self.interp_factor = interp_factor = 8
-        self.fft_len = fft_len = ofdm_config_siso.N_sc
-        self.N_tx = N_tx = ofdm_config_siso.N_tx
-        self.N_rx = N_rx = 1
+        self.fft_len = fft_len = ofdm_config.N_sc
+        self.N_tx = N_tx = ofdm_config.N_tx
+        self.N_rx = N_rx = 2
         self.wavelength = wavelength = 3e8/rf_freq
         self.tx_multiplier = tx_multiplier = 0.42
-        self.tx_gain = tx_gain = 20
-        self.sivers_angle_log = sivers_angle_log = parrent_path+"/data/sivers_angle_log.csv"
+        self.tx_gain = tx_gain = 42
         self.signal_strength_log_file = signal_strength_log_file = parrent_path+"/data/signal_strength_log.csv"
         self.save_radar_log = save_radar_log = False
-        self.rx_gain = rx_gain = 20
-        self.range_axis = range_axis = np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor)
+        self.rx_gain = rx_gain = 41
         self.radar_log_file = radar_log_file = parrent_path+"/data/radar_log.csv"
         self.radar_data_file = radar_data_file = parrent_path+"/data/radar_data.csv"
         self.radar_chan_file = radar_chan_file = parrent_path+"/data/radar_chan.csv"
         self.radar_aided = radar_aided = False
         self.phased_steering = phased_steering = False
+        self.phase_tx4 = phase_tx4 = 2.02
+        self.phase_tx3 = phase_tx3 = 1.95
+        self.phase_tx2 = phase_tx2 = -1.2
+        self.phase_rx2 = phase_rx2 = -1.15
         self.packet_data_file = packet_data_file = parrent_path+"/data/packet_data.csv"
         self.mcs = mcs = 3
+        self.interp_factor = interp_factor = 8
         self.freq_smoothing = freq_smoothing = False
-        self.digital_beamforming = digital_beamforming = False
-        self.delay_samp = delay_samp = 188
+        self.digital_beamforming = digital_beamforming = True
+        self.delay_samp = delay_samp = 187+5
         self.cp_len = cp_len = int(fft_len/4)
         self.chan_est_file = chan_est_file = parrent_path+"/data/chan_est.csv"
         self.capture_radar = capture_radar = False
-        self.background_record = background_record = False
+        self.background_record = background_record = True
+        self.angle_res = angle_res = np.rad2deg(np.arcsin(2/(N_tx*N_rx)))
         self.angle_axis = angle_axis = np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi
+        self.amp_tx4 = amp_tx4 = 0.87
+        self.amp_tx3 = amp_tx3 = 0.75
+        self.amp_tx2 = amp_tx2 = 0.68
+        self.amp_rx2 = amp_rx2 = 1.43
         self.R_res = R_res = 3e8/(2*samp_rate)
         self.R_max = R_max = 3e8*fft_len/(2*samp_rate)
-        self.N_ltf = N_ltf = ofdm_config_siso.N_ltf
+        self.N_ltf = N_ltf = ofdm_config.N_ltf
 
         ##################################################
         # Blocks
@@ -130,7 +135,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(6, 8):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._tx_gain_range = Range(0, 60, 1, 20, 200)
+        self._tx_gain_range = Range(0, 60, 1, 42, 200)
         self._tx_gain_win = RangeWidget(self._tx_gain_range, self.set_tx_gain, 'TX Gain', "counter_slider", float)
         self.top_grid_layout.addWidget(self._tx_gain_win, 0, 0, 1, 3)
         for r in range(0, 1):
@@ -157,7 +162,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(6, 8):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._rx_gain_range = Range(0, 60, 1, 20, 200)
+        self._rx_gain_range = Range(0, 60, 1, 41, 200)
         self._rx_gain_win = RangeWidget(self._rx_gain_range, self.set_rx_gain, 'RX Gain', "counter_slider", float)
         self.top_grid_layout.addWidget(self._rx_gain_win, 0, 3, 1, 3)
         for r in range(0, 1):
@@ -183,6 +188,34 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         for r in range(2, 3):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(2, 4):
+            self.top_grid_layout.setColumnStretch(c, 1)
+        self._phase_tx4_range = Range(-2*cmath.pi, 2*cmath.pi, 0.01, 2.02, 200)
+        self._phase_tx4_win = RangeWidget(self._phase_tx4_range, self.set_phase_tx4, 'TX4 \n Phase', "counter_slider", float)
+        self.top_grid_layout.addWidget(self._phase_tx4_win, 7, 6, 1, 2)
+        for r in range(7, 8):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(6, 8):
+            self.top_grid_layout.setColumnStretch(c, 1)
+        self._phase_tx3_range = Range(-2*cmath.pi, 2*cmath.pi, 0.01, 1.95, 200)
+        self._phase_tx3_win = RangeWidget(self._phase_tx3_range, self.set_phase_tx3, 'TX3 \n Phase', "counter_slider", float)
+        self.top_grid_layout.addWidget(self._phase_tx3_win, 7, 4, 1, 2)
+        for r in range(7, 8):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(4, 6):
+            self.top_grid_layout.setColumnStretch(c, 1)
+        self._phase_tx2_range = Range(-2*cmath.pi, 2*cmath.pi, 0.01, -1.2, 200)
+        self._phase_tx2_win = RangeWidget(self._phase_tx2_range, self.set_phase_tx2, 'TX2 \n Phase', "counter_slider", float)
+        self.top_grid_layout.addWidget(self._phase_tx2_win, 7, 2, 1, 2)
+        for r in range(7, 8):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(2, 4):
+            self.top_grid_layout.setColumnStretch(c, 1)
+        self._phase_rx2_range = Range(-2*cmath.pi, 2*cmath.pi, 0.01, -1.15, 200)
+        self._phase_rx2_win = RangeWidget(self._phase_rx2_range, self.set_phase_rx2, 'RX2 \nPhase', "counter_slider", float)
+        self.top_grid_layout.addWidget(self._phase_rx2_win, 7, 0, 1, 2)
+        for r in range(7, 8):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(0, 2):
             self.top_grid_layout.setColumnStretch(c, 1)
         # Create the options list
         self._mcs_options = [0, 1, 2, 3, 4, 5]
@@ -249,7 +282,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
             lambda i: self.set_digital_beamforming(self._digital_beamforming_options[i]))
         # Create the radio buttons
         self.top_layout.addWidget(self._digital_beamforming_tool_bar)
-        self._delay_samp_range = Range(0, 500, 1, 188, 200)
+        self._delay_samp_range = Range(0, 500, 1, 187+5, 200)
         self._delay_samp_win = RangeWidget(self._delay_samp_range, self.set_delay_samp, 'TX/RX Sync', "counter_slider", float)
         self.top_grid_layout.addWidget(self._delay_samp_win, 8, 0, 1, 8)
         for r in range(8, 9):
@@ -276,56 +309,34 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(0, 2):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self.qtgui_time_sink_x_0 = qtgui.time_sink_c(
-            512, #size
-            1, #samp_rate
-            'IDFT', #name
-            1 #number of inputs
-        )
-        self.qtgui_time_sink_x_0.set_update_time(0.10)
-        self.qtgui_time_sink_x_0.set_y_axis(-1, 1)
-
-        self.qtgui_time_sink_x_0.set_y_label('Amplitude', "")
-
-        self.qtgui_time_sink_x_0.enable_tags(True)
-        self.qtgui_time_sink_x_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
-        self.qtgui_time_sink_x_0.enable_autoscale(True)
-        self.qtgui_time_sink_x_0.enable_grid(False)
-        self.qtgui_time_sink_x_0.enable_axis_labels(True)
-        self.qtgui_time_sink_x_0.enable_control_panel(False)
-        self.qtgui_time_sink_x_0.enable_stem_plot(False)
-
-
-        labels = ['Signal 1', 'Signal 2', 'Signal 3', 'Signal 4', 'Signal 5',
-            'Signal 6', 'Signal 7', 'Signal 8', 'Signal 9', 'Signal 10']
-        widths = [1, 1, 1, 1, 1,
-            1, 1, 1, 1, 1]
-        colors = ['blue', 'red', 'green', 'black', 'cyan',
-            'magenta', 'yellow', 'dark red', 'dark green', 'dark blue']
-        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
-            1.0, 1.0, 1.0, 1.0, 1.0]
-        styles = [1, 1, 1, 1, 1,
-            1, 1, 1, 1, 1]
-        markers = [-1, -1, -1, -1, -1,
-            -1, -1, -1, -1, -1]
-
-
-        for i in range(2):
-            if len(labels[i]) == 0:
-                if (i % 2 == 0):
-                    self.qtgui_time_sink_x_0.set_line_label(i, "Re{{Data {0}}}".format(i/2))
-                else:
-                    self.qtgui_time_sink_x_0.set_line_label(i, "Im{{Data {0}}}".format(i/2))
-            else:
-                self.qtgui_time_sink_x_0.set_line_label(i, labels[i])
-            self.qtgui_time_sink_x_0.set_line_width(i, widths[i])
-            self.qtgui_time_sink_x_0.set_line_color(i, colors[i])
-            self.qtgui_time_sink_x_0.set_line_style(i, styles[i])
-            self.qtgui_time_sink_x_0.set_line_marker(i, markers[i])
-            self.qtgui_time_sink_x_0.set_line_alpha(i, alphas[i])
-
-        self._qtgui_time_sink_x_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0.pyqwidget(), Qt.QWidget)
-        self.top_layout.addWidget(self._qtgui_time_sink_x_0_win)
+        self._amp_tx4_range = Range(0, 10, 0.01, 0.87, 200)
+        self._amp_tx4_win = RangeWidget(self._amp_tx4_range, self.set_amp_tx4, 'TX4 \n Amp', "counter_slider", float)
+        self.top_grid_layout.addWidget(self._amp_tx4_win, 6, 6, 1, 2)
+        for r in range(6, 7):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(6, 8):
+            self.top_grid_layout.setColumnStretch(c, 1)
+        self._amp_tx3_range = Range(0, 10, 0.01, 0.75, 200)
+        self._amp_tx3_win = RangeWidget(self._amp_tx3_range, self.set_amp_tx3, 'TX3 \n Amp', "counter_slider", float)
+        self.top_grid_layout.addWidget(self._amp_tx3_win, 6, 4, 1, 2)
+        for r in range(6, 7):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(4, 6):
+            self.top_grid_layout.setColumnStretch(c, 1)
+        self._amp_tx2_range = Range(0, 10, 0.01, 0.68, 200)
+        self._amp_tx2_win = RangeWidget(self._amp_tx2_range, self.set_amp_tx2, 'TX2 \n Amp', "counter_slider", float)
+        self.top_grid_layout.addWidget(self._amp_tx2_win, 6, 2, 1, 2)
+        for r in range(6, 7):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(2, 4):
+            self.top_grid_layout.setColumnStretch(c, 1)
+        self._amp_rx2_range = Range(0, 10, 0.01, 1.43, 200)
+        self._amp_rx2_win = RangeWidget(self._amp_rx2_range, self.set_amp_rx2, 'RX2 \nAmp', "counter_slider", float)
+        self.top_grid_layout.addWidget(self._amp_rx2_win, 6, 0, 1, 2)
+        for r in range(6, 7):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(0, 2):
+            self.top_grid_layout.setColumnStretch(c, 1)
         # Create the options list
         self._phased_steering_options = [False, True]
         # Create the labels list
@@ -346,28 +357,47 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(0, 4):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self.mimo_ofdm_jrc_zero_pad_0 = mimo_ofdm_jrc.zero_pad(False, 0, (fft_len+cp_len)*3)
+        self.mimo_ofdm_jrc_zero_pad_0_0_0_0 = mimo_ofdm_jrc.zero_pad(False, 5, (fft_len+cp_len)*3)
+        self.mimo_ofdm_jrc_zero_pad_0_0_0_0.set_min_output_buffer(8000)
+        self.mimo_ofdm_jrc_zero_pad_0_0_0 = mimo_ofdm_jrc.zero_pad(False, 5, (fft_len+cp_len)*3)
+        self.mimo_ofdm_jrc_zero_pad_0_0_0.set_min_output_buffer(8000)
+        self.mimo_ofdm_jrc_zero_pad_0_0 = mimo_ofdm_jrc.zero_pad(False, 5, (fft_len+cp_len)*3)
+        self.mimo_ofdm_jrc_zero_pad_0_0.set_min_output_buffer(8000)
+        self.mimo_ofdm_jrc_zero_pad_0 = mimo_ofdm_jrc.zero_pad(False, 5, (fft_len+cp_len)*3)
         self.mimo_ofdm_jrc_zero_pad_0.set_min_output_buffer(8000)
-        self.mimo_ofdm_jrc_usrp_mimo_trx_0 = mimo_ofdm_jrc.usrp_mimo_trx(1, 1, 1, samp_rate, usrp_freq, delay_samp, False, 0.04, "addr0=192.168.120.2, master_clock_rate=250e6", "internal", "internal", "TX/RX,TX/RX", tx_gain, 0.6, 0.02, "", "RX2,RX2", rx_gain, 0.6, 0.02, 0, "", "packet_len")
+        self.mimo_ofdm_jrc_usrp_mimo_trx_0 = mimo_ofdm_jrc.usrp_mimo_trx(2, 4, 2, samp_rate, usrp_freq, delay_samp, False, 0.04, "addr0=192.168.120.2, addr1=192.168.101.2, master_clock_rate=250e6", "external,external", "external,external", "TX/RX,TX/RX,TX/RX,TX/RX", tx_gain, 0.6, 0.01, "", "RX2,RX2", rx_gain, 0.6, 0.01, 0, "", "packet_len")
         self.mimo_ofdm_jrc_usrp_mimo_trx_0.set_processor_affinity([6])
-        self.mimo_ofdm_jrc_stream_encoder_0 = mimo_ofdm_jrc.stream_encoder(mcs, ofdm_config_siso.N_data, 0, False)
-        self.mimo_ofdm_jrc_socket_pdu_jrc_1 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 5000)
-        self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, range_axis, np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, 10, 15, 50, radar_log_file, signal_strength_log_file, save_radar_log, "packet_len", False)
-        self.mimo_ofdm_jrc_packet_switch_1 = mimo_ofdm_jrc.packet_switch(1000, '/path/to/default/file')
+        self.mimo_ofdm_jrc_stream_encoder_0 = mimo_ofdm_jrc.stream_encoder(mcs, ofdm_config.N_data, 0, False)
+        self.mimo_ofdm_jrc_socket_pdu_jrc_0 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 5000)
+        self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor), np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, angle_res*2, 15, 50, radar_log_file, signal_strength_log_file, save_radar_log, "packet_len", False)
+        self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(100, packet_data_file)
+        self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
-        self.mimo_ofdm_jrc_ndp_generator_1 = mimo_ofdm_jrc.ndp_generator()
-        self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, ofdm_config_siso.data_subcarriers, ofdm_config_siso.pilot_subcarriers, ofdm_config_siso.pilot_symbols, ofdm_config_siso.l_stf_ltf_64, ofdm_config_siso.ltf_mapped_sc__ss_sym, chan_est_file, freq_smoothing, radar_data_file, radar_aided, False, False, "packet_len",  False)
+        self.mimo_ofdm_jrc_ndp_generator_0 = mimo_ofdm_jrc.ndp_generator()
+        self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64, ofdm_config.ltf_mapped_sc__ss_sym, chan_est_file, freq_smoothing, radar_data_file, radar_aided, False, False, "packet_len",  False)
         self.mimo_ofdm_jrc_mimo_precoder_0.set_processor_affinity([7])
         self.mimo_ofdm_jrc_mimo_precoder_0.set_min_output_buffer(1000)
-        self.mimo_ofdm_jrc_mimo_ofdm_radar_0 = mimo_ofdm_jrc.mimo_ofdm_radar(fft_len, N_tx, N_rx, N_tx, len(ofdm_config_siso.l_stf_ltf_64)+1, False, background_record, 8, interp_factor, False, radar_chan_file, save_radar_log, "packet_len",  False)
+        self.mimo_ofdm_jrc_mimo_ofdm_radar_0 = mimo_ofdm_jrc.mimo_ofdm_radar(fft_len, N_tx, N_rx, N_tx, len(ofdm_config.l_stf_ltf_64)+1, True, background_record, 10, interp_factor, False, radar_chan_file, save_radar_log, "packet_len",  False)
         self.mimo_ofdm_jrc_matrix_transpose_0 = mimo_ofdm_jrc.matrix_transpose(fft_len*interp_factor, N_tx*N_rx, interp_factor_angle, False, "packet_len")
+        self.mimo_ofdm_jrc_gui_time_plot_2 = mimo_ofdm_jrc.gui_time_plot(250, "angle", "Angle (degree)", [-70,70], 10, "Angle Estimate")
+        self.mimo_ofdm_jrc_gui_time_plot_1 = mimo_ofdm_jrc.gui_time_plot(250, "snr", "SNR [dB]", [10,40], 10, "Signal-to-Noise Ratio")
         self.mimo_ofdm_jrc_gui_time_plot_0 = mimo_ofdm_jrc.gui_time_plot(250, "range", "Range (m)", [0, 20], 10, "Range Estimate")
-        self.mimo_ofdm_jrc_gui_heatmap_plot_0 = mimo_ofdm_jrc.gui_heatmap_plot(N_tx*N_rx*interp_factor_angle, digital_beamforming,sivers_angle_log,100, "Angle", "Range (m)", 'Range-Angle Image', angle_axis, range_axis, 9, [70, -70, 10], [0, 15,2], False, False, "packet_len")
-        self.fft_vxx_0_1_0 = fft.fft_vcc(N_tx*N_rx*interp_factor_angle, True, [], True, 1)
-        self.fft_vxx_0_1 = fft.fft_vcc(fft_len*interp_factor, False, window.rectangular(fft_len*interp_factor), True, 1)
+        self.mimo_ofdm_jrc_gui_heatmap_plot_0 = mimo_ofdm_jrc.gui_heatmap_plot(N_tx*N_rx*interp_factor_angle, digital_beamforming,'',100, "Angle", "Range (m)", 'Range-Angle Image', angle_axis, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor), 9, [70, -70, 10], [0, 10, 2], False, False, "packet_len")
+        self.fft_vxx_0_3 = fft.fft_vcc(fft_len, False, tuple([1/64**.5] * 64), True, 1)
+        self.fft_vxx_0_3.set_min_output_buffer(65536)
+        self.fft_vxx_0_2_0 = fft.fft_vcc(fft_len, False, tuple([1/64**.5] * 64), True, 1)
+        self.fft_vxx_0_2_0.set_min_output_buffer(65536)
+        self.fft_vxx_0_2 = fft.fft_vcc(fft_len, False, tuple([1/64**.5] * 64), True, 1)
+        self.fft_vxx_0_2.set_min_output_buffer(65536)
+        self.fft_vxx_0_1_0 = fft.fft_vcc(N_tx*N_rx*interp_factor_angle, True, window.rectangular(N_tx*N_rx*interp_factor_angle), True, 1)
+        self.fft_vxx_0_1 = fft.fft_vcc(fft_len*interp_factor, False, window.rectangular(fft_len*interp_factor), False, 1)
+        self.fft_vxx_0_0_0 = fft.fft_vcc(fft_len, True, (), True, 1)
         self.fft_vxx_0_0 = fft.fft_vcc(fft_len, True, (), True, 1)
         self.fft_vxx_0 = fft.fft_vcc(fft_len, False, tuple([1/64**.5] * 64), True, 1)
         self.fft_vxx_0.set_min_output_buffer(65536)
+        self.digital_ofdm_cyclic_prefixer_0_1 = digital.ofdm_cyclic_prefixer(fft_len, fft_len + cp_len, 0, "packet_len")
+        self.digital_ofdm_cyclic_prefixer_0_0_0 = digital.ofdm_cyclic_prefixer(fft_len, fft_len + cp_len, 0, "packet_len")
+        self.digital_ofdm_cyclic_prefixer_0_0 = digital.ofdm_cyclic_prefixer(fft_len, fft_len + cp_len, 0, "packet_len")
         self.digital_ofdm_cyclic_prefixer_0 = digital.ofdm_cyclic_prefixer(fft_len, fft_len + cp_len, 0, "packet_len")
         _capture_radar_push_button = Qt.QPushButton('Capture Radar Image ')
         _capture_radar_push_button = Qt.QPushButton('Capture Radar Image ')
@@ -375,7 +405,13 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         _capture_radar_push_button.pressed.connect(lambda: self.set_capture_radar(self._capture_radar_choices['Pressed']))
         _capture_radar_push_button.released.connect(lambda: self.set_capture_radar(self._capture_radar_choices['Released']))
         self.top_layout.addWidget(_capture_radar_push_button)
-        self.blocks_vector_to_stream_0 = blocks.vector_to_stream(gr.sizeof_gr_complex*1, fft_len*interp_factor)
+        self.blocks_multiply_const_vxx_0_1 = blocks.multiply_const_cc(amp_rx2*cmath.exp(1j*phase_rx2))
+        self.blocks_multiply_const_vxx_0_0_1_0 = blocks.multiply_const_cc(tx_multiplier)
+        self.blocks_multiply_const_vxx_0_0_1 = blocks.multiply_const_cc(tx_multiplier)
+        self.blocks_multiply_const_vxx_0_0_0_0_0 = blocks.multiply_const_cc(amp_tx4*cmath.exp(1j*phase_tx4))
+        self.blocks_multiply_const_vxx_0_0_0_0 = blocks.multiply_const_cc(amp_tx3*cmath.exp(1j*phase_tx3))
+        self.blocks_multiply_const_vxx_0_0_0 = blocks.multiply_const_cc(amp_tx2*cmath.exp(1j*phase_tx2))
+        self.blocks_multiply_const_vxx_0_0 = blocks.multiply_const_cc(tx_multiplier)
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_cc(tx_multiplier)
         self.blocks_complex_to_mag_squared_0_0 = blocks.complex_to_mag_squared(N_tx*N_rx*interp_factor_angle)
         self.blocks_complex_to_mag_squared_0_0.set_processor_affinity([9])
@@ -384,29 +420,54 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.mimo_ofdm_jrc_ndp_generator_1, 'out'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
-        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_1, 'strobe'), (self.mimo_ofdm_jrc_ndp_generator_1, 'enable'))
-        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_1, 'strobe'), (self.mimo_ofdm_jrc_socket_pdu_jrc_1, 'enable'))
+        self.msg_connect((self.mimo_ofdm_jrc_ndp_generator_0, 'out'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_ndp_generator_0, 'enable'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'enable'))
         self.msg_connect((self.mimo_ofdm_jrc_range_angle_estimator_0, 'params'), (self.mimo_ofdm_jrc_gui_time_plot_0, 'stats'))
-        self.msg_connect((self.mimo_ofdm_jrc_socket_pdu_jrc_1, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_range_angle_estimator_0, 'params'), (self.mimo_ofdm_jrc_gui_time_plot_1, 'stats'))
+        self.msg_connect((self.mimo_ofdm_jrc_range_angle_estimator_0, 'params'), (self.mimo_ofdm_jrc_gui_time_plot_2, 'stats'))
+        self.msg_connect((self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
         self.connect((self.blocks_complex_to_mag_squared_0_0, 0), (self.mimo_ofdm_jrc_gui_heatmap_plot_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.mimo_ofdm_jrc_zero_pad_0, 0))
-        self.connect((self.blocks_vector_to_stream_0, 0), (self.qtgui_time_sink_x_0, 0))
+        self.connect((self.blocks_multiply_const_vxx_0_0, 0), (self.blocks_multiply_const_vxx_0_0_0, 0))
+        self.connect((self.blocks_multiply_const_vxx_0_0_0, 0), (self.mimo_ofdm_jrc_zero_pad_0_0, 0))
+        self.connect((self.blocks_multiply_const_vxx_0_0_0_0, 0), (self.mimo_ofdm_jrc_zero_pad_0_0_0, 0))
+        self.connect((self.blocks_multiply_const_vxx_0_0_0_0_0, 0), (self.mimo_ofdm_jrc_zero_pad_0_0_0_0, 0))
+        self.connect((self.blocks_multiply_const_vxx_0_0_1, 0), (self.blocks_multiply_const_vxx_0_0_0_0, 0))
+        self.connect((self.blocks_multiply_const_vxx_0_0_1_0, 0), (self.blocks_multiply_const_vxx_0_0_0_0_0, 0))
+        self.connect((self.blocks_multiply_const_vxx_0_1, 0), (self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0, 0))
         self.connect((self.digital_ofdm_cyclic_prefixer_0, 0), (self.blocks_multiply_const_vxx_0, 0))
+        self.connect((self.digital_ofdm_cyclic_prefixer_0_0, 0), (self.blocks_multiply_const_vxx_0_0, 0))
+        self.connect((self.digital_ofdm_cyclic_prefixer_0_0_0, 0), (self.blocks_multiply_const_vxx_0_0_1_0, 0))
+        self.connect((self.digital_ofdm_cyclic_prefixer_0_1, 0), (self.blocks_multiply_const_vxx_0_0_1, 0))
         self.connect((self.fft_vxx_0, 0), (self.digital_ofdm_cyclic_prefixer_0, 0))
-        self.connect((self.fft_vxx_0_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 1))
-        self.connect((self.fft_vxx_0_1, 0), (self.blocks_vector_to_stream_0, 0))
+        self.connect((self.fft_vxx_0_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 4))
+        self.connect((self.fft_vxx_0_0_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 5))
         self.connect((self.fft_vxx_0_1, 0), (self.mimo_ofdm_jrc_matrix_transpose_0, 0))
         self.connect((self.fft_vxx_0_1_0, 0), (self.blocks_complex_to_mag_squared_0_0, 0))
         self.connect((self.fft_vxx_0_1_0, 0), (self.mimo_ofdm_jrc_range_angle_estimator_0, 0))
+        self.connect((self.fft_vxx_0_2, 0), (self.digital_ofdm_cyclic_prefixer_0_0, 0))
+        self.connect((self.fft_vxx_0_2_0, 0), (self.digital_ofdm_cyclic_prefixer_0_0_0, 0))
+        self.connect((self.fft_vxx_0_3, 0), (self.digital_ofdm_cyclic_prefixer_0_1, 0))
         self.connect((self.mimo_ofdm_jrc_matrix_transpose_0, 0), (self.fft_vxx_0_1_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 0), (self.fft_vxx_0_1, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 0), (self.fft_vxx_0, 0))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.fft_vxx_0_2, 0))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.fft_vxx_0_2_0, 0))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.fft_vxx_0_3, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 0))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 1))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 2))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 3))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0, 0), (self.fft_vxx_0_0, 0))
+        self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0, 0), (self.fft_vxx_0_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_stream_encoder_0, 0), (self.mimo_ofdm_jrc_mimo_precoder_0, 0))
+        self.connect((self.mimo_ofdm_jrc_usrp_mimo_trx_0, 1), (self.blocks_multiply_const_vxx_0_1, 0))
         self.connect((self.mimo_ofdm_jrc_usrp_mimo_trx_0, 0), (self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0, 0))
         self.connect((self.mimo_ofdm_jrc_zero_pad_0, 0), (self.mimo_ofdm_jrc_usrp_mimo_trx_0, 0))
+        self.connect((self.mimo_ofdm_jrc_zero_pad_0_0, 0), (self.mimo_ofdm_jrc_usrp_mimo_trx_0, 1))
+        self.connect((self.mimo_ofdm_jrc_zero_pad_0_0_0, 0), (self.mimo_ofdm_jrc_usrp_mimo_trx_0, 2))
+        self.connect((self.mimo_ofdm_jrc_zero_pad_0_0_0_0, 0), (self.mimo_ofdm_jrc_usrp_mimo_trx_0, 3))
 
 
     def closeEvent(self, event):
@@ -419,7 +480,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
 
     def set_usrp_freq(self, usrp_freq):
         self.usrp_freq = usrp_freq
-        self.set_rf_freq(self.usrp_freq+24.6e9)
+        self.set_rf_freq(self.usrp_freq+20e9)
 
     def get_samp_rate(self):
         return self.samp_rate
@@ -428,7 +489,6 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.samp_rate = samp_rate
         self.set_R_max(3e8*self.fft_len/(2*self.samp_rate))
         self.set_R_res(3e8/(2*self.samp_rate))
-        self.set_range_axis(np.linspace(0, 3e8*self.fft_len/(2*self.samp_rate), self.fft_len*self.interp_factor))
 
     def get_rf_freq(self):
         return self.rf_freq
@@ -448,7 +508,6 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.set_radar_data_file(self.parrent_path+"/data/radar_data.csv")
         self.set_radar_log_file(self.parrent_path+"/data/radar_log.csv")
         self.set_signal_strength_log_file(self.parrent_path+"/data/signal_strength_log.csv")
-        self.set_sivers_angle_log(self.parrent_path+"/data/sivers_angle_log.csv")
 
     def get_interp_factor_angle(self):
         return self.interp_factor_angle
@@ -457,13 +516,6 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.interp_factor_angle = interp_factor_angle
         self.set_angle_axis(np.arcsin( 2/(self.N_tx*self.N_rx*self.interp_factor_angle)*(np.arange(0, self.N_tx*self.N_rx*self.interp_factor_angle)-np.floor(self.N_tx*self.N_rx*self.interp_factor_angle/2)+0.5) )*180/cmath.pi)
 
-    def get_interp_factor(self):
-        return self.interp_factor
-
-    def set_interp_factor(self, interp_factor):
-        self.interp_factor = interp_factor
-        self.set_range_axis(np.linspace(0, 3e8*self.fft_len/(2*self.samp_rate), self.fft_len*self.interp_factor))
-
     def get_fft_len(self):
         return self.fft_len
 
@@ -471,7 +523,6 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.fft_len = fft_len
         self.set_R_max(3e8*self.fft_len/(2*self.samp_rate))
         self.set_cp_len(int(self.fft_len/4))
-        self.set_range_axis(np.linspace(0, 3e8*self.fft_len/(2*self.samp_rate), self.fft_len*self.interp_factor))
 
     def get_N_tx(self):
         return self.N_tx
@@ -479,6 +530,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
     def set_N_tx(self, N_tx):
         self.N_tx = N_tx
         self.set_angle_axis(np.arcsin( 2/(self.N_tx*self.N_rx*self.interp_factor_angle)*(np.arange(0, self.N_tx*self.N_rx*self.interp_factor_angle)-np.floor(self.N_tx*self.N_rx*self.interp_factor_angle/2)+0.5) )*180/cmath.pi)
+        self.set_angle_res(np.rad2deg(np.arcsin(2/(self.N_tx*self.N_rx))))
 
     def get_N_rx(self):
         return self.N_rx
@@ -486,6 +538,7 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
     def set_N_rx(self, N_rx):
         self.N_rx = N_rx
         self.set_angle_axis(np.arcsin( 2/(self.N_tx*self.N_rx*self.interp_factor_angle)*(np.arange(0, self.N_tx*self.N_rx*self.interp_factor_angle)-np.floor(self.N_tx*self.N_rx*self.interp_factor_angle/2)+0.5) )*180/cmath.pi)
+        self.set_angle_res(np.rad2deg(np.arcsin(2/(self.N_tx*self.N_rx))))
 
     def get_wavelength(self):
         return self.wavelength
@@ -499,6 +552,9 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
     def set_tx_multiplier(self, tx_multiplier):
         self.tx_multiplier = tx_multiplier
         self.blocks_multiply_const_vxx_0.set_k(self.tx_multiplier)
+        self.blocks_multiply_const_vxx_0_0.set_k(self.tx_multiplier)
+        self.blocks_multiply_const_vxx_0_0_1.set_k(self.tx_multiplier)
+        self.blocks_multiply_const_vxx_0_0_1_0.set_k(self.tx_multiplier)
 
     def get_tx_gain(self):
         return self.tx_gain
@@ -506,12 +562,6 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
     def set_tx_gain(self, tx_gain):
         self.tx_gain = tx_gain
         self.mimo_ofdm_jrc_usrp_mimo_trx_0.set_tx_gain(self.tx_gain)
-
-    def get_sivers_angle_log(self):
-        return self.sivers_angle_log
-
-    def set_sivers_angle_log(self, sivers_angle_log):
-        self.sivers_angle_log = sivers_angle_log
 
     def get_signal_strength_log_file(self):
         return self.signal_strength_log_file
@@ -534,12 +584,6 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
     def set_rx_gain(self, rx_gain):
         self.rx_gain = rx_gain
         self.mimo_ofdm_jrc_usrp_mimo_trx_0.set_rx_gain(self.rx_gain)
-
-    def get_range_axis(self):
-        return self.range_axis
-
-    def set_range_axis(self, range_axis):
-        self.range_axis = range_axis
 
     def get_radar_log_file(self):
         return self.radar_log_file
@@ -574,6 +618,34 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.phased_steering = phased_steering
         self._phased_steering_callback(self.phased_steering)
 
+    def get_phase_tx4(self):
+        return self.phase_tx4
+
+    def set_phase_tx4(self, phase_tx4):
+        self.phase_tx4 = phase_tx4
+        self.blocks_multiply_const_vxx_0_0_0_0_0.set_k(self.amp_tx4*cmath.exp(1j*self.phase_tx4))
+
+    def get_phase_tx3(self):
+        return self.phase_tx3
+
+    def set_phase_tx3(self, phase_tx3):
+        self.phase_tx3 = phase_tx3
+        self.blocks_multiply_const_vxx_0_0_0_0.set_k(self.amp_tx3*cmath.exp(1j*self.phase_tx3))
+
+    def get_phase_tx2(self):
+        return self.phase_tx2
+
+    def set_phase_tx2(self, phase_tx2):
+        self.phase_tx2 = phase_tx2
+        self.blocks_multiply_const_vxx_0_0_0.set_k(self.amp_tx2*cmath.exp(1j*self.phase_tx2))
+
+    def get_phase_rx2(self):
+        return self.phase_rx2
+
+    def set_phase_rx2(self, phase_rx2):
+        self.phase_rx2 = phase_rx2
+        self.blocks_multiply_const_vxx_0_1.set_k(self.amp_rx2*cmath.exp(1j*self.phase_rx2))
+
     def get_packet_data_file(self):
         return self.packet_data_file
 
@@ -587,6 +659,12 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self.mcs = mcs
         self._mcs_callback(self.mcs)
         self.mimo_ofdm_jrc_stream_encoder_0.set_mcs(self.mcs)
+
+    def get_interp_factor(self):
+        return self.interp_factor
+
+    def set_interp_factor(self, interp_factor):
+        self.interp_factor = interp_factor
 
     def get_freq_smoothing(self):
         return self.freq_smoothing
@@ -637,11 +715,45 @@ class mimo_ofdm_jrc_TRX(gr.top_block, Qt.QWidget):
         self._background_record_callback(self.background_record)
         self.mimo_ofdm_jrc_mimo_ofdm_radar_0.set_background_record(self.background_record);
 
+    def get_angle_res(self):
+        return self.angle_res
+
+    def set_angle_res(self, angle_res):
+        self.angle_res = angle_res
+
     def get_angle_axis(self):
         return self.angle_axis
 
     def set_angle_axis(self, angle_axis):
         self.angle_axis = angle_axis
+
+    def get_amp_tx4(self):
+        return self.amp_tx4
+
+    def set_amp_tx4(self, amp_tx4):
+        self.amp_tx4 = amp_tx4
+        self.blocks_multiply_const_vxx_0_0_0_0_0.set_k(self.amp_tx4*cmath.exp(1j*self.phase_tx4))
+
+    def get_amp_tx3(self):
+        return self.amp_tx3
+
+    def set_amp_tx3(self, amp_tx3):
+        self.amp_tx3 = amp_tx3
+        self.blocks_multiply_const_vxx_0_0_0_0.set_k(self.amp_tx3*cmath.exp(1j*self.phase_tx3))
+
+    def get_amp_tx2(self):
+        return self.amp_tx2
+
+    def set_amp_tx2(self, amp_tx2):
+        self.amp_tx2 = amp_tx2
+        self.blocks_multiply_const_vxx_0_0_0.set_k(self.amp_tx2*cmath.exp(1j*self.phase_tx2))
+
+    def get_amp_rx2(self):
+        return self.amp_rx2
+
+    def set_amp_rx2(self, amp_rx2):
+        self.amp_rx2 = amp_rx2
+        self.blocks_multiply_const_vxx_0_1.set_k(self.amp_rx2*cmath.exp(1j*self.phase_rx2))
 
     def get_R_res(self):
         return self.R_res
