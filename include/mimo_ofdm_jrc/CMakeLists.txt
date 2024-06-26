@@ -46,5 +46,6 @@ install(FILES
     zero_pad.h
     socket_pdu_jrc.h
     ndp_generator.h
-    packet_switch.h DESTINATION include/mimo_ofdm_jrc
+    packet_switch.h
+    gui_heatmap_plot_digital.h DESTINATION include/mimo_ofdm_jrc
 )

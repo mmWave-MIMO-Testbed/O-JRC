@@ -23,6 +23,7 @@
 ########################################################################
 set(QTGUI_MOC_HEADERS
     heatmap_plot.h
+    heatmap_plot_digital.h
     time_plot.h)
 QT5_WRAP_CPP(QTGUI_MOC_OUTFILES ${QTGUI_MOC_HEADERS})
 
@@ -43,6 +44,7 @@ list(APPEND mimo_ofdm_jrc_sources
     viterbi_decoder.cc
     utils.cc
     heatmap_plot.cc
+    heatmap_plot_digital.cc
     fft_peak_detect_impl.cc
     frame_detector_impl.cc
     frame_sync_impl.cc
@@ -69,7 +71,8 @@ list(APPEND mimo_ofdm_jrc_sources
     socket_pdu_jrc_impl.cc 
     tcp_connection.cc
     ndp_generator_impl.cc
-    packet_switch_impl.cc )
+    packet_switch_impl.cc
+    gui_heatmap_plot_digital_impl.cc )
 
 set(mimo_ofdm_jrc_sources "${mimo_ofdm_jrc_sources}" PARENT_SCOPE)
 if(NOT mimo_ofdm_jrc_sources)
