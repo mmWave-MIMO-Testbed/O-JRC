@@ -36,31 +36,31 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: ofdm_config.N_ltf
+    value: ofdm_config_siso_16sub.N_ltf
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [496, 76.0]
+    coordinate: [504, 80.0]
     rotation: 0
     state: enabled
 - name: N_rx
   id: variable
   parameters:
     comment: ''
-    value: '4'
+    value: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [840, 12.0]
+    coordinate: [712, 8.0]
     rotation: 0
     state: enabled
 - name: N_tx
   id: variable
   parameters:
     comment: ''
-    value: ofdm_config.N_tx
+    value: '1'
   states:
     bus_sink: false
     bus_source: false
@@ -107,7 +107,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [216, 264.0]
+    coordinate: [1128, 32.0]
     rotation: 0
     state: enabled
 - name: chan_est_file
@@ -132,6 +132,18 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [24, 196.0]
+    rotation: 0
+    state: enabled
+- name: chan_est_ndp_file
+  id: variable
+  parameters:
+    comment: ''
+    value: parrent_path+"/data/chan_est_ndp.csv"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1120, 112.0]
     rotation: 0
     state: enabled
 - name: comm_log_file
@@ -179,7 +191,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [544, 12.0]
+    coordinate: [544, 8.0]
     rotation: 0
     state: enabled
 - name: distance
@@ -198,12 +210,12 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: ofdm_config.N_sc
+    value: ofdm_config_siso_64sub.N_sc
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [480, 12.0]
+    coordinate: [480, 8.0]
     rotation: 0
     state: enabled
 - name: freq
@@ -227,7 +239,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [920, 12.0]
+    coordinate: [808, 24.0]
     rotation: 0
     state: enabled
 - name: mcs
@@ -309,23 +321,11 @@ blocks:
     coordinate: [1056, 772.0]
     rotation: 0
     state: enabled
-- name: packet_data_file
-  id: variable
-  parameters:
-    comment: ''
-    value: parrent_path+"/data/packet_data.csv"
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [24, 260.0]
-    rotation: 0
-    state: enabled
 - name: parrent_path
   id: variable
   parameters:
     comment: ''
-    value: '"/home/xin/O-JRC/examples"'
+    value: '"/home/haocheng/O-JRC/examples"'
   states:
     bus_sink: false
     bus_source: false
@@ -487,7 +487,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '150000000'
+    value: 100e6
   states:
     bus_sink: false
     bus_source: false
@@ -504,7 +504,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [464, 1612.0]
+    coordinate: [456, 1592.0]
     rotation: 0
     state: enabled
 - name: theta
@@ -546,7 +546,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1056, 16.0]
+    coordinate: [952, 20.0]
     rotation: 0
     state: enabled
 - name: use_radar_streams
@@ -608,24 +608,6 @@ blocks:
     coordinate: [736, 1360.0]
     rotation: 0
     state: true
-- name: blocks_add_xx_0_0
-  id: blocks_add_xx
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    num_inputs: '4'
-    type: complex
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [904, 904.0]
-    rotation: 0
-    state: enabled
 - name: blocks_complex_to_mag_0
   id: blocks_complex_to_mag
   parameters:
@@ -721,7 +703,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [192, 1724.0]
+    coordinate: [192, 1736.0]
     rotation: 0
     state: enabled
 - name: blocks_delay_0_0
@@ -816,61 +798,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [256, 836.0]
-    rotation: 0
-    state: enabled
-- name: blocks_multiply_const_vxx_0_0
-  id: blocks_multiply_const_vxx
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    const: tx_multiplier
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    type: complex
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [256, 908.0]
-    rotation: 0
-    state: enabled
-- name: blocks_multiply_const_vxx_0_0_0
-  id: blocks_multiply_const_vxx
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    const: tx_multiplier
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    type: complex
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [256, 980.0]
-    rotation: 0
-    state: enabled
-- name: blocks_multiply_const_vxx_0_0_0_0
-  id: blocks_multiply_const_vxx
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    const: tx_multiplier
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    type: complex
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [256, 1052.0]
+    coordinate: [240, 976.0]
     rotation: 0
     state: enabled
 - name: blocks_multiply_const_vxx_1
@@ -888,63 +816,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [656, 836.0]
+    coordinate: [664, 968.0]
     rotation: 0
     state: true
-- name: blocks_multiply_const_vxx_1_0
-  id: blocks_multiply_const_vxx
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: (1/path_loss)*cmath.exp(1j*cmath.pi*np.sin(np.deg2rad(theta)))
-    const: (1/path_loss)*cmath.exp(1j*cmath.pi*np.sin(np.deg2rad(theta)))
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    type: complex
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [624, 908.0]
-    rotation: 0
-    state: enabled
-- name: blocks_multiply_const_vxx_1_0_0
-  id: blocks_multiply_const_vxx
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: (1/path_loss)*cmath.exp(1j*cmath.pi*np.sin(np.deg2rad(theta)))
-    const: (1/path_loss)*cmath.exp(2j*cmath.pi*np.sin(np.deg2rad(theta)))
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    type: complex
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [624, 980.0]
-    rotation: 0
-    state: enabled
-- name: blocks_multiply_const_vxx_1_0_0_0
-  id: blocks_multiply_const_vxx
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: (1/path_loss)*cmath.exp(1j*cmath.pi*np.sin(np.deg2rad(theta)))
-    const: (1/path_loss)*cmath.exp(3j*cmath.pi*np.sin(np.deg2rad(theta)))
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    type: complex
-    vlen: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [624, 1052.0]
-    rotation: 0
-    state: enabled
 - name: blocks_multiply_xx_0
   id: blocks_multiply_xx
   parameters:
@@ -1083,7 +957,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [96, 340.0]
+    coordinate: [80, 396.0]
     rotation: 0
     state: enabled
 - name: blocks_socket_pdu_1
@@ -1121,7 +995,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [656, 1712.0]
+    coordinate: [656, 1720.0]
     rotation: 0
     state: enabled
 - name: blocks_tag_debug_0
@@ -1227,14 +1101,14 @@ blocks:
     comment: ''
     maxoutbuf: '0'
     minoutbuf: '0'
-    num_items: len(ofdm_config.data_subcarriers)
+    num_items: len(ofdm_config_siso_64sub.data_subcarriers)
     type: complex
     vlen: '1'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1128, 1848.0]
+    coordinate: [1136, 1848.0]
     rotation: 180
     state: enabled
 - name: blocks_vector_to_stream_0_0_0
@@ -1351,64 +1225,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1152, 268.0]
-    rotation: 0
-    state: enabled
-- name: digital_ofdm_cyclic_prefixer_0_0
-  id: digital_ofdm_cyclic_prefixer
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    cp_len: cp_len
-    input_size: fft_len
-    maxoutbuf: '0'
-    minoutbuf: ''
-    rolloff: '0'
-    tagname: '"packet_len"'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1152, 372.0]
-    rotation: 0
-    state: enabled
-- name: digital_ofdm_cyclic_prefixer_0_0_0
-  id: digital_ofdm_cyclic_prefixer
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    cp_len: cp_len
-    input_size: fft_len
-    maxoutbuf: '0'
-    minoutbuf: ''
-    rolloff: '0'
-    tagname: '"packet_len"'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1152, 476.0]
-    rotation: 0
-    state: enabled
-- name: digital_ofdm_cyclic_prefixer_0_0_0_0
-  id: digital_ofdm_cyclic_prefixer
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    cp_len: cp_len
-    input_size: fft_len
-    maxoutbuf: '0'
-    minoutbuf: ''
-    rolloff: '0'
-    tagname: '"packet_len"'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1152, 580.0]
+    coordinate: [1144, 412.0]
     rotation: 0
     state: enabled
 - name: fft_vxx_0
@@ -1424,12 +1241,12 @@ blocks:
     nthreads: '2'
     shift: 'True'
     type: complex
-    window: tuple([1/64**.5] * 64)
+    window: tuple([1/64**.5] * fft_len)
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [912, 252.0]
+    coordinate: [896, 396.0]
     rotation: 0
     state: enabled
 - name: fft_vxx_0_0
@@ -1450,70 +1267,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [832, 1676.0]
-    rotation: 0
-    state: enabled
-- name: fft_vxx_0_2
-  id: fft_vxx
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: tuple([1/52**.5] * 64)
-    fft_size: fft_len
-    forward: 'False'
-    maxoutbuf: '0'
-    minoutbuf: ''
-    nthreads: '2'
-    shift: 'True'
-    type: complex
-    window: tuple([1/64**.5] * 64)
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [912, 356.0]
-    rotation: 0
-    state: enabled
-- name: fft_vxx_0_2_0
-  id: fft_vxx
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: tuple([1/52**.5] * 64)
-    fft_size: fft_len
-    forward: 'False'
-    maxoutbuf: '0'
-    minoutbuf: ''
-    nthreads: '2'
-    shift: 'True'
-    type: complex
-    window: tuple([1/64**.5] * 64)
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [912, 460.0]
-    rotation: 0
-    state: enabled
-- name: fft_vxx_0_2_0_0
-  id: fft_vxx
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: tuple([1/52**.5] * 64)
-    fft_size: fft_len
-    forward: 'False'
-    maxoutbuf: '0'
-    minoutbuf: ''
-    nthreads: '2'
-    shift: 'True'
-    type: complex
-    window: tuple([1/64**.5] * 64)
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [912, 564.0]
+    coordinate: [824, 1660.0]
     rotation: 0
     state: enabled
 - name: helper_frame_detector_0
@@ -1713,24 +1467,6 @@ blocks:
     coordinate: [1376, 1680.0]
     rotation: 0
     state: disabled
-- name: helper_zero_pad_0
-  id: helper_zero_pad
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    debug: 'False'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    pad_front: '5'
-    pad_tail: 6*(fft_len+cp_len)+10
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [440, 892.0]
-    rotation: 0
-    state: disabled
 - name: helper_zero_pad_0_0
   id: helper_zero_pad
   parameters:
@@ -1747,42 +1483,6 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [440, 820.0]
-    rotation: 0
-    state: disabled
-- name: helper_zero_pad_0_1
-  id: helper_zero_pad
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    debug: 'False'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    pad_front: '5'
-    pad_tail: 6*(fft_len+cp_len)+10
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [440, 964.0]
-    rotation: 0
-    state: disabled
-- name: helper_zero_pad_0_1_0
-  id: helper_zero_pad
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    debug: 'False'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    pad_front: '5'
-    pad_tail: 6*(fft_len+cp_len)+10
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [440, 1036.0]
     rotation: 0
     state: disabled
 - name: import_0
@@ -1894,7 +1594,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 1684.0]
+    coordinate: [376, 1676.0]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_gui_time_plot_0
@@ -1941,10 +1641,10 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    interval: '250'
+    interval: '100'
     label: '"Received Data Throughput"'
-    time_window: '10'
-    y_axis_lim: '[0,5]'
+    time_window: '5'
+    y_axis_lim: '[0,30]'
     y_label: '"Throughput [KByte/s]"'
     y_tag: '"throughput"'
   states:
@@ -1960,30 +1660,30 @@ blocks:
     affinity: ''
     alias: ''
     bw: samp_rate
-    chan_est_data_file: '""'
+    chan_est_data_file: chan_est_data_file
     chan_est_file: chan_est_file
-    chan_est_ndp_file: '""'
+    chan_est_ndp_file: chan_est_ndp_file
     comm_log_file: comm_log_file
     comment: ''
     cp_len: cp_len
-    data_carriers: ofdm_config.data_subcarriers
+    data_carriers: ofdm_config_siso_64sub.data_subcarriers
     debug: 'False'
     estimator: chan_est
     fft_len: fft_len
     freq: rf_freq
-    long_seq: ofdm_config.l_stf_ltf_64[3]
-    mapped_ltf_symbols: ofdm_config.ltf_mapped_sc__ss_sym
+    long_seq: ofdm_config_siso_64sub.l_stf_ltf_64[3]
+    mapped_ltf_symbols: ofdm_config_siso_64sub.ltf_mapped_sc__ss_sym
     maxoutbuf: '0'
     minoutbuf: '80000'
     n_mimo_ltf: N_tx
-    pilot_carriers: ofdm_config.pilot_subcarriers
-    pilot_symbols: ofdm_config.pilot_symbols
+    pilot_carriers: ofdm_config_siso_64sub.pilot_subcarriers
+    pilot_symbols: ofdm_config_siso_64sub.pilot_symbols
     stats_record: 'False'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1056, 1564.0]
+    coordinate: [1056, 1540.0]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_mimo_precoder_0
@@ -1996,19 +1696,19 @@ blocks:
     chan_est_file: chan_est_file
     chan_est_smoothing: 'False'
     comment: ''
-    data_carriers: ofdm_config.data_subcarriers
+    data_carriers: ofdm_config_siso_64sub.data_subcarriers
     debug: 'False'
     fft_len: fft_len
     len_tag_key: '"packet_len"'
-    mapped_ltf_symbols: ofdm_config.ltf_mapped_sc__ss_sym
+    mapped_ltf_symbols: ofdm_config_siso_64sub.ltf_mapped_sc__ss_sym
     maxoutbuf: '0'
     minoutbuf: '0'
     phased_steering: phased_steering
-    pilot_carriers: ofdm_config.pilot_subcarriers
-    pilot_symbols: ofdm_config.pilot_symbols
+    pilot_carriers: ofdm_config_siso_64sub.pilot_subcarriers
+    pilot_symbols: ofdm_config_siso_64sub.pilot_symbols
     radar_aided: radar_aided
     radar_log_file: radar_read_file
-    sync_words: ofdm_config.l_stf_ltf_64
+    sync_words: ofdm_config_siso_64sub.l_stf_ltf_64
     use_radar_streams: use_radar_streams
   states:
     bus_sink: false
@@ -2036,57 +1736,6 @@ blocks:
     coordinate: [736, 1252.0]
     rotation: 0
     state: true
-- name: mimo_ofdm_jrc_ndp_generator_0
-  id: mimo_ofdm_jrc_ndp_generator
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [88, 552.0]
-    rotation: 0
-    state: disabled
-- name: mimo_ofdm_jrc_packet_switch_0
-  id: mimo_ofdm_jrc_packet_switch
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    packet_info_file: packet_data_file
-    period_ms: '10'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [56, 616.0]
-    rotation: 0
-    state: disabled
-- name: mimo_ofdm_jrc_socket_pdu_jrc_0
-  id: mimo_ofdm_jrc_socket_pdu_jrc
-  parameters:
-    MTU: '10000'
-    affinity: ''
-    alias: ''
-    comment: ''
-    host: ''
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    port: '52001'
-    type: UDP_SERVER
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [80, 420.0]
-    rotation: 0
-    state: disabled
 - name: mimo_ofdm_jrc_stream_decoder_0
   id: mimo_ofdm_jrc_stream_decoder
   parameters:
@@ -2096,14 +1745,14 @@ blocks:
     debug: 'False'
     maxoutbuf: '0'
     minoutbuf: '0'
-    n_data_carriers: len(ofdm_config.data_subcarriers)
+    n_data_carriers: len(ofdm_config_siso_64sub.data_subcarriers)
     stats_path: comm_log_file
     stats_record: record_comm_stats
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1376, 1684.0]
+    coordinate: [1376, 1708.0]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_stream_encoder_0
@@ -2141,7 +1790,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [304, 396.0]
+    coordinate: [312, 516.0]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_zero_pad_0
@@ -2159,61 +1808,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [440, 812.0]
-    rotation: 0
-    state: true
-- name: mimo_ofdm_jrc_zero_pad_0_0
-  id: mimo_ofdm_jrc_zero_pad
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    debug: 'False'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    pad_front: '5'
-    pad_tail: 6*(fft_len+cp_len)+10
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [440, 884.0]
-    rotation: 0
-    state: true
-- name: mimo_ofdm_jrc_zero_pad_0_0_0
-  id: mimo_ofdm_jrc_zero_pad
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    debug: 'False'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    pad_front: '5'
-    pad_tail: 6*(fft_len+cp_len)+10
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
     coordinate: [440, 956.0]
-    rotation: 0
-    state: true
-- name: mimo_ofdm_jrc_zero_pad_0_0_0_0
-  id: mimo_ofdm_jrc_zero_pad
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    debug: 'False'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    pad_front: '5'
-    pad_tail: 6*(fft_len+cp_len)+10
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [440, 1028.0]
     rotation: 0
     state: true
 - name: ofdm_config
@@ -2366,6 +1961,198 @@ blocks:
     coordinate: [640, 84.0]
     rotation: 0
     state: true
+- name: ofdm_config_siso_16sub
+  id: epy_module
+  parameters:
+    alias: ''
+    comment: ''
+    source_code: "import numpy as np\n#import matplotlib.pyplot as plt\n\nN_tx = 1\
+      \  \nN_ltf = N_tx\nN_sc = 16 \n\ndata_subcarriers = list(range(-7, -4)) + list(range(-3,\
+      \ 0)) + list(range(0, 4)) + list(range(5, 8))\npilot_subcarriers = [-4, 4]\n\
+      \nN_data = len(data_subcarriers)\nN_pilot = len(pilot_subcarriers)\n\npilot_symbols\
+      \ = [(1, 1), (1, 1), (1, 1), (1, 1), \n                 (-1, -1), (-1, -1),\
+      \ (-1, -1), (-1, -1), \n                 (1, 1), (1, 1), (1, 1), (1, 1), \n\
+      \                 (-1, -1), (-1, -1), (-1, -1), (-1, -1)]\n\nl_stf_16_def =\
+      \ np.array([0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j),\
+      \ 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, (-1.4719601443879746-1.4719601443879746j),\
+      \ 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, (-1.4719601443879746-1.4719601443879746j),\
+      \ 0.0, (1.4719601443879746+1.4719601443879746j)])\nl_ltf_16_def = np.array([0,\
+      \ 0, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 0])\n\nl_ltf_16_custom = np.array([0,\
+      \ 1, 1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 0])\n\nassert(len(l_stf_16_def)\
+      \ == N_sc)\nassert(len(l_ltf_16_def) == N_sc)\nassert(len(l_ltf_16_custom) ==\
+      \ N_sc)\n\nsymbol_rotation = np.array([1, -1j, -1, 1j] * 4)\nl_ltf_16_rot =\
+      \ symbol_rotation * l_ltf_16_custom\nl_stf_ltf_16 = np.vstack((l_stf_16_def,\
+      \ l_stf_16_def, l_ltf_16_rot, l_ltf_16_custom))\n\nltf_16 = np.array([0, 1,\
+      \ 1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 0], dtype=np.complex64)\nP_ltf\
+      \ = np.array([[1, -1, 1, 1]], dtype=np.complex64)\n\nltf_tx = []\nfor i_tx in\
+      \ range(N_tx):\n    ltf_tx.append(tuple(map(tuple, np.outer(P_ltf[i_tx, :N_ltf],\
+      \ ltf_16))))\n\nltf_mapped_16 = []\nfor i_tx in range(N_tx):\n    ltf_expand_time\
+      \ = np.outer(P_ltf[i_tx, :N_ltf], ltf_16)\n    ltf_mapped_16.append(ltf_expand_time.flatten().tolist())\n\
+      \nltf_mapped_16 = np.array(ltf_mapped_16)\n\nltf_mapped_sc__ss_sym = []\nfor\
+      \ i_sc in range(N_sc):\n    ltf_ss_sym = P_ltf[:N_tx, :N_ltf] * ltf_16[i_sc]\n\
+      \    ltf_mapped_sc__ss_sym.append(ltf_ss_sym.flatten().tolist())\n\nltf_mapped_sc__ss_sym\
+      \ = np.array(ltf_mapped_sc__ss_sym)\n\n# %%\nl_ltf = l_stf_ltf_16[3]\nl_ltf_time\
+      \ = N_sc * np.fft.ifft(np.fft.fftshift(l_ltf)) / np.sqrt(np.count_nonzero(l_ltf))\n\
+      l_ltf_fir = np.conj(l_ltf_time)\nl_ltf_fir = l_ltf_fir[::-1]\n\n#plt.figure()\n\
+      #plt.plot(np.abs(l_ltf_time))\n\n#plt.figure()\n#plt.plot(np.abs(np.convolve(l_ltf_fir,\
+      \ l_ltf_time, 'full')))\n\n"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [640, 136.0]
+    rotation: 0
+    state: true
+- name: ofdm_config_siso_64sub
+  id: epy_module
+  parameters:
+    alias: ''
+    comment: ''
+    source_code: "# %% this module will be imported in the into your flowgraph\nimport\
+      \ numpy as np\n# import matplotlib.pyplot as plt\n\nN_tx = 1\nN_ltf = N_tx\n\
+      N_sc = 64\n\ndata_subcarriers = list(range(-26, -21)) + list(range(-20, -7))\
+      \ + list(range(-6, 0)) + list(range(1, 7)) + list(range(8, 21)) +list( range(22,\
+      \ 27))\npilot_subcarriers = [-21, -7, 7, 21]\npilot_symbols = ((1, 1, 1, -1),\
+      \ (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1,\
+      \ 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1,\
+      \ -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1),\
+      \ (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1,\
+      \ -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1,\
+      \ 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1,\
+      \ 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1,\
+      \ -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1),\
+      \ (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1),\
+      \ (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1,\
+      \ -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1,\
+      \ -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1),\
+      \ (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1,\
+      \ -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1,\
+      \ -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1),\
+      \ (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1,\
+      \ -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1,\
+      \ 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1),\
+      \ (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1),\
+      \ (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1,\
+      \ -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1,\
+      \ -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1),\
+      \ (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1,\
+      \ -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1,\
+      \ -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1),\
+      \ (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1,\
+      \ -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1))\n\nN_data = len(data_subcarriers)\n\
+      N_pilot = len(pilot_subcarriers)\n\n# l_stf_ltf_128_custom = ((0.0, 0.0, 0.0,\
+      \ 0.0, 0.0, 0.0, 0.0, 0.0, (-1.4719601443879744+1.4719601443879744j), 0.0, 0.0,\
+      \ 0.0, (1.4719601443879744-1.4719601443879744j), 0.0, 0.0, 0.0, (-1.4719601443879744+1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879744-1.4719601443879744j), 0.0, 0.0, 0.0, (1.4719601443879744-1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879744+1.4719601443879744j), 0.0, 0.0, 0.0, 0.0,\
+      \ 0.0, 0.0, 0.0, (1.4719601443879744-1.4719601443879744j), 0.0, 0.0, 0.0, (1.4719601443879744-1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879744+1.4719601443879744j), 0.0, 0.0, 0.0, (-1.4719601443879744+1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879744+1.4719601443879744j), 0.0, 0.0, 0.0, (-1.4719601443879744+1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,\
+      \ (1.4719601443879744+1.4719601443879744j), 0.0, 0.0, 0.0, (-1.4719601443879744-1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879744+1.4719601443879744j), 0.0, 0.0, 0.0, (-1.4719601443879744-1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879744-1.4719601443879744j), 0.0, 0.0, 0.0, (1.4719601443879744+1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, (-1.4719601443879744-1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879744-1.4719601443879744j), 0.0, 0.0, 0.0, (1.4719601443879744+1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879744+1.4719601443879744j), 0.0, 0.0, 0.0, (1.4719601443879744+1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879744+1.4719601443879744j), 0.0, 0.0, 0.0, 0.0,\
+      \ 0.0, 0.0, 0.0), \n#     (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, (-1.4719601443879744+1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879744-1.4719601443879744j), 0.0, 0.0, 0.0, (-1.4719601443879744+1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879744-1.4719601443879744j), 0.0, 0.0, 0.0, (1.4719601443879744-1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879744+1.4719601443879744j), 0.0, 0.0, 0.0, 0.0,\
+      \ 0.0, 0.0, 0.0, (1.4719601443879744-1.4719601443879744j), 0.0, 0.0, 0.0, (1.4719601443879744-1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879744+1.4719601443879744j), 0.0, 0.0, 0.0, (-1.4719601443879744+1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879744+1.4719601443879744j), 0.0, 0.0, 0.0, (-1.4719601443879744+1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,\
+      \ (1.4719601443879744+1.4719601443879744j), 0.0, 0.0, 0.0, (-1.4719601443879744-1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879744+1.4719601443879744j), 0.0, 0.0, 0.0, (-1.4719601443879744-1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879744-1.4719601443879744j), 0.0, 0.0, 0.0, (1.4719601443879744+1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, (-1.4719601443879744-1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879744-1.4719601443879744j), 0.0, 0.0, 0.0, (1.4719601443879744+1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879744+1.4719601443879744j), 0.0, 0.0, 0.0, (1.4719601443879744+1.4719601443879744j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879744+1.4719601443879744j), 0.0, 0.0, 0.0, 0.0,\
+      \ 0.0, 0.0, 0.0), \n#     (0, 0j, (-0-1j), (-0-1j), -1j, -1j, 1j, (-0-1j), -1j,\
+      \ 1j, 1j, (-0-1j), -1j, -1j, (-0-1j), (-0-1j), 1j, -1j, 1j, (-0-1j), 1j, 1j,\
+      \ (-0-1j), (-0-1j), 1j, 1j, 1j, 1j, 1j, -1j, 1j, (-0-1j), 1j, -1j, (-0-1j),\
+      \ 1j, 1j, -1j, (-0-1j), (-0-1j), -1j, -1j, (-0-1j), 1j, -1j, 1j, (-0-1j), (-0-1j),\
+      \ 1j, 1j, (-0-1j), (-0-1j), -1j, -1j, (-0-1j), (-0-1j), 1j, -1j, 1j, (-0-1j),\
+      \ 1j, 1j, (-0-1j), 1j, 0, (-1-0j), -1, (-1+0j), 1, (1+0j), 1, (-1+0j), -1, (1+0j),\
+      \ 1, (-1+0j), -1, (-1-0j), -1, (-1+0j), 1, (-1-0j), 1, (-1+0j), 1, (1+0j), -1,\
+      \ (-1+0j), 1, (1+0j), 1, (1+0j), 1, (-1-0j), 1, (-1+0j), 1, (-1-0j), -1, (1+0j),\
+      \ 1, (-1-0j), -1, (-1+0j), -1, (-1-0j), -1, (1+0j), -1, (1+0j), -1, (-1+0j),\
+      \ 1, (1+0j), -1, (-1+0j), -1, (-1-0j), -1, (-1+0j), 1, (-1-0j), 1, (-1+0j),\
+      \ -1, (-1-0j), -1, 0j), \n#     (0, 0, 1j, -1, -1j, 1, -1j, -1, -1j, -1, -1j,\
+      \ -1, -1j, 1, 1j, -1, 1j, 1, -1j, -1, 1j, -1, 1j, -1, 1j, -1, -1j, 1, 1j, 1,\
+      \ -1j, -1, 1j, 1, 1j, 1, 1j, 1, 1j, -1, -1j, 1, 1j, 1, -1j, -1, 1j, -1, 1j,\
+      \ -1, 1j, -1, -1j, 1, 1j, -1, 1j, 1, -1j, -1, 1j, -1, 1j, 1, 0, -1j, 1, 1j,\
+      \ 1, 1j, -1, 1j, -1, 1j, -1, 1j, -1, -1j, 1, 1j, 1, -1j, -1, 1j, 1, 1j, 1, 1j,\
+      \ 1, 1j, -1, -1j, 1, -1j, -1, 1j, 1, -1j, 1, -1j, 1, -1j, 1, 1j, -1, -1j, 1,\
+      \ -1j, -1, 1j, 1, 1j, 1, 1j, 1, 1j, -1, -1j, 1, 1j, 1, -1j, -1, 1j, -1, -1j,\
+      \ 1, 0))\n\n# l_stf_ltf_64 = ((0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, 0.0,\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0),\n#  (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,\
+      \ 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, 0.0,\
+      \ 0.0, 0.0, 0.0), \n#     (0, 0j, 0, 0j, 0, 0j, -1, 1j, -1, 1j, -1, 1j, -1,\
+      \ -1j, 1, 1j, 1, -1j, -1, 1j, 1, 1j, 1, 1j, 1, 1j, -1, (-0-1j), 1, -1j, -1,\
+      \ 1j, 0, -1j, 1, (-0-1j), 1, -1j, 1, 1j, -1, -1j, 1, (-0-1j), -1, 1j, 1, 1j,\
+      \ 1, 1j, 1, 1j, -1, -1j, 1, 1j, 1, -1j, -1, 0j, 0, 0j, 0, 0j), \n#     (0, 0,\
+      \ 0, 0, 0, 0, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, -1, 1, 1,\
+      \ -1, 1, -1, 1, 1, 1, 1, 0, 1, -1, -1, 1, 1, -1, 1, -1, 1, -1, -1, -1, -1, -1,\
+      \ 1, 1, -1, -1, 1, -1, 1, -1, 1, 1, 1, 1, 0, 0, 0, 0, 0))\n\n\nl_stf_64_def\
+      \ = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, 0.0,\
+      \ 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j), 0.0, 0.0, 0.0, (1.4719601443879746+1.4719601443879746j),\
+      \ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])\nl_ltf_64_def = np.array([0, 0, 0, 0,\
+      \ 0, 0, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1,\
+      \ -1, 1, 1, 1, 1, 0, 1, -1, -1, 1, 1, -1, 1, -1, 1, -1, -1, -1, -1, -1, 1, 1,\
+      \ -1, -1, 1, -1, 1, -1, 1, 1, 1, 1, 0, 0, 0, 0, 0])\n\n\nl_ltf_64_custom = np.array([0,\
+      \ 0, 0, 0, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, -1, 1,\
+      \ 1, -1, 1, -1, 1, 1, 1, 1, 0, 1, -1, -1, 1, 1, -1, 1, -1, 1, -1, -1, -1, -1,\
+      \ -1, 1, 1, -1, -1, 1, -1, 1, -1, 1, 1, 1, 1, -1, -1, 0, 0, 0])\n\nassert(len(l_stf_64_def)\
+      \ == N_sc)\nassert(len(l_ltf_64_def) == N_sc)\nassert(len(l_ltf_64_custom) ==\
+      \ N_sc)\n\n\nsymbol_rotation = np.array([1, -1j, -1, 1j] * 16)\nl_ltf_64_rot\
+      \ = symbol_rotation*l_ltf_64_custom\nl_stf_ltf_64 = np.vstack((l_stf_64_def,\
+      \ l_stf_64_def, l_ltf_64_rot, l_ltf_64_custom))\n\n# MATLAB\n# [ltfLeft, ltfRight]\
+      \ = wlan.internal.lltfSequence()\n# [zeros(4,1); 1; 1; ltfLeft; 0; ltfRight;-1;-1;\
+      \ zeros(3,1)];\nltf_64 = np.array([0, 0, 0, 0, 1, 1, 1, 1, -1, -1, 1, 1, -1,\
+      \ 1, -1, 1, 1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 0, 1, -1, -1,\
+      \ 1, 1, -1, 1, -1, 1, -1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, 1, 1,\
+      \ 1, 1, -1, -1, 0, 0, 0], dtype=np.complex64)\nP_ltf = np.array([[1, -1, 1,\
+      \ 1], [1, 1, -1, 1], [1, 1, 1, -1], [-1, 1, 1, 1]], dtype=np.complex64)\n\n\n\
+      ltf_tx = []\nfor i_tx in range(N_tx):\n    ltf_tx.append(tuple(map(tuple, np.outer(P_ltf[i_tx,:N_ltf],ltf_64))))\n\
+      \n\nltf_mapped_64 = []\nfor i_tx in range(N_tx):\n    ltf_expand_time = np.outer(P_ltf[i_tx,:N_ltf],\
+      \ ltf_64)\n    ltf_mapped_64.append(ltf_expand_time.flatten().tolist())\n\n\
+      # ltf_mapped_64 = np.array(ltf_mapped_64).T\nltf_mapped_64 = np.array(ltf_mapped_64)\n\
+      \n\n# Nsc X (Ntx.Nltf) [ second dimension is row-major of (Ntx X Nltf) ]\nltf_mapped_sc__ss_sym\
+      \ = []\nfor i_sc in range(N_sc):\n    ltf_ss_sym = P_ltf[:N_tx,:N_ltf]*ltf_64[i_sc]\n\
+      \    ltf_mapped_sc__ss_sym.append(ltf_ss_sym.flatten().tolist()) # --> flatten()\
+      \ follows row-major order\n\nltf_mapped_sc__ss_sym = np.array(ltf_mapped_sc__ss_sym)\n\
+      \n# %%\nl_ltf = l_stf_ltf_64[3]\nl_ltf_time = N_sc*np.fft.ifft(np.fft.fftshift(l_ltf))\
+      \ / np.sqrt(np.count_nonzero(l_ltf))\nl_ltf_fir = np.conj(l_ltf_time)\nl_ltf_fir\
+      \ = l_ltf_fir[::-1]\n\n# plt.figure()\n# plt.plot(np.abs(l_ltf_time))\n\n# plt.figure()\n\
+      # plt.plot(np.abs(np.convolve(l_ltf_fir,l_ltf_time,'full')))\n\n# %%\n"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [792, 136.0]
+    rotation: 0
+    state: true
 - name: qtgui_const_sink_x_0
   id: qtgui_const_sink_x
   parameters:
@@ -2455,7 +2242,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1096, 1884.0]
+    coordinate: [1152, 1908.0]
     rotation: 0
     state: enabled
 - name: qtgui_histogram_sink_x_0
@@ -2896,7 +2683,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [664, 692.0]
+    coordinate: [656, 812.0]
     rotation: 180
     state: enabled
 - name: qtgui_time_sink_x_0_0_1_0
@@ -3782,7 +3569,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1392, 284.0]
+    coordinate: [1376, 432.0]
     rotation: 0
     state: enabled
 - name: virtual_sink_0_0
@@ -3809,45 +3596,6 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [1528, 1276.0]
-    rotation: 0
-    state: enabled
-- name: virtual_sink_0_1
-  id: virtual_sink
-  parameters:
-    alias: ''
-    comment: ''
-    stream_id: TX2
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1392, 388.0]
-    rotation: 0
-    state: enabled
-- name: virtual_sink_0_1_0
-  id: virtual_sink
-  parameters:
-    alias: ''
-    comment: ''
-    stream_id: TX3
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1392, 492.0]
-    rotation: 0
-    state: enabled
-- name: virtual_sink_0_1_0_0
-  id: virtual_sink
-  parameters:
-    alias: ''
-    comment: ''
-    stream_id: TX4
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1392, 596.0]
     rotation: 0
     state: enabled
 - name: virtual_source_0
@@ -3886,52 +3634,12 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [96, 836.0]
-    rotation: 0
-    state: enabled
-- name: virtual_source_0_1_0_0_0
-  id: virtual_source
-  parameters:
-    alias: ''
-    comment: ''
-    stream_id: TX2
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [96, 908.0]
-    rotation: 0
-    state: enabled
-- name: virtual_source_0_1_0_0_0_0
-  id: virtual_source
-  parameters:
-    alias: ''
-    comment: ''
-    stream_id: TX3
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [96, 980.0]
-    rotation: 0
-    state: enabled
-- name: virtual_source_0_1_0_0_0_0_0
-  id: virtual_source
-  parameters:
-    alias: ''
-    comment: ''
-    stream_id: TX4
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [96, 1052.0]
+    coordinate: [88, 976.0]
     rotation: 0
     state: enabled
 
 connections:
 - [blocks_abs_xx_0, '0', blocks_divide_xx_0, '1']
-- [blocks_add_xx_0_0, '0', channels_channel_model_0, '0']
 - [blocks_complex_to_mag_0, '0', blocks_divide_xx_0, '0']
 - [blocks_complex_to_mag_1, '0', qtgui_time_sink_x_0_0, '0']
 - [blocks_complex_to_mag_squared_0, '0', blocks_moving_average_xx_0, '0']
@@ -3950,20 +3658,13 @@ connections:
 - [blocks_multiply_const_vxx_0, '0', blocks_complex_to_mag_squared_0, '0']
 - [blocks_multiply_const_vxx_0, '0', helper_zero_pad_0_0, '0']
 - [blocks_multiply_const_vxx_0, '0', mimo_ofdm_jrc_zero_pad_0, '0']
-- [blocks_multiply_const_vxx_0_0, '0', helper_zero_pad_0, '0']
-- [blocks_multiply_const_vxx_0_0, '0', mimo_ofdm_jrc_zero_pad_0_0, '0']
-- [blocks_multiply_const_vxx_0_0_0, '0', helper_zero_pad_0_1, '0']
-- [blocks_multiply_const_vxx_0_0_0, '0', mimo_ofdm_jrc_zero_pad_0_0_0, '0']
-- [blocks_multiply_const_vxx_0_0_0_0, '0', helper_zero_pad_0_1_0, '0']
-- [blocks_multiply_const_vxx_0_0_0_0, '0', mimo_ofdm_jrc_zero_pad_0_0_0_0, '0']
-- [blocks_multiply_const_vxx_1, '0', blocks_add_xx_0_0, '0']
+- [blocks_multiply_const_vxx_1, '0', channels_channel_model_0, '0']
 - [blocks_multiply_const_vxx_1, '0', qtgui_time_sink_x_0_0_1, '0']
-- [blocks_multiply_const_vxx_1_0, '0', blocks_add_xx_0_0, '1']
-- [blocks_multiply_const_vxx_1_0_0, '0', blocks_add_xx_0_0, '2']
-- [blocks_multiply_const_vxx_1_0_0_0, '0', blocks_add_xx_0_0, '3']
 - [blocks_multiply_xx_0, '0', helper_moving_avg_0, '0']
 - [blocks_multiply_xx_0, '0', mimo_ofdm_jrc_moving_avg_0, '0']
 - [blocks_nlog10_ff_1, '0', qtgui_number_sink_0, '0']
+- [blocks_socket_pdu_0, pdus, helper_mimo_encoder_0, pdu_in]
+- [blocks_socket_pdu_0, pdus, mimo_ofdm_jrc_stream_encoder_0, pdu_in]
 - [blocks_socket_pdu_0, pdus, mimo_ofdm_jrc_stream_encoder_1, pdu_in]
 - [blocks_stream_to_vector_0, '0', fft_vxx_0_0, '0']
 - [blocks_throttle_0, '0', qtgui_time_sink_x_0_0_1_1, '0']
@@ -3977,18 +3678,12 @@ connections:
 - [channels_channel_model_0, '0', blocks_throttle_0, '0']
 - [digital_ofdm_cyclic_prefixer_0, '0', blocks_tag_debug_0_1_0_0_0_0, '0']
 - [digital_ofdm_cyclic_prefixer_0, '0', virtual_sink_0, '0']
-- [digital_ofdm_cyclic_prefixer_0_0, '0', virtual_sink_0_1, '0']
-- [digital_ofdm_cyclic_prefixer_0_0_0, '0', virtual_sink_0_1_0, '0']
-- [digital_ofdm_cyclic_prefixer_0_0_0_0, '0', virtual_sink_0_1_0_0, '0']
 - [fft_vxx_0, '0', blocks_vector_to_stream_0_0_0, '0']
 - [fft_vxx_0, '0', digital_ofdm_cyclic_prefixer_0, '0']
 - [fft_vxx_0_0, '0', blocks_null_sink_0_3, '0']
 - [fft_vxx_0_0, '0', blocks_vector_to_stream_0_0_0_0_0_0, '0']
 - [fft_vxx_0_0, '0', helper_mimo_ofdm_equalizer_0, '0']
 - [fft_vxx_0_0, '0', mimo_ofdm_jrc_mimo_ofdm_equalizer_0, '0']
-- [fft_vxx_0_2, '0', digital_ofdm_cyclic_prefixer_0_0, '0']
-- [fft_vxx_0_2_0, '0', digital_ofdm_cyclic_prefixer_0_0_0, '0']
-- [fft_vxx_0_2_0_0, '0', digital_ofdm_cyclic_prefixer_0_0_0_0, '0']
 - [helper_frame_detector_0, '0', qtgui_time_sink_x_0_2_0, '0']
 - [helper_frame_detector_0, '0', virtual_sink_0_0_0, '0']
 - [helper_frame_sync_0, '0', blocks_stream_to_vector_0, '0']
@@ -4001,65 +3696,28 @@ connections:
 - [helper_mimo_ofdm_equalizer_0, '0', helper_stream_decoder_0, '0']
 - [helper_mimo_precoder_0, '0', blocks_vector_to_stream_0_0_0_0, '0']
 - [helper_mimo_precoder_0, '0', fft_vxx_0, '0']
-- [helper_mimo_precoder_0, '1', blocks_vector_to_stream_0_0_0_0_0, '0']
-- [helper_mimo_precoder_0, '1', fft_vxx_0_2, '0']
-- [helper_mimo_precoder_0, '2', fft_vxx_0_2_0, '0']
-- [helper_mimo_precoder_0, '3', fft_vxx_0_2_0_0, '0']
-- [helper_moving_avg_0, '0', blocks_complex_to_mag_0, '0']
-- [helper_moving_avg_0, '0', helper_frame_detector_0, '2']
-- [helper_stream_decoder_0, '0', blocks_null_sink_0_0, '0']
-- [helper_stream_decoder_0, '0', qtgui_histogram_sink_x_0, '0']
-- [helper_stream_decoder_0, '0', qtgui_time_sink_x_1, '0']
-- [helper_stream_decoder_0, stats, helper_gui_time_plot_0, stats]
-- [helper_stream_decoder_0, stats, helper_gui_time_plot_1, stats]
-- [helper_stream_decoder_0, sym, blocks_socket_pdu_1, pdus]
-- [helper_zero_pad_0, '0', blocks_multiply_const_vxx_1_0, '0']
-- [helper_zero_pad_0_0, '0', blocks_multiply_const_vxx_1, '0']
-- [helper_zero_pad_0_1, '0', blocks_multiply_const_vxx_1_0_0, '0']
-- [helper_zero_pad_0_1_0, '0', blocks_multiply_const_vxx_1_0_0_0, '0']
 - [mimo_ofdm_jrc_frame_detector_0, '0', qtgui_time_sink_x_0_2_0, '0']
 - [mimo_ofdm_jrc_frame_detector_0, '0', virtual_sink_0_0_0, '0']
 - [mimo_ofdm_jrc_frame_sync_0, '0', blocks_stream_to_vector_0, '0']
-- [mimo_ofdm_jrc_frame_sync_0, '0', qtgui_time_sink_x_0, '0']
-- [mimo_ofdm_jrc_mimo_ofdm_equalizer_0, '0', blocks_null_sink_0, '0']
 - [mimo_ofdm_jrc_mimo_ofdm_equalizer_0, '0', blocks_vector_to_stream_0, '0']
 - [mimo_ofdm_jrc_mimo_ofdm_equalizer_0, '0', helper_stream_decoder_0, '0']
 - [mimo_ofdm_jrc_mimo_ofdm_equalizer_0, '0', mimo_ofdm_jrc_stream_decoder_0, '0']
 - [mimo_ofdm_jrc_mimo_precoder_0, '0', fft_vxx_0, '0']
-- [mimo_ofdm_jrc_mimo_precoder_0, '1', fft_vxx_0_2, '0']
-- [mimo_ofdm_jrc_mimo_precoder_0, '2', fft_vxx_0_2_0, '0']
-- [mimo_ofdm_jrc_mimo_precoder_0, '3', fft_vxx_0_2_0_0, '0']
 - [mimo_ofdm_jrc_moving_avg_0, '0', blocks_complex_to_mag_0, '0']
-- [mimo_ofdm_jrc_moving_avg_0, '0', helper_frame_detector_0, '2']
 - [mimo_ofdm_jrc_moving_avg_0, '0', mimo_ofdm_jrc_frame_detector_0, '1']
-- [mimo_ofdm_jrc_ndp_generator_0, out, mimo_ofdm_jrc_stream_encoder_1, pdu_in]
-- [mimo_ofdm_jrc_packet_switch_0, strobe, mimo_ofdm_jrc_ndp_generator_0, enable]
-- [mimo_ofdm_jrc_packet_switch_0, strobe, mimo_ofdm_jrc_socket_pdu_jrc_0, enable]
-- [mimo_ofdm_jrc_socket_pdu_jrc_0, pdus, mimo_ofdm_jrc_stream_encoder_1, pdu_in]
 - [mimo_ofdm_jrc_stream_decoder_0, '0', blocks_null_sink_0_0, '0']
-- [mimo_ofdm_jrc_stream_decoder_0, stats, helper_gui_time_plot_0, stats]
-- [mimo_ofdm_jrc_stream_decoder_0, stats, helper_gui_time_plot_1, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, stats, mimo_ofdm_jrc_gui_time_plot_0, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, stats, mimo_ofdm_jrc_gui_time_plot_1, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, stats, mimo_ofdm_jrc_gui_time_plot_1_0, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, sym, blocks_socket_pdu_1, pdus]
-- [mimo_ofdm_jrc_stream_encoder_0, '0', helper_mimo_precoder_0, '0']
-- [mimo_ofdm_jrc_stream_encoder_1, '0', helper_mimo_precoder_0, '0']
 - [mimo_ofdm_jrc_stream_encoder_1, '0', mimo_ofdm_jrc_mimo_precoder_0, '0']
 - [mimo_ofdm_jrc_zero_pad_0, '0', blocks_multiply_const_vxx_1, '0']
-- [mimo_ofdm_jrc_zero_pad_0_0, '0', blocks_multiply_const_vxx_1_0, '0']
-- [mimo_ofdm_jrc_zero_pad_0_0_0, '0', blocks_multiply_const_vxx_1_0_0, '0']
-- [mimo_ofdm_jrc_zero_pad_0_0_0_0, '0', blocks_multiply_const_vxx_1_0_0_0, '0']
 - [virtual_source_0, '0', blocks_complex_to_mag_squared_0_0, '0']
 - [virtual_source_0, '0', blocks_delay_0_0, '0']
 - [virtual_source_0, '0', blocks_multiply_xx_0, '1']
 - [virtual_source_0_0, '0', blocks_delay_0, '0']
-- [virtual_source_0_0, '0', helper_frame_sync_0, '1']
 - [virtual_source_0_0, '0', mimo_ofdm_jrc_frame_sync_0, '0']
 - [virtual_source_0_1_0_0, '0', blocks_multiply_const_vxx_0, '0']
-- [virtual_source_0_1_0_0_0, '0', blocks_multiply_const_vxx_0_0, '0']
-- [virtual_source_0_1_0_0_0_0, '0', blocks_multiply_const_vxx_0_0_0, '0']
-- [virtual_source_0_1_0_0_0_0_0, '0', blocks_multiply_const_vxx_0_0_0_0, '0']
 
 metadata:
   file_format: 1

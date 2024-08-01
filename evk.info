@@ -1487,3 +1487,7 @@
 2024-05-10 15:43:39,644 INFO : # Host instance created successfully.
 2024-05-10 15:43:39,644 ERROR: #   [1m[31mNo file found matching rx_setup_25Ghz.py
 2024-05-29 18:25:53,602 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-07-12 15:46:39,301 INFO : #   Connecting to motherboard with serial number 0 ...
+2024-07-12 15:46:39,312 ERROR: # [1m[31mFailed to create host instance: /home/haocheng/O-JRC/examples/Analog_Beamforming_Control/Sivers_EVK02004/api-Rapinoe_API_0.1.49/lib/linux/x86_64/libmbdrv.so: cannot open shared object file: No such file or directory
+2024-07-12 15:46:39,312 ERROR: # [1m[31mInitialization failed: /home/haocheng/O-JRC/examples/Analog_Beamforming_Control/Sivers_EVK02004/api-Rapinoe_API_0.1.49/lib/linux/x86_64/libmbdrv.so: cannot open shared object file: No such file or directory
+2024-07-12 15:46:39,312 INFO : # Process will terminate due to failed initialization.

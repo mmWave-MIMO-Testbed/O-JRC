@@ -41,6 +41,7 @@ import cmath
 import mimo_ofdm_jrc
 import numpy as np
 import ofdm_config_siso  # embedded python module
+import ofdm_config_siso_16sub  # embedded python module
 import os
 import random
 import string
@@ -83,8 +84,10 @@ class V0_SISO_OFDM_TX(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
+        self.rf_freq = rf_freq = 24e9
         self.parrent_path = parrent_path = "/home/host-pc/O-JRC/examples"
         self.fft_len = fft_len = ofdm_config_siso.N_sc
+        self.wavelength = wavelength = 3e8/rf_freq
         self.usrp_freq = usrp_freq = 4e8
         self.tx_multiplier = tx_multiplier = 0.42
         self.tx_gain = tx_gain = 20
@@ -196,6 +199,13 @@ class V0_SISO_OFDM_TX(gr.top_block, Qt.QWidget):
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
+    def get_rf_freq(self):
+        return self.rf_freq
+
+    def set_rf_freq(self, rf_freq):
+        self.rf_freq = rf_freq
+        self.set_wavelength(3e8/self.rf_freq)
+
     def get_parrent_path(self):
         return self.parrent_path
 
@@ -211,6 +221,12 @@ class V0_SISO_OFDM_TX(gr.top_block, Qt.QWidget):
     def set_fft_len(self, fft_len):
         self.fft_len = fft_len
         self.set_cp_len(int(self.fft_len/4))
+
+    def get_wavelength(self):
+        return self.wavelength
+
+    def set_wavelength(self, wavelength):
+        self.wavelength = wavelength
 
     def get_usrp_freq(self):
         return self.usrp_freq

@@ -982,7 +982,54 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [512, 92.0]
+    coordinate: [1216, 312.0]
+    rotation: 0
+    state: true
+- name: ofdm_config_siso_16sub
+  id: epy_module
+  parameters:
+    alias: ''
+    comment: ''
+    source_code: "import numpy as np\n#import matplotlib.pyplot as plt\n\nN_tx = 1\n\
+      N_ltf = N_tx\nN_sc = 16  # \u5B50\u8F7D\u6CE2\u6570\u91CF\n\n# \u91CD\u65B0\u5B9A\
+      \u4E49\u6570\u636E\u5B50\u8F7D\u6CE2\u548C\u5BFC\u9891\u5B50\u8F7D\u6CE2\u7684\
+      \u7D22\u5F15\ndata_subcarriers = list(range(-7, -4)) + list(range(-3, 0)) +\
+      \ list(range(1, 4)) + list(range(5, 8))\npilot_subcarriers = [-4, 0, 4]  # \u4E09\
+      \u4E2A\u5BFC\u9891\u5B50\u8F7D\u6CE2\n\nN_data = len(data_subcarriers)\nN_pilot\
+      \ = len(pilot_subcarriers)\n\n# \u91CD\u65B0\u5B9A\u4E49\u5BFC\u9891\u7B26\u53F7\
+      \u5E8F\u5217\npilot_symbols = [(1, 1, 1), (1, 1, 1), (1, 1, 1), (1, 1, 1), \n\
+      \                 (-1, -1, -1), (-1, -1, -1), (-1, -1, -1), (-1, -1, -1), \n\
+      \                 (1, 1, 1), (1, 1, 1), (1, 1, 1), (1, 1, 1), \n           \
+      \      (-1, -1, -1), (-1, -1, -1), (-1, -1, -1), (-1, -1, -1)]\n\n# \u91CD\u65B0\
+      \u5B9A\u4E49LTF\u548CSTF\u5E8F\u5217\u4EE5\u5339\u914D16\u4E2A\u5B50\u8F7D\u6CE2\
+      \nl_stf_16_def = np.array([0.0, 0.0, (1.4719601443879746+1.4719601443879746j),\
+      \ 0.0, 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, (1.4719601443879746+1.4719601443879746j),\
+      \ 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, (1.4719601443879746+1.4719601443879746j),\
+      \ 0.0, (-1.4719601443879746-1.4719601443879746j), 0.0, (1.4719601443879746+1.4719601443879746j)])\n\
+      l_ltf_16_def = np.array([0, 0, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 0])\n\
+      \nl_ltf_16_custom = np.array([0, 1, 1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1,\
+      \ 1, 0])\n\nassert(len(l_stf_16_def) == N_sc)\nassert(len(l_ltf_16_def) == N_sc)\n\
+      assert(len(l_ltf_16_custom) == N_sc)\n\nsymbol_rotation = np.array([1, -1j,\
+      \ -1, 1j] * 4)\nl_ltf_16_rot = symbol_rotation*l_ltf_16_custom\nl_stf_ltf_16\
+      \ = np.vstack((l_stf_16_def, l_stf_16_def, l_ltf_16_rot, l_ltf_16_custom))\n\
+      \nltf_16 = np.array([0, 1, 1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 0], dtype=np.complex64)\n\
+      P_ltf = np.array([[1, -1, 1, 1], [1, 1, -1, 1], [1, 1, 1, -1], [-1, 1, 1, 1]],\
+      \ dtype=np.complex64)\n\nltf_tx = []\nfor i_tx in range(N_tx):\n    ltf_tx.append(tuple(map(tuple,\
+      \ np.outer(P_ltf[i_tx, :N_ltf], ltf_16))))\n\nltf_mapped_16 = []\nfor i_tx in\
+      \ range(N_tx):\n    ltf_expand_time = np.outer(P_ltf[i_tx, :N_ltf], ltf_16)\n\
+      \    ltf_mapped_16.append(ltf_expand_time.flatten().tolist())\n\nltf_mapped_16\
+      \ = np.array(ltf_mapped_16)\n\nltf_mapped_sc__ss_sym = []\nfor i_sc in range(N_sc):\n\
+      \    ltf_ss_sym = P_ltf[:N_tx, :N_ltf]*ltf_16[i_sc]\n    ltf_mapped_sc__ss_sym.append(ltf_ss_sym.flatten().tolist())\n\
+      \nltf_mapped_sc__ss_sym = np.array(ltf_mapped_sc__ss_sym)\n\n# %%\nl_ltf = l_stf_ltf_16[3]\n\
+      l_ltf_time = N_sc*np.fft.ifft(np.fft.fftshift(l_ltf)) / np.sqrt(np.count_nonzero(l_ltf))\n\
+      l_ltf_fir = np.conj(l_ltf_time)\nl_ltf_fir = l_ltf_fir[::-1]\n\n#plt.figure()\n\
+      #plt.plot(np.abs(l_ltf_time))\n\n#plt.figure()\n#plt.plot(np.abs(np.convolve(l_ltf_fir,\
+      \ l_ltf_time, 'full')))\n\n"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1200, 248.0]
     rotation: 0
     state: true
 - name: qtgui_const_sink_x_0

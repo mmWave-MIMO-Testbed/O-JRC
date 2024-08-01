@@ -42,6 +42,7 @@ import cmath
 import mimo_ofdm_jrc
 import numpy as np
 import ofdm_config_siso  # embedded python module
+import ofdm_config_siso_16sub  # embedded python module
 import os
 import random
 import string

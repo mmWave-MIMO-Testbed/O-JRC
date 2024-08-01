@@ -4,7 +4,7 @@ from datetime import datetime
 import beamSweep
 import os
 import numpy as np
-import hunter 
+#import hunter 
 #hunter.trace(module='posixpath', action=hunter.CallPrinter)
 
 def write_sivers_log(sivers_angle,sivers_log_path):
