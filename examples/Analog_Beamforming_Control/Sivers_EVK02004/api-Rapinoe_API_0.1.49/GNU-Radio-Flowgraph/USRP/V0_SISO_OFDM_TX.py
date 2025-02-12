@@ -84,14 +84,14 @@ class V0_SISO_OFDM_TX(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.rf_freq = rf_freq = 24e9
-        self.parrent_path = parrent_path = "/home/host-pc/O-JRC/examples"
+        self.rf_freq = rf_freq = 60e9
+        self.parrent_path = parrent_path = "/home/haocheng/O-JRC/examples"
         self.fft_len = fft_len = ofdm_config_siso.N_sc
         self.wavelength = wavelength = 3e8/rf_freq
-        self.usrp_freq = usrp_freq = 4e8
+        self.usrp_freq = usrp_freq = 4.8e8
         self.tx_multiplier = tx_multiplier = 0.42
-        self.tx_gain = tx_gain = 20
-        self.samp_rate = samp_rate = int(25e6)
+        self.tx_gain = tx_gain = 76
+        self.samp_rate = samp_rate = int(35e6)
         self.radar_log_file = radar_log_file = parrent_path+"/data/radar_log.csv"
         self.packet_data_file = packet_data_file = parrent_path+"/data/packet_data.csv"
         self.mcs = mcs = 3
@@ -111,7 +111,7 @@ class V0_SISO_OFDM_TX(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(6, 8):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._tx_gain_range = Range(0, 60, 1, 20, 200)
+        self._tx_gain_range = Range(0, 80, 1, 76, 200)
         self._tx_gain_win = RangeWidget(self._tx_gain_range, self.set_tx_gain, 'TX Gain', "counter_slider", float)
         self.top_grid_layout.addWidget(self._tx_gain_win, 0, 0, 1, 3)
         for r in range(0, 1):
@@ -148,7 +148,7 @@ class V0_SISO_OFDM_TX(gr.top_block, Qt.QWidget):
         for c in range(0, 8):
             self.top_grid_layout.setColumnStretch(c, 1)
         self.uhd_usrp_sink_1 = uhd.usrp_sink(
-            ",".join(("addr0=192.168.120.2, master_clock_rate=250e6", '')),
+            ",".join(("serial=32A036E", '')),
             uhd.stream_args(
                 cpu_format="fc32",
                 args='',
@@ -156,7 +156,6 @@ class V0_SISO_OFDM_TX(gr.top_block, Qt.QWidget):
             ),
             "",
         )
-        self.uhd_usrp_sink_1.set_subdev_spec("A:0", 0)
         self.uhd_usrp_sink_1.set_center_freq(usrp_freq, 0)
         self.uhd_usrp_sink_1.set_gain(tx_gain, 0)
         self.uhd_usrp_sink_1.set_antenna("TX/RX", 0)
@@ -164,28 +163,23 @@ class V0_SISO_OFDM_TX(gr.top_block, Qt.QWidget):
         self.uhd_usrp_sink_1.set_samp_rate(samp_rate)
         # No synchronization enforced.
         self.uhd_usrp_sink_1.set_max_output_buffer(10000)
-        self.mimo_ofdm_jrc_zero_pad_0 = mimo_ofdm_jrc.zero_pad(False, 5, (fft_len+cp_len)*3)
+        self.mimo_ofdm_jrc_zero_pad_0 = mimo_ofdm_jrc.zero_pad(True, 5, (fft_len+cp_len)*3)
         self.mimo_ofdm_jrc_zero_pad_0.set_min_output_buffer(24000)
         self.mimo_ofdm_jrc_stream_encoder_0 = mimo_ofdm_jrc.stream_encoder(mcs, ofdm_config_siso.N_data, 0, False)
-        self.mimo_ofdm_jrc_socket_pdu_jrc_0 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 5000)
-        self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(50, packet_data_file)
-        self.mimo_ofdm_jrc_ndp_generator_0 = mimo_ofdm_jrc.ndp_generator()
         self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, ofdm_config_siso.data_subcarriers, ofdm_config_siso.pilot_subcarriers, ofdm_config_siso.pilot_symbols, ofdm_config_siso.l_stf_ltf_64, ofdm_config_siso.ltf_mapped_sc__ss_sym, chan_est_file, False, radar_log_file, False, False, False, "packet_len",  False)
         self.mimo_ofdm_jrc_mimo_precoder_0.set_processor_affinity([7])
         self.mimo_ofdm_jrc_mimo_precoder_0.set_min_output_buffer(1000)
         self.fft_vxx_0 = fft.fft_vcc(fft_len, False, tuple([1/64**.5] * 64), True, 1)
         self.fft_vxx_0.set_min_output_buffer(65536)
         self.digital_ofdm_cyclic_prefixer_0 = digital.ofdm_cyclic_prefixer(fft_len, fft_len + cp_len, 0, "packet_len")
+        self.blocks_socket_pdu_0 = blocks.socket_pdu('UDP_SERVER', '', '52001', 5000, False)
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_cc(tx_multiplier)
 
 
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.mimo_ofdm_jrc_ndp_generator_0, 'out'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
-        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_ndp_generator_0, 'enable'))
-        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'enable'))
-        self.msg_connect((self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
+        self.msg_connect((self.blocks_socket_pdu_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.mimo_ofdm_jrc_zero_pad_0, 0))
         self.connect((self.digital_ofdm_cyclic_prefixer_0, 0), (self.blocks_multiply_const_vxx_0, 0))
         self.connect((self.fft_vxx_0, 0), (self.digital_ofdm_cyclic_prefixer_0, 0))

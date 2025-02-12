@@ -33,6 +33,7 @@
 #include "mimo_ofdm_jrc/ndp_generator.h"
 #include "mimo_ofdm_jrc/packet_switch.h"
 #include "mimo_ofdm_jrc/gui_heatmap_plot_digital.h"
+#include "mimo_ofdm_jrc/MAC_header.h"
 %}
 
 %include "mimo_ofdm_jrc/fft_peak_detect.h"
@@ -87,3 +88,5 @@ GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, ndp_generator);
 GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, packet_switch);
 %include "mimo_ofdm_jrc/gui_heatmap_plot_digital.h"
 GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, gui_heatmap_plot_digital);
+%include "mimo_ofdm_jrc/MAC_header.h"
+GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, MAC_header);

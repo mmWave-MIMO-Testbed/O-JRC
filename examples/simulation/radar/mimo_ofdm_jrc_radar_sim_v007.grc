@@ -376,7 +376,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"/home/xin/O-JRC/examples"'
+    value: '"/home/haocheng/O-JRC/examples"'
   states:
     bus_sink: false
     bus_source: false
@@ -1884,10 +1884,12 @@ blocks:
     axis_y: np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor)
     comment: ''
     db_scale: 'False'
+    digital_control: 'True'
     dynamic_range_db: '15'
     interval: '100'
     label: Range-Angle Image
     len_key: '"packet_len"'
+    sivers_angle_log: '""'
     vlen: N_tx*N_rx*interp_factor_angle
     x_axis_ticks: '[-90, 90, 10]'
     xlabel: '"Angle"'
@@ -1999,6 +2001,7 @@ blocks:
     minoutbuf: '0'
     radar_chan_file: radar_chan_file
     record_len: '8'
+    stats_record: 'False'
   states:
     bus_sink: false
     bus_source: false
@@ -2092,6 +2095,7 @@ blocks:
     snr_threshold: '15'
     stats_path: radar_log_file
     stats_record: save_radar_log
+    stats_signal_strength_path: '""'
     vlen: N_tx*N_rx*interp_factor_angle
   states:
     bus_sink: false

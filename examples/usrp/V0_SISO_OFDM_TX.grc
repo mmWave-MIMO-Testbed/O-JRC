@@ -153,7 +153,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [456, 380.0]
+    coordinate: [544, 380.0]
     rotation: 0
     state: enabled
 - name: packet_data_file
@@ -203,7 +203,7 @@ blocks:
     bus_structure: null
     coordinate: [392, 20.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: samp_rate
   id: variable
   parameters:
@@ -281,7 +281,7 @@ blocks:
     bus_structure: null
     coordinate: [392, 108.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: blocks_multiply_const_vxx_0
   id: blocks_multiply_const_vxx
   parameters:
@@ -540,7 +540,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [432, 524.0]
+    coordinate: [544, 532.0]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_usrp_mimo_trx_0

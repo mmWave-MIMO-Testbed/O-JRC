@@ -1083,7 +1083,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [96, 340.0]
+    coordinate: [72, 404.0]
     rotation: 0
     state: enabled
 - name: blocks_socket_pdu_1
@@ -2141,7 +2141,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [304, 396.0]
+    coordinate: [336, 404.0]
     rotation: 0
     state: true
 - name: mimo_ofdm_jrc_zero_pad_0

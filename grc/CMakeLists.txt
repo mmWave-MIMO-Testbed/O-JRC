@@ -42,5 +42,6 @@ install(FILES
     mimo_ofdm_jrc_socket_pdu_jrc.block.yml
     mimo_ofdm_jrc_ndp_generator.block.yml
     mimo_ofdm_jrc_packet_switch.block.yml
-    mimo_ofdm_jrc_gui_heatmap_plot_digital.block.yml DESTINATION share/gnuradio/grc/blocks
+    mimo_ofdm_jrc_gui_heatmap_plot_digital.block.yml
+    mimo_ofdm_jrc_MAC_header.block.yml DESTINATION share/gnuradio/grc/blocks
 )

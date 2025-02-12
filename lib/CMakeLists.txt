@@ -72,7 +72,8 @@ list(APPEND mimo_ofdm_jrc_sources
     tcp_connection.cc
     ndp_generator_impl.cc
     packet_switch_impl.cc
-    gui_heatmap_plot_digital_impl.cc )
+    gui_heatmap_plot_digital_impl.cc
+    MAC_header_impl.cc )
 
 set(mimo_ofdm_jrc_sources "${mimo_ofdm_jrc_sources}" PARENT_SCOPE)
 if(NOT mimo_ofdm_jrc_sources)

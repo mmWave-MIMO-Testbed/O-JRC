@@ -83,9 +83,11 @@ class V0_SISO_OFDM_TX(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
+        self.usrp_freq = usrp_freq = 4e8
+        self.rf_freq = rf_freq = usrp_freq+24.6e9
         self.parrent_path = parrent_path = "/home/host-pc/O-JRC/examples"
         self.fft_len = fft_len = ofdm_config_siso.N_sc
-        self.usrp_freq = usrp_freq = 4e8
+        self.wavelength = wavelength = 3e8/rf_freq
         self.tx_multiplier = tx_multiplier = 0.42
         self.tx_gain = tx_gain = 20
         self.samp_rate = samp_rate = int(25e6)
@@ -196,6 +198,21 @@ class V0_SISO_OFDM_TX(gr.top_block, Qt.QWidget):
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
+    def get_usrp_freq(self):
+        return self.usrp_freq
+
+    def set_usrp_freq(self, usrp_freq):
+        self.usrp_freq = usrp_freq
+        self.set_rf_freq(self.usrp_freq+24.6e9)
+        self.uhd_usrp_sink_1.set_center_freq(self.usrp_freq, 0)
+
+    def get_rf_freq(self):
+        return self.rf_freq
+
+    def set_rf_freq(self, rf_freq):
+        self.rf_freq = rf_freq
+        self.set_wavelength(3e8/self.rf_freq)
+
     def get_parrent_path(self):
         return self.parrent_path
 
@@ -212,12 +229,11 @@ class V0_SISO_OFDM_TX(gr.top_block, Qt.QWidget):
         self.fft_len = fft_len
         self.set_cp_len(int(self.fft_len/4))
 
-    def get_usrp_freq(self):
-        return self.usrp_freq
+    def get_wavelength(self):
+        return self.wavelength
 
-    def set_usrp_freq(self, usrp_freq):
-        self.usrp_freq = usrp_freq
-        self.uhd_usrp_sink_1.set_center_freq(self.usrp_freq, 0)
+    def set_wavelength(self, wavelength):
+        self.wavelength = wavelength
 
     def get_tx_multiplier(self):
         return self.tx_multiplier
