@@ -67,11 +67,11 @@ while total_time-start_time <= end_time:
      # ES algorithm
     current_time = datetime.now()
     test_packet.timestamp =  current_time.strftime("%H:%M:%S") + ':' + current_time.strftime("%f")[:3]
-    test_packet.packet_type = 1   # 1 for NDP 2 for data
-    test_packet.packet_size = 300
+    test_packet.packet_type = 2   # 1 for NDP 2 for data
+    test_packet.packet_size = 100
     now_time = time.time()
     #last_data_timestamp = datetime.now() #Self-test
-    test_comm.CRC = 1 #Self-test
+    #test_comm.CRC = 1 #Self-test
     #test_comm = data_interface.load_comm_data(comm_log_path)
     test_radar = data_interface.load_radar_data(radar_log_path) # update radar info
     time_diff = now_time - previous_time

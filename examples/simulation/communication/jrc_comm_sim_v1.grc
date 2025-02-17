@@ -325,7 +325,11 @@ blocks:
   id: variable
   parameters:
     comment: ''
+<<<<<<< Updated upstream
     value: '"/home/xin/O-JRC/examples"'
+=======
+    value: '"/home/hostpc-usrp/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/examples"'
+>>>>>>> Stashed changes
   states:
     bus_sink: false
     bus_source: false
@@ -2060,7 +2064,11 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     packet_info_file: packet_data_file
+<<<<<<< Updated upstream
     period_ms: '10'
+=======
+    period_ms: '100'
+>>>>>>> Stashed changes
   states:
     bus_sink: false
     bus_source: false

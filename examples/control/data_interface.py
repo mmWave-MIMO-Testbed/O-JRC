@@ -1,4 +1,7 @@
 import csv
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
 
 # define two structure 
 class RadarData:
@@ -26,6 +29,35 @@ class PacketData:
         self.packet_type =   int(packet_type)
         self.packet_size =   int(packet_size)
 
+
+class CSIClassifier(nn.Module):
+    def __init__(self):
+        super(CSIClassifier, self).__init__()
+        # 输入通道为2，即相位和幅度
+        self.conv1 = nn.Conv2d(2, 16, (3, 5), padding=(1, 2))  # 考虑到高度较小，使用更大的宽度卷积核
+        self.pool1 = nn.MaxPool2d((2, 1))  # 针对高度进行池化，不改变宽度
+        self.conv2 = nn.Conv2d(16, 32, (3, 5), padding=(1, 2))
+        self.pool2 = nn.MaxPool2d((2, 1))
+        self.conv3 = nn.Conv2d(32, 64, (3, 5), padding=(1, 2))
+        self.pool3 = nn.MaxPool2d((2, 1))
+        
+        # 计算池化后的尺寸，假设每次池化后高度减半
+        # 假设经过三次池化，高度变为1，宽度保持64
+        self.to_linear = 64 * 64  # 更新全连接层的输入尺寸
+        self.fc1 = nn.Linear(self.to_linear, 128)
+        self.fc2 = nn.Linear(128, 64)  # 输出层：64种标签
+
+    def forward(self, x):
+        x = F.relu(self.conv1(x))
+        x = self.pool1(x)
+        x = F.relu(self.conv2(x))
+        x = self.pool2(x)
+        x = F.relu(self.conv3(x))
+        x = self.pool3(x)
+        x = x.view(-1, self.to_linear)  # 展平
+        x = F.relu(self.fc1(x))
+        x = self.fc2(x)
+        return x
 
 def load_radar_data(radar_log_path):
     with open(radar_log_path,'r') as radar_file:

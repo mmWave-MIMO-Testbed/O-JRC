@@ -222,7 +222,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: usrp_freq+20e9
+    value: usrp_freq+19e9
   states:
     bus_sink: false
     bus_source: false
@@ -309,7 +309,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: 4e9
+    value: 5e9
   states:
     bus_sink: false
     bus_source: false
