@@ -34,6 +34,10 @@ import signal
 from argparse import ArgumentParser
 from gnuradio.eng_arg import eng_float, intx
 from gnuradio import eng_notation
+from gnuradio import uhd
+import time
+from gnuradio.qtgui import Range, RangeWidget
+import cmath
 
 from gnuradio import qtgui
 
@@ -73,14 +77,62 @@ class FMCW_Sim(gr.top_block, Qt.QWidget):
         ##################################################
         # Variables
         ##################################################
-        self.samp_rate = samp_rate = 250e6
+        self.tx_gain = tx_gain = 40
+        self.samp_rate = samp_rate = int(250e6)
+        self.rx_gain = rx_gain = 40
+        self.delay_samp = delay_samp = 1000
         self.bandwidth = bandwidth = 125e6
-        self.USRP_frequency = USRP_frequency = 5e9
+        self.amplitude = amplitude = 1
+        self.USRP_frequency = USRP_frequency = 4e9
+        self.Sweeptime = Sweeptime = 1e-6
         self.SweepTime = SweepTime = 1e-5
 
         ##################################################
         # Blocks
         ##################################################
+        self._delay_samp_range = Range(0, 10000, 1, 1000, 200)
+        self._delay_samp_win = RangeWidget(self._delay_samp_range, self.set_delay_samp, 'Delay Samples', "counter_slider", int)
+        self.top_layout.addWidget(self._delay_samp_win)
+        self._Sweeptime_range = Range(1e-6, 1e-2, 1e-6, 1e-6, 200)
+        self._Sweeptime_win = RangeWidget(self._Sweeptime_range, self.set_Sweeptime, 'Sweep Time (s)', "counter_slider", float)
+        self.top_layout.addWidget(self._Sweeptime_win)
+        self.uhd_usrp_source_0_0 = uhd.usrp_source(
+            ",".join(("addr=192.168.120.2,master_clock_rate=250e6", '')),
+            uhd.stream_args(
+                cpu_format="fc32",
+                args='',
+                channels=list(range(0,1)),
+            ),
+        )
+        self.uhd_usrp_source_0_0.set_subdev_spec("A:0", 0)
+        self.uhd_usrp_source_0_0.set_time_source('external', 0)
+        self.uhd_usrp_source_0_0.set_clock_source('external', 0)
+        self.uhd_usrp_source_0_0.set_center_freq(USRP_frequency, 0)
+        self.uhd_usrp_source_0_0.set_gain(rx_gain, 0)
+        self.uhd_usrp_source_0_0.set_antenna('RX2', 0)
+        self.uhd_usrp_source_0_0.set_bandwidth(bandwidth, 0)
+        self.uhd_usrp_source_0_0.set_samp_rate(samp_rate)
+        self.uhd_usrp_source_0_0.set_time_now(uhd.time_spec(time.time()), uhd.ALL_MBOARDS)
+        self.uhd_usrp_source_0_0.set_min_output_buffer(24000)
+        self.uhd_usrp_sink_1 = uhd.usrp_sink(
+            ",".join(("addr0=192.168.120.2, master_clock_rate=250e6", '')),
+            uhd.stream_args(
+                cpu_format="fc32",
+                args='',
+                channels=list(range(0,1)),
+            ),
+            "",
+        )
+        self.uhd_usrp_sink_1.set_subdev_spec("A:0", 0)
+        self.uhd_usrp_sink_1.set_time_source('external', 0)
+        self.uhd_usrp_sink_1.set_clock_source('external', 0)
+        self.uhd_usrp_sink_1.set_center_freq(USRP_frequency, 0)
+        self.uhd_usrp_sink_1.set_gain(tx_gain, 0)
+        self.uhd_usrp_sink_1.set_antenna("TX/RX", 0)
+        self.uhd_usrp_sink_1.set_bandwidth(bandwidth, 0)
+        self.uhd_usrp_sink_1.set_samp_rate(samp_rate)
+        # No synchronization enforced.
+        self.uhd_usrp_sink_1.set_min_output_buffer(24000)
         self.qtgui_time_sink_x_1 = qtgui.time_sink_c(
             1024, #size
             samp_rate, #samp_rate
@@ -94,7 +146,7 @@ class FMCW_Sim(gr.top_block, Qt.QWidget):
 
         self.qtgui_time_sink_x_1.enable_tags(True)
         self.qtgui_time_sink_x_1.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
-        self.qtgui_time_sink_x_1.enable_autoscale(True)
+        self.qtgui_time_sink_x_1.enable_autoscale(False)
         self.qtgui_time_sink_x_1.enable_grid(False)
         self.qtgui_time_sink_x_1.enable_axis_labels(True)
         self.qtgui_time_sink_x_1.enable_control_panel(False)
@@ -131,10 +183,60 @@ class FMCW_Sim(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_1_win = sip.wrapinstance(self.qtgui_time_sink_x_1.pyqwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_time_sink_x_1_win)
+        self.qtgui_time_sink_x_0_0 = qtgui.time_sink_c(
+            1024, #size
+            samp_rate, #samp_rate
+            "RX Signal", #name
+            1 #number of inputs
+        )
+        self.qtgui_time_sink_x_0_0.set_update_time(0.10)
+        self.qtgui_time_sink_x_0_0.set_y_axis(-1, 1)
+
+        self.qtgui_time_sink_x_0_0.set_y_label('Amplitude', "")
+
+        self.qtgui_time_sink_x_0_0.enable_tags(True)
+        self.qtgui_time_sink_x_0_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, 0, "")
+        self.qtgui_time_sink_x_0_0.enable_autoscale(True)
+        self.qtgui_time_sink_x_0_0.enable_grid(False)
+        self.qtgui_time_sink_x_0_0.enable_axis_labels(True)
+        self.qtgui_time_sink_x_0_0.enable_control_panel(False)
+        self.qtgui_time_sink_x_0_0.enable_stem_plot(False)
+
+
+        labels = ['Signal 1', 'Signal 2', 'Signal 3', 'Signal 4', 'Signal 5',
+            'Signal 6', 'Signal 7', 'Signal 8', 'Signal 9', 'Signal 10']
+        widths = [1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1]
+        colors = ['blue', 'red', 'green', 'black', 'cyan',
+            'magenta', 'yellow', 'dark red', 'dark green', 'dark blue']
+        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
+            1.0, 1.0, 1.0, 1.0, 1.0]
+        styles = [1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1]
+        markers = [-1, -1, -1, -1, -1,
+            -1, -1, -1, -1, -1]
+
+
+        for i in range(2):
+            if len(labels[i]) == 0:
+                if (i % 2 == 0):
+                    self.qtgui_time_sink_x_0_0.set_line_label(i, "Re{{Data {0}}}".format(i/2))
+                else:
+                    self.qtgui_time_sink_x_0_0.set_line_label(i, "Im{{Data {0}}}".format(i/2))
+            else:
+                self.qtgui_time_sink_x_0_0.set_line_label(i, labels[i])
+            self.qtgui_time_sink_x_0_0.set_line_width(i, widths[i])
+            self.qtgui_time_sink_x_0_0.set_line_color(i, colors[i])
+            self.qtgui_time_sink_x_0_0.set_line_style(i, styles[i])
+            self.qtgui_time_sink_x_0_0.set_line_marker(i, markers[i])
+            self.qtgui_time_sink_x_0_0.set_line_alpha(i, alphas[i])
+
+        self._qtgui_time_sink_x_0_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0.pyqwidget(), Qt.QWidget)
+        self.top_layout.addWidget(self._qtgui_time_sink_x_0_0_win)
         self.qtgui_time_sink_x_0 = qtgui.time_sink_c(
             102400, #size
             samp_rate, #samp_rate
-            "RX Signal", #name
+            "RX2 Signal", #name
             1 #number of inputs
         )
         self.qtgui_time_sink_x_0.set_update_time(0.10)
@@ -222,21 +324,21 @@ class FMCW_Sim(gr.top_block, Qt.QWidget):
         self._qtgui_freq_sink_x_0_win = sip.wrapinstance(self.qtgui_freq_sink_x_0.pyqwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_freq_sink_x_0_win)
         self.low_pass_filter_0 = filter.fir_filter_ccf(
-            1,
+            2,
             firdes.low_pass(
-                1,
+                10,
                 samp_rate,
-                100000,
-                20000,
+                100e3,
+                10e3,
                 firdes.WIN_HAMMING,
                 6))
-        self.blocks_vco_c_0 = blocks.vco_c(samp_rate, bandwidth/1, 1)
-        self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate*0.1,True)
-        self.blocks_skiphead_0 = blocks.skiphead(gr.sizeof_gr_complex*1, 10000000)
+        self.blocks_vco_c_0 = blocks.vco_c(samp_rate, bandwidth*cmath.pi, amplitude*1.5)
+        self.blocks_vco_c_0.set_min_output_buffer(24000)
+        self.blocks_skiphead_0 = blocks.skiphead(gr.sizeof_gr_complex*1, int(2.5e6))
         self.blocks_multiply_conjugate_cc_0 = blocks.multiply_conjugate_cc(1)
-        self.blocks_head_0 = blocks.head(gr.sizeof_gr_complex*1, 25000000)
-        self.blocks_delay_0 = blocks.delay(gr.sizeof_gr_complex*1, 1700)
-        self.analog_sig_source_x_0 = analog.sig_source_f(samp_rate, analog.GR_SAW_WAVE, 1/SweepTime, 1, 0, 0)
+        self.blocks_head_0 = blocks.head(gr.sizeof_gr_complex*1, int(25e6))
+        self.blocks_delay_0 = blocks.delay(gr.sizeof_gr_complex*1, delay_samp)
+        self.analog_sig_source_x_0 = analog.sig_source_f(samp_rate, analog.GR_SAW_WAVE, 1/Sweeptime, amplitude, -0.5, 0)
 
 
         ##################################################
@@ -245,14 +347,15 @@ class FMCW_Sim(gr.top_block, Qt.QWidget):
         self.connect((self.analog_sig_source_x_0, 0), (self.blocks_vco_c_0, 0))
         self.connect((self.blocks_delay_0, 0), (self.blocks_multiply_conjugate_cc_0, 1))
         self.connect((self.blocks_head_0, 0), (self.low_pass_filter_0, 0))
-        self.connect((self.blocks_multiply_conjugate_cc_0, 0), (self.blocks_throttle_0, 0))
+        self.connect((self.blocks_multiply_conjugate_cc_0, 0), (self.blocks_skiphead_0, 0))
         self.connect((self.blocks_skiphead_0, 0), (self.blocks_head_0, 0))
-        self.connect((self.blocks_throttle_0, 0), (self.blocks_skiphead_0, 0))
-        self.connect((self.blocks_vco_c_0, 0), (self.blocks_delay_0, 0))
         self.connect((self.blocks_vco_c_0, 0), (self.blocks_multiply_conjugate_cc_0, 0))
         self.connect((self.blocks_vco_c_0, 0), (self.qtgui_time_sink_x_1, 0))
+        self.connect((self.blocks_vco_c_0, 0), (self.uhd_usrp_sink_1, 0))
         self.connect((self.low_pass_filter_0, 0), (self.qtgui_freq_sink_x_0, 0))
         self.connect((self.low_pass_filter_0, 0), (self.qtgui_time_sink_x_0, 0))
+        self.connect((self.uhd_usrp_source_0_0, 0), (self.blocks_delay_0, 0))
+        self.connect((self.uhd_usrp_source_0_0, 0), (self.qtgui_time_sink_x_0_0, 0))
 
 
     def closeEvent(self, event):
@@ -260,16 +363,39 @@ class FMCW_Sim(gr.top_block, Qt.QWidget):
         self.settings.setValue("geometry", self.saveGeometry())
         event.accept()
 
+    def get_tx_gain(self):
+        return self.tx_gain
+
+    def set_tx_gain(self, tx_gain):
+        self.tx_gain = tx_gain
+        self.uhd_usrp_sink_1.set_gain(self.tx_gain, 0)
+
     def get_samp_rate(self):
         return self.samp_rate
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
         self.analog_sig_source_x_0.set_sampling_freq(self.samp_rate)
-        self.blocks_throttle_0.set_sample_rate(self.samp_rate*0.1)
-        self.low_pass_filter_0.set_taps(firdes.low_pass(1, self.samp_rate, 100000, 20000, firdes.WIN_HAMMING, 6))
+        self.low_pass_filter_0.set_taps(firdes.low_pass(10, self.samp_rate, 100e3, 10e3, firdes.WIN_HAMMING, 6))
         self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
+        self.qtgui_time_sink_x_0_0.set_samp_rate(self.samp_rate)
         self.qtgui_time_sink_x_1.set_samp_rate(self.samp_rate)
+        self.uhd_usrp_sink_1.set_samp_rate(self.samp_rate)
+        self.uhd_usrp_source_0_0.set_samp_rate(self.samp_rate)
+
+    def get_rx_gain(self):
+        return self.rx_gain
+
+    def set_rx_gain(self, rx_gain):
+        self.rx_gain = rx_gain
+        self.uhd_usrp_source_0_0.set_gain(self.rx_gain, 0)
+
+    def get_delay_samp(self):
+        return self.delay_samp
+
+    def set_delay_samp(self, delay_samp):
+        self.delay_samp = delay_samp
+        self.blocks_delay_0.set_dly(self.delay_samp)
 
     def get_bandwidth(self):
         return self.bandwidth
@@ -277,19 +403,36 @@ class FMCW_Sim(gr.top_block, Qt.QWidget):
     def set_bandwidth(self, bandwidth):
         self.bandwidth = bandwidth
         self.qtgui_freq_sink_x_0.set_frequency_range(0, self.bandwidth)
+        self.uhd_usrp_sink_1.set_bandwidth(self.bandwidth, 0)
+        self.uhd_usrp_source_0_0.set_bandwidth(self.bandwidth, 0)
+
+    def get_amplitude(self):
+        return self.amplitude
+
+    def set_amplitude(self, amplitude):
+        self.amplitude = amplitude
+        self.analog_sig_source_x_0.set_amplitude(self.amplitude)
 
     def get_USRP_frequency(self):
         return self.USRP_frequency
 
     def set_USRP_frequency(self, USRP_frequency):
         self.USRP_frequency = USRP_frequency
+        self.uhd_usrp_sink_1.set_center_freq(self.USRP_frequency, 0)
+        self.uhd_usrp_source_0_0.set_center_freq(self.USRP_frequency, 0)
+
+    def get_Sweeptime(self):
+        return self.Sweeptime
+
+    def set_Sweeptime(self, Sweeptime):
+        self.Sweeptime = Sweeptime
+        self.analog_sig_source_x_0.set_frequency(1/self.Sweeptime)
 
     def get_SweepTime(self):
         return self.SweepTime
 
     def set_SweepTime(self, SweepTime):
         self.SweepTime = SweepTime
-        self.analog_sig_source_x_0.set_frequency(1/self.SweepTime)
 
 
 
