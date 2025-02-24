@@ -62,9 +62,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1040, 60.0]
+    coordinate: [1040, 44.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: USRP_frequency
   id: variable
   parameters:
@@ -113,20 +113,20 @@ blocks:
     start: '0'
     step: '1'
     stop: '10000'
-    value: '17'
+    value: '0'
     widget: counter_slider
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [320, 468.0]
+    coordinate: [320, 580.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: rx_gain
   id: variable
   parameters:
     comment: ''
-    value: '40'
+    value: '50'
   states:
     bus_sink: false
     bus_source: false
@@ -138,7 +138,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: int(250e6)
+    value: int(125e6)
   states:
     bus_sink: false
     bus_source: false
@@ -150,7 +150,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '40'
+    value: '50'
   states:
     bus_sink: false
     bus_source: false
@@ -179,7 +179,7 @@ blocks:
     bus_structure: null
     coordinate: [128, 220.0]
     rotation: 0
-    state: true
+    state: disabled
 - name: blocks_delay_0
   id: blocks_delay
   parameters:
@@ -188,7 +188,7 @@ blocks:
     comment: ''
     delay: delay_samp
     maxoutbuf: '0'
-    minoutbuf: '0'
+    minoutbuf: '24000'
     num_ports: '1'
     type: complex
     vlen: '1'
@@ -198,6 +198,28 @@ blocks:
     bus_structure: null
     coordinate: [752, 508.0]
     rotation: 0
+    state: disabled
+- name: blocks_file_source_0
+  id: blocks_file_source
+  parameters:
+    affinity: ''
+    alias: ''
+    begin_tag: pmt.PMT_NIL
+    comment: ''
+    file: /home/host-pc/O-JRC/examples/simulation/radar/fmcw_chirp.dat
+    length: '0'
+    maxoutbuf: '0'
+    minoutbuf: '24000'
+    offset: '0'
+    repeat: 'True'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [144, 284.0]
+    rotation: 0
     state: enabled
 - name: blocks_head_0
   id: blocks_head
@@ -206,7 +228,7 @@ blocks:
     alias: ''
     comment: N_head = T_capture * Fs
     maxoutbuf: '0'
-    minoutbuf: '0'
+    minoutbuf: '24000'
     num_items: int(25e6)
     type: complex
     vlen: '1'
@@ -216,7 +238,7 @@ blocks:
     bus_structure: null
     coordinate: [1080, 336.0]
     rotation: 180
-    state: enabled
+    state: disabled
 - name: blocks_multiply_conjugate_cc_0
   id: blocks_multiply_conjugate_cc
   parameters:
@@ -233,6 +255,23 @@ blocks:
     coordinate: [848, 216.0]
     rotation: 0
     state: enabled
+- name: blocks_null_sink_0
+  id: blocks_null_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    bus_structure_sink: '[[0,],]'
+    comment: ''
+    num_inputs: '1'
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1360, 320.0]
+    rotation: 0
+    state: true
 - name: blocks_skiphead_0
   id: blocks_skiphead
   parameters:
@@ -240,7 +279,7 @@ blocks:
     alias: ''
     comment: N_skip = T_stable * Fs
     maxoutbuf: '0'
-    minoutbuf: '0'
+    minoutbuf: '24000'
     num_items: int(2.5e6)
     type: complex
     vlen: '1'
@@ -250,7 +289,7 @@ blocks:
     bus_structure: null
     coordinate: [1080, 228.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: blocks_vco_c_0
   id: blocks_vco_c
   parameters:
@@ -272,7 +311,7 @@ blocks:
     bus_structure: null
     coordinate: [368, 204.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: import_0_0
   id: import
   parameters:
@@ -291,14 +330,14 @@ blocks:
   parameters:
     affinity: ''
     alias: ''
-    beta: '6.26'
+    beta: '6'
     comment: cutoff frequency = 2BR_max / c T_sweep
-    cutoff_freq: bandwidth
+    cutoff_freq: samp_rate/2
     decim: '1'
-    gain: '1'
+    gain: '10'
     interp: '1'
     maxoutbuf: '0'
-    minoutbuf: '0'
+    minoutbuf: '24000'
     samp_rate: samp_rate
     type: fir_filter_ccf
     width: 30e3
@@ -309,7 +348,7 @@ blocks:
     bus_structure: null
     coordinate: [984, 448.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: qtgui_freq_sink_x_0
   id: qtgui_freq_sink_x
   parameters:
@@ -326,7 +365,7 @@ blocks:
     alpha8: '1.0'
     alpha9: '1.0'
     autoscale: 'True'
-    average: '0.2'
+    average: '1.0'
     axislabels: 'True'
     bw: bandwidth
     color1: '"blue"'
@@ -342,7 +381,7 @@ blocks:
     comment: ''
     ctrlpanel: 'False'
     fc: '0'
-    fftsize: '512'
+    fftsize: '1024'
     freqhalf: 'True'
     grid: 'True'
     gui_hint: ''
@@ -369,7 +408,7 @@ blocks:
     tr_tag: '""'
     type: complex
     units: dB
-    update_time: '0.2'
+    update_time: '0.5'
     width1: '1'
     width10: '1'
     width2: '1'
@@ -443,9 +482,9 @@ blocks:
     marker7: '-1'
     marker8: '-1'
     marker9: '-1'
-    name: '"RX2 Signal"'
+    name: '"Beat Signal (De-chirped)"'
     nconnections: '1'
-    size: '1024'
+    size: '128'
     srate: samp_rate
     stemplot: 'False'
     style1: '1'
@@ -465,7 +504,7 @@ blocks:
     tr_slope: qtgui.TRIG_SLOPE_POS
     tr_tag: '""'
     type: complex
-    update_time: '0.10'
+    update_time: '1'
     width1: '1'
     width10: '1'
     width2: '1'
@@ -486,7 +525,7 @@ blocks:
     bus_structure: null
     coordinate: [1208, 420.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: qtgui_time_sink_x_0_0
   id: qtgui_time_sink_x
   parameters:
@@ -542,7 +581,7 @@ blocks:
     marker9: '-1'
     name: '"RX Signal"'
     nconnections: '1'
-    size: '1024'
+    size: '128'
     srate: samp_rate
     stemplot: 'False'
     style1: '1'
@@ -562,7 +601,7 @@ blocks:
     tr_slope: qtgui.TRIG_SLOPE_POS
     tr_tag: '""'
     type: complex
-    update_time: '0.10'
+    update_time: '1'
     width1: '1'
     width10: '1'
     width2: '1'
@@ -583,7 +622,7 @@ blocks:
     bus_structure: null
     coordinate: [928, 636.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: qtgui_time_sink_x_1
   id: qtgui_time_sink_x
   parameters:
@@ -639,7 +678,7 @@ blocks:
     marker9: '-1'
     name: '"TX1 Signal"'
     nconnections: '1'
-    size: '1024'
+    size: '512'
     srate: samp_rate
     stemplot: 'False'
     style1: '1'
@@ -659,7 +698,7 @@ blocks:
     tr_slope: qtgui.TRIG_SLOPE_POS
     tr_tag: '""'
     type: complex
-    update_time: '0.10'
+    update_time: '0.3'
     width1: '1'
     width10: '1'
     width2: '1'
@@ -678,9 +717,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [592, 140.0]
+    coordinate: [600, 140.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: uhd_usrp_sink_1
   id: uhd_usrp_sink
   parameters:
@@ -719,7 +758,7 @@ blocks:
     ant8: '"TX/RX"'
     ant9: '"TX/RX"'
     bw0: bandwidth
-    bw1: '0'
+    bw1: bandwidth
     bw10: '0'
     bw11: '0'
     bw12: '0'
@@ -751,7 +790,7 @@ blocks:
     bw8: '0'
     bw9: '0'
     center_freq0: USRP_frequency
-    center_freq1: '0'
+    center_freq1: USRP_frequency
     center_freq10: '0'
     center_freq11: '0'
     center_freq12: '0'
@@ -795,7 +834,7 @@ blocks:
     dev_addr: '"addr0=192.168.120.2, master_clock_rate=250e6"'
     dev_args: ''
     gain0: tx_gain
-    gain1: '0'
+    gain1: tx_gain
     gain10: '0'
     gain11: '0'
     gain12: '0'
@@ -929,7 +968,7 @@ blocks:
     num_mboards: '1'
     otw: ''
     samp_rate: samp_rate
-    sd_spec0: '"A:0"'
+    sd_spec0: '"A:0 B:0"'
     sd_spec1: ''
     sd_spec2: ''
     sd_spec3: ''
@@ -957,7 +996,7 @@ blocks:
     bus_structure: null
     coordinate: [600, 268.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: uhd_usrp_source_0_0
   id: uhd_usrp_source
   parameters:
@@ -1315,7 +1354,7 @@ blocks:
     start_time: '-1.0'
     stream_args: ''
     stream_chans: '[]'
-    sync: pc_clock
+    sync: none
     time_source0: external
     time_source1: ''
     time_source2: ''
@@ -1331,7 +1370,7 @@ blocks:
     bus_structure: null
     coordinate: [528, 532.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: virtual_sink_0
   id: virtual_sink
   parameters:
@@ -1344,23 +1383,28 @@ blocks:
     bus_structure: null
     coordinate: [352, 356.0]
     rotation: 0
-    state: true
+    state: disabled
 
 connections:
 - [analog_sig_source_x_0, '0', blocks_vco_c_0, '0']
 - [analog_sig_source_x_0, '0', virtual_sink_0, '0']
 - [blocks_delay_0, '0', blocks_multiply_conjugate_cc_0, '1']
+- [blocks_file_source_0, '0', blocks_multiply_conjugate_cc_0, '0']
+- [blocks_file_source_0, '0', qtgui_time_sink_x_1, '0']
+- [blocks_file_source_0, '0', uhd_usrp_sink_1, '0']
 - [blocks_head_0, '0', low_pass_filter_0, '0']
+- [blocks_multiply_conjugate_cc_0, '0', blocks_null_sink_0, '0']
 - [blocks_multiply_conjugate_cc_0, '0', blocks_skiphead_0, '0']
+- [blocks_multiply_conjugate_cc_0, '0', low_pass_filter_0, '0']
+- [blocks_multiply_conjugate_cc_0, '0', qtgui_freq_sink_x_0, '0']
+- [blocks_multiply_conjugate_cc_0, '0', qtgui_time_sink_x_0, '0']
 - [blocks_skiphead_0, '0', blocks_head_0, '0']
-- [blocks_vco_c_0, '0', blocks_delay_0, '0']
 - [blocks_vco_c_0, '0', blocks_multiply_conjugate_cc_0, '0']
-- [blocks_vco_c_0, '0', qtgui_time_sink_x_0_0, '0']
 - [blocks_vco_c_0, '0', qtgui_time_sink_x_1, '0']
 - [blocks_vco_c_0, '0', uhd_usrp_sink_1, '0']
 - [low_pass_filter_0, '0', qtgui_freq_sink_x_0, '0']
 - [low_pass_filter_0, '0', qtgui_time_sink_x_0, '0']
-- [uhd_usrp_source_0_0, '0', blocks_delay_0, '0']
+- [uhd_usrp_source_0_0, '0', blocks_multiply_conjugate_cc_0, '1']
 - [uhd_usrp_source_0_0, '0', qtgui_time_sink_x_0_0, '0']
 
 metadata:
