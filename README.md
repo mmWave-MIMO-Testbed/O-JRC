@@ -1,4 +1,4 @@
-# MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation
+# O-JRC: An Open Source Software Platform for mmWave Joint Radar-Communication Development and Experimentation
 
 This project is developed and tested in Ubuntu 20.04 and Ubuntu 22.04. We recommend installing GnuRadio and UHD from source whose links are provided below. Additionally, this project uses Eigen3 library for linear algebra operations in C++.
 
