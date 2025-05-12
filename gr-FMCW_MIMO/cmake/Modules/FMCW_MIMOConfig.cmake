@@ -1,0 +1,31 @@
+INCLUDE(FindPkgConfig)
+PKG_CHECK_MODULES(PC_FMCW_MIMO FMCW_MIMO)
+
+FIND_PATH(
+    FMCW_MIMO_INCLUDE_DIRS
+    NAMES FMCW_MIMO/api.h
+    HINTS $ENV{FMCW_MIMO_DIR}/include
+        ${PC_FMCW_MIMO_INCLUDEDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/include
+          /usr/local/include
+          /usr/include
+)
+
+FIND_LIBRARY(
+    FMCW_MIMO_LIBRARIES
+    NAMES gnuradio-FMCW_MIMO
+    HINTS $ENV{FMCW_MIMO_DIR}/lib
+        ${PC_FMCW_MIMO_LIBDIR}
+    PATHS ${CMAKE_INSTALL_PREFIX}/lib
+          ${CMAKE_INSTALL_PREFIX}/lib64
+          /usr/local/lib
+          /usr/local/lib64
+          /usr/lib
+          /usr/lib64
+          )
+
+include("${CMAKE_CURRENT_LIST_DIR}/FMCW_MIMOTarget.cmake")
+
+INCLUDE(FindPackageHandleStandardArgs)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(FMCW_MIMO DEFAULT_MSG FMCW_MIMO_LIBRARIES FMCW_MIMO_INCLUDE_DIRS)
+MARK_AS_ADVANCED(FMCW_MIMO_LIBRARIES FMCW_MIMO_INCLUDE_DIRS)

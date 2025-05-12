@@ -1,0 +1,61 @@
+id: FMCW_MIMO_TDM_FMCW_Generator
+label: TDM_FMCW_Generator
+category: '[FMCW_MIMO]'
+
+templates:
+  imports: import FMCW_MIMO
+  make: FMCW_MIMO.TDM_FMCW_Generator(${samp_rate}, ${bandwidth}, ${chirp_duration}, ${tdm_offset}, ${num_tx})
+  callbacks:
+    - set_enabled(${enabled})
+
+parameters:
+- id: samp_rate
+  label: Sample Rate (Hz)
+  dtype: float
+  default: 125e6
+- id: bandwidth
+  label: Bandwidth (Hz)
+  dtype: float
+  default: 125e6
+- id: chirp_duration
+  label: Chirp Duration (s)
+  dtype: float
+  default: 0.001
+- id: tdm_offset
+  label: TDM Offset (s)
+  dtype: float
+  default: 0.005
+- id: num_tx
+  label: Number of TX
+  dtype: int
+  default: 4
+- id: enabled
+  label: Enabled
+  dtype: bool
+  default: True
+
+inputs: []
+
+outputs:
+- label: TX0
+  domain: stream
+  dtype: complex
+  vlen: 1
+  optional: 0
+- label: TX1
+  domain: stream
+  dtype: complex
+  vlen: 1
+  optional: 0
+- label: TX2
+  domain: stream
+  dtype: complex
+  vlen: 1
+  optional: 0
+- label: TX3
+  domain: stream
+  dtype: complex
+  vlen: 1
+  optional: 0
+
+file_format: 1
