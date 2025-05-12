@@ -32,6 +32,36 @@ options:
     state: enabled
 
 blocks:
+- name: FMCW_Generation
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: FMCW_Generation)Switch
+    label0: 'On'
+    label1: 'OFF'
+    label2: ''
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '2'
+    option0: 'True'
+    option1: 'False'
+    option2: '2'
+    option3: '3'
+    option4: '4'
+    options: '[0, 1, 2]'
+    orient: Qt.QVBoxLayout
+    type: raw
+    value: 'True'
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [328, 436.0]
+    rotation: 0
+    state: true
 - name: N_USRP
   id: variable
   parameters:
@@ -92,6 +122,18 @@ blocks:
     coordinate: [408, 16.0]
     rotation: 0
     state: true
+- name: chirp_duration
+  id: variable
+  parameters:
+    comment: ''
+    value: 1e-3
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [440, 92.0]
+    rotation: 0
+    state: true
 - name: delay_samp
   id: variable_qtgui_range
   parameters:
@@ -114,17 +156,26 @@ blocks:
     rotation: 0
     state: enabled
 - name: rx_gain
-  id: variable
+  id: variable_qtgui_range
   parameters:
     comment: ''
-    value: '50'
+    gui_hint: 0,3,1,3
+    label: RX Gain
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '60'
+    value: '41'
+    widget: counter_slider
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [712, 24.0]
+    coordinate: [1336, 252.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: samp_rate
   id: variable
   parameters:
@@ -138,17 +189,26 @@ blocks:
     rotation: 0
     state: enabled
 - name: tx_gain
-  id: variable
+  id: variable_qtgui_range
   parameters:
     comment: ''
-    value: '50'
+    gui_hint: 0,0,1,3
+    label: TX Gain
+    min_len: '200'
+    orient: Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '60'
+    value: '42'
+    widget: counter_slider
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [632, 24.0]
+    coordinate: [1208, 252.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: FMCW_MIMO_FMCW_MIMO_USRP_0
   id: FMCW_MIMO_FMCW_MIMO_USRP
   parameters:
@@ -158,14 +218,14 @@ blocks:
     affinity: ''
     alias: ''
     antenna_rx: '"RX2,RX2"'
-    antenna_tx: '"TX/RX,TX/RX"'
-    args: '"addr0=192.168.1xx.2, addr1=192.168.1xx.2, master_clock_rate=xxxe6"'
+    antenna_tx: '"TX/RX,TX/RX,TX/RX,TX/RX"'
+    args: '"addr0=192.168.120.2, addr1=192.168.101.2, master_clock_rate=250e6"'
     center_freq: USRP_frequency
     clock_sources: '"external,external"'
     comment: ''
     debug: 'False'
-    gain_rx: ''
-    gain_tx: ''
+    gain_rx: rx_gain
+    gain_tx: tx_gain
     len_key: '"packet_len"'
     lo_offset_rx: '0'
     maxoutbuf: '0'
@@ -175,7 +235,7 @@ blocks:
     time_sources: '"external,external"'
     timeout_rx: '0.5'
     timeout_tx: '0.5'
-    update_period: ''
+    update_period: '0.04'
     wait_rx: '0.01'
     wait_tx: '0.01'
     wire_rx: '""'
@@ -184,22 +244,22 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [600, 256.0]
+    coordinate: [600, 260.0]
     rotation: 0
-    state: true
+    state: enabled
 - name: FMCW_MIMO_TDM_FMCW_Generator_0
   id: FMCW_MIMO_TDM_FMCW_Generator
   parameters:
     affinity: ''
     alias: ''
-    bandwidth: 125e6
-    chirp_duration: '0.001'
+    bandwidth: bandwidth
+    chirp_duration: chirp_duration
     comment: ''
-    enabled: 'True'
+    enabled: FMCW_Generation
     maxoutbuf: '0'
     minoutbuf: '0'
-    num_tx: '4'
-    samp_rate: 125e6
+    num_tx: N_tx
+    samp_rate: samp_rate
     tdm_offset: '0.005'
   states:
     bus_sink: false
@@ -215,7 +275,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: /home/haocheng/O-JRC/examples/FMCW_Radar/GNU-Radio-Flowgraph/saved_data/saved_fmcw_io_sample_rx1.dat
+    file: /home/host-pc/O-JRC/examples/FMCW_Radar/GNU-Radio-Flowgraph/saved_data/saved_fmcw_io_sample_rx1.dat
     type: complex
     unbuffered: 'False'
     vlen: '1'
@@ -233,7 +293,7 @@ blocks:
     alias: ''
     append: 'False'
     comment: ''
-    file: /home/haocheng/O-JRC/examples/FMCW_Radar/GNU-Radio-Flowgraph/saved_data/saved_fmcw_io_sample_rx2.dat
+    file: /home/host-pc/O-JRC/examples/FMCW_Radar/GNU-Radio-Flowgraph/saved_data/saved_fmcw_io_sample_rx2.dat
     type: complex
     unbuffered: 'False'
     vlen: '1'
@@ -244,6 +304,22 @@ blocks:
     coordinate: [912, 348.0]
     rotation: 0
     state: true
+- name: blocks_multiply_conjugate_cc_0
+  id: blocks_multiply_conjugate_cc
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [912, 112.0]
+    rotation: 0
+    state: enabled
 - name: import_0_0
   id: import
   parameters:
@@ -257,14 +333,97 @@ blocks:
     coordinate: [296, 96.0]
     rotation: 0
     state: true
+- name: qtgui_freq_sink_x_0
+  id: qtgui_freq_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    average: '1.0'
+    axislabels: 'True'
+    bw: bandwidth
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    ctrlpanel: 'False'
+    fc: '0'
+    fftsize: '1024'
+    freqhalf: 'True'
+    grid: 'True'
+    gui_hint: ''
+    label: Relative Gain
+    label1: ''
+    label10: ''''''
+    label2: ''''''
+    label3: ''''''
+    label4: ''''''
+    label5: ''''''
+    label6: ''''''
+    label7: ''''''
+    label8: ''''''
+    label9: ''''''
+    legend: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '"FFT"'
+    nconnections: '1'
+    showports: 'False'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_tag: '""'
+    type: complex
+    units: dB
+    update_time: '0.5'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    wintype: firdes.WIN_BLACKMAN_hARRIS
+    ymax: '10'
+    ymin: '-140'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1152, 100.0]
+    rotation: 0
+    state: enabled
 
 connections:
 - [FMCW_MIMO_FMCW_MIMO_USRP_0, '0', blocks_file_sink_0, '0']
+- [FMCW_MIMO_FMCW_MIMO_USRP_0, '0', blocks_multiply_conjugate_cc_0, '1']
 - [FMCW_MIMO_FMCW_MIMO_USRP_0, '1', blocks_file_sink_0_0, '0']
 - [FMCW_MIMO_TDM_FMCW_Generator_0, '0', FMCW_MIMO_FMCW_MIMO_USRP_0, '0']
+- [FMCW_MIMO_TDM_FMCW_Generator_0, '0', blocks_multiply_conjugate_cc_0, '0']
 - [FMCW_MIMO_TDM_FMCW_Generator_0, '1', FMCW_MIMO_FMCW_MIMO_USRP_0, '1']
 - [FMCW_MIMO_TDM_FMCW_Generator_0, '2', FMCW_MIMO_FMCW_MIMO_USRP_0, '2']
 - [FMCW_MIMO_TDM_FMCW_Generator_0, '3', FMCW_MIMO_FMCW_MIMO_USRP_0, '3']
+- [blocks_multiply_conjugate_cc_0, '0', qtgui_freq_sink_x_0, '0']
 
 metadata:
   file_format: 1

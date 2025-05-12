@@ -104,7 +104,7 @@ blocks:
     start: '0'
     step: '0.01'
     stop: '10'
-    value: '1.43'
+    value: '1.13'
     widget: counter_slider
   states:
     bus_sink: false
@@ -125,7 +125,7 @@ blocks:
     start: '0'
     step: '0.01'
     stop: '10'
-    value: '0.68'
+    value: '0.64'
     widget: counter_slider
   states:
     bus_sink: false
@@ -146,7 +146,7 @@ blocks:
     start: '0'
     step: '0.01'
     stop: '10'
-    value: '0.75'
+    value: '0.58'
     widget: counter_slider
   states:
     bus_sink: false
@@ -167,7 +167,7 @@ blocks:
     start: '0'
     step: '0.01'
     stop: '10'
-    value: '0.87'
+    value: '0.76'
     widget: counter_slider
   states:
     bus_sink: false
@@ -426,7 +426,7 @@ blocks:
     start: -2*cmath.pi
     step: '0.01'
     stop: 2*cmath.pi
-    value: '-1.15'
+    value: '-1.08'
     widget: counter_slider
   states:
     bus_sink: false
@@ -447,7 +447,7 @@ blocks:
     start: -2*cmath.pi
     step: '0.01'
     stop: 2*cmath.pi
-    value: '-1.2'
+    value: '-1.06'
     widget: counter_slider
   states:
     bus_sink: false
@@ -468,7 +468,7 @@ blocks:
     start: -2*cmath.pi
     step: '0.01'
     stop: 2*cmath.pi
-    value: '1.95'
+    value: '2.08'
     widget: counter_slider
   states:
     bus_sink: false
@@ -489,7 +489,7 @@ blocks:
     start: -2*cmath.pi
     step: '0.01'
     stop: 2*cmath.pi
-    value: '2.02'
+    value: '2.35'
     widget: counter_slider
   states:
     bus_sink: false

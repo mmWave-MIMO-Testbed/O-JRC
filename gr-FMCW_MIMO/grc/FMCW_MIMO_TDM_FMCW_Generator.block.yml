@@ -6,7 +6,7 @@ templates:
   imports: import FMCW_MIMO
   make: FMCW_MIMO.TDM_FMCW_Generator(${samp_rate}, ${bandwidth}, ${chirp_duration}, ${tdm_offset}, ${num_tx})
   callbacks:
-    - set_enabled(${enabled})
+    - set_enabled(bool(${enabled}))
 
 parameters:
 - id: samp_rate

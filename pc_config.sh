@@ -25,11 +25,11 @@ echo 12451245 | sudo setpci -v -d 8086:10fb e6.b=2e
 #echo 12451245 | sudo -S ethtool -G enp8s0f0 tx 4096 rx 4096 
 #echo 12451245 | sudo -S ethtool -G enp8s0f1 tx 4096 rx 4096
 echo 12451245 | sudo -S ethtool -G enp9s0f0np0 tx 4096 rx 4096
-echo 12451245 | sudo -S ethtool -G enp9s0f1np0 tx 4096 rx 4096
+echo 12451245 | sudo -S ethtool -G enp9s0f1np1 tx 4096 rx 4096
 #echo 12451245 | sudo -S ethtool -G enp1s0f0 tx 4096 rx 4096
 echo 12451245 | sudo -S ethtool -G enp1s0f1 tx 4096 rx 4096
 echo 12451245 | sudo -S ethtool -C enp9s0f0np0 rx-usecs 1
-echo 12451245 | sudo -S ethtool -C enp9s0f1np0 rx-usecs 1
+echo 12451245 | sudo -S ethtool -C enp9s0f1np1 rx-usecs 1
 #echo 12451245 | sudo -S ethtool -C enp1s0f0 rx-usecs 1
 echo 12451245 | sudo -S ethtool -C enp1s0f1 rx-usecs 1
 

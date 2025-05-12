@@ -126,7 +126,38 @@ endif(APPLE)
 # Find gnuradio build dependencies
 ########################################################################
 find_package(Doxygen)
+find_package(FFTW3f)
+find_package(Volk)
+find_package(UHD)
 
+find_package(Qt5Widgets REQUIRED)
+find_package(Qwt)
+
+
+set(QT_FOUND ${Qt5Widgets_FOUND})
+set(QT_LIBRARIES ${Qt5Widgets_LIBRARIES})
+set(QT_INCLUDE_DIRS ${Qt5Widgets_INCLUDE_DIRS})
+
+find_package(Eigen3)
+# set(EIGEN_INC_DIR  ${EIGEN3_INCLUDE_DIRS})
+
+# include_directories( ${EIGEN3_INCLUDE_DIRS} )
+
+if (TARGET Eigen3::Eigen)
+    message("Eigen was found")
+endif (TARGET Eigen3::Eigen) 
+
+# add_executable (example example.cpp)
+# target_link_libraries (example Eigen3::Eigen)
+message("[DEBUG] EIGEN3_INCLUDE_DIRS: ${EIGEN3_INCLUDE_DIRS}")
+
+
+# add_definitions(-DEIGEN3_ENABLED=${Eigen3_FOUND})
+if(Eigen3_FOUND)
+    message([STATUS] "Eigen3 found.")
+else()
+    message([STATUS] "Eigen3 not found. Eigen3 is required for MIMO precoding!!!")
+endif(Eigen3_FOUND)
 ########################################################################
 # Setup doxygen option
 ########################################################################

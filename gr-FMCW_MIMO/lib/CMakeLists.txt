@@ -29,6 +29,7 @@ list(APPEND FMCW_MIMO_sources
     FMCW_Radar_impl.cc
     FMCW_Radar_Plot_impl.cc
     TDM_FMCW_Generator_impl.cc
+    utils.cc
 )
 
 set(FMCW_MIMO_sources "${FMCW_MIMO_sources}" PARENT_SCOPE)
@@ -38,7 +39,13 @@ if(NOT FMCW_MIMO_sources)
 endif(NOT FMCW_MIMO_sources)
 
 add_library(gnuradio-FMCW_MIMO SHARED ${FMCW_MIMO_sources})
-target_link_libraries(gnuradio-FMCW_MIMO gnuradio::gnuradio-runtime)
+target_link_libraries(gnuradio-FMCW_MIMO gnuradio::gnuradio-runtime
+			${GR_VOLK_LIB} 
+			    fftw3f::fftw3f 
+			    UHD::UHD 
+			    qwt::qwt 
+			    Qt5::Widgets
+			    Eigen3::Eigen)
 target_include_directories(gnuradio-FMCW_MIMO
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
     PUBLIC $<INSTALL_INTERFACE:include>
