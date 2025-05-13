@@ -91,21 +91,23 @@ class FMCW_Sim(gr.top_block, Qt.QWidget):
             uhd.stream_args(
                 cpu_format="fc32",
                 args='',
-                channels=list(range(0,1)),
+                channels=list(range(0,2)),
             ),
         )
-        self.uhd_usrp_source_0_0.set_subdev_spec("A:0", 0)
+        self.uhd_usrp_source_0_0.set_subdev_spec("A:0 B:0", 0)
         self.uhd_usrp_source_0_0.set_time_source('external', 0)
         self.uhd_usrp_source_0_0.set_clock_source('external', 0)
         self.uhd_usrp_source_0_0.set_center_freq(USRP_frequency, 0)
         self.uhd_usrp_source_0_0.set_gain(rx_gain, 0)
         self.uhd_usrp_source_0_0.set_antenna('RX2', 0)
         self.uhd_usrp_source_0_0.set_bandwidth(bandwidth, 0)
+        self.uhd_usrp_source_0_0.set_center_freq(0, 1)
+        self.uhd_usrp_source_0_0.set_gain(0, 1)
         self.uhd_usrp_source_0_0.set_samp_rate(samp_rate)
         # No synchronization enforced.
         self.uhd_usrp_source_0_0.set_min_output_buffer(24000)
         self.uhd_usrp_sink_1 = uhd.usrp_sink(
-            ",".join(("addr0=192.168.120.2, master_clock_rate=250e6", '')),
+            ",".join(("addr0=192.168.101.2, master_clock_rate=250e6", '')),
             uhd.stream_args(
                 cpu_format="fc32",
                 args='',
@@ -113,7 +115,7 @@ class FMCW_Sim(gr.top_block, Qt.QWidget):
             ),
             "",
         )
-        self.uhd_usrp_sink_1.set_subdev_spec("A:0 B:0", 0)
+        self.uhd_usrp_sink_1.set_subdev_spec("B:0", 0)
         self.uhd_usrp_sink_1.set_time_source('external', 0)
         self.uhd_usrp_sink_1.set_clock_source('external', 0)
         self.uhd_usrp_sink_1.set_center_freq(USRP_frequency, 0)
@@ -168,6 +170,10 @@ class FMCW_Sim(gr.top_block, Qt.QWidget):
         self.blocks_file_source_0 = blocks.file_source(gr.sizeof_gr_complex*1, '/home/host-pc/O-JRC/examples/simulation/radar/fmcw_chirp.dat', True, 0, 0)
         self.blocks_file_source_0.set_begin_tag(pmt.PMT_NIL)
         self.blocks_file_source_0.set_min_output_buffer(24000)
+        self.blocks_file_sink_0_0 = blocks.file_sink(gr.sizeof_gr_complex*1, '/home/host-pc/O-JRC/examples/FMCW_Radar/GNU-Radio-Flowgraph/saved_data/saved_fmcw_io_sample_rx2.dat', True)
+        self.blocks_file_sink_0_0.set_unbuffered(False)
+        self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_gr_complex*1, '/home/host-pc/O-JRC/examples/FMCW_Radar/GNU-Radio-Flowgraph/saved_data/saved_fmcw_io_sample_rx1.dat', True)
+        self.blocks_file_sink_0.set_unbuffered(False)
 
 
         ##################################################
@@ -177,6 +183,8 @@ class FMCW_Sim(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_file_source_0, 0), (self.uhd_usrp_sink_1, 0))
         self.connect((self.blocks_multiply_conjugate_cc_0, 0), (self.blocks_null_sink_0, 0))
         self.connect((self.blocks_multiply_conjugate_cc_0, 0), (self.qtgui_freq_sink_x_0, 0))
+        self.connect((self.uhd_usrp_source_0_0, 0), (self.blocks_file_sink_0, 0))
+        self.connect((self.uhd_usrp_source_0_0, 1), (self.blocks_file_sink_0_0, 0))
         self.connect((self.uhd_usrp_source_0_0, 0), (self.blocks_multiply_conjugate_cc_0, 1))
 
 

@@ -156,7 +156,7 @@ class TDM_FMCW_MIMO_ISAC(gr.top_block, Qt.QWidget):
         self.blocks_file_sink_0_0.set_unbuffered(False)
         self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_gr_complex*1, '/home/host-pc/O-JRC/examples/FMCW_Radar/GNU-Radio-Flowgraph/saved_data/saved_fmcw_io_sample_rx1.dat', False)
         self.blocks_file_sink_0.set_unbuffered(False)
-        self.FMCW_MIMO_TDM_FMCW_Generator_0 = FMCW_MIMO.TDM_FMCW_Generator(samp_rate, bandwidth, chirp_duration, 0.005, N_tx)
+        self.FMCW_MIMO_TDM_FMCW_Generator_0 = FMCW_MIMO.TDM_FMCW_Generator(samp_rate, bandwidth, chirp_duration, 0.01, N_tx, "packet_len")
         self.FMCW_MIMO_FMCW_MIMO_USRP_0 = FMCW_MIMO.FMCW_MIMO_USRP(N_USRP, N_tx, N_rx, samp_rate, USRP_frequency, delay_samp, False, 0.04, "addr0=192.168.120.2, addr1=192.168.101.2, master_clock_rate=250e6", "external,external", "external,external", "TX/RX,TX/RX,TX/RX,TX/RX", tx_gain, 0.5, 0.01, "", "RX2,RX2", rx_gain, 0.5, 0.01, 0, "", "packet_len")
         # Create the options list
         self._FMCW_Generation_options = [True, False]
@@ -182,8 +182,8 @@ class TDM_FMCW_MIMO_ISAC(gr.top_block, Qt.QWidget):
         self.connect((self.FMCW_MIMO_FMCW_MIMO_USRP_0, 0), (self.blocks_file_sink_0, 0))
         self.connect((self.FMCW_MIMO_FMCW_MIMO_USRP_0, 1), (self.blocks_file_sink_0_0, 0))
         self.connect((self.FMCW_MIMO_FMCW_MIMO_USRP_0, 0), (self.blocks_multiply_conjugate_cc_0, 1))
-        self.connect((self.FMCW_MIMO_TDM_FMCW_Generator_0, 1), (self.FMCW_MIMO_FMCW_MIMO_USRP_0, 1))
         self.connect((self.FMCW_MIMO_TDM_FMCW_Generator_0, 3), (self.FMCW_MIMO_FMCW_MIMO_USRP_0, 3))
+        self.connect((self.FMCW_MIMO_TDM_FMCW_Generator_0, 1), (self.FMCW_MIMO_FMCW_MIMO_USRP_0, 1))
         self.connect((self.FMCW_MIMO_TDM_FMCW_Generator_0, 2), (self.FMCW_MIMO_FMCW_MIMO_USRP_0, 2))
         self.connect((self.FMCW_MIMO_TDM_FMCW_Generator_0, 0), (self.FMCW_MIMO_FMCW_MIMO_USRP_0, 0))
         self.connect((self.FMCW_MIMO_TDM_FMCW_Generator_0, 0), (self.blocks_multiply_conjugate_cc_0, 0))

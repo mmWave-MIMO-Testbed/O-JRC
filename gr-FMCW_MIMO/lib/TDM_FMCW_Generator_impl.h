@@ -57,7 +57,7 @@ namespace gr {
 
       // Where all the action really happens
       void set_enabled(bool enabled);
-      void forecast (int noutput_items, gr_vector_int &ninput_items_required);
+      // void forecast (int noutput_items, gr_vector_int &ninput_items_required);
 
       int work(int noutput_items,
          gr_vector_int             &ninput_items,
