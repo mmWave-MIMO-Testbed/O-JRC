@@ -26,6 +26,7 @@
 #include "TDM_FMCW_Generator_impl.h"
 #include <cmath>
 #include <cstring>
+#include <stdexcept>
 
 namespace gr {
   namespace FMCW_MIMO {
@@ -35,10 +36,11 @@ namespace gr {
                           double bandwidth,
                           double chirp_duration,
                           double tdm_offset,
-                          int    num_tx)
+                          int    num_tx,
+                        const std::string &len_key)
     {
-      return gnuradio::get_initial_sptr
-        (new TDM_FMCW_Generator_impl(samp_rate, bandwidth, chirp_duration, tdm_offset, num_tx));
+      return sptr(new TDM_FMCW_Generator_impl(
+                                            samp_rate, bandwidth, chirp_duration, tdm_offset, num_tx, len_key));
     }
 
 
@@ -50,32 +52,39 @@ namespace gr {
       double bandwidth,
       double chirp_duration,
       double tdm_offset,
-      int    num_tx)
-      : gr::block("TDM_FMCW_Generator",
+      int    num_tx,
+      const std::string &len_key)
+      : gr::tagged_stream_block("TDM_FMCW_Generator",
               gr::io_signature::make(0, 0, 0),
-              gr::io_signature::make(num_tx, num_tx, sizeof(gr_complex))),
-                  d_samp_rate(samp_rate),
-                  d_bandwidth(bandwidth),
-                  d_chirp_duration(chirp_duration),
-                  d_tdm_offset(tdm_offset),
-                  d_num_tx(num_tx),
-                  d_sample_count(0),
-                  d_enabled(true)
-    {if (d_chirp_duration > d_tdm_offset) {
-    throw std::invalid_argument("chirp_duration must be <= tdm_offset");
-  }
-  d_chirp_len = std::round(d_chirp_duration * d_samp_rate);
-  d_slot_len  = std::round(d_tdm_offset   * d_samp_rate);
-  d_period    = d_slot_len * d_num_tx;
-  d_chirp.resize(d_chirp_len);
+              gr::io_signature::make(num_tx, num_tx, sizeof(gr_complex)),len_key),
+              d_samp_rate(samp_rate),
+              d_bandwidth(bandwidth),
+              d_chirp_duration(chirp_duration),
+              d_tdm_offset(tdm_offset),
+              d_num_tx(num_tx),
+              d_sample_count(0),
+              d_enabled(true),
+              d_len_key(pmt::string_to_symbol(len_key)),
+              d_len_key_str(len_key)
+    {
+      if (d_chirp_duration > d_tdm_offset) 
+      {
+        throw std::invalid_argument("chirp_duration must be <= tdm_offset");
+      }
+      d_chirp_len = std::round(d_chirp_duration * d_samp_rate);
+      d_slot_len  = std::round(d_tdm_offset   * d_samp_rate);
+      d_period    = d_slot_len * d_num_tx;
+      d_chirp.resize(d_chirp_len);
 
-  double f0 = -d_bandwidth/2.0;
-  double f1 = +d_bandwidth/2.0;
-  for (int n = 0; n < d_chirp_len; ++n) {
-    double t = n / d_samp_rate;
-    double phase = 2*M_PI*(f0*t + 0.5*(f1 - f0)/d_chirp_duration * t*t);
-    d_chirp[n] = gr_complex(std::cos(phase), std::sin(phase));
-  }}
+      double f0 = -d_bandwidth/2.0;
+      double f1 = +d_bandwidth/2.0;
+      for (int n = 0; n < d_chirp_len; ++n) 
+      {
+        double t = n / d_samp_rate;
+        double phase = 2*M_PI*(f0*t + 0.5*(f1 - f0)/d_chirp_duration * t*t);
+        d_chirp[n] = gr_complex(std::cos(phase), std::sin(phase));
+      }
+    }
 
     /*
      * Our virtual destructor.
@@ -86,47 +95,51 @@ namespace gr {
       d_enabled = enabled;
     }
      
-    TDM_FMCW_Generator_impl::~TDM_FMCW_Generator_impl()
+    TDM_FMCW_Generator_impl::~TDM_FMCW_Generator_impl() 
     {
+      // Nothing to do here
     }
 
-    void
-    TDM_FMCW_Generator_impl::forecast (int noutput_items, gr_vector_int &ninput_items_required)
-    {
-      /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
-      for (auto &n : ninput_items_required) n = 0;
-    }
+    // void
+    // TDM_FMCW_Generator_impl::forecast (int noutput_items, gr_vector_int &ninput_items_required)
+    // {
+    //   /* <+forecast+> e.g. ninput_items_required[0] = noutput_items */
+    //   for (auto &n : ninput_items_required) n = 0;
+    // }
 
-    int
-    TDM_FMCW_Generator_impl::general_work (int noutput_items,
-                       gr_vector_int &ninput_items,
-                       gr_vector_const_void_star &input_items,
-                       gr_vector_void_star &output_items)
+int TDM_FMCW_Generator_impl::work(        
+        int noutput_items,
+    gr_vector_int             &ninput_items,
+    gr_vector_const_void_star &input_items,
+    gr_vector_void_star       &output_items)
     {
-      for (int chan = 0; chan < d_num_tx; ++chan) {
-          auto out = reinterpret_cast<gr_complex*>(output_items[chan]);
-          if (!d_enabled) {
-              std::memset(out, 0, noutput_items * sizeof(gr_complex));
-                          } 
-          else {
-      for (int i = 0; i < noutput_items; ++i) {
-        int idx  = (d_sample_count + i) % d_period;
-        int slot = idx / d_slot_len;
-        int pos  = idx - slot * d_slot_len;
-        gr_complex v = (pos < d_chirp_len ? d_chirp[pos] : gr_complex(0,0));
-        out[i] = (slot == chan ? v : gr_complex(0,0));
+      // insert length tag
+      pmt::pmt_t value = pmt::from_long(noutput_items);
+      for (int ch = 0; ch < d_num_tx; ++ch) {
+        add_item_tag(ch,
+                     nitems_written(ch),
+                     d_len_key,
+                     value);
       }
-    }
-  }
-  d_sample_count = (d_sample_count + noutput_items) % d_period;
 
-  // 通知产生了多少输出
-  for (int chan = 0; chan < d_num_tx; ++chan) {
-    produce(chan, noutput_items);
-  }
+      // FMCW TDM chirp generation
+      for (int ch = 0; ch < d_num_tx; ++ch) {
+        auto out = reinterpret_cast<gr_complex*>(output_items[ch]);
+        if (!d_enabled) {
+          std::memset(out, 0, noutput_items * sizeof(gr_complex));
+        } else {
+          for (int i = 0; i < noutput_items; ++i) {
+            int idx  = (d_sample_count + i) % d_period;
+            int slot = idx / d_slot_len;
+            int pos  = idx - slot * d_slot_len;
+            gr_complex v = (pos < d_chirp_len ? d_chirp[pos] : gr_complex(0,0));
+            out[i] = (slot == ch ? v : gr_complex(0,0));
+          }
+        }
+      }
 
-  // 不消耗任何输入
-  return 0;
+      d_sample_count = (d_sample_count + noutput_items) % d_period;
+      return noutput_items;
     }
 
   } /* namespace FMCW_MIMO */

@@ -4,9 +4,9 @@ category: '[FMCW_MIMO]'
 
 templates:
   imports: import FMCW_MIMO
-  make: FMCW_MIMO.TDM_FMCW_Generator(${samp_rate}, ${bandwidth}, ${chirp_duration}, ${tdm_offset}, ${num_tx})
+  make: FMCW_MIMO.TDM_FMCW_Generator(${samp_rate}, ${bandwidth}, ${chirp_duration}, ${tdm_offset}, ${num_tx}, ${len_key})
   callbacks:
-    - set_enabled(bool(${enabled}))
+    - set_enabled(${enabled})
 
 parameters:
 - id: samp_rate
@@ -29,6 +29,11 @@ parameters:
   label: Number of TX
   dtype: int
   default: 4
+- id: len_key
+  label: Packet Length Key
+  dtype: string
+  default: '"packet_len"'
+  hide: part
 - id: enabled
   label: Enabled
   dtype: bool

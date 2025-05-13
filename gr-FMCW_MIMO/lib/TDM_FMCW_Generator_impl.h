@@ -23,6 +23,8 @@
 
 #include <FMCW_MIMO/TDM_FMCW_Generator.h>
 #include <gnuradio/gr_complex.h>
+#include <pmt/pmt.h>
+#include <string>
 
 namespace gr {
   namespace FMCW_MIMO {
@@ -40,6 +42,8 @@ namespace gr {
       int    d_period;
       int    d_sample_count;
       bool   d_enabled;
+      pmt::pmt_t  d_len_key;
+      std::string d_len_key_str;
       std::vector<gr_complex> d_chirp;
 
      public:
@@ -47,17 +51,18 @@ namespace gr {
                            double bandwidth,
                            double chirp_duration,
                            double tdm_offset,
-                           int    num_tx);
+                           int    num_tx,
+                          const std::string &len_key);
       ~TDM_FMCW_Generator_impl();
 
       // Where all the action really happens
       void set_enabled(bool enabled);
       void forecast (int noutput_items, gr_vector_int &ninput_items_required);
 
-      int general_work(int noutput_items,
-           gr_vector_int &ninput_items,
-           gr_vector_const_void_star &input_items,
-           gr_vector_void_star &output_items);
+      int work(int noutput_items,
+         gr_vector_int             &ninput_items,
+         gr_vector_const_void_star &input_items,
+         gr_vector_void_star       &output_items);
     };
 
   } // namespace FMCW_MIMO

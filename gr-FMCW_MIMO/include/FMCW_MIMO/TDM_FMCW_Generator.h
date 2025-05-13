@@ -22,8 +22,9 @@
 #define INCLUDED_FMCW_MIMO_TDM_FMCW_GENERATOR_H
 
 #include <FMCW_MIMO/api.h>
-#include <gnuradio/block.h>
+#include <gnuradio/tagged_stream_block.h>
 #include <gnuradio/gr_complex.h>
+#include <vector>
 
 namespace gr {
   namespace FMCW_MIMO {
@@ -33,7 +34,7 @@ namespace gr {
      * \ingroup FMCW_MIMO
      *
      */
-    class FMCW_MIMO_API TDM_FMCW_Generator : virtual public gr::block
+    class FMCW_MIMO_API TDM_FMCW_Generator : virtual public gr::tagged_stream_block
     {
      public:
       typedef boost::shared_ptr<TDM_FMCW_Generator> sptr;
@@ -44,12 +45,14 @@ namespace gr {
         * @param chirp_duration chirp duration (s)
         * @param tdm_offset     TDM guard time (s)
         * @param num_tx         number of TX channels
+        * @param len_key        长度 tag key（默认 "packet_len"）
         */
       static sptr make(double samp_rate,
                    double bandwidth,
                    double chirp_duration,
                    double tdm_offset,
-                   int    num_tx);
+                   int    num_tx,
+                  const std::string &len_key = "packet_len");
       /**
        * Dynamic switch
        * true=create chirp, false= 0 output
