@@ -1,6 +1,6 @@
 /* -*- c++ -*- */
 /*
- * Copyright 2022 gr-mimo_ofdm_jrc author.
+ * Copyright 2025 HaochengZhu.
  *
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,32 +18,35 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_MIMO_OFDM_JRC_STREAM_ENCODER_IMPL_H
-#define INCLUDED_MIMO_OFDM_JRC_STREAM_ENCODER_IMPL_H
+#ifndef INCLUDED_MIMO_OFDM_JRC_STREAM_ENCODER_AUTOMODULATION_IMPL_H
+#define INCLUDED_MIMO_OFDM_JRC_STREAM_ENCODER_AUTOMODULATION_IMPL_H
 
-#include <mimo_ofdm_jrc/stream_encoder.h>
+#include <mimo_ofdm_jrc/stream_encoder_automodulation.h>
 #include <gnuradio/digital/constellation.h>
 #include "utils.h"
 
 namespace gr {
   namespace mimo_ofdm_jrc {
 
-    class stream_encoder_impl : public stream_encoder
+    class stream_encoder_automodulation_impl : public stream_encoder_automodulation
     {
      private:
-     	bool         d_debug;
-        char*        d_symbol_values;
-        gr_complex*  d_complex_symbols;
+      // Nothing to declare in this block.
+      bool         d_debug;
+      char*        d_symbol_values;
+      gr_complex*  d_complex_symbols;
 
         int         d_offset;
         int         d_symbol_len;
         int 		d_data_len;
         int 		d_N_ss_radar;
+        const std::string d_mcs_ctrl_file;
         ofdm_mcs	d_ofdm_mcs;
         MCS 		d_mod_encode;
         gr::thread::mutex d_mutex;
 
         uint8_t      d_scrambler;
+        int      d_readfile_flag;
 
         boost::shared_ptr<gr::digital::constellation> modulator;
         digital::constellation_bpsk::sptr d_bpsk;
@@ -52,17 +55,17 @@ namespace gr {
         digital::constellation_16qam::sptr d_16qam;
 
      public:
-      stream_encoder_impl(MCS mod_encode, int data_len, int N_ss_radar, bool debug);
-      ~stream_encoder_impl();
+      stream_encoder_automodulation_impl(MCS mod_encode, int data_len, int N_ss_radar, const std::string& mcs_ctrl_file, bool debug);
+      ~stream_encoder_automodulation_impl();
 
-      // Where all the action really happens
+      // // Where all the action really happens
       // void forecast (int noutput_items, gr_vector_int &ninput_items_required);
 
       int general_work(int noutput_items,
            gr_vector_int &ninput_items,
            gr_vector_const_void_star &input_items,
            gr_vector_void_star &output_items);
-      
+
       void set_mcs(MCS mod_encode);
       void print_output(const char *pdu, int pdu_length);
 
@@ -71,5 +74,5 @@ namespace gr {
   } // namespace mimo_ofdm_jrc
 } // namespace gr
 
-#endif /* INCLUDED_MIMO_OFDM_JRC_STREAM_ENCODER_IMPL_H */
+#endif /* INCLUDED_MIMO_OFDM_JRC_STREAM_ENCODER_AUTOMODULATION_IMPL_H */
 

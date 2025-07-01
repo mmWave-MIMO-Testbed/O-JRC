@@ -301,7 +301,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"/home/xin/MIMO-OFDM-JRC-Optimal-Beam-and-Resource-Allocation/examples"'
+    value: '"/home/haocheng/O-JRC/examples"'
   states:
     bus_sink: false
     bus_source: false
@@ -1936,7 +1936,9 @@ blocks:
     affinity: ''
     alias: ''
     bw: samp_rate
+    chan_est_data_file: '""'
     chan_est_file: chan_est_file
+    chan_est_ndp_file: '""'
     comm_log_file: '""'
     comment: ''
     cp_len: cp_len

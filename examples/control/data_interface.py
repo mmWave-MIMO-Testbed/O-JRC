@@ -26,6 +26,10 @@ class PacketData:
         self.packet_type =   int(packet_type)
         self.packet_size =   int(packet_size)
 
+class MCS_ctrl_data:
+    def __init__(self, mcs_type):
+        self.mcs_type = int(mcs_type)
+
 
 def load_radar_data(radar_log_path):
     with open(radar_log_path,'r') as radar_file:
@@ -94,6 +98,10 @@ def write_plot_log(packet_type, radar_angle, beamforming_angle, data_snr, CRC, t
     with open(plot_log_path,'a') as file:
         file.write(line)
 
+def write_mcs_ctrl_data(MCS_ctrl_data, mcs_ctrl_data_path):
+    line = f"{MCS_ctrl_data.mcs_type}\n"
+    with open(mcs_ctrl_data_path, 'w') as file:
+        file.write(line)
 
 
    

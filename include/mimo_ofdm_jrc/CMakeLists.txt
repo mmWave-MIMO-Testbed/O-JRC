@@ -48,5 +48,7 @@ install(FILES
     ndp_generator.h
     packet_switch.h
     gui_heatmap_plot_digital.h
-    MAC_header.h DESTINATION include/mimo_ofdm_jrc
+    MAC_header.h
+    Stream_decoder_DynModulation.h
+    stream_encoder_automodulation.h DESTINATION include/mimo_ofdm_jrc
 )

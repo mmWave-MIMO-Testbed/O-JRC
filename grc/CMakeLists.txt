@@ -43,5 +43,7 @@ install(FILES
     mimo_ofdm_jrc_ndp_generator.block.yml
     mimo_ofdm_jrc_packet_switch.block.yml
     mimo_ofdm_jrc_gui_heatmap_plot_digital.block.yml
-    mimo_ofdm_jrc_MAC_header.block.yml DESTINATION share/gnuradio/grc/blocks
+    mimo_ofdm_jrc_MAC_header.block.yml
+    mimo_ofdm_jrc_Stream_decoder_DynModulation.block.yml
+    mimo_ofdm_jrc_stream_encoder_automodulation.block.yml DESTINATION share/gnuradio/grc/blocks
 )

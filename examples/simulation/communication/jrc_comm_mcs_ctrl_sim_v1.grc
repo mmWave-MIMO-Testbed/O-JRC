@@ -273,6 +273,18 @@ blocks:
     coordinate: [1480, 92.0]
     rotation: 0
     state: enabled
+- name: mcs_ctrl_file
+  id: variable
+  parameters:
+    comment: ''
+    value: parrent_path+"/data/mcs_ctrl.csv"
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 320.0]
+    rotation: 0
+    state: true
 - name: mimo_tap1
   id: variable
   parameters:
@@ -1095,9 +1107,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [72, 404.0]
+    coordinate: [192, 380.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: blocks_socket_pdu_1
   id: blocks_socket_pdu
   parameters:
@@ -1607,25 +1619,6 @@ blocks:
     coordinate: [1696, 1944.0]
     rotation: 0
     state: disabled
-- name: helper_mimo_encoder_0
-  id: helper_mimo_encoder
-  parameters:
-    N_ss_radar: '0'
-    affinity: ''
-    alias: ''
-    comment: ''
-    data_len: ofdm_config.N_data
-    debug: 'True'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    mod_encode: mcs
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [320, 396.0]
-    rotation: 0
-    state: disabled
 - name: helper_mimo_ofdm_equalizer_0
   id: helper_mimo_ofdm_equalizer
   parameters:
@@ -2062,7 +2055,7 @@ blocks:
     bus_structure: null
     coordinate: [88, 552.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: mimo_ofdm_jrc_packet_switch_0
   id: mimo_ofdm_jrc_packet_switch
   parameters:
@@ -2072,14 +2065,14 @@ blocks:
     maxoutbuf: '0'
     minoutbuf: '0'
     packet_info_file: packet_data_file
-    period_ms: '10'
+    period_ms: '50'
   states:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [56, 616.0]
+    coordinate: [48, 600.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: mimo_ofdm_jrc_socket_pdu_jrc_0
   id: mimo_ofdm_jrc_socket_pdu_jrc
   parameters:
@@ -2098,7 +2091,7 @@ blocks:
     bus_structure: null
     coordinate: [80, 420.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: mimo_ofdm_jrc_stream_decoder_0
   id: mimo_ofdm_jrc_stream_decoder
   parameters:
@@ -2153,9 +2146,29 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [336, 404.0]
+    coordinate: [328, 388.0]
     rotation: 0
-    state: true
+    state: disabled
+- name: mimo_ofdm_jrc_stream_encoder_automodulation_0
+  id: mimo_ofdm_jrc_stream_encoder_automodulation
+  parameters:
+    N_ss_radar: '0'
+    affinity: ''
+    alias: ''
+    comment: ''
+    data_len: ofdm_config.N_data
+    debug: 'False'
+    maxoutbuf: '0'
+    mcs_ctrl_file: mcs_ctrl_file
+    minoutbuf: '0'
+    mod_encode: mcs
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 500.0]
+    rotation: 0
+    state: enabled
 - name: mimo_ofdm_jrc_zero_pad_0
   id: mimo_ofdm_jrc_zero_pad
   parameters:
@@ -3977,6 +3990,7 @@ connections:
 - [blocks_multiply_xx_0, '0', mimo_ofdm_jrc_moving_avg_0, '0']
 - [blocks_nlog10_ff_1, '0', qtgui_number_sink_0, '0']
 - [blocks_socket_pdu_0, pdus, mimo_ofdm_jrc_stream_encoder_1, pdu_in]
+- [blocks_socket_pdu_0, pdus, mimo_ofdm_jrc_stream_encoder_automodulation_0, pdu_in]
 - [blocks_stream_to_vector_0, '0', fft_vxx_0_0, '0']
 - [blocks_throttle_0, '0', qtgui_time_sink_x_0_0_1_1, '0']
 - [blocks_throttle_0, '0', virtual_sink_0_0, '0']
@@ -4005,8 +4019,6 @@ connections:
 - [helper_frame_detector_0, '0', virtual_sink_0_0_0, '0']
 - [helper_frame_sync_0, '0', blocks_stream_to_vector_0, '0']
 - [helper_frame_sync_0, '0', qtgui_time_sink_x_0, '0']
-- [helper_mimo_encoder_0, '0', blocks_tag_debug_0_1_0_0_0_1, '0']
-- [helper_mimo_encoder_0, '0', helper_mimo_precoder_0, '0']
 - [helper_mimo_ofdm_equalizer_0, '0', blocks_null_sink_0, '0']
 - [helper_mimo_ofdm_equalizer_0, '0', blocks_tag_debug_0, '0']
 - [helper_mimo_ofdm_equalizer_0, '0', blocks_vector_to_stream_0, '0']
@@ -4045,9 +4057,13 @@ connections:
 - [mimo_ofdm_jrc_moving_avg_0, '0', helper_frame_detector_0, '2']
 - [mimo_ofdm_jrc_moving_avg_0, '0', mimo_ofdm_jrc_frame_detector_0, '1']
 - [mimo_ofdm_jrc_ndp_generator_0, out, mimo_ofdm_jrc_stream_encoder_1, pdu_in]
+- [mimo_ofdm_jrc_ndp_generator_0, out, mimo_ofdm_jrc_stream_encoder_automodulation_0,
+  pdu_in]
 - [mimo_ofdm_jrc_packet_switch_0, strobe, mimo_ofdm_jrc_ndp_generator_0, enable]
 - [mimo_ofdm_jrc_packet_switch_0, strobe, mimo_ofdm_jrc_socket_pdu_jrc_0, enable]
 - [mimo_ofdm_jrc_socket_pdu_jrc_0, pdus, mimo_ofdm_jrc_stream_encoder_1, pdu_in]
+- [mimo_ofdm_jrc_socket_pdu_jrc_0, pdus, mimo_ofdm_jrc_stream_encoder_automodulation_0,
+  pdu_in]
 - [mimo_ofdm_jrc_stream_decoder_0, '0', blocks_null_sink_0_0, '0']
 - [mimo_ofdm_jrc_stream_decoder_0, stats, helper_gui_time_plot_0, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, stats, helper_gui_time_plot_1, stats]
@@ -4058,6 +4074,8 @@ connections:
 - [mimo_ofdm_jrc_stream_encoder_0, '0', helper_mimo_precoder_0, '0']
 - [mimo_ofdm_jrc_stream_encoder_1, '0', helper_mimo_precoder_0, '0']
 - [mimo_ofdm_jrc_stream_encoder_1, '0', mimo_ofdm_jrc_mimo_precoder_0, '0']
+- [mimo_ofdm_jrc_stream_encoder_automodulation_0, '0', mimo_ofdm_jrc_mimo_precoder_0,
+  '0']
 - [mimo_ofdm_jrc_zero_pad_0, '0', blocks_multiply_const_vxx_1, '0']
 - [mimo_ofdm_jrc_zero_pad_0_0, '0', blocks_multiply_const_vxx_1_0, '0']
 - [mimo_ofdm_jrc_zero_pad_0_0_0, '0', blocks_multiply_const_vxx_1_0_0, '0']
