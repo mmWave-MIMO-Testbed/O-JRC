@@ -32,8 +32,8 @@ CRC_flag = 0
 mcs_modulation = 1 # 0 and 1for BPSK, 2 and 3 for QPSK, 4 and 5 for 16QAM, start from BPSK
 
 WINDOW_SIZE           = 20
-LOWER_THRESH          = 5
-UPPER_THRESH          = 15
+LOWER_THRESH          = 16
+UPPER_THRESH          = 18
 crc_window = deque(maxlen=WINDOW_SIZE)
 
 #load data from radar_data

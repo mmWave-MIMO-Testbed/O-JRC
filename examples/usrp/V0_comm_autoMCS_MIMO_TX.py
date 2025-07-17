@@ -178,9 +178,9 @@ class V0_comm_autoMCS_MIMO_TX(gr.top_block, Qt.QWidget):
         for c in range(2, 4):
             self.top_grid_layout.setColumnStretch(c, 1)
         # Create the options list
-        self._mcs_options = [0, 1, 2, 3, 4, 5]
+        self._mcs_options = [0, 1, 2, 3, 4, 5, 6]
         # Create the labels list
-        self._mcs_labels = ['BPSK 1/2', 'BPSK 3/4', 'QPSK 1/2', 'QPSK 3/4', '16QAM 1/2', '16QAM 3/4']
+        self._mcs_labels = ['BPSK 1/2', 'BPSK 3/4', 'QPSK 1/2', 'QPSK 3/4', '16QAM 1/2', '16QAM 3/4', 'ReadFile']
         # Create the combo box
         # Create the radio buttons
         self._mcs_group_box = Qt.QGroupBox('Modulation and Coding Scheme' + ": ")
@@ -201,10 +201,10 @@ class V0_comm_autoMCS_MIMO_TX(gr.top_block, Qt.QWidget):
         self._mcs_callback(self.mcs)
         self._mcs_button_group.buttonClicked[int].connect(
             lambda i: self.set_mcs(self._mcs_options[i]))
-        self.top_grid_layout.addWidget(self._mcs_group_box, 3, 0, 1, 8)
-        for r in range(3, 4):
+        self.top_grid_layout.addWidget(self._mcs_group_box, 2, 0, 1, 1)
+        for r in range(2, 3):
             self.top_grid_layout.setRowStretch(r, 1)
-        for c in range(0, 8):
+        for c in range(0, 1):
             self.top_grid_layout.setColumnStretch(c, 1)
         # Create the options list
         self._freq_smoothing_options = [False, True]
@@ -285,6 +285,9 @@ class V0_comm_autoMCS_MIMO_TX(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_usrp_mimo_trx_0 = mimo_ofdm_jrc.usrp_mimo_trx(2, 4, 1, samp_rate, usrp_freq, delay_samp, False, 0.04, "addr0=192.168.120.2, addr1=192.168.101.2, master_clock_rate=250e6", "external,external", "external,external", "TX/RX,TX/RX,TX/RX,TX/RX", tx_gain, 0.6, 0.01, "", "RX2,RX2", rx_gain, 0.6, 0.01, 0, "", "packet_len")
         self.mimo_ofdm_jrc_usrp_mimo_trx_0.set_processor_affinity([6])
         self.mimo_ofdm_jrc_stream_encoder_automodulation_0 = mimo_ofdm_jrc.stream_encoder_automodulation(mcs, ofdm_config.N_data, 0, mcs_ctrl_file, False)
+        self.mimo_ofdm_jrc_socket_pdu_jrc_0 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 5000)
+        self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(100, packet_data_file)
+        self.mimo_ofdm_jrc_ndp_generator_0 = mimo_ofdm_jrc.ndp_generator()
         self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64, ofdm_config.ltf_mapped_sc__ss_sym, chan_est_file, freq_smoothing, radar_data_file, radar_aided, False, False, "packet_len",  False)
         self.mimo_ofdm_jrc_mimo_precoder_0.set_processor_affinity([7])
         self.mimo_ofdm_jrc_mimo_precoder_0.set_min_output_buffer(1000)
@@ -300,7 +303,6 @@ class V0_comm_autoMCS_MIMO_TX(gr.top_block, Qt.QWidget):
         self.digital_ofdm_cyclic_prefixer_0_0_0 = digital.ofdm_cyclic_prefixer(fft_len, fft_len + cp_len, 0, "packet_len")
         self.digital_ofdm_cyclic_prefixer_0_0 = digital.ofdm_cyclic_prefixer(fft_len, fft_len + cp_len, 0, "packet_len")
         self.digital_ofdm_cyclic_prefixer_0 = digital.ofdm_cyclic_prefixer(fft_len, fft_len + cp_len, 0, "packet_len")
-        self.blocks_socket_pdu_0 = blocks.socket_pdu('UDP_SERVER', '', '52001', 5000, False)
         self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_gr_complex*1)
         self.blocks_multiply_const_vxx_0_0_1_0 = blocks.multiply_const_cc(tx_multiplier)
         self.blocks_multiply_const_vxx_0_0_1 = blocks.multiply_const_cc(tx_multiplier)
@@ -314,7 +316,10 @@ class V0_comm_autoMCS_MIMO_TX(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.blocks_socket_pdu_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_automodulation_0, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_ndp_generator_0, 'out'), (self.mimo_ofdm_jrc_stream_encoder_automodulation_0, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_ndp_generator_0, 'enable'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'enable'))
+        self.msg_connect((self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_automodulation_0, 'pdu_in'))
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.mimo_ofdm_jrc_zero_pad_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0_0, 0), (self.blocks_multiply_const_vxx_0_0_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0_0_0, 0), (self.mimo_ofdm_jrc_zero_pad_0_0, 0))
@@ -473,8 +478,8 @@ class V0_comm_autoMCS_MIMO_TX(gr.top_block, Qt.QWidget):
 
     def set_mcs(self, mcs):
         self.mcs = mcs
-        self._mcs_callback(self.mcs)
         self.mimo_ofdm_jrc_stream_encoder_automodulation_0.set_mcs(self.mcs)
+        self._mcs_callback(self.mcs)
 
     def get_interp_factor_angle(self):
         return self.interp_factor_angle

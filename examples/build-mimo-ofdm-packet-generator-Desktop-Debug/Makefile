@@ -493,7 +493,7 @@ main.o: ../step_2_packet_generate/main.cpp ../step_2_packet_generate/mainwindow.
 
 mainwindow.o: ../step_2_packet_generate/mainwindow.cpp ../step_2_packet_generate/mainwindow.h \
 		../step_2_packet_generate/txworker.h \
-		ui_mainwindow.h
+		../step_2_packet_generate/ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../step_2_packet_generate/mainwindow.cpp
 
 txworker.o: ../step_2_packet_generate/txworker.cpp ../step_2_packet_generate/txworker.h
