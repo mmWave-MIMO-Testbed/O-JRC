@@ -47,6 +47,7 @@ namespace gr {
 
         uint8_t      d_scrambler;
         int      d_readfile_flag;
+        int  d_target_nsym = 0;   // Fix OFDM symbols；<=0 means disable, fix data payload
 
         boost::shared_ptr<gr::digital::constellation> modulator;
         digital::constellation_bpsk::sptr d_bpsk;
@@ -55,7 +56,7 @@ namespace gr {
         digital::constellation_16qam::sptr d_16qam;
 
      public:
-      stream_encoder_automodulation_impl(MCS mod_encode, int data_len, int N_ss_radar, const std::string& mcs_ctrl_file, bool debug);
+      stream_encoder_automodulation_impl(MCS mod_encode, int data_len, int N_ss_radar, const std::string& mcs_ctrl_file, int target_nsym, bool debug);
       ~stream_encoder_automodulation_impl();
 
       // // Where all the action really happens

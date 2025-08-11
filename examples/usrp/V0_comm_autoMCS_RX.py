@@ -330,8 +330,6 @@ class V0_comm_autoMCS_RX(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(2, 4):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self.mimo_ofdm_jrc_stream_decoder_0 = mimo_ofdm_jrc.stream_decoder(len(ofdm_config.data_subcarriers), comm_log_file, save_comm_log, False)
-        self.mimo_ofdm_jrc_stream_decoder_0.set_processor_affinity([5])
         self.mimo_ofdm_jrc_moving_avg_1 = mimo_ofdm_jrc.moving_avg(32, 1, 20000, False)
         self.mimo_ofdm_jrc_moving_avg_1.set_processor_affinity([1])
         self.mimo_ofdm_jrc_moving_avg_1.set_min_output_buffer(24000)
@@ -346,6 +344,8 @@ class V0_comm_autoMCS_RX(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_frame_detector_0 = mimo_ofdm_jrc.frame_detector(64, 16, 0.85, 30, (len(ofdm_config.l_stf_ltf_64)+N_tx)*(fft_len+cp_len), False)
         self.mimo_ofdm_jrc_frame_detector_0.set_processor_affinity([3])
         self.mimo_ofdm_jrc_frame_detector_0.set_min_output_buffer(48000)
+        self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0 = mimo_ofdm_jrc.Stream_decoder_DynModulation(len(ofdm_config.data_subcarriers), comm_log_file, save_comm_log, False)
+        self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0.set_processor_affinity([5])
         self.fft_vxx_0_0 = fft.fft_vcc(fft_len, True, window.rectangular(fft_len), True, 1)
         self.blocks_vector_to_stream_0 = blocks.vector_to_stream(gr.sizeof_gr_complex*1, len(ofdm_config.data_subcarriers))
         self.blocks_sub_xx_0 = blocks.sub_cc(1)
@@ -372,9 +372,9 @@ class V0_comm_autoMCS_RX(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'sym'), (self.blocks_socket_pdu_1, 'pdus'))
-        self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_0_0, 'stats'))
-        self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_1, 'stats'))
+        self.msg_connect((self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0, 'sym'), (self.blocks_socket_pdu_1, 'pdus'))
+        self.msg_connect((self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_0_0, 'stats'))
+        self.msg_connect((self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_1, 'stats'))
         self.connect((self.blocks_abs_xx_0, 0), (self.blocks_divide_xx_0, 1))
         self.connect((self.blocks_complex_to_mag_0, 0), (self.blocks_divide_xx_0, 0))
         self.connect((self.blocks_complex_to_mag_squared_0_0, 0), (self.blocks_moving_average_xx_1_0, 0))
@@ -392,16 +392,16 @@ class V0_comm_autoMCS_RX(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_sub_xx_0, 0), (self.blocks_multiply_xx_0, 1))
         self.connect((self.blocks_vector_to_stream_0, 0), (self.qtgui_const_sink_x_0, 0))
         self.connect((self.fft_vxx_0_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0, 0))
+        self.connect((self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0, 0), (self.blocks_null_sink_0, 0))
         self.connect((self.mimo_ofdm_jrc_frame_detector_0, 0), (self.blocks_delay_0, 0))
         self.connect((self.mimo_ofdm_jrc_frame_detector_0, 0), (self.mimo_ofdm_jrc_frame_sync_0, 0))
         self.connect((self.mimo_ofdm_jrc_frame_detector_0, 0), (self.qtgui_time_sink_x_0_2_0, 0))
         self.connect((self.mimo_ofdm_jrc_frame_sync_0, 0), (self.blocks_stream_to_vector_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0, 0), (self.blocks_vector_to_stream_0, 0))
-        self.connect((self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0, 0), (self.mimo_ofdm_jrc_stream_decoder_0, 0))
+        self.connect((self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0, 0), (self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0, 0))
         self.connect((self.mimo_ofdm_jrc_moving_avg_0, 0), (self.blocks_sub_xx_0, 1))
         self.connect((self.mimo_ofdm_jrc_moving_avg_1, 0), (self.blocks_complex_to_mag_0, 0))
         self.connect((self.mimo_ofdm_jrc_moving_avg_1, 0), (self.mimo_ofdm_jrc_frame_detector_0, 1))
-        self.connect((self.mimo_ofdm_jrc_stream_decoder_0, 0), (self.blocks_null_sink_0, 0))
         self.connect((self.uhd_usrp_source_0, 0), (self.blocks_sub_xx_0, 0))
         self.connect((self.uhd_usrp_source_0, 0), (self.mimo_ofdm_jrc_moving_avg_0, 0))
 
@@ -474,7 +474,7 @@ class V0_comm_autoMCS_RX(gr.top_block, Qt.QWidget):
     def set_save_comm_log(self, save_comm_log):
         self.save_comm_log = save_comm_log
         self._save_comm_log_callback(self.save_comm_log)
-        self.mimo_ofdm_jrc_stream_decoder_0.set_stats_record(self.save_comm_log)
+        self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0.set_stats_record(self.save_comm_log)
 
     def get_samp_rate(self):
         return self.samp_rate

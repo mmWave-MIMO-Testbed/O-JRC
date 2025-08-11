@@ -48,6 +48,7 @@ namespace gr {
       bool d_log;
 
       const std::string d_comm_log_file;
+      // const std::string d_payload_log_file;
 
       packet_param d_stream_param;
       ofdm_mcs d_ofdm_mcs;
@@ -65,8 +66,8 @@ namespace gr {
 
       ba::accumulator_set<int, ba::stats<bt::rolling_mean> > per_stats;
       ba::accumulator_set<float, ba::stats<bt::rolling_mean> > snr_data_stats;
-      ba::accumulator_set<double, ba::stats<bt::rolling_mean> > tpt_stats;
-      ba::accumulator_set<float, ba::stats<bt::rolling_mean> > reward_stats;
+      //ba::accumulator_set<double, ba::stats<bt::rolling_mean> > tpt_stats;
+      //ba::accumulator_set<float, ba::stats<bt::rolling_mean> > reward_stats;
 
       // double d_nom_freq;  // nominal frequency, Hz
       // double d_freq_offset;  // frequency offset, Hz

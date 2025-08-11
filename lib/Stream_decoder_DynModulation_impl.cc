@@ -60,8 +60,8 @@ namespace gr {
             d_stats_record(stats_record),
             d_frame_rx_complete(true),
             per_stats(bt::rolling_window::window_size = 25),
-            tpt_stats(bt::rolling_window::window_size = 10),
-            reward_stats(bt::rolling_window::window_size = 1), //reward design
+            // tpt_stats(bt::rolling_window::window_size = 10),
+            // reward_stats(bt::rolling_window::window_size = 1), //reward design
             snr_data_stats(bt::rolling_window::window_size = 1)
     {
             message_port_register_out(pmt::mp("sym"));
@@ -253,6 +253,29 @@ namespace gr {
 
             std::ofstream file_stream(d_comm_log_file, std::ofstream::app);
 
+            // Local utility
+            constexpr size_t DUMP_MAX = 0; // 0 means no truncation. 
+            auto write_hex = [](std::ostream& os, const uint8_t* data, size_t len, size_t max_dump) {
+                static const char H[] = "0123456789ABCDEF";
+                size_t n = (max_dump == 0) ? len : std::min(len, max_dump);
+                for (size_t i = 0; i < n; ++i) {
+                    unsigned v = data[i];
+                    os << H[v >> 4] << H[v & 0x0F];
+                }
+                if (n < len) os << "...";
+            };
+
+            auto write_ascii = [](std::ostream& os, const uint8_t* data, size_t len, size_t max_dump) {
+                size_t n = (max_dump == 0) ? len : std::min(len, max_dump);
+                for (size_t i = 0; i < n; ++i) {
+                    unsigned char c = data[i];
+                    // print printable characters, others are replaced with '.'
+                    if (c >= 32 && c <= 126) os << static_cast<char>(c);
+                    else os << '.';
+                }
+                if (n < len) os << "...";
+            };
+
             if(d_stats_record)
             {
                 dout << "[STREAM DECODER] d_comm_log_file:" << d_comm_log_file << ", " << file_stream.is_open() << std::endl;
@@ -262,7 +285,7 @@ namespace gr {
                 {
                     if(!d_new_stat_started)
                     {
-                        file_stream << "\n NEW RECORD - " << current_date_time() << "time, CRC, type, est_snr, data_snr, data_CRC, reward, per_val, Throughput" <<"\n";;
+                        file_stream << "\n NEW RECORD - " << current_date_time() << "time, CRC, type, mcs, est_snr, data_snr, data size,n_OFDM symbols, payload" <<"\n";;
                         file_stream.flush();
                         d_new_stat_started = true;
                     }
@@ -304,7 +327,28 @@ namespace gr {
             //CHECKSUM
             boost::crc_32_type result;
             result.process_bytes(out_bytes+2, d_stream_param.data_size_byte); // +2 for 16-bit zeros prepended to reset the scrambler
-            if(result.checksum() != 558161692) 
+            
+            // ===FCS + length check===
+            const uint8_t* psdu  = out_bytes + 2;                 // skip SERVICE(2B)
+            size_t         Lpsdu = d_stream_param.data_size_byte; // = PSDU + FCS total bytes
+
+            bool crc_ok = false;
+            if (Lpsdu >= 4) {
+                uint32_t fcs_rx = 0;
+                memcpy(&fcs_rx, psdu + (Lpsdu - 4), 4);           // get "received" FCS (host byte order)
+
+                boost::crc_32_type crc;
+                crc.process_bytes(psdu, Lpsdu - 4);               // only calculate for PSDU (excluding FCS)
+                uint32_t fcs_calc = crc.checksum();
+
+                crc_ok = (fcs_calc == fcs_rx);
+            } else {
+                dout << "[STREAM DECODER] PSDU too short for FCS: " << Lpsdu << " bytes" << std::endl;
+                crc_ok = false;                                   // length abnormal, treat as CRC failure
+            }
+            
+            //if(result.checksum() != 558161692)
+            if (!crc_ok)
             {
                 std::cerr << "[STREAM DECODER] Data Checksum is WRONG!!! --> Dropping Packet, bytes:" << d_stream_param.data_size_byte << std::endl;
 
@@ -331,23 +375,24 @@ namespace gr {
                 pmt::pmt_t d_snr_value = pmt::init_f32vector(1, &snr_val); // pmt
                 pmt::pmt_t d_snr_pack = pmt::list2(d_snr_key, d_snr_value); // make list 
 
-                float tpt_val = 0.01*boost::accumulators::rolling_mean(tpt_stats);
-                pmt::pmt_t d_tpt_key = pmt::string_to_symbol("throughput"); //identifier
-                pmt::pmt_t d_tpt_value = pmt::init_f32vector(1, &tpt_val); //pmt
-                pmt::pmt_t d_tpt_pack = pmt::list2(d_tpt_key,d_tpt_value); //make list
+                // float tpt_val = 0.01*boost::accumulators::rolling_mean(tpt_stats);
+                // pmt::pmt_t d_tpt_key = pmt::string_to_symbol("throughput"); //identifier
+                // pmt::pmt_t d_tpt_value = pmt::init_f32vector(1, &tpt_val); //pmt
+                // pmt::pmt_t d_tpt_pack = pmt::list2(d_tpt_key,d_tpt_value); //make list
 
-                float reward_val = boost::accumulators::rolling_mean(reward_stats);
-                pmt::pmt_t d_avesnr_key = pmt::string_to_symbol("reward"); //identifier
-                pmt::pmt_t d_avesnr_value = pmt::init_f32vector(1, &reward_val); //pmt
-                pmt::pmt_t d_avesnr_pack = pmt::list2(d_avesnr_key,d_avesnr_value); //make list
+                // float reward_val = boost::accumulators::rolling_mean(reward_stats);
+                // pmt::pmt_t d_avesnr_key = pmt::string_to_symbol("reward"); //identifier
+                // pmt::pmt_t d_avesnr_value = pmt::init_f32vector(1, &reward_val); //pmt
+                // pmt::pmt_t d_avesnr_pack = pmt::list2(d_avesnr_key,d_avesnr_value); //make list
 
-                pmt::pmt_t stats_msg = pmt::list4(d_per_pack, d_snr_pack,d_tpt_pack,d_avesnr_pack);
+                // pmt::pmt_t stats_msg = pmt::list4(d_per_pack, d_snr_pack,d_tpt_pack,d_avesnr_pack);
+                pmt::pmt_t stats_msg = pmt::list2(d_per_pack, d_snr_pack);
                 message_port_pub(pmt::mp("stats"), stats_msg); // publish message
 
                 per_stats(1);
                 snr_data_stats(d_snr_data_est);
-                tpt_stats(0);
-                reward_stats(0);
+                // tpt_stats(0);
+                // reward_stats(0);
 
                 if(d_stats_record)
                 {       
@@ -355,12 +400,23 @@ namespace gr {
 
                     if (file_stream.is_open())
                     {
-                        //file_stream << current_date_time2() << ", \t" << 0 << ", \t" << (int) d_packet_type << ", \t" << (int) d_mcs << ", \t" << d_snr_est << ", \t" << d_snr_data_est << ", \t" << d_stream_param.data_size_byte << ", \t";
-                        file_stream << current_date_time2() << ", \t" << 0 << ", \t" << (int) d_packet_type << ", \t" << d_snr_est << ", \t" <<d_snr_data_est << ", \t" << reward_val << ", \t" << per_val <<", \t" << tpt_val << ", \t";
+                        file_stream << current_date_time2() << ", \t" << 0 << ", \t" << (int) d_packet_type << ", \t" << (int) d_mcs << ", \t" << d_snr_est << ", \t" << d_snr_data_est << ", \t" << d_stream_param.data_size_byte << ", \t" << d_stream_param.n_ofdm_sym << ", \t";
+                        //file_stream << current_date_time2() << ", \t" << 0 << ", \t" << (int) d_packet_type << ", \t" << d_snr_est << ", \t" <<d_snr_data_est << ", \t" << reward_val << ", \t" << per_val <<", \t" << tpt_val << ", \t";
                         for (int i = 0; i < chan_est_mean.size(); i++)
                         {
-                            file_stream << chan_est_mean[i] << ".";
+                            file_stream << chan_est_mean[i] << ", \t";
                         }
+
+                        if (static_cast<int>(d_packet_type) == 2) { // 2==DATA
+                            const uint8_t* payload_ptr = out_bytes + 2; // skip SERVICE 16-bit 0
+                            size_t payload_len = static_cast<size_t>(d_stream_param.data_size_byte)-4; // remove trailing CRC32
+                            if (payload_len > 0 && payload_ptr) {
+                                //file_stream << ", \tPAYLOAD(" << payload_len << "): ";
+                                // write_hex(file_stream, payload_ptr, payload_len, DUMP_MAX);
+                                write_ascii(file_stream, payload_ptr, payload_len, DUMP_MAX);
+                            }
+                        }
+
                         file_stream << "\n";
                         file_stream.flush();
                     }
@@ -379,16 +435,16 @@ namespace gr {
             total_data_received += d_stream_param.data_size_byte;
             per_stats(0);
             snr_data_stats(d_snr_data_est);
-            if (int(d_packet_type) == 1)
-            {
-                tpt_stats(0);
-                reward_stats(0);
-            }
-            else
-            {
-                tpt_stats(d_stream_param.data_size_byte);
-                reward_stats(1);
-            }
+            // if (int(d_packet_type) == 1)
+            // {
+            //     tpt_stats(0);
+            //     reward_stats(0);
+            // }
+            // else
+            // {
+            //     tpt_stats(d_stream_param.data_size_byte);
+            //     reward_stats(1);
+            // }
             dout << "[STREAM DECODER] Estimated SNR:" << d_snr_est << std::endl;
             
             // time (&curr_time);
@@ -430,17 +486,18 @@ namespace gr {
             pmt::pmt_t d_snr_value = pmt::init_f32vector(1, &snr_val); // pmt
             pmt::pmt_t d_snr_pack = pmt::list2(d_snr_key, d_snr_value); // make list 
 
-            float tpt_val = 0.01 * boost::accumulators::rolling_mean(tpt_stats);
-            pmt::pmt_t d_tpt_key = pmt::string_to_symbol("throughput"); //identifier
-            pmt::pmt_t d_tpt_value = pmt::init_f32vector(1, &tpt_val); //pmt
-            pmt::pmt_t d_tpt_pack = pmt::list2(d_tpt_key,d_tpt_value); //make list
+            // float tpt_val = 0.01 * boost::accumulators::rolling_mean(tpt_stats);
+            // pmt::pmt_t d_tpt_key = pmt::string_to_symbol("throughput"); //identifier
+            // pmt::pmt_t d_tpt_value = pmt::init_f32vector(1, &tpt_val); //pmt
+            // pmt::pmt_t d_tpt_pack = pmt::list2(d_tpt_key,d_tpt_value); //make list
 
-            float reward_val = boost::accumulators::rolling_mean(reward_stats);
-            pmt::pmt_t d_avesnr_key = pmt::string_to_symbol("reward"); //identifier
-            pmt::pmt_t d_avesnr_value = pmt::init_f32vector(1, &reward_val); //pmt
-            pmt::pmt_t d_avesnr_pack = pmt::list2(d_avesnr_key,d_avesnr_value); //make list
+            // float reward_val = boost::accumulators::rolling_mean(reward_stats);
+            // pmt::pmt_t d_avesnr_key = pmt::string_to_symbol("reward"); //identifier
+            // pmt::pmt_t d_avesnr_value = pmt::init_f32vector(1, &reward_val); //pmt
+            // pmt::pmt_t d_avesnr_pack = pmt::list2(d_avesnr_key,d_avesnr_value); //make list
 
-            pmt::pmt_t stats_msg = pmt::list4(d_per_pack, d_snr_pack,d_tpt_pack,d_avesnr_pack);
+            // pmt::pmt_t stats_msg = pmt::list4(d_per_pack, d_snr_pack,d_tpt_pack,d_avesnr_pack);
+            pmt::pmt_t stats_msg = pmt::list2(d_per_pack, d_snr_pack);
             message_port_pub(pmt::mp("stats"), stats_msg); // publish message
 
             if(d_stats_record)
@@ -448,12 +505,23 @@ namespace gr {
                 dout << "[STREAM DECODER] d_comm_log_file:" << d_comm_log_file << ", " << file_stream.is_open() << std::endl;
                 if (file_stream.is_open())
                 {
-                    //file_stream << current_date_time2() << ", \t" << 1 << ", \t" << (int) d_packet_type << ", \t" << (int) d_mcs << ", \t" << d_snr_est << ", \t" << d_snr_data_est << ", \t" << d_stream_param.data_size_byte << ", \t" ;
-                    file_stream << current_date_time2() << ", \t" << 1 << ", \t" << (int) d_packet_type << ", \t" << d_snr_est << ", \t" <<d_snr_data_est << ", \t" << reward_val << ", \t" << per_val <<", \t" << tpt_val << ", \t"; 
+                    file_stream << current_date_time2() << ", \t" << 1 << ", \t" << (int) d_packet_type << ", \t" << (int) d_mcs << ", \t" << d_snr_est << ", \t" << d_snr_data_est << ", \t" << d_stream_param.data_size_byte << ", \t" << d_stream_param.n_ofdm_sym<< ", \t" ;
+                    //file_stream << current_date_time2() << ", \t" << 1 << ", \t" << (int) d_packet_type << ", \t" << d_snr_est << ", \t" <<d_snr_data_est << ", \t" << reward_val << ", \t" << per_val <<", \t" << tpt_val << ", \t"; 
                     for (int i = 0; i < chan_est_mean.size(); i++)
                     {
-                        file_stream << chan_est_mean[i] << ".";
+                        file_stream << chan_est_mean[i]<< ", \t";
                     }
+
+                    if (static_cast<int>(d_packet_type) == 2) { // DATA == 2
+                        const uint8_t* payload_ptr = out_bytes + 2; // skip SERVICE 16-bit 0
+                        size_t payload_len = static_cast<size_t>(d_stream_param.data_size_byte)-4; // remove trailing CRC32
+                        if (payload_len > 0 && payload_ptr) {
+                            //file_stream << ", \tPAYLOAD(" << payload_len << "): ";
+                            // write_hex(file_stream, payload_ptr, payload_len, DUMP_MAX);
+                            write_ascii(file_stream, payload_ptr, payload_len, DUMP_MAX);
+                        }
+                    }
+
                     file_stream << "\n";
                     file_stream.flush();
                 }

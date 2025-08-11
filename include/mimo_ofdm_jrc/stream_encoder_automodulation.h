@@ -60,7 +60,7 @@ namespace gr {
        * class. mimo_ofdm_jrc::stream_encoder_automodulation::make is the public interface for
        * creating new instances.
        */
-      static sptr make(MCS mod_encode, int data_len, int N_ss_radar, const std::string& mcs_ctrl_file, bool debug);
+      static sptr make(MCS mod_encode, int data_len, int N_ss_radar, const std::string& mcs_ctrl_file, int target_nsym, bool debug);
       virtual void set_mcs(MCS mod_encode) = 0;
     };
 

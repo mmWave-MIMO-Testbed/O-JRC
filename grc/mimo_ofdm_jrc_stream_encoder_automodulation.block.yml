@@ -4,7 +4,7 @@ category: '[mimo_ofdm_jrc]'
 
 templates:
   imports: import mimo_ofdm_jrc
-  make: mimo_ofdm_jrc.stream_encoder_automodulation(${mod_encode}, ${data_len}, ${N_ss_radar}, ${mcs_ctrl_file}, ${debug})
+  make: mimo_ofdm_jrc.stream_encoder_automodulation(${mod_encode}, ${data_len}, ${N_ss_radar}, ${mcs_ctrl_file}, ${target_nsym}, ${debug})
   callbacks:
   - set_mcs(${mod_encode})
 
@@ -25,6 +25,10 @@ parameters:
 - id: mcs_ctrl_file
   label: MCS Control File
   dtype: string
+- id: target_nsym
+  label: Target OFDM symbols
+  dtype: int
+  default: 48
 - id: debug
   label: Debug
   dtype: bool

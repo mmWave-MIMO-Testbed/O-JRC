@@ -477,6 +477,19 @@ blocks:
     coordinate: [312, 76.0]
     rotation: 0
     state: enabled
+- name: target_OFDM_symbols
+  id: variable
+  parameters:
+    comment: "fix OFDM symbols per packet.\n>0 enable\uFF0Caccording to MCS to cut\
+      \ or adding 0;\n==0 for fixed packet data payload length"
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [368, 824.0]
+    rotation: 0
+    state: true
 - name: tx_gain
   id: variable_qtgui_range
   parameters:
@@ -705,7 +718,7 @@ blocks:
     bus_structure: null
     coordinate: [144, 532.0]
     rotation: 0
-    state: disabled
+    state: enabled
 - name: digital_ofdm_cyclic_prefixer_0
   id: digital_ofdm_cyclic_prefixer
   parameters:
@@ -976,7 +989,7 @@ blocks:
     bus_structure: null
     coordinate: [152, 784.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: mimo_ofdm_jrc_packet_switch_0
   id: mimo_ofdm_jrc_packet_switch
   parameters:
@@ -993,7 +1006,7 @@ blocks:
     bus_structure: null
     coordinate: [64, 892.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: mimo_ofdm_jrc_socket_pdu_jrc_0
   id: mimo_ofdm_jrc_socket_pdu_jrc
   parameters:
@@ -1012,7 +1025,7 @@ blocks:
     bus_structure: null
     coordinate: [144, 644.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: mimo_ofdm_jrc_stream_encoder_0
   id: mimo_ofdm_jrc_stream_encoder
   parameters:
@@ -1045,6 +1058,7 @@ blocks:
     mcs_ctrl_file: mcs_ctrl_file
     minoutbuf: '0'
     mod_encode: mcs
+    target_nsym: target_OFDM_symbols
   states:
     bus_sink: false
     bus_source: false

@@ -30,17 +30,17 @@ namespace gr {
   namespace mimo_ofdm_jrc {
 
     stream_encoder_automodulation::sptr
-    stream_encoder_automodulation::make(MCS mod_encode, int data_len, int N_ss_radar, const std::string& mcs_ctrl_file, bool debug)
+    stream_encoder_automodulation::make(MCS mod_encode, int data_len, int N_ss_radar, const std::string& mcs_ctrl_file, int target_nsym, bool debug)
     {
       return gnuradio::get_initial_sptr
-        (new stream_encoder_automodulation_impl(mod_encode, data_len, N_ss_radar, mcs_ctrl_file, debug));
+        (new stream_encoder_automodulation_impl(mod_encode, data_len, N_ss_radar, mcs_ctrl_file, target_nsym, debug));
     }
 
 
     /*
      * The private constructor
      */
-    stream_encoder_automodulation_impl::stream_encoder_automodulation_impl(MCS mod_encode, int data_len, int N_ss_radar, const std::string& mcs_ctrl_file, bool debug)
+    stream_encoder_automodulation_impl::stream_encoder_automodulation_impl(MCS mod_encode, int data_len, int N_ss_radar, const std::string& mcs_ctrl_file, int target_nsym, bool debug)
       : gr::block("stream_encoder_automodulation",
               gr::io_signature::make(0, 0, 0),
               gr::io_signature::make(1, 1, sizeof(gr_complex))),
@@ -54,7 +54,8 @@ namespace gr {
             d_mcs_ctrl_file(mcs_ctrl_file),
             d_scrambler(1),
             d_readfile_flag(0),
-            d_N_ss_radar(N_ss_radar)
+            d_N_ss_radar(N_ss_radar),
+            d_target_nsym(target_nsym)
     {
       message_port_register_in(pmt::mp("pdu_in"));
 		
@@ -143,7 +144,120 @@ namespace gr {
 
 
           d_ofdm_mcs = ofdm_mcs(d_mod_encode, d_data_len);
-          packet_param burst(d_ofdm_mcs, packet_size_byte+4, packet_type); //+4 added for 32bit CRC checksum
+          // packet_param burst(d_ofdm_mcs, packet_size_byte+4, packet_type); //+4 added for 32bit CRC checksum
+          // if enable fix OFDM symbols
+          // char* resized_buf = nullptr;
+          // if (d_target_nsym > 0) 
+          // {
+          //     const int N_dbps = d_ofdm_mcs.n_dbps;           // dbps per symbol
+          //     const int NSYM   = d_target_nsym;
+          //     // calculate L_max / L_min （unit：symbol's PSDU，exclude FCS）
+          //     auto floor_div = [](int a,int b){ return a>=0? a/b : -(( -a + b -1)/b); };
+          //     auto ceil_div  = [](int a,int b){ return a>=0? (a + b -1)/b : -( (-a)/b ); };
+
+          //     // B = 8L + 54;  54 = 16(SERVICE)+6(tail)+32(FCS)
+          //     int L_max = floor_div(NSYM * N_dbps - 54, 8);
+          //     int Bmin  = (NSYM - 1) * N_dbps + 1;
+          //     int L_min = ceil_div(Bmin - 54, 8);
+          //     // limit to legal range
+          //     L_max = std::min(L_max, MAX_PAYLOAD_SIZE - 4);  // plus 4B FCS
+          //     L_max = std::max(L_max, 0);
+          //     L_min = std::max(L_min, 0);
+
+          //     int L_in  = std::max(packet_size_byte, 1);      // reserve 1B for packet_type
+          //     int L_tgt = std::min(std::max(L_in, L_min), L_max);
+
+          //     if (L_tgt != packet_size_byte) {
+          //         // reshape to L_tgt: truncate if exceed; pad with 0 if insufficient
+          //         resized_buf = (char*)calloc(L_tgt, sizeof(char));
+          //         // ensure the first byte (packet_type) is not lost
+          //         int copy_len = std::min(packet_size_byte, L_tgt);
+          //         if (copy_len > 0) memcpy(resized_buf, data_packet, copy_len);
+          //         data_packet      = resized_buf;
+          //         packet_size_byte = L_tgt;
+          //         dout << "[STREAM ENCODER] reshape PSDU: in=" << L_in
+          //             << " -> tgt=" << L_tgt
+          //             << " (nsym=" << NSYM << ", Ndbps=" << N_dbps << ")\n";
+          //     }
+          // }
+
+          // // construct burst（ensure: n_ofdm_sym == d_target_nsym）
+          // packet_param burst(d_ofdm_mcs, packet_size_byte+4, packet_type);
+          // if (d_target_nsym > 0 && burst.n_ofdm_sym != d_target_nsym) {
+          //     dout << "[STREAM ENCODER][WARN] n_ofdm_sym=" << burst.n_ofdm_sym
+          //         << " != target " << d_target_nsym << " (check L_min/L_max)\n";
+          // }
+
+          // ---- fix Nsym's cutting + padding + fine-tune to hit target_nsym (CRC still calculated as you did later)----
+          char* resized_buf = nullptr;
+          if (d_target_nsym > 0) 
+          {
+              const int N_dbps = d_ofdm_mcs.n_dbps;   // number of data bits per symbol
+              const int NSYM   = d_target_nsym;
+              const int FCS_BYTES = 4;
+              const int B_HDR = 16 /*SERVICE*/ + 6 /*tail*/ + 8*FCS_BYTES; // =54
+
+              auto floor_div = [](int a,int b){ return a>=0? a/b : -(( -a + b -1)/b); };
+              auto ceil_div  = [](int a,int b){ return a>=0? (a + b -1)/b : -( (-a)/b ); };
+
+              // from ceil((8L + 54)/N_dbps) == NSYM to get the range of L(unit: byte here L is PSDU doesn't have FCS)
+              int L_max = floor_div(NSYM * N_dbps - B_HDR, 8);
+              int Bmin  = (NSYM - 1) * N_dbps + 1;             // strictly greater than (NSYM-1)*N_dbps
+              int L_min = ceil_div(Bmin - B_HDR, 8);
+
+              // physical range and implementation limit
+              L_max = std::min(L_max, MAX_PAYLOAD_SIZE - FCS_BYTES);
+              L_max = std::max(L_max, 0);
+              L_min = std::max(L_min, 0);
+
+              int L_in  = std::max(packet_size_byte, 1);       // at least keep the first byte packet_type
+              // int L_tgt = std::min(std::max(L_in, L_min), L_max); // find the closest range first
+              int L_tgt = L_max;   // always fill the capacity of this MCS+Nsym -> bytes are constant under the same MCS
+
+              // —— use packet_param to align and fine-tune the actual calculation, avoid ±1 —— //
+              auto nsym_of = [&](int L_bytes)->int {
+                  packet_param tmp(d_ofdm_mcs, L_bytes + FCS_BYTES, packet_type);
+                  return tmp.n_ofdm_sym;
+              };
+              int ns = nsym_of(L_tgt);
+
+              int guard = 64; // very few loops, for safety
+              while (ns > NSYM && L_tgt > L_min && guard--) { L_tgt--; ns = nsym_of(L_tgt); }
+              while (ns < NSYM && L_tgt < L_max && guard--) { L_tgt++; ns = nsym_of(L_tgt); }
+
+              if (ns != NSYM) {
+                  // probe 1~2 bytes near the boundary, compatible with internal rounding differences
+                  bool fixed = false;
+                  for (int d = -2; d <= 2; ++d) {
+                      int cand = std::min(L_max, std::max(L_min, L_tgt + d));
+                      if (nsym_of(cand) == NSYM) { L_tgt = cand; fixed = true; break; }
+                  }
+                  if (!fixed) {
+                      dout << "[STREAM ENCODER][WARN] cannot hit NSYM=" << NSYM
+                          << " with L in [" << L_min << "," << L_max << "], use L=" << L_tgt
+                          << " (nsym=" << ns << ")\n";
+                  }
+              }
+
+              // reshape buffer only when really needed: truncate if exceed, pad if insufficient
+              if (L_tgt != packet_size_byte) {
+                  resized_buf = (char*)calloc(L_tgt, sizeof(char));
+                  int copy_len = std::min(packet_size_byte, L_tgt);
+                  if (copy_len > 0) memcpy(resized_buf, data_packet, copy_len);
+                  data_packet      = resized_buf;
+                  packet_size_byte = L_tgt;
+                  dout << "[STREAM ENCODER] reshape PSDU: in=" << L_in
+                      << " -> tgt=" << L_tgt
+                      << " (nsym=" << NSYM << ", Ndbps=" << N_dbps << ")\n";
+              }
+          }
+
+          // ---- construct burst (hit target_nsym) here ----
+          packet_param burst(d_ofdm_mcs, packet_size_byte + 4, packet_type);
+          if (d_target_nsym > 0 && burst.n_ofdm_sym != d_target_nsym) {
+              dout << "[STREAM ENCODER][WARN] n_ofdm_sym=" << burst.n_ofdm_sym
+                  << " != target " << d_target_nsym << " (check L_min/L_max)\n";
+          }
 
           // int max_ofdm_sym = (((16 + 8 * MAX_PAYLOAD_SIZE + 6) / ((double) d_ofdm_mcs.n_dbps)) + 1); // 16 zeros for scrambler + psdu + 6-bits to terminate convolutional encoder
           // std::cout << "[STREAM ENCODER] PDU too Large -> Maximun PDU Length (byte): " << max_ofdm_sym << std::endl;
@@ -253,9 +367,12 @@ namespace gr {
           add_item_tag(0, nitems_written(0), pmt::mp("mcs"), mcs_tag, srcid);
 
           int total_pdu_length = packet_size_byte+4;
-          pmt::pmt_t pdu_bytes = pmt::from_long(total_pdu_length); //+4 added for 32bit CRC checksum
-          add_item_tag(0, nitems_written(0), pmt::mp("pdu_len"), pdu_bytes, srcid);
+          //pmt::pmt_t pdu_bytes = pmt::from_long(total_pdu_length); //+4 added for 32bit CRC checksum
+          //add_item_tag(0, nitems_written(0), pmt::mp("pdu_len"), pdu_bytes, srcid);
 
+          pmt::pmt_t v = pmt::from_long(total_pdu_length);
+          add_item_tag(0, nitems_written(0), pmt::mp("pdu_len"),    v, srcid);
+          add_item_tag(0, nitems_written(0), pmt::mp("data_bytes"), v, srcid);
 
           free(data_packet_crc);
           free(data_bits);
@@ -264,6 +381,7 @@ namespace gr {
           free(punctured_data);
           free(interleaved_data);
           free(symbols);
+          if (resized_buf) free(resized_buf);
                   
           break;
         }
