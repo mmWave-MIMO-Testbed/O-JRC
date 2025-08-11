@@ -50,5 +50,6 @@ install(FILES
     gui_heatmap_plot_digital.h
     MAC_header.h
     Stream_decoder_DynModulation.h
-    stream_encoder_automodulation.h DESTINATION include/mimo_ofdm_jrc
+    stream_encoder_automodulation.h
+    Multi_targets_simulator.h DESTINATION include/mimo_ofdm_jrc
 )
