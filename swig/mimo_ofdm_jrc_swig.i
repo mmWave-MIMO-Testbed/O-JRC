@@ -37,6 +37,7 @@
 #include "mimo_ofdm_jrc/Stream_decoder_DynModulation.h"
 #include "mimo_ofdm_jrc/stream_encoder_automodulation.h"
 #include "mimo_ofdm_jrc/Multi_targets_simulator.h"
+#include "mimo_ofdm_jrc/comm_target_simulator.h"
 %}
 
 %include "mimo_ofdm_jrc/fft_peak_detect.h"
@@ -99,3 +100,5 @@ GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, Stream_decoder_DynModulation);
 GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, stream_encoder_automodulation);
 %include "mimo_ofdm_jrc/Multi_targets_simulator.h"
 GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, Multi_targets_simulator);
+%include "mimo_ofdm_jrc/comm_target_simulator.h"
+GR_SWIG_BLOCK_MAGIC2(mimo_ofdm_jrc, comm_target_simulator);

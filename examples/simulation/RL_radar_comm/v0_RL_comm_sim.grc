@@ -616,6 +616,23 @@ blocks:
     coordinate: [1744, 228.0]
     rotation: 0
     state: true
+- name: variable_config_0
+  id: variable_config
+  parameters:
+    comment: ''
+    config_file: default
+    option: key
+    section: main
+    type: real
+    value: '0'
+    writeback: None
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1328, 744.0]
+    rotation: 0
+    state: true
 - name: wavelength
   id: variable
   parameters:
@@ -2956,7 +2973,7 @@ blocks:
     bus_structure: null
     coordinate: [664, 692.0]
     rotation: 180
-    state: enabled
+    state: disabled
 - name: qtgui_time_sink_x_0_0_1_0
   id: qtgui_time_sink_x
   parameters:

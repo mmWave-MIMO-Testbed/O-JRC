@@ -1263,7 +1263,7 @@ blocks:
     azimuth: trgt_angle_multi
     center_freq: rf_freq
     comment: RCS = 10**(trgt_rcs_dbsm/10.0)
-    csv_path: /home/haocheng/O-JRC/examples/data/target_data.csv
+    csv_path: /home/haocheng/O-JRC/examples/RL_ResourceAllocation_Data/target_data.csv
     debug: 'False'
     len_key: '"packet_len"'
     maxoutbuf: '0'
@@ -1291,7 +1291,7 @@ blocks:
     azimuth: trgt_angle_multi
     center_freq: rf_freq
     comment: RCS = 10**(trgt_rcs_dbsm/10.0)
-    csv_path: /home/haocheng/O-JRC/examples/data/target_data.csv
+    csv_path: /home/haocheng/O-JRC/examples/RL_ResourceAllocation_Data/target_data.csv
     debug: 'False'
     len_key: '"packet_len"'
     maxoutbuf: '0'
@@ -1319,7 +1319,7 @@ blocks:
     azimuth: trgt_angle_multi
     center_freq: rf_freq
     comment: RCS = 10**(trgt_rcs_dbsm/10.0)
-    csv_path: /home/haocheng/O-JRC/examples/data/target_data.csv
+    csv_path: /home/haocheng/O-JRC/examples/RL_ResourceAllocation_Data/target_data.csv
     debug: 'False'
     len_key: '"packet_len"'
     maxoutbuf: '0'
@@ -1347,7 +1347,7 @@ blocks:
     azimuth: trgt_angle_multi
     center_freq: rf_freq
     comment: RCS = 10**(trgt_rcs_dbsm/10.0)
-    csv_path: /home/haocheng/O-JRC/examples/data/target_data.csv
+    csv_path: /home/haocheng/O-JRC/examples/RL_ResourceAllocation_Data/target_data.csv
     debug: 'False'
     len_key: '"packet_len"'
     maxoutbuf: '0'
@@ -1410,9 +1410,9 @@ blocks:
     label: Range-Angle Image
     len_key: '"packet_len"'
     vlen: N_tx*N_rx*interp_factor_angle
-    x_axis_ticks: '[70, -70, 10]'
+    x_axis_ticks: '[-70, 70, 10]'
     xlabel: '"Angle"'
-    y_axis_ticks: '[0, 10, 2]'
+    y_axis_ticks: '[0, 10, 1]'
     ylabel: '"Range (m)"'
   states:
     bus_sink: false

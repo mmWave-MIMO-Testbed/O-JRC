@@ -51,5 +51,6 @@ install(FILES
     MAC_header.h
     Stream_decoder_DynModulation.h
     stream_encoder_automodulation.h
-    Multi_targets_simulator.h DESTINATION include/mimo_ofdm_jrc
+    Multi_targets_simulator.h
+    comm_target_simulator.h DESTINATION include/mimo_ofdm_jrc
 )

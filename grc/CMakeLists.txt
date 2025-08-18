@@ -46,5 +46,6 @@ install(FILES
     mimo_ofdm_jrc_MAC_header.block.yml
     mimo_ofdm_jrc_Stream_decoder_DynModulation.block.yml
     mimo_ofdm_jrc_stream_encoder_automodulation.block.yml
-    mimo_ofdm_jrc_Multi_targets_simulator.block.yml DESTINATION share/gnuradio/grc/blocks
+    mimo_ofdm_jrc_Multi_targets_simulator.block.yml
+    mimo_ofdm_jrc_comm_target_simulator.block.yml DESTINATION share/gnuradio/grc/blocks
 )
