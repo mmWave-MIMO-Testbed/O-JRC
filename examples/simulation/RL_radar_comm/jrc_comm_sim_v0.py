@@ -106,10 +106,10 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.tx_multiplier = tx_multiplier = 0.50
         self.target_OFDM_symbols = target_OFDM_symbols = 16
         self.sync_length = sync_length = 4*(fft_len+cp_len)
-        self.record_comm_stats = record_comm_stats = False
+        self.record_comm_stats = record_comm_stats = True
         self.radar_read_file = radar_read_file = parrent_path+"/data/radar_data.csv"
         self.radar_log_file = radar_log_file = parrent_path+"/data/radar_log.csv"
-        self.radar_aided = radar_aided = False
+        self.radar_aided = radar_aided = True
         self.phased_steering = phased_steering = False
         self.path_loss = path_loss = 4*cmath.pi*distance/wavelength
         self.packet_data_file = packet_data_file = parrent_path+"/data/packet_data.csv"
@@ -151,13 +151,6 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self._tx_multiplier_win = RangeWidget(self._tx_multiplier_range, self.set_tx_multiplier, 'TX Gain', "counter_slider", float)
         self.top_grid_layout.addWidget(self._tx_multiplier_win, 0, 0, 1, 1)
         for r in range(0, 1):
-            self.top_grid_layout.setRowStretch(r, 1)
-        for c in range(0, 1):
-            self.top_grid_layout.setColumnStretch(c, 1)
-        self._theta_range = Range(-90, 90, 1, 20, 200)
-        self._theta_win = RangeWidget(self._theta_range, self.set_theta, 'Azimuth Angle', "counter_slider", float)
-        self.top_grid_layout.addWidget(self._theta_win, 1, 0, 1, 1)
-        for r in range(1, 2):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(0, 1):
             self.top_grid_layout.setColumnStretch(c, 1)
@@ -233,8 +226,8 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self._mcs_callback(self.mcs)
         self._mcs_button_group.buttonClicked[int].connect(
             lambda i: self.set_mcs(self._mcs_options[i]))
-        self.top_grid_layout.addWidget(self._mcs_group_box, 2, 0, 1, 1)
-        for r in range(2, 3):
+        self.top_grid_layout.addWidget(self._mcs_group_box, 3, 0, 1, 1)
+        for r in range(3, 4):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(0, 1):
             self.top_grid_layout.setColumnStretch(c, 1)
@@ -262,8 +255,15 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self._chan_est_callback(self.chan_est)
         self._chan_est_button_group.buttonClicked[int].connect(
             lambda i: self.set_chan_est(self._chan_est_options[i]))
-        self.top_grid_layout.addWidget(self._chan_est_group_box, 3, 0, 1, 1)
-        for r in range(3, 4):
+        self.top_grid_layout.addWidget(self._chan_est_group_box, 4, 0, 1, 1)
+        for r in range(4, 5):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(0, 1):
+            self.top_grid_layout.setColumnStretch(c, 1)
+        self._theta_range = Range(-90, 90, 1, 20, 200)
+        self._theta_win = RangeWidget(self._theta_range, self.set_theta, 'Azimuth Angle', "counter_slider", float)
+        self.top_grid_layout.addWidget(self._theta_win, 1, 0, 1, 1)
+        for r in range(1, 2):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(0, 1):
             self.top_grid_layout.setColumnStretch(c, 1)
@@ -411,8 +411,8 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
             self.qtgui_const_sink_x_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_const_sink_x_0_win = sip.wrapinstance(self.qtgui_const_sink_x_0.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_const_sink_x_0_win, 4, 0, 1, 1)
-        for r in range(4, 5):
+        self.top_grid_layout.addWidget(self._qtgui_const_sink_x_0_win, 5, 0, 1, 1)
+        for r in range(5, 6):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(0, 1):
             self.top_grid_layout.setColumnStretch(c, 1)
@@ -422,6 +422,9 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_zero_pad_0 = mimo_ofdm_jrc.zero_pad(False, 5, 6*(fft_len+cp_len)+10)
         self.mimo_ofdm_jrc_stream_encoder_1 = mimo_ofdm_jrc.stream_encoder(mcs, ofdm_config.N_data, 0, False)
         self.mimo_ofdm_jrc_stream_decoder_0 = mimo_ofdm_jrc.stream_decoder(len(ofdm_config.data_subcarriers), comm_log_file, record_comm_stats, False)
+        self.mimo_ofdm_jrc_socket_pdu_jrc_0 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 10000)
+        self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(50, packet_data_file)
+        self.mimo_ofdm_jrc_ndp_generator_0 = mimo_ofdm_jrc.ndp_generator()
         self.mimo_ofdm_jrc_moving_avg_0 = mimo_ofdm_jrc.moving_avg(corr_window_size, 1, 16000, False)
         self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64, ofdm_config.ltf_mapped_sc__ss_sym, chan_est_file, False, radar_read_file, radar_aided, phased_steering, use_radar_streams, "packet_len",  False)
         self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0 = mimo_ofdm_jrc.mimo_ofdm_equalizer(chan_est, rf_freq, samp_rate, fft_len, cp_len, ofdm_config.data_subcarriers, ofdm_config.pilot_subcarriers, ofdm_config.pilot_symbols, ofdm_config.l_stf_ltf_64[3], ofdm_config.ltf_mapped_sc__ss_sym, N_tx, chan_est_file, comm_log_file, chan_est_data_file,chan_est_ndp_file ,False, False)
@@ -430,11 +433,19 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_gui_time_plot_0 = mimo_ofdm_jrc.gui_time_plot(250, "snr", "SNR [dB]", [0,40], 10, "Signal-to-Noise Ratio")
         self.mimo_ofdm_jrc_frame_sync_0 = mimo_ofdm_jrc.frame_sync(fft_len, cp_len, sync_length, ofdm_config.l_ltf_fir, False)
         self.mimo_ofdm_jrc_frame_detector_0 = mimo_ofdm_jrc.frame_detector(fft_len, cp_len, 0.6, 10, (len(ofdm_config.l_stf_ltf_64)+N_tx)*(fft_len+cp_len), False)
+        self.mimo_ofdm_jrc_comm_target_simulator_0 = mimo_ofdm_jrc.comm_target_simulator(4, 24e9, 0.01, False)
         self.fft_vxx_0_2_0_0 = fft.fft_vcc(fft_len, False, tuple([1/64**.5] * 64), True, 2)
         self.fft_vxx_0_2_0 = fft.fft_vcc(fft_len, False, tuple([1/64**.5] * 64), True, 2)
         self.fft_vxx_0_2 = fft.fft_vcc(fft_len, False, tuple([1/64**.5] * 64), True, 2)
         self.fft_vxx_0_0 = fft.fft_vcc(fft_len, True, window.rectangular(fft_len), True, 1)
         self.fft_vxx_0 = fft.fft_vcc(fft_len, False, tuple([1/64**.5] * 64), True, 2)
+        self._distance_range = Range(1, 40, 1, 20, 200)
+        self._distance_win = RangeWidget(self._distance_range, self.set_distance, 'Distance', "counter_slider", float)
+        self.top_grid_layout.addWidget(self._distance_win, 2, 0, 1, 1)
+        for r in range(2, 3):
+            self.top_grid_layout.setRowStretch(r, 1)
+        for c in range(0, 1):
+            self.top_grid_layout.setColumnStretch(c, 1)
         self.digital_ofdm_cyclic_prefixer_0_0_0_0 = digital.ofdm_cyclic_prefixer(fft_len, fft_len + cp_len, 0, "packet_len")
         self.digital_ofdm_cyclic_prefixer_0_0_0 = digital.ofdm_cyclic_prefixer(fft_len, fft_len + cp_len, 0, "packet_len")
         self.digital_ofdm_cyclic_prefixer_0_0 = digital.ofdm_cyclic_prefixer(fft_len, fft_len + cp_len, 0, "packet_len")
@@ -450,13 +461,9 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_stream_to_vector_0 = blocks.stream_to_vector(gr.sizeof_gr_complex*1, fft_len)
         self.blocks_socket_pdu_1 = blocks.socket_pdu('UDP_CLIENT', '127.0.0.1', '52002', 5000, False)
-        self.blocks_socket_pdu_0 = blocks.socket_pdu('UDP_SERVER', '', '52001', 5000, False)
+        self.blocks_socket_pdu_0_0 = blocks.socket_pdu('UDP_SERVER', '', '52002', 5000, False)
         self.blocks_null_sink_0_0 = blocks.null_sink(gr.sizeof_float*1)
         self.blocks_multiply_xx_0 = blocks.multiply_vcc(1)
-        self.blocks_multiply_const_vxx_1_0_0_0 = blocks.multiply_const_cc((1/path_loss)*cmath.exp(3j*cmath.pi*np.sin(np.deg2rad(theta))))
-        self.blocks_multiply_const_vxx_1_0_0 = blocks.multiply_const_cc((1/path_loss)*cmath.exp(2j*cmath.pi*np.sin(np.deg2rad(theta))))
-        self.blocks_multiply_const_vxx_1_0 = blocks.multiply_const_cc((1/path_loss)*cmath.exp(1j*cmath.pi*np.sin(np.deg2rad(theta))))
-        self.blocks_multiply_const_vxx_1 = blocks.multiply_const_cc(1/path_loss)
         self.blocks_multiply_const_vxx_0_0_0_0 = blocks.multiply_const_cc(tx_multiplier)
         self.blocks_multiply_const_vxx_0_0_0 = blocks.multiply_const_cc(tx_multiplier)
         self.blocks_multiply_const_vxx_0_0 = blocks.multiply_const_cc(tx_multiplier)
@@ -469,19 +476,21 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.blocks_conjugate_cc_0 = blocks.conjugate_cc()
         self.blocks_complex_to_mag_squared_0_0 = blocks.complex_to_mag_squared(1)
         self.blocks_complex_to_mag_0 = blocks.complex_to_mag(1)
-        self.blocks_add_xx_0_0 = blocks.add_vcc(1)
         self.blocks_abs_xx_0 = blocks.abs_ff(1)
 
 
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.blocks_socket_pdu_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_1, 'pdu_in'))
+        self.msg_connect((self.blocks_socket_pdu_0_0, 'pdus'), (self.mimo_ofdm_jrc_comm_target_simulator_0, 'cfg'))
+        self.msg_connect((self.mimo_ofdm_jrc_ndp_generator_0, 'out'), (self.mimo_ofdm_jrc_stream_encoder_1, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_ndp_generator_0, 'enable'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'enable'))
+        self.msg_connect((self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_1, 'pdu_in'))
         self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'sym'), (self.blocks_socket_pdu_1, 'pdus'))
         self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_0, 'stats'))
         self.msg_connect((self.mimo_ofdm_jrc_stream_decoder_0, 'stats'), (self.mimo_ofdm_jrc_gui_time_plot_1, 'stats'))
         self.connect((self.blocks_abs_xx_0, 0), (self.blocks_divide_xx_0, 1))
-        self.connect((self.blocks_add_xx_0_0, 0), (self.channels_channel_model_0, 0))
         self.connect((self.blocks_complex_to_mag_0, 0), (self.blocks_divide_xx_0, 0))
         self.connect((self.blocks_complex_to_mag_squared_0_0, 0), (self.blocks_moving_average_xx_1_0, 0))
         self.connect((self.blocks_conjugate_cc_0, 0), (self.blocks_multiply_xx_0, 0))
@@ -495,10 +504,6 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_multiply_const_vxx_0_0, 0), (self.mimo_ofdm_jrc_zero_pad_0_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0_0_0, 0), (self.mimo_ofdm_jrc_zero_pad_0_0_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0_0_0_0, 0), (self.mimo_ofdm_jrc_zero_pad_0_0_0_0, 0))
-        self.connect((self.blocks_multiply_const_vxx_1, 0), (self.blocks_add_xx_0_0, 0))
-        self.connect((self.blocks_multiply_const_vxx_1_0, 0), (self.blocks_add_xx_0_0, 1))
-        self.connect((self.blocks_multiply_const_vxx_1_0_0, 0), (self.blocks_add_xx_0_0, 2))
-        self.connect((self.blocks_multiply_const_vxx_1_0_0_0, 0), (self.blocks_add_xx_0_0, 3))
         self.connect((self.blocks_multiply_xx_0, 0), (self.mimo_ofdm_jrc_moving_avg_0, 0))
         self.connect((self.blocks_stream_to_vector_0, 0), (self.fft_vxx_0_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.blocks_complex_to_mag_squared_0_0, 0))
@@ -515,6 +520,7 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.connect((self.fft_vxx_0_2, 0), (self.digital_ofdm_cyclic_prefixer_0_0, 0))
         self.connect((self.fft_vxx_0_2_0, 0), (self.digital_ofdm_cyclic_prefixer_0_0_0, 0))
         self.connect((self.fft_vxx_0_2_0_0, 0), (self.digital_ofdm_cyclic_prefixer_0_0_0_0, 0))
+        self.connect((self.mimo_ofdm_jrc_comm_target_simulator_0, 0), (self.channels_channel_model_0, 0))
         self.connect((self.mimo_ofdm_jrc_frame_detector_0, 0), (self.blocks_delay_0, 0))
         self.connect((self.mimo_ofdm_jrc_frame_detector_0, 0), (self.mimo_ofdm_jrc_frame_sync_0, 0))
         self.connect((self.mimo_ofdm_jrc_frame_detector_0, 0), (self.qtgui_time_sink_x_0_2_0, 0))
@@ -529,10 +535,10 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.connect((self.mimo_ofdm_jrc_moving_avg_0, 0), (self.mimo_ofdm_jrc_frame_detector_0, 1))
         self.connect((self.mimo_ofdm_jrc_stream_decoder_0, 0), (self.blocks_null_sink_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_stream_encoder_1, 0), (self.mimo_ofdm_jrc_mimo_precoder_0, 0))
-        self.connect((self.mimo_ofdm_jrc_zero_pad_0, 0), (self.blocks_multiply_const_vxx_1, 0))
-        self.connect((self.mimo_ofdm_jrc_zero_pad_0_0, 0), (self.blocks_multiply_const_vxx_1_0, 0))
-        self.connect((self.mimo_ofdm_jrc_zero_pad_0_0_0, 0), (self.blocks_multiply_const_vxx_1_0_0, 0))
-        self.connect((self.mimo_ofdm_jrc_zero_pad_0_0_0_0, 0), (self.blocks_multiply_const_vxx_1_0_0_0, 0))
+        self.connect((self.mimo_ofdm_jrc_zero_pad_0, 0), (self.mimo_ofdm_jrc_comm_target_simulator_0, 0))
+        self.connect((self.mimo_ofdm_jrc_zero_pad_0_0, 0), (self.mimo_ofdm_jrc_comm_target_simulator_0, 1))
+        self.connect((self.mimo_ofdm_jrc_zero_pad_0_0_0, 0), (self.mimo_ofdm_jrc_comm_target_simulator_0, 2))
+        self.connect((self.mimo_ofdm_jrc_zero_pad_0_0_0_0, 0), (self.mimo_ofdm_jrc_comm_target_simulator_0, 3))
 
 
     def closeEvent(self, event):
@@ -553,9 +559,7 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
     def set_theta(self, theta):
         self.theta = theta
         self.set_mimo_tap1(cmath.exp(1j*cmath.pi*np.sin(np.deg2rad(self.theta))))
-        self.blocks_multiply_const_vxx_1_0.set_k((1/self.path_loss)*cmath.exp(1j*cmath.pi*np.sin(np.deg2rad(self.theta))))
-        self.blocks_multiply_const_vxx_1_0_0.set_k((1/self.path_loss)*cmath.exp(2j*cmath.pi*np.sin(np.deg2rad(self.theta))))
-        self.blocks_multiply_const_vxx_1_0_0_0.set_k((1/self.path_loss)*cmath.exp(3j*cmath.pi*np.sin(np.deg2rad(self.theta))))
+        self.mimo_ofdm_jrc_comm_target_simulator_0.set_theta_deg(self.theta)
 
     def get_rf_freq(self):
         return self.rf_freq
@@ -626,6 +630,7 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
     def set_distance(self, distance):
         self.distance = distance
         self.set_path_loss(4*cmath.pi*self.distance/self.wavelength)
+        self.mimo_ofdm_jrc_comm_target_simulator_0.set_distance_m(self.distance)
 
     def get_cp_len(self):
         return self.cp_len
@@ -712,10 +717,6 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
 
     def set_path_loss(self, path_loss):
         self.path_loss = path_loss
-        self.blocks_multiply_const_vxx_1.set_k(1/self.path_loss)
-        self.blocks_multiply_const_vxx_1_0.set_k((1/self.path_loss)*cmath.exp(1j*cmath.pi*np.sin(np.deg2rad(self.theta))))
-        self.blocks_multiply_const_vxx_1_0_0.set_k((1/self.path_loss)*cmath.exp(2j*cmath.pi*np.sin(np.deg2rad(self.theta))))
-        self.blocks_multiply_const_vxx_1_0_0_0.set_k((1/self.path_loss)*cmath.exp(3j*cmath.pi*np.sin(np.deg2rad(self.theta))))
 
     def get_packet_data_file(self):
         return self.packet_data_file

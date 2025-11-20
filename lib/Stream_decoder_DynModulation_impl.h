@@ -26,6 +26,7 @@
 #include <boost/crc.hpp>
 #include "utils.h"
 #include <gnuradio/digital/constellation.h>
+#include<vector>
 
 #include <boost/accumulators/accumulators.hpp>
 #include <boost/accumulators/statistics.hpp>

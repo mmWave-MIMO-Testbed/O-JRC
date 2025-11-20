@@ -60,7 +60,7 @@ BLOCKAGE_YMIN, BLOCKAGE_YMAX =  5.5,  6.0   # ← 你当前版本的高度：0.5
 A_CENTER = (0.0, 3.0)   # center of ellipse
 A_A = 1.1               # ellipse x-radius
 A_B = 0.6               # ellipse y-radius
-A_VAVG = 0.7            # average speed m/s
+A_VAVG = 0.1            # average speed m/s
 A_WOBBLE_AMP = 0.10     # small vertical wobble
 A_JITTER_STD = 0.20     # speed jitter level
 

@@ -24,156 +24,96 @@
 
 #include <gnuradio/io_signature.h>
 #include "comm_target_simulator_impl.h"
-#include <pmt/pmt.h>
-#include <complex>
-#include <vector>
-#include <mutex>
-#include <cmath>
 #include <algorithm>
+#include <cmath>
 
 namespace gr {
   namespace mimo_ofdm_jrc {
 
-  class comm_target_simulator_impl final : public comm_target_simulator
-  {
-      const int     d_num_tx;
-      const bool    d_use_two_pi;
-      const double  d_min_dist;
+    // ---------------helper：calculate coefficients for every TX----------------
+    void comm_target_simulator_impl::recompute_coeffs_unlocked()
+    {
+        // λ = c / f
+        d_lambda_m = (d_center_freq_hz > 0.0) ? (C / d_center_freq_hz) : 0.0;
 
-      std::mutex    d_mu;
-      double        d_center_freq_hz;
-      double        d_lambda_m;
-      double        d_theta_deg   = 0.0; // deg
-      double        d_distance_m  = 1.0; // m
-      std::vector<std::complex<float>> d_coeffs;
+        const double R   = std::max(d_distance_m, d_min_dist);
+        const double amp = (d_lambda_m > 0.0) ? (d_lambda_m / (4.0 * M_PI * R)) : 0.0;
 
-      static constexpr double C = 299792458.0; // m/s
+        const double theta_rad = d_theta_deg * M_PI / 180.0;
+        const double base      = d_use_two_pi ? (2.0 * M_PI) : M_PI;
 
-      void recompute_coeffs_unlocked()
-      {
-          d_lambda_m = (d_center_freq_hz > 0.0) ? (C / d_center_freq_hz) : 0.0;
-          const double R   = std::max(d_distance_m, d_min_dist);
-          const double amp = (d_lambda_m > 0.0) ? (d_lambda_m / (4.0 * M_PI * R)) : 0.0;
+        d_coeffs.resize(d_num_tx);
+        for (int k = 0; k < d_num_tx; ++k) {
+            const double phase = k * base * std::sin(theta_rad);
+            d_coeffs[k] = std::complex<float>(std::cos(phase), std::sin(phase)) * static_cast<float>(amp);
+        }
+    }
 
-          const double theta_rad = d_theta_deg * M_PI / 180.0;
-          const double base      = d_use_two_pi ? (2.0 * M_PI) : M_PI;
+    // --------------- helper：process cfg messages ----------------
+    void comm_target_simulator_impl::handle_cfg_msg_(pmt::pmt_t msg)
+    {
+        std::lock_guard<std::mutex> lk(d_mu);
+        bool changed = false;
 
-          d_coeffs.resize(d_num_tx);
-          for (int k = 0; k < d_num_tx; ++k) {
-              const double phase = k * base * std::sin(theta_rad);
-              d_coeffs[k] = std::complex<float>(std::cos(phase), std::sin(phase)) * static_cast<float>(amp);
-          }
-      }
+        // support：Socket PDU 's PDU(pair) + u8vector(PMT)
+        if (pmt::is_pair(msg) && pmt::is_u8vector(pmt::cdr(msg))) {
+            std::vector<uint8_t> bytes = pmt::u8vector_elements(pmt::cdr(msg));
+            try {
+                msg = pmt::deserialize_str(std::string(bytes.begin(), bytes.end()));
+            } catch (...) {
+                return; // no PMT serialization data，ignore
+            }
+        }
 
-      void handle_cfg_msg_(pmt::pmt_t msg)
-      {
-          std::lock_guard<std::mutex> lk(d_mu);
-          bool changed = false;
+        // support：direct PMT dictionary
+        if (pmt::is_dict(msg)) {
+            if (pmt::dict_has_key(msg, pmt::intern("theta_deg"))) {
+                const double th = pmt::to_double(pmt::dict_ref(msg, pmt::intern("theta_deg"), pmt::PMT_NIL));
+                if (std::isfinite(th) && std::abs(th - d_theta_deg) > 1e-12) { d_theta_deg = th; changed = true; }
+            }
+            if (pmt::dict_has_key(msg, pmt::intern("distance_m"))) {
+                const double R = pmt::to_double(pmt::dict_ref(msg, pmt::intern("distance_m"), pmt::PMT_NIL));
+                if (std::isfinite(R) && std::abs(R - d_distance_m) > 1e-12) { d_distance_m = R; changed = true; }
+            }
+        }
+        // accept direct value: <theta_deg>
+        else if (pmt::is_real(msg) || pmt::is_integer(msg)) {
+            const double th = pmt::to_double(msg);
+            if (std::isfinite(th) && std::abs(th - d_theta_deg) > 1e-12) { d_theta_deg = th; changed = true; }
+        }
 
-          // 支持：Socket PDU 的 PDU(pair) + u8vector(序列化 PMT)
-          if (pmt::is_pair(msg) && pmt::is_u8vector(pmt::cdr(msg))) {
-              std::vector<uint8_t> bytes = pmt::u8vector_elements(pmt::cdr(msg));
-              try {
-                  msg = pmt::deserialize_str(std::string(bytes.begin(), bytes.end()));
-              } catch (...) {
-                  return; // 不是 PMT 序列化数据，忽略
-              }
-          }
+        if (changed) {
+            recompute_coeffs_unlocked();
+            // If ACK is needed, you can publish the state here: message_port_pub(pmt::mp("state"), dict)
+        }
+    }
 
-          if (pmt::is_dict(msg)) {
-              if (pmt::dict_has_key(msg, pmt::intern("theta_deg"))) {
-                  const double th = pmt::to_double(pmt::dict_ref(msg, pmt::intern("theta_deg"), pmt::PMT_NIL));
-                  if (std::isfinite(th) && std::abs(th - d_theta_deg) > 1e-12) { d_theta_deg = th; changed = true; }
-              }
-              if (pmt::dict_has_key(msg, pmt::intern("distance_m"))) {
-                  const double R = pmt::to_double(pmt::dict_ref(msg, pmt::intern("distance_m"), pmt::PMT_NIL));
-                  if (std::isfinite(R) && std::abs(R - d_distance_m) > 1e-12) { d_distance_m = R; changed = true; }
-              }
-          } else if (pmt::is_real(msg) || pmt::is_integer(msg)) {
-              // 直接数值：当作 theta_deg
-              const double th = pmt::to_double(msg);
-              if (std::isfinite(th) && std::abs(th - d_theta_deg) > 1e-12) { d_theta_deg = th; changed = true; }
-          }
+    // --------------- constructor / destructor / factory ----------------
+    comm_target_simulator_impl::comm_target_simulator_impl(int num_tx,
+                                                          double center_freq_hz,
+                                                          double min_distance_m,
+                                                          bool use_two_pi)
+    : gr::sync_block("comm_target_simulator",
+                    gr::io_signature::make(num_tx, num_tx, sizeof(gr_complex)),
+                    gr::io_signature::make(1, 1, sizeof(gr_complex))),
+      d_num_tx(num_tx),
+      d_use_two_pi(use_two_pi),
+      d_min_dist(std::max(1e-6, min_distance_m)),
+      d_center_freq_hz(center_freq_hz),
+      d_coeffs(num_tx, std::complex<float>(0.0f, 0.0f))
+    {
+        // cfg message port
+        message_port_register_in(pmt::mp("cfg"));
+        set_msg_handler(pmt::mp("cfg"), [this](pmt::pmt_t m){ this->handle_cfg_msg_(m); });
 
-          if (changed) {
-              recompute_coeffs_unlocked();
-              // 若需要 ACK，可在此发布到 "state"（此处省略）
-          }
-      }
+        // Optional: state port
+        // message_port_register_out(pmt::mp("state"));
 
-  public:
-      comm_target_simulator_impl(int num_tx,
-                                double center_freq_hz,
-                                double min_distance_m,
-                                bool use_two_pi)
-      : gr::sync_block("comm_target_simulator",
-                      gr::io_signature::make(num_tx, num_tx, sizeof(gr_complex)),
-                      gr::io_signature::make(1, 1, sizeof(gr_complex))),
-        d_num_tx(num_tx),
-        d_use_two_pi(use_two_pi),
-        d_min_dist(std::max(1e-6, min_distance_m)),
-        d_center_freq_hz(center_freq_hz),
-        d_coeffs(num_tx, std::complex<float>(0.0f, 0.0f))
-      {
-          message_port_register_in(pmt::mp("cfg"));
-          set_msg_handler(pmt::mp("cfg"), [this](pmt::pmt_t m){ this->handle_cfg_msg_(m); });
+        std::lock_guard<std::mutex> lk(d_mu);
+        recompute_coeffs_unlocked();
+    }
 
-          // 可选回执端口
-          // message_port_register_out(pmt::mp("state"));
-
-          std::lock_guard<std::mutex> lk(d_mu);
-          recompute_coeffs_unlocked();
-      }
-
-      static sptr make(int num_tx,
-                      double center_freq_hz,
-                      double min_distance_m,
-                      bool use_two_pi)
-      {
-          if (num_tx <= 0) throw std::invalid_argument("num_tx must be > 0");
-          if (center_freq_hz <= 0.0) throw std::invalid_argument("center_freq_hz must be > 0");
-          return std::make_shared<comm_target_simulator_impl>(num_tx, center_freq_hz, min_distance_m, use_two_pi);
-      }
-
-      // 手动 setter
-      void set_theta_deg(double th_deg) override {
-          std::lock_guard<std::mutex> lk(d_mu);
-          if (std::isfinite(th_deg) && std::abs(th_deg - d_theta_deg) > 1e-12) {
-              d_theta_deg = th_deg; recompute_coeffs_unlocked();
-          }
-      }
-      void set_distance_m(double dist_m) override {
-          std::lock_guard<std::mutex> lk(d_mu);
-          if (std::isfinite(dist_m) && std::abs(dist_m - d_distance_m) > 1e-12) {
-              d_distance_m = dist_m; recompute_coeffs_unlocked();
-          }
-      }
-      void set_center_freq(double fc_hz) override {
-          std::lock_guard<std::mutex> lk(d_mu);
-          if (std::isfinite(fc_hz) && fc_hz > 0.0 && std::abs(fc_hz - d_center_freq_hz) > 1e-3) {
-              d_center_freq_hz = fc_hz; recompute_coeffs_unlocked();
-          }
-      }
-
-      int work(int noutput_items,
-              gr_vector_const_void_star &input_items,
-              gr_vector_void_star &output_items) override
-      {
-          auto **in  = reinterpret_cast<const gr_complex* const*>(input_items.data());
-          auto  *out = reinterpret_cast<gr_complex*>(output_items[0]);
-
-          std::vector<std::complex<float>> coeffs;
-          { std::lock_guard<std::mutex> lk(d_mu); coeffs = d_coeffs; }
-
-          for (int n = 0; n < noutput_items; ++n) {
-              std::complex<float> acc(0.0f, 0.0f);
-              for (int k = 0; k < d_num_tx; ++k)
-                  acc += coeffs[k] * in[k][n];
-              out[n] = acc;
-          }
-          return noutput_items;
-      }
-  };
+    comm_target_simulator_impl::~comm_target_simulator_impl() = default;
 
     comm_target_simulator::sptr
     comm_target_simulator::make(int num_tx,
@@ -185,35 +125,54 @@ namespace gr {
         (new comm_target_simulator_impl(num_tx, center_freq_hz, min_distance_m, use_two_pi));
     }
 
-
-    /*
-     * The private constructor
-     */
-    comm_target_simulator_impl::comm_target_simulator_impl()
-      : gr::sync_block("comm_target_simulator",
-              gr::io_signature::make(<+MIN_IN+>, <+MAX_IN+>, sizeof(<+ITYPE+>)),
-              gr::io_signature::make(<+MIN_OUT+>, <+MAX_OUT+>, sizeof(<+OTYPE+>)))
-    {}
-
-    /*
-     * Our virtual destructor.
-     */
-    comm_target_simulator_impl::~comm_target_simulator_impl()
+    // --------------- setters ----------------
+    void comm_target_simulator_impl::set_theta_deg(double th_deg)
     {
+        std::lock_guard<std::mutex> lk(d_mu);
+        if (std::isfinite(th_deg) && std::abs(th_deg - d_theta_deg) > 1e-12) {
+            d_theta_deg = th_deg;
+            recompute_coeffs_unlocked();
+        }
     }
 
-    int
-    comm_target_simulator_impl::work(int noutput_items,
-        gr_vector_const_void_star &input_items,
-        gr_vector_void_star &output_items)
+    void comm_target_simulator_impl::set_distance_m(double dist_m)
     {
-      const <+ITYPE+> *in = (const <+ITYPE+> *) input_items[0];
-      <+OTYPE+> *out = (<+OTYPE+> *) output_items[0];
+        std::lock_guard<std::mutex> lk(d_mu);
+        if (std::isfinite(dist_m) && std::abs(dist_m - d_distance_m) > 1e-12) {
+            d_distance_m = dist_m;
+            recompute_coeffs_unlocked();
+        }
+    }
 
-      // Do <+signal processing+>
+    void comm_target_simulator_impl::set_center_freq(double fc_hz)
+    {
+        std::lock_guard<std::mutex> lk(d_mu);
+        if (std::isfinite(fc_hz) && fc_hz > 0.0 && std::abs(fc_hz - d_center_freq_hz) > 1e-3) {
+            d_center_freq_hz = fc_hz;
+            recompute_coeffs_unlocked();
+        }
+    }
 
-      // Tell runtime system how many output items we produced.
-      return noutput_items;
+    // --------------- work ----------------
+    int comm_target_simulator_impl::work(int noutput_items,
+                                        gr_vector_const_void_star &input_items,
+                                        gr_vector_void_star &output_items)
+    {
+        auto *out = reinterpret_cast<gr_complex*>(output_items[0]);
+
+        // copy one coeff to stack to avoid long lock hold
+        std::vector<std::complex<float>> coeffs;
+        { std::lock_guard<std::mutex> lk(d_mu); coeffs = d_coeffs; }
+
+        for (int n = 0; n < noutput_items; ++n) {
+            std::complex<float> acc(0.0f, 0.0f);
+            for (int k = 0; k < d_num_tx; ++k) {
+                const auto *in_k = reinterpret_cast<const gr_complex*>(input_items[k]);
+                acc += coeffs[k] * in_k[n];
+            }
+            out[n] = acc;
+        }
+        return noutput_items;
     }
 
   } /* namespace mimo_ofdm_jrc */

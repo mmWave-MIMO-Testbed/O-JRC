@@ -36,7 +36,9 @@ namespace gr {
      private:
       // CSV hot-reload state
       std::string d_csv_path;   // empty means not using CSV
-      std::time_t d_last_mtime{0};
+      // std::time_t d_last_mtime{0};
+        std::time_t d_last_sec{0};
+        long        d_last_nsec{-1};
       void reload_csv_if_needed_(); // called at the top of work()
 
      protected:

@@ -23,10 +23,10 @@ if __name__ == '__main__':
 from PyQt5 import Qt
 from PyQt5.QtCore import QObject, pyqtSlot
 from gnuradio import qtgui
-from gnuradio.filter import firdes
 import sip
 from gnuradio import blocks
 from gnuradio import channels
+from gnuradio.filter import firdes
 from gnuradio import digital
 from gnuradio import fft
 from gnuradio.fft import window
@@ -83,7 +83,7 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         # Variables
         ##################################################
         self.freq = freq = 4e9
-        self.theta = theta = 20
+        self.theta = theta = 0
         self.rf_freq = rf_freq = freq+20e9
         self.fft_len = fft_len = ofdm_config.N_sc
         self.wavelength = wavelength = 3e8/rf_freq
@@ -94,8 +94,8 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.distance = distance = 20
         self.cp_len = cp_len = int(fft_len/4)
         self.use_radar_streams = use_radar_streams = False
-        self.tx_multiplier = tx_multiplier = 0.50
-        self.target_OFDM_symbols = target_OFDM_symbols = 16
+        self.tx_multiplier = tx_multiplier = 0.25
+        self.target_OFDM_symbols = target_OFDM_symbols = 48*2
         self.sync_length = sync_length = 4*(fft_len+cp_len)
         self.record_comm_stats = record_comm_stats = False
         self.radar_read_file = radar_read_file = parrent_path+"/data/radar_data.csv"
@@ -138,14 +138,14 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
             lambda i: self.set_use_radar_streams(self._use_radar_streams_options[i]))
         # Create the radio buttons
         self.top_layout.addWidget(self._use_radar_streams_tool_bar)
-        self._tx_multiplier_range = Range(0.01, 10, 0.01, 0.50, 200)
+        self._tx_multiplier_range = Range(0.01, 10, 0.01, 0.25, 200)
         self._tx_multiplier_win = RangeWidget(self._tx_multiplier_range, self.set_tx_multiplier, 'TX Gain', "counter_slider", float)
         self.top_grid_layout.addWidget(self._tx_multiplier_win, 0, 0, 1, 1)
         for r in range(0, 1):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(0, 1):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self._theta_range = Range(-90, 90, 1, 20, 200)
+        self._theta_range = Range(-90, 90, 1, 0, 200)
         self._theta_win = RangeWidget(self._theta_range, self.set_theta, 'Azimuth Angle', "counter_slider", float)
         self.top_grid_layout.addWidget(self._theta_win, 1, 0, 1, 1)
         for r in range(1, 2):
@@ -258,165 +258,6 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setRowStretch(r, 1)
         for c in range(0, 1):
             self.top_grid_layout.setColumnStretch(c, 1)
-        self.qtgui_time_sink_x_0_2_0 = qtgui.time_sink_c(
-            (fft_len+cp_len)*20, #size
-            1, #samp_rate
-            "FRAME", #name
-            1 #number of inputs
-        )
-        self.qtgui_time_sink_x_0_2_0.set_update_time(0.1)
-        self.qtgui_time_sink_x_0_2_0.set_y_axis(-1, 1)
-
-        self.qtgui_time_sink_x_0_2_0.set_y_label('Amplitude', "")
-
-        self.qtgui_time_sink_x_0_2_0.enable_tags(True)
-        self.qtgui_time_sink_x_0_2_0.set_trigger_mode(qtgui.TRIG_MODE_TAG, qtgui.TRIG_SLOPE_POS, 0, 300, 0, "frame_start")
-        self.qtgui_time_sink_x_0_2_0.enable_autoscale(True)
-        self.qtgui_time_sink_x_0_2_0.enable_grid(True)
-        self.qtgui_time_sink_x_0_2_0.enable_axis_labels(True)
-        self.qtgui_time_sink_x_0_2_0.enable_control_panel(False)
-        self.qtgui_time_sink_x_0_2_0.enable_stem_plot(False)
-
-
-        labels = ['', '', '', '', '',
-            '', '', '', '', '']
-        widths = [2, 2, 1, 1, 1,
-            1, 1, 1, 1, 1]
-        colors = ['blue', 'red', 'green', 'black', 'cyan',
-            'magenta', 'yellow', 'dark red', 'dark green', 'dark blue']
-        alphas = [0.6, 0.6, 1.0, 1.0, 1.0,
-            1.0, 1.0, 1.0, 1.0, 1.0]
-        styles = [1, 1, 1, 1, 1,
-            1, 1, 1, 1, 1]
-        markers = [-1, -1, -1, -1, -1,
-            -1, -1, -1, -1, -1]
-
-
-        for i in range(2):
-            if len(labels[i]) == 0:
-                if (i % 2 == 0):
-                    self.qtgui_time_sink_x_0_2_0.set_line_label(i, "Re{{Data {0}}}".format(i/2))
-                else:
-                    self.qtgui_time_sink_x_0_2_0.set_line_label(i, "Im{{Data {0}}}".format(i/2))
-            else:
-                self.qtgui_time_sink_x_0_2_0.set_line_label(i, labels[i])
-            self.qtgui_time_sink_x_0_2_0.set_line_width(i, widths[i])
-            self.qtgui_time_sink_x_0_2_0.set_line_color(i, colors[i])
-            self.qtgui_time_sink_x_0_2_0.set_line_style(i, styles[i])
-            self.qtgui_time_sink_x_0_2_0.set_line_marker(i, markers[i])
-            self.qtgui_time_sink_x_0_2_0.set_line_alpha(i, alphas[i])
-
-        self._qtgui_time_sink_x_0_2_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0_2_0.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_2_0_win, 7, 0, 1, 1)
-        for r in range(7, 8):
-            self.top_grid_layout.setRowStretch(r, 1)
-        for c in range(0, 1):
-            self.top_grid_layout.setColumnStretch(c, 1)
-        self.qtgui_time_sink_x_0_2 = qtgui.time_sink_f(
-            (fft_len+cp_len)*30, #size
-            1, #samp_rate
-            "PREAMBLE DETECTOR", #name
-            1 #number of inputs
-        )
-        self.qtgui_time_sink_x_0_2.set_update_time(0.1)
-        self.qtgui_time_sink_x_0_2.set_y_axis(-0.1, 2)
-
-        self.qtgui_time_sink_x_0_2.set_y_label('Amplitude', "")
-
-        self.qtgui_time_sink_x_0_2.enable_tags(True)
-        self.qtgui_time_sink_x_0_2.set_trigger_mode(qtgui.TRIG_MODE_NORM, qtgui.TRIG_SLOPE_POS, 0.65, 300, 0, '')
-        self.qtgui_time_sink_x_0_2.enable_autoscale(False)
-        self.qtgui_time_sink_x_0_2.enable_grid(True)
-        self.qtgui_time_sink_x_0_2.enable_axis_labels(True)
-        self.qtgui_time_sink_x_0_2.enable_control_panel(False)
-        self.qtgui_time_sink_x_0_2.enable_stem_plot(False)
-
-
-        labels = ['', '', '', '', '',
-            '', '', '', '', '']
-        widths = [2, 1, 1, 1, 1,
-            1, 1, 1, 1, 1]
-        colors = ['blue', 'red', 'green', 'black', 'cyan',
-            'magenta', 'yellow', 'dark red', 'dark green', 'dark blue']
-        alphas = [0.6, 1.0, 1.0, 1.0, 1.0,
-            1.0, 1.0, 1.0, 1.0, 1.0]
-        styles = [1, 1, 1, 1, 1,
-            1, 1, 1, 1, 1]
-        markers = [-1, -1, -1, -1, -1,
-            -1, -1, -1, -1, -1]
-
-
-        for i in range(1):
-            if len(labels[i]) == 0:
-                self.qtgui_time_sink_x_0_2.set_line_label(i, "Data {0}".format(i))
-            else:
-                self.qtgui_time_sink_x_0_2.set_line_label(i, labels[i])
-            self.qtgui_time_sink_x_0_2.set_line_width(i, widths[i])
-            self.qtgui_time_sink_x_0_2.set_line_color(i, colors[i])
-            self.qtgui_time_sink_x_0_2.set_line_style(i, styles[i])
-            self.qtgui_time_sink_x_0_2.set_line_marker(i, markers[i])
-            self.qtgui_time_sink_x_0_2.set_line_alpha(i, alphas[i])
-
-        self._qtgui_time_sink_x_0_2_win = sip.wrapinstance(self.qtgui_time_sink_x_0_2.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_2_win, 8, 0, 1, 1)
-        for r in range(8, 9):
-            self.top_grid_layout.setRowStretch(r, 1)
-        for c in range(0, 1):
-            self.top_grid_layout.setColumnStretch(c, 1)
-        self.qtgui_time_sink_x_0_0_1 = qtgui.time_sink_c(
-            (fft_len+cp_len)*40, #size
-            1, #samp_rate
-            'Signal TX1', #name
-            1 #number of inputs
-        )
-        self.qtgui_time_sink_x_0_0_1.set_update_time(0.10)
-        self.qtgui_time_sink_x_0_0_1.set_y_axis(-1, 1)
-
-        self.qtgui_time_sink_x_0_0_1.set_y_label('Amplitude', "")
-
-        self.qtgui_time_sink_x_0_0_1.enable_tags(True)
-        self.qtgui_time_sink_x_0_0_1.set_trigger_mode(qtgui.TRIG_MODE_TAG, qtgui.TRIG_SLOPE_POS, 0.0, 50, 0, "packet_len")
-        self.qtgui_time_sink_x_0_0_1.enable_autoscale(True)
-        self.qtgui_time_sink_x_0_0_1.enable_grid(True)
-        self.qtgui_time_sink_x_0_0_1.enable_axis_labels(True)
-        self.qtgui_time_sink_x_0_0_1.enable_control_panel(False)
-        self.qtgui_time_sink_x_0_0_1.enable_stem_plot(False)
-
-
-        labels = ['', '', '', '', '',
-            '', '', '', '', '']
-        widths = [2, 2, 1, 1, 1,
-            1, 1, 1, 1, 1]
-        colors = ['blue', 'red', 'green', 'black', 'cyan',
-            'magenta', 'yellow', 'dark red', 'dark green', 'dark blue']
-        alphas = [0.7, 0.7, 1.0, 1.0, 1.0,
-            1.0, 1.0, 1.0, 1.0, 1.0]
-        styles = [1, 1, 1, 1, 1,
-            1, 1, 1, 1, 1]
-        markers = [-1, -1, -1, -1, -1,
-            -1, -1, -1, -1, -1]
-
-
-        for i in range(2):
-            if len(labels[i]) == 0:
-                if (i % 2 == 0):
-                    self.qtgui_time_sink_x_0_0_1.set_line_label(i, "Re{{Data {0}}}".format(i/2))
-                else:
-                    self.qtgui_time_sink_x_0_0_1.set_line_label(i, "Im{{Data {0}}}".format(i/2))
-            else:
-                self.qtgui_time_sink_x_0_0_1.set_line_label(i, labels[i])
-            self.qtgui_time_sink_x_0_0_1.set_line_width(i, widths[i])
-            self.qtgui_time_sink_x_0_0_1.set_line_color(i, colors[i])
-            self.qtgui_time_sink_x_0_0_1.set_line_style(i, styles[i])
-            self.qtgui_time_sink_x_0_0_1.set_line_marker(i, markers[i])
-            self.qtgui_time_sink_x_0_0_1.set_line_alpha(i, alphas[i])
-
-        self._qtgui_time_sink_x_0_0_1_win = sip.wrapinstance(self.qtgui_time_sink_x_0_0_1.pyqwidget(), Qt.QWidget)
-        self.top_grid_layout.addWidget(self._qtgui_time_sink_x_0_0_1_win, 6, 0, 1, 1)
-        for r in range(6, 7):
-            self.top_grid_layout.setRowStretch(r, 1)
-        for c in range(0, 1):
-            self.top_grid_layout.setColumnStretch(c, 1)
         self.qtgui_const_sink_x_0 = qtgui.const_sink_c(
             ofdm_config.N_data*5, #size
             'CONSTELLATIONS', #name
@@ -474,7 +315,7 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_gui_time_plot_0 = mimo_ofdm_jrc.gui_time_plot(250, "snr", "SNR [dB]", [0,40], 10, "Signal-to-Noise Ratio")
         self.mimo_ofdm_jrc_frame_sync_0 = mimo_ofdm_jrc.frame_sync(fft_len, cp_len, sync_length, ofdm_config.l_ltf_fir, False)
         self.mimo_ofdm_jrc_frame_detector_0 = mimo_ofdm_jrc.frame_detector(fft_len, cp_len, 0.6, 10, (len(ofdm_config.l_stf_ltf_64)+N_tx)*(fft_len+cp_len), False)
-        self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0 = mimo_ofdm_jrc.Stream_decoder_DynModulation(len(ofdm_config.data_subcarriers), comm_log_file, record_comm_stats, False)
+        self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0 = mimo_ofdm_jrc.Stream_decoder_DynModulation(len(ofdm_config.data_subcarriers), comm_log_file, record_comm_stats, True)
         self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0.set_processor_affinity([5])
         self.fft_vxx_0_2_0_0 = fft.fft_vcc(fft_len, False, tuple([1/64**.5] * 64), True, 2)
         self.fft_vxx_0_2_0 = fft.fft_vcc(fft_len, False, tuple([1/64**.5] * 64), True, 2)
@@ -535,14 +376,12 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_delay_0_0, 0), (self.blocks_conjugate_cc_0, 0))
         self.connect((self.blocks_delay_0_0, 0), (self.mimo_ofdm_jrc_frame_detector_0, 0))
         self.connect((self.blocks_divide_xx_0, 0), (self.mimo_ofdm_jrc_frame_detector_0, 2))
-        self.connect((self.blocks_divide_xx_0, 0), (self.qtgui_time_sink_x_0_2, 0))
         self.connect((self.blocks_moving_average_xx_1_0, 0), (self.blocks_abs_xx_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.mimo_ofdm_jrc_zero_pad_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0_0, 0), (self.mimo_ofdm_jrc_zero_pad_0_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0_0_0, 0), (self.mimo_ofdm_jrc_zero_pad_0_0_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0_0_0_0, 0), (self.mimo_ofdm_jrc_zero_pad_0_0_0_0, 0))
         self.connect((self.blocks_multiply_const_vxx_1, 0), (self.blocks_add_xx_0_0, 0))
-        self.connect((self.blocks_multiply_const_vxx_1, 0), (self.qtgui_time_sink_x_0_0_1, 0))
         self.connect((self.blocks_multiply_const_vxx_1_0, 0), (self.blocks_add_xx_0_0, 1))
         self.connect((self.blocks_multiply_const_vxx_1_0_0, 0), (self.blocks_add_xx_0_0, 2))
         self.connect((self.blocks_multiply_const_vxx_1_0_0_0, 0), (self.blocks_add_xx_0_0, 3))
@@ -565,7 +404,6 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.connect((self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0, 0), (self.blocks_null_sink_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_frame_detector_0, 0), (self.blocks_delay_0, 0))
         self.connect((self.mimo_ofdm_jrc_frame_detector_0, 0), (self.mimo_ofdm_jrc_frame_sync_0, 0))
-        self.connect((self.mimo_ofdm_jrc_frame_detector_0, 0), (self.qtgui_time_sink_x_0_2_0, 0))
         self.connect((self.mimo_ofdm_jrc_frame_sync_0, 0), (self.blocks_stream_to_vector_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0, 0), (self.blocks_vector_to_stream_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_ofdm_equalizer_0, 0), (self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0, 0))

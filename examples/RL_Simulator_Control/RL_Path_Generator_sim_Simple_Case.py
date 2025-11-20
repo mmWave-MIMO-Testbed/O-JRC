@@ -45,7 +45,7 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 CELL_SIZE_M = 0.1          # 10 cm grid
 DT_S        = 0.1          # seconds per time slot
-DURATION_S  = 60.0         # total duration (e.g., 60s)
+DURATION_S  = 40.0         # total duration (e.g., 40s)
 NUM_SLOTS   = int(round(DURATION_S / DT_S))
 
 # World (meters)
@@ -56,17 +56,17 @@ WORLD_YMIN, WORLD_YMAX =  0.0, +10.0  # length 10 m
 RADAR_X, RADAR_Y = 0.0, 0.0
 
 # Blockage rectangle (meters)
-BLOCKAGE_XMIN, BLOCKAGE_XMAX = -0.8, +0.8
+BLOCKAGE_XMIN, BLOCKAGE_XMAX = -0.4, +0.4
 BLOCKAGE_YMIN, BLOCKAGE_YMAX =  4.5,  5.0   # 高度：0.5 m
 
 # --------------------- Static target (kept) ---------------------
 STATIC_TID = 101
-STATIC_POS = (-2.5, 1.0)  # y=1 m, 不会被上方遮挡体挡住
+STATIC_POS = (-1.5, 2.0)  # y=2 m, 不会被上方遮挡体挡住
 
 # --------------------- Target B: horizontal line behind blockage ---------------------
 # Constant y chosen > BLOCKAGE_YMAX so B stays "behind" the blockage from radar's perspective
 B_Y_CONST = 7.0
-B_SPEED   = 0.8   # m/s, horizontal speed (bounce motion)
+B_SPEED   = 0.1   # m/s, horizontal speed (bounce motion)
 
 # Always-occluded design (derive safe horizontal extent)
 ALWAYS_OCCLUDED = False
@@ -77,7 +77,7 @@ if ALWAYS_OCCLUDED:
     B_X_MIN, B_X_MAX = -x_abs_max, x_abs_max
 else:
     # choose your own sweep (may be partially visible)
-    B_X_MIN, B_X_MAX = -3.0, 3.0
+    B_X_MIN, B_X_MAX = -2.0, 2.0
 
 # clip to world
 B_X_MIN = max(B_X_MIN, WORLD_XMIN)

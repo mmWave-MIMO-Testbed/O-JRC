@@ -23,6 +23,8 @@
 #endif
 
 #include <gnuradio/io_signature.h>
+#include <cmath>
+#include <vector>
 #include "Stream_decoder_DynModulation_impl.h"
 
 namespace gr {

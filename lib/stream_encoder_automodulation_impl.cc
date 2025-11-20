@@ -143,7 +143,7 @@ namespace gr {
           }
 
 
-          d_ofdm_mcs = ofdm_mcs(d_mod_encode, d_data_len);
+          // d_ofdm_mcs = ofdm_mcs(d_mod_encode, d_data_len);
           // packet_param burst(d_ofdm_mcs, packet_size_byte+4, packet_type); //+4 added for 32bit CRC checksum
           // if enable fix OFDM symbols
           // char* resized_buf = nullptr;
@@ -252,11 +252,19 @@ namespace gr {
               }
           }
 
-          // ---- construct burst (hit target_nsym) here ----
+          // // ---- construct burst (hit target_nsym) here ----
+          // packet_param burst(d_ofdm_mcs, packet_size_byte + 4, packet_type);
+          // if (d_target_nsym > 0 && burst.n_ofdm_sym != d_target_nsym) {
+          //     dout << "[STREAM ENCODER][WARN] n_ofdm_sym=" << burst.n_ofdm_sym
+          //         << " != target " << d_target_nsym << " (check L_min/L_max)\n";
+          // }
+
           packet_param burst(d_ofdm_mcs, packet_size_byte + 4, packet_type);
           if (d_target_nsym > 0 && burst.n_ofdm_sym != d_target_nsym) {
-              dout << "[STREAM ENCODER][WARN] n_ofdm_sym=" << burst.n_ofdm_sym
-                  << " != target " << d_target_nsym << " (check L_min/L_max)\n";
+              std::cerr << "[STREAM ENCODER] ASSERT: nsym=" << burst.n_ofdm_sym
+                        << " != target " << d_target_nsym << "  (MCS=" << int(d_ofdm_mcs.d_mcs) << ")\n";
+              if (resized_buf) free(resized_buf);
+              return 0; // do not send wrong packets
           }
 
           // int max_ofdm_sym = (((16 + 8 * MAX_PAYLOAD_SIZE + 6) / ((double) d_ofdm_mcs.n_dbps)) + 1); // 16 zeros for scrambler + psdu + 6-bits to terminate convolutional encoder
@@ -297,12 +305,16 @@ namespace gr {
           //generate the data field, adding service field and pad bits
           generate_bits(data_packet_crc, data_bits, burst, d_ofdm_mcs);
 
-          // scrambling
-          scramble(data_bits, scrambled_data, burst, d_scrambler++);
-          if(d_scrambler > 127) 
-          {
-            d_scrambler = 1;
-          }
+          // // scrambling
+          // scramble(data_bits, scrambled_data, burst, d_scrambler++);
+          // if(d_scrambler > 127) 
+          // {
+          //   d_scrambler = 1;
+          // }
+          
+          // fix every PDU scrambling seed to 127
+          d_scrambler = 127;
+          scramble(data_bits, scrambled_data, burst, d_scrambler);
 
           // reset tail bits
           reset_tail_bits(scrambled_data, burst);
@@ -316,7 +328,9 @@ namespace gr {
           // one byte per symbol
           split_symbols(punctured_data, symbols, burst, d_ofdm_mcs);
 
-          d_symbol_len = burst.n_ofdm_sym * d_data_len;
+          // d_symbol_len = burst.n_ofdm_sym * d_data_len;
+          d_symbol_len = (d_target_nsym > 0) ? (d_target_nsym * d_data_len)
+                                   : (burst.n_ofdm_sym * d_data_len);
 
           d_symbol_values = (char *)calloc((d_symbol_len), sizeof(char));
           std::memcpy(d_symbol_values, symbols, d_symbol_len);
@@ -349,6 +363,9 @@ namespace gr {
                       if(modulator->bits_per_symbol() == d_qpsk->bits_per_symbol()){
                           d_complex_symbols[i] = d_complex_symbols[i] / (float)2.0;
                       }
+                      // if(modulator->bits_per_symbol() == d_bpsk->bits_per_symbol()){
+                      //     d_complex_symbols[i] = d_complex_symbols[i] / (float)2.0;
+                      // }
             // d_complex_symbols[i] = 0;
             // dout << " " << d_complex_symbols[i].real() << "+" << d_complex_symbols[i].imag();
           }

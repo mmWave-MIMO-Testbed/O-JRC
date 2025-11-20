@@ -43,41 +43,26 @@ namespace gr {
       double        d_center_freq_hz;
       double        d_lambda_m;
       double        d_theta_deg   = 0.0; // deg
-      double        d_distance_m  = 1.0; // m
+      double        d_distance_m  = 20.0; // m
       std::vector<std::complex<float>> d_coeffs;
 
-      static constexpr double C = 299792458.0; // m/s
+      static constexpr double C = 3e8; // m/s
 
       // helper
       void recompute_coeffs_unlocked();
       void handle_cfg_msg_(pmt::pmt_t msg);
 
      public:
-      const int     d_num_tx;
-      const bool    d_use_two_pi;
-      const double  d_min_dist;
-
-      std::mutex    d_mu;
-      double        d_center_freq_hz;
-      double        d_lambda_m;
-      double        d_theta_deg   = 0.0; // deg
-      double        d_distance_m  = 1.0; // m
-      std::vector<std::complex<float>> d_coeffs;
-
-      static constexpr double C = 299792458.0; // m/s
-
-      void recompute_coeffs_unlocked();
-      void handle_cfg_msg_(pmt::pmt_t msg);
-      // setters
-      void set_theta_deg(double th_deg) override;
-      void set_distance_m(double dist_m) override;
-      void set_center_freq(double fc_hz) override;
-
       comm_target_simulator_impl(int num_tx,
                                double center_freq_hz,
                                double min_distance_m,
                                bool use_two_pi);
       ~comm_target_simulator_impl();
+
+      // set manually
+      void set_theta_deg(double th_deg);
+      void set_distance_m(double dist_m);
+      void set_center_freq(double fc_hz);
 
       // Where all the action really happens
       int work(

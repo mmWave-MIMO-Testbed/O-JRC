@@ -63,7 +63,7 @@ ofdm_mcs::ofdm_mcs(MCS mod_encode, int n_data_carriers) {
 		case BPSK_3_4:
 			n_bpsc = 1;
 			n_cbps = d_n_data_carriers*n_bpsc;
-			n_dbps = n_cbps*3/4;
+			n_dbps = (n_cbps/4)*3;
 			rate_field = 0x0F; // 0b00001111
             n_constellations = 2;
 			break;

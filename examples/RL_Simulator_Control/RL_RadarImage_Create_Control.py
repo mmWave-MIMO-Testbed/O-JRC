@@ -5,6 +5,8 @@ from pathlib import Path
 import pandas as pd
 import csv
 import time
+# import socket
+# from gnuradio import pmt
 
 # ========= 路径配置 =========
 DATA_DIR = Path("/home/haocheng/O-JRC/examples/RL_ResourceAllocation_Data")
@@ -16,10 +18,10 @@ OUT_FILE = DATA_DIR / "target_data.csv"
 DT_S = 0.1                      # 与生成器一致
 USE_RADIAL_VELOCITY = True      # True=计算径向速度；False=全设0
 INCLUDE_HEADER = True           # 写入第一行注释头
-RCS_BY_ID = { "1": 1.0, "2": 60.0, "101":1.6 }  # 各目标的等效RCS（可按需改）
+RCS_BY_ID = { "1": 1.0, "2": 45.0, "101":1.0 }  # 各目标的等效RCS（可按需改）
 RCS_DEFAULT_TARGET = 1.0
-RCS_BLOCKAGE = 0.8              # 每个遮挡cell的等效RCS（可按需改）
-AUTO_INTERVAL_S = 0.5  # 自动模式下的步进间隔（秒）
+RCS_BLOCKAGE = 0.6              # 每个遮挡cell的等效RCS（可按需改）
+AUTO_INTERVAL_S = 0.1  # 自动模式下的步进间隔（秒）
 
 # ========= 工具函数 =========
 def _strip_quotes_and_unescape(s: str) -> str:

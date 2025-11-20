@@ -4,7 +4,10 @@ category: '[mimo_ofdm_jrc]'
 
 templates:
   imports: import mimo_ofdm_jrc
-  make: mimo_ofdm_jrc.comm_target_simulator()
+  make: mimo_ofdm_jrc.comm_target_simulator(${num_tx}, ${center_freq_hz}, ${min_distance_m}, ${use_two_pi})
+  callbacks:
+    - set_theta_deg(${theta_deg})
+    - set_distance_m(${distance_m})
 
 #  Make one 'parameters' list entry for every parameter you want settable from the GUI.
 #     Keys include:
@@ -12,12 +15,33 @@ templates:
 #     * label (label shown in the GUI)
 #     * dtype (e.g. int, float, complex, byte, short, xxx_vector, ...)
 parameters:
-- id: ...
-  label: ...
-  dtype: ...
-- id: ...
-  label: ...
-  dtype: ...
+  - id: num_tx
+    label: Num TX
+    dtype: int
+    default: 4
+  - id: center_freq_hz
+    label: Center Frequency (Hz)
+    dtype: real
+    default: 24e9
+    # to calculate lambda = c/f
+  - id: min_distance_m
+    label: Min Distance (m)
+    dtype: real
+    default: 0.01
+    # to avoid division by zero when R=0
+  - id: use_two_pi
+    label: Use 2π instead of π
+    dtype: bool
+    default: False
+    # True -> phase increment uses 2π*sin(theta)，False -> use π*sin(theta)
+  - id: theta_deg
+    label: Theta (deg)
+    dtype: real
+    default: 0
+  - id: distance_m
+    label: Distance (m)
+    dtype: real
+    default: 1.0
 
 #  Make one 'inputs' list entry per input and one 'outputs' list entry per output.
 #  Keys include:
@@ -27,18 +51,17 @@ parameters:
 #      * vlen (optional - data stream vector length. Default is 1)
 #      * optional (optional - set to 1 for optional inputs. Default is 0)
 inputs:
-- label: ...
-  domain: ...
-  dtype: ...
-  vlen: ...
-  optional: ...
+  - domain: stream
+    dtype: complex
+    multiplicity: ${num_tx}
+  - domain: message
+    id: cfg
+    # from Socket PDU (UDP Server)
+    # payload is the bytes serialized PMT dictionary (theta_deg, distance_m)
 
 outputs:
-- label: ...
-  domain: ...
-  dtype: ...
-  vlen: ...
-  optional: ...
+  - domain: stream
+    dtype: complex
 
 #  'file_format' specifies the version of the GRC yml format used in the file
 #  and should usually not be changed.

@@ -172,13 +172,24 @@ namespace gr {
     {
         d_debug = debug;
         
-        // save CSV path & initial mtime
-        d_csv_path   = csv_path;
-        d_last_mtime = 0;
+        // // save CSV path & initial mtime
+        // d_csv_path   = csv_path;
+        // d_last_mtime = 0;
+        
+        // if (!d_csv_path.empty()) {
+        //     struct stat st{};
+        //     if (stat(d_csv_path.c_str(), &st) == 0) {
+        //         d_last_mtime = st.st_mtime; // avoid duplicate reload on first work()
+        //     }
+        // }
+        // save CSV path & initial write time
+        d_csv_path = csv_path;
+
         if (!d_csv_path.empty()) {
             struct stat st{};
             if (stat(d_csv_path.c_str(), &st) == 0) {
-                d_last_mtime = st.st_mtime; // avoid duplicate reload on first work()
+                d_last_sec  = st.st_mtim.tv_sec;
+                d_last_nsec = st.st_mtim.tv_nsec;
             }
         }
 
@@ -308,6 +319,36 @@ namespace gr {
         }
     }
 
+    // void Multi_targets_simulator_impl::reload_csv_if_needed_()
+    // {
+    //     if (d_csv_path.empty()) return;
+
+    //     struct stat st{};
+    //     if (stat(d_csv_path.c_str(), &st) != 0) {
+    //         dout << "[MULTI TARGET SIM] CSV stat failed: " << d_csv_path << std::endl;
+    //         return; // keep old config
+    //     }
+
+    //     // stat everytime, if mtime changes
+    //     if (t == d_last_write_time) {
+    //         std::vector<float> range, velocity, rcs, azimuth;
+    //         try {
+    //             read_targets_csv(d_csv_path, range, velocity, rcs, azimuth);
+    //         } catch (const std::exception& e) {
+    //             dout << "[MULTI TARGET SIM] CSV read error: " << e.what() << std::endl;
+    //             return; // keep old config
+    //         }
+
+    //         // CHECK：setup_targets will add d_setlock
+    //         setup_targets(range, velocity, rcs, azimuth,
+    //                       d_position_rx, d_samp_rate, d_center_freq,
+    //                       d_self_coupling_db, d_rndm_phaseshift, d_self_coupling);
+
+    //         d_last_mtime = st.st_mtime;
+    //         dout << "[MULTI TARGET SIM] CSV reloaded from " << d_csv_path << std::endl;
+    //     }
+    // }
+
     void Multi_targets_simulator_impl::reload_csv_if_needed_()
     {
         if (d_csv_path.empty()) return;
@@ -318,25 +359,38 @@ namespace gr {
             return; // keep old config
         }
 
-        // stat everytime, if mtime changes
-        if (st.st_mtime != d_last_mtime) {
-            std::vector<float> range, velocity, rcs, azimuth;
-            try {
-                read_targets_csv(d_csv_path, range, velocity, rcs, azimuth);
-            } catch (const std::exception& e) {
-                dout << "[MULTI TARGET SIM] CSV read error: " << e.what() << std::endl;
-                return; // keep old config
-            }
+        // use nano-sec mtime
+        std::time_t sec;
+        long        nsec;
+        sec  = st.st_mtim.tv_sec;
+        nsec = st.st_mtim.tv_nsec;
 
-            // CHECK：setup_targets will add d_setlock
-            setup_targets(range, velocity, rcs, azimuth,
-                          d_position_rx, d_samp_rate, d_center_freq,
-                          d_self_coupling_db, d_rndm_phaseshift, d_self_coupling);
-
-            d_last_mtime = st.st_mtime;
-            dout << "[MULTI TARGET SIM] CSV reloaded from " << d_csv_path << std::endl;
+        // equal to (sec, nsec) don't reload
+        if (sec == d_last_sec && nsec == d_last_nsec) {
+            return;
         }
+
+        // read CSV
+        std::vector<float> range, velocity, rcs, azimuth;
+        try {
+            read_targets_csv(d_csv_path, range, velocity, rcs, azimuth);
+        } catch (const std::exception& e) {
+            dout << "[MULTI TARGET SIM] CSV read error: " << e.what() << std::endl;
+            return; // keep old config
+        }
+
+        // apply new configuration
+        setup_targets(range, velocity, rcs, azimuth,
+                    d_position_rx, d_samp_rate, d_center_freq,
+                    d_self_coupling_db, d_rndm_phaseshift, d_self_coupling);
+
+        // only update cache time after successful read and apply
+        d_last_sec  = sec;
+        d_last_nsec = nsec;
+
+        dout << "[MULTI TARGET SIM] CSV reloaded from " << d_csv_path << std::endl;
     }
+
 
     int
     Multi_targets_simulator_impl::work (int noutput_items,

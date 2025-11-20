@@ -91,6 +91,7 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
         self.trgt_rcs_dbsm = trgt_rcs_dbsm = 20
         self.trgt_range_multi = trgt_range_multi = np.array([5.0, 5.5], dtype=float)
         self.samp_rate = samp_rate = 125000000
+        self.parrent_path = parrent_path = "/home/haocheng/O-JRC/examples"
         self.noise_figure_dB = noise_figure_dB = 10
         self.interp_factor_angle = interp_factor_angle = 16
         self.fft_len = fft_len = int(2**6)
@@ -100,19 +101,20 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
         self.trgt_velocity_multi = trgt_velocity_multi = [0.0] * len(trgt_range_multi)
         self.trgt_rcs_multi = trgt_rcs_multi = [10**(trgt_rcs_dbsm/10.0), 10**(trgt_rcs_dbsm/10.0)]
         self.trgt_angle_multi = trgt_angle_multi = np.array([0.0, 10.0], dtype=float)
-        self.target_data_file = target_data_file = os.getcwd()+"/temp/target_data.csv"
+        self.target_data_file = target_data_file = parrent_path+"/RL_ResourceAllocation_Data/target_data.csv"
         self.save_radar_log = save_radar_log = False
-        self.radar_log_file = radar_log_file = os.getcwd()+"/temp/radar_log.csv"
-        self.radar_chan_file = radar_chan_file = os.getcwd()+"/temp/radar_chan.csv"
+        self.radar_log_file = radar_log_file = parrent_path+"/RL_ResourceAllocation_Data/radar_log.csv"
+        self.radar_chan_file = radar_chan_file = parrent_path+"/RL_ResourceAllocation_Data/radar_chan.csv"
         self.pilot_symbols = pilot_symbols = ((1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (1, 1, 1, -1), (1, 1, 1, -1), (1, 1, 1, -1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1), (-1, -1, -1, 1))
         self.pilot_carriers_64 = pilot_carriers_64 = (-21, -7, 7, 21)
+        self.packet_data_file = packet_data_file = parrent_path+"/RL_ResourceAllocation_Data/packet_data.csv"
         self.noise_var = noise_var = 4.003886160000000e-21*samp_rate*10**(noise_figure_dB/10.0)
         self.max_ofdm_symbols = max_ofdm_symbols = 800
         self.interp_factor_range = interp_factor_range = 8
         self.interp_factor = interp_factor = 8
         self.data_carriers_64 = data_carriers_64 = list(range(-26, -21)) + list(range(-20, -7)) + list(range(-6, 0)) + list(range(1, 7)) + list(range(8, 21)) +list( range(22, 27))
         self.cp_len = cp_len = int(fft_len/4)
-        self.chan_est_path = chan_est_path = os.getcwd()+"/temp/chan_est.csv"
+        self.chan_est_path = chan_est_path = parrent_path+"/RL_ResourceAllocation_Data/chan_est.csv"
         self.capture_radar = capture_radar = False
         self.angle_res = angle_res = np.rad2deg(np.arcsin(2/(N_tx*N_rx)))
         self.angle_axis = angle_axis = np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi
@@ -128,7 +130,7 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
         ##################################################
         # Blocks
         ##################################################
-        self._tx_multiplier_range = Range(0.05, 10, 0.05, 0.1, 200)
+        self._tx_multiplier_range = Range(0.01, 10, 0.05, 0.1, 200)
         self._tx_multiplier_win = RangeWidget(self._tx_multiplier_range, self.set_tx_multiplier, 'TX Gain', "counter_slider", float)
         self.top_grid_layout.addWidget(self._tx_multiplier_win, 1, 0, 1, 2)
         for r in range(1, 2):
@@ -271,13 +273,17 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_zero_pad_0 = mimo_ofdm_jrc.zero_pad(False, 0, (fft_len+cp_len)*3)
         self.mimo_ofdm_jrc_zero_pad_0.set_min_output_buffer(24000)
         self.mimo_ofdm_jrc_stream_encoder_0 = mimo_ofdm_jrc.stream_encoder(mimo_ofdm_jrc.QPSK_3_4, len(data_carriers_64), 0, False)
-        self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor_range), np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, angle_res*2, 15, 0, radar_log_file, "", save_radar_log, "packet_len", False)
+        self.mimo_ofdm_jrc_socket_pdu_jrc_0 = mimo_ofdm_jrc.socket_pdu_jrc('UDP_SERVER', '', '52001', 10000)
+        self.mimo_ofdm_jrc_range_angle_estimator_0 = mimo_ofdm_jrc.range_angle_estimator(N_tx*N_rx*interp_factor_angle, np.linspace(0, 3e8*fft_len/(2*samp_rate), fft_len*interp_factor_range), np.arcsin( 2/(N_tx*N_rx*interp_factor_angle)*(np.arange(0, N_tx*N_rx*interp_factor_angle)-np.floor(N_tx*N_rx*interp_factor_angle/2)+0.5) )*180/cmath.pi, R_res*2, angle_res*2, 20, 0, radar_log_file, "", save_radar_log, "packet_len", False)
+        self.mimo_ofdm_jrc_packet_switch_0 = mimo_ofdm_jrc.packet_switch(50, packet_data_file)
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
         self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0 = mimo_ofdm_jrc.ofdm_cyclic_prefix_remover(fft_len, cp_len, "packet_len")
+        self.mimo_ofdm_jrc_ndp_generator_0 = mimo_ofdm_jrc.ndp_generator()
         self.mimo_ofdm_jrc_mimo_precoder_0 = mimo_ofdm_jrc.mimo_precoder(fft_len, N_tx, 1, data_carriers_64, pilot_carriers_64, pilot_symbols, ofdm_config.l_stf_ltf_64, ofdm_config.ltf_mapped_sc__ss_sym, "", False, "", False, False, False, "packet_len",  False)
         self.mimo_ofdm_jrc_mimo_precoder_0.set_min_output_buffer(800)
-        self.mimo_ofdm_jrc_mimo_ofdm_radar_0 = mimo_ofdm_jrc.mimo_ofdm_radar(fft_len, N_tx, N_rx, N_tx, len(ofdm_config.l_stf_ltf_64)+1, False, False, 8, interp_factor_range, False, radar_chan_file, False, "packet_len",  False)
+        self.mimo_ofdm_jrc_mimo_ofdm_radar_0 = mimo_ofdm_jrc.mimo_ofdm_radar(fft_len, N_tx, N_rx, N_tx, len(ofdm_config.l_stf_ltf_64)+1, False, False, 8, interp_factor_range, False, radar_chan_file, True, "packet_len",  False)
         self.mimo_ofdm_jrc_matrix_transpose_0 = mimo_ofdm_jrc.matrix_transpose(fft_len*interp_factor_range, N_tx*N_rx, interp_factor_angle, False, "packet_len")
+        self.mimo_ofdm_jrc_matrix_transpose_0.set_min_output_buffer(10000)
         self.mimo_ofdm_jrc_gui_time_plot_2 = mimo_ofdm_jrc.gui_time_plot(250, "range", "Range (m)", [0,20], 10, "Range Estimate")
         self.mimo_ofdm_jrc_gui_time_plot_1 = mimo_ofdm_jrc.gui_time_plot(250, "angle", "Angle (degree)", [-70,70], 10, "Angle Estimate")
         self.mimo_ofdm_jrc_gui_time_plot_0 = mimo_ofdm_jrc.gui_time_plot(250, "snr", "SNR [dB]", [0,40], 10, "Signal-to-Noise Ratio")
@@ -322,7 +328,6 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
             self.top_grid_layout.setColumnStretch(c, 1)
         self.blocks_throttle_0_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
-        self.blocks_socket_pdu_0 = blocks.socket_pdu('UDP_SERVER', '', '52001', 5000, False)
         self.blocks_multiply_const_vxx_0_0_0_0 = blocks.multiply_const_cc(tx_multiplier)
         self.blocks_multiply_const_vxx_0_0_0_0.set_min_output_buffer(64000)
         self.blocks_multiply_const_vxx_0_0_0 = blocks.multiply_const_cc(tx_multiplier)
@@ -342,10 +347,13 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.blocks_socket_pdu_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_ndp_generator_0, 'out'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_ndp_generator_0, 'enable'))
+        self.msg_connect((self.mimo_ofdm_jrc_packet_switch_0, 'strobe'), (self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'enable'))
         self.msg_connect((self.mimo_ofdm_jrc_range_angle_estimator_0, 'params'), (self.mimo_ofdm_jrc_gui_time_plot_0, 'stats'))
         self.msg_connect((self.mimo_ofdm_jrc_range_angle_estimator_0, 'params'), (self.mimo_ofdm_jrc_gui_time_plot_1, 'stats'))
         self.msg_connect((self.mimo_ofdm_jrc_range_angle_estimator_0, 'params'), (self.mimo_ofdm_jrc_gui_time_plot_2, 'stats'))
+        self.msg_connect((self.mimo_ofdm_jrc_socket_pdu_jrc_0, 'pdus'), (self.mimo_ofdm_jrc_stream_encoder_0, 'pdu_in'))
         self.connect((self.analog_noise_source_x_0, 0), (self.blocks_add_xx_0, 4))
         self.connect((self.analog_noise_source_x_0_0, 0), (self.blocks_add_xx_0_0, 4))
         self.connect((self.blocks_add_xx_0, 0), (self.blocks_throttle_0, 0))
@@ -386,10 +394,10 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.fft_vxx_0_2, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.fft_vxx_0_2_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.fft_vxx_0_2_0_0, 0))
-        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 1))
-        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 2), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 2))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 0), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 0))
         self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 3), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 3))
+        self.connect((self.mimo_ofdm_jrc_mimo_precoder_0, 1), (self.mimo_ofdm_jrc_mimo_ofdm_radar_0, 1))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0, 0), (self.fft_vxx_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_ofdm_cyclic_prefix_remover_0_0, 0), (self.fft_vxx_0_0_0, 0))
         self.connect((self.mimo_ofdm_jrc_stream_encoder_0, 0), (self.mimo_ofdm_jrc_mimo_precoder_0, 0))
@@ -452,6 +460,17 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
         self.set_noise_var(4.003886160000000e-21*self.samp_rate*10**(self.noise_figure_dB/10.0))
         self.blocks_throttle_0.set_sample_rate(self.samp_rate)
         self.blocks_throttle_0_0.set_sample_rate(self.samp_rate)
+
+    def get_parrent_path(self):
+        return self.parrent_path
+
+    def set_parrent_path(self, parrent_path):
+        self.parrent_path = parrent_path
+        self.set_chan_est_path(self.parrent_path+"/RL_ResourceAllocation_Data/chan_est.csv")
+        self.set_packet_data_file(self.parrent_path+"/RL_ResourceAllocation_Data/packet_data.csv")
+        self.set_radar_chan_file(self.parrent_path+"/RL_ResourceAllocation_Data/radar_chan.csv")
+        self.set_radar_log_file(self.parrent_path+"/RL_ResourceAllocation_Data/radar_log.csv")
+        self.set_target_data_file(self.parrent_path+"/RL_ResourceAllocation_Data/target_data.csv")
 
     def get_noise_figure_dB(self):
         return self.noise_figure_dB
@@ -556,6 +575,12 @@ class mimo_ofdm_radar_sim(gr.top_block, Qt.QWidget):
 
     def set_pilot_carriers_64(self, pilot_carriers_64):
         self.pilot_carriers_64 = pilot_carriers_64
+
+    def get_packet_data_file(self):
+        return self.packet_data_file
+
+    def set_packet_data_file(self, packet_data_file):
+        self.packet_data_file = packet_data_file
 
     def get_noise_var(self):
         return self.noise_var
