@@ -62,6 +62,7 @@ namespace gr {
 		  d_bpsk = digital::constellation_bpsk::make();
 		  d_qpsk = digital::constellation_qpsk::make();
 		  d_16qam = digital::constellation_16qam::make();
+      d_8psk = digital::constellation_8psk::make();   //added by aadnan
 
 		  modulator = d_bpsk;
     }
@@ -351,6 +352,11 @@ namespace gr {
               modulator = d_16qam;
               break;
 
+            case PSK8_1_2:    //added by aadnan
+            case PSK8_3_4:    //added by aadnan
+              modulator = d_8psk;
+              break;
+
             default:
               throw std::invalid_argument("wrong encoding");
               break;
@@ -449,8 +455,8 @@ namespace gr {
   {
     MCS effective_mcs = mod_encode;
 
-    //  if input == 6，read CSV
-    if (mod_encode == 6) {
+    //  if input == 8，read CSV
+    if (mod_encode == 8) {  //changed from 6 to 8 by aadnan
         // const std::string csv_path = "/home/haocheng/O-JRC/examples/data/mcs_ctrl.csv";
         const std::string csv_path = d_mcs_ctrl_file;
         d_readfile_flag = 1; // set readfile flag to 1
@@ -465,7 +471,7 @@ namespace gr {
                 std::stringstream ss(line);
                 int v;
                 // define: the first column in CSV is the MCS value, ignore other columns
-                if (ss >> v && v >= 0 && v <= 5) {
+                if (ss >> v && v >= 0 && v <= 7) { //changed from 5 to 7 by aadnan
                     effective_mcs = static_cast<MCS>(v);
                     dout << "[STREAM ENCODER] In file, MCS = " << v << "Readfile flag= "<< d_readfile_flag <<std::endl;
                 } else {

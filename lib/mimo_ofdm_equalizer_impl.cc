@@ -138,6 +138,7 @@ namespace gr {
 			d_bpsk = digital::constellation_bpsk::make(); // for decoding SIG symbol 
             d_qpsk = digital::constellation_qpsk::make();
             d_16qam = digital::constellation_16qam::make();
+            d_8psk  = digital::constellation_8psk::make(); //added by aadnan
             // d_64qam = digital::constellation_64qam::make();
 
 			set_estimator(estimator_algo);
@@ -888,6 +889,14 @@ namespace gr {
             modulator_SIG = d_16qam;
             // dout << "Encoding: 18 Mbit/s   ";
             break;
+        case 8:     //added by aadnan
+            mcs_SIG = PSK8_1_2;
+            modulator_SIG = d_8psk;
+            break;
+        case 12:    //added by aadnan
+            mcs_SIG = PSK8_3_4;
+            modulator_SIG = d_8psk;
+            break;
         // case 8:
         //     mcs_SIG = 6;
         //     n_ofdm_symbols_SIG = (int)ceil((16 + 8 * data_length_SIG + 6) / (double)192);
@@ -1008,6 +1017,14 @@ namespace gr {
             mcs_SIG = QAM16_3_4;
             modulator_SIG = d_16qam;
             // dout << "Encoding: 18 Mbit/s   ";
+            break;
+        case 1:     //added by aadnan
+            mcs_SIG = PSK8_1_2;
+            modulator_SIG = d_8psk;
+            break;
+        case 3:     //added by aadnan
+            mcs_SIG = PSK8_3_4;
+            modulator_SIG = d_8psk;
             break;
         // case 8:
         //     mcs_SIG = 6;

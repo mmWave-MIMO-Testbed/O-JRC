@@ -78,7 +78,7 @@ namespace gr {
 
             d_bpsk = digital::constellation_bpsk::make(); 
 			      d_qpsk = digital::constellation_qpsk::make();
-            //d_8psk = digital::constellation_8psk::make();
+            d_8psk = digital::constellation_8psk::make();   //uncommented by aadnan
 			      d_16qam = digital::constellation_16qam::make();
 
             perf_display_interval = 1.0;
@@ -620,6 +620,10 @@ namespace gr {
             case QAM16_3_4:
                 d_demodulator = d_16qam;
                 break;
+            case PSK8_1_2:      //added by aadnan
+            case PSK8_3_4:      //added by aadnan
+                d_demodulator = d_8psk;       //added by aadnan
+                break;      //added by aadnan
             default:
                 std::cout << "[STREAM DECODER] Something is wrong! --> mcs_value is not correct: " << (int) mcs_value << std::endl;
             }

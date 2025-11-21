@@ -112,6 +112,7 @@ namespace gr {
         digital::constellation_bpsk::sptr d_bpsk;
         digital::constellation_qpsk::sptr d_qpsk;
         digital::constellation_16qam::sptr d_16qam;
+        digital::constellation_8psk::sptr d_8psk; //added by aadnan
         // digital::constellation_64qam::sptr d_64qam;
 
         float perf_display_interval;       

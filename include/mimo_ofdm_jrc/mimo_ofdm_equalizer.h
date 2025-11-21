@@ -33,6 +33,7 @@ enum Modulation {
 	BPSK  = 0,
 	QPSK = 1,
 	QAM16 = 2,
+  PSK8 = 3, //added by aadnan
 };
 
 namespace gr {

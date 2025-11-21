@@ -100,6 +100,22 @@ ofdm_mcs::ofdm_mcs(MCS mod_encode, int n_data_carriers) {
             n_constellations = 16;
 			break;
 
+		case PSK8_1_2:		//added by aadnan
+			n_bpsc = 3;
+			n_cbps = d_n_data_carriers*n_bpsc;
+			n_dbps = n_cbps/2;
+			rate_field = 0x01; // 0b00000001  (custom 8-PSK 1/2)
+            n_constellations = 8;
+			break;
+
+		case PSK8_3_4:		//added by aadnan
+			n_bpsc = 3;
+			n_cbps = d_n_data_carriers*n_bpsc;
+			n_dbps = n_cbps*3/4;
+			rate_field = 0x03; // 0b00000011  (custom 8-PSK 3/4)
+            n_constellations = 8;
+			break;
+
 		defaut:
 			assert(false);
 			break;
@@ -221,6 +237,7 @@ void puncturing(const char *in, char *out, packet_param &frame, ofdm_mcs &ofdm)
 		switch(ofdm.d_mcs) {
 			case BPSK_1_2:
 			case QPSK_1_2:
+			case PSK8_1_2:	   //added by aadnan
 			case QAM16_1_2:
 				*out = in[i];
 				out++;
@@ -228,6 +245,7 @@ void puncturing(const char *in, char *out, packet_param &frame, ofdm_mcs &ofdm)
 
 			case BPSK_3_4:
 			case QPSK_3_4:
+			case PSK8_3_4:	   //added by aadnan
 			case QAM16_3_4:
 			// case QAM64_3_4:
 				mod = i % 6;

@@ -77,7 +77,7 @@ namespace gr {
 
       digital::constellation_bpsk::sptr 				d_bpsk;
       digital::constellation_qpsk::sptr 				d_qpsk;
-      //digital::constellation_qpsk::sptr 				d_8psk;
+      digital::constellation_8psk::sptr 				d_8psk; //uncommented by aadnan
       digital::constellation_16qam::sptr 				d_16qam;
 
       uint8_t* d_rx_symbols;

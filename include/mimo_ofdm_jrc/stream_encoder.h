@@ -31,7 +31,9 @@ enum MCS : uint8_t {
     QPSK_3_4  = 3,
     QAM16_1_2 = 4,
     QAM16_3_4 = 5,
-    ReadFile = 6,
+    PSK8_1_2  = 6,   //added by aadnan
+    PSK8_3_4  = 7,   //added by aadnan
+    ReadFile = 8,   //changed by aadnan
 };
 
 enum PACKET_TYPE : uint8_t {
