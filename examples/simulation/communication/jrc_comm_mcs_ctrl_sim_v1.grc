@@ -253,15 +253,15 @@ blocks:
     label2: ''
     label3: ''
     label4: ''
-    labels: '["BPSK 1/2", "BPSK 3/4", "QPSK 1/2", "QPSK 3/4", "16QAM 1/2","16QAM 3/4"
-      , "ReadFile"]'
+    labels: '["BPSK 1/2", "BPSK 3/4", "QPSK 1/2", "QPSK 3/4", "16QAM 1/2", "16QAM
+      3/4" , "8PSK 1/2", "8PSK 3/4", "ReadFile"]'
     num_opts: '0'
     option0: '0'
     option1: '1'
     option2: '2'
     option3: '3'
     option4: '4'
-    options: '[0, 1, 2, 3, 4, 5, 6] '
+    options: '[0, 1, 2, 3, 4, 5, 6, 7, 8] '
     orient: Qt.QHBoxLayout
     type: int
     value: '3'
@@ -349,7 +349,7 @@ blocks:
   id: variable
   parameters:
     comment: ''
-    value: '"/home/haocheng/O-JRC/examples"'
+    value: '"/home/aadnan181/O-JRC-In_Devlopment/examples"'
   states:
     bus_sink: false
     bus_source: false
@@ -536,7 +536,7 @@ blocks:
   parameters:
     comment: "fix OFDM symbols per packet. \n(better == multiply of 48)\n>0 enable\uFF0C\
       according to MCS to cut or adding 0;\n==0 for fixed packet data payload length"
-    value: 48*2
+    value: '96'
   states:
     bus_sink: false
     bus_source: false
@@ -1574,26 +1574,6 @@ blocks:
     coordinate: [1264, 1240.0]
     rotation: 0
     state: disabled
-- name: helper_frame_sync_0
-  id: helper_frame_sync
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    cp_len: cp_len
-    debug: 'False'
-    fft_len: fft_len
-    ltf_seq_time: ofdm_config.l_ltf_fir
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    sync_length: sync_length
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [376, 1676.0]
-    rotation: 0
-    state: disabled
 - name: helper_gui_time_plot_0
   id: helper_gui_time_plot
   parameters:
@@ -1611,196 +1591,6 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [1696, 1820.0]
-    rotation: 0
-    state: disabled
-- name: helper_gui_time_plot_1
-  id: helper_gui_time_plot
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    interval: '250'
-    label: '"Packet Error Rate"'
-    time_window: '10'
-    y_axis_lim: '[0, 102]'
-    y_label: '"PER [%]"'
-    y_tag: '"per"'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1696, 1944.0]
-    rotation: 0
-    state: disabled
-- name: helper_mimo_ofdm_equalizer_0
-  id: helper_mimo_ofdm_equalizer
-  parameters:
-    affinity: ''
-    alias: ''
-    bw: samp_rate
-    chan_est_file: chan_est_file
-    comm_log_file: '""'
-    comment: ''
-    cp_len: cp_len
-    data_carriers: ofdm_config.data_subcarriers
-    debug: 'False'
-    estimator: chan_est
-    fft_len: fft_len
-    freq: rf_freq
-    long_seq: ofdm_config.l_stf_ltf_64[3]
-    mapped_ltf_symbols: ofdm_config.ltf_mapped_sc__ss_sym
-    maxoutbuf: '0'
-    minoutbuf: '80000'
-    n_mimo_ltf: N_tx
-    pilot_carriers: ofdm_config.pilot_subcarriers
-    pilot_symbols: ofdm_config.pilot_symbols
-    stats_record: 'False'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1056, 1556.0]
-    rotation: 0
-    state: disabled
-- name: helper_mimo_precoder_0
-  id: helper_mimo_precoder
-  parameters:
-    N_ss: '1'
-    N_tx: N_tx
-    affinity: ''
-    alias: ''
-    chan_est_file: chan_est_file
-    chan_est_smoothing: 'False'
-    comment: ''
-    data_carriers: ofdm_config.data_subcarriers
-    debug: 'False'
-    fft_len: fft_len
-    len_tag_key: '"packet_len"'
-    mapped_ltf_symbols: ofdm_config.ltf_mapped_sc__ss_sym
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    phased_steering: phased_steering
-    pilot_carriers: ofdm_config.pilot_subcarriers
-    pilot_symbols: ofdm_config.pilot_symbols
-    radar_aided: radar_aided
-    radar_log_file: radar_log_file
-    sync_words: ofdm_config.l_stf_ltf_64
-    use_radar_streams: use_radar_streams
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [600, 324.0]
-    rotation: 0
-    state: disabled
-- name: helper_moving_avg_0
-  id: helper_moving_avg
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    debug: 'False'
-    length: corr_window_size
-    max_iter: '16000'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    scale: '1'
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [736, 1260.0]
-    rotation: 0
-    state: disabled
-- name: helper_stream_decoder_0
-  id: helper_stream_decoder
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    debug: 'False'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    n_data_carriers: len(ofdm_config.data_subcarriers)
-    stats_path: comm_log_file
-    stats_record: record_comm_stats
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [1376, 1680.0]
-    rotation: 0
-    state: disabled
-- name: helper_zero_pad_0
-  id: helper_zero_pad
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    debug: 'False'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    pad_front: '5'
-    pad_tail: 6*(fft_len+cp_len)+10
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [440, 892.0]
-    rotation: 0
-    state: disabled
-- name: helper_zero_pad_0_0
-  id: helper_zero_pad
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    debug: 'False'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    pad_front: '5'
-    pad_tail: 6*(fft_len+cp_len)+10
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [440, 820.0]
-    rotation: 0
-    state: disabled
-- name: helper_zero_pad_0_1
-  id: helper_zero_pad
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    debug: 'False'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    pad_front: '5'
-    pad_tail: 6*(fft_len+cp_len)+10
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [440, 964.0]
-    rotation: 0
-    state: disabled
-- name: helper_zero_pad_0_1_0
-  id: helper_zero_pad
-  parameters:
-    affinity: ''
-    alias: ''
-    comment: ''
-    debug: 'False'
-    maxoutbuf: '0'
-    minoutbuf: '0'
-    pad_front: '5'
-    pad_tail: 6*(fft_len+cp_len)+10
-  states:
-    bus_sink: false
-    bus_source: false
-    bus_structure: null
-    coordinate: [440, 1036.0]
     rotation: 0
     state: disabled
 - name: import_0
@@ -1880,7 +1670,7 @@ blocks:
     affinity: '[5]'
     alias: ''
     comment: ''
-    debug: 'True'
+    debug: 'False'
     maxoutbuf: '0'
     minoutbuf: '0'
     n_data_carriers: len(ofdm_config.data_subcarriers)
@@ -3995,7 +3785,6 @@ connections:
 - [blocks_complex_to_mag_squared_0, '0', blocks_moving_average_xx_0, '0']
 - [blocks_complex_to_mag_squared_0_0, '0', blocks_moving_average_xx_1_0, '0']
 - [blocks_conjugate_cc_0, '0', blocks_multiply_xx_0, '0']
-- [blocks_delay_0, '0', helper_frame_sync_0, '0']
 - [blocks_delay_0, '0', mimo_ofdm_jrc_frame_sync_0, '1']
 - [blocks_delay_0_0, '0', blocks_conjugate_cc_0, '0']
 - [blocks_delay_0_0, '0', helper_frame_detector_0, '0']
@@ -4006,20 +3795,14 @@ connections:
 - [blocks_moving_average_xx_0, '0', blocks_nlog10_ff_1, '0']
 - [blocks_moving_average_xx_1_0, '0', blocks_abs_xx_0, '0']
 - [blocks_multiply_const_vxx_0, '0', blocks_complex_to_mag_squared_0, '0']
-- [blocks_multiply_const_vxx_0, '0', helper_zero_pad_0_0, '0']
 - [blocks_multiply_const_vxx_0, '0', mimo_ofdm_jrc_zero_pad_0, '0']
-- [blocks_multiply_const_vxx_0_0, '0', helper_zero_pad_0, '0']
 - [blocks_multiply_const_vxx_0_0, '0', mimo_ofdm_jrc_zero_pad_0_0, '0']
-- [blocks_multiply_const_vxx_0_0_0, '0', helper_zero_pad_0_1, '0']
 - [blocks_multiply_const_vxx_0_0_0, '0', mimo_ofdm_jrc_zero_pad_0_0_0, '0']
-- [blocks_multiply_const_vxx_0_0_0_0, '0', helper_zero_pad_0_1_0, '0']
 - [blocks_multiply_const_vxx_0_0_0_0, '0', mimo_ofdm_jrc_zero_pad_0_0_0_0, '0']
 - [blocks_multiply_const_vxx_1, '0', blocks_add_xx_0_0, '0']
-- [blocks_multiply_const_vxx_1, '0', qtgui_time_sink_x_0_0_1, '0']
 - [blocks_multiply_const_vxx_1_0, '0', blocks_add_xx_0_0, '1']
 - [blocks_multiply_const_vxx_1_0_0, '0', blocks_add_xx_0_0, '2']
 - [blocks_multiply_const_vxx_1_0_0_0, '0', blocks_add_xx_0_0, '3']
-- [blocks_multiply_xx_0, '0', helper_moving_avg_0, '0']
 - [blocks_multiply_xx_0, '0', mimo_ofdm_jrc_moving_avg_0, '0']
 - [blocks_nlog10_ff_1, '0', qtgui_number_sink_0, '0']
 - [blocks_socket_pdu_0, pdus, mimo_ofdm_jrc_stream_encoder_1, pdu_in]
@@ -4043,37 +3826,12 @@ connections:
 - [fft_vxx_0, '0', digital_ofdm_cyclic_prefixer_0, '0']
 - [fft_vxx_0_0, '0', blocks_null_sink_0_3, '0']
 - [fft_vxx_0_0, '0', blocks_vector_to_stream_0_0_0_0_0_0, '0']
-- [fft_vxx_0_0, '0', helper_mimo_ofdm_equalizer_0, '0']
 - [fft_vxx_0_0, '0', mimo_ofdm_jrc_mimo_ofdm_equalizer_0, '0']
 - [fft_vxx_0_2, '0', digital_ofdm_cyclic_prefixer_0_0, '0']
 - [fft_vxx_0_2_0, '0', digital_ofdm_cyclic_prefixer_0_0_0, '0']
 - [fft_vxx_0_2_0_0, '0', digital_ofdm_cyclic_prefixer_0_0_0_0, '0']
 - [helper_frame_detector_0, '0', qtgui_time_sink_x_0_2_0, '0']
 - [helper_frame_detector_0, '0', virtual_sink_0_0_0, '0']
-- [helper_frame_sync_0, '0', blocks_stream_to_vector_0, '0']
-- [helper_frame_sync_0, '0', qtgui_time_sink_x_0, '0']
-- [helper_mimo_ofdm_equalizer_0, '0', blocks_null_sink_0, '0']
-- [helper_mimo_ofdm_equalizer_0, '0', blocks_tag_debug_0, '0']
-- [helper_mimo_ofdm_equalizer_0, '0', blocks_vector_to_stream_0, '0']
-- [helper_mimo_ofdm_equalizer_0, '0', helper_stream_decoder_0, '0']
-- [helper_mimo_precoder_0, '0', blocks_vector_to_stream_0_0_0_0, '0']
-- [helper_mimo_precoder_0, '0', fft_vxx_0, '0']
-- [helper_mimo_precoder_0, '1', blocks_vector_to_stream_0_0_0_0_0, '0']
-- [helper_mimo_precoder_0, '1', fft_vxx_0_2, '0']
-- [helper_mimo_precoder_0, '2', fft_vxx_0_2_0, '0']
-- [helper_mimo_precoder_0, '3', fft_vxx_0_2_0_0, '0']
-- [helper_moving_avg_0, '0', blocks_complex_to_mag_0, '0']
-- [helper_moving_avg_0, '0', helper_frame_detector_0, '2']
-- [helper_stream_decoder_0, '0', blocks_null_sink_0_0, '0']
-- [helper_stream_decoder_0, '0', qtgui_histogram_sink_x_0, '0']
-- [helper_stream_decoder_0, '0', qtgui_time_sink_x_1, '0']
-- [helper_stream_decoder_0, stats, helper_gui_time_plot_0, stats]
-- [helper_stream_decoder_0, stats, helper_gui_time_plot_1, stats]
-- [helper_stream_decoder_0, sym, blocks_socket_pdu_1, pdus]
-- [helper_zero_pad_0, '0', blocks_multiply_const_vxx_1_0, '0']
-- [helper_zero_pad_0_0, '0', blocks_multiply_const_vxx_1, '0']
-- [helper_zero_pad_0_1, '0', blocks_multiply_const_vxx_1_0_0, '0']
-- [helper_zero_pad_0_1_0, '0', blocks_multiply_const_vxx_1_0_0_0, '0']
 - [mimo_ofdm_jrc_Stream_decoder_DynModulation_0, '0', blocks_null_sink_0_0, '0']
 - [mimo_ofdm_jrc_Stream_decoder_DynModulation_0, stats, mimo_ofdm_jrc_gui_time_plot_0,
   stats]
@@ -4088,7 +3846,6 @@ connections:
 - [mimo_ofdm_jrc_frame_sync_0, '0', qtgui_time_sink_x_0, '0']
 - [mimo_ofdm_jrc_mimo_ofdm_equalizer_0, '0', blocks_null_sink_0, '0']
 - [mimo_ofdm_jrc_mimo_ofdm_equalizer_0, '0', blocks_vector_to_stream_0, '0']
-- [mimo_ofdm_jrc_mimo_ofdm_equalizer_0, '0', helper_stream_decoder_0, '0']
 - [mimo_ofdm_jrc_mimo_ofdm_equalizer_0, '0', mimo_ofdm_jrc_Stream_decoder_DynModulation_0,
   '0']
 - [mimo_ofdm_jrc_mimo_ofdm_equalizer_0, '0', mimo_ofdm_jrc_stream_decoder_0, '0']
@@ -4109,13 +3866,10 @@ connections:
   pdu_in]
 - [mimo_ofdm_jrc_stream_decoder_0, '0', blocks_null_sink_0_0, '0']
 - [mimo_ofdm_jrc_stream_decoder_0, stats, helper_gui_time_plot_0, stats]
-- [mimo_ofdm_jrc_stream_decoder_0, stats, helper_gui_time_plot_1, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, stats, mimo_ofdm_jrc_gui_time_plot_0, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, stats, mimo_ofdm_jrc_gui_time_plot_1, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, stats, mimo_ofdm_jrc_gui_time_plot_1_0, stats]
 - [mimo_ofdm_jrc_stream_decoder_0, sym, blocks_socket_pdu_1, pdus]
-- [mimo_ofdm_jrc_stream_encoder_0, '0', helper_mimo_precoder_0, '0']
-- [mimo_ofdm_jrc_stream_encoder_1, '0', helper_mimo_precoder_0, '0']
 - [mimo_ofdm_jrc_stream_encoder_1, '0', mimo_ofdm_jrc_mimo_precoder_0, '0']
 - [mimo_ofdm_jrc_stream_encoder_automodulation_0, '0', mimo_ofdm_jrc_mimo_precoder_0,
   '0']
@@ -4127,7 +3881,6 @@ connections:
 - [virtual_source_0, '0', blocks_delay_0_0, '0']
 - [virtual_source_0, '0', blocks_multiply_xx_0, '1']
 - [virtual_source_0_0, '0', blocks_delay_0, '0']
-- [virtual_source_0_0, '0', helper_frame_sync_0, '1']
 - [virtual_source_0_0, '0', mimo_ofdm_jrc_frame_sync_0, '0']
 - [virtual_source_0_1_0_0, '0', blocks_multiply_const_vxx_0, '0']
 - [virtual_source_0_1_0_0_0, '0', blocks_multiply_const_vxx_0_0, '0']

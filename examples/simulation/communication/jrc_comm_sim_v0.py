@@ -88,14 +88,14 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.fft_len = fft_len = ofdm_config.N_sc
         self.wavelength = wavelength = 3e8/rf_freq
         self.samp_rate = samp_rate = 150000000
-        self.parrent_path = parrent_path = "/home/haocheng/O-JRC/examples"
+        self.parrent_path = parrent_path = "/home/aadnan181/O-JRC-In_Devlopment/examples"
         self.noise_figure_dB = noise_figure_dB = 10
         self.mimo_tap1 = mimo_tap1 = cmath.exp(1j*cmath.pi*np.sin(np.deg2rad(theta)))
         self.distance = distance = 20
         self.cp_len = cp_len = int(fft_len/4)
         self.use_radar_streams = use_radar_streams = False
         self.tx_multiplier = tx_multiplier = 0.25
-        self.target_OFDM_symbols = target_OFDM_symbols = 48*2
+        self.target_OFDM_symbols = target_OFDM_symbols = 96
         self.sync_length = sync_length = 4*(fft_len+cp_len)
         self.record_comm_stats = record_comm_stats = False
         self.radar_read_file = radar_read_file = parrent_path+"/data/radar_data.csv"
@@ -201,9 +201,9 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         # Create the radio buttons
         self.top_layout.addWidget(self._phased_steering_tool_bar)
         # Create the options list
-        self._mcs_options = [0, 1, 2, 3, 4, 5, 6]
+        self._mcs_options = [0, 1, 2, 3, 4, 5, 6, 7, 8]
         # Create the labels list
-        self._mcs_labels = ['BPSK 1/2', 'BPSK 3/4', 'QPSK 1/2', 'QPSK 3/4', '16QAM 1/2', '16QAM 3/4', 'ReadFile']
+        self._mcs_labels = ['BPSK 1/2', 'BPSK 3/4', 'QPSK 1/2', 'QPSK 3/4', '16QAM 1/2', '16QAM 3/4', '8PSK 1/2', '8PSK 3/4', 'ReadFile']
         # Create the combo box
         # Create the radio buttons
         self._mcs_group_box = Qt.QGroupBox('Modulation and Coding Scheme' + ": ")
@@ -315,7 +315,7 @@ class jrc_comm_sim_v0(gr.top_block, Qt.QWidget):
         self.mimo_ofdm_jrc_gui_time_plot_0 = mimo_ofdm_jrc.gui_time_plot(250, "snr", "SNR [dB]", [0,40], 10, "Signal-to-Noise Ratio")
         self.mimo_ofdm_jrc_frame_sync_0 = mimo_ofdm_jrc.frame_sync(fft_len, cp_len, sync_length, ofdm_config.l_ltf_fir, False)
         self.mimo_ofdm_jrc_frame_detector_0 = mimo_ofdm_jrc.frame_detector(fft_len, cp_len, 0.6, 10, (len(ofdm_config.l_stf_ltf_64)+N_tx)*(fft_len+cp_len), False)
-        self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0 = mimo_ofdm_jrc.Stream_decoder_DynModulation(len(ofdm_config.data_subcarriers), comm_log_file, record_comm_stats, True)
+        self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0 = mimo_ofdm_jrc.Stream_decoder_DynModulation(len(ofdm_config.data_subcarriers), comm_log_file, record_comm_stats, False)
         self.mimo_ofdm_jrc_Stream_decoder_DynModulation_0.set_processor_affinity([5])
         self.fft_vxx_0_2_0_0 = fft.fft_vcc(fft_len, False, tuple([1/64**.5] * 64), True, 2)
         self.fft_vxx_0_2_0 = fft.fft_vcc(fft_len, False, tuple([1/64**.5] * 64), True, 2)

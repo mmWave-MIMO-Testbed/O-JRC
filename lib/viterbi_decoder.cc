@@ -339,6 +339,7 @@ viterbi_decoder::reset() {
 	case BPSK_1_2:
 	case QPSK_1_2:
 	case QAM16_1_2:
+	case PSK8_1_2:	//added by aadnan
 		d_ntraceback = 5;
 		d_depuncture_pattern = PUNCTURE_1_2;
 		d_k = 1;
@@ -351,6 +352,7 @@ viterbi_decoder::reset() {
 	case BPSK_3_4:
 	case QPSK_3_4:
 	case QAM16_3_4:
+	case PSK8_3_4:	//added by aadnan
 	// case QAM64_3_4:
 		d_ntraceback = 10;
 		d_depuncture_pattern = PUNCTURE_3_4;

@@ -100,7 +100,7 @@ namespace gr {
       dout << "[STREAM ENCODER] MCS: " << d_mod_encode << " Readfile Flag: " << d_readfile_flag << std::endl;
       if (d_readfile_flag == 1)
         {
-          set_mcs(static_cast<MCS>(6));
+          set_mcs(static_cast<MCS>(8)); //ReadFile
         }
 
       while (!d_offset)
