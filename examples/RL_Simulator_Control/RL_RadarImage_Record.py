@@ -45,16 +45,16 @@ PACKET_DATA_FILE= DATA_DIR / "packet_data.csv"     # 触发 GNU Radio 的信号�
 PACKET_LOG_FILE = DATA_DIR / "packet_log.csv"      # 可选：我们自己的触发日志
 
 # ========= 参数配置 =========
-DT_S = 0.1                        # 与时隙生成一致（仅用于速度估计）
+DT_S = 0.2                        # 与时隙生成一致（仅用于速度估计）
 USE_RADIAL_VELOCITY = False       # True=径向速度差分；False=全0
 INCLUDE_HEADER = True             # target_data.csv 的表头注释
 
 BLOCKAGE_ONLY_ONESHOT = False    #Blockage only on first slot
 
 # RCS 配置（按需修改）
-RCS_BY_ID = { "1": 1.0, "2": 40.0, "101": 0.5 }
+RCS_BY_ID = { "1": 45.0, "2": 40.0, "101": 1.0 }
 RCS_DEFAULT_TARGET = 1.0
-RCS_BLOCKAGE = 0.9
+RCS_BLOCKAGE = 0.8
 
 # 当束内没有任何目标时，注入一个极低RCS的“虚拟目标”，以保证雷达图像可生成
 DUMMY_TARGET_RANGE_M = 11.0
@@ -71,7 +71,8 @@ OMNI_WIDTH_DEG = 360.0  # 仅占位，表示全向
 # 从 -60 到 60，每 10 度一个中心
 BEAM_CENTERS = list(range(-60, 61, 10))           # [-60, -50, ..., 60]
 # 每个中心对应这三种宽度
-BEAM_WIDTHS  = [20.0, 40.0, 60.0]
+# BEAM_WIDTHS  = [20.0, 40.0, 60.0]
+BEAM_WIDTHS  = [20.0]
 # BEAM_WIDTHS = [180.0]  # test: 全部用 omnidirectional
 # 展平后的 beam book：
 # id=0 预留给 OMNI；其余按 (center, width) 的笛卡尔积顺序排列：
@@ -81,7 +82,7 @@ BEAM_BOOK = [(None, OMNI_WIDTH_DEG)] + [(c, w) for c in BEAM_CENTERS for w in BE
 N_BEAMS = len(BEAM_BOOK)  # = 1 + 13*3 = 40
 
 # 触发配置：每束发多少包、间隔多久
-PACKETS_PER_BEAM = 50
+PACKETS_PER_BEAM = 10
 PACKET_INTERVAL_S = 0.08         # 两次触发之间的间隔
 MARKER_SETTLE_S   = 0.1         # 写 marker 后给文件系统/其它进程一点缓冲
 

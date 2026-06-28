@@ -74,7 +74,8 @@ UDP_PORT = 52002
 OMNI_ID = 0
 OMNI_WIDTH_DEG = 360.0
 BEAM_CENTERS = list(range(-60, 61, 10))   # [-60,-50,...,60]
-BEAM_WIDTHS  = [20.0, 40.0, 60.0]
+BEAM_WIDTHS  = [20.0]
+# BEAM_WIDTHS  = [20.0, 40.0, 60.0]
 
 # 展平后的 beambook：id=0 是 omni；其余按 (center,width) 的笛卡尔积顺序
 BEAM_BOOK = [(None, OMNI_WIDTH_DEG)] + [(c, w) for c in BEAM_CENTERS for w in BEAM_WIDTHS]
@@ -86,9 +87,9 @@ def _beam_params(beam_index: int) -> tuple[float | None, float]:
     return BEAM_BOOK[beam_index]
 
 # ================== PACKET CONFIG ==================
-PACKETS_PER_BEAM = 50
+PACKETS_PER_BEAM = 10
 TRIGGER_PACKET_TYPE = 2   # 1=NDP, 2=DATA
-TRIGGER_PACKET_SIZE = 100
+TRIGGER_PACKET_SIZE = 64
 PACKET_INTERVAL_S  = 0.08  # spacing between packets
 READ_DELAY_S       = 0.08  # small delay before reading comm_log
 

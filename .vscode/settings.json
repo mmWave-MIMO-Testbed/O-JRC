@@ -77,5 +77,6 @@
         "semaphore": "cpp",
         "span": "cpp",
         "stop_token": "cpp"
-    }
+    },
+    "python-envs.defaultEnvManager": "ms-python.python:venv"
 }
